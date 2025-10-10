@@ -33,12 +33,12 @@
     background:linear-gradient(90deg,var(--deep), #163a5a); color:#fff;
     box-shadow:0 10px 36px rgba(11,37,68,0.12);
   }
-  .header-inner{ max-width:var(--maxw); margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:14px 20px; gap:16px; }
+  .header-inner{ max-width:var(--maxw); margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:14px 20px; gap:16px; flex-wrap:wrap; }
   .brand{ display:flex; gap:12px; align-items:center; }
   .brand img{ width:64px; height:64px; object-fit:cover; border-radius:12px; background:#fff; padding:6px; }
   .brand h1{ margin:0; font-family:'Playfair Display', serif; font-size:1.2rem; }
   .brand p{ margin:0; font-size:0.85rem; opacity:0.95; color:#d8eaf8 }
-  nav.topnav{ display:flex; gap:8px; align-items:center; }
+  nav.topnav{ display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
   nav.topnav a{ padding:8px 12px; border-radius:10px; background:rgba(255,255,255,0.06); color:#fff; font-weight:700; font-size:0.9rem; }
   nav.topnav a:hover{ transform:translateY(-3px); box-shadow:0 8px 20px rgba(11,37,68,0.12); }
 
@@ -116,6 +116,17 @@
     .post-row{ grid-template-columns:1fr; }
     .charts{ grid-template-columns:1fr; }
   }
+  @media (max-width:600px){
+    body{ padding:0 8px; }
+    .wrap{ padding:12px; }
+    .panel{ padding:14px; margin-bottom:16px; }
+    .case-left h2{ font-size:1.4rem; }
+    .case-left .sub, .post-text, .muted{ font-size:0.9rem; line-height:1.4; }
+    .post-card{ flex-direction:column; align-items:flex-start; }
+    .post-card img{ width:100%; height:auto; }
+    nav.topnav a{ padding:6px 10px; font-size:0.85rem; }
+  }
+
 </style>
 </head>
 <body>
@@ -124,7 +135,7 @@
   <header class="fixed-header">
     <div class="header-inner">
       <div class="brand">
-        <img src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/3_Assets/Logo/logo.png" alt="Haksoss logo">
+        <img src="3_Assets/Logo/logo.png" alt="Haksoss logo">
         <div>
           <h1 class="site-title">Haksoss — Morning Experience Campaign</h1>
           <p class="site-sub">Bilingual campaign — emails, social, ads, KPIs & creative execution</p>
@@ -199,7 +210,7 @@
           </div>
 
           <div class="case-right">
-            <img src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/3_Assets/Images/hero-latte.jpg" alt="Hero Latte">
+            <img src="3_Assets/Images/hero-latte.jpg" alt="Hero Latte">
             <div class="steam" aria-hidden><div></div><div></div><div></div></div>
           </div>
         </div>
@@ -212,19 +223,19 @@
 
         <div class="gallery" aria-hidden>
           <!-- images -->
-          <div class="tile"><img src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/3_Assets/Images/hero-latte.jpg" alt="hero-latte"><div class="meta">hero-latte.jpg</div></div>
-          <div class="tile"><img src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/3_Assets/Images/chocolate-croissant.jpg" alt="chocolate-croissant"><div class="meta">chocolate-croissant.jpg</div></div>
-          <div class="tile"><img src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/3_Assets/Images/seasonal-treat.jpg" alt="seasonal-treat"><div class="meta">seasonal-treat.jpg</div></div>
-          <div class="tile"><img src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/3_Assets/Images/special-latte.jpg" alt="special-latte"><div class="meta">special-latte.jpg</div></div>
-          <div class="tile"><img src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/3_Assets/Images/special-offer.jpg" alt="special-offer"><div class="meta">special-offer.jpg</div></div>
-          <div class="tile"><img src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/3_Assets/Images/loyalty-program.jpg" alt="loyalty-program"><div class="meta">loyalty-program.jpg</div></div>
+          <div class="tile"><img src="3_Assets/Images/hero-latte.jpg" alt="hero-latte"><div class="meta">hero-latte.jpg</div></div>
+          <div class="tile"><img src="3_Assets/Images/chocolate-croissant.jpg" alt="chocolate-croissant"><div class="meta">chocolate-croissant.jpg</div></div>
+          <div class="tile"><img src="3_Assets/Images/seasonal-treat.jpg" alt="seasonal-treat"><div class="meta">seasonal-treat.jpg</div></div>
+          <div class="tile"><img src="3_Assets/Images/special-latte.jpg" alt="special-latte"><div class="meta">special-latte.jpg</div></div>
+          <div class="tile"><img src="3_Assets/Images/special-offer.jpg" alt="special-offer"><div class="meta">special-offer.jpg</div></div>
+          <div class="tile"><img src="3_Assets/Images/loyalty-program.jpg" alt="loyalty-program"><div class="meta">loyalty-program.jpg</div></div>
 
           <!-- templates -->
-          <div class="tile"><img src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/3_Assets/1_Templates/hero_latte_post.png" alt="template hero"><div class="meta">hero_latte_post.png (template)</div></div>
-          <div class="tile"><img src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/3_Assets/1_Templates/special_latte.png" alt="template special"><div class="meta">special_latte.png (template)</div></div>
-          <div class="tile"><img src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/3_Assets/1_Templates/season_offer.png" alt="template season"><div class="meta">season_offer.png (template)</div></div>
-          <div class="tile"><img src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/3_Assets/1_Templates/haksoss_post.png" alt="template brand"><div class="meta">haksoss_post.png (template)</div></div>
-          <div class="tile"><img src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/3_Assets/1_Templates/discover_more.png" alt="template discover"><div class="meta">discover_more.png (template)</div></div>
+          <div class="tile"><img src="3_Assets/1_Templates/hero_latte_post.png" alt="template hero"><div class="meta">hero_latte_post.png (template)</div></div>
+          <div class="tile"><img src="3_Assets/1_Templates/special_latte.png" alt="template special"><div class="meta">special_latte.png (template)</div></div>
+          <div class="tile"><img src="3_Assets/1_Templates/season_offer.png" alt="template season"><div class="meta">season_offer.png (template)</div></div>
+          <div class="tile"><img src="3_Assets/1_Templates/haksoss_post.png" alt="template brand"><div class="meta">haksoss_post.png (template)</div></div>
+          <div class="tile"><img src="3_Assets/1_Templates/discover_more.png" alt="template discover"><div class="meta">discover_more.png (template)</div></div>
         </div>
       </section>
 
@@ -277,7 +288,7 @@
         <!-- Hero Latte post -->
         <div class="post-row" style="margin-top:12px">
           <div class="post-card">
-            <img src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/3_Assets/1_Templates/hero_latte_post.png" alt="Hero Latte Post">
+            <img src="3_Assets/1_Templates/hero_latte_post.png" alt="Hero Latte Post">
             <div class="post-text">
               <strong>Hero Latte — Post (English)</strong>
               <p style="margin:6px 0">“Wake up with the perfect cup.”<br>Hero Latte: Velvety, aromatic, balanced. Experience morning luxury by the sea. ☕✨</p>
@@ -286,7 +297,7 @@
           </div>
 
           <div class="post-card">
-            <img src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/3_Assets/Images/hero-latte.jpg" alt="Hero Latte Photo">
+            <img src="3_Assets/Images/hero-latte.jpg" alt="Hero Latte Photo">
             <div class="post-text">
               <strong>Hero Latte — Story Preview</strong>
               <p style="margin:6px 0">Short video / GIF: latte art close-up + CTA “Swipe up to claim your complimentary upgrade”</p>
@@ -297,7 +308,7 @@
         <!-- Chocolate Croissant post -->
         <div class="post-row">
           <div class="post-card">
-            <img src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/3_Assets/Images/chocolate-croissant.jpg" alt="Chocolate Croissant">
+            <img src="3_Assets/Images/chocolate-croissant.jpg" alt="Chocolate Croissant">
             <div class="post-text">
               <strong>Chocolate Croissant — Post</strong>
               <p style="margin:6px 0">Layers of buttery pastry and rich chocolate — the perfect morning treat. Buy one, get the second at 50% off this week.</p>
@@ -306,7 +317,7 @@
           </div>
 
           <div class="post-card">
-            <img src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/3_Assets/1_Templates/haksoss_post.png" alt="Brand Post Template">
+            <img src="3_Assets/1_Templates/haksoss_post.png" alt="Brand Post Template">
             <div class="post-text">
               <strong>Brand Post — Seasonal</strong>
               <p style="margin:6px 0">Highlight seasonal pairing: Chocolate Croissant + Hero Latte combo — limited time.</p>
@@ -317,7 +328,7 @@
         <!-- Special Latte -->
         <div class="post-row">
           <div class="post-card">
-            <img src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/3_Assets/1_Templates/special_latte.png" alt="Special Latte Template">
+            <img src="3_Assets/1_Templates/special_latte.png" alt="Special Latte Template">
             <div class="post-text">
               <strong>Special Latte — Post</strong>
               <p style="margin:6px 0">Introducing this month’s seasonal latte — small-batch flavors, crafted with care. Early access for loyalty members.</p>
@@ -325,7 +336,7 @@
           </div>
 
           <div class="post-card">
-            <img src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/3_Assets/Images/special-latte.jpg" alt="Special Latte Photo">
+            <img src="3_Assets/Images/special-latte.jpg" alt="Special Latte Photo">
             <div class="post-text">
               <strong>Special Latte — Story</strong>
               <p style="margin:6px 0">Short clip: steaming cup on seaside table — overlay: “Try it today” + loyalty CTA.</p>
@@ -336,7 +347,7 @@
         <!-- Season Offer / Discover More -->
         <div class="post-row">
           <div class="post-card">
-            <img src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/3_Assets/1_Templates/season_offer.png" alt="Season Offer Template">
+            <img src="3_Assets/1_Templates/season_offer.png" alt="Season Offer Template">
             <div class="post-text">
               <strong>Season Offer — Post</strong>
               <p style="margin:6px 0">Limited-time seasonal treats — featured weekly. Combine with any latte for a special bonus.</p>
@@ -344,7 +355,7 @@
           </div>
 
           <div class="post-card">
-            <img src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/3_Assets/1_Templates/discover_more.png" alt="Discover More Template">
+            <img src="3_Assets/1_Templates/discover_more.png" alt="Discover More Template">
             <div class="post-text">
               <strong>Discover More — Carousel</strong>
               <p style="margin:6px 0">Carousel showcasing: Hero Latte • Croissant • Seasonal Treat • Loyalty Perks. CTA: Discover our delights.</p>
@@ -361,12 +372,12 @@
 
         <div class="ad-grid">
           <div class="ad-card">
-            <img src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/3_Assets/Images/special-offer.jpg" alt="Special Offer">
+            <img src="3_Assets/Images/special-offer.jpg" alt="Special Offer">
             <div style="margin-top:8px"><strong>Hero Latte Upgrade — Meta Ad</strong><p class="muted">Complementary upgrade creative — targeted to nearby coffee lovers and retargeting audiences.</p></div>
           </div>
 
           <div class="ad-card">
-            <img src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/3_Assets/Images/loyalty-program.jpg" alt="Loyalty Program">
+            <img src="3_Assets/Images/loyalty-program.jpg" alt="Loyalty Program">
             <div style="margin-top:8px"><strong>Loyalty Sign-up Ad — Retargeting</strong><p class="muted">Retarget visitors with loyalty benefits and VIP event invites.</p></div>
           </div>
         </div>
