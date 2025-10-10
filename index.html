@@ -4,9 +4,57 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Haksoss — Complete Campaign (Case Study + Creative Execution)</title>
+<meta name="description" content="Haksoss Morning Experience Campaign — Complete bilingual case study, creative execution, emails, social posts, ads, KPIs, and portfolio-ready assets. Discover Alexandria's premium morning coffee experience." />
+<meta name="keywords" content="Haksoss, Alexandria café, morning experience, hero latte, chocolate croissant, seasonal treats, loyalty program, coffee campaign, social media marketing, email marketing, ads, KPIs" />
+<meta name="author" content="Mohamed Abdelrazek" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://moeabdelrazek.github.io/haksoss-campaign" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:title" content="Haksoss — Complete Campaign (Case Study + Creative Execution)" />
+<meta property="og:description" content="Bilingual campaign showcasing Haksoss' premium morning experience: Hero Latte, Chocolate Croissant, Seasonal Treats, loyalty strategy, emails, social posts, ads, KPIs, and creative assets." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://moeabdelrazek.github.io/haksoss-campaign" />
+<meta property="og:image" content="3_Assets/Images/hero-latte.jpg" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Haksoss — Complete Campaign (Case Study + Creative Execution)" />
+<meta name="twitter:description" content="Bilingual campaign showcasing Haksoss' premium morning experience: Hero Latte, Chocolate Croissant, Seasonal Treats, loyalty strategy, emails, social posts, ads, KPIs, and creative assets." />
+<meta name="twitter:image" content="3_Assets/Images/hero-latte.jpg" />
 
 <!-- Chart.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- JSON-LD structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Haksoss Morning Experience Campaign",
+  "description": "Complete campaign case study including creative execution, emails, social posts, ads, KPIs, and portfolio-ready assets.",
+  "creator": {
+    "@type": "Person",
+    "name": "Mohamed Abdelrazek",
+    "url": "https://moeabdelrazek.github.io/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Haksoss",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "3_Assets/Logo/logo.png"
+    }
+  },
+  "url": "https://moeabdelrazek.github.io/haksoss-campaign",
+  "image": [
+    "3_Assets/Images/hero-latte.jpg",
+    "3_Assets/Images/chocolate-croissant.jpg",
+    "3_Assets/Images/seasonal-treat.jpg"
+  ],
+  "inLanguage": "en, ar"
+}
+</script>
 
 <style>
   :root{
@@ -20,13 +68,9 @@
     --maxw:1180px;
     --radius:12px;
   }
-
-  /* Reset */
   *{box-sizing:border-box}
   body{ margin:0; font-family:"Lato", system-ui, -apple-system, "Segoe UI", Roboto, Arial; color:#0f172a; background:linear-gradient(180deg,#f7fbff 0%, #ffffff 60%); -webkit-font-smoothing:antialiased; }
   a{ color:var(--blue); text-decoration:none; }
-
-  /* Layout */
   .wrap{ max-width:var(--maxw); margin:24px auto; padding:20px; }
   header.fixed-header{
     position:fixed; left:0; right:0; top:0; z-index:9999;
@@ -41,15 +85,9 @@
   nav.topnav{ display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
   nav.topnav a{ padding:8px 12px; border-radius:10px; background:rgba(255,255,255,0.06); color:#fff; font-weight:700; font-size:0.9rem; }
   nav.topnav a:hover{ transform:translateY(-3px); box-shadow:0 8px 20px rgba(11,37,68,0.12); }
-
-  /* page content wrapper to offset fixed header */
   .page { padding-top:108px; }
-
-  /* Panels */
   .panel{ background:var(--card); border-radius:var(--radius); padding:18px; margin-bottom:18px; box-shadow:0 14px 40px rgba(16,24,40,0.04); opacity:0; transform:translateY(12px); transition:all .6s cubic-bezier(.2,.9,.3,1); }
   .panel.inview{ opacity:1; transform:translateY(0); }
-
-  /* CASE STUDY (lead) */
   .case-hero{ display:flex; gap:22px; align-items:start; }
   .case-left{ flex:1; }
   .case-left h2{ margin:0 0 6px; font-family:'Playfair Display', serif; color:var(--deep); font-size:1.6rem; }
@@ -58,61 +96,42 @@
   .stat{ background:linear-gradient(180deg,#fff,#f3f8ff); padding:10px 12px; border-radius:10px; min-width:140px; box-shadow:0 10px 28px rgba(11,37,68,0.04); }
   .stat .val{ color:var(--blue); font-weight:800; font-size:1.2rem; }
   .stat .lab{ color:var(--muted); font-size:0.9rem; margin-top:6px; }
-
   .case-right{ width:420px; max-width:40%; position:relative; }
   .case-right img{ width:100%; border-radius:12px; box-shadow:0 30px 60px rgba(11,37,68,0.08); transform:translateY(-6px); transition:transform .6s ease; }
   .case-right img:hover{ transform:translateY(-12px) scale(1.02); }
-
   .marquee{ margin-top:10px; padding:10px; border-radius:10px; background:linear-gradient(90deg,#fff,#f7fbff); overflow:hidden; }
   .marquee p{ margin:0; white-space:nowrap; animation:marq 18s linear infinite; color:var(--muted); font-weight:700; }
   @keyframes marq{ from{transform:translateX(0)} to{transform:translateX(-100%)} }
-
-  /* gallery */
   .gallery{ display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:14px; margin-top:12px; }
   .tile{ background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 12px 36px rgba(16,24,40,0.04); position:relative; transition:transform .35s ease; }
   .tile:hover{ transform:translateY(-6px); }
   .tile img{ width:100%; height:160px; object-fit:cover; display:block; }
   .tile .meta{ padding:10px; font-weight:800; color:var(--muted); }
-
-  /* emails table */
   .table-wrap{ overflow:auto; margin-top:12px; }
   table{ width:100%; border-collapse:collapse; font-size:0.95rem; }
   th, td{ padding:12px 10px; border-bottom:1px solid #eef4fb; text-align:left; vertical-align:top; }
   th{ background:linear-gradient(180deg,#fbfdff,#f4fbff); color:var(--deep); font-weight:800; }
-
-  /* Posts with captions */
   .post-row{ display:grid; grid-template-columns:1fr 1fr; gap:16px; align-items:center; margin-top:12px; }
   .post-card{ display:flex; gap:12px; align-items:center; background:#fff; padding:12px; border-radius:10px; box-shadow:0 10px 30px rgba(16,24,40,0.03); }
   .post-card img{ width:160px; height:120px; object-fit:cover; border-radius:8px; }
   .post-text{ font-size:0.95rem; color:#243240; }
-
-  /* ads */
   .ad-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; margin-top:12px; }
-
-  /* kpis & charts */
   .kpi-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:12px; margin-top:12px; }
   .kpi{ background:linear-gradient(180deg,#fff,#f5fbff); padding:12px; border-radius:10px; text-align:center; box-shadow:0 10px 28px rgba(16,24,40,0.03); }
   .kpi .num{ font-size:1.3rem; font-weight:800; color:var(--blue); }
   .charts{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:12px; }
-
-  /* guidelines and footer */
   .flex{ display:flex; gap:12px; flex-wrap:wrap; }
   .card{ background:#fff; border-radius:10px; padding:12px; box-shadow:0 10px 28px rgba(16,24,40,0.03); }
   footer{ margin-top:18px; text-align:center; color:var(--muted); font-size:0.95rem; }
-
-  /* steam + particles */
   .steam{ position:absolute; right:6px; top:-30px; width:80px; height:120px; pointer-events:none; }
   .steam div{ width:8px; position:absolute; bottom:0; height:60px; background:rgba(255,255,255,0.5); border-radius:50%; filter:blur(2px); animation:steamUp 3s infinite ease-in-out; }
   .steam div:nth-child(2){ left:18px; animation-delay:.5s; height:70px; }
   .steam div:nth-child(3){ left:36px; animation-delay:1s; height:55px; }
   @keyframes steamUp{ 0%{ transform:translateY(0) scaleX(1); opacity:0.5 } 50%{ transform:translateY(-40px) scaleX(1.2); opacity:0.25 } 100%{ transform:translateY(-90px) scaleX(1); opacity:0 } }
-
   .particles{ position:fixed; left:0; top:0; right:0; bottom:0; pointer-events:none; z-index:0; }
-
-  /* responsiveness */
   @media (max-width:1000px){
     .case-hero{ flex-direction:column; }
-    .case-right{ width:100%; max-width:100%;}
+    .case-right{ width:100%; max-width:100%; }
     .post-row{ grid-template-columns:1fr; }
     .charts{ grid-template-columns:1fr; }
   }
@@ -126,6 +145,11 @@
     .post-card img{ width:100%; height:auto; }
     nav.topnav a{ padding:6px 10px; font-size:0.85rem; }
   }
+</style>
+</head>
+<body>
+<!-- Keep the rest of your HTML content unchanged -->
+
 
 </style>
 </head>
@@ -526,3 +550,4 @@
 </script>
 </body>
 </html>
+
