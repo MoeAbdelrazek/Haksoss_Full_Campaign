@@ -1,14 +1,12 @@
- 
- 
-
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Haksoss — Complete Campaign (Case Study + Creative Execution)</title>
-
-<!-- Chart.js -->
+<title>Haksoss Café — Luxury Morning Experience in Alexandria</title>
+<meta name="description" content="Wake up to luxury with Haksoss Café. Savor our signature Hero Latte, fresh Chocolate Croissants, and seasonal treats. Premium breakfast by the sea, loyalty rewards, and elegant mornings await." />
+<meta name="keywords" content="Luxury café Alexandria, Best morning coffee Alexandria, Haksoss Café menu, Coffee by the sea Alexandria, Premium breakfast Alexandria, Hero Latte, Chocolate Croissant" />
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <style>
@@ -112,6 +110,14 @@
 
   .particles{ position:fixed; left:0; top:0; right:0; bottom:0; pointer-events:none; z-index:0; }
 
+  /* SEO Report Specific Styles (inherited/adapted from SEO.html) */
+  .seo-report h2 { font-size: 1.8rem; border-bottom: 3px solid #2b6cb0; padding-bottom: 5px; margin-top: 40px; font-family:'Playfair Display', serif; color:#0b2545; }
+  .seo-report h3 { font-size: 1.3rem; color: #1e3a8a; margin-top: 25px; font-family:'Playfair Display', serif; }
+  .seo-report table th { background:linear-gradient(90deg,#2b6cb0,#3b82f6); color:#fff; font-weight:700; }
+  .seo-report .card { background:#f1f5f9; padding:16px; border-radius:10px; box-shadow:0 10px 28px rgba(16,24,40,0.03); margin:15px 0; }
+  .seo-report .highlight { color: #2b6cb0; font-weight: 700; }
+
+
   /* responsiveness */
   @media (max-width:1000px){
     .case-hero{ flex-direction:column; }
@@ -134,7 +140,6 @@
 </head>
 <body>
 
-  <!-- fixed header -->
   <header class="fixed-header">
     <div class="header-inner">
       <div class="brand">
@@ -153,18 +158,15 @@
         <a href="#ads">Ads</a>
         <a href="#kpis">KPIs</a>
         <a href="#guidelines">Guidelines</a>
-      </nav>
+        <a href="#seo-report">SEO Report</a> </nav>
     </div>
   </header>
 
-  <!-- page content -->
   <div class="page">
     <div class="wrap">
 
-      <!-- particles (beans) -->
       <div class="particles" id="particles"></div>
 
-      <!-- CASE STUDY — full, first -->
       <section id="case" class="panel inview">
         <div class="case-hero">
           <div class="case-left">
@@ -219,30 +221,29 @@
         </div>
       </section>
 
-      <!-- CREATIVE EXECUTION (gallery of all images + templates) -->
       <section id="creative" class="panel">
         <h2>Creative Execution</h2>
         <p class="muted">All campaign visuals and templates used across posts, stories, and ads — presented together for portfolio review.</p>
 
         <div class="gallery" aria-hidden>
-          <!-- images -->
-          <div class="tile"><img src="3_Assets/Images/hero-latte.jpg" alt="hero-latte"><div class="meta">hero-latte.jpg</div></div>
-          <div class="tile"><img src="3_Assets/Images/chocolate-croissant.jpg" alt="chocolate-croissant"><div class="meta">chocolate-croissant.jpg</div></div>
-          <div class="tile"><img src="3_Assets/Images/seasonal-treat.jpg" alt="seasonal-treat"><div class="meta">seasonal-treat.jpg</div></div>
+          <div class="tile"><img src="3_Assets/Images/hero-latte.jpg" alt="Hero Latte coffee by the sea at Haksoss Café">
+            <div class="meta">hero-latte.jpg</div></div>
+          <div class="tile"><img src="3_Assets/Images/chocolate-croissant.jpg" alt="Freshly baked chocolate croissant at Haksoss Café">
+            <div class="meta">chocolate-croissant.jpg</div></div>
+          <div class="tile"><img src="3_Assets/Images/seasonal-treat.jpg" alt="Seasonal breakfast treats at Haksoss Café">
+            <div class="meta">seasonal-treat.jpg</div></div>
           <div class="tile"><img src="3_Assets/Images/special-latte.jpg" alt="special-latte"><div class="meta">special-latte.jpg</div></div>
           <div class="tile"><img src="3_Assets/Images/special-offer.jpg" alt="special-offer"><div class="meta">special-offer.jpg</div></div>
           <div class="tile"><img src="3_Assets/Images/loyalty-program.jpg" alt="loyalty-program"><div class="meta">loyalty-program.jpg</div></div>
 
-          <!-- templates -->
-          <div class="tile"><img src="3_Assets/1_Templates/hero_latte_post.png" alt="template hero"><div class="meta">hero_latte_post.png (template)</div></div>
-          <div class="tile"><img src="3_Assets/1_Templates/special_latte.png" alt="template special"><div class="meta">special_latte.png (template)</div></div>
-          <div class="tile"><img src="3_Assets/1_Templates/season_offer.png" alt="template season"><div class="meta">season_offer.png (template)</div></div>
-          <div class="tile"><img src="3_Assets/1_Templates/haksoss_post.png" alt="template brand"><div class="meta">haksoss_post.png (template)</div></div>
-          <div class="tile"><img src="3_Assets/1_Templates/discover_more.png" alt="template discover"><div class="meta">discover_more.png (template)</div></div>
+          <div class="tile"><img src="3_Assets/1_Templates/hero_latte_post.png" alt="Hero Latte Post Template"><div class="meta">hero_latte_post.png (template)</div></div>
+          <div class="tile"><img src="3_Assets/1_Templates/special_latte.png" alt="Special Latte Post Template"><div class="meta">special_latte.png (template)</div></div>
+          <div class="tile"><img src="3_Assets/1_Templates/season_offer.png" alt="Season Offer Post Template"><div class="meta">season_offer.png (template)</div></div>
+          <div class="tile"><img src="3_Assets/1_Templates/haksoss_post.png" alt="Brand Post Template"><div class="meta">haksoss_post.png (template)</div></div>
+          <div class="tile"><img src="3_Assets/1_Templates/discover_more.png" alt="Discover More Post Template"><div class="meta">discover_more.png (template)</div></div>
         </div>
       </section>
 
-      <!-- EMAILS -->
       <section id="emails" class="panel">
         <h2>Emails — Full List (English & Arabic)</h2>
         <p class="muted">Copy-ready email content used in the campaign; paste directly into your ESP. (EN and AR versions.)</p>
@@ -253,7 +254,6 @@
               <tr><th>Email</th><th>Language</th><th>Subject / Short</th><th>Full Copy</th></tr>
             </thead>
             <tbody>
-              <!-- English -->
               <tr><td>Morning Awakening</td><td>English</td><td>Wake up with the perfect cup</td><td>Wake up with the perfect cup and embrace the serenity of Alexandria’s beach mornings. Haksoss brings luxury and flavor together.</td></tr>
 
               <tr><td>Signature Indulgence</td><td>English</td><td>Mornings deserve indulgence</td><td>At Haksoss, we believe that mornings deserve moments of pure indulgence. Let us take you on a journey of taste, aroma, and elegance.<br>• Hero Latte: Velvety, aromatic, perfect balance.<br>• Chocolate Croissant: Layers of buttery pastry with rich chocolate.<br>• Seasonal Treats: Fresh ingredients capturing every season.<br>• Special Latte Creations: Luxury coffee with beach ambiance.</td></tr>
@@ -266,7 +266,6 @@
 
               <tr><td>Final Sunrise Reminder</td><td>English</td><td>Don’t miss the morning elegance</td><td>Don’t miss the chance to experience elegance, flavor, and luxury.<br>• Hero Latte: Crafted to perfection.<br>• Chocolate Croissant: Flaky, decadent, unforgettable.<br>• Seasonal Treats & Special Lattes: Limited-time creations.<br>• Loyalty Rewards: Join today for benefits.</td></tr>
 
-              <!-- Arabic -->
               <tr><td>صباح مشرق</td><td>Arabic</td><td>ابدأ صباحك مع الكوب المثالي</td><td>ابدأ صباحك مع الكوب المثالي واستمتع بهدوء شواطئ الإسكندرية. هكسوس يجمع بين الفخامة والنكهات.</td></tr>
 
               <tr><td>المتعة المميزة</td><td>Arabic</td><td>الصباح يستحق الترف</td><td>في هكسوس، نؤمن أن الصباح يستحق لحظات من الترف الخالص.<br>• لاتيه هيرو: كريمي وعطري، وتوازن مثالي من النكهات.<br>• كرواسون الشوكولاتة: طبقات معجنات مع الشوكولاتة الغنية.<br>• حلويات الموسم: مكونات طازجة تعكس كل موسم.</td></tr>
@@ -283,12 +282,10 @@
         </div>
       </section>
 
-      <!-- SOCIAL POSTS & STORIES: each image + its post text -->
       <section id="social" class="panel">
         <h2>Social Media — Posts & Stories (with copy)</h2>
         <p class="muted">Each visual below is paired with the exact caption/copy used in the campaign (English shown first; Arabic available as needed).</p>
 
-        <!-- Hero Latte post -->
         <div class="post-row" style="margin-top:12px">
           <div class="post-card">
             <img src="3_Assets/1_Templates/hero_latte_post.png" alt="Hero Latte Post">
@@ -308,7 +305,6 @@
           </div>
         </div>
 
-        <!-- Chocolate Croissant post -->
         <div class="post-row">
           <div class="post-card">
             <img src="3_Assets/Images/chocolate-croissant.jpg" alt="Chocolate Croissant">
@@ -328,7 +324,6 @@
           </div>
         </div>
 
-        <!-- Special Latte -->
         <div class="post-row">
           <div class="post-card">
             <img src="3_Assets/1_Templates/special_latte.png" alt="Special Latte Template">
@@ -347,7 +342,6 @@
           </div>
         </div>
 
-        <!-- Season Offer / Discover More -->
         <div class="post-row">
           <div class="post-card">
             <img src="3_Assets/1_Templates/season_offer.png" alt="Season Offer Template">
@@ -368,7 +362,6 @@
 
       </section>
 
-      <!-- ADS -->
       <section id="ads" class="panel">
         <h2>Ads & Promotions</h2>
         <p class="muted">Examples of promoted creatives used in performance campaigns.</p>
@@ -386,7 +379,6 @@
         </div>
       </section>
 
-      <!-- KPIs + Charts -->
       <section id="kpis" class="panel">
         <h2>KPIs & Performance Dashboard</h2>
         <p class="muted">Performance summary and visual charts. These figures are the campaign results used for the case study presentation.</p>
@@ -418,7 +410,6 @@
         </table>
       </section>
 
-      <!-- GUIDELINES -->
       <section id="guidelines" class="panel">
         <h2>Brand Guidelines & Posting Rhythm</h2>
         <div class="flex" style="margin-top:10px">
@@ -451,17 +442,108 @@
         </div>
       </section>
 
-      <!-- FOOTER -->
+      <section id="seo-report" class="panel seo-report">
+        <h2>SEO & Organic Strategy Report</h2>
+        <p class="muted">Key recommendations for target keywords, on-page structure, and technical SEO from the detailed report.</p>
+
+        <div class="section">
+        <h3>1. Target Keywords & Search Intent</h3>
+        <div class="card">
+        <table>
+        <tr><th>Keyword</th><th>Search Volume</th><th>Difficulty</th><th>Intent</th><th>Priority</th></tr>
+        <tr><td>Luxury café Alexandria</td><td>1,200</td><td>Medium</td><td>Local/Branding</td><td>High</td></tr>
+        <tr><td>Best morning coffee Alexandria</td><td>900</td><td>Medium</td><td>Local/Intent</td><td>High</td></tr>
+        <tr><td>Haksoss Café menu</td><td>400</td><td>Low</td><td>Brand</td><td>Medium</td></tr>
+        <tr><td>Coffee by the sea Alexandria</td><td>500</td><td>Low</td><td>Experience</td><td>Medium</td></tr>
+        <tr><td>Premium breakfast Alexandria</td><td>800</td><td>Medium</td><td>Local/Offer</td><td>High</td></tr>
+        <tr><td>Morning latte Alexandria</td><td>350</td><td>Low</td><td>Intent</td><td>Medium</td></tr>
+        <tr><td>Chocolate croissant Alexandria</td><td>250</td><td>Low</td><td>Product</td><td>Medium</td></tr>
+        </table>
+        </div>
+        </div>
+
+        <div class="section">
+        <h3>2. Homepage Meta & SEO Texts</h3>
+        <div class="card">
+        <p><strong>Meta Title:</strong> <span class="highlight">Haksoss Café — Luxury Morning Experience in Alexandria</span></p>
+        <p><strong>Meta Description:</strong> <span class="highlight">Wake up to luxury with Haksoss Café. Savor our signature Hero Latte, fresh Chocolate Croissants, and seasonal treats. Premium breakfast by the sea, loyalty rewards, and elegant mornings await.</span></p>
+        <h4>Headings & Structure</h4>
+        <ul class="muted">
+        <li>H1: Haksoss Café — Elevate Your Mornings</li>
+        <li>H2: Hero Latte — Alexandria’s Signature Morning Experience</li>
+        <li>H2: Fresh Chocolate Croissants & Seasonal Treats</li>
+        <li>H2: Join Haksoss Loyalty for Exclusive Rewards</li>
+        <li>H3: Premium Breakfast by the Beach</li>
+        <li>H3: VIP Tastings & Special Offers</li>
+        </ul>
+        <h4>Internal Links Recommendations</h4>
+        <ul class="muted">
+        <li>Menu page → Highlight seasonal and signature items</li>
+        <li>Loyalty program → CTA in header/footer and blog posts</li>
+        <li>Blog articles → “Top Breakfast Spots in Alexandria” linking to Hero Latte</li>
+        </ul>
+        </div>
+        </div>
+
+        <div class="section">
+        <h3>3. Product / Campaign Pages SEO</h3>
+        <div class="card">
+        <h4>Hero Latte</h4>
+        <ul class="muted">
+        <li>Title: Hero Latte — Alexandria’s Signature Coffee Experience</li>
+        <li>Meta Description: Enjoy the velvety, aromatic Hero Latte at Haksoss Café. Start your day with luxury coffee moments by the sea.</li>
+        <li>Alt Text: hero-latte.jpg → <span class="highlight">“Hero Latte coffee by the sea at Haksoss Café”</span></li>
+        </ul>
+
+        <h4>Chocolate Croissant</h4>
+        <ul class="muted">
+        <li>Title: Chocolate Croissant — Flaky Morning Indulgence</li>
+        <li>Meta Description: Layers of buttery pastry and rich chocolate — the perfect breakfast treat at Haksoss Café in Alexandria.</li>
+        <li>Alt Text: chocolate-croissant.jpg → <span class="highlight">“Freshly baked chocolate croissant at Haksoss Café”</span></li>
+        </ul>
+
+        <h4>Seasonal Treats</h4>
+        <ul class="muted">
+        <li>Title: Seasonal Breakfast Treats — Haksoss Café Alexandria</li>
+        <li>Meta Description: Discover Haksoss’ seasonal pastries and special latte creations, crafted to elevate your morning experience.</li>
+        <li>Alt Text: seasonal-treat.jpg → <span class="highlight">“Seasonal breakfast treats at Haksoss Café”</span></li>
+        </ul>
+        </div>
+        </div>
+
+        <div class="section">
+        <h3>4. Blog / Content Marketing Ideas</h3>
+        <div class="card">
+        <ul class="muted">
+        <li>“Top 5 Luxury Morning Experiences in Alexandria” → Mention Hero Latte, Chocolate Croissants, and beach ambiance.</li>
+        <li>“The Secret Behind the Perfect Morning Latte” → Highlight Haksoss’ brewing methods, visuals, and sensory appeal.</li>
+        <li>“Why Breakfast at Haksoss Café is Alexandria’s Must-Try” → Include loyalty perks, seasonal offerings, and VIP tastings.</li>
+        </ul>
+        <p class="muted"><strong>SEO Blog Intro:</strong> “Start your day the Haksoss way. From velvety Hero Lattes to buttery Chocolate Croissants, Haksoss Café delivers Alexandria’s premier morning experience. Indulge in seasonal delights, enjoy seaside views, and earn loyalty rewards with every visit.”</p>
+        </div>
+        </div>
+
+        <div class="section">
+        <h3>5. Technical & On-Page SEO Notes</h3>
+        <div class="card">
+        <ul class="muted">
+        <li>Images: Include descriptive alt text and compress images for fast loading. (***Note: Alt text was updated in the Creative Execution section above.***)</li>
+        <li>Headers: H1 per page, H2/H3 for subtopics.</li>
+        <li>URLs: /hero-latte, /chocolate-croissant, /seasonal-treats</li>
+        <li>Internal Linking: Highlight product pages from homepage, blog, and emails.</li>
+        <li>Schema Markup: LocalBusiness, Product (Hero Latte, Chocolate Croissant), Offers & Promotions (Recommended)</li>
+        </ul>
+        </div>
+        </div>
+
+      </section>
+
       <footer>
         <div>Created by <strong>Mohamed Abdelrazek</strong> • <a href="https://www.linkedin.com/in/moe-abdelrazek/" target="_blank">LinkedIn</a> • <a href="https://moeabdelrazek.github.io/" target="_blank">moeabdelrazek.github.io</a></div>
         <div style="margin-top:6px; color:var(--muted)">Haksoss Campaign • Portfolio Presentation • 2025</div>
       </footer>
 
-    </div> <!-- wrap -->
-  </div> <!-- page -->
-
-<!-- Scripts -->
-<script>
+    </div> </div> <script>
   // generate subtle bean particles
   (function makeBeans(){
     const container = document.getElementById('particles');
@@ -529,7 +611,3 @@
 </script>
 </body>
 </html>
-
-
-
-
