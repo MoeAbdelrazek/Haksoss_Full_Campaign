@@ -1,0 +1,10 @@
+Haksoss Social Media Guidelines:
+
+1. Tone: Elegant, luxurious, friendly.
+2. Fonts: Playfair (headlines), Lato (body).
+3. Colors: Deep-sea blue, sandy beige (campaign theme).
+4. Posting Frequency: 1-2 posts/day on Instagram & Facebook, 3-5 stories/week.
+5. Captions: Match the text files provided, include hashtags from hashtags_en.txt / hashtags_ar.txt.
+6. Images: Always use templates from 1_Templates. Do not alter the templates.
+7. Stories: Include swipe-up text where applicable.
+8. Ads: Use captions from 4_Ads folder, paired with correct template.

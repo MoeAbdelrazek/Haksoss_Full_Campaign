@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Haksoss Elite Campaign Preview</title>
+<link href="https://fonts.googleapis.com/css2?family=Lato&family=Playfair+Display&display=swap" rel="stylesheet">
+<style>
+  body { font-family:'Lato', sans-serif; margin:0; padding:0; background: linear-gradient(to bottom, #005C91, #F3E9DC); color:#6B4C3B; overflow-x:hidden; position:relative; }
+  body::before { content:''; position:fixed; top:0; left:0; width:200%; height:200%; background: url('file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/Assets/logo.png') no-repeat center/contain; opacity:0.02; animation: floatBg 60s linear infinite; pointer-events:none; z-index:0; }
+  @keyframes floatBg { 0%{ transform: translate(-50px,-50px) rotate(0deg);} 50%{ transform: translate(50px,50px) rotate(180deg);} 100%{ transform: translate(-50px,-50px) rotate(360deg);} }
+
+  header { background:#6B4C3B; color:#FFF8F0; padding:20px; text-align:center; font-family:'Playfair Display', serif; font-size:2em; display:flex; align-items:center; justify-content:center; gap:15px; position:relative; z-index:1; }
+  header img { height:60px; }
+
+  nav#toc { position:sticky; top:0; background:#D99B6C; padding:10px 0; z-index:10; display:flex; justify-content:center; flex-wrap:wrap; }
+  nav#toc a { margin:5px 10px; color:#FFF8F0; text-decoration:none; padding:8px 15px; border-radius:8px; background:#6B4C3B; font-weight:bold; transition:0.3s; }
+  nav#toc a:hover { background:#D99B6C; transform:translateY(-3px); }
+
+  .banner-container { position:relative; overflow:hidden; max-width:1000px; margin:20px auto; border-radius:12px; box-shadow:0 6px 12px rgba(107,76,59,0.3); }
+  .banner-slide { display:none; text-align:center; padding:20px; background:#D99B6C; color:#FFF8F0; font-weight:bold; font-size:1.2em; }
+  .banner-slide.active { display:block; animation:fadeSlide 1s;}
+  @keyframes fadeSlide { from{opacity:0;} to{opacity:1;} }
+
+  .email-container { background:rgba(255,248,240,0.85); backdrop-filter:blur(8px); border-radius:15px; padding:25px; margin:50px auto; box-shadow:0 12px 24px rgba(107,76,59,0.3); max-width:900px; position:relative; transform: translateY(20px); opacity:0; transition: all 0.8s ease; }
+  .email-container.show { transform: translateY(0); opacity:1; animation: floatCard 6s ease-in-out infinite alternate; }
+  @keyframes floatCard {0% { transform: translateY(0); } 100% { transform: translateY(-10px); }}
+  .email-container::before { content:''; position:absolute; top:10px; right:10px; width:120px; height:120px; background:url('file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/Assets/logo.png') no-repeat center/contain; opacity:0.1; }
+
+  h1,h2 { font-family:'Playfair Display', serif; margin-top:20px; }
+  img { max-width:100%; border-radius:12px; margin:20px 0; box-shadow:0 6px 12px rgba(107,76,59,0.3); transition: transform 0.5s; display:block; }
+  img:hover { transform: scale(1.05); }
+
+  a.cta { display:inline-block; padding:12px 25px; background-color:#D99B6C; color:#FFF8F0; text-decoration:none; border-radius:12px; margin:15px 0; font-weight:bold; box-shadow:0 4px 12px rgba(107,76,59,0.3); transition: all 0.3s; position:relative; z-index:5; }
+  a.cta:hover { transform: translateY(-3px); box-shadow:0 6px 12px rgba(107,76,59,0.4); }
+
+  ul { margin-left:20px; }
+
+  .steam { position:relative; width:60px; height:100px; margin: -120px auto 40px auto; z-index:2; }
+  .steam div { width:6px; height:60px; background:rgba(255,255,255,0.4); border-radius:50%; position:absolute; bottom:0; animation: steamUp 3s infinite ease-in-out; }
+  .steam div:nth-child(2) { left:20px; animation-delay:0.5s; }
+  .steam div:nth-child(3) { left:40px; animation-delay:1s; }
+  @keyframes steamUp { 0% { transform: translateY(0) scaleX(1); opacity:0.4; } 50% { transform: translateY(-30px) scaleX(1.2); opacity:0.2;} 100% { transform: translateY(-60px) scaleX(1); opacity:0; } }
+
+  .parallax-img { position:relative; transform:translateZ(0); }
+
+  .wave { position:fixed; bottom:0; left:0; width:100%; height:80px; background: url('data:image/svg+xml;utf8,<svg width="100%" height="80" xmlns="http://www.w3.org/2000/svg"><path fill="%23D99B6C" d="M0,40 Q50,80 100,40 T200,40 T300,40 T400,40 T500,40 T600,40 T700,40 T800,40 T900,40 T1000,40 V80 H0 Z"/></svg>') repeat-x; animation: waveMove 10s linear infinite; z-index:0; }
+  @keyframes waveMove { 0%{background-position-x:0;} 100%{background-position-x:1000px;} }
+
+  a.floating-cta { position:fixed; bottom:20px; right:20px; z-index:50; background:#D99B6C; color:#FFF8F0; padding:15px 25px; border-radius:12px; font-weight:bold; box-shadow:0 6px 12px rgba(107,76,59,0.5); animation: floatCTA 2s ease-in-out infinite alternate; }
+  @keyframes floatCTA {0%{transform:translateY(0);}100%{transform:translateY(-5px);}}
+
+  @media (max-width:768px){ .email-container{padding:20px;} nav#toc a{margin:5px; font-size:0.9em;} .banner-slide{font-size:1em;} }
+</style>
+</head>
+<body>
+
+<header>
+  <img src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/Assets/logo.png" alt="Haksoss Logo">
+  Haksoss Elite Campaign Preview
+</header>
+
+<nav id="toc">
+  <a href="#email1">Morning Awakening</a>
+  <a href="#email2">Signature Indulgence</a>
+  <a href="#email3">Exclusive Offer</a>
+  <a href="#email4">Loyalty Invitation</a>
+  <a href="#email5">Haksoss Spotlight</a>
+  <a href="#email6">Final Sunrise Reminder</a>
+  <a href="#vip">VIP Loyalty Section</a>
+</nav>
+
+<div class="banner-container">
+  <div class="banner-slide active">Special Morning Offer: Hero Latte Upgrade!</div>
+  <div class="banner-slide">Chocolate Croissant Buy 1 Get 1 50% Off!</div>
+  <div class="banner-slide">Seasonal Treats Now Available – Limited Time!</div>
+</div>
+
+<a href="#reserve" class="floating-cta">Reserve Your Table</a>
+
+<!-- Emails start -->
+<div id="email1" class="email-container">
+  <h1>Morning Awakening</h1>
+  <p>Wake up with the perfect cup and embrace the serenity of Alexandria’s beach mornings. Haksoss brings luxury and flavor together.</p>
+  <div class="steam"><div></div><div></div><div></div></div>
+  <img class="parallax-img" src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/Assets/hero-latte.jpg" alt="Hero Latte">
+  <a class="cta" href="#reserve">Order Now</a>
+</div>
+
+<div id="email2" class="email-container">
+  <h1>Signature Indulgence</h1>
+  <ul>
+    <li>Hero Latte: Velvety, aromatic, perfect balance.</li>
+    <li>Chocolate Croissant: Layers of buttery pastry with rich chocolate.</li>
+    <li>Seasonal Treats: Fresh ingredients capturing every season.</li>
+    <li>Special Latte Creations: Luxury coffee with beach ambiance.</li>
+  </ul>
+  <img src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/Assets/chocolate-croissant.jpg" alt="Chocolate Croissant">
+  <img src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/Assets/seasonal-treat.jpg" alt="Seasonal Treat">
+  <img src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/Assets/special-latte.jpg" alt="Special Latte">
+  <a class="cta" href="#reserve">Order Now</a>
+</div>
+
+<!-- Repeat for all emails and Arabic emails, same structure -->
+
+<div id="vip" class="email-container">
+  <h1>VIP Loyalty Section</h1>
+  <p>Exclusive perks for our most valued patrons:</p>
+  <ul>
+    <li>Private tastings by the beach.</li>
+    <li>Early access to seasonal creations.</li>
+    <li>Personalized rewards tailored to your preferences.</li>
+  </ul>
+  <img src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/Assets/loyalty-program.jpg" alt="VIP Loyalty">
+  <a class="cta" href="#reserve">Join VIP</a>
+</div>
+
+<div class="wave"></div>
+
+<script>
+// Animate email containers on scroll
+const containers = document.querySelectorAll('.email-container');
+function showContainers() {
+  const triggerBottom = window.innerHeight * 0.85;
+  containers.forEach(c => {
+    const boxTop = c.getBoundingClientRect().top;
+    if(boxTop < triggerBottom){ c.classList.add('show'); }
+  });
+}
+window.addEventListener('scroll', showContainers);
+window.addEventListener('load', showContainers);
+
+// Rotating banner
+let bannerIndex = 0;
+const slides = document.querySelectorAll('.banner-slide');
+function showBanner() {
+  slides.forEach(s => s.classList.remove('active'));
+  slides[bannerIndex].classList.add('active');
+  bannerIndex = (bannerIndex + 1) % slides.length;
+}
+setInterval(showBanner, 4000);
+</script>
+
+</body>
+</html>
