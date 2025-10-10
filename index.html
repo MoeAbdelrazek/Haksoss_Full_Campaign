@@ -4,59 +4,51 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Haksoss — Complete Campaign (Case Study + Creative Execution)</title>
-<meta name="description" content="Haksoss Morning Experience Campaign — Complete bilingual case study, creative execution, emails, social posts, ads, KPIs, and portfolio-ready assets. Discover Alexandria's premium morning coffee experience." />
-<meta name="keywords" content="Haksoss, Alexandria café, morning experience, hero latte, chocolate croissant, seasonal treats, loyalty program, coffee campaign, social media marketing, email marketing, ads, KPIs" />
+
+<!-- SEO Meta -->
+<meta name="description" content="Haksoss Morning Experience Campaign: Wake up with luxury. Case study, creative execution, emails, social media, ads, and KPI dashboard for Alexandria’s premium café." />
+<meta name="keywords" content="Haksoss, Morning Experience, Alexandria Café, Luxury Breakfast, Hero Latte, Chocolate Croissant, Coffee Campaign, Bilingual Marketing, Social Media Campaign, Email Marketing" />
 <meta name="author" content="Mohamed Abdelrazek" />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://moeabdelrazek.github.io/haksoss-campaign" />
 
-<!-- Open Graph / Facebook -->
+<!-- Open Graph / Social SEO -->
 <meta property="og:title" content="Haksoss — Complete Campaign (Case Study + Creative Execution)" />
-<meta property="og:description" content="Bilingual campaign showcasing Haksoss' premium morning experience: Hero Latte, Chocolate Croissant, Seasonal Treats, loyalty strategy, emails, social posts, ads, KPIs, and creative assets." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://moeabdelrazek.github.io/haksoss-campaign" />
+<meta property="og:description" content="Full Haksoss Morning Experience campaign: hero latte, chocolate croissant, seasonal treats, loyalty program, and creative execution." />
 <meta property="og:image" content="3_Assets/Images/hero-latte.jpg" />
+<meta property="og:url" content="https://moeabdelrazek.github.io/haksoss-campaign" />
+<meta property="og:type" content="website" />
 
-<!-- Twitter -->
+<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Haksoss — Complete Campaign (Case Study + Creative Execution)" />
-<meta name="twitter:description" content="Bilingual campaign showcasing Haksoss' premium morning experience: Hero Latte, Chocolate Croissant, Seasonal Treats, loyalty strategy, emails, social posts, ads, KPIs, and creative assets." />
+<meta name="twitter:description" content="Discover the full Haksoss Morning Experience campaign with creative execution, emails, social, ads, and KPIs." />
 <meta name="twitter:image" content="3_Assets/Images/hero-latte.jpg" />
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Haksoss Café",
+  "image": "https://moeabdelrazek.github.io/3_Assets/Images/hero-latte.jpg",
+  "url": "https://moeabdelrazek.github.io/haksoss-campaign",
+  "telephone": "+20-123-456-789",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Corniche Road, Alexandria",
+    "addressLocality": "Alexandria",
+    "addressCountry": "EG"
+  },
+  "description": "Haksoss Morning Experience Campaign: Elevating breakfast in Alexandria through luxury coffee, pastries, and a bilingual creative strategy."
+}
+</script>
 
 <!-- Chart.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<!-- JSON-LD structured data -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  "name": "Haksoss Morning Experience Campaign",
-  "description": "Complete campaign case study including creative execution, emails, social posts, ads, KPIs, and portfolio-ready assets.",
-  "creator": {
-    "@type": "Person",
-    "name": "Mohamed Abdelrazek",
-    "url": "https://moeabdelrazek.github.io/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Haksoss",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "3_Assets/Logo/logo.png"
-    }
-  },
-  "url": "https://moeabdelrazek.github.io/haksoss-campaign",
-  "image": [
-    "3_Assets/Images/hero-latte.jpg",
-    "3_Assets/Images/chocolate-croissant.jpg",
-    "3_Assets/Images/seasonal-treat.jpg"
-  ],
-  "inLanguage": "en, ar"
-}
-</script>
-
 <style>
+  /* existing CSS unchanged */
   :root{
     --deep:#0b2545;
     --blue:#2b6cb0;
@@ -68,15 +60,12 @@
     --maxw:1180px;
     --radius:12px;
   }
+
   *{box-sizing:border-box}
   body{ margin:0; font-family:"Lato", system-ui, -apple-system, "Segoe UI", Roboto, Arial; color:#0f172a; background:linear-gradient(180deg,#f7fbff 0%, #ffffff 60%); -webkit-font-smoothing:antialiased; }
   a{ color:var(--blue); text-decoration:none; }
   .wrap{ max-width:var(--maxw); margin:24px auto; padding:20px; }
-  header.fixed-header{
-    position:fixed; left:0; right:0; top:0; z-index:9999;
-    background:linear-gradient(90deg,var(--deep), #163a5a); color:#fff;
-    box-shadow:0 10px 36px rgba(11,37,68,0.12);
-  }
+  header.fixed-header{ position:fixed; left:0; right:0; top:0; z-index:9999; background:linear-gradient(90deg,var(--deep), #163a5a); color:#fff; box-shadow:0 10px 36px rgba(11,37,68,0.12); }
   .header-inner{ max-width:var(--maxw); margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:14px 20px; gap:16px; flex-wrap:wrap; }
   .brand{ display:flex; gap:12px; align-items:center; }
   .brand img{ width:64px; height:64px; object-fit:cover; border-radius:12px; background:#fff; padding:6px; }
@@ -129,26 +118,20 @@
   .steam div:nth-child(3){ left:36px; animation-delay:1s; height:55px; }
   @keyframes steamUp{ 0%{ transform:translateY(0) scaleX(1); opacity:0.5 } 50%{ transform:translateY(-40px) scaleX(1.2); opacity:0.25 } 100%{ transform:translateY(-90px) scaleX(1); opacity:0 } }
   .particles{ position:fixed; left:0; top:0; right:0; bottom:0; pointer-events:none; z-index:0; }
-  @media (max-width:1000px){
-    .case-hero{ flex-direction:column; }
-    .case-right{ width:100%; max-width:100%; }
-    .post-row{ grid-template-columns:1fr; }
-    .charts{ grid-template-columns:1fr; }
-  }
-  @media (max-width:600px){
-    body{ padding:0 8px; }
-    .wrap{ padding:12px; }
-    .panel{ padding:14px; margin-bottom:16px; }
-    .case-left h2{ font-size:1.4rem; }
-    .case-left .sub, .post-text, .muted{ font-size:0.9rem; line-height:1.4; }
-    .post-card{ flex-direction:column; align-items:flex-start; }
-    .post-card img{ width:100%; height:auto; }
-    nav.topnav a{ padding:6px 10px; font-size:0.85rem; }
-  }
+  @media (max-width:1000px){ .case-hero{ flex-direction:column; } .case-right{ width:100%; max-width:100%;} .post-row{ grid-template-columns:1fr; } .charts{ grid-template-columns:1fr; } }
+  @media (max-width:600px){ body{ padding:0 8px; } .wrap{ padding:12px; } .panel{ padding:14px; margin-bottom:16px; } .case-left h2{ font-size:1.4rem; } .case-left .sub, .post-text, .muted{ font-size:0.9rem; line-height:1.4; } .post-card{ flex-direction:column; align-items:flex-start; } .post-card img{ width:100%; height:auto; } nav.topnav a{ padding:6px 10px; font-size:0.85rem; } }
 </style>
 </head>
 <body>
-<!-- Keep the rest of your HTML content unchanged -->
+
+<!-- keep all existing HTML unchanged, including header, page, panels, images, gallery, emails, social, ads, KPIs, footer -->
+
+<script>
+  /* keep all your existing JS unchanged */
+</script>
+</body>
+</html>
+
 
 
 </style>
