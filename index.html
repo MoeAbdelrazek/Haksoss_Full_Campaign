@@ -486,6 +486,142 @@
     data:{ labels:['IG Posts','IG Stories','Facebook','TikTok'], datasets:[{ data:[310,205,175,380], backgroundColor:['#1b639e','#4c96d8','#7dd3fc','#d99b6c'], borderRadius:6 }] },
     options:{ responsive:true, plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true}} }
   });
+<section id="deep-analysis" class="panel">
+    <h2>Pillar 4: Deep Dive Performance Analysis & Scalability Mandate</h2>
+    <p class="muted">A deeper financial and strategic breakdown, justifying the campaign's massive 411% ROI and providing a roadmap for **aggressive scale-up** based on channel efficiency.</p>
+
+    <div class="kpi-grid">
+        <div class="kpi" style="border-left: 5px solid #D99B6C;">
+            <div>CAC:LTV Ratio</div>
+            <div class="num" style="color:#D99B6C">1 : 290</div>
+            <div class="lab">($1.65 CAC vs $480 Est LTV)</div>
+        </div>
+        <div class="kpi">
+            <div>Estimated Total Spend</div>
+            <div class="num">$1,765</div>
+            <div class="lab">Based on 1,070 sign-ups @ $1.65 CPA</div>
+        </div>
+        <div class="kpi">
+            <div>Revenue Per Reach</div>
+            <div class="num">$0.11</div>
+            <div class="lab">($9,010 Total Revenue / 80.8k Reach)</div>
+        </div>
+        <div class="kpi" style="border-left: 5px solid #D99B6C;">
+            <div>Next Budget Shift</div>
+            <div class="num" style="color:#D99B6C">+100%</div>
+            <div class="lab">Immediate mandate for TikTok channel</div>
+        </div>
+    </div>
+
+    <h3>Financial Efficiency Justification</h3>
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Metric</th>
+                    <th>Result</th>
+                    <th>Strategic Justification</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>**CAC:LTV Ratio**</td>
+                    <td>1:290</td>
+                    <td>**Unprecedented Scalability.** This ratio is the strongest signal for immediate, aggressive budget scaling. The business can acquire customers profitably nearly 300 times over.</td>
+                </tr>
+                <tr>
+                    <td>**Avg CPA**</td>
+                    <td>$1.65</td>
+                    <td>**World-Class.** This cost is far below the F&B industry benchmark ($10-$30), proving the creative and targeting efficacy. The goal is now to drive this below $1.00 via a dedicated landing page.</td>
+                </tr>
+                <tr>
+                    <td>**Overall ROI**</td>
+                    <td>411%</td>
+                    <td>Achieved by focusing on **long-term loyalty** (LTV) rather than single-transaction conversions. This validates the entire campaign thesis.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>LTV Optimization & Retention Mandates</h3>
+    <div class="post-row" style="margin-top:20px">
+        <div class="post-card">
+            <img src="3_Assets/Images/loyalty-program.jpg" alt="Loyalty Program Graphic">
+            <div class="post-text">
+                <strong>Mandate 1: Conversion Funnel Tightening</strong>
+                <p style="margin:6px 0">The goal is to push CPA below $1.00. Launch the dedicated, single-page landing page (LPO) immediately with an exclusive **"First-Time Luxury"** offer tied to the loyalty sign-up.</p>
+                <p class="muted">**Target:** All acquisition traffic | **Objective:** Reduce CPA and drop-off rate.</p>
+            </div>
+        </div>
+
+        <div class="post-card">
+            <img src="3_Assets/Images/seasonal-treat.jpg" alt="Seasonal Croissant">
+            <div class="post-text">
+                <strong>Mandate 2: Hyper-Personalized CRM</strong>
+                <p style="margin:6px 0">A/B test the planned "Mood" email segmentation against a **Purchase History** segmentation (Latte-first vs. Croissant-first). This delivers hyper-personalized offers to push customers to the Gold Tier.</p>
+                <p class="muted">**Target:** Existing Loyalty members | **Objective:** Increase LTV via higher frequency/spend.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="charts">
+        <div class="chart card"><h4 style="margin:0 0 8px">Engagement Rate by Platform (Actionable Insights)</h4><canvas id="engChartNew"></canvas></div>
+        <div class="chart card"><h4 style="margin:0 0 8px">Conversions by Channel (Budget Reallocation Proof)</h4><canvas id="convPieNew"></canvas></div>
+    </div>
+
+</section>
+
+<script>
+    // --- START of NEW Chart.js and Animation Code ---
+
+    // Replicate and enhance engagement chart (if you want the new version)
+    // NOTE: If you already have 'engChart', rename the canvas id in the HTML above to 'engChartNew'
+    new Chart(document.getElementById('engChartNew'), {
+        type: 'bar',
+        data: {
+            labels: ['IG Posts','IG Stories','Facebook','TikTok'],
+            datasets: [{ 
+                label: 'Engagement Rate (%)',
+                data: [12.5, 9.3, 8.4, 15.1], 
+                backgroundColor: ['#1b639e', '#4c96d8', '#7dd3fc', '#D99B6C'], 
+                borderRadius: 6 
+            }]
+        },
+        options:{ 
+            responsive: true, 
+            plugins: { legend: { display: false }, title: { display: false } }, 
+            scales: { y: { beginAtZero: true, max: 20, ticks: { callback: v => v + '%' } } } 
+        }
+    });
+
+    // New Conversions Pie Chart (if you want the new version)
+    // NOTE: If you already have 'convBar', rename the canvas id in the HTML above to 'convPieNew'
+    new Chart(document.getElementById('convPieNew'), {
+        type:'doughnut',
+        data:{ 
+            labels:['IG Posts','IG Stories','Facebook','TikTok'], 
+            datasets:[{ 
+                label: 'Total Conversions',
+                data:[310, 205, 175, 380], 
+                backgroundColor: ['#1b639e', '#4c96d8', '#7dd3fc', '#D99B6C'], 
+            }] 
+        },
+        options:{ 
+            responsive: true, 
+            plugins: { 
+                legend: { position: 'right' }, 
+                title: { display: false } 
+            }
+        }
+    });
+
+    // Add Intersection Observer for the new section's panel
+    const newPanel = document.getElementById('deep-analysis');
+    if (newPanel) {
+        observer.observe(newPanel); // Uses the existing observer setup in your original file
+    }
+
+    // --- END of NEW Chart.js and Animation Code ---
 </script>
 </body>
 </html>
