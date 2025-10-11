@@ -2,14 +2,29 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
+<!-- Primary SEO -->
 <title>Haksoss Café — The Ultimate Luxury Morning Experience Campaign (Case Study)</title>
 
 <meta name="description" content="Wake up to luxury with Haksoss Café. Savor our signature Hero Latte, fresh Chocolate Croissants, and seasonal treats. Premium breakfast by the sea, loyalty rewards, and elegant mornings await."/>
+<meta name="keywords" content="Haksoss, Luxury café, Alexandria coffee, Hero Latte, Chocolate Croissant, loyalty program, premium breakfast">
+<meta property="og:title" content="Haksoss Café — The Ultimate Luxury Morning Experience Campaign (Case Study)">
+<meta property="og:description" content="Wake up to luxury with Haksoss Café. Savor our signature Hero Latte, fresh Chocolate Croissants, and seasonal treats.">
+<meta property="og:image" content="3_Assets/Images/hero-latte.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://moeabdelrazek.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Haksoss Café — The Ultimate Luxury Morning Experience">
+<meta name="twitter:description" content="Wake up to luxury with Haksoss Café.">
+<meta name="twitter:image" content="3_Assets/Images/hero-latte.jpg">
 
+<!-- Chart.js and Icons -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMD/2j/JcW8C1c7N+4B2bX8T8bF+x8Z8B/z/d7mXwYF6V8G5S2P8V7O8F5U9O4F8A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
 
 <style>
 :root{
@@ -45,7 +60,15 @@ body{
     background:linear-gradient(180deg, var(--bg-start) 0%, var(--bg-end) 100%);
     -webkit-font-smoothing:antialiased;
     min-height: 100vh;
+
+    /* Page fade-in */
+    opacity: 0;
+    animation: bodyFadeIn 900ms ease forwards;
 }
+@keyframes bodyFadeIn {
+  to { opacity: 1; }
+}
+
 a{ color:var(--blue); text-decoration:none; transition:color .3s; }
 a:hover { color:var(--accent); }
 
@@ -170,7 +193,6 @@ td:nth-child(3) { font-weight: 700; color: var(--blue); }
     font-size: 1.1rem;
     font-weight: 800;
 }
-/* Section specific colors */
 #advanced-strategy h2 { color: var(--blue); }
 
 /* Chart size adjustment */
@@ -224,21 +246,16 @@ footer{
     gap: 5px;
 }
 
-/* PROFESSIONAL NAME FORMAT */
+/* PROFESSIONAL NAME FORMAT - signature */
 .author-name strong {
-    /* Clean, Professional Look */
-    color: var(--deep); /* Use the deep navy color */
-    font-weight: 800; /* Bold but not excessive */
+    color: var(--deep);
+    font-weight: 800;
     font-size: 1.1em;
     letter-spacing: 0.5px;
     display: inline-block;
-    /* Remove all shine effects */
-    background: none;
-    -webkit-background-clip: initial;
-    background-clip: initial;
-    text-shadow: none;
 }
 
+/* Footer links & signature adjustments */
 .footer-links{
     display: flex;
     gap: 25px;
@@ -246,7 +263,7 @@ footer{
 }
 .footer-links a{
     color: var(--deep);
-    font-size: 1.6rem; /* Awesome Icon size */
+    font-size: 1.6rem; /* Icon size used previously */
     transition: color 0.3s, transform 0.3s;
 }
 .footer-links a:hover{
@@ -263,8 +280,7 @@ footer{
     font-weight: 400;
 }
 
-
-/* MOBILE OPTIMIZATION */
+/* Mobile Optimizations */
 @media (max-width: 768px) {
     .case-hero {
         flex-direction: column;
@@ -314,19 +330,131 @@ footer{
         gap: 5px;
     }
 }
+
+/* =========================
+   ADDITIONAL ANIMATIONS
+   (Cinematic, elegant)
+   ========================= */
+
+/* Fade-in on-scroll helper - used by sections + tiles + stats */
+.fade-section, .tile, .stat {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 800ms cubic-bezier(.2,.9,.3,1), transform 800ms cubic-bezier(.2,.9,.3,1);
+}
+.inview, .fade-section.visible, .tile.inview, .stat.inview {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero breathing */
+.hero-breath {
+  animation: heroPulse 8s ease-in-out infinite alternate;
+}
+@keyframes heroPulse {
+  from { transform: translateY(0) scale(1); }
+  to { transform: translateY(-6px) scale(1.02); }
+}
+
+/* Intro overlay (full-screen cinematic) */
+#intro-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  color: var(--accent);
+  z-index: 99999;
+  pointer-events: auto;
+}
+.intro-card {
+  text-align:center;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: introIn 1400ms ease forwards;
+}
+@keyframes introIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+.intro-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 68px;
+  color: var(--accent);
+  margin: 0;
+  letter-spacing: 1px;
+}
+.intro-tagline {
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  margin-top: 6px;
+  letter-spacing: 2px;
+}
+
+/* music control */
+#music-control {
+  position: fixed;
+  right: 24px;
+  bottom: 26px;
+  z-index: 99999;
+  background: var(--accent);
+  color: #0b2545;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 999px;
+  box-shadow: 0 8px 30px rgba(11,37,68,0.12);
+  cursor: pointer;
+  font-weight: 700;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+#music-control:hover { transform: translateY(-4px); }
+
+/* signature footer style override (Great Vibes) */
+.signature {
+  font-family: 'Great Vibes', cursive;
+  font-size: 32px;
+  color: var(--accent);
+  margin: 0;
+  transition: transform .25s ease;
+}
+.signature:hover { transform: scale(1.04); text-shadow: 0 0 10px rgba(217,155,108,0.6); }
+
+/* small adjustments for charts and containers inside panels (preserve original layout) */
+.charts { margin-top: 20px; }
+.panel .chart { margin-top: 10px; }
+
+/* ensure high z for header while intro is active */
+body.intro-active header.fixed-header { z-index: 100000; pointer-events: none; }
+
+/* accessibility focus */
+a:focus, button:focus { outline: 3px solid rgba(217,155,108,0.25); outline-offset: 3px; }
 </style>
 </head>
 <body>
+<!-- Luxury Intro Overlay (first-visit only) -->
+<div id="intro-overlay" aria-hidden="true" style="display:none">
+  <div class="intro-card" role="dialog" aria-label="Haksoss introduction">
+    <h1 class="intro-title">Haksoss Café</h1>
+    <p class="intro-tagline">A Morning Beyond Ordinary</p>
+  </div>
+</div>
 
-<header class="fixed-header">
-<div class="header-inner">
-<div class="brand">
-<img src="3_Assets/Logo/logo.png" alt="Haksoss café logo">
-<div>
-<h1 class="site-title">Haksoss — Luxury Morning Experience Campaign</h1>
-</div>
-</div>
-</div>
+<!-- Music control (optional background track) -->
+<audio id="bg-music" loop preload="auto" style="display:none">
+  <!-- Put your music file at this path or update the src -->
+  <source src="3_Assets/Music/haksoss-bg.mp3" type="audio/mpeg">
+</audio>
+<button id="music-control" aria-pressed="false" title="Play background music">Play Music</button>
+
+<header class="fixed-header" role="banner">
+  <div class="header-inner">
+    <div class="brand">
+      <img src="3_Assets/Logo/logo.png" alt="Haksoss café logo">
+      <div>
+        <h1 class="site-title">Haksoss — Luxury Morning Experience Campaign</h1>
+      </div>
+    </div>
+  </div>
 </header>
 
 <div class="page">
@@ -358,7 +486,7 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
 </div>
 </section>
 
-<section id="creative" class="panel">
+<section id="creative" class="panel fade-section">
 <h2>Creative Execution & Visual Assets (Photo Gallery)</h2>
 <p class="muted">All campaign visuals and templates used across posts, stories, and ads—optimized for morning light and high-end aesthetic.</p>
 
@@ -378,7 +506,7 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
 </div>
 </section>
 
-<section id="emails" class="panel">
+<section id="emails" class="panel fade-section">
 <h2>Emails — Full List (English & Arabic)</h2>
 <p class="muted">Copy-ready email content used in the campaign, optimized for open rate and intent. All 12 email copies are provided.</p>
 
@@ -405,7 +533,7 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
 </div>
 </section>
 
-<section id="ai-usage" class="panel">
+<section id="ai-usage" class="panel fade-section">
 <h2>Algorithmic Intelligence and Predictive Modeling</h2>
 <p class="muted">The campaign's superior performance was driven by a proprietary **Machine Learning Model** used for Dynamic Creative Optimization (DCO) and resource allocation, ensuring maximum efficiency.</p>
 
@@ -424,7 +552,7 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
 </div>
 </section>
 
-<section id="seo-analysis" class="panel">
+<section id="seo-analysis" class="panel fade-section">
 <h2>SEO & Digital Strategy Analysis</h2>
 <p class="muted">The campaign success was augmented by a targeted SEO strategy, focusing on high-intent local and product keywords, and a technical foundation to ensure visibility across search engines and social platforms.</p>
 
@@ -451,7 +579,7 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
 </div>
 </section>
 
-<section id="kpis" class="panel">
+<section id="kpis" class="panel fade-section">
 <h2>KPIs & Performance Dashboard</h2>
 <p class="muted">A comprehensive view of campaign results, channel efficiency, and predictive customer modeling, illustrating the profitability and growth potential of the strategy.</p>
 
@@ -460,8 +588,8 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
 <div class="chart card"><h4 style="margin:0 0 8px; color:var(--deep)">Ad Spend Distribution</h4><canvas id="spendPie"></canvas></div>
 <div class="chart card"><h4 style="margin:0 0 8px; color:var(--deep)">Email Open Rate Trend</h4><canvas id="emailLine"></canvas></div>
 <div class="chart card"><h4 style="margin:0 0 8px; color:var(--deep)">Customer Acquisition Cost (CAC) per Channel</h4><canvas id="cacChart"></canvas></div>
-<div class="chart card"><h4 style="margin:0 0 8px; color:var(--deep)}>Conversions by Channel</h4><canvas id="convBar"></canvas></div>
-<div class="chart card"><h4 style="margin:0 0 8px; color:var(--deep)}>LTV to CAC Ratio (Predictive)</h4><canvas id="ltvRatio"></canvas></div>
+<div class="chart card"><h4 style="margin:0 0 8px; color:var(--deep)">Conversions by Channel</h4><canvas id="convBar"></canvas></div>
+<div class="chart card"><h4 style="margin:0 0 8px; color:var(--deep)">LTV to CAC Ratio (Predictive)</h4><canvas id="ltvRatio"></canvas></div>
 </div>
 
 <div class="table-wrap" id="core-metrics" style="margin-top:30px;">
@@ -481,7 +609,7 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
 </div>
 </section>
 
-<section id="advanced-strategy" class="panel">
+<section id="advanced-strategy" class="panel fade-section">
 <h2 style="color:var(--blue);">Advanced Loyalty and Decentralization Strategy</h2>
 <p class="sub">This section outlines the advanced strategy to achieve market dominance through data sovereignty, personalized loyalty, and Web3 integration, future-proofing the campaign for maximum LTV.</p>
 
@@ -500,13 +628,21 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
         <div class="author-name">
             Created by <strong>Mohamed Abdelrazek</strong>
         </div>
-        <div class="footer-links">
-            <a href="https://www.linkedin.com/in/moe-abdelrazek/" target="_blank" title="Mohamed Abdelrazek | LinkedIn">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://moeabdelrazek.github.io/" target="_blank" title="Mohamed Abdelrazek — Portfolio">
-                <i class="fas fa-folder-open"></i>
-            </a>
+        <div class="footer-links" aria-label="Social links">
+            <!-- Signature visible, then icons/links -->
+            <div style="display:flex; flex-direction:column; align-items:center; gap:8px;">
+              <p class="signature">Moe Abdelrazek</p>
+              <div style="display:flex; gap:10px;">
+                <a href="https://moeabdelrazek.github.io/" target="_blank" title="Moe's Portfolio" rel="noopener noreferrer">
+                  <i class="fas fa-folder-open" aria-hidden="true"></i>
+                  <span class="sr-only">Portfolio</span>
+                </a>
+                <a href="https://www.linkedin.com/in/moe-abdelrazek/" target="_blank" title="Moe on LinkedIn" rel="noopener noreferrer">
+                  <i class="fab fa-linkedin" aria-hidden="true"></i>
+                  <span class="sr-only">LinkedIn</span>
+                </a>
+              </div>
+            </div>
         </div>
     </div>
     <div class="footer-meta">
@@ -516,100 +652,214 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
     </div>
 </div>
 </footer>
-</div> </div> <script>
-// reveal panels on scroll - Enhanced animation
-const observer = new IntersectionObserver((entries)=>{
-entries.forEach(e=>{
-if(e.isIntersecting) e.target.classList.add('inview');
-});
-}, {threshold:0.1});
-document.querySelectorAll('.panel, .tile, .stat, .ad-card, .kpi').forEach(n => observer.observe(n));
+</div> </div>
 
-// Charts (Chart.js)
-const NAVY = '#0B2545';
-const OCEAN_BLUE = '#4A90E2';
-const SAND_GOLD = '#D99B6C';
-const LIGHT_BLUE = '#A2CCFF';
+<!-- SCRIPTS: Animations, Charts, Music, Intro -->
+<script>
+/* ======================
+   Intro overlay (first-visit only)
+   ====================== */
+(function(){
+  const KEY = 'haksoss_intro_seen_v1';
+  const overlay = document.getElementById('intro-overlay');
+  document.body.classList.add('intro-active'); // prevent interactions while deciding
 
-// 1. Engagement Chart (Existing, new colors)
-new Chart(document.getElementById('engChart'), {
-type: 'bar',
-data: {
-labels: ['IG Posts','IG Stories','Facebook','TikTok'],
-datasets: [{ data:[12.5,9.3,8.4,15.1], backgroundColor:[OCEAN_BLUE, NAVY, LIGHT_BLUE, SAND_GOLD], borderRadius:4 }]
-},
-options:{ responsive:true, plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true, ticks:{callback:v=>v+'%'}}} }
-});
+  function showIntro() {
+    overlay.style.display = 'flex';
+    // automatically hide after 3.3s
+    setTimeout(() => {
+      overlay.style.opacity = '0';
+      overlay.style.transition = 'opacity 600ms ease';
+      setTimeout(() => {
+        overlay.style.display = 'none';
+        document.body.classList.remove('intro-active');
+      }, 600);
+    }, 3300);
+  }
 
-// 2. Spend Pie (Existing, new colors)
-new Chart(document.getElementById('spendPie'), {
-type: 'doughnut',
-data: { labels:['Meta','Google Display','TikTok'], datasets:[{ data:[850,420,500], backgroundColor:[OCEAN_BLUE, LIGHT_BLUE, SAND_GOLD] }] },
-options:{ responsive:true }
-});
+  // show only if not seen before
+  try {
+    const seen = localStorage.getItem(KEY);
+    if (!seen) {
+      // show intro and set flag
+      showIntro();
+      localStorage.setItem(KEY, '1');
+    } else {
+      // skip intro
+      overlay.style.display = 'none';
+      document.body.classList.remove('intro-active');
+    }
+  } catch(e){
+    // if localStorage blocked, show intro once
+    showIntro();
+    document.body.classList.remove('intro-active');
+  }
+})();
 
-// 3. Email Line Chart (Restored)
-new Chart(document.getElementById('emailLine'), {
-type:'line',
-data:{ labels:['Morn. Awake','Sig. Indulge','Ex. Offer','Loy. Invite','Spotlight','Final Rem.'],
-datasets:[{ data:[42,40,45,47,39,44], borderColor:SAND_GOLD, fill:false, tension:0.4, pointRadius:4, pointBackgroundColor: SAND_GOLD }] },
-options:{ responsive:true, plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true, ticks:{callback:v=>v+'%'}}} }
-});
+/* ======================
+   Reveal on scroll (IntersectionObserver)
+   ====================== */
+(function(){
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('inview');
+        entry.target.classList.add('visible'); // for fade-section naming compatibility
+        if (entry.target.classList.contains('tile') || entry.target.classList.contains('stat') ) {
+          // keep visual effect
+        }
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
 
+  // observe panels, tiles, stats
+  document.querySelectorAll('.panel, .tile, .stat, .fade-section').forEach(n => observer.observe(n));
+})();
 
-// 4. CAC Per Channel
-new Chart(document.getElementById('cacChart'), {
-type: 'bar',
-data: {
-labels: ['Meta (IG/FB)', 'TikTok', 'Google Display'],
-datasets: [{
-data: [1.65, 1.32, 4.20],
-backgroundColor: [OCEAN_BLUE, SAND_GOLD, NAVY],
-borderRadius: 4
-}]
-},
-options: {
-responsive: true,
-plugins: {
-legend: { display: false },
-tooltip: { callbacks: { label: (context) => `CAC: $${context.parsed.y.toFixed(2)}` } }
-},
-scales: {
-y: { beginAtZero: true }
-}
-}
-});
+/* ======================
+   Charts (Chart.js)
+   ====================== */
+(function(){
+  const NAVY = '#0B2545';
+  const OCEAN_BLUE = '#4A90E2';
+  const SAND_GOLD = '#D99B6C';
+  const LIGHT_BLUE = '#A2CCFF';
 
-// 5. Conversions by Channel (Restored)
-new Chart(document.getElementById('convBar'), {
-type:'bar',
-data:{ labels:['Meta','TikTok','Email','Organic'], datasets:[{ data:[380,310,240,140], backgroundColor:[LIGHT_BLUE, SAND_GOLD, OCEAN_BLUE, NAVY], borderRadius:4 }] },
-options:{ responsive:true, plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true}} }
-});
+  // 1. Engagement Chart
+  const engCtx = document.getElementById('engChart');
+  if (engCtx) {
+    new Chart(engCtx, {
+      type: 'bar',
+      data: {
+        labels: ['IG Posts','IG Stories','Facebook','TikTok'],
+        datasets: [{ data:[12.5,9.3,8.4,15.1], backgroundColor:[OCEAN_BLUE, NAVY, LIGHT_BLUE, SAND_GOLD], borderRadius:4 }]
+      },
+      options:{ responsive:true, plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true, ticks:{callback:v=>v+'%'}}} }
+    });
+  }
 
+  // 2. Spend Pie
+  const spendPie = document.getElementById('spendPie');
+  if (spendPie) {
+    new Chart(spendPie, {
+      type: 'doughnut',
+      data: { labels:['Meta','Google Display','TikTok'], datasets:[{ data:[850,420,500], backgroundColor:[OCEAN_BLUE, LIGHT_BLUE, SAND_GOLD] }] },
+      options:{ responsive:true }
+    });
+  }
 
-// 6. LTV to CAC Ratio
-new Chart(document.getElementById('ltvRatio'), {
-type: 'pie',
-data: {
-labels: ['Customer LTV ($68.20)', 'Cost per Acquisition ($1.65)'],
-datasets: [{
-data: [68.20, 1.65],
-backgroundColor: [SAND_GOLD, NAVY],
-}]
-},
-options: {
-responsive: true,
-plugins: {
-title: {
-display: true,
-text: 'LTV:CAC Ratio (41.3:1)',
-font: { size: 16, weight: 'bold', family: 'Playfair Display' },
-color: NAVY
-}
-}
-}
-});
+  // 3. Email Line Chart
+  const emailLine = document.getElementById('emailLine');
+  if (emailLine) {
+    new Chart(emailLine, {
+      type:'line',
+      data:{ labels:['Morn. Awake','Sig. Indulge','Ex. Offer','Loy. Invite','Spotlight','Final Rem.'],
+      datasets:[{ data:[42,40,45,47,39,44], borderColor:SAND_GOLD, fill:false, tension:0.4, pointRadius:4, pointBackgroundColor: SAND_GOLD }] },
+      options:{ responsive:true, plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true, ticks:{callback:v=>v+'%'}}} }
+    });
+  }
+
+  // 4. CAC Per Channel
+  const cacEl = document.getElementById('cacChart');
+  if (cacEl) {
+    new Chart(cacEl, {
+      type: 'bar',
+      data: {
+        labels: ['Meta (IG/FB)', 'TikTok', 'Google Display'],
+        datasets: [{
+          data: [1.65, 1.32, 4.20],
+          backgroundColor: [OCEAN_BLUE, SAND_GOLD, NAVY],
+          borderRadius: 4
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          tooltip: { callbacks: { label: (context) => `CAC: $${context.parsed.y.toFixed(2)}` } }
+        },
+        scales: { y: { beginAtZero: true } }
+      }
+    });
+  }
+
+  // 5. Conversions by Channel
+  const convBar = document.getElementById('convBar');
+  if (convBar) {
+    new Chart(convBar, {
+      type:'bar',
+      data:{ labels:['Meta','TikTok','Email','Organic'], datasets:[{ data:[380,310,240,140], backgroundColor:[LIGHT_BLUE, SAND_GOLD, OCEAN_BLUE, NAVY], borderRadius:4 }] },
+      options:{ responsive:true, plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true}} }
+    });
+  }
+
+  // 6. LTV to CAC Ratio
+  const ltvRatio = document.getElementById('ltvRatio');
+  if (ltvRatio) {
+    new Chart(ltvRatio, {
+      type: 'pie',
+      data: {
+        labels: ['Customer LTV ($68.20)', 'Cost per Acquisition ($1.65)'],
+        datasets: [{
+          data: [68.20, 1.65],
+          backgroundColor: [SAND_GOLD, NAVY],
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          title: {
+            display: true,
+            text: 'LTV:CAC Ratio (41.3:1)',
+            font: { size: 16, weight: 'bold', family: 'Playfair Display' },
+            color: NAVY
+          }
+        }
+      }
+    });
+  }
+})();
+
+/* ======================
+   Background music control
+   ====================== */
+(function(){
+  const btn = document.getElementById('music-control');
+  const music = document.getElementById('bg-music');
+  let playing = false;
+
+  // Start muted for safety
+  if (music) music.muted = true;
+  btn && btn.addEventListener('click', async () => {
+    if (!music) return;
+    if (!playing) {
+      try {
+        music.muted = false;
+        await music.play();
+        btn.textContent = 'Pause Music';
+        btn.setAttribute('aria-pressed', 'true');
+        playing = true;
+      } catch(e) {
+        // Autoplay prevented — show user hint
+        btn.textContent = 'Start Music';
+        music.muted = false;
+        playing = false;
+      }
+    } else {
+      music.pause();
+      btn.textContent = 'Play Music';
+      btn.setAttribute('aria-pressed', 'false');
+      playing = false;
+    }
+  });
+
+  // Hide button if no source
+  if (!music || !music.querySelector('source')) {
+    btn.style.display = 'none';
+  }
+})();
 </script>
+
 </body>
 </html>
