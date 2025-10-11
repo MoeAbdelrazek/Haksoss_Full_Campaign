@@ -15,8 +15,7 @@
 <meta property="og:url" content="https://moeabdelrazek.github.io/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Haksoss Café — The Ultimate Luxury Morning Experience">
-<meta name="twitter:description" content="Wake up to luxury with Haksoss Café.">
-<meta name="twitter:image" content="3_Assets/Images/hero-latte.jpg">
+<meta name="twitter:description" content="Wake up to luxury with Haksoss...">
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMD/2j/JcW8C1c7N+4B2bX8T8bF+x8Z8B/z/d7mXwYF6V8G5S2P8V7O8F5U9O4F8A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -371,24 +370,21 @@ a:focus, button:focus { outline: 3px solid rgba(192, 124, 74, 0.5); outline-offs
     DASHBOARD OVERRIDES (for integration)
     ======================================= */
 /* Scoping styles to the new dashboard section */
-#full-dashboard {
-    /* Use main file's panel styling */
-}
-#full-dashboard table {
+#kpis-dashboard table {
     border: none; /* Remove table borders to follow main file's style */
     margin-bottom: 20px;
 }
-#full-dashboard th, #full-dashboard td {
+#kpis-dashboard th, #kpis-dashboard td {
     border: 1px solid rgba(109, 76, 65, 0.2); /* Coffee brown faint border */
     padding: 12px;
     text-align: center;
 }
-#full-dashboard th {
+#kpis-dashboard th {
     background: var(--primary-brown);
     color: var(--bg-start);
     border-bottom: 3px solid var(--accent);
 }
-#full-dashboard canvas {
+#kpis-dashboard canvas {
     max-width: 100%;
     margin-bottom: 30px;
 }
@@ -947,18 +943,18 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
     </div>
 </section>
 
-<section id="full-dashboard" class="panel fade-section">
-    <h2>Full Financial Performance Dashboard</h2>
+<section id="kpis-dashboard" class="panel fade-section">
+    <h2>Key Performance Indicators (KPIs) & Financial Dashboard</h2>
 
     <div class="dashboard-section">
-        <h3>Campaign Summary</h3>
+        <h3>1. Financial KPIs & Campaign Summary</h3>
         <div class="table-wrap">
             <table id="summary-table">
                 <thead>
                     <tr>
                         <th>Metric</th>
                         <th>Ad Spend (USD)</th>
-                        <th>Revenue Generated (USD)</th>
+                        <th>Revenue Generated</th>
                         <th>ROI / Result</th>
                     </tr>
                 </thead>
@@ -993,9 +989,8 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
         </div>
     </div>
 
-
     <div class="dashboard-section">
-        <h3>Conversion Funnel Chart</h3>
+        <h3>2. Conversion KPIs: Funnel & Sign-ups</h3>
         <div class="chart card">
             <canvas id="conversionFunnelChart"></canvas>
         </div>
@@ -1003,17 +998,17 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
 
     <div class="charts">
         <div class="chart card">
-            <h3>Revenue Breakdown by Platform</h3>
+            <h3>3. Revenue & ROI Breakdown by Platform</h3>
             <canvas id="revenuePlatformChart"></canvas>
         </div>
         <div class="chart card">
-            <h3>Email Performance: Conversion Rate</h3>
+            <h3>4. Email Performance: Conversion Rate KPI</h3>
             <canvas id="emailPerformanceChart"></canvas>
         </div>
     </div>
 
     <div class="dashboard-section" id="ai-metrics">
-        <h3>AI-Driven Testing Metrics (GPT-4o)</h3>
+        <h3>5. A/B Testing & Optimization KPIs (AI Lift)</h3>
         <div class="table-wrap">
             <table>
                 <thead>
@@ -1048,7 +1043,6 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
         </div>
     </div>
 </section>
-
 <section id="advanced-strategy" class="panel fade-section">
     <h2>Advanced SEO & Technical Strategy</h2>
     <p class="muted">Local SEO focus for "Alexandria coffee" and technical improvements for mobile-first indexing.</p>
@@ -1323,7 +1317,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCharts(true);
 
     // Currency toggle
-    document.querySelectorAll('#full-dashboard input[name="currency"]').forEach(radio=>{
+    document.querySelectorAll('#kpis-dashboard input[name="currency"]').forEach(radio=>{
         radio.addEventListener('change', e=>{
             const isUSD = e.target.value === 'USD';
             updateCharts(isUSD);
