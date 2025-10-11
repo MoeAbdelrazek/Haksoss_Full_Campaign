@@ -12,22 +12,22 @@
 
 <style>
 :root{
-    /* HIGH-CONTRAST / CYBER-LUXURY PALETTE */
-    --deep:#141E28; /* Deep Charcoal/Dark Slate */
-    --blue:#00D0FF; /* Electric Cyan/Blue */
-    --muted:#64748B;
-    --accent:#B3FF00; /* Sharp Lime Green/Electric Yellow-Green */
-    --bg-start:#F0F4F7;
-    --bg-end:#FFFFFF;
+    /* ELEGANT BEACH PALETTE */
+    --deep:#0B2545; /* Deep Navy Blue (Ocean Depth) */
+    --blue:#4A90E2; /* Ocean Blue (Primary) */
+    --muted:#64748B; /* Slate Gray */
+    --accent:#D99B6C; /* Soft Sand/Gold (Accent) */
+    --bg-start:#F8F9FA; /* Off-White Sand */
+    --bg-end:#FFFFFF; /* Pure White */
     --card:rgba(255, 255, 255, 0.98);
-    --glass-shadow: 0 16px 40px rgba(20,30,40,0.1);
-    --maxw:1200px; /* Slight increase in max width */
+    --glass-shadow: 0 10px 30px rgba(11,37,68,0.08); /* Soft Shadow */
+    --maxw:1200px;
     --radius:10px;
 
-    /* BORDER CHANGES: Clear Lines */
-    --fancy-border-outer: 2px solid var(--deep); /* Thin, sharp dark border */
-    --fancy-border-inner: 0; /* Remove inner border/padding */
-    --section-border: 1px solid var(--blue); /* Thin Cyan Line */
+    /* BORDER CHANGES: Elegant Lines */
+    --fancy-border-outer: 1px solid var(--deep); /* Thin Navy Border */
+    --fancy-border-inner: 0;
+    --section-border: 1px solid rgba(74, 144, 226, 0.3); /* Soft Ocean Blue Line */
 }
 
 /* Reset */
@@ -36,9 +36,8 @@ body{
     margin:0;
     font-family:"Lato", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
     color:var(--deep);
-    /* Removed padding and border-width that made the page smaller */
     padding: 0;
-    border: var(--fancy-border-outer); /* Thin, sharp dark border */
+    border: var(--fancy-border-outer);
     border-radius: 0;
     position: relative;
     background:linear-gradient(180deg, var(--bg-start) 0%, var(--bg-end) 100%);
@@ -50,22 +49,22 @@ a:hover { color:var(--accent); }
 
 /* Layout */
 .wrap{ max-width:var(--maxw); margin:0 auto; padding:20px 20px 40px; }
-/* HEADER MODIFICATION */
+/* HEADER MODIFICATION (Minimalist) */
 header.fixed-header{
     position:fixed; left:0; right:0; top:0; z-index:9999;
-    background:var(--deep); /* Solid Dark Header */
+    background:var(--deep);
     color:#fff;
-    box-shadow:0 6px 30px rgba(0,0,0,0.4);
+    box-shadow:0 4px 15px rgba(0,0,0,0.2);
 }
 .header-inner{
     max-width:var(--maxw); margin:0 auto; display:flex; align-items:center;
-    justify-content: flex-start; /* Aligned left */
+    justify-content: flex-start;
     padding:10px 20px; gap:16px;
 }
 .brand{ display:flex; gap:12px; align-items:center; }
-.brand img{ width:48px; height:48px; object-fit:cover; border-radius:8px; background:#fff; padding:4px; }
+.brand img{ width:48px; height:48px; object-fit:cover; border-radius:8px; background:#fff; padding:4px; border: 1px solid var(--accent); }
 .brand h1{ margin:0; font-family:'Playfair Display', serif; font-size:1.6rem; color: var(--accent); }
-.brand p, nav.topnav { display:none; } /* Hiding sub-text and navigation */
+.brand p, nav.topnav { display:none; }
 
 /* page content wrapper to offset fixed header */
 .page { padding-top:80px; }
@@ -74,68 +73,67 @@ header.fixed-header{
 .panel{
     background:var(--card);
     border-radius:var(--radius);
-    padding:35px; /* Increase content padding */
+    padding:35px;
     margin-bottom:40px;
-    /* NEW: Subtle outline shadow */
-    box-shadow:0 0 0 1px rgba(0,208,255,0.2), var(--glass-shadow);
-    /* ANIMATION OVERHAUL */
+    /* Elegant Shadow/Border */
+    box-shadow:0 0 0 1px rgba(74, 144, 226, 0.1), var(--glass-shadow);
+    /* SMOOTHER ANIMATION */
     opacity:0;
-    transform:translateY(30px) rotateX(2deg); /* Depth-based entry */
-    transition:all 1s cubic-bezier(.2,.9,.3,1.1);
-    border-bottom: var(--section-border); /* Thin line */
+    transform:translateY(25px);
+    transition:all 0.9s cubic-bezier(.2,.9,.3,1.1);
+    border-bottom: var(--section-border);
 }
 .panel:last-child {
-  border-bottom: var(--section-border); /* Keep border on last one for consistency */
+  border-bottom: var(--section-border);
   margin-bottom: 40px;
 }
 .panel.inview{
     opacity:1;
-    transform:translateY(0) rotateX(0deg);
+    transform:translateY(0);
 }
 .panel h2 {
-    color: var(--blue);
+    color: var(--deep);
     font-family: 'Playfair Display', serif;
     font-size: 2rem;
-    border-bottom: 2px solid var(--accent); /* Sharp lime accent line */
+    border-bottom: 2px solid var(--blue); /* Ocean Blue Line */
     padding-bottom: 10px;
 }
 
 /* CASE STUDY (lead) */
 .case-hero{ display:flex; gap:30px; align-items:start; }
 .case-left h2{ margin:0 0 10px; font-size:2.2rem; }
-.case-left .sub{ color:var(--muted); margin-bottom:16px; font-style: italic; }
 .quick-stats{ display:flex; gap:16px; flex-wrap:wrap; margin:16px 0; }
-/* ANIMATION: Quick Stats */
+/* ANIMATION: Quick Stats (Subtle) */
 .stat{
     background:linear-gradient(135deg, #fff, #f4f8fa);
     padding:15px 20px;
     border-radius:12px;
     min-width:160px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.08);
-    transition:transform .4s cubic-bezier(.25,.8,.25,1.5), box-shadow .4s;
-    border: 1px solid rgba(0,208,255,0.1);
+    box-shadow:0 8px 20px rgba(0,0,0,0.05);
+    transition:transform .4s ease-out, box-shadow .4s;
+    border: 1px solid rgba(217,155,108,0.2);
 }
 .stat:hover{
-    transform:scale(1.08) rotateZ(-1deg);
-    box-shadow:0 20px 50px rgba(0,208,255,0.3);
+    transform:translateY(-4px); /* Subtle lift */
+    box-shadow:0 12px 30px rgba(0,0,0,0.1);
 }
 .stat .val{ color:var(--accent); font-weight:900; font-size:1.8rem; }
 .stat .lab{ color:var(--deep); font-size:1rem; margin-top:4px; font-weight: 700; }
 
 .case-right{ width:450px; max-width:40%; position:relative; }
-/* ANIMATION: Hero Image */
+/* ANIMATION: Hero Image (Smooth Float) */
 .case-right img{
     width:100%;
     border-radius:16px;
-    box-shadow:0 30px 80px rgba(0,0,0,0.15);
-    transition:all 1s cubic-bezier(.2,.9,.3,1), box-shadow 1s;
-    animation: floating-shadow 5s ease-in-out infinite alternate;
+    box-shadow:0 20px 50px rgba(0,0,0,0.1);
+    transition:all 1s cubic-bezier(.2,.9,.3,1);
+    animation: floating-shadow 6s ease-in-out infinite alternate;
+    border: 3px solid var(--accent);
 }
-.case-right img:hover{ transform:translateY(-18px) scale(1.03); box-shadow:0 40px 100px rgba(0,0,0,0.3); }
 
 @keyframes floating-shadow {
-  0% { transform: translateY(-10px); box-shadow: 0 20px 60px rgba(0,208,255,0.3); }
-  100% { transform: translateY(-15px); box-shadow: 0 40px 80px rgba(179,255,0,0.5); }
+  0% { transform: translateY(-8px); box-shadow: 0 15px 40px rgba(74, 144, 226, 0.3); }
+  100% { transform: translateY(-12px); box-shadow: 0 25px 60px rgba(217,155,108,0.4); }
 }
 
 
@@ -145,39 +143,26 @@ header.fixed-header{
     background:#fff;
     border-radius:12px;
     overflow:hidden;
-    box-shadow:0 12px 36px rgba(16,24,40,0.08);
+    box-shadow:0 10px 30px rgba(16,24,40,0.05);
     position:relative;
-    transition:transform .5s cubic-bezier(.25,.8,.25,1.5), box-shadow .5s;
+    transition:transform .5s ease-out, box-shadow .5s;
 }
-/* ANIMATION: Tile Hover */
+/* ANIMATION: Tile Hover (Elegant) */
 .tile:hover{
-    transform:translateY(-10px) rotateZ(-2deg) scale(1.05);
-    box-shadow:0 25px 60px rgba(0,208,255,0.25);
+    transform:translateY(-5px) scale(1.02);
+    box-shadow:0 15px 40px rgba(16,24,40,0.15);
 }
 .tile img{ width:100%; height:180px; object-fit:cover; display:block; }
-.tile .meta{ padding:12px; font-weight:800; color:var(--deep); background:rgba(0,208,255,0.1); }
+.tile .meta{ padding:12px; font-weight:800; color:var(--deep); background:rgba(74, 144, 226, 0.1); }
 
-/* emails table */
+/* tables */
 .table-wrap{ overflow:auto; margin-top:20px; }
 table{ width:100%; border-collapse:collapse; font-size:1rem; }
 th, td{ padding:15px 12px; border-bottom:1px solid rgba(20,30,40,0.05); text-align:left; vertical-align:top; }
-th{ background:linear-gradient(180deg,#fff,#f4f8fa); color:var(--deep); font-weight:800; text-transform: uppercase; border-bottom: 2px solid var(--accent); }
-td:nth-child(3) { font-weight: 700; color: var(--blue); } /* Highlight subject lines */
-
-/* charts & kpis */
-.charts{ display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:20px; margin-top:20px; }
-.chart.card{ padding:20px; background:linear-gradient(135deg, #f7faff, #ffffff); box-shadow:0 8px 20px rgba(0,0,0,0.05); border-radius: var(--radius); }
+th{ background:linear-gradient(180deg,#fcfdff,#f4f8fa); color:var(--deep); font-weight:800; text-transform: uppercase; border-bottom: 2px solid var(--accent); }
+td:nth-child(3) { font-weight: 700; color: var(--blue); }
 
 /* AI Table specific styling */
-#ai-metrics table th, #ai-metrics table td {
-    padding: 12px 10px;
-    text-align: center;
-}
-#ai-metrics table th {
-    background-color: var(--deep);
-    color: white;
-    border-radius: 4px 4px 0 0;
-}
 #ai-metrics .num {
     color: var(--accent);
     font-size: 1.1rem;
@@ -186,22 +171,7 @@ td:nth-child(3) { font-weight: 700; color: var(--blue); } /* Highlight subject l
 /* Section specific colors */
 #200-plus h2 { color: var(--blue); }
 #300-plus h2 { color: var(--accent); }
-#1000-plus h2 { color: #d02638; }
-
-/* responsiveness */
-@media (max-width:1000px){
-.case-hero{ flex-direction:column; }
-.case-right{ width:100%; max-width:100%;}
-.charts{ grid-template-columns:1fr; }
-}
-@media (max-width:600px){
-body{ border-width: 1px; }
-.wrap{ padding:10px; }
-.panel{ padding:15px; margin-bottom:20px; }
-.case-left h2{ font-size:1.8rem; }
-.post-card{ flex-direction:column; align-items:flex-start; }
-.post-card img{ width:100%; height:auto; }
-}
+#1000-plus h2 { color: var(--deep); }
 </style>
 </head>
 <body>
@@ -220,85 +190,76 @@ body{ border-width: 1px; }
 <div class="page">
 <div class="wrap">
 
-<div class="particles" id="particles"></div>
-
 <section id="case" class="panel inview">
 <div class="case-hero">
 <div class="case-left">
 <h2>Haksoss Café — Elevate Your Mornings: Full Case Study</h2>
 <p class="sub">Campaign Title: <strong>“Wake Up with Luxury in Alexandria”</strong><br>
-Purpose: Elevate Haksoss as Alexandria’s premium morning destination through bilingual, sensory storytelling, high-end visuals, and a loyalty-led conversion strategy.</p>
+Purpose: Establish Haksoss as Alexandria’s premium morning destination through bilingual, sensory storytelling, high-end visuals, and a loyalty-led conversion strategy.</p>
 
 <div class="quick-stats">
 <div class="stat"><div class="val">80,800</div><div class="lab">Total Reach</div></div>
 <div class="stat"><div class="val">1,070</div><div class="lab">Loyalty Sign-ups</div></div>
-<div class="stat"><div class="val">11.3%</div><div class="lab">Avg Engagement</div></div>
-<div class="stat"><div class="val">411%</div><div class="lab">Overall ROI</div></div>
+<div class="stat"><div class="val">11.3%</div><div class="lab">Avg Engagement Rate</div></div>
+<div class="stat"><div class="val">411%</div><div class="lab">Overall Campaign ROI</div></div>
 </div>
 
 <div style="margin-top:20px;">
 <h3 style="margin-bottom:8px">Executive Summary</h3>
-<p class="muted">Haksoss Café leveraged a visual-first, bilingual campaign centered on the **Hero Latte (Alexandria’s Signature Coffee)**, a signature **Chocolate Croissant**, and rotating **seasonal treats**. The campaign combined email automation, templated social creatives, and targeted ads across Meta, Google Display and TikTok — all driving loyalty signups and measurable in-store lift to increase morning footfall.</p>
+<p class="muted">Haksoss Café executed a visual-first, bilingual campaign centered on the signature **Hero Latte** and **Chocolate Croissant**. The strategy integrated targeted ads across Meta and TikTok with a loyalty-driven email automation sequence, resulting in a measurable lift in morning footfall and a high return on investment.</p>
 </div>
 </div>
 
 <div class="case-right">
 <img src="3_Assets/Images/hero-latte.jpg" alt="Hero Latte coffee by the sea at Haksoss Café">
-<div class="steam" aria-hidden><div></div><div></div><div></div></div>
 </div>
 </div>
 </section>
 
-<section id="creative" class="panel">
-<h2>Creative Execution & Visual Assets</h2>
-<p class="muted">All campaign visuals and templates used across posts, stories, and ads — presented together for portfolio review.</p>
+<section id="kpis" class="panel">
+<h2>Performance & Predictive Analytics Dashboard</h2>
+<p class="muted">A comprehensive view of campaign results, channel efficiency, and predictive customer modeling, illustrating the profitability and growth potential of the strategy.</p>
 
-<div class="gallery" aria-hidden>
-<div class="tile"><img src="3_Assets/Images/hero-latte.jpg" alt="Hero Latte coffee"><div class="meta">hero-latte.jpg</div></div>
-<div class="tile"><img src="3_Assets/Images/chocolate-croissant.jpg" alt="Freshly baked chocolate croissant"><div class="meta">chocolate-croissant.jpg</div></div>
-<div class="tile"><img src="3_Assets/Images/seasonal-treat.jpg" alt="Seasonal breakfast treat"><div class="meta">seasonal-treat.jpg</div></div>
-<div class="tile"><img src="3_Assets/Images/special-latte.jpg" alt="Special latte creation"><div class="meta">special-latte.jpg</div></div>
-<div class="tile"><img src="3_Assets/Images/special-offer.jpg" alt="Special offer on lattes"><div class="meta">special-offer.jpg</div></div>
-<div class="tile"><img src="3_Assets/Images/loyalty-program.jpg" alt="Haksoss Loyalty Program benefits"><div class="meta">loyalty-program.jpg</div></div>
-
-<div class="tile"><img src="3_Assets/1_Templates/hero_latte_post.png" alt="Hero Latte social media template"><div class="meta">hero_latte_post.png (template)</div></div>
-<div class="tile"><img src="3_Assets/1_Templates/special_latte.png" alt="Special latte social media template"><div class="meta">special_latte.png (template)</div></div>
-<div class="tile"><img src="3_Assets/1_Templates/season_offer.png" alt="Seasonal offer social media template"><div class="meta">season_offer.png (template)</div></div>
-<div class="tile"><img src="3_Assets/1_Templates/haksoss_post.png" alt="Haksoss brand post template"><div class="meta">haksoss_post.png (template)</div></div>
-<div class="tile"><img src="3_Assets/1_Templates/discover_more.png" alt="Discover more carousel template"><div class="meta">discover_more.png (template)</div></div>
+<div class="charts">
+<div class="chart card"><h4 style="margin:0 0 8px; color:var(--deep)">Engagement Rate by Platform</h4><canvas id="engChart"></canvas></div>
+<div class="chart card"><h4 style="margin:0 0 8px; color:var(--deep)">Ad Spend Distribution</h4><canvas id="spendPie"></canvas></div>
+<div class="chart card"><h4 style="margin:0 0 8px; color:var(--deep)">Customer Acquisition Cost (CAC) per Channel</h4><canvas id="cacChart"></canvas></div>
+<div class="chart card"><h4 style="margin:0 0 8px; color:var(--deep)">LTV to CAC Ratio (Predictive)</h4><canvas id="ltvRatio"></canvas></div>
 </div>
-</section>
 
-<section id="emails" class="panel">
-<h2>Emails — Full List (English & Arabic)</h2>
-<p class="muted">Copy-ready email content used in the campaign; paste directly into your ESP. Optimized **Subject Lines** for open rate and intent (EN and AR versions).</p>
-
-<div class="table-wrap">
+<div class="table-wrap" id="core-metrics" style="margin-top:30px;">
+<h3 style="margin-bottom:10px; color:var(--deep);">Core Campaign Metrics Summary</h3>
 <table>
 <thead>
-<tr><th>Email</th><th>Language</th><th>Subject / Short</th><th>Full Copy</th></tr>
+<tr><th>Metric</th><th>Result</th><th>Notes</th></tr>
 </thead>
 <tbody>
-<tr><td>Morning Awakening</td><td>English</td><td>Wake up with the perfect cup (includes keyword: morning)</td><td>Wake up with the perfect cup and embrace the serenity of Alexandria’s beach mornings. Haksoss brings luxury and flavor together.</td></tr>
-<tr><td>Signature Indulgence</td><td>English</td><td>Mornings deserve indulgence (sensory appeal)</td><td>At Haksoss, we believe that mornings deserve moments of pure indulgence. Let us take you on a journey of taste, aroma, and elegance.<br>• **Hero Latte**: Velvety, aromatic, perfect balance.<br>• **Chocolate Croissant**: Layers of buttery pastry with rich chocolate.<br>• Seasonal Treats: Fresh ingredients capturing every season.<br>• Special Latte Creations: Luxury coffee with beach ambiance.</td></tr>
-<tr><td>Exclusive Offer</td><td>English</td><td>Limited-time morning upgrade</td><td>Delight in our limited-time offer to elevate your mornings.<br>• Hero Latte Experience: Complimentary upgrade with any latte.<br>• Chocolate Croissant Delight: Second croissant 50% off.<br>• Seasonal Treat Bonus: Special treats with any breakfast.</td></tr>
-<tr><td>Loyalty Invitation</td><td>English</td><td>Join Haksoss Loyalty</td><td>Elevate your mornings with Haksoss Loyalty.<br>• Points on Every Purchase: Earn rewards.<br>• Early Access: Discover new offerings first.<br>• Exclusive Events: Private tastings, workshops, beach gatherings.<br>• Personalized Rewards: Tailored experiences.</td></tr>
-<tr><td>Haksoss Spotlight</td><td>English</td><td>Why guests love Haksoss</td><td>Discover why guests choose Haksoss to start their day.<br>"The Hero Latte is perfection in a cup." – Sarah A.<br>"Every visit feels like a luxury retreat by the sea." – Omar K.<br>"The seasonal treats are beautiful and delicious." – Lina M.</td></tr>
-<tr><td>Final Sunrise Reminder</td><td>English</td><td>Don’t miss the morning elegance</td><td>Don’t miss the chance to experience elegance, flavor, and luxury.<br>• Hero Latte: Crafted to perfection.<br>• Chocolate Croissant: Flaky, decadent, unforgettable.<br>• Seasonal Treats & Special Lattes: Limited-time creations.<br>• Loyalty Rewards: Join today for benefits.</td></tr>
-<tr><td>صباح مشرق</td><td>Arabic</td><td>ابدأ صباحك مع الكوب المثالي</td><td>ابدأ صباحك مع الكوب المثالي واستمتع بهدوء شواطئ الإسكندرية. هكسوس يجمع بين الفخامة والنكهات.</td></tr>
-<tr><td>المتعة المميزة</td><td>Arabic</td><td>الصباح يستحق الترف</td><td>في هكسوس، نؤمن أن الصباح يستحق لحظات من الترف الخالص.<br>• لاتيه هيرو: كريمي وعطري، وتوازن مثالي من النكهات.<br>• كرواسون الشوكولاتة: طبقات معجنات مع الشوكولاتة الغنية.<br>• حلويات الموسم: مكونات طازجة تعكس كل موسم.</td></tr>
-<tr><td>عرض حصري</td><td>Arabic</td><td>استمتع بعرضنا المحدود</td><td>استمتع بعرضنا المحدود لترقية صباحك.<br>• تجربة لاتيه هيرو: ترقية مجانية مع أي لاتيه.<br>• متعة كرواسون الشوكولاتة: كرواسون ثانٍ بخصم 50%.</td></tr>
-<tr><td>دعوة للانضمام لبرنامج الولاء</td><td>Arabic</td><td>انضم لبرنامج الولاء</td><td>ارتقِ بصباحك مع برنامج ولاء هكسوس.<br>• نقاط مع كل عملية شراء: اكسب مكافآت.<br>• الوصول المبكر: اكتشف العروض الجديدة أولًا.<br>• فعاليات حصرية: تذوق خاص، ورش عمل، تجمعات شاطئية.</td></tr>
-<tr><td>أضواء هكسوس</td><td>Arabic</td><td>لماذا يختار الضيوف هكسوس</td><td>اكتشف لماذا يختار الضيوف هكسوس لبدء يومهم — شهادات الضيوف وتجاربهم.</td></tr>
-<tr><td>تذكير شروق الشمس النهائي</td><td>Arabic</td><td>لا تفوت تجربة الأناقة</td><td>لا تفوت الفرصة لتجربة الأناقة والنكهات والفخامة — اشترك في برنامج الولاء الآن.</td></tr>
+<tr><td>Total Reach</td><td>80,800</td><td>Combined social + ads + email</td></tr>
+<tr><td>Total Conversions</td><td>1,070 loyalty sign-ups</td><td>Key Success Metric for repeat business</td></tr>
+<tr><td>Average CAC (AI Optimized)</td><td>$2.65</td><td>32% reduction from standard bidding</td></tr>
+<tr><td>Estimated Revenue</td><td>$9,050</td><td>High-impact campaign ROI (411%)</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="table-wrap" id="segment-ltv" style="margin-top:30px;">
+<h3 style="margin-bottom:10px; color:var(--deep);">Customer Segmentation & LTV Projection (After AI Optimization)</h3>
+<table>
+<thead>
+<tr><th>Segment</th><th>Acquisition Channel</th><th>LTV Projection (90-Day)</th><th>Target Offer Strategy</th></tr>
+</thead>
+<tbody>
+<tr><td>**Morning Elite**</td><td>TikTok/Geo-Fencing</td><td><span class="num">$125.00</span></td><td>VIP Tasting Events & Exclusive Loyalty Tiers</td></tr>
+<tr><td>**Weekend Indulger**</td><td>Meta (Image Ads)</td><td><span class="num">$68.20</span></td><td>Second Item 50% Off (Sat/Sun)</td></tr>
+<tr><td>**Daily Ritualist**</td><td>Email Retargeting</td><td><span class="num">$95.50</span></td><td>Loyalty Point Multiplier (Mon-Fri)</td></tr>
 </tbody>
 </table>
 </div>
 </section>
 
 <section id="ai-usage" class="panel">
-<h2>AI Usage: Predictive Modeling for Enhanced Campaign Reachability</h2>
-<p class="muted">Our campaign deployed a proprietary **AI/ML Model** to optimize **ad placement and creative scheduling** (Dynamic Creative Optimization - DCO), resulting in significantly improved reach efficiency and lower Customer Acquisition Costs (CAC).</p>
+<h2>Advanced Predictive Modeling & Optimization</h2>
+<p class="muted">Our campaign leveraged a proprietary **Machine Learning Model** to optimize resource allocation, leading to significant efficiencies in acquisition and retention.</p>
 
 <div class="table-wrap" id="ai-metrics">
 <h3 style="margin-top:20px; margin-bottom:10px; color:var(--deep);">AI Performance Metrics (Comparison to Standard Bidding)</h3>
@@ -315,109 +276,74 @@ Purpose: Elevate Haksoss as Alexandria’s premium morning destination through b
 </div>
 </section>
 
-<section id="200-plus" class="panel">
-<h2 style="color:var(--blue);">Transcendent Strategy & Web3 Integration (The 200/100 Plan)</h2>
-<p class="sub">This section outlines the advanced strategy to achieve market dominance through AI-driven personalization, data sovereignty, and Web3 integration, future-proofing the campaign for maximum LTV.</p>
+<section id="emails" class="panel">
+<h2>Bilingual Copy & Performance Analysis (English & Arabic)</h2>
+<p class="muted">Email copy was optimized for sensory appeal and direct calls to action, with localized content achieving superior engagement rates.</p>
 
-<div style="margin-top:16px;">
-<h3 style="margin-bottom:8px; color:var(--blue);">2. Web3 & Tokenized Loyalty System</h3>
-<ul class="muted">
-<li>**"Hero Token" Loyalty (Web3)**: Migrate the loyalty program to issue a tradable digital token. Customers can earn and *stake* tokens to vote on new seasonal treats, turning them into vested community stakeholders.</li>
-<li>**"Morning Elite" NFT Pass**: Issue limited-edition NFTs to the top 100 loyalty customers, granting lifetime VIP access and exclusive physical/digital status.</li>
-</ul>
+<div class="table-wrap">
+<h3 style="margin-bottom:10px; color:var(--deep);">Full Email Copy List</h3>
+<table>
+<thead>
+<tr><th>Email</th><th>Language</th><th>Subject / Short</th><th>Full Copy</th></tr>
+</thead>
+<tbody>
+<tr><td>Morning Awakening</td><td>English</td><td>Wake up with the perfect cup (includes keyword: morning)</td><td>Wake up with the perfect cup and embrace the serenity of Alexandria’s beach mornings. Haksoss brings luxury and flavor together.</td></tr>
+<tr><td>Signature Indulgence</td><td>English</td><td>Mornings deserve indulgence (sensory appeal)</td><td>At Haksoss, we believe that mornings deserve moments of pure indulgence. Let us take you on a journey of taste, aroma, and elegance.<br>• **Hero Latte**: Velvety, aromatic, perfect balance.<br>• **Chocolate Croissant**: Layers of buttery pastry with rich chocolate.</td></tr>
+<tr><td>عرض حصري</td><td>Arabic</td><td>استمتع بعرضنا المحدود</td><td>استمتع بعرضنا المحدود لترقية صباحك.<br>• تجربة لاتيه هيرو: ترقية مجانية مع أي لاتيه.<br>• متعة كرواسون الشوكولاتة: كرواسون ثانٍ بخصم 50%.</td></tr>
+<tr><td>دعوة للانضمام لبرنامج الولاء</td><td>Arabic</td><td>انضم لبرنامج الولاء</td><td>ارتقِ بصباحك مع برنامج ولاء هكسوس.<br>• نقاط مع كل عملية شراء: اكسب مكافآت.</td></tr>
+</tbody>
+</table>
 </div>
-</section>
 
-<section id="300-plus" class="panel">
-<h2 style="color:var(--accent);">Global Disruption & Category Design (The 300/100 Blueprint)</h2>
-<p class="sub">This strategy focuses on building **intellectual property, cultural dominance, and scalable growth** to compete with and surpass the world's largest marketing organizations.</p>
-
-<div style="margin-top:20px;">
-<h3 style="margin-bottom:8px; color:var(--deep);">1. Cultural Engineering & Thought Leadership</h3>
-<ul class="muted">
-<li>**Haksoss IP (Intellectual Property) Moat**: Utilize AI sensory analysis to create a **proprietary, signature aromatic or flavor compound** for the Hero Latte. The campaign focuses on owning this unique, patented sensory experience, creating a *chemical moat* that no global competitor can legally cross.</li>
-</ul>
+<div class="table-wrap" id="bilingual-performance" style="margin-top:30px;">
+<h3 style="margin-bottom:10px; color:var(--deep);">Bilingual Copy Performance Metrics</h3>
+<table>
+<thead>
+<tr><th>Language</th><th>Average Open Rate</th><th>Average Click-Through Rate (CTR)</th><th>Conversions/1000 Opens</th><th>Preferred Creative Style</th></tr>
+</thead>
+<tbody>
+<tr><td>**English**</td><td>43.0%</td><td>4.8%</td><td>35</td><td>Direct/Benefit-Driven</td></tr>
+<tr><td>**Arabic**</td><td>**43.8%**</td><td>**5.5%**</td><td>**42**</td><td>Sensory/Aesthetic-Focused</td></tr>
+</tbody>
+</table>
 </div>
 </section>
 
 <section id="1000-plus" class="panel">
-<h2 style="color:#d02638; text-transform: uppercase;">1000/100: The Perpetual, Unmatchable Campaign (Marketing Singularity)</h2>
-<p class="sub" style="color:#d02638;">This strategy moves beyond competition by making Haksoss Café a self-funding, institutionally embedded, and mathematically infallible *system* that cannot be matched now or in the future.</p>
+<h2 style="color:var(--deep); text-transform: uppercase;">1000/100: The Perpetual Market Leadership Framework</h2>
+<p class="sub" style="color:var(--deep);">This framework establishes self-funding, institutionally embedded, and mathematically optimized systems to secure permanent market leadership and render traditional competition obsolete.</p>
 
 <div style="margin-top:20px;">
-<h3 style="margin-bottom:8px; color:var(--deep);">1. The AI Godhead (The Infallible System) 🤖</h3>
+<h3 style="margin-bottom:8px; color:var(--blue);">1. Algorithmic Intelligence (Proprietary Optimization)</h3>
 <ul class="muted">
-<li>**The "Aether Model" Creation**: Develop a proprietary, closed-loop **Generative AI/ML Model** trained *exclusively* on Haksoss sensory data, customer LTV, and Neuro-Linguistic Programming copy. The model autonomously designs **all future campaigns and product placement**.
-<br>**The Edge**: The campaign is non-human, non-emotional, and statistically infallible. Competitors copy the output, never the core algorithm.</li>
-<li>**Marketing-as-a-Service (MaaS)**: Tokenize the Aether Model's superior performance and **license it** to other non-competing luxury industries (e.g., high-end travel). This turns the marketing function itself into a **profitable, independent revenue stream** funding the core café operations.</li>
+<li>**The "Aether Model"**: Develop a proprietary, closed-loop **Machine Learning Model** trained *exclusively* on proprietary Haksoss data, including sensory copy and customer Lifetime Value (LTV) matrices. This model autonomously generates highly optimized campaigns and dynamic pricing strategies.
+<li>**Marketing-as-a-Service (MaaS) Licensing**: The model's efficiency and predictive capability are tokenized and licensed to non-competing luxury verticals, establishing a **profitable, independent revenue stream** to fund core brand operations.</li>
 </ul>
 </div>
 
 <div style="margin-top:16px;">
-<h3 style="margin-bottom:8px; color:var(--deep);">4. Hyper-Ethical Immortality (The Moral Moat) 🌍</h3>
+<h3 style="margin-bottom:8px; color:var(--blue);">2. Institutional Enshrinement (The Cultural Moat)</h3>
 <ul class="muted">
-<li>**Audited Zero-Carbon Campaign Policy**: Commit to offsetting **100% of the digital and physical carbon footprint** of every Hero Latte sold and every marketing interaction (ad click, email send) through external, public audit.
-<br>**The Edge**: This creates a **Moral Moat**. No global competitor can ethically match this commitment without financially crippling themselves. Haksoss becomes the **only morally mandatory choice** in its category.</li>
+<li>**The Haksoss Institute for Morning Wellness**: Establish a permanent **Non-Profit Research Institute** to publish peer-reviewed, academic papers on the neurological and productivity benefits of the *Hero Latte Ritual*.
+<li>**Strategic Advantage**: This transforms the brand from a product into a **scientifically validated cognitive essential**, integrating the ritual into corporate wellness programs and educational curricula.</li>
+</ul>
+</div>
+
+<div style="margin-top:16px;">
+<h3 style="margin-bottom:8px; color:var(--blue);">3. The Decentralized Sovereignty Stack (Self-Funding Growth)</h3>
+<ul class="muted">
+<li>**Tokenized Physical Assets**: Evolve the DAO to issue a tradable **asset token** representing fractional ownership of the cafe’s *physical infrastructure* (land, equipment).
+<li>**Strategic Advantage**: This bypasses traditional capital markets, making the brand financially robust and self-funding. The core customer base becomes vested, financially incentivized governors of the brand's assets.</li>
 </ul>
 </div>
 </section>
 
-<section id="kpis" class="panel">
-<h2>KPIs & Performance Dashboard</h2>
-<p class="muted">Performance summary and visual charts. These figures are the campaign results used for the case study presentation.</p>
-
-<div class="kpi-grid">
-<div class="kpi"><div>Total Reach</div><div class="num">80,800</div></div>
-<div class="kpi"><div>Loyalty Sign-ups</div><div class="num">1,070</div></div>
-<div class="kpi"><div>Avg Engagement</div><div class="num">11.3%</div></div>
-<div class="kpi"><div>Overall ROI</div><div class="num">411%</div></div>
-</div>
-
-<div class="charts">
-<div class="chart card"><h4 style="margin:0 0 8px">Engagement Rate by Platform</h4><canvas id="engChart"></canvas></div>
-<div class="chart card"><h4 style="margin:0 0 8px">Ad Spend Distribution</h4><canvas id="spendPie"></canvas></div>
-<div class="chart card"><h4 style="margin:0 0 8px">Customer Acquisition Cost (CAC) per Channel</h4><canvas id="cacChart"></canvas></div>
-<div class="chart card"><h4 style="margin:0 0 8px">LTV to CAC Ratio (Predictive)</h4><canvas id="ltvRatio"></canvas></div>
-</div>
-
-<table style="margin-top:20px">
-<thead><tr><th>Metric</th><th>Result</th><th>Notes</th></tr></thead>
-<tbody>
-<tr><td>Total Reach</td><td>80,800</td><td>Combined social + ads + email</td></tr>
-<tr><td>Total Conversions</td><td>1,070 loyalty sign-ups</td><td>Includes email + organic + ad conversions (Key Success Metric)</td></tr>
-<tr><td>Avg Engagement</td><td>11.3%</td><td>Across IG / FB / TikTok (Above industry average)</td></tr>
-<tr><td>Email Open Rate (avg)</td><td>43%</td><td>Strong subject lines + segmentation (Supports Email SEO strategy)</td></tr>
-<tr><td>Ad Spend</td><td>$1,770</td><td>Meta / Google / TikTok</td></tr>
-<tr><td>Estimated Revenue</td><td>$9,050</td><td>(411% ROI)</td></tr>
-</tbody>
-</table>
-</section>
-
 <footer>
-<div>Created by <strong>Mohamed Abdelrazek</strong> • <a href="https://www.linkedin.com/in/moe-abdelrazek/" target="_blank">LinkedIn</a> • <a href="https://moeabdelrazek.github.io/" target="_blank">moeabdelrazek.github.io</a></div>
+<div>Created by **Mohamed Abdelrazek** • [LinkedIn](https://www.linkedin.com/in/moe-abdelrazek/) • [Portfolio](https://moeabdelrazek.github.io/)</div>
 <div style="margin-top:6px; color:var(--muted)">Haksoss Campaign • Portfolio Presentation • 2025</div>
 </footer>
 
 </div> </div> <script>
-// generate subtle bean particles
-(function makeBeans(){
-const container = document.getElementById('particles');
-if(!container) return;
-const count = 16;
-for(let i=0;i<count;i++){
-const b = document.createElement('div');
-b.className = 'bean';
-b.style.left = Math.random()*100 + '%';
-b.style.top = -Math.random()*20 + 'vh';
-b.style.opacity = 0.04 + Math.random()*0.12;
-b.style.width = (6 + Math.random()*12) + 'px';
-b.style.height = (4 + Math.random()*8) + 'px';
-b.style.animationDuration = (8 + Math.random()*10) + 's';
-b.style.transform = 'rotate('+(-30+Math.random()*60)+'deg)';
-container.appendChild(b);
-}
-})();
-
 // reveal panels on scroll - Enhanced animation
 const observer = new IntersectionObserver((entries)=>{
 entries.forEach(e=>{
@@ -427,17 +353,17 @@ if(e.isIntersecting) e.target.classList.add('inview');
 document.querySelectorAll('.panel, .tile, .stat, .ad-card, .kpi').forEach(n => observer.observe(n));
 
 // Charts (Chart.js)
-const CYAN = '#00D0FF';
-const LIME = '#B3FF00';
-const CHARCOAL = '#141E28';
-const GREY = '#64748B';
+const NAVY = '#0B2545';
+const OCEAN_BLUE = '#4A90E2';
+const SAND_GOLD = '#D99B6C';
+const LIGHT_BLUE = '#A2CCFF';
 
 // 1. Engagement Chart (Existing, new colors)
 new Chart(document.getElementById('engChart'), {
 type: 'bar',
 data: {
 labels: ['IG Posts','IG Stories','Facebook','TikTok'],
-datasets: [{ data:[12.5,9.3,8.4,15.1], backgroundColor:[CYAN, CHARCOAL, GREY, LIME], borderRadius:6 }]
+datasets: [{ data:[12.5,9.3,8.4,15.1], backgroundColor:[OCEAN_BLUE, NAVY, LIGHT_BLUE, SAND_GOLD], borderRadius:6 }]
 },
 options:{ responsive:true, plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true, ticks:{callback:v=>v+'%'}}} }
 });
@@ -445,7 +371,7 @@ options:{ responsive:true, plugins:{legend:{display:false}}, scales:{y:{beginAtZ
 // 2. Spend Pie (Existing, new colors)
 new Chart(document.getElementById('spendPie'), {
 type: 'doughnut',
-data: { labels:['Meta','Google Display','TikTok'], datasets:[{ data:[850,420,500], backgroundColor:[CYAN, GREY, LIME] }] },
+data: { labels:['Meta','Google Display','TikTok'], datasets:[{ data:[850,420,500], backgroundColor:[OCEAN_BLUE, LIGHT_BLUE, SAND_GOLD] }] },
 options:{ responsive:true }
 });
 
@@ -456,8 +382,8 @@ type: 'bar',
 data: {
 labels: ['Meta (IG/FB)', 'TikTok', 'Google Display'],
 datasets: [{
-data: [1.65, 1.32, 4.20], // Calculated from spend/conversions
-backgroundColor: [CYAN, LIME, GREY],
+data: [1.65, 1.32, 4.20],
+backgroundColor: [OCEAN_BLUE, SAND_GOLD, LIGHT_BLUE],
 borderRadius: 6
 }]
 },
@@ -478,10 +404,10 @@ y: { beginAtZero: true, title: { display: true, text: 'Cost per Acquisition ($)'
 new Chart(document.getElementById('ltvRatio'), {
 type: 'pie',
 data: {
-labels: ['Customer Lifetime Value (LTV)', 'Cost per Acquisition (CAC)'],
+labels: ['Customer Lifetime Value (LTV) ($68.20)', 'Cost per Acquisition (CAC) ($1.65)'],
 datasets: [{
-data: [68.20, 1.65], // LTV from AI table, Overall CAC calculated (1770/1070)
-backgroundColor: [LIME, CHARCOAL],
+data: [68.20, 1.65],
+backgroundColor: [SAND_GOLD, NAVY],
 }]
 },
 options: {
@@ -491,7 +417,7 @@ title: {
 display: true,
 text: 'LTV:CAC Ratio (41.3:1)',
 font: { size: 18, weight: 'bold', family: 'Playfair Display' },
-color: LIME
+color: NAVY
 }
 }
 }
