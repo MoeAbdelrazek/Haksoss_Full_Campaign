@@ -1,77 +1,109 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Haksoss Café — Advanced Campaign Dashboard (Beachside V3.0)</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600;700;800&family=Great+Vibes&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
-    
-    <style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>Haksoss Café — The Ultimate Luxury Morning Experience Campaign (Case Study)</title>
+
+<meta name="description" content="Wake up to luxury with Haksoss Café. Savor our signature Hero Latte, fresh Chocolate Croissants, and seasonal treats. Premium breakfast by the sea, loyalty rewards, and elegant mornings await."/>
+<meta name="keywords" content="Luxury café Alexandria, Best morning coffee Alexandria, Premium breakfast Alexandria, Haksoss, Hero Latte, Chocolate Croissant, loyalty program, coffee shop">
+<meta property="og:title" content="Haksoss Café — The Ultimate Luxury Morning Experience Campaign (Case Study)">
+<meta property="og:description" content="Wake up to luxury with Haksoss Café. Savor our signature Hero Latte, fresh Chocolate Croissants, and seasonal treats.">
+<meta property="og:image" content="3_Assets/Images/hero-latte.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://moeabdelrazek.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Haksoss Café — The Ultimate Luxury Morning Experience">
+<meta name="twitter:description" content="Wake up to luxury with Haksoss Café.">
+<meta name="twitter:image" content="3_Assets/Images/hero-latte.jpg">
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Haksoss Café",
+  "description": "Alexandria's premium morning destination, serving the Hero Latte and Chocolate Croissant.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Alexandria",
+    "addressCountry": "Egypt"
+  },
+  "url": "https://moeabdelrazek.github.io/",
+  "image": "3_Assets/Images/hero-latte.jpg"
+}
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMD/2j/JcW8C1c7N+4B2bX8T8bF+x8Z8B/z/d7mXwYF6V8G5S2P8V7O8F5U9O4F8A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
 /* =====================================================
-CSS START: ALEXANDRIA BEACH CAFE AESTHETIC V3.0 🏖️
-- Palette: Mediterranean Blue, Sandstone, Sunset Gold
-- Lighter, airier feel with soft shadows
-- Focus on luxury and seaside elegance
-===================================================== 
+CSS START: PROFESSIONAL CAFE-BRUNCH AESTHETIC V2.0 ☕
+- Enhanced Color Palette
+- Modern Layouts (Flex/Grid)
+- Sophisticated, Performance-Optimized Animations
+===================================================== 
 */
 :root{
-    /* ALEXANDRIA BEACH CAFE PALETTE (Sunlit & Opulent) */
-    --deep: #1A374D; /* Deep Mediterranean Blue/Navy */
-    --primary-blue: #4682B4; /* Classic Steel Blue/Sea Tone */
-    --muted-sand: #E6D8C8; /* Soft Sandstone/Linen */
-    --accent: #FFC300; /* Warm Sunset Gold (Luxury Highlight) */
-    --bg-start: #F9F5EF; /* Creamy Off-White */
-    --bg-end: #FFFFFF; /* Clean White */
-    --card: rgba(255, 255, 255, 0.95);
-    --card-shadow: 0 12px 40px rgba(26, 55, 77, 0.1), 0 0 0 1px rgba(255, 195, 0, 0.1); /* Lighter, blue-tinted shadow with gold hint */
-    --maxw: 1400px;
-    --radius: 15px; /* Softer, beach-house radius */
+    /* PROFESSIONAL CAFE-BRUNCH PALETTE (Refined & Earthy) */
+    --deep: #2A1D13; /* Rich Espresso Black */
+    --primary-brown: #795548; /* Warm Coffee Brown */
+    --muted-sage: #B0C5AE; /* Soft Sage Green/Mint */
+    --accent: #D7A640; /* Muted Gold/Brass (The Luxury Highlight) */
+    --bg-start: #F7F3EE; /* Off-White Paper/Linen */
+    --bg-end: #FFFFFF; /* Clean White */
+    --card: rgba(255, 255, 255, 0.98);
+    --card-shadow: 0 10px 30px rgba(42, 29, 19, 0.1), 0 0 0 1px rgba(215, 166, 64, 0.1); /* Subtle Gold-hinted shadow */
+    --maxw: 1400px; /* Wider for professional dashboard feel */
+    --radius: 10px; /* Modern, slightly tighter radius */
 
-    /* Animation Timing */
-    --timing-slow: 1.2s;
-    --timing-medium: 0.8s;
-    --ease-out-expo: cubic-bezier(.19, 1, .22, 1);
+    /* Animation Timing */
+    --timing-slow: 1.2s;
+    --timing-medium: 0.8s;
+    --ease-out-expo: cubic-bezier(.19, 1, .22, 1);
 }
 
 /* Reset and Global Styles */
 *{
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+    /* Font Smoothing for crisp text */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 body{
-    margin: 0;
-    font-family: "Poppins", "Lato", system-ui, -apple-system, Roboto, Arial;
-    color: var(--deep);
-    padding: 0;
-    min-height: 100vh;
-    background: linear-gradient(180deg, var(--bg-start) 0%, var(--bg-end) 100%);
-    opacity: 0;
-    animation: bodyFadeIn var(--timing-medium) var(--ease-out-expo) forwards;
+    margin: 0;
+    font-family: "Poppins", "Lato", system-ui, -apple-system, Roboto, Arial;
+    color: var(--deep);
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(180deg, var(--bg-start) 0%, var(--bg-end) 100%);
+    opacity: 0;
+    animation: bodyFadeIn var(--timing-medium) var(--ease-out-expo) forwards;
 }
 @keyframes bodyFadeIn {
-    to { opacity: 1; }
+    to { opacity: 1; }
 }
 
-a{ color: var(--primary-blue); text-decoration: none; transition: color .3s, transform .3s; }
+a{ color: var(--primary-brown); text-decoration: none; transition: color .3s, transform .3s; }
 a:hover { color: var(--accent); transform: translateY(-1px); }
 
 /* Layout */
 .wrap{ max-width: var(--maxw); margin: 0 auto; padding: 30px 40px 60px; }
-.page { padding-top: 90px; } 
+.page { padding-top: 90px; } /* Offset fixed header */
 
 /* HEADER - CLEAN, BOLD, FIXED */
 header.fixed-header{
-    position: fixed; left: 0; right: 0; top: 0; z-index: 9999;
-    background: var(--deep); /* Deep Blue */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.4); 
+    position: fixed; left: 0; right: 0; top: 0; z-index: 9999;
+    background: var(--deep);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* Deep shadow */
 }
 .header-inner{
-    max-width: var(--maxw); margin: 0 auto; display: flex; align-items: center;
-    justify-content: space-between; 
-    padding: 15px 40px; gap: 20px;
+    max-width: var(--maxw); margin: 0 auto; display: flex; align-items: center;
+    justify-content: space-between; /* Space for future nav */
+    padding: 15px 40px; gap: 20px;
 }
 .brand{ display: flex; gap: 15px; align-items: center; }
 .brand img{ width: 40px; height: 40px; object-fit: cover; border-radius: 50%; background: #fff; padding: 2px; border: 2px solid var(--accent); }
@@ -80,981 +112,1137 @@ header.fixed-header{
 
 /* PANELS (The Core Look) - Looks like clean, elevated papers */
 .panel{
-    background: var(--card);
-    border-radius: var(--radius);
-    padding: 40px 50px;
-    margin-bottom: 50px;
-    box-shadow: var(--card-shadow);
-    overflow: hidden; 
-    border: 1px solid rgba(255, 195, 0, 0.15); /* Faint gold outline */
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 40px 50px;
+    margin-bottom: 50px;
+    box-shadow: var(--card-shadow);
+    overflow: hidden; /* For animations */
+    border: 1px solid rgba(215, 166, 64, 0.15); /* Faint gold outline */
 
-    /* Sophisticated Inview Animation */
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 1s var(--ease-out-expo), transform 1s var(--ease-out-expo);
+    /* Sophisticated Inview Animation */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s var(--ease-out-expo), transform 1s var(--ease-out-expo);
 }
 .panel.inview{
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
 }
 .panel h2 {
-    color: var(--deep);
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    font-weight: 700;
-    padding-bottom: 15px;
-    margin-bottom: 25px;
-    position: relative;
+    color: var(--deep);
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    position: relative;
 }
 /* Title underline effect */
 .panel h2:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 60px; 
-    height: 3px;
-    background: var(--primary-blue); /* Blue underline */
-    border-radius: 2px;
-    transition: width 1s ease-out;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px; /* Controlled width */
+    height: 3px;
+    background: var(--accent);
+    border-radius: 2px;
+    transition: width 1s ease-out;
 }
 .panel.inview h2:after {
-    width: 100%; 
+    width: 100%; /* Expands on view */
 }
 
 /* CASE STUDY (lead) */
-.case-hero{ 
-    display: flex; 
-    gap: 50px; 
-    align-items: center; 
-    padding-bottom: 30px; 
-    border-bottom: 1px solid rgba(70, 130, 180, 0.3); /* Blue separator */
+.case-hero{ 
+    display: flex; 
+    gap: 50px; 
+    align-items: center; 
+    padding-bottom: 30px; 
+    border-bottom: 1px solid rgba(121, 85, 72, 0.2); 
 }
 .case-left { flex-grow: 1; }
 .case-left h2{ margin: 0 0 15px; font-size: 3rem; }
-.sub { color: var(--primary-blue); font-weight: 600; margin-bottom: 30px; }
+.sub { color: var(--primary-brown); font-weight: 600; margin-bottom: 30px; }
 
 /* Quick Stats - Looks like elegant data cards */
 .quick-stats{ display: flex; gap: 20px; flex-wrap: wrap; margin: 30px 0; }
 .stat{
-    background: linear-gradient(135deg, var(--bg-end), var(--bg-start));
-    padding: 25px 30px;
-    border-radius: var(--radius);
-    min-width: 200px;
-    box-shadow: 0 8px 25px rgba(26, 55, 77, 0.1);
-    transition: transform .4s var(--ease-out-expo), box-shadow .4s;
-    border-left: 5px solid var(--accent); /* Sunset Gold side bar */
+    background: linear-gradient(135deg, var(--bg-end), var(--bg-start));
+    padding: 25px 30px;
+    border-radius: 10px;
+    min-width: 200px;
+    box-shadow: 0 8px 25px rgba(42, 29, 19, 0.1);
+    transition: transform .4s var(--ease-out-expo), box-shadow .4s;
+    border-left: 5px solid var(--accent); /* Accent color side bar */
 }
 .stat:hover{
-    transform: translateY(-8px);
-    box-shadow: 0 15px 40px rgba(26, 55, 77, 0.2);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(42, 29, 19, 0.2);
 }
 .stat .val{ color: var(--accent); font-weight: 800; font-size: 2.4rem; font-family: 'Playfair Display', serif; }
-.stat .lab{ color: var(--primary-blue); font-size: 0.9rem; margin-top: 4px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+.stat .lab{ color: var(--primary-brown); font-size: 0.9rem; margin-top: 4px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
 
 .case-right{ width: 450px; max-width: 40%; position: relative; }
 .case-right img{
-    width: 100%;
-    border-radius: var(--radius);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
-    border: 5px solid var(--muted-sand); /* Sand-colored frame */
-    animation: floating-shadow 6s ease-in-out infinite alternate;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    border: 5px solid var(--bg-start); /* Border to frame the image */
+    animation: floating-shadow 6s ease-in-out infinite alternate;
 }
 
 @keyframes floating-shadow {
-    0% { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(70, 130, 180, 0.4); }
-    100% { transform: translateY(-10px); box-shadow: 0 25px 50px rgba(255, 195, 0, 0.5); } /* Blue to Gold shift */
+    0% { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(121, 85, 72, 0.4); }
+    100% { transform: translateY(-10px); box-shadow: 0 25px 50px rgba(215, 166, 64, 0.5); }
 }
 
 /* GALLERY - Product Grid with subtle depth */
 .gallery{ display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; margin-top: 30px; }
 .tile{
-    background: var(--bg-end);
-    border-radius: var(--radius);
-    overflow: hidden;
-    box-shadow: 0 8px 20px rgba(26, 55, 77, 0.1);
-    position: relative;
-    transition: transform .4s ease, box-shadow .4s;
-    border: 1px solid rgba(70, 130, 180, 0.1); /* Faint blue border */
+    background: var(--bg-end);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(42, 29, 19, 0.1);
+    position: relative;
+    transition: transform .4s ease, box-shadow .4s;
+    border: 1px solid rgba(121, 85, 72, 0.1);
 }
 .tile:hover{
-    transform: scale(1.03);
-    box-shadow: 0 18px 40px rgba(26, 55, 77, 0.25);
+    transform: scale(1.03);
+    box-shadow: 0 18px 40px rgba(42, 29, 19, 0.25);
 }
-.tile img{ 
-    width: 100%; 
-    height: 220px; 
-    object-fit: cover; 
-    display: block; 
-    transition: transform .6s ease;
+.tile img{ 
+    width: 100%; 
+    height: 220px; 
+    object-fit: cover; 
+    display: block; 
+    transition: transform .6s ease;
 }
 .tile:hover img {
-    transform: scale(1.05) rotate(1deg); 
+    transform: scale(1.05) rotate(1deg); /* Subtle zoom/rotate effect */
 }
-.tile .meta{ 
-    padding: 14px; 
-    font-weight: 700; 
-    color: var(--deep); 
-    background: var(--muted-sand); /* Sand background for meta */
-    font-size: 0.9rem;
-    text-transform: uppercase;
+.tile .meta{ 
+    padding: 14px; 
+    font-weight: 700; 
+    color: var(--deep); 
+    background: var(--muted-sage); 
+    font-size: 0.9rem;
+    text-transform: uppercase;
 }
 
 /* TABLES - Clean, Professional Lines */
 .table-wrap{ overflow: auto; margin-top: 30px; }
 table{ width: 100%; border-collapse: separate; border-spacing: 0; font-size: 0.95rem; border-radius: var(--radius); overflow: hidden; }
-th, td{ padding: 18px 15px; border-bottom: 1px solid rgba(70, 130, 180, 0.1); text-align: left; vertical-align: middle; }
-th{ 
-    background: linear-gradient(180deg, var(--primary-blue) 0%, var(--deep) 100%); 
-    color: var(--bg-start); 
-    font-weight: 700; 
-    text-transform: uppercase; 
-    letter-spacing: 0.5px;
-    border-bottom: 3px solid var(--accent); /* Gold separator */
+th, td{ padding: 18px 15px; border-bottom: 1px solid rgba(121, 85, 72, 0.1); text-align: left; vertical-align: middle; }
+th{ 
+    background: linear-gradient(180deg, var(--primary-brown) 0%, var(--deep) 100%); 
+    color: var(--bg-start); 
+    font-weight: 700; 
+    text-transform: uppercase; 
+    letter-spacing: 0.5px;
+    border-bottom: 3px solid var(--accent);
 }
-tr:nth-child(even) { background-color: rgba(249, 245, 239, 0.6); } /* Subtle lighter striping */
+tr:nth-child(even) { background-color: rgba(247, 243, 238, 0.6); } /* Subtle row striping */
 
 /* AI Metrics Table specific styling */
 #ai-metrics .num {
-    color: var(--accent);
-    font-size: 1.25rem;
-    font-weight: 700;
+    color: var(--accent);
+    font-size: 1.25rem;
+    font-weight: 700;
 }
 #ai-metrics tr td:last-child {
-    font-weight: 700;
-    color: var(--primary-blue);
+    font-weight: 700;
+    color: var(--primary-brown);
 }
 #ai-metrics tr:hover {
-    background-color: rgba(255, 195, 0, 0.1); /* Highlight AI impact on hover */
+    background-color: rgba(215, 166, 64, 0.1); /* Highlight AI impact on hover */
 }
 
 /* Chart Styles - Grouped and Elevated */
-.charts{ 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 30px; 
-    margin-top: 40px; 
+.charts{ 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px; 
+    margin-top: 40px; 
 }
-.chart.card{ 
-    padding: 30px; 
-    background: var(--bg-end); 
-    box-shadow: 0 5px 15px rgba(26, 55, 77, 0.05); 
-    border-radius: var(--radius); 
-    transition: transform .3s ease, box-shadow .3s ease;
-    border: 1px solid rgba(70, 130, 180, 0.5); /* Blue border */
+.chart.card{ 
+    padding: 30px; 
+    background: var(--bg-end); 
+    box-shadow: 0 5px 15px rgba(42, 29, 19, 0.05); 
+    border-radius: var(--radius); 
+    transition: transform .3s ease, box-shadow .3s ease;
+    border: 1px solid rgba(176, 197, 174, 0.5); /* Muted sage border */
 }
 .chart.card:hover {
-    transform: scale(1.01);
-    box-shadow: 0 10px 25px rgba(26, 55, 77, 0.15);
+    transform: scale(1.01);
+    box-shadow: 0 10px 25px rgba(42, 29, 19, 0.15);
 }
 
 /* Professional List Styling - Enhanced Bullet */
 .professional-list {
-    list-style: none;
-    padding-left: 0;
-    margin-top: 20px;
+    list-style: none;
+    padding-left: 0;
+    margin-top: 20px;
 }
 .professional-list li {
-    position: relative;
-    padding: 12px 0 12px 40px;
-    margin-bottom: 10px;
-    line-height: 1.6;
-    color: var(--deep);
-    background: rgba(70, 130, 180, 0.1); /* Light blue background for li */
-    border-radius: 6px;
-    border-left: 4px solid var(--accent); /* Sunset Gold indicator */
+    position: relative;
+    padding: 12px 0 12px 40px;
+    margin-bottom: 10px;
+    line-height: 1.6;
+    color: var(--deep);
+    background: rgba(176, 197, 174, 0.1); /* Light background for li */
+    border-radius: 6px;
+    border-left: 4px solid var(--primary-brown); /* Stronger indicator */
 }
 /* Bullet point styling (Coffee Bean) */
 .professional-list li:before {
-    content: "⚓"; /* Anchor icon for seaside feel */
-    position: absolute;
-    left: 10px;
-    color: var(--primary-blue);
-    font-size: 1.1rem;
-    top: 50%;
-    transform: translateY(-50%);
+    content: "☕"; 
+    position: absolute;
+    left: 10px;
+    color: var(--accent);
+    font-size: 1.1rem;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 /* AI Section Specific (Focus on data) */
 #ai-usage h3 {
-    color: var(--primary-blue);
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
+    color: var(--primary-brown);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
 }
 
 /* EMAIL CARDS - More pronounced separation and animation */
 .email-card-group {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 25px;
-    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
 }
 .email-card {
-    background: var(--card);
-    border-radius: var(--radius);
-    padding: 25px;
-    box-shadow: 0 5px 15px rgba(26, 55, 77, 0.1);
-    border: 1px solid rgba(255, 195, 0, 0.2); /* Faint gold border */
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    
-    /* Sequential Card Animation */
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 1s var(--ease-out-expo);
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(42, 29, 19, 0.1);
+    border: 1px solid rgba(215, 166, 64, 0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    
+    /* Sequential Card Animation */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s var(--ease-out-expo);
 }
 .email-card:nth-child(2) { transition-delay: 0.1s; }
 .email-card:nth-child(3) { transition-delay: 0.2s; }
 .email-card:nth-child(4) { transition-delay: 0.3s; }
 .email-card.inview {
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
 }
 .email-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(26, 55, 77, 0.2);
-    cursor: default;
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(42, 29, 19, 0.2);
+    cursor: default;
 }
 
 .email-card .language-tag {
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: var(--bg-start);
-    background: var(--deep); /* Deep Blue */
-    padding: 4px 10px;
-    border-radius: 4px;
-    display: inline-block;
-    margin-right: 10px;
-    letter-spacing: 1px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--bg-start);
+    background: var(--deep);
+    padding: 4px 10px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-right: 10px;
+    letter-spacing: 1px;
 }
 .email-card .metric-value {
-    color: var(--accent);
-    font-weight: 800;
+    color: var(--accent);
+    font-weight: 800;
 }
 
 /* DASHBOARD SPECIFIC STYLES */
 #full-dashboard { padding: 40px 50px; }
-#full-dashboard h1 { 
-    font-size: 2.8rem; 
-    color: var(--deep);
-    border-bottom: 2px solid var(--accent);
-    padding-bottom: 15px;
-    margin-bottom: 40px;
+#full-dashboard h1 { 
+    font-size: 2.8rem; 
+    color: var(--deep);
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 15px;
+    margin-bottom: 40px;
 }
 .dashboard-section { margin-bottom: 40px; }
 .currency-toggle { margin-bottom: 25px; }
 
 .currency-toggle label {
-    padding: 10px 20px;
-    border: 2px solid var(--primary-blue);
-    border-radius: 50px;
-    color: var(--primary-blue);
-    font-weight: 600;
-    background: var(--bg-start);
-    cursor: pointer;
-    transition: all 0.3s ease;
+    padding: 10px 20px;
+    border: 2px solid var(--primary-brown);
+    border-radius: 50px;
+    color: var(--primary-brown);
+    font-weight: 600;
+    background: var(--bg-start);
 }
-.currency-toggle input[type="radio"] { display: none; }
 .currency-toggle input[type="radio"]:checked + label {
-    background: var(--accent);
-    color: var(--deep);
-    border-color: var(--accent);
-    box-shadow: 0 6px 15px rgba(255, 195, 0, 0.4);
-    transform: translateY(-2px);
+    background: var(--accent);
+    color: var(--deep);
+    border-color: var(--accent);
+    box-shadow: 0 6px 15px rgba(215, 166, 64, 0.4);
+    transform: translateY(-2px);
 }
 
 
 /* FOOTER - Professional and Elegant */
 footer{
-    padding: 30px 40px;
-    border-top: 1px solid rgba(255, 195, 0, 0.3);
-    background: var(--deep);
-    color: var(--bg-start);
-    text-align: center;
+    padding: 30px 40px;
+    border-top: 1px solid rgba(215, 166, 64, 0.3);
+    background: var(--deep);
+    color: var(--bg-start);
+    text-align: center;
 }
 .footer-wrap{
-    max-width: var(--maxw);
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.9rem;
+    max-width: var(--maxw);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
 }
 .author-name strong {
-    color: var(--accent);
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
 }
 .signature {
-    font-family: 'Great Vibes', cursive;
-    font-size: 38px;
-    color: var(--accent);
-    margin: 0;
-    transition: transform .3s ease;
+    font-family: 'Great Vibes', cursive;
+    font-size: 38px;
+    color: var(--accent);
+    margin: 0;
+    transition: transform .3s ease;
 }
 .signature:hover { transform: scale(1.05); text-shadow: 0 0 15px var(--accent); }
 .footer-links a{
-    color: var(--bg-start);
-    transition: color 0.3s, transform 0.3s;
-    font-size: 1.5rem;
+    color: var(--bg-start);
+    transition: color 0.3s, transform 0.3s;
 }
 .footer-links a:hover{
-    color: var(--accent);
-    transform: scale(1.2);
+    color: var(--accent);
+    transform: scale(1.2);
 }
 .footer-meta {
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
 }
 
 /* MUSIC CONTROL - Animated Button */
 #music-control {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    z-index: 10000;
-    background: var(--accent);
-    color: var(--deep);
-    border: none;
-    padding: 14px 22px;
-    border-radius: 50px;
-    box-shadow: 0 8px 30px rgba(255, 195, 0, 0.4);
-    cursor: pointer;
-    font-weight: 700;
-    letter-spacing: 1px;
-    transition: all .3s ease;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 10000;
+    background: var(--accent);
+    color: var(--deep);
+    border: none;
+    padding: 14px 22px;
+    border-radius: 50px;
+    box-shadow: 0 8px 30px rgba(215, 166, 64, 0.4);
+    cursor: pointer;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: all .3s ease;
 }
-#music-control:hover { 
-    transform: scale(1.05); 
-    background: #FFD700; 
+#music-control:hover { 
+    transform: scale(1.05); 
+    background: #FFD700; /* Brighter gold on hover */
 }
 #music-control:active {
-    transform: scale(0.95);
-    box-shadow: 0 4px 15px rgba(255, 195, 0, 0.6);
+    transform: scale(0.95);
+    box-shadow: 0 4px 15px rgba(215, 166, 64, 0.6);
 }
 
 /* MEDIA QUERIES */
 @media (max-width: 900px) {
-    .wrap { padding: 20px 20px 40px; }
-    .header-inner { padding: 10px 20px; }
-    .case-hero { flex-direction: column; gap: 30px; }
-    .case-right{ width: 100%; max-width: 100%; }
-    .panel { padding: 30px 20px; }
-    .case-left h2{ font-size: 2.2rem; }
-    .quick-stats { justify-content: space-between; }
-    .stat { min-width: 48%; }
-    .footer-wrap { flex-direction: column; gap: 20px; }
-    .footer-meta { text-align: center; }
+    .wrap { padding: 20px 20px 40px; }
+    .header-inner { padding: 10px 20px; }
+    .case-hero { flex-direction: column; gap: 30px; }
+    .case-right{ width: 100%; max-width: 100%; }
+    .panel { padding: 30px 20px; }
+    .case-left h2{ font-size: 2.2rem; }
+    .quick-stats { justify-content: space-between; }
+    .stat { min-width: 48%; }
+    .footer-wrap { flex-direction: column; gap: 20px; }
+    .footer-meta { text-align: center; }
 }
 /* =====================================================
-CSS END: ALEXANDRIA BEACH CAFE AESTHETIC V3.0 🏖️
-===================================================== */
-    </style>
+CSS END: PROFESSIONAL CAFE-BRUNCH AESTHETIC V2.0 ☕
+===================================================== 
+*/
+</style>
 </head>
 <body>
+<div id="intro-overlay" aria-hidden="true">
+    <div class="intro-card" role="dialog" aria-label="Haksoss introduction">
+        <h1 class="intro-title">Haksoss Café</h1>
+        <p class="intro-tagline">A Morning Beyond Ordinary</p>
+    </div>
+</div>
 
-<header class="fixed-header">
-    <div class="header-inner">
-        <div class="brand">
-            <img src="https://i.ibb.co/6yX9G5W/haksoss-logo.jpg" alt="Haksoss Café Logo">
-            <h1>HAKSOSS CAFÉ</h1>
-        </div>
-        <button id="music-control" aria-pressed="false"><i class="fas fa-play"></i> Play Music</button>
-    </div>
+<audio id="bg-music" loop preload="auto" style="display:none">
+    <source src="3_Assets/Audio/cafe_jazz.mp3" type="audio/mp3">
+</audio>
+<button id="music-control" aria-pressed="false" title="Play background music"><i class="fas fa-play"></i> Play Music</button>
+
+<header class="fixed-header" role="banner">
+    <div class="header-inner">
+        <div class="brand">
+            <img src="3_Assets/Logo/logo.png" alt="Haksoss café logo">
+            <div>
+                <h1 class="site-title">Haksoss — Luxury Morning Experience Campaign</h1>
+            </div>
+        </div>
+    </div>
 </header>
 
-<div class="wrap page">
-    
-    <section id="hero" class="panel fade-section">
-        <div class="case-hero">
-            <div class="case-left">
-                <h2>The Haksoss Campaign: Digital Gold Standard</h2>
-                <p class="sub">A multi-channel, bilingual marketing strategy driving 411% ROI and high-value loyalty sign-ups through machine learning optimization.</p>
-                <div class="quick-stats">
-                    <div class="stat"><span class="val">411%</span><span class="lab">Campaign ROI</span></div>
-                    <div class="stat"><span class="val">1,070</span><span class="lab">Loyalty Conversions</span></div>
-                    <div class="stat"><span class="val">51%</span><span class="lab">Predicted LTV Increase</span></div>
-                    <div class="stat"><span class="val">5.5%</span><span class="lab">Arabic Email CTR</span></div>
-                </div>
-            </div>
-            <div class="case-right">
-                <img src="https://i.ibb.co/VMyBq91/hero-image.jpg" alt="A perfectly arranged coffee and croissant setting, representing Haksoss Café luxury.">
-            </div>
-        </div>
-    </section>
+<div class="page">
+<div class="wrap">
 
-    <section id="channel-overview" class="panel fade-section">
-        <h2>Channel Performance Overview</h2>
-        <div class="gallery">
-            <div class="tile">
-                <img src="https://i.ibb.co/Tmg24mQ/meta-ads.jpg" alt="Facebook and Instagram Ads icon">
-                <div class="meta">Meta Ads (FB/IG) — Highest Conversions</div>
-            </div>
-            <div class="tile">
-                <img src="https://i.ibb.co/Bnm10F1/tiktok-ads.jpg" alt="TikTok Ads icon">
-                <div class="meta">TikTok — Lowest CAC ($1.32)</div>
-            </div>
-            <div class="tile">
-                <img src="https://i.ibb.co/b3XpG7b/email-automation.jpg" alt="Email Automation icon">
-                <div class="meta">Email Sequence — Highest Avg. OR (43.8%)</div>
-            </div>
-            <div class="tile">
-                <img src="https://i.ibb.co/q7XwW12/local-seo.jpg" alt="Local SEO icon">
-                <div class="meta">Local SEO — Low-Cost Organic Lead</div>
-            </div>
-        </div>
-    </section>
+<section id="case" class="panel inview">
+<div class="case-hero">
+<div class="case-left">
+<h2>Haksoss Café — Elevate Your Mornings: Full Case Study</h2>
+<p class="sub">Campaign Title: **“Wake Up with Luxury in Alexandria”**<br>
+Purpose: Establish Haksoss as Alexandria’s premium morning destination through bilingual, sensory storytelling, high-end visuals, and a loyalty-led conversion strategy.</p>
 
-    <section id="email-marketing" class="panel fade-section">
-        <h2>Bilingual Email Marketing Sequence 📧</h2>
-        <p class="muted">The six-part nurturing funnel was optimized for cultural context (Arabic) and luxurious sensory language, resulting in superior performance.</p>
+<div class="quick-stats">
+<div class="stat"><div class="val">80,800</div><div class="lab">Total Reach</div></div>
+<div class="stat"><div class="val">1,070</div><div class="lab">Loyalty Sign-ups</div></div>
+<div class="stat"><div class="val">11.3%</div><div class="lab">Avg Engagement Rate</div></div>
+<div class="stat"><div class="val">411%</div><div class="lab">Overall Campaign ROI</div></div>
+</div>
 
-        <div class="email-card-group">
-            <div class="email-card">
-                <h4>أضواء هكسوس (5/6)</h4>
-                <span class="language-tag"><i class="fas fa-language"></i> Arabic</span>
-                <p class="subject" dir="rtl" style="text-align:right;"><i class="fas fa-envelope"></i> الموضوع: لماذا يختار الضيوف هكسوس؟</p>
-                <div class="analysis" dir="rtl" style="text-align:right;">
-                    <strong>الهدف:</strong> استخدام الدليل الاجتماعي لبناء الثقة وترسيخ صورة العلامة التجارية الفاخرة.
-                    التحليل: معدل النقر هو الأفضل في هذه المرحلة، مما يبرهن على فعالية إبراز تجارب العملاء.
-                </div>
-                <div class="copy-text" dir="rtl" style="text-align:right;">اكتشف لماذا يختار الضيوف هكسوس لبدء يومهم — شهادات الضيوف وتجاربهم.</div>
-                <div style="margin-top:15px;">
-                    <div class="metric-item"><span class="metric-label">Open Rate:</span> <span class="metric-value">43.8%</span></div>
-                    <div class="metric-item"><span class="metric-label">CTR:</span> <span class="metric-value">6.1%</span></div>
-                    <div class="metric-item"><span class="metric-label">Conversion Rate:</span> <span class="metric-value">3.5%</span></div>
-                </div>
-            </div>
+<div style="margin-top:20px;">
+<h3 style="margin-bottom:8px">Executive Summary</h3>
+<p class="muted">Haksoss Café executed a visual-first, bilingual campaign centered on the signature **Hero Latte** and **Chocolate Croissant**. The strategy integrated targeted ads across Meta and TikTok with a loyalty-driven email automation sequence, resulting in a measurable lift in morning footfall and a high return on investment.</p>
+</div>
+</div>
 
-            <div class="email-card">
-                <h4>تذكير شروق الشمس (6/6)</h4>
-                <span class="language-tag"><i class="fas fa-language"></i> Arabic</span>
-                <p class="subject" dir="rtl" style="text-align:right;"><i class="fas fa-envelope"></i> الموضوع: لا تفوت تجربة الأناقة</p>
-                <div class="analysis" dir="rtl" style="text-align:right;">
-                    <strong>الهدف:</strong> استخدام عامل الاستعجال النهائي لجذب آخر شريحة من المشتركين.
-                    التحليل: نجاح في تحصيل التحويلات الأخيرة وتفوق في معدل التحويل النهائي على النسخة الإنجليزية.
-                </div>
-                <div class="copy-text" dir="rtl" style="text-align:right;">لا تفوت الفرصة لتجربة الأناقة والنكهات والفخامة — اشترك في برنامج الولاء الآن.</div>
-                <div style="margin-top:15px;">
-                    <div class="metric-item"><span class="metric-label">Open Rate:</span> <span class="metric-value">44.9%</span></div>
-                    <div class="metric-item"><span class="metric-label">CTR:</span> <span class="metric-value">4.5%</span></div>
-                    <div class="metric-item"><span class="metric-label">Conversion Rate:</span> <span class="metric-value">5.2%</span></div>
-                </div>
-            </div>
-        </div>
+<div class="case-right">
+<img src="3_Assets/Images/hero-latte.jpg" alt="Hero Latte, the best morning coffee in Alexandria, served at Haksoss Luxury Café">
+</div>
+</div>
+</section>
 
-        <section id="emails-strategy-analysis" style="margin-top: 50px;">
-            <h3 style="margin-bottom:15px; color:var(--primary-blue);">Advanced Email Strategy & Recommendations</h3>
-            <ul class="professional-list">
-                <li>**Bilingual Optimization:** The Arabic sequence consistently demonstrated a **1.3% higher average CTR** and **7 more conversions per 1000 sends** compared to the English sequence, underscoring the critical need for cultural and linguistic relevance in local marketing.</li>
-                <li>**Sensory Keywords:** Emails using sensory words like *'velvety,' 'aromatic,'* and *'indulgence'* achieved an average **4% higher engagement** than purely transactional emails, aligning the copy with the luxury brand aesthetic.</li>
-                <li>**Loyalty Automation Funnel:** The "Loyalty Invitation" emails had the highest overall conversion rates (9.8% E / 11.1% A), confirming that segmenting users who have already shown intent into a dedicated loyalty funnel is the most profitable automation step.</li>
-                <li>**Next Step: Dynamic Content:** Implement dynamic weather and time-of-day personalization within the hero email block (e.g., "Perfect for this cloudy morning") to increase Open Rate and perceived relevance.</li>
-            </ul>
-        </section>
-    </section>
+<section id="creative" class="panel fade-section">
+<h2>Creative Execution & Visual Assets (Photo Gallery)</h2>
+<p class="muted">All campaign visuals and templates used across posts, stories, and ads—optimized for morning light and high-end aesthetic.</p>
 
-    <section id="ai-usage" class="panel fade-section">
-        <h2>Algorithmic Intelligence & Predictive Modeling: The Data Edge</h2>
-        <p class="muted">The campaign's superior performance was driven by a proprietary **Machine Learning (ML) framework** used for Dynamic Creative Optimization (DCO), predictive Lifetime Value (LTV) modeling, and resource allocation, ensuring maximum efficiency and profitability.</p>
+<div class="gallery" aria-hidden>
+<div class="tile"><img src="3_Assets/Images/hero-latte.jpg" alt="Signature Hero Latte coffee, a premium breakfast experience"><div class="meta">hero-latte.jpg</div></div>
+<div class="tile"><img src="3_Assets/Images/chocolate-croissant.jpg" alt="Freshly baked Chocolate Croissant at Haksoss Café Alexandria"><div class="meta">chocolate-croissant.jpg</div></div>
+<div class="tile"><img src="3_Assets/Images/seasonal-treat.jpg" alt="Seasonal breakfast treat at the luxury café"><div class="meta">seasonal-treat.jpg</div></div>
+<div class="tile"><img src="3_Assets/Images/special-latte.jpg" alt="Special latte creation by the sea"><div class="meta">special-latte.jpg</div></div>
+<div class="tile"><img src="3_Assets/Images/special-offer.jpg" alt="Special offer on lattes for morning customers"><div class="meta">special-offer.jpg</div></div>
+<div class="tile"><img src="3_Assets/Images/loyalty-program.jpg" alt="Haksoss Loyalty Program benefits and rewards"><div class="meta">loyalty-program.jpg</div></div>
 
-        <div class="charts" style="margin-top:30px;">
-            <div class="chart card"><h4 style="margin:0 0 8px; color:var(--deep)">Predicted 90-Day LTV Distribution</h4><canvas id="ltvDistributionChart"></canvas></div>
-            <div class="chart card"><h4 style="margin:0 0 8px; color:var(--deep)">Cost-Per-Acquisition (CAC) Trend</h4><canvas id="cacTrendChart"></canvas></div>
-        </div>
+<div class="tile"><img src="3_Assets/1_Templates/hero_latte_post.png" alt="Hero Latte social media template for best coffee"><div class="meta">hero_latte_post.png (template)</div></div>
+<div class="tile"><img src="3_Assets/1_Templates/special_latte.png" alt="Special latte social media template"><div class="meta">special_latte.png (template)</div></div>
+<div class="tile"><img src="3_Assets/1_Templates/season_offer.png" alt="Seasonal offer social media template for breakfast"><div class="meta">season_offer.png (template)</div></div>
+<div class="tile"><img src="3_Assets/1_Templates/haksoss_post.png" alt="Haksoss brand post template for luxury experience"><div class="meta">haksoss_post.png (template)</div></div>
+<div class="tile"><img src="3_Assets/1_Templates/discover_more.png" alt="Discover more carousel template"><div class="meta">discover_more.png (template)</div></div>
+</div>
+</section>
 
-        <div class="table-wrap" id="ai-metrics" style="margin-top:40px;">
-        <h3 style="margin-top:20px; margin-bottom:10px; color:var(--deep);">ML Model Performance Metrics (Comparison vs. Manual Bidding)</h3>
-        <table>
-        <thead>
-        <tr><th>Metric</th><th>Standard (Manual Bidding)</th><th>AI/ML Optimization</th><th>Improvement</th></tr>
-        </thead>
-        <tbody>
-        <tr><td>**Average CTR (Loyalty Ads)**</td><td>4.8%</td><td><span class="num">6.9%</span></td><td>**+43.75%**</td></tr>
-        <tr><td>**Cost Per Loyalty Sign-up (CAC)**</td><td>$3.90</td><td><span class="num">$1.85</span></td><td>**-52.5%**</td></tr>
-        <tr><td>**Predicted LTV of New Users**</td><td>$45.00</td><td><span class="num">$75.50</span></td><td>**+67.8%**</td></tr>
-        <tr><td>**Creative Performance Split (DCO)**</td><td>55% (Top Creative)</td><td><span class="num">82% (Top Creative)</span></td><td>**DCO Efficiency**</td></tr>
-        </tbody>
-        </table>
-        </div>
+<section id="emails" class="panel fade-section">
+<h2>Emails — Full Campaign Sequence & Performance Analysis</h2>
+<p class="muted">Copy-ready email content used in the campaign, optimized for open rate and intent. Click/hover on a card for full details.</p>
 
-        <div style="margin-top:40px;">
-            <h3 style="margin-bottom:8px; color:var(--primary-blue);">ML Implementation Focus & Outcomes</h3>
-            <ul class="professional-list">
-                <li class="fade-section">**Dynamic Creative Optimization (DCO):** The ML model automatically identified that visuals featuring the **Chocolate Croissant (82%)** combined with the Arabic copy generated the highest CTR. This DCO focus led to a significant reallocation of ad budget, maximizing conversions.</li>
-                <li class="fade-section">**Predictive Value Bidding (PVB):** Instead of optimizing for low-cost clicks, the AI leveraged the **Predicted LTV** of a user (based on location and past behavior profiles) to bid higher for high-value customers, resulting in a 67.8% LTV increase.</li>
-                <li class="fade-section">**Budget Allocation Efficiency:** The AI framework reduced the effective **Cost Per Acquisition (CAC)** by over 50% by swiftly pausing underperforming ad sets and shifting 75% of the total budget to the most efficient conversion funnels (TikTok & Meta Loyalty lead forms).</li>
-                <li class="fade-section">**Retention Forecasting:** The model accurately predicted that customers acquired through the Loyalty Funnel had an **85% 90-Day Retention Rate**, far surpassing the 55% rate of standard offer customers.</li>
-            </ul>
-        </div>
-    </section>
+<div class="email-card-group">
 
-    <section id="seo-analysis" class="panel fade-section">
-        <h2>SEO & Digital Strategy Analysis: Dominating Local Search</h2>
-        <p class="muted">The campaign success was augmented by a targeted SEO strategy, focusing on high-intent local and product keywords, and a technical foundation to ensure visibility across search engines and social platforms. This ensured long-term, low-cost organic traffic beyond paid media reach.</p>
+    <div class="email-card">
+        <h4>Morning Awakening (1/6)</h4>
+        <span class="language-tag"><i class="fas fa-globe"></i> English</span>
+        <p class="subject"><i class="fas fa-envelope"></i> Subject: Wake up with the perfect cup</p>
+        <div class="analysis">
+            <strong>Goal:</strong> Establish Haksoss as the essential start to the day. High-intent keyword inclusion ('morning').
+            Analysis: Highest open rate due to first-email novelty and strong subject line focus.
+        </div>
+        <div class="copy-text">Wake up with the perfect cup and embrace the serenity of Alexandria’s beach mornings. Haksoss brings luxury and flavor together.</div>
+        <div style="margin-top:15px;">
+            <div class="metric-item"><span class="metric-label">Open Rate:</span> <span class="metric-value">46.2%</span></div>
+            <div class="metric-item"><span class="metric-label">CTR:</span> <span class="metric-value">4.1%</span></div>
+            <div class="metric-item"><span class="metric-label">Conversion Rate:</span> <span class="metric-value">2.5%</span></div>
+        </div>
+    </div>
 
-        <div style="margin-top:20px;">
-        <h3 style="margin-bottom:8px">Key SEO Implementation Points</h3>
-        <ul class="professional-list">
-        <li>**Keyword Targeting (High-Intent Local):** Focused on "Luxury café Alexandria," "Best morning coffee Alexandria," and "Premium breakfast Alexandria" to capture local purchase intent.</li>
-        <li>**Product Focus & Schema:** Implemented dedicated SEO copy and alt text for **Hero Latte** and **Chocolate Croissant**. Critically, **Product Schema Markup** was implemented to enhance rich snippets, leading to higher click-through rates (CTR) in Search Engine Results Pages (SERPs).</li>
-        <li>**Technical Foundations:** Ensured images are compressed (AVG size reduction: 45%), header structure (H1/H2) is logical, and **LocalBusiness Schema Markup** is deployed to capture 'near me' searches and improve Google My Business (GMB) visibility.</li>
-        <li>**Content Cluster Strategy:** Created supplementary blog content (e.g., "7 Ways to Start a Luxury Morning in Alexandria") to build topical authority around the core theme.</li>
-        </ul>
-        </div>
+    <div class="email-card">
+        <h4>Signature Indulgence (2/6)</h4>
+        <span class="language-tag"><i class="fas fa-globe"></i> English</span>
+        <p class="subject"><i class="fas fa-envelope"></i> Subject: Mornings deserve indulgence</p>
+        <div class="analysis">
+            <strong>Goal:</strong> Showcase primary products (Hero Latte & Croissant) using rich, sensory language (Velvety, Aromatic).
+            Analysis: Strong engagement, validating the use of emotional/sensory copy over generic product listings.
+        </div>
+        <div class="copy-text">At Haksoss, we believe that mornings deserve moments of pure indulgence. Let us take you on a journey of taste, aroma, and elegance.<br>• **Hero Latte**: Velvety, aromatic, perfect balance.<br>• **Chocolate Croissant**: Layers of buttery pastry with rich chocolate.</div>
+        <div style="margin-top:15px;">
+            <div class="metric-item"><span class="metric-label">Open Rate:</span> <span class="metric-value">42.5%</span></div>
+            <div class="metric-item"><span class="metric-label">CTR:</span> <span class="metric-value">5.8%</span></div>
+            <div class="metric-item"><span class="metric-label">Conversion Rate:</span> <span class="metric-value">3.2%</span></div>
+        </div>
+    </div>
 
-        <div class="table-wrap" id="bilingual-performance" style="margin-top:30px;">
-        <h3 style="margin-bottom:10px; color:var(--deep);">SEO Performance Metrics (Organic Traffic Focus - 30 Day Snapshot)</h3>
-        <table>
-        <thead>
-        <tr><th>Metric</th><th>Target</th><th>Result</th><th>Analysis</th></tr>
-        </thead>
-        <tbody>
-        <tr><td>**Overall Organic Search Traffic**</td><td>+15%</td><td>**+22%**</td><td>Exceeded target, driven by local and product keyword gains.</td></tr>
-        <tr><td>**"Hero Latte" Product Page Rank**</td><td>Top 5</td><td>**#2**</td><td>Directly linked to Product Schema implementation and content depth.</td></tr>
-        <tr><td>**Local Pack Impressions (GMB)**</td><td>12,000</td><td>**15,500**</td><td>Improved by optimizing GMB profile & deploying LocalBusiness Schema.</td></tr>
-        <tr><td>**Average Time on Page (Blog)**</td><td>1:30 min</td><td>**2:15 min**</td><td>High engagement validates the quality of the supporting content cluster strategy.</td></tr>
-        <tr><td>**Organic Conversion Rate (Loyalty Sign-up)**</td><td>1.5%</td><td>**2.1%**</td><td>Traffic quality is high (low-cost, high-intent searches).</td></tr>
-        </tbody>
-        </table>
-        </div>
+    <div class="email-card">
+        <h4>Exclusive Offer (3/6)</h4>
+        <span class="language-tag"><i class="fas fa-globe"></i> English</span>
+        <p class="subject"><i class="fas fa-envelope"></i> Subject: Limited-time morning upgrade</p>
+        <div class="analysis">
+            <strong>Goal:</strong> Drive immediate footfall using scarcity (limited-time) and value-adds (free upgrade, 50% off).
+            Analysis: High conversion rate per click (CPC) driven by strong financial incentive.
+        </div>
+        <div class="copy-text">Delight in our limited-time offer to elevate your mornings.<br>• Hero Latte Experience: Complimentary upgrade with any latte.<br>• Chocolate Croissant Delight: Second croissant 50% off.</div>
+        <div style="margin-top:15px;">
+            <div class="metric-item"><span class="metric-label">Open Rate:</span> <span class="metric-value">45.0%</span></div>
+            <div class="metric-item"><span class="metric-label">CTR:</span> <span class="metric-value">4.5%</span></div>
+            <div class="metric-item"><span class="metric-label">Conversion Rate:</span> <span class="metric-value">6.1%</span></div>
+        </div>
+    </div>
 
-        <section id="seo-advanced-analysis" style="margin-top: 50px;">
-            <h3 style="margin-bottom:15px; color:var(--primary-blue);">Detailed SEO Analysis & Path to Dominance</h3>
-            <ul class="professional-list">
-                <li>**Mobile-First Indexing:** Site achieved a **98/100 Mobile PageSpeed Score** after image optimization and server-side rendering review. This ensured optimal indexing and user experience on primary mobile devices.</li>
-                <li>**Structured Data Impact:** The use of **Product Schema** for the Hero Latte resulted in a **$0.05 lower cost-per-conversion** for users who clicked through Rich Snippets compared to standard organic results.</li>
-                <li>**Long-Tail Keyword Opportunity:** Analysis revealed a surge in searches for "best place for brunch with a view alexandria." Future content should explicitly target this long-tail, high-value phrase to capture qualified users.</li>
-                <li>**Bilingual SEO Strategy:** Confirmed that maintaining distinct, culturally-optimized pages (English/Arabic) for high-value keywords is essential, as the Arabic keyword set has a **20% higher search volume** for local terms.</li>
-            </ul>
-        </section>
-    </section>
-    <section id="kpis" class="panel fade-section">
-        <h2>KPIs & Performance Dashboard (Summary Charts)</h2>
-        <p class="muted">A comprehensive view of campaign results, channel efficiency, and predictive customer modeling, illustrating the profitability and growth potential of the strategy.</p>
+    <div class="email-card">
+        <h4>Loyalty Invitation (4/6)</h4>
+        <span class="language-tag"><i class="fas fa-globe"></i> English</span>
+        <p class="subject"><i class="fas fa-envelope"></i> Subject: Join Haksoss Loyalty: Unlock VIP Status</p>
+        <div class="analysis">
+            <strong>Goal:</strong> Convert engaged users into lifetime loyalty members. Focus on long-term benefits (Rewards, Early Access).
+            Analysis: Lower Open Rate, but the highest Conversion Rate, proving high intent from subscribers who reach this stage.
+        </div>
+        <div class="copy-text">Elevate your mornings with Haksoss Loyalty.<br>• Points on Every Purchase: Earn rewards.<br>• Early Access: Discover new offerings first.<br>• Exclusive Events: Private tastings, workshops, beach gatherings.</div>
+        <div style="margin-top:15px;">
+            <div class="metric-item"><span class="metric-label">Open Rate:</span> <span class="metric-value">40.5%</span></div>
+            <div class="metric-item"><span class="metric-label">CTR:</span> <span class="metric-value">6.5%</span></div>
+            <div class="metric-item"><span class="metric-label">Conversion Rate:</span> <span class="metric-value">9.8%</span></div>
+        </div>
+    </div>
 
-        <div class="charts">
-            <div class="chart card"><h4 style="margin:0 0 8px; color:var(--deep)">Engagement Rate by Platform</h4><canvas id="engChart"></canvas></div>
-            <div class="chart card"><h4 style="margin:0 0 8px; color:var(--deep)">Ad Spend Distribution</h4><canvas id="spendPie"></canvas></div>
-            <div class="chart card"><h4 style="margin:0 0 8px; color:var(--deep)">Email Open Rate Trend</h4><canvas id="emailLine"></canvas></div>
-            <div class="chart card"><h4 style="margin:0 0 8px; color:var(--deep)">Customer Acquisition Cost (CAC) per Channel</h4><canvas id="cacChart"></canvas></div>
-            <div class="chart card"><h4 style="margin:0 0 8px; color:var(--deep)">Conversions by Channel</h4><canvas id="convBar"></canvas></div>
-            <div class="chart card"><h4 style="margin:0 0 8px; color:var(--deep)">LTV to CAC Ratio (Predictive)</h4><canvas id="ltvRatio"></canvas></div>
-        </div>
+    <div class="email-card">
+        <h4>Haksoss Spotlight (5/6)</h4>
+        <span class="language-tag"><i class="fas fa-globe"></i> English</span>
+        <p class="subject"><i class="fas fa-envelope"></i> Subject: Why guests choose Haksoss (Social Proof)</p>
+        <div class="analysis">
+            <strong>Goal:</strong> Use social proof (testimonials) to build trust and overcome any remaining hesitation.
+            Analysis: Excellent CTR indicates high interest in peer-driven content.
+        </div>
+        <div class="copy-text">Discover why guests choose Haksoss to start their day. "The Hero Latte is perfection in a cup." – Sarah A.</div>
+        <div style="margin-top:15px;">
+            <div class="metric-item"><span class="metric-label">Open Rate:</span> <span class="metric-value">43.0%</span></div>
+            <div class="metric-item"><span class="metric-label">CTR:</span> <span class="metric-value">5.3%</span></div>
+            <div class="metric-item"><span class="metric-label">Conversion Rate:</span> <span class="metric-value">2.8%</span></div>
+        </div>
+    </div>
 
-        <div class="table-wrap" id="core-metrics" style="margin-top:30px;">
-        <h3 style="margin-bottom:10px; color:var(--deep);">Core Campaign Metrics Summary</h3>
-        <table>
-        <thead>
-        <tr><th>Metric</th><th>Result</th><th>Notes</th></tr>
-        </thead>
-        <tbody>
-        <tr><td>Total Reach</td><td>80,800</td><td>Combined social + ads + email</td></tr>
-        <tr><td>Total Conversions</td><td>1,070 loyalty sign-ups</td><td>Key Success Metric for repeat business</td></tr>
-        <tr><td>Average CAC (AI Optimized)</td><td>$2.65</td><td>32% reduction from standard bidding</td></tr>
-        <tr><td>Estimated Revenue</td><td>$9,050</td><td>High-impact campaign ROI (411%)</td></tr>
-        <tr><td>Avg. LTV Projection (90-Day)</td><td>$68.20</td><td>51% increase over prior average ($45.00)</td></tr>
-        </tbody>
-        </table>
-        </div>
-    </section>
+    <div class="email-card">
+        <h4>Final Sunrise Reminder (6/6)</h4>
+        <span class="language-tag"><i class="fas fa-globe"></i> English</span>
+        <p class="subject"><i class="fas fa-envelope"></i> Subject: Don’t miss the morning elegance</p>
+        <div class="analysis">
+            <strong>Goal:</strong> Final urgency trigger to capture remaining unconverted subscribers before the campaign phase ends.
+            Analysis: Good final boost in conversion from last-chance framing.
+        </div>
+        <div class="copy-text">Don’t miss the chance to experience elegance, flavor, and luxury — Subscribe to the loyalty program now.</div>
+        <div style="margin-top:15px;">
+            <div class="metric-item"><span class="metric-label">Open Rate:</span> <span class="metric-value">44.1%</span></div>
+            <div class="metric-item"><span class="metric-label">CTR:</span> <span class="metric-value">3.9%</span></div>
+            <div class="metric-item"><span class="metric-label">Conversion Rate:</span> <span class="metric-value">4.5%</span></div>
+        </div>
+    </div>
 
-    <section id="full-dashboard" class="panel fade-section">
+    <div class="email-card">
+        <h4>صباح مشرق (1/6)</h4>
+        <span class="language-tag"><i class="fas fa-language"></i> Arabic</span>
+        <p class="subject" dir="rtl" style="text-align:right;"><i class="fas fa-envelope"></i> الموضوع: ابدأ صباحك مع الكوب المثالي</p>
+        <div class="analysis" dir="rtl" style="text-align:right;">
+            <strong>الهدف:</strong> ترسيخ هكسوس كبداية أساسية لليوم. تضمين الكلمات المفتاحية ذات الصلة بالنية الشرائية.
+            التحليل: معدل فتح مرتفع بسبب الجدة والتركيز على جمالية الصباح الباكر في الإسكندرية.
+        </div>
+        <div class="copy-text" dir="rtl" style="text-align:right;">ابدأ صباحك مع الكوب المثالي واستمتع بهدوء شواطئ الإسكندرية. هكسوس يجمع بين الفخامة والنكهات.</div>
+        <div style="margin-top:15px;">
+            <div class="metric-item"><span class="metric-label">Open Rate:</span> <span class="metric-value">47.5%</span></div>
+            <div class="metric-item"><span class="metric-label">CTR:</span> <span class="metric-value">5.1%</span></div>
+            <div class="metric-item"><span class="metric-label">Conversion Rate:</span> <span class="metric-value">3.1%</span></div>
+        </div>
+    </div>
 
-        <h1>Haksoss Café — Full Financial Campaign Dashboard</h1>
+    <div class="email-card">
+        <h4>المتعة المميزة (2/6)</h4>
+        <span class="language-tag"><i class="fas fa-language"></i> Arabic</span>
+        <p class="subject" dir="rtl" style="text-align:right;"><i class="fas fa-envelope"></i> الموضوع: الصباح يستحق الترف</p>
+        <div class="analysis" dir="rtl" style="text-align:right;">
+            <strong>الهدف:</strong> عرض المنتجات الرئيسية بلغة حسية ومحفزة للشراء (كريمي، عطري، ترف خالص).
+            التحليل: تفاعل قوي، حيث يتجاوز معدل النقر نظيره الإنجليزي، مما يدل على نجاح الترجمة في نقل الإحساس.
+        </div>
+        <div class="copy-text" dir="rtl" style="text-align:right;">في هكسوس، نؤمن أن الصباح يستحق لحظات من الترف الخالص.<br>• لاتيه هيرو: كريمي وعطري، وتوازن مثالي من النكهات.<br>• كرواسون الشوكولاتة: طبقات معجنات مع الشوكولاتة الغنية.</div>
+        <div style="margin-top:15px;">
+            <div class="metric-item"><span class="metric-label">Open Rate:</span> <span class="metric-value">43.2%</span></div>
+            <div class="metric-item"><span class="metric-label">CTR:</span> <span class="metric-value">6.8%</span></div>
+            <div class="metric-item"><span class="metric-label">Conversion Rate:</span> <span class="metric-value">4.0%</span></div>
+        </div>
+    </div>
 
-        <div class="dashboard-section">
-        <h2>Key Performance Indicators (KPIs)</h2>
-        <table>
-        <thead>
-        <tr>
-        <th>Metric</th>
-        <th>Value</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr><td>Total Reach</td><td>120,000</td></tr>
-        <tr><td>Impressions</td><td>450,000</td></tr>
-        <tr><td>CTR</td><td>4.2%</td></tr>
-        <tr><td>Conversions</td><td>3,500</td></tr>
-        <tr><td>Conversion Rate</td><td>2.92%</td></tr>
-        <tr><td>Total Revenue</td><td id="total-revenue">$48,000 / EGP 1,728,000</td></tr>
-        <tr><td>Total Spend</td><td id="total-spend">$20,000 / EGP 720,000</td></tr>
-        <tr><td>Overall ROI</td><td id="overall-roi">140%</td></tr>
-        </tbody>
-        </table>
-        </div>
+    <div class="email-card">
+        <h4>عرض حصري (3/6)</h4>
+        <span class="language-tag"><i class="fas fa-language"></i> Arabic</span>
+        <p class="subject" dir="rtl" style="text-align:right;"><i class="fas fa-envelope"></i> الموضوع: استمتع بعرضنا المحدود لترقية صباحك</p>
+        <div class="analysis" dir="rtl" style="text-align:right;">
+            <strong>الهدف:</strong> تحفيز الزيارة الفورية عبر العروض المحدودة والقيمة المضافة (ترقية مجانية).
+            التحليل: أعلى معدل تحويل بين رسائل العروض، مما يشير إلى أن العرض كان جذابًا للغاية للجمهور العربي.
+        </div>
+        <div class="copy-text" dir="rtl" style="text-align:right;">استمتع بعرضنا المحدود لترقية صباحك.<br>• تجربة لاتيه هيرو: ترقية مجانية مع أي لاتيه.<br>• متعة كرواسون الشوكولاتة: كرواسون ثانٍ بخصم 50%.</div>
+        <div style="margin-top:15px;">
+            <div class="metric-item"><span class="metric-label">Open Rate:</span> <span class="metric-value">46.5%</span></div>
+            <div class="metric-item"><span class="metric-label">CTR:</span> <span class="metric-value">5.5%</span></div>
+            <div class="metric-item"><span class="metric-label">Conversion Rate:</span> <span class="metric-value">7.5%</span></div>
+        </div>
+    </div>
 
-        <div class="dashboard-section">
-        <h2>Financial Table (USD / EGP)</h2>
-        <div class="currency-toggle">
-        <input type="radio" id="usd-toggle" name="currency" value="USD" checked><label for="usd-toggle">USD</label>
-        <input type="radio" id="egp-toggle" name="currency" value="EGP"><label for="egp-toggle">EGP</label>
-        </div>
-        <div class="table-wrap">
-        <table id="financial-table">
-        <thead>
-        <tr>
-        <th>Channel</th>
-        <th>Spend</th>
-        <th>Revenue</th>
-        <th>ROI</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr><td>Facebook Ads</td><td>$7,000</td><td>$18,000</td><td></td></tr>
-        <tr><td>Google Ads</td><td>$5,000</td><td>$12,500</td><td></td></tr>
-        <tr><td>Influencers</td><td>$3,000</td><td>$8,000</td><td></td></tr>
-        <tr><td>Email Marketing</td><td>$2,500</td><td>$5,500</td><td></td></tr>
-        <tr><td>Creative Production</td><td>$2,000</td><td>$4,500</td><td></td></tr>
-        <tr><td>Miscellaneous</td><td>$500</td><td>$1,500</td><td></td></tr>
-        </tbody>
-        </table>
-        </div>
-        </div>
+    <div class="email-card">
+        <h4>دعوة للانضمام (4/6)</h4>
+        <span class="language-tag"><i class="fas fa-language"></i> Arabic</span>
+        <p class="subject" dir="rtl" style="text-align:right;"><i class="fas fa-envelope"></i> الموضوع: انضم لبرنامج الولاء هكسوس</p>
+        <div class="analysis" dir="rtl" style="text-align:right;">
+            <strong>الهدف:</strong> إقناع العملاء بالانضمام للولاء من أجل زيادة القيمة العمرية (LTV).
+            التحليل: تحويل استثنائي يؤكد قوة دافع العملاء على المدى الطويل.
+        </div>
+        <div class="copy-text" dir="rtl" style="text-align:right;">ارتقِ بصباحك مع برنامج ولاء هكسوس.<br>• نقاط مع كل عملية شراء: اكسب مكافآت.</div>
+        <div style="margin-top:15px;">
+            <div class="metric-item"><span class="metric-label">Open Rate:</span> <span class="metric-value">41.0%</span></div>
+            <div class="metric-item"><span class="metric-label">CTR:</span> <span class="metric-value">7.8%</span></div>
+            <div class="metric-item"><span class="metric-label">Conversion Rate:</span> <span class="metric-value">11.1%</span></div>
+        </div>
+    </div>
 
-        <div class="dashboard-section charts">
-        <div class="chart card"><h4 style="margin:0 0 8px; color:var(--deep)">Spend vs Revenue by Channel</h4><canvas id="spendRevenueChart"></canvas></div>
-        <div class="chart card"><h4 style="margin:0 0 8px; color:var(--deep)">ROI % by Channel</h4><canvas id="roiChart"></canvas></div>
-        </div>
+    <div class="email-card">
+        <h4>أضواء هكسوس (5/6)</h4>
+        <span class="language-tag"><i class="fas fa-language"></i> Arabic</span>
+        <p class="subject" dir="rtl" style="text-align:right;"><i class="fas fa-envelope"></i> الموضوع: لماذا يختار الضيوف هكسوس؟</p>
+        <div class="analysis" dir="rtl" style="text-align:right;">
+            <strong>الهدف:</strong> استخدام الدليل الاجتماعي لبناء الثقة وترسيخ صورة العلامة التجارية الفاخرة.
+            التحليل: معدل النقر هو الأفضل في هذه المرحلة، مما يبرهن على فعالية إبراز تجارب العملاء.
+        </div>
+        <div class="copy-text" dir="rtl" style="text-align:right;">اكتشف لماذا يختار الضيوف هكسوس لبدء يومهم — شهادات الضيوف وتجاربهم.</div>
+        <div style="margin-top:15px;">
+            <div class="metric-item"><span class="metric-label">Open Rate:</span> <span class="metric-value">43.8%</span></div>
+            <div class="metric-item"><span class="metric-label">CTR:</span> <span class="metric-value">6.1%</span></div>
+            <div class="metric-item"><span class="metric-label">Conversion Rate:</span> <span class="metric-value">3.5%</span></div>
+        </div>
+    </div>
 
-        <div class="dashboard-section">
-        <h2>Marketing Insights & Recommendations</h2>
-        <div class="table-wrap">
-        <table id="insights-table">
-        <thead>
-        <tr>
-        <th>Channel</th>
-        <th>ROI</th>
-        <th>Insight</th>
-        <th>Recommendation</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr><td>Facebook Ads</td><td></td><td></td><td>Increase ad spend on high-performing demographics; test carousel ads.</td></tr>
-        <tr><td>Google Ads</td><td></td><td></td><td>Refine keywords; reduce bids on low-converting terms.</td></tr>
-        <tr><td>Influencers</td><td></td><td></td><td>Focus on top 2 influencers with highest engagement.</td></tr>
-        <tr><td>Email Marketing</td><td></td><td></td><td>Segment audience further and personalize content to boost CTR.</td></tr>
-        <tr><td>Creative Production</td><td></td><td></td><td>Optimize visuals based on engagement metrics.</td></tr>
-        <tr><td>Miscellaneous</td><td></td><td></td><td>Monitor expenses; reallocate to high ROI channels if needed.</td></tr>
-        </tbody>
-        </table>
-        </div>
-        </div>
+    <div class="email-card">
+        <h4>تذكير شروق الشمس (6/6)</h4>
+        <span class="language-tag"><i class="fas fa-language"></i> Arabic</span>
+        <p class="subject" dir="rtl" style="text-align:right;"><i class="fas fa-envelope"></i> الموضوع: لا تفوت تجربة الأناقة</p>
+        <div class="analysis" dir="rtl" style="text-align:right;">
+            <strong>الهدف:</strong> استخدام عامل الاستعجال النهائي لجذب آخر شريحة من المشتركين.
+            التحليل: نجاح في تحصيل التحويلات الأخيرة وتفوق في معدل التحويل النهائي على النسخة الإنجليزية.
+        </div>
+        <div class="copy-text" dir="rtl" style="text-align:right;">لا تفوت الفرصة لتجربة الأناقة والنكهات والفخامة — اشترك في برنامج الولاء الآن.</div>
+        <div style="margin-top:15px;">
+            <div class="metric-item"><span class="metric-label">Open Rate:</span> <span class="metric-value">44.9%</span></div>
+            <div class="metric-item"><span class="metric-label">CTR:</span> <span class="metric-value">4.5%</span></div>
+            <div class="metric-item"><span class="metric-label">Conversion Rate:</span> <span class="metric-value">5.2%</span></div>
+        </div>
+    </div>
 
-    </section>
-    
-    <section id="advanced-strategy" class="panel fade-section">
-        <h2 style="color:var(--primary-blue);">Advanced Loyalty and Decentralization Strategy</h2>
-        <p class="sub">This section outlines the advanced strategy to achieve market dominance through data sovereignty, personalized loyalty, and Web3 integration, future-proofing the campaign for maximum LTV.</p>
+</div>
 
-        <div style="margin-top:16px;">
-        <h3 style="margin-bottom:8px; color:var(--primary-blue);">Tokenized Loyalty and Governance</h3>
-        <ul class="professional-list">
-        <li>Tokenized Loyalty System: The loyalty program will be migrated to issue a tradable digital token. Customers can earn and stake tokens to participate in voting on new seasonal treats, establishing them as vested community stakeholders.</li>
-        <li>"Morning Elite" Access Pass: Limited-edition Non-Fungible Tokens (NFTs) will be issued to the top 100 loyalty customers, granting them lifetime VIP access and exclusive physical and digital status benefits.</li>
-        </ul>
-        </div>
-    </section>
+<section id="emails-strategy-analysis" style="margin-top: 50px;">
+    <h3 style="margin-bottom:15px; color:var(--primary-brown);">Advanced Email Strategy & Recommendations</h3>
+    <ul class="professional-list">
+        <li>**Bilingual Optimization:** The Arabic sequence consistently demonstrated a **1.3% higher average CTR** and **7 more conversions per 1000 sends** compared to the English sequence, underscoring the critical need for cultural and linguistic relevance in local marketing.</li>
+        <li>**Sensory Keywords:** Emails using sensory words like *'velvety,' 'aromatic,'* and *'indulgence'* achieved an average **4% higher engagement** than purely transactional emails, aligning the copy with the luxury brand aesthetic.</li>
+        <li>**Loyalty Automation Funnel:** The "Loyalty Invitation" emails had the highest overall conversion rates (9.8% E / 11.1% A), confirming that segmenting users who have already shown intent into a dedicated loyalty funnel is the most profitable automation step.</li>
+        <li>**Next Step: Dynamic Content:** Implement dynamic weather and time-of-day personalization within the hero email block (e.g., "Perfect for this cloudy morning") to increase Open Rate and perceived relevance.</li>
+    </ul>
+</section>
+</section>
 
-    <footer>
-        <div class="footer-wrap">
-            <div class="footer-info">
-                <div class="author-name">
-                    Created by <strong>Mohamed Abdelrazek</strong>
-                </div>
-                <div class="footer-links" aria-label="Social links">
-                    <div style="display:flex; flex-direction:column; align-items:center; gap:8px;">
-                        <p class="signature">Moe Abdelrazek</p>
-                        <div style="display:flex; gap:10px;">
-                            <a href="https://moeabdelrazek.github.io/" target="_blank" title="Moe's Portfolio" rel="noopener noreferrer">
-                                <i class="fas fa-folder-open" aria-hidden="true"></i>
-                                <span class="sr-only">Portfolio</span>
-                            </a>
-                            <a href="https://www.linkedin.com/in/moe-abdelrazek/" target="_blank" title="Moe on LinkedIn" rel="noopener noreferrer">
-                                <i class="fab fa-linkedin" aria-hidden="true"></i>
-                                <span class="sr-only">LinkedIn</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-meta">
-                <span class="copyright">© 2025 Haksoss Campaign</span>
-                <span class="divider">|</span>
-                <span class="muted">Portfolio Presentation</span>
-            </div>
-        </div>
-    </footer>
-</div> 
+<section id="ai-usage" class="panel fade-section">
+<h2>Algorithmic Intelligence & Predictive Modeling: The Data Edge</h2>
+<p class="muted">The campaign's superior performance was driven by a proprietary **Machine Learning (ML) framework** used for Dynamic Creative Optimization (DCO), predictive Lifetime Value (LTV) modeling, and resource allocation, ensuring maximum efficiency and profitability.</p>
 
-<audio id="bg-music" loop>
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-</audio>
+<div class="charts" style="margin-top:30px;">
+    <div class="chart card"><h4 style="margin:0 0 8px; color:var(--deep)">Predicted 90-Day LTV Distribution</h4><canvas id="ltvDistributionChart"></canvas></div>
+    <div class="chart card"><h4 style="margin:0 0 8px; color:var(--deep)">Cost-Per-Acquisition (CAC) Trend</h4><canvas id="cacTrendChart"></canvas></div>
+</div>
+
+<div class="table-wrap" id="ai-metrics" style="margin-top:40px;">
+<h3 style="margin-top:20px; margin-bottom:10px; color:var(--deep);">ML Model Performance Metrics (Comparison vs. Manual Bidding)</h3>
+<table>
+<thead>
+<tr><th>Metric</th><th>Standard (Manual Bidding)</th><th>AI/ML Optimization</th><th>Improvement</th></tr>
+</thead>
+<tbody>
+<tr><td>**Average CTR (Loyalty Ads)**</td><td>4.8%</td><td><span class="num">6.9%</span></td><td>**+43.75%**</td></tr>
+<tr><td>**Cost Per Loyalty Sign-up (CAC)**</td><td>$3.90</td><td><span class="num">$1.85</span></td><td>**-52.5%**</td></tr>
+<tr><td>**Predicted LTV of New Users**</td><td>$45.00</td><td><span class="num">$75.50</span></td><td>**+67.8%**</td></tr>
+<tr><td>**Creative Performance Split (DCO)**</td><td>55% (Top Creative)</td><td><span class="num">82% (Top Creative)</span></td><td>**DCO Efficiency**</td></tr>
+</tbody>
+</table>
+</div>
+
+<div style="margin-top:40px;">
+    <h3 style="margin-bottom:8px; color:var(--primary-brown);">ML Implementation Focus & Outcomes</h3>
+    <ul class="professional-list">
+        <li class="fade-section">**Dynamic Creative Optimization (DCO):** The ML model automatically identified that visuals featuring the **Chocolate Croissant (82%)** combined with the Arabic copy generated the highest CTR. This DCO focus led to a significant reallocation of ad budget, maximizing conversions.</li>
+        <li class="fade-section">**Predictive Value Bidding (PVB):** Instead of optimizing for low-cost clicks, the AI leveraged the **Predicted LTV** of a user (based on location and past behavior profiles) to bid higher for high-value customers, resulting in a 67.8% LTV increase.</li>
+        <li class="fade-section">**Budget Allocation Efficiency:** The AI framework reduced the effective **Cost Per Acquisition (CAC)** by over 50% by swiftly pausing underperforming ad sets and shifting 75% of the total budget to the most efficient conversion funnels (TikTok & Meta Loyalty lead forms).</li>
+        <li class="fade-section">**Retention Forecasting:** The model accurately predicted that customers acquired through the Loyalty Funnel had an **85% 90-Day Retention Rate**, far surpassing the 55% rate of standard offer customers.</li>
+    </ul>
+</div>
+</section>
+
+<section id="seo-analysis" class="panel fade-section">
+<h2>SEO & Digital Strategy Analysis</h2>
+<p class="muted">The campaign success was augmented by a targeted SEO strategy, focusing on high-intent local and product keywords, and a technical foundation to ensure visibility across search engines and social platforms.</p>
+
+<div style="margin-top:20px;">
+<h3 style="margin-bottom:8px">Key SEO Implementation Points</h3>
+<ul class="professional-list">
+<li>Keyword Targeting focused on "Luxury café Alexandria," "Best morning coffee Alexandria," and "Premium breakfast Alexandria" to capture local purchase intent.</li>
+<li>Product Focus implemented dedicated SEO copy and alt text for **Hero Latte** and **Chocolate Croissant** to drive specific product search traffic.</li>
+<li>Technical Foundations ensured images are compressed, header structure (H1/H2) is logical, and **LocalBusiness** Schema Markup is ready for deployment to capture 'near me' searches.</li>
+</ul>
+</div>
+
+<div class="table-wrap" id="bilingual-performance" style="margin-top:30px;">
+<h3 style="margin-bottom:10px; color:var(--deep);">Bilingual Copy Performance Metrics (Overall Summary)</h3>
+<table>
+<thead>
+<tr><th>Language</th><th>Average Open Rate</th><th>Average Click-Through Rate (CTR)</th><th>Conversions/1000 Opens</th></tr>
+</thead>
+<tbody>
+<tr><td>**English**</td><td>43.0%</td><td>4.8%</td><td>35</td></tr>
+<tr><td>**Arabic**</td><td>**43.8%**</td><td>**5.5%**</td><td>**42**</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="kpis" class="panel fade-section">
+<h2>KPIs & Performance Dashboard (Summary Charts)</h2>
+<p class="muted">A comprehensive view of campaign results, channel efficiency, and predictive customer modeling, illustrating the profitability and growth potential of the strategy.</p>
+
+<div class="charts">
+<div class="chart card"><h4 style="margin:0 0 8px; color:var(--deep)">Engagement Rate by Platform</h4><canvas id="engChart"></canvas></div>
+<div class="chart card"><h4 style="margin:0 0 8px; color:var(--deep)">Ad Spend Distribution</h4><canvas id="spendPie"></canvas></div>
+<div class="chart card"><h4 style="margin:0 0 8px; color:var(--deep)">Email Open Rate Trend</h4><canvas id="emailLine"></canvas></div>
+<div class="chart card"><h4 style="margin:0 0 8px; color:var(--deep)">Customer Acquisition Cost (CAC) per Channel</h4><canvas id="cacChart"></canvas></div>
+<div class="chart card"><h4 style="margin:0 0 8px; color:var(--deep)">Conversions by Channel</h4><canvas id="convBar"></canvas></div>
+<div class="chart card"><h4 style="margin:0 0 8px; color:var(--deep)">LTV to CAC Ratio (Predictive)</h4><canvas id="ltvRatio"></canvas></div>
+</div>
+
+<div class="table-wrap" id="core-metrics" style="margin-top:30px;">
+<h3 style="margin-bottom:10px; color:var(--deep);">Core Campaign Metrics Summary</h3>
+<table>
+<thead>
+<tr><th>Metric</th><th>Result</th><th>Notes</th></tr>
+</thead>
+<tbody>
+<tr><td>Total Reach</td><td>80,800</td><td>Combined social + ads + email</td></tr>
+<tr><td>Total Conversions</td><td>1,070 loyalty sign-ups</td><td>Key Success Metric for repeat business</td></tr>
+<tr><td>Average CAC (AI Optimized)</td><td>$2.65</td><td>32% reduction from standard bidding</td></tr>
+<tr><td>Estimated Revenue</td><td>$9,050</td><td>High-impact campaign ROI (411%)</td></tr>
+<tr><td>Avg. LTV Projection (90-Day)</td><td>$68.20</td><td>51% increase over prior average ($45.00)</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="full-dashboard" class="panel fade-section">
+
+<h1>Haksoss Café — Full Financial Campaign Dashboard</h1>
+
+<div class="dashboard-section">
+<h2>Key Performance Indicators (KPIs)</h2>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>Total Reach</td><td>120,000</td></tr>
+<tr><td>Impressions</td><td>450,000</td></tr>
+<tr><td>CTR</td><td>4.2%</td></tr>
+<tr><td>Conversions</td><td>3,500</td></tr>
+<tr><td>Conversion Rate</td><td>2.92%</td></tr>
+<tr><td>Total Revenue</td><td id="total-revenue">$48,000 / EGP 1,728,000</td></tr>
+<tr><td>Total Spend</td><td id="total-spend">$20,000 / EGP 720,000</td></tr>
+<tr><td>Overall ROI</td><td id="overall-roi">140%</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="dashboard-section">
+<h2>Financial Table (USD / EGP)</h2>
+<div class="currency-toggle">
+<input type="radio" id="usd-toggle" name="currency" value="USD" checked><label for="usd-toggle">USD</label>
+<input type="radio" id="egp-toggle" name="currency" value="EGP"><label for="egp-toggle">EGP</label>
+</div>
+<div class="table-wrap">
+<table id="financial-table">
+<thead>
+<tr>
+<th>Channel</th>
+<th>Spend</th>
+<th>Revenue</th>
+<th>ROI</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>Facebook Ads</td><td>$7,000</td><td>$18,000</td><td></td></tr>
+<tr><td>Google Ads</td><td>$5,000</td><td>$12,500</td><td></td></tr>
+<tr><td>Influencers</td><td>$3,000</td><td>$8,000</td><td></td></tr>
+<tr><td>Email Marketing</td><td>$2,500</td><td>$5,500</td><td></td></tr>
+<tr><td>Creative Production</td><td>$2,000</td><td>$4,500</td><td></td></tr>
+<tr><td>Miscellaneous</td><td>$500</td><td>$1,500</td><td></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div class="dashboard-section charts">
+<div class="chart card"><h4 style="margin:0 0 8px; color:var(--deep)">Spend vs Revenue by Channel</h4><canvas id="spendRevenueChart"></canvas></div>
+<div class="chart card"><h4 style="margin:0 0 8px; color:var(--deep)">ROI % by Channel</h4><canvas id="roiChart"></canvas></div>
+</div>
+
+<div class="dashboard-section">
+<h2>Marketing Insights & Recommendations</h2>
+<div class="table-wrap">
+<table id="insights-table">
+<thead>
+<tr>
+<th>Channel</th>
+<th>ROI</th>
+<th>Insight</th>
+<th>Recommendation</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>Facebook Ads</td><td></td><td></td><td>Increase ad spend on high-performing demographics; test carousel ads.</td></tr>
+<tr><td>Google Ads</td><td></td><td></td><td>Refine keywords; reduce bids on low-converting terms.</td></tr>
+<tr><td>Influencers</td><td></td><td></td><td>Focus on top 2 influencers with highest engagement.</td></tr>
+<tr><td>Email Marketing</td><td></td><td></td><td>Segment audience further and personalize content to boost CTR.</td></tr>
+<tr><td>Creative Production</td><td></td><td></td><td>Optimize visuals based on engagement metrics.</td></tr>
+<tr><td>Miscellaneous</td><td></td><td></td><td>Monitor expenses; reallocate to high ROI channels if needed.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</section>
+<section id="advanced-strategy" class="panel fade-section">
+<h2 style="color:var(--primary-brown);">Advanced Loyalty and Decentralization Strategy</h2>
+<p class="sub">This section outlines the advanced strategy to achieve market dominance through data sovereignty, personalized loyalty, and Web3 integration, future-proofing the campaign for maximum LTV.</p>
+
+<div style="margin-top:16px;">
+<h3 style="margin-bottom:8px; color:var(--primary-brown);">Tokenized Loyalty and Governance</h3>
+<ul class="professional-list">
+<li>Tokenized Loyalty System: The loyalty program will be migrated to issue a tradable digital token. Customers can earn and stake tokens to participate in voting on new seasonal treats, establishing them as vested community stakeholders.</li>
+<li>"Morning Elite" Access Pass: Limited-edition Non-Fungible Tokens (NFTs) will be issued to the top 100 loyalty customers, granting them lifetime VIP access and exclusive physical and digital status benefits.</li>
+</ul>
+</div>
+</section>
+
+<footer>
+<div class="footer-wrap">
+    <div class="footer-info">
+        <div class="author-name">
+            Created by <strong>Mohamed Abdelrazek</strong>
+        </div>
+        <div class="footer-links" aria-label="Social links">
+                        <div style="display:flex; flex-direction:column; align-items:center; gap:8px;">
+              <p class="signature">Moe Abdelrazek</p>
+              <div style="display:flex; gap:10px;">
+                <a href="https://moeabdelrazek.github.io/" target="_blank" title="Moe's Portfolio" rel="noopener noreferrer">
+                  <i class="fas fa-folder-open" aria-hidden="true"></i>
+                  <span class="sr-only">Portfolio</span>
+                </a>
+                <a href="https://www.linkedin.com/in/moe-abdelrazek/" target="_blank" title="Moe on LinkedIn" rel="noopener noreferrer">
+                  <i class="fab fa-linkedin" aria-hidden="true"></i>
+                  <span class="sr-only">LinkedIn</span>
+                </a>
+              </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-meta">
+        <span class="copyright">© 2025 Haksoss Campaign</span>
+        <span class="divider">|</span>
+        <span class="muted">Portfolio Presentation</span>
+    </div>
+</div>
+</footer>
+</div> </div>
 
 <script>
 /* ======================
-    Intro overlay (first-visit only)
-    ====================== */
+    Intro overlay (first-visit only)
+    ====================== */
 (function(){
-    const KEY = 'haksoss_intro_seen_v2'; // Updated key for new version
-    const overlay = document.getElementById('intro-overlay');
-    // NOTE: Removed the intro-overlay element from the HTML as it wasn't provided, only the logic.
-    // If you add a div with id="intro-overlay" back to the HTML, this script will run.
-    if (overlay) {
-        document.body.classList.add('intro-active');
+    const KEY = 'haksoss_intro_seen_v2'; // Updated key for new version
+    const overlay = document.getElementById('intro-overlay');
+    if (!overlay) return;
+    document.body.classList.add('intro-active');
 
-        function showIntro() {
-            overlay.style.display = 'flex';
-            // automatically hide after 3.3s
-            setTimeout(() => {
-                overlay.style.opacity = '0';
-                overlay.style.transition = 'opacity 600ms ease';
-                setTimeout(() => {
-                    overlay.style.display = 'none';
-                    document.body.classList.remove('intro-active');
-                }, 600);
-            }, 3300);
-        }
+    function showIntro() {
+        overlay.style.display = 'flex';
+        // automatically hide after 3.3s
+        setTimeout(() => {
+            overlay.style.opacity = '0';
+            overlay.style.transition = 'opacity 600ms ease';
+            setTimeout(() => {
+                overlay.style.display = 'none';
+                document.body.classList.remove('intro-active');
+            }, 600);
+        }, 3300);
+    }
 
-        try {
-            const seen = localStorage.getItem(KEY);
-            if (!seen) {
-                showIntro();
-                localStorage.setItem(KEY, '1');
-            } else {
-                overlay.style.display = 'none';
-                document.body.classList.remove('intro-active');
-            }
-        } catch(e){
-            showIntro();
-            document.body.classList.remove('intro-active');
-        }
-    }
+    try {
+        const seen = localStorage.getItem(KEY);
+        if (!seen) {
+            showIntro();
+            localStorage.setItem(KEY, '1');
+        } else {
+            overlay.style.display = 'none';
+            document.body.classList.remove('intro-active');
+        }
+    } catch(e){
+        showIntro();
+        document.body.classList.remove('intro-active');
+    }
 })();
 
 /* ======================
-    Reveal on scroll (IntersectionObserver)
-    ====================== */
+    Reveal on scroll (IntersectionObserver)
+    ====================== */
 (function(){
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('inview');
-                entry.target.classList.add('visible');
-                // We keep observing so the title underline animation can run on the panel
-                if (!entry.target.classList.contains('panel')) {
-                    observer.unobserve(entry.target);
-                }
-            }
-        });
-    }, { threshold: 0.1 });
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('inview');
+                entry.target.classList.add('visible');
+                // We keep observing so the title underline animation can run on the panel
+                if (!entry.target.classList.contains('panel')) {
+                    observer.unobserve(entry.target);
+                }
+            }
+        });
+    }, { threshold: 0.1 });
 
-    // Observe panels, tiles, stats, and email cards
-    document.querySelectorAll('.panel, .tile, .stat, .fade-section, .email-card').forEach(n => observer.observe(n));
+    // Observe panels, tiles, stats, and email cards
+    document.querySelectorAll('.panel, .tile, .stat, .fade-section, .email-card').forEach(n => observer.observe(n));
 })();
 
 /* ======================
-    Charts (Chart.js) - Main Case Study Charts
-    ====================== */
+    Charts (Chart.js) - Main Case Study Charts
+    ====================== */
 (function(){
-    // NEW CAFE PALETTE COLORS (Mapped to new CSS variables)
-    const ESPRESSO_BROWN = '#1A374D'; // Deep Blue
-    const COFFEE_BROWN = '#4682B4'; // Primary Blue
-    const COPPER_ACCENT = '#FFC300'; // Accent Gold
-    const MUTED_SAGE = '#E6D8C8'; // Muted Sand
+    // NEW CAFE PALETTE COLORS
+    const ESPRESSO_BROWN = '#2A1D13'; // Deep
+    const COFFEE_BROWN = '#795548'; // Primary Brown
+    const COPPER_ACCENT = '#D7A640'; // Accent
+    const MUTED_SAGE = '#B0C5AE'; // Secondary Accent
 
-    // 1. Engagement Chart
-    const engCtx = document.getElementById('engChart');
-    if (engCtx) {
-        new Chart(engCtx, {
-            type: 'bar',
-            data: {
-                labels: ['IG Posts','IG Stories','Facebook','TikTok'],
-                datasets: [{ data:[12.5,9.3,8.4,15.1], backgroundColor:[COFFEE_BROWN, ESPRESSO_BROWN, MUTED_SAGE, COPPER_ACCENT], borderRadius:4 }]
-            },
-            options:{ responsive:true, plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true, ticks:{callback:v=>v+'%'}}} }
-        });
-    }
+    // 1. Engagement Chart
+    const engCtx = document.getElementById('engChart');
+    if (engCtx) {
+        new Chart(engCtx, {
+            type: 'bar',
+            data: {
+                labels: ['IG Posts','IG Stories','Facebook','TikTok'],
+                datasets: [{ data:[12.5,9.3,8.4,15.1], backgroundColor:[COFFEE_BROWN, ESPRESSO_BROWN, MUTED_SAGE, COPPER_ACCENT], borderRadius:4 }]
+            },
+            options:{ responsive:true, plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true, ticks:{callback:v=>v+'%'}}} }
+        });
+    }
 
-    // 2. Spend Pie
-    const spendPie = document.getElementById('spendPie');
-    if (spendPie) {
-        new Chart(spendPie, {
-            type: 'doughnut',
-            data: { labels:['Meta','Google Display','TikTok'], datasets:[{ data:[850,420,500], backgroundColor:[COFFEE_BROWN, MUTED_SAGE, COPPER_ACCENT] }] },
-            options:{ responsive:true }
-        });
-    }
+    // 2. Spend Pie
+    const spendPie = document.getElementById('spendPie');
+    if (spendPie) {
+        new Chart(spendPie, {
+            type: 'doughnut',
+            data: { labels:['Meta','Google Display','TikTok'], datasets:[{ data:[850,420,500], backgroundColor:[COFFEE_BROWN, MUTED_SAGE, COPPER_ACCENT] }] },
+            options:{ responsive:true }
+        });
+    }
 
-    // 3. Email Line Chart (Now reflects the average trend)
-    const emailLine = document.getElementById('emailLine');
-    if (emailLine) {
-        new Chart(emailLine, {
-            type:'line',
-            data:{ labels:['Morn. Awake','Sig. Indulge','Ex. Offer','Loy. Invite','Spotlight','Final Rem.'],
-            datasets:[
-                {
-                    label: 'English Avg.',
-                    data:[46.2, 42.5, 45.0, 40.5, 43.0, 44.1],
-                    borderColor:COFFEE_BROWN, fill:false, tension:0.4, pointRadius:4, pointBackgroundColor: COFFEE_BROWN
-                },
-                {
-                    label: 'Arabic Avg.',
-                    data:[47.5, 43.2, 46.5, 41.0, 43.8, 44.9],
-                    borderColor:COPPER_ACCENT, fill:false, tension:0.4, pointRadius:4, pointBackgroundColor: COPPER_ACCENT
-                }
-            ]
-            },
-            options:{ responsive:true, plugins:{legend:{position:'top'}}, scales:{y:{beginAtZero:true, ticks:{callback:v=>v+'%'}}} }
-        });
-    }
+    // 3. Email Line Chart (Now reflects the average trend)
+    const emailLine = document.getElementById('emailLine');
+    if (emailLine) {
+        new Chart(emailLine, {
+            type:'line',
+            data:{ labels:['Morn. Awake','Sig. Indulge','Ex. Offer','Loy. Invite','Spotlight','Final Rem.'],
+            datasets:[
+                {
+                    label: 'English Avg.',
+                    data:[46.2, 42.5, 45.0, 40.5, 43.0, 44.1],
+                    borderColor:COFFEE_BROWN, fill:false, tension:0.4, pointRadius:4, pointBackgroundColor: COFFEE_BROWN
+                },
+                {
+                    label: 'Arabic Avg.',
+                    data:[47.5, 43.2, 46.5, 41.0, 43.8, 44.9],
+                    borderColor:COPPER_ACCENT, fill:false, tension:0.4, pointRadius:4, pointBackgroundColor: COPPER_ACCENT
+                }
+            ]
+            },
+            options:{ responsive:true, plugins:{legend:{position:'top'}}, scales:{y:{beginAtZero:true, ticks:{callback:v=>v+'%'}}} }
+        });
+    }
 
-    // 4. CAC Per Channel
-    const cacEl = document.getElementById('cacChart');
-    if (cacEl) {
-        new Chart(cacEl, {
-            type: 'bar',
-            data: {
-                labels: ['Meta (IG/FB)', 'TikTok', 'Google Display'],
-                datasets: [{
-                    data: [1.65, 1.32, 4.20],
-                    backgroundColor: [COFFEE_BROWN, COPPER_ACCENT, ESPRESSO_BROWN],
-                    borderRadius: 4
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: { display: false },
-                    tooltip: { callbacks: { label: (context) => `CAC: $${context.parsed.y.toFixed(2)}` } }
-                },
-                scales: { y: { beginAtZero: true } }
-            }
-        });
-    }
+    // 4. CAC Per Channel
+    const cacEl = document.getElementById('cacChart');
+    if (cacEl) {
+        new Chart(cacEl, {
+            type: 'bar',
+            data: {
+                labels: ['Meta (IG/FB)', 'TikTok', 'Google Display'],
+                datasets: [{
+                    data: [1.65, 1.32, 4.20],
+                    backgroundColor: [COFFEE_BROWN, COPPER_ACCENT, ESPRESSO_BROWN],
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: { callbacks: { label: (context) => `CAC: $${context.parsed.y.toFixed(2)}` } }
+                },
+                scales: { y: { beginAtZero: true } }
+            }
+        });
+    }
 
-    // 5. Conversions by Channel
-    const convBar = document.getElementById('convBar');
-    if (convBar) {
-        new Chart(convBar, {
-            type:'bar',
-            data:{ labels:['Meta','TikTok','Email','Organic'], datasets:[{ data:[380,310,240,140], backgroundColor:[MUTED_SAGE, COPPER_ACCENT, COFFEE_BROWN, ESPRESSO_BROWN], borderRadius:4 }] },
-            options:{ responsive:true, plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true}} }
-        });
-    }
+    // 5. Conversions by Channel
+    const convBar = document.getElementById('convBar');
+    if (convBar) {
+        new Chart(convBar, {
+            type:'bar',
+            data:{ labels:['Meta','TikTok','Email','Organic'], datasets:[{ data:[380,310,240,140], backgroundColor:[MUTED_SAGE, COPPER_ACCENT, COFFEE_BROWN, ESPRESSO_BROWN], borderRadius:4 }] },
+            options:{ responsive:true, plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true}} }
+        });
+    }
 
-    // 6. LTV Ratio
-    const ltvRatio = document.getElementById('ltvRatio');
-    if (ltvRatio) {
-        new Chart(ltvRatio, {
-            type: 'bar',
-            data: {
-                labels: ['LTV:CAC Ratio'],
-                datasets: [
-                    {
-                        label: 'Ratio (Ideal > 3)',
-                        data: [25.74], // LTV $68.20 / CAC $2.65 = 25.73
-                        backgroundColor: COFFEE_BROWN,
-                        borderRadius: 4
-                    }
-                ]
-            },
-            options: {
-                responsive: true,
-                indexAxis: 'y',
-                plugins: {
-                    legend: { display: false },
-                    title: { display: true, text: 'LTV:CAC Ratio (25.74:1) - Excellent' }
-                },
-                scales: {
-                    x: { beginAtZero: true }
-                }
-            }
-        });
-    }
+    // 6. LTV Ratio
+    const ltvRatio = document.getElementById('ltvRatio');
+    if (ltvRatio) {
+        new Chart(ltvRatio, {
+            type: 'bar',
+            data: {
+                labels: ['LTV:CAC Ratio'],
+                datasets: [
+                    {
+                        label: 'Ratio (Ideal > 3)',
+                        data: [25.74], // LTV $68.20 / CAC $2.65 = 25.73
+                        backgroundColor: COFFEE_BROWN,
+                        borderRadius: 4
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                indexAxis: 'y',
+                plugins: {
+                    legend: { display: false },
+                    title: { display: true, text: 'LTV:CAC Ratio (25.74:1) - Excellent' }
+                },
+                scales: {
+                    x: { beginAtZero: true }
+                }
+            }
+        });
+    }
 })();
 
 // NEW AI CHARTS FUNCTIONALITY
 (function(){
-    const ESPRESSO_BROWN = '#1A374D'; // Deep Blue
-    const COFFEE_BROWN = '#4682B4'; // Primary Blue
-    const COPPER_ACCENT = '#FFC300'; // Accent Gold
-    const MUTED_SAGE = '#E6D8C8'; // Muted Sand
+    const ESPRESSO_BROWN = '#2A1D13'; // Deep
+    const COFFEE_BROWN = '#795548'; // Primary Brown
+    const COPPER_ACCENT = '#D7A640'; // Accent
+    const MUTED_SAGE = '#B0C5AE'; // Secondary Accent
 
-    // Chart 1: LTV Distribution
-    const ltvCtx = document.getElementById('ltvDistributionChart');
-    if (ltvCtx) {
-        new Chart(ltvCtx, {
-            type: 'polarArea',
-            data: {
-                labels: ['High Value ($90+)', 'Medium Value ($50-$89)', 'Entry Value (Under $50)'],
-                datasets: [{
-                    data: [35, 45, 20], // Percentage of new users falling into these LTV brackets
-                    backgroundColor: [COPPER_ACCENT, COFFEE_BROWN, MUTED_SAGE],
-                    borderColor: 'white',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: { position: 'top' },
-                    title: { display: true, text: 'LTV Segment Split (High-Value Focus)' }
-                },
-                scales: {
-                    r: { ticks: { display: false } }
-                }
-            }
-        });
-    }
+    // Chart 1: LTV Distribution
+    const ltvCtx = document.getElementById('ltvDistributionChart');
+    if (ltvCtx) {
+        new Chart(ltvCtx, {
+            type: 'polarArea',
+            data: {
+                labels: ['High Value ($90+)', 'Medium Value ($50-$89)', 'Entry Value (Under $50)'],
+                datasets: [{
+                    data: [35, 45, 20], // Percentage of new users falling into these LTV brackets
+                    backgroundColor: [COPPER_ACCENT, COFFEE_BROWN, MUTED_SAGE],
+                    borderColor: 'white',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'top' },
+                    title: { display: true, text: 'LTV Segment Split (High-Value Focus)' }
+                },
+                scales: {
+                    r: { ticks: { display: false } }
+                }
+            }
+        });
+    }
 
-    // Chart 2: CAC Trend
-    const cacTrendCtx = document.getElementById('cacTrendChart');
-    if (cacTrendCtx) {
-        new Chart(cacTrendCtx, {
-            type: 'line',
-            data: {
-                labels: ['Week 1 (Manual)', 'Week 2 (ML Start)', 'Week 3', 'Week 4'],
-                datasets: [{
-                    label: 'Avg. CAC ($)',
-                    data: [3.90, 3.10, 2.20, 1.85],
-                    borderColor: ESPRESSO_BROWN,
-                    backgroundColor: ESPRESSO_BROWN,
-                    fill: false,
-                    tension: 0.3,
-                    pointRadius: 6,
-                    pointBackgroundColor: COPPER_ACCENT // Highlight change points
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: { display: false },
-                    title: { display: true, text: 'CAC Reduction Over Campaign Duration' }
-                },
-                scales: {
-                    y: { beginAtZero: false }
-                }
-            }
-        });
-    }
+    // Chart 2: CAC Trend
+    const cacTrendCtx = document.getElementById('cacTrendChart');
+    if (cacTrendCtx) {
+        new Chart(cacTrendCtx, {
+            type: 'line',
+            data: {
+                labels: ['Week 1 (Manual)', 'Week 2 (ML Start)', 'Week 3', 'Week 4'],
+                datasets: [{
+                    label: 'Avg. CAC ($)',
+                    data: [3.90, 3.10, 2.20, 1.85],
+                    borderColor: ESPRESSO_BROWN,
+                    backgroundColor: ESPRESSO_BROWN,
+                    fill: false,
+                    tension: 0.3,
+                    pointRadius: 6,
+                    pointBackgroundColor: COPPER_ACCENT // Highlight change points
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false },
+                    title: { display: true, text: 'CAC Reduction Over Campaign Duration' }
+                },
+                scales: {
+                    y: { beginAtZero: false }
+                }
+            }
+        });
+    }
 })();
 
 
 /* =======================================
-    DASHBOARD SCRIPT (from original request)
-    ======================================= */
+    DASHBOARD SCRIPT (from original request)
+    ======================================= */
 (function(){
 // Financial Data
 const financialData = [
-    {channel:"Facebook Ads", spend:7000, revenue:18000},
-    {channel:"Google Ads", spend:5000, revenue:12500},
-    {channel:"Influencers", spend:3000, revenue:8000},
-    {channel:"Email Marketing", spend:2500, revenue:5500},
-    {channel:"Creative Production", spend:2000, revenue:4500},
-    {channel:"Miscellaneous", spend:500, revenue:1500}
+    {channel:"Facebook Ads", spend:7000, revenue:18000},
+    {channel:"Google Ads", spend:5000, revenue:12500},
+    {channel:"Influencers", spend:3000, revenue:8000},
+    {channel:"Email Marketing", spend:2500, revenue:5500},
+    {channel:"Creative Production", spend:2000, revenue:4500},
+    {channel:"Miscellaneous", spend:500, revenue:1500}
 ];
 const EGP_RATE = 36; // USD to EGP
 
@@ -1072,175 +1260,175 @@ let spendRevenueChart;
 let roiChart;
 
 function calculateROI(revenue, spend) {
-    return ((revenue - spend) / spend * 100).toFixed(1);
+    return ((revenue - spend) / spend * 100).toFixed(1);
 }
 
 function updateFinancialTable(isUSD) {
-    const tableBody = document.getElementById('financial-table').querySelector('tbody');
-    const currency = isUSD ? '$' : 'EGP ';
-    const rate = isUSD ? 1 : EGP_RATE;
+    const tableBody = document.getElementById('financial-table').querySelector('tbody');
+    const currency = isUSD ? '$' : 'EGP ';
+    const rate = isUSD ? 1 : EGP_RATE;
 
-    tableBody.querySelectorAll('tr').forEach((row, index) => {
-        const data = financialData[index];
-        const spend = (data.spend * rate).toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 0});
-        const revenue = (data.revenue * rate).toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 0});
-        const roi = calculateROI(data.revenue, data.spend) + '%';
+    tableBody.querySelectorAll('tr').forEach((row, index) => {
+        const data = financialData[index];
+        const spend = (data.spend * rate).toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 0});
+        const revenue = (data.revenue * rate).toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 0});
+        const roi = calculateROI(data.revenue, data.spend) + '%';
 
-        row.cells[1].textContent = currency + spend;
-        row.cells[2].textContent = currency + revenue;
-        row.cells[3].textContent = roi;
-    });
+        row.cells[1].textContent = currency + spend;
+        row.cells[2].textContent = currency + revenue;
+        row.cells[3].textContent = roi;
+    });
 }
 
 function updateCharts(isUSD) {
-    const labels = financialData.map(d=>d.channel);
-    const spendData = financialData.map(d=>isUSD?d.spend:d.spend*EGP_RATE);
-    const revenueData = financialData.map(d=>isUSD?d.revenue:d.revenue*EGP_RATE);
-    const roiData = financialData.map(d=>calculateROI(d.revenue, d.spend));
+    const labels = financialData.map(d=>d.channel);
+    const spendData = financialData.map(d=>isUSD?d.spend:d.spend*EGP_RATE);
+    const revenueData = financialData.map(d=>isUSD?d.revenue:d.revenue*EGP_RATE);
+    const roiData = financialData.map(d=>calculateROI(d.revenue, d.spend));
 
-    const currencySymbol = isUSD ? '$' : 'EGP ';
+    const currencySymbol = isUSD ? '$' : 'EGP ';
 
-    // Update Spend vs Revenue Chart
-    if (spendRevenueChart) {
-        spendRevenueChart.data.datasets[0].data = spendData;
-        spendRevenueChart.data.datasets[1].data = revenueData;
-        // Use colors from the new cafe palette for this chart
-        spendRevenueChart.data.datasets[0].backgroundColor = '#FFC300'; // Copper for Spend
-        spendRevenueChart.data.datasets[1].backgroundColor = '#E6D8C8'; // Sage for Revenue
+    // Update Spend vs Revenue Chart
+    if (spendRevenueChart) {
+        spendRevenueChart.data.datasets[0].data = spendData;
+        spendRevenueChart.data.datasets[1].data = revenueData;
+        // Use colors from the new cafe palette for this chart
+        spendRevenueChart.data.datasets[0].backgroundColor = '#D7A640'; // Copper for Spend
+        spendRevenueChart.data.datasets[1].backgroundColor = '#B0C5AE'; // Sage for Revenue
 
-        spendRevenueChart.options.plugins.tooltip.callbacks.label = (context) => {
-            const value = context.parsed.y.toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 0});
-            return `${context.dataset.label}: ${currencySymbol}${value}`;
-        };
-        spendRevenueChart.update();
-    }
+        spendRevenueChart.options.plugins.tooltip.callbacks.label = (context) => {
+            const value = context.parsed.y.toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 0});
+            return `${context.dataset.label}: ${currencySymbol}${value}`;
+        };
+        spendRevenueChart.update();
+    }
 
-    // Update ROI Chart (Data doesn't change with currency, but update is needed)
-    if (roiChart) {
-        roiChart.data.datasets[0].data = roiData;
-        roiChart.data.datasets[0].backgroundColor = '#4682B4'; // Coffee Brown (Primary Blue) for ROI
-        roiChart.update();
-    }
+    // Update ROI Chart (Data doesn't change with currency, but update is needed)
+    if (roiChart) {
+        roiChart.data.datasets[0].data = roiData;
+        roiChart.data.datasets[0].backgroundColor = '#795548'; // Coffee Brown for ROI
+        roiChart.update();
+    }
 
 
-    // Update KPI Table Totals
-    const totalSpendUSD = financialData.map(d=>d.spend).reduce((a,b)=>a+b,0);
-    const totalRevenueUSD = financialData.map(d=>d.revenue).reduce((a,b)=>a+b,0);
-    
-    document.getElementById('total-spend').textContent = isUSD ? 
-        `$${totalSpendUSD.toLocaleString()} / EGP ${(totalSpendUSD * EGP_RATE).toLocaleString()}` :
-        `EGP ${(totalSpendUSD * EGP_RATE).toLocaleString()} / $${totalSpendUSD.toLocaleString()}`;
+    // Update KPI Table Totals
+    const totalSpendUSD = financialData.map(d=>d.spend).reduce((a,b)=>a+b,0);
+    const totalRevenueUSD = financialData.map(d=>d.revenue).reduce((a,b)=>a+b,0);
+    
+    document.getElementById('total-spend').textContent = isUSD ? 
+        `$${totalSpendUSD.toLocaleString()} / EGP ${(totalSpendUSD * EGP_RATE).toLocaleString()}` :
+        `EGP ${(totalSpendUSD * EGP_RATE).toLocaleString()} / $${totalSpendUSD.toLocaleString()}`;
 
-    document.getElementById('total-revenue').textContent = isUSD ? 
-        `$${totalRevenueUSD.toLocaleString()} / EGP ${(totalRevenueUSD * EGP_RATE).toLocaleString()}` :
-        `EGP ${(totalRevenueUSD * EGP_RATE).toLocaleString()} / $${totalRevenueUSD.toLocaleString()}`;
+    document.getElementById('total-revenue').textContent = isUSD ? 
+        `$${totalRevenueUSD.toLocaleString()} / EGP ${(totalRevenueUSD * EGP_RATE).toLocaleString()}` :
+        `EGP ${(totalRevenueUSD * EGP_RATE).toLocaleString()} / $${totalRevenueUSD.toLocaleString()}`;
 
-    // Update Financial Table
-    updateFinancialTable(isUSD);
+    // Update Financial Table
+    updateFinancialTable(isUSD);
 }
 
 
 // Function to create/initialize charts
 function initializeCharts() {
-    // Spend vs Revenue Chart
-    spendRevenueChart = new Chart(chartCtx1,{
-        type:'bar',
-        data:{
-            labels: financialData.map(d=>d.channel),
-            datasets:[
-                {label:'Spend', data:financialData.map(d=>d.spend), backgroundColor:'#FFC300'}, /* Copper (Accent Gold) */
-                {label:'Revenue', data:financialData.map(d=>d.revenue), backgroundColor:'#E6D8C8'} /* Sage (Muted Sand) */
-            ]
-        },
-        options:{
-            responsive:true,
-            plugins:{
-                legend:{position:'top'},
-                title:{display:true,text:'Spend vs Revenue by Channel'},
-                tooltip: {
-                    callbacks: {
-                            label: (context) => {
-                                const value = context.parsed.y.toLocaleString();
-                                return `${context.dataset.label}: $${value}`;
-                            }
-                    }
-                }
-            }
-        }
-    });
+    // Spend vs Revenue Chart
+    spendRevenueChart = new Chart(chartCtx1,{
+        type:'bar',
+        data:{
+            labels: financialData.map(d=>d.channel),
+            datasets:[
+                {label:'Spend', data:financialData.map(d=>d.spend), backgroundColor:'#D7A640'}, /* Copper */
+                {label:'Revenue', data:financialData.map(d=>d.revenue), backgroundColor:'#B0C5AE'} /* Sage */
+            ]
+        },
+        options:{
+            responsive:true,
+            plugins:{
+                legend:{position:'top'},
+                title:{display:true,text:'Spend vs Revenue by Channel'},
+                tooltip: {
+                    callbacks: {
+                         label: (context) => {
+                             const value = context.parsed.y.toLocaleString();
+                             return `${context.dataset.label}: $${value}`;
+                           }
+                    }
+                }
+            }
+        }
+    });
 
-    // ROI Chart
-    roiChart = new Chart(chartCtx2,{
-        type:'bar',
-        data:{
-            labels: financialData.map(d=>d.channel),
-            datasets:[{label:'ROI %', data:financialData.map(d=>calculateROI(d.revenue, d.spend)), backgroundColor:'#4682B4'}] /* Coffee Brown (Primary Blue) */
-        },
-        options:{ 
-            responsive:true, 
-            plugins:{ 
-                legend:{display:false}, 
-                title:{display:true,text:'ROI % by Channel'},
-                tooltip: {
-                    callbacks: {
-                            label: (context) => `${context.dataset.label}: ${context.parsed.y.toFixed(1)}%`
-                        }
-                }
-            },
-            scales: {
-                y: {
-                    ticks: {
-                        callback: (value) => value + '%'
-                    }
-                }
-            }
-        }
-    });
+    // ROI Chart
+    roiChart = new Chart(chartCtx2,{
+        type:'bar',
+        data:{
+            labels: financialData.map(d=>d.channel),
+            datasets:[{label:'ROI %', data:financialData.map(d=>calculateROI(d.revenue, d.spend)), backgroundColor:'#795548'}] /* Coffee Brown */
+        },
+        options:{ 
+            responsive:true, 
+            plugins:{ 
+                legend:{display:false}, 
+                title:{display:true,text:'ROI % by Channel'},
+                tooltip: {
+                    callbacks: {
+                         label: (context) => `${context.dataset.label}: ${context.parsed.y.toFixed(1)}%`
+                       }
+                }
+            },
+            scales: {
+                y: {
+                    ticks: {
+                        callback: (value) => value + '%'
+                    }
+                }
+            }
+        }
+    });
 }
 
 // Insights Table
 function updateInsights(){
-    const financialRows = financialData;
-    const insightsRows = insightsTable.querySelectorAll('tbody tr');
+    const financialRows = financialData;
+    const insightsRows = insightsTable.querySelectorAll('tbody tr');
 
-    financialRows.forEach((fRow,index)=>{
-        let roi = parseFloat(calculateROI(fRow.revenue, fRow.spend));
-        insightsRows[index].cells[1].textContent = roi.toFixed(1) + '%';
-        if(roi>150){ insightsRows[index].cells[2].textContent='Exceptional performance ☕👑'; }
-        else if(roi>100){ insightsRows[index].cells[2].textContent='Excellent performance ✅'; }
-        else if(roi>50){ insightsRows[index].cells[2].textContent='Good performance 👍'; }
-        else if(roi>0){ insightsRows[index].cells[2].textContent='Moderate performance ⚠️'; }
-        else{ insightsRows[index].cells[2].textContent='Underperforming ❌'; }
-    });
+    financialRows.forEach((fRow,index)=>{
+        let roi = parseFloat(calculateROI(fRow.revenue, fRow.spend));
+        insightsRows[index].cells[1].textContent = roi.toFixed(1) + '%';
+        if(roi>150){ insightsRows[index].cells[2].textContent='Exceptional performance ☕👑'; }
+        else if(roi>100){ insightsRows[index].cells[2].textContent='Excellent performance ✅'; }
+        else if(roi>50){ insightsRows[index].cells[2].textContent='Good performance 👍'; }
+        else if(roi>0){ insightsRows[index].cells[2].textContent='Moderate performance ⚠️'; }
+        else{ insightsRows[index].cells[2].textContent='Underperforming ❌'; }
+    });
 }
 
 // Currency toggle
 document.querySelectorAll('#full-dashboard input[name="currency"]').forEach(radio=>{
-    radio.addEventListener('change', e=>{
-        const isUSD = e.target.value === 'USD';
-        updateCharts(isUSD);
-    });
+    radio.addEventListener('change', e=>{
+        const isUSD = e.target.value === 'USD';
+        updateCharts(isUSD);
+    });
 });
 
 // Music control
 document.getElementById('music-control').addEventListener('click', function() {
-    const audio = document.getElementById('bg-music');
-    const icon = this.querySelector('i');
-    
-    if (audio.paused) {
-        audio.play().then(() => {
-            this.innerHTML = '<i class="fas fa-pause"></i> Pause Music';
-            this.setAttribute('aria-pressed', 'true');
-        }).catch(error => {
-            console.warn("Autoplay was prevented. User must interact first.", error);
-            this.innerHTML = '<i class="fas fa-play"></i> Play Music';
-            this.setAttribute('aria-pressed', 'false');
-        });
-    } else {
-        audio.pause();
-        this.innerHTML = '<i class="fas fa-play"></i> Play Music';
-        this.setAttribute('aria-pressed', 'false');
-    }
+    const audio = document.getElementById('bg-music');
+    const icon = this.querySelector('i');
+    
+    if (audio.paused) {
+        audio.play().then(() => {
+            this.innerHTML = '<i class="fas fa-pause"></i> Pause Music';
+            this.setAttribute('aria-pressed', 'true');
+        }).catch(error => {
+            console.warn("Autoplay was prevented. User must interact first.", error);
+            this.innerHTML = '<i class="fas fa-play"></i> Play Music';
+            this.setAttribute('aria-pressed', 'false');
+        });
+    } else {
+        audio.pause();
+        this.innerHTML = '<i class="fas fa-play"></i> Play Music';
+        this.setAttribute('aria-pressed', 'false');
+    }
 });
 
 
