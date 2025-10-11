@@ -9,6 +9,7 @@
 <meta name="description" content="Wake up to luxury with Haksoss Café. Savor our signature Hero Latte, fresh Chocolate Croissants, and seasonal treats. Premium breakfast by the sea, loyalty rewards, and elegant mornings await."/>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMD/2j/JcW8C1c7N+4B2bX8T8bF+x8Z8B/z/d7mXwYF6V8G5S2P8V7O8F5U9O4F8A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <style>
 :root{
@@ -199,13 +200,13 @@ td:nth-child(3) { font-weight: 700; color: var(--blue); }
     top: 0;
 }
 
-/* FOOTER IMPROVEMENT */
+/* FOOTER IMPROVEMENT (New Icon Style) */
 footer{
     padding: 30px 20px;
     border-top: 1px solid rgba(74, 144, 226, 0.1);
     background: var(--bg-start);
     color: var(--deep);
-    text-align: center; /* Default for mobile */
+    text-align: center;
 }
 .footer-wrap{
     max-width: var(--maxw);
@@ -217,17 +218,36 @@ footer{
     font-size: 0.9rem;
     font-weight: 600;
 }
-.footer-wrap a{
-    color: var(--blue);
-    font-weight: 700;
+.footer-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
 }
-.footer-wrap .divider{
+.footer-links{
+    display: flex;
+    gap: 25px;
+    margin-top: 10px;
+}
+.footer-links a{
+    color: var(--deep);
+    font-size: 1.6rem; /* Awesome Icon size */
+    transition: color 0.3s, transform 0.3s;
+}
+.footer-links a:hover{
+    color: var(--accent); /* Hover effect using accent color */
+    transform: scale(1.15);
+}
+.footer-meta {
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+.footer-meta .divider{
     color: var(--accent);
     margin: 0 8px;
     font-weight: 400;
 }
-.footer-left{ color: var(--muted); }
-.footer-right{ text-align: center; }
+
 
 /* MOBILE OPTIMIZATION */
 @media (max-width: 768px) {
@@ -246,25 +266,37 @@ footer{
         flex-direction: column;
         gap: 10px;
     }
-    .footer-left, .footer-right {
+    .footer-meta {
         flex-direction: column;
         gap: 5px;
     }
-    .footer-wrap .divider {
+    .footer-meta .divider {
         display: none; /* Hide vertical dividers on mobile stack */
+    }
+    .footer-info {
+        gap: 8px;
     }
 }
 
 /* DESKTOP FOOTER LAYOUT */
 @media (min-width: 768px) {
     .footer-wrap {
-        flex-direction: row;
+        flex-direction: row; /* Split to two sides */
         justify-content: space-between;
     }
-    .footer-right{ text-align: right; }
-    .footer-left, .footer-right {
+    .footer-info {
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+    }
+    .footer-links {
+        margin-top: 0;
+    }
+    .footer-meta {
+        text-align: right;
         display: flex;
         align-items: center;
+        gap: 5px;
     }
 }
 </style>
@@ -462,15 +494,20 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
 
 <footer>
 <div class="footer-wrap">
-    <div class="footer-right">
-        <div class="author-info">
+    <div class="footer-info">
+        <div class="author-name">
             Created by **Mohamed Abdelrazek**
         </div>
-        <div class="links">
-            [LinkedIn](https://www.linkedin.com/in/moe-abdelrazek/) <span class="divider">|</span> [Portfolio](https://moeabdelrazek.github.io/)
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/moe-abdelrazek/" target="_blank" title="LinkedIn Profile">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://moeabdelrazek.github.io/" target="_blank" title="Portfolio Website">
+                <i class="fas fa-folder-open"></i>
+            </a>
         </div>
     </div>
-    <div class="footer-left">
+    <div class="footer-meta">
         <span class="copyright">© 2025 Haksoss Campaign</span>
         <span class="divider">|</span>
         <span class="muted">Portfolio Presentation</span>
