@@ -33,7 +33,10 @@
     --accent:#C25B3E; /* Terracotta/Burnt Orange/Clay */
     --bg-start:#F8F8F8; /* Off-White/Light Sand */
     --bg-end:#D3EAF4; /* Very Pale Sky Blue (Horizon/Water) */
-    --card:rgba(255, 255, 255, 0.95);
+    
+    /* PANEL BACKGROUND CHANGE: LATTE COLOR with Sand Animation */
+    --card: #FFFDF4; /* Latte Cream color */
+    
     --card-shadow: 0 10px 20px rgba(0, 79, 122, 0.1), 0 0 0 1px rgba(37, 147, 195, 0.1); /* Blue-tinted Shadow */
     --maxw:1200px;
     --radius:16px; /* Slightly larger radius for a softer feel */
@@ -94,7 +97,11 @@ header.fixed-header{
 
 /* Panels (The Core Look) - Looks like menu/paper */
 .panel{
-    background:var(--card);
+    /* APPLY LATTE COLOR AND SAND ANIMATION */
+    background: linear-gradient(135deg, var(--card) 0%, #ffffff 50%, var(--card) 100%);
+    background-size: 400% 400%;
+    animation: SandShimmer 12s ease infinite;
+    
     border-radius:var(--radius);
     padding:40px; /* Slightly more padding for a luxurious feel */
     margin-bottom:40px;
@@ -106,6 +113,15 @@ header.fixed-header{
     transition:all 1s cubic-bezier(.2,.9,.3,1.1);
     border-bottom: var(--section-border);
 }
+
+/* KEYFRAMES FOR SAND ANIMATION */
+@keyframes SandShimmer {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+
 .panel:last-child {
     border-bottom: var(--section-border);
     margin-bottom: 40px;
