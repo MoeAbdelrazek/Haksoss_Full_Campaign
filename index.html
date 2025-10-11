@@ -17,8 +17,8 @@
     --blue:#4A90E2; /* Ocean Blue (Primary) */
     --muted:#64748B; /* Slate Gray */
     --accent:#D99B6C; /* Soft Sand/Gold (Accent) */
-    --bg-start:#F8F9FA; /* Off-White Sand */
-    --bg-end:#FFFFFF; /* Pure White */
+    --bg-start:#FFF8E1; /* Pale Sand/Ivory - New Beach Aesthetic */
+    --bg-end:#FDFDFD; /* Near White */
     --card:rgba(255, 255, 255, 0.98);
     --glass-shadow: 0 10px 30px rgba(11,37,68,0.08); /* Soft Shadow */
     --maxw:1200px;
@@ -40,6 +40,7 @@ body{
     border: var(--fancy-border-outer);
     border-radius: 0;
     position: relative;
+    /* BEACH BACKGROUND AESTHETIC */
     background:linear-gradient(180deg, var(--bg-start) 0%, var(--bg-end) 100%);
     -webkit-font-smoothing:antialiased;
     min-height: 100vh;
@@ -197,6 +198,75 @@ td:nth-child(3) { font-weight: 700; color: var(--blue); }
     font-size: 1.2rem;
     top: 0;
 }
+
+/* FOOTER IMPROVEMENT */
+footer{
+    padding: 30px 20px;
+    border-top: 1px solid rgba(74, 144, 226, 0.1);
+    background: var(--bg-start);
+    color: var(--deep);
+    text-align: center; /* Default for mobile */
+}
+.footer-wrap{
+    max-width: var(--maxw);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; /* Stack on mobile */
+    gap: 15px;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+.footer-wrap a{
+    color: var(--blue);
+    font-weight: 700;
+}
+.footer-wrap .divider{
+    color: var(--accent);
+    margin: 0 8px;
+    font-weight: 400;
+}
+.footer-left{ color: var(--muted); }
+.footer-right{ text-align: center; }
+
+/* MOBILE OPTIMIZATION */
+@media (max-width: 768px) {
+    .case-hero {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .case-right{
+        width: 100%;
+        max-width: 100%;
+    }
+    .panel {
+        padding: 25px 20px;
+    }
+    .footer-wrap {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .footer-left, .footer-right {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .footer-wrap .divider {
+        display: none; /* Hide vertical dividers on mobile stack */
+    }
+}
+
+/* DESKTOP FOOTER LAYOUT */
+@media (min-width: 768px) {
+    .footer-wrap {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .footer-right{ text-align: right; }
+    .footer-left, .footer-right {
+        display: flex;
+        align-items: center;
+    }
+}
 </style>
 </head>
 <body>
@@ -343,8 +413,8 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
 <div class="chart card"><h4 style="margin:0 0 8px; color:var(--deep)">Ad Spend Distribution</h4><canvas id="spendPie"></canvas></div>
 <div class="chart card"><h4 style="margin:0 0 8px; color:var(--deep)">Email Open Rate Trend</h4><canvas id="emailLine"></canvas></div>
 <div class="chart card"><h4 style="margin:0 0 8px; color:var(--deep)">Customer Acquisition Cost (CAC) per Channel</h4><canvas id="cacChart"></canvas></div>
-<div class="chart card"><h4 style="margin:0 0 8px; color:var(--deep)">Conversions by Channel</h4><canvas id="convBar"></canvas></div>
-<div class="chart card"><h4 style="margin:0 0 8px; color:var(--deep)">LTV to CAC Ratio (Predictive)</h4><canvas id="ltvRatio"></canvas></div>
+<div class="chart card"><h4 style="margin:0 0 8px; color:var(--deep)}>Conversions by Channel</h4><canvas id="convBar"></canvas></div>
+<div class="chart card"><h4 style="margin:0 0 8px; color:var(--deep)}>LTV to CAC Ratio (Predictive)</h4><canvas id="ltvRatio"></canvas></div>
 </div>
 
 <div class="table-wrap" id="core-metrics" style="margin-top:30px;">
@@ -371,8 +441,8 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
 <div style="margin-top:16px;">
 <h3 style="margin-bottom:8px; color:var(--blue);">Tokenized Loyalty and Governance</h3>
 <ul class="professional-list">
-<li>**Tokenized Loyalty System**: The loyalty program will be migrated to issue a tradable digital token. Customers can earn and stake tokens to participate in voting on new seasonal treats, establishing them as vested community stakeholders.</li>
-<li>**"Morning Elite" Access Pass**: Limited-edition Non-Fungible Tokens (NFTs) will be issued to the top 100 loyalty customers, granting them lifetime VIP access and exclusive physical and digital status benefits.</li>
+<li>Tokenized Loyalty System: The loyalty program will be migrated to issue a tradable digital token. Customers can earn and stake tokens to participate in voting on new seasonal treats, establishing them as vested community stakeholders.</li>
+<li>"Morning Elite" Access Pass: Limited-edition Non-Fungible Tokens (NFTs) will be issued to the top 100 loyalty customers, granting them lifetime VIP access and exclusive physical and digital status benefits.</li>
 </ul>
 </div>
 </section>
@@ -384,17 +454,29 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
 <div style="margin-top:20px;">
 <h3 style="margin-bottom:8px; color:var(--deep);">Cultural Engineering and Thought Leadership</h3>
 <ul class="professional-list">
-<li>**The "Alexandria Morning Ritual" Movement**: A global media and PR campaign will be launched, backed by academic research, to institutionalize the **Hero Latte** as the essential component of a globally recognized *Mindful Morning Ritual*.</li>
-<li>**Haksoss Proprietary IP Moat**: AI sensory analysis will be utilized to create a proprietary, signature aromatic or flavor compound for the Hero Latte. The campaign focuses on owning this unique, patented sensory experience, thereby creating a **chemical moat** that no global competitor can legally cross.</li>
+<li>The "Alexandria Morning Ritual" Movement: A global media and PR campaign will be launched, backed by academic research, to institutionalize the **Hero Latte** as the essential component of a globally recognized *Mindful Morning Ritual*.</li>
+<li>Haksoss Proprietary IP Moat: AI sensory analysis will be utilized to create a proprietary, signature aromatic or flavor compound for the Hero Latte. The campaign focuses on owning this unique, patented sensory experience, thereby creating a **chemical moat** that no global competitor can legally cross.</li>
 </ul>
 </div>
 </section>
 
 <footer>
-<div>Created by **Mohamed Abdelrazek** • [LinkedIn](https://www.linkedin.com/in/moe-abdelrazek/) • [Portfolio](https://moeabdelrazek.github.io/)</div>
-<div style="margin-top:6px; color:var(--muted)">Haksoss Campaign • Portfolio Presentation • 2025</div>
+<div class="footer-wrap">
+    <div class="footer-right">
+        <div class="author-info">
+            Created by **Mohamed Abdelrazek**
+        </div>
+        <div class="links">
+            [LinkedIn](https://www.linkedin.com/in/moe-abdelrazek/) <span class="divider">|</span> [Portfolio](https://moeabdelrazek.github.io/)
+        </div>
+    </div>
+    <div class="footer-left">
+        <span class="copyright">© 2025 Haksoss Campaign</span>
+        <span class="divider">|</span>
+        <span class="muted">Portfolio Presentation</span>
+    </div>
+</div>
 </footer>
-
 </div> </div> <script>
 // reveal panels on scroll - Enhanced animation
 const observer = new IntersectionObserver((entries)=>{
