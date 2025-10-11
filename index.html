@@ -57,7 +57,7 @@ body{
     /* CAFE BACKGROUND AESTHETIC */
     background:linear-gradient(180deg, var(--bg-start) 0%, var(--bg-end) 100%);
     -webkit-font-smoothing:antialiased;
-    min-height: 100vh;
+    min-height: 10vh;
 
     /* Page fade-in */
     opacity: 0;
@@ -390,23 +390,7 @@ footer{
     text-transform: uppercase;
 }
 
-/* music control */
-#music-control {
-    position: fixed;
-    right: 28px;
-    bottom: 28px;
-    z-index: 99999;
-    background: var(--accent);
-    color: var(--deep);
-    border: none;
-    padding: 12px 18px;
-    border-radius: 999px;
-    box-shadow: 0 8px 30px rgba(51, 26, 0, 0.2);
-    cursor: pointer;
-    font-weight: 700;
-    transition: transform .3s ease, box-shadow .3s ease;
-}
-#music-control:hover { transform: translateY(-6px); box-shadow: 0 12px 35px rgba(51, 26, 0, 0.3); }
+/* music control - REMOVED CSS FOR #music-control */
 
 /* signature footer style override (Great Vibes) */
 .signature {
@@ -616,6 +600,10 @@ a:focus, button:focus { outline: 3px solid rgba(192, 124, 74, 0.5); outline-offs
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
 }
+.social-card-platform {
+    font-size: 1.5rem;
+    color: var(--bg-start);
+}
 .social-card-body {
     padding: 20px;
 }
@@ -655,10 +643,7 @@ a:focus, button:focus { outline: 3px solid rgba(192, 124, 74, 0.5); outline-offs
     color: var(--muted-sage);
     font-weight: 600;
 }
-.social-card-platform {
-    font-size: 1.5rem;
-    color: var(--bg-start);
-}
+
 
 /* SEO Table overrides for distinct aesthetic */
 #seo-performance table {
@@ -691,10 +676,6 @@ a:focus, button:focus { outline: 3px solid rgba(192, 124, 74, 0.5); outline-offs
         <p class="intro-tagline">A Morning Beyond Ordinary</p>
     </div>
 </div>
-
-<audio id="bg-music" loop preload="auto" style="display:none">
-    </audio>
-<button id="music-control" aria-pressed="false" title="Play background music">Play Music</button>
 
 <header class="fixed-header" role="banner">
     <div class="header-inner">
@@ -757,8 +738,8 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
 </section>
 
 <section id="emails" class="panel fade-section">
-<h2>Emails — Full Campaign Sequence & Performance Analysis (12 Emails)</h2>
-<p class="muted">Copy-ready email content used in the bilingual (English/Arabic) campaign, optimized for open rate and intent. Click/hover on a card for full details.</p>
+<h2>Emails — Full Campaign Sequence & Performance Analysis </h2>
+<p class="muted"> </p>
 
 <div class="email-card-group">
 
@@ -1122,7 +1103,7 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
                 </tr>
             </thead>
             <tbody>
-                <tr><td>Total Revenue Generated</td><td id="total-revenue">$50,000</td><td id="total-revenue-egp">EGP 1,500,000</td><td>$52,500</td><td>**+5%**</td></tr>
+                <tr><td>Total Revenue Generated</td><td id="total-revenue">$50,000</td><td id="total-revenue-egp">(EGP 1,500,000)</td><td>$52,500</td><td>**+5%**</td></tr>
                 <tr><td>Total Ad Spend</td><td>$17,500</td><td>$17,500</td><td>$17,500</td><td>**0%**</td></tr>
                 <tr><td>Overall Campaign ROI</td><td>256%</td><td>300%</td><td><span style="color:var(--accent); font-weight:700;">411%</span></td><td>**+111%**</td></tr>
                 <tr><td>Loyalty Sign-ups</td><td>1,000</td><td>950</td><td><span style="color:var(--accent); font-weight:700;">1,070</span></td><td>**+12.6%**</td></tr>
@@ -1329,7 +1310,7 @@ const BACKGROUND_CREAM = '#FAF0E6';
         new Chart(engChart, {
             type: 'bar',
             data: {
-                labels: ['Facebook', 'Instagram', 'TikTok', 'Email'],
+                labels: ['Facebook', 'Instagram', 'TikTok', 'Email (Open Rate)'],
                 datasets: [{
                     label: 'Avg. Engagement Rate',
                     data: [13.2, 16.5, 12.2, 43.5], // Email is Open Rate for comparison
@@ -1345,27 +1326,8 @@ const BACKGROUND_CREAM = '#FAF0E6';
         });
     }
 
-    // 2. Ad Spend Distribution (Pie Chart)
-    const spendPie = document.getElementById('spendPie');
-    if (spendPie) {
-        new Chart(spendPie, {
-            type: 'pie',
-            data: {
-                labels: ['Facebook Ads', 'Google Ads', 'Influencers', 'Email/Creative/Misc'],
-                datasets: [{
-                    data: [7000, 5000, 3000, 2500], // Total $17,500
-                    backgroundColor: [COFFEE_BROWN, COPPER_ACCENT, ESPRESSO_BROWN, MUTED_SAGE]
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: { position: 'bottom' },
-                    title: { display: true, text: 'Total Campaign Spend: $17,500' }
-                }
-            }
-        });
-    }
+    // 2. Ad Spend Distribution (Pie Chart) - REMOVED AS NOT USED IN FINAL TEMPLATE
+    // const spendPie = document.getElementById('spendPie'); 
 
     // 3. Organic Traffic Trend (New Chart)
     const organicTrafficChart = document.getElementById('organicTrafficChart');
@@ -1728,26 +1690,6 @@ const BACKGROUND_CREAM = '#FAF0E6';
 
 })();
 
-
-// Music control
-document.getElementById('music-control').addEventListener('click', function() {
-    const audio = document.getElementById('bg-music');
-    if (audio.paused) {
-        audio.play().then(() => {
-            this.textContent = 'Pause Music';
-            this.setAttribute('aria-pressed', 'true');
-        }).catch(error => {
-            console.warn("Autoplay was prevented. User must interact first.", error);
-            // Optionally change text back if playing failed
-            this.textContent = 'Play Music';
-            this.setAttribute('aria-pressed', 'false');
-        });
-    } else {
-        audio.pause();
-        this.textContent = 'Play Music';
-        this.setAttribute('aria-pressed', 'false');
-    }
-});
 </script>
 </body>
 </html>
