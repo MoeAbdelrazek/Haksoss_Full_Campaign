@@ -171,7 +171,10 @@ td:nth-child(3) { font-weight: 700; color: var(--blue); }
 /* Section specific colors */
 #200-plus h2 { color: var(--blue); }
 #300-plus h2 { color: var(--accent); }
-#1000-plus h2 { color: var(--deep); }
+
+/* Chart size adjustment */
+.charts{ display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:20px; margin-top:20px; }
+.chart.card{ padding:20px; background:linear-gradient(135deg, #f7faff, #ffffff); box-shadow:0 8px 20px rgba(0,0,0,0.05); border-radius: var(--radius); }
 </style>
 </head>
 <body>
@@ -216,14 +219,90 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
 </div>
 </section>
 
+<section id="creative" class="panel">
+<h2>Creative Execution & Visual Assets (Photo Gallery)</h2>
+<p class="muted">All campaign visuals and templates used across posts, stories, and ads—optimized for morning light and high-end aesthetic.</p>
+
+<div class="gallery" aria-hidden>
+<div class="tile"><img src="3_Assets/Images/hero-latte.jpg" alt="Hero Latte coffee"><div class="meta">hero-latte.jpg</div></div>
+<div class="tile"><img src="3_Assets/Images/chocolate-croissant.jpg" alt="Freshly baked chocolate croissant"><div class="meta">chocolate-croissant.jpg</div></div>
+<div class="tile"><img src="3_Assets/Images/seasonal-treat.jpg" alt="Seasonal breakfast treat"><div class="meta">seasonal-treat.jpg</div></div>
+<div class="tile"><img src="3_Assets/Images/special-latte.jpg" alt="Special latte creation"><div class="meta">special-latte.jpg</div></div>
+<div class="tile"><img src="3_Assets/Images/special-offer.jpg" alt="Special offer on lattes"><div class="meta">special-offer.jpg</div></div>
+<div class="tile"><img src="3_Assets/Images/loyalty-program.jpg" alt="Haksoss Loyalty Program benefits"><div class="meta">loyalty-program.jpg</div></div>
+
+<div class="tile"><img src="3_Assets/1_Templates/hero_latte_post.png" alt="Hero Latte social media template"><div class="meta">hero_latte_post.png (template)</div></div>
+<div class="tile"><img src="3_Assets/1_Templates/special_latte.png" alt="Special latte social media template"><div class="meta">special_latte.png (template)</div></div>
+<div class="tile"><img src="3_Assets/1_Templates/season_offer.png" alt="Seasonal offer social media template"><div class="meta">season_offer.png (template)</div></div>
+<div class="tile"><img src="3_Assets/1_Templates/haksoss_post.png" alt="Haksoss brand post template"><div class="meta">haksoss_post.png (template)</div></div>
+<div class="tile"><img src="3_Assets/1_Templates/discover_more.png" alt="Discover more carousel template"><div class="meta">discover_more.png (template)</div></div>
+</div>
+</section>
+
+<section id="emails" class="panel">
+<h2>Emails — Full List (English & Arabic)</h2>
+<p class="muted">Copy-ready email content used in the campaign, optimized for open rate and intent. All 12 email copies are provided.</p>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Email</th><th>Language</th><th>Subject / Short</th><th>Full Copy</th></tr>
+</thead>
+<tbody>
+<tr><td>Morning Awakening</td><td>English</td><td>Wake up with the perfect cup (includes keyword: morning)</td><td>Wake up with the perfect cup and embrace the serenity of Alexandria’s beach mornings. Haksoss brings luxury and flavor together.</td></tr>
+<tr><td>Signature Indulgence</td><td>English</td><td>Mornings deserve indulgence (sensory appeal)</td><td>At Haksoss, we believe that mornings deserve moments of pure indulgence. Let us take you on a journey of taste, aroma, and elegance.<br>• **Hero Latte**: Velvety, aromatic, perfect balance.<br>• **Chocolate Croissant**: Layers of buttery pastry with rich chocolate.<br>• Seasonal Treats: Fresh ingredients capturing every season.</td></tr>
+<tr><td>Exclusive Offer</td><td>English</td><td>Limited-time morning upgrade</td><td>Delight in our limited-time offer to elevate your mornings.<br>• Hero Latte Experience: Complimentary upgrade with any latte.<br>• Chocolate Croissant Delight: Second croissant 50% off.</td></tr>
+<tr><td>Loyalty Invitation</td><td>English</td><td>Join Haksoss Loyalty</td><td>Elevate your mornings with Haksoss Loyalty.<br>• Points on Every Purchase: Earn rewards.<br>• Early Access: Discover new offerings first.<br>• Exclusive Events: Private tastings, workshops, beach gatherings.</td></tr>
+<tr><td>Haksoss Spotlight</td><td>English</td><td>Why guests love Haksoss</td><td>Discover why guests choose Haksoss to start their day.<br>"The Hero Latte is perfection in a cup." – Sarah A.</td></tr>
+<tr><td>Final Sunrise Reminder</td><td>English</td><td>Don’t miss the morning elegance</td><td>Don’t miss the chance to experience elegance, flavor, and luxury.<br>• Loyalty Rewards: Join today for benefits.</td></tr>
+<tr><td>صباح مشرق</td><td>Arabic</td><td>ابدأ صباحك مع الكوب المثالي</td><td>ابدأ صباحك مع الكوب المثالي واستمتع بهدوء شواطئ الإسكندرية. هكسوس يجمع بين الفخامة والنكهات.</td></tr>
+<tr><td>المتعة المميزة</td><td>Arabic</td><td>الصباح يستحق الترف</td><td>في هكسوس، نؤمن أن الصباح يستحق لحظات من الترف الخالص.<br>• لاتيه هيرو: كريمي وعطري، وتوازن مثالي من النكهات.<br>• كرواسون الشوكولاتة: طبقات معجنات مع الشوكولاتة الغنية.</td></tr>
+<tr><td>عرض حصري</td><td>Arabic</td><td>استمتع بعرضنا المحدود</td><td>استمتع بعرضنا المحدود لترقية صباحك.<br>• تجربة لاتيه هيرو: ترقية مجانية مع أي لاتيه.<br>• متعة كرواسون الشوكولاتة: كرواسون ثانٍ بخصم 50%.</td></tr>
+<tr><td>دعوة للانضمام لبرنامج الولاء</td><td>Arabic</td><td>انضم لبرنامج الولاء</td><td>ارتقِ بصباحك مع برنامج ولاء هكسوس.<br>• نقاط مع كل عملية شراء: اكسب مكافآت.</td></tr>
+<tr><td>أضواء هكسوس</td><td>Arabic</td><td>لماذا يختار الضيوف هكسوس</td><td>اكتشف لماذا يختار الضيوف هكسوس لبدء يومهم — شهادات الضيوف وتجاربهم.</td></tr>
+<tr><td>تذكير شروق الشمس النهائي</td><td>Arabic</td><td>لا تفوت تجربة الأناقة</td><td>لا تفوت الفرصة لتجربة الأناقة والنكهات والفخامة — اشترك في برنامج الولاء الآن.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="seo-analysis" class="panel">
+<h2>SEO & Digital Strategy Analysis</h2>
+<p class="muted">The campaign success was augmented by a targeted SEO strategy, focusing on high-intent local and product keywords, and a technical foundation to ensure visibility across search engines and social platforms.</p>
+
+<div style="margin-top:20px;">
+<h3 style="margin-bottom:8px">Key SEO Implementation Points</h3>
+<ul class="muted">
+<li>**Keyword Targeting**: Focused on "**Luxury café Alexandria**," "**Best morning coffee Alexandria**," and "**Premium breakfast Alexandria**" to capture local purchase intent.</li>
+<li>**Product Focus**: Implemented dedicated SEO copy and alt text for **Hero Latte** and **Chocolate Croissant** to drive specific product search traffic.</li>
+<li>**Technical Foundations**: Ensured images are compressed, header structure (H1/H2) is logical, and **LocalBusiness** Schema Markup is ready for deployment to capture 'near me' searches.</li>
+</ul>
+</div>
+
+<div class="table-wrap" id="bilingual-performance" style="margin-top:30px;">
+<h3 style="margin-bottom:10px; color:var(--deep);">Bilingual Copy Performance Metrics</h3>
+<table>
+<thead>
+<tr><th>Language</th><th>Average Open Rate</th><th>Average Click-Through Rate (CTR)</th><th>Conversions/1000 Opens</th></tr>
+</thead>
+<tbody>
+<tr><td>**English**</td><td>43.0%</td><td>4.8%</td><td>35</td></tr>
+<tr><td>**Arabic**</td><td>**43.8%**</td><td>**5.5%**</td><td>**42**</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
 <section id="kpis" class="panel">
-<h2>Performance & Predictive Analytics Dashboard</h2>
+<h2>KPIs & Performance Dashboard</h2>
 <p class="muted">A comprehensive view of campaign results, channel efficiency, and predictive customer modeling, illustrating the profitability and growth potential of the strategy.</p>
 
 <div class="charts">
 <div class="chart card"><h4 style="margin:0 0 8px; color:var(--deep)">Engagement Rate by Platform</h4><canvas id="engChart"></canvas></div>
 <div class="chart card"><h4 style="margin:0 0 8px; color:var(--deep)">Ad Spend Distribution</h4><canvas id="spendPie"></canvas></div>
+<div class="chart card"><h4 style="margin:0 0 8px; color:var(--deep)">Email Open Rate Trend</h4><canvas id="emailLine"></canvas></div>
 <div class="chart card"><h4 style="margin:0 0 8px; color:var(--deep)">Customer Acquisition Cost (CAC) per Channel</h4><canvas id="cacChart"></canvas></div>
+<div class="chart card"><h4 style="margin:0 0 8px; color:var(--deep)">Conversions by Channel</h4><canvas id="convBar"></canvas></div>
 <div class="chart card"><h4 style="margin:0 0 8px; color:var(--deep)">LTV to CAC Ratio (Predictive)</h4><canvas id="ltvRatio"></canvas></div>
 </div>
 
@@ -238,20 +317,7 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
 <tr><td>Total Conversions</td><td>1,070 loyalty sign-ups</td><td>Key Success Metric for repeat business</td></tr>
 <tr><td>Average CAC (AI Optimized)</td><td>$2.65</td><td>32% reduction from standard bidding</td></tr>
 <tr><td>Estimated Revenue</td><td>$9,050</td><td>High-impact campaign ROI (411%)</td></tr>
-</tbody>
-</table>
-</div>
-
-<div class="table-wrap" id="segment-ltv" style="margin-top:30px;">
-<h3 style="margin-bottom:10px; color:var(--deep);">Customer Segmentation & LTV Projection (After AI Optimization)</h3>
-<table>
-<thead>
-<tr><th>Segment</th><th>Acquisition Channel</th><th>LTV Projection (90-Day)</th><th>Target Offer Strategy</th></tr>
-</thead>
-<tbody>
-<tr><td>**Morning Elite**</td><td>TikTok/Geo-Fencing</td><td><span class="num">$125.00</span></td><td>VIP Tasting Events & Exclusive Loyalty Tiers</td></tr>
-<tr><td>**Weekend Indulger**</td><td>Meta (Image Ads)</td><td><span class="num">$68.20</span></td><td>Second Item 50% Off (Sat/Sun)</td></tr>
-<tr><td>**Daily Ritualist**</td><td>Email Retargeting</td><td><span class="num">$95.50</span></td><td>Loyalty Point Multiplier (Mon-Fri)</td></tr>
+<tr><td>Avg. LTV Projection (90-Day)</td><td>$68.20</td><td>51% increase over prior average ($45.00)</td></tr>
 </tbody>
 </table>
 </div>
@@ -276,64 +342,28 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
 </div>
 </section>
 
-<section id="emails" class="panel">
-<h2>Bilingual Copy & Performance Analysis (English & Arabic)</h2>
-<p class="muted">Email copy was optimized for sensory appeal and direct calls to action, with localized content achieving superior engagement rates.</p>
+<section id="200-plus" class="panel">
+<h2 style="color:var(--blue);">Transcendent Strategy & Web3 Integration (The 200/100 Plan)</h2>
+<p class="sub">This section outlines the advanced strategy to achieve market dominance through AI-driven personalization, data sovereignty, and Web3 integration, future-proofing the campaign for maximum LTV.</p>
 
-<div class="table-wrap">
-<h3 style="margin-bottom:10px; color:var(--deep);">Full Email Copy List</h3>
-<table>
-<thead>
-<tr><th>Email</th><th>Language</th><th>Subject / Short</th><th>Full Copy</th></tr>
-</thead>
-<tbody>
-<tr><td>Morning Awakening</td><td>English</td><td>Wake up with the perfect cup (includes keyword: morning)</td><td>Wake up with the perfect cup and embrace the serenity of Alexandria’s beach mornings. Haksoss brings luxury and flavor together.</td></tr>
-<tr><td>Signature Indulgence</td><td>English</td><td>Mornings deserve indulgence (sensory appeal)</td><td>At Haksoss, we believe that mornings deserve moments of pure indulgence. Let us take you on a journey of taste, aroma, and elegance.<br>• **Hero Latte**: Velvety, aromatic, perfect balance.<br>• **Chocolate Croissant**: Layers of buttery pastry with rich chocolate.</td></tr>
-<tr><td>عرض حصري</td><td>Arabic</td><td>استمتع بعرضنا المحدود</td><td>استمتع بعرضنا المحدود لترقية صباحك.<br>• تجربة لاتيه هيرو: ترقية مجانية مع أي لاتيه.<br>• متعة كرواسون الشوكولاتة: كرواسون ثانٍ بخصم 50%.</td></tr>
-<tr><td>دعوة للانضمام لبرنامج الولاء</td><td>Arabic</td><td>انضم لبرنامج الولاء</td><td>ارتقِ بصباحك مع برنامج ولاء هكسوس.<br>• نقاط مع كل عملية شراء: اكسب مكافآت.</td></tr>
-</tbody>
-</table>
-</div>
-
-<div class="table-wrap" id="bilingual-performance" style="margin-top:30px;">
-<h3 style="margin-bottom:10px; color:var(--deep);">Bilingual Copy Performance Metrics</h3>
-<table>
-<thead>
-<tr><th>Language</th><th>Average Open Rate</th><th>Average Click-Through Rate (CTR)</th><th>Conversions/1000 Opens</th><th>Preferred Creative Style</th></tr>
-</thead>
-<tbody>
-<tr><td>**English**</td><td>43.0%</td><td>4.8%</td><td>35</td><td>Direct/Benefit-Driven</td></tr>
-<tr><td>**Arabic**</td><td>**43.8%**</td><td>**5.5%**</td><td>**42**</td><td>Sensory/Aesthetic-Focused</td></tr>
-</tbody>
-</table>
+<div style="margin-top:16px;">
+<h3 style="margin-bottom:8px; color:var(--blue);">2. Web3 & Tokenized Loyalty System</h3>
+<ul class="muted">
+<li>**"Hero Token" Loyalty (Web3)**: Migrate the loyalty program to issue a tradable digital token. Customers can earn and *stake* tokens to vote on new seasonal treats, turning them into vested community stakeholders.</li>
+<li>**"Morning Elite" NFT Pass**: Issue limited-edition NFTs to the top 100 loyalty customers, granting lifetime VIP access and exclusive physical/digital status.</li>
+</ul>
 </div>
 </section>
 
-<section id="1000-plus" class="panel">
-<h2 style="color:var(--deep); text-transform: uppercase;">1000/100: The Perpetual Market Leadership Framework</h2>
-<p class="sub" style="color:var(--deep);">This framework establishes self-funding, institutionally embedded, and mathematically optimized systems to secure permanent market leadership and render traditional competition obsolete.</p>
+<section id="300-plus" class="panel">
+<h2 style="color:var(--accent);">Global Disruption & Category Design (The 300/100 Blueprint)</h2>
+<p class="sub">This strategy focuses on building **intellectual property, cultural dominance, and scalable growth** to compete with and surpass the world's largest marketing organizations.</p>
 
 <div style="margin-top:20px;">
-<h3 style="margin-bottom:8px; color:var(--blue);">1. Algorithmic Intelligence (Proprietary Optimization)</h3>
+<h3 style="margin-bottom:8px; color:var(--deep);">1. Cultural Engineering & Thought Leadership</h3>
 <ul class="muted">
-<li>**The "Aether Model"**: Develop a proprietary, closed-loop **Machine Learning Model** trained *exclusively* on proprietary Haksoss data, including sensory copy and customer Lifetime Value (LTV) matrices. This model autonomously generates highly optimized campaigns and dynamic pricing strategies.
-<li>**Marketing-as-a-Service (MaaS) Licensing**: The model's efficiency and predictive capability are tokenized and licensed to non-competing luxury verticals, establishing a **profitable, independent revenue stream** to fund core brand operations.</li>
-</ul>
-</div>
-
-<div style="margin-top:16px;">
-<h3 style="margin-bottom:8px; color:var(--blue);">2. Institutional Enshrinement (The Cultural Moat)</h3>
-<ul class="muted">
-<li>**The Haksoss Institute for Morning Wellness**: Establish a permanent **Non-Profit Research Institute** to publish peer-reviewed, academic papers on the neurological and productivity benefits of the *Hero Latte Ritual*.
-<li>**Strategic Advantage**: This transforms the brand from a product into a **scientifically validated cognitive essential**, integrating the ritual into corporate wellness programs and educational curricula.</li>
-</ul>
-</div>
-
-<div style="margin-top:16px;">
-<h3 style="margin-bottom:8px; color:var(--blue);">3. The Decentralized Sovereignty Stack (Self-Funding Growth)</h3>
-<ul class="muted">
-<li>**Tokenized Physical Assets**: Evolve the DAO to issue a tradable **asset token** representing fractional ownership of the cafe’s *physical infrastructure* (land, equipment).
-<li>**Strategic Advantage**: This bypasses traditional capital markets, making the brand financially robust and self-funding. The core customer base becomes vested, financially incentivized governors of the brand's assets.</li>
+<li>**The "Alexandria Morning Ritual" Movement**: Launch a global media/PR campaign, backed by academic research, to institutionalize the **Hero Latte** as the essential component of a globally recognized *Mindful Morning Ritual*.</li>
+<li>**Haksoss IP (Intellectual Property) Moat**: Utilize AI sensory analysis to create a **proprietary, signature aromatic or flavor compound** for the Hero Latte. The campaign focuses on owning this unique, patented sensory experience, creating a *chemical moat* that no global competitor can legally cross.</li>
 </ul>
 </div>
 </section>
@@ -363,7 +393,7 @@ new Chart(document.getElementById('engChart'), {
 type: 'bar',
 data: {
 labels: ['IG Posts','IG Stories','Facebook','TikTok'],
-datasets: [{ data:[12.5,9.3,8.4,15.1], backgroundColor:[OCEAN_BLUE, NAVY, LIGHT_BLUE, SAND_GOLD], borderRadius:6 }]
+datasets: [{ data:[12.5,9.3,8.4,15.1], backgroundColor:[OCEAN_BLUE, NAVY, LIGHT_BLUE, SAND_GOLD], borderRadius:4 }]
 },
 options:{ responsive:true, plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true, ticks:{callback:v=>v+'%'}}} }
 });
@@ -375,16 +405,24 @@ data: { labels:['Meta','Google Display','TikTok'], datasets:[{ data:[850,420,500
 options:{ responsive:true }
 });
 
+// 3. Email Line Chart (Restored)
+new Chart(document.getElementById('emailLine'), {
+type:'line',
+data:{ labels:['Morn. Awake','Sig. Indulge','Ex. Offer','Loy. Invite','Spotlight','Final Rem.'],
+datasets:[{ data:[42,40,45,47,39,44], borderColor:SAND_GOLD, fill:false, tension:0.4, pointRadius:4, pointBackgroundColor: SAND_GOLD }] },
+options:{ responsive:true, plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true, ticks:{callback:v=>v+'%'}}} }
+});
 
-// 3. NEW: CAC Per Channel (Meta/TikTok are most efficient)
+
+// 4. CAC Per Channel
 new Chart(document.getElementById('cacChart'), {
 type: 'bar',
 data: {
 labels: ['Meta (IG/FB)', 'TikTok', 'Google Display'],
 datasets: [{
 data: [1.65, 1.32, 4.20],
-backgroundColor: [OCEAN_BLUE, SAND_GOLD, LIGHT_BLUE],
-borderRadius: 6
+backgroundColor: [OCEAN_BLUE, SAND_GOLD, NAVY],
+borderRadius: 4
 }]
 },
 options: {
@@ -394,17 +432,24 @@ legend: { display: false },
 tooltip: { callbacks: { label: (context) => `CAC: $${context.parsed.y.toFixed(2)}` } }
 },
 scales: {
-y: { beginAtZero: true, title: { display: true, text: 'Cost per Acquisition ($)' } }
+y: { beginAtZero: true }
 }
 }
 });
 
+// 5. Conversions by Channel (Restored)
+new Chart(document.getElementById('convBar'), {
+type:'bar',
+data:{ labels:['IG Posts','IG Stories','Facebook','TikTok'], datasets:[{ data:[310,205,175,380], backgroundColor:[LIGHT_BLUE, OCEAN_BLUE, NAVY, SAND_GOLD], borderRadius:4 }] },
+options:{ responsive:true, plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true}} }
+});
 
-// 4. NEW: LTV to CAC Ratio (Unmatchable Profitability)
+
+// 6. LTV to CAC Ratio
 new Chart(document.getElementById('ltvRatio'), {
 type: 'pie',
 data: {
-labels: ['Customer Lifetime Value (LTV) ($68.20)', 'Cost per Acquisition (CAC) ($1.65)'],
+labels: ['Customer LTV ($68.20)', 'Cost per Acquisition ($1.65)'],
 datasets: [{
 data: [68.20, 1.65],
 backgroundColor: [SAND_GOLD, NAVY],
@@ -416,7 +461,7 @@ plugins: {
 title: {
 display: true,
 text: 'LTV:CAC Ratio (41.3:1)',
-font: { size: 18, weight: 'bold', family: 'Playfair Display' },
+font: { size: 16, weight: 'bold', family: 'Playfair Display' },
 color: NAVY
 }
 }
