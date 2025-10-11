@@ -10,44 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<style>
-  :root{
-    /* Refined Color Palette for Agency Look */
-    --deep:#0b2545; /* Primary: Deep Navy */
-    --blue:#1b639e; /* Action: Rich Blue */
-    --muted:#64748b; /* Text: Slate Gray */
-    --accent:#D99B6C; /* Highlight: Sand/Copper */
-    --bg:#f8f9fc; /* Background: Off-White */
-    --card:#fff; /* Card: Pure White */
-    --glass: rgba(255,255,255,0.95);
-    --maxw:1200px;
-    --radius:10px;
-  }
-
-  /* Reset */
-  *{box-sizing:border-box}
-  body{
-    margin:0;
-    font-family:"Lato", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-    color:#0f172a;
-    background:var(--bg);
-    -webkit-font-smoothing:antialiased;
-    font-weight: 400; /* Lighter body text */
-  }
-  h2{ border-bottom: 2px solid var(--blue); padding-bottom: 8px; } /* Stronger section separation */
-  a{ color:var(--blue); text-decoration:none; transition: color 0.3s; }
-  a:hover{ color: var(--deep); }
-  h1, h2, h3, h4 { color: var(--deep); font-family: 'Playfair Display', serif; }
-
-  /* Layout */
-  .wrap{ max-width:var(--maxw); margin:30px auto; padding:20px; }
-  header.fixed-header{
-    position:sticky; left:0; right:0; top:0; z-index:9999; /* Changed to sticky for modern feel */
-    background:var(--card); color:var(--deep);
-    box-shadow:0 6px 20px rgba(0,0,0,0.05);
-  }
-  .header-inner{ max-width:var(--maxw); margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:12px 20px; gap:16px; flex-wrap:wrap; }
-  .brand{ display:flex; gap:12px; align-items:center; }
+@@ -50,27 +51,28 @@
   .brand img{ width:50px; height:50px; object-fit:cover; border-radius:8px; background:var(--bg); padding:4px; }
   .brand h1{ margin:0; font-family:'Playfair Display', serif; font-size:1.1rem; font-weight:700; color:var(--deep); }
   .brand p{ margin:0; font-size:0.75rem; opacity:0.8; color:var(--muted); font-weight:400; }
@@ -76,29 +39,7 @@
 
   .case-right{ width:480px; max-width:40%; position:relative; }
   .case-right img{ width:100%; border-radius:12px; box-shadow:0 30px 60px rgba(11,37,68,0.08); transition:box-shadow .6s ease; }
-  .case-right img:hover{ box-shadow:0 40px 80px rgba(11,37,68,0.15); }
-
-  .marquee{ margin-top:16px; padding:12px; border-radius:10px; background:linear-gradient(90deg,#f9fcff,#eaf3fd); overflow:hidden; border: 1px solid #d4e3f3; }
-  .marquee p{ margin:0; white-space:nowrap; animation:marq 18s linear infinite; color:var(--deep); font-weight:800; font-size:0.9rem; }
-
-  /* gallery */
-  .gallery{ display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; margin-top:20px; }
-  .tile{ background:var(--card); border-radius:10px; overflow:hidden; box-shadow:0 8px 24px rgba(16,24,40,0.05); position:relative; transition:transform .35s ease, box-shadow .35s ease; border: 1px solid #eef4fb; }
-  .tile:hover{ transform:translateY(-4px); box-shadow:0 12px 30px rgba(16,24,40,0.1); }
-  .tile img{ width:100%; height:180px; object-fit:cover; display:block; }
-  .tile .meta{ padding:10px; font-weight:700; color:var(--muted); font-size:0.85rem; background: #fcfdfe; }
-
-  /* emails table - Enhanced Styling */
-  .table-wrap{ overflow:auto; margin-top:20px; }
-  table{ width:100%; border-collapse:collapse; font-size:0.9rem; border: 1px solid #eef4fb; border-radius: var(--radius); overflow: hidden; }
-  th, td{ padding:14px 12px; border-bottom:1px solid #eef4fb; text-align:left; vertical-align:top; }
-  th{ background:linear-gradient(90deg,var(--blue), #2a80c9); color:#fff; font-weight:700; text-transform:uppercase; font-size:0.8rem; letter-spacing: 0.5px; }
-  tr:last-child td{ border-bottom: none; }
-  tbody tr:nth-child(odd) { background-color: #fcfdfe; }
-
-  /* Posts with captions */
-  .post-row{ display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:stretch; margin-top:20px; }
-  .post-card{ display:flex; gap:16px; align-items:flex-start; background:var(--card); padding:16px; border-radius:10px; box-shadow:0 8px 24px rgba(16,24,40,0.05); border: 1px solid #eef4fb; }
+@@ -100,6 +102,7 @@
   .post-card img{ width:180px; height:130px; object-fit:cover; border-radius:8px; }
   .post-text{ flex-grow: 1; font-size:0.95rem; color:#243240; }
   .post-text strong { display: block; margin-bottom: 8px; color: var(--deep); }
@@ -106,66 +47,7 @@
 
   /* ads */
   .ad-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; margin-top:20px; }
-  .ad-card img{ width:100%; height:auto; border-radius:8px; box-shadow:0 10px 30px rgba(16,24,40,0.05); }
-
-  /* kpis & charts - High Impact */
-  .kpi-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:16px; margin-top:20px; }
-  .kpi{ background:linear-gradient(180deg,#fff,#f5fbff); padding:16px; border-radius:12px; text-align:center; box-shadow:0 10px 30px rgba(16,24,40,0.03); border: 1px solid #eef4fb; }
-  .kpi .num{ font-size:1.8rem; font-weight:900; color:var(--blue); display: block; margin-bottom: 4px; }
-  .charts{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:20px; }
-  .chart.card { padding: 20px; border: 1px solid #eef4fb; }
-
-  /* guidelines and footer */
-  .flex{ display:flex; gap:16px; flex-wrap:wrap; }
-  .card{ background:#fff; border-radius:10px; padding:16px; box-shadow:0 8px 20px rgba(16,24,40,0.03); border: 1px solid #eef4fb; }
-  footer{ margin-top:30px; text-align:center; color:var(--muted); font-size:0.85rem; padding-bottom: 20px; }
-
-  /* SEO Report Specific Styles */
-  .seo-report h2 { font-size: 1.8rem; border-bottom: 2px solid var(--blue); padding-bottom: 8px; margin-top: 40px; font-family:'Playfair Display', serif; color:var(--deep); }
-  .seo-report h3 { font-size: 1.4rem; color: var(--blue); margin-top: 25px; font-family:'Playfair Display', serif; }
-  .seo-report .card { background:#f9fbfc; padding:20px; border-radius:10px; box-shadow:none; margin:15px 0; border: 1px solid #eef4fb; }
-  .seo-report .highlight { color: #d99b6c; font-weight: 800; } /* Use accent color for highlights */
-  .seo-report table th { background:linear-gradient(90deg,#1b639e,#2a80c9); color:#fff; font-weight:700; }
-  .seo-report .muted { font-weight: 300; } /* Lighter weight for block text */
-
-  /* particles */
-  .bean{
-    position:absolute; background-color:var(--accent); border-radius:50%; opacity:0;
-    animation:float linear infinite;
-  }
-  @keyframes float{
-    0%{ transform:translateY(0) rotate(0); opacity:0.1; }
-    50%{ opacity:0.04; }
-    100%{ transform:translateY(-100vh) rotate(720deg); opacity:0; }
-  }
-
-  /* responsiveness */
-  @media (max-width:1000px){
-    .case-hero{ flex-direction:column; }
-    .case-right{ width:100%; max-width:100%;}
-    .post-row{ grid-template-columns:1fr; }
-    .charts{ grid-template-columns:1fr; }
-    .post-card img{ width: 140px; height: 100px; }
-  }
-  @media (max-width:600px){
-    .wrap{ padding:10px; margin: 15px auto; }
-    .panel{ padding:18px; margin-bottom:18px; }
-    .case-left h2{ font-size:1.6rem; }
-    .stat{ min-width: 120px; padding: 10px 14px; }
-    .stat .val{ font-size:1.4rem; }
-    .stat .lab{ font-size:0.8rem; }
-    .post-card{ flex-direction:column; align-items:flex-start; }
-    .post-card img{ width:100%; height:auto; }
-    nav.topnav a{ padding:5px 8px; font-size:0.8rem; }
-  }
-
-</style>
-</head>
-<body>
-
-  <header class="fixed-header">
-    <div class="header-inner">
-      <div class="brand">
+@@ -165,22 +168,14 @@
         <img src="3_Assets/Logo/logo.png" alt="Haksoss logo">
         <div>
           <h1 class="site-title">Haksoss — **LTV & Scalability** Case Study</h1>
@@ -175,6 +57,7 @@
 
       <nav class="topnav">
         <a href="#case">Executive Summary</a>
+        <a href="#creative">Creative Execution</a>
         <a href="#story">Core Strategy</a>
         <a href="#kpis">Optimization KPIs</a>
         <a href="#emails">CRM / LTV</a>
@@ -183,13 +66,7 @@
       </nav>
     </div>
   </header>
-
-  <div class="page">
-    <div class="wrap">
-
-      <div class="particles" id="particles"></div>
-
-      <section id="case" class="panel inview">
+@@ -190,14 +185,12 @@
         <div class="case-hero">
           <div class="case-left">
             <h2>Haksoss Morning Experience — Executive Summary</h2>
@@ -215,16 +92,23 @@
               <ul class="muted">
                 <li>**LTV Acquisition:** Successfully acquire loyalty members (1,000+ goal) to drive long-term revenue.</li>
                 <li>**Efficiency:** Maintain a **Cost-Per-Acquisition (CPA)** below target while scaling reach.</li>
-                <li>**Sales Uplift:** Increase morning footfall and online breakfast orders by **40–60%**.</li>
+                <li>**CRM Growth:** Acquire loyalty members to improve customer retention and repeat visits.</li>
+                <li>**Creative Excellence:** Showcase bilingual execution and professional, high-end creative assets.</li>
+              </ul>
+            </div>
+
+            <div style="margin-top:16px;">
+              <h3 style="margin-bottom:8px">Visual & Tone Guidelines</h3>
+              <ul class="muted">
+                <li>**Palette:** Modern minimal (White + Deep Blue + Soft Sand accents).</li>
+                <li>**Typography:** *Playfair Display* for headlines (Elegance), *Lato* for body copy (Clarity).</li>
+                <li>**Imagery:** Morning-light product photography with a focus on sensory appeal and cozy textures.</li>
+                <li>**Tone:** Elegant, sensory, and highly inviting, executed flawlessly in both English and Arabic.</li>
                 <li>**Brand Perception:** Build an emotional connection to the "Haksoss Luxury Experience."</li>
               </ul>
             </div>
           </div>
-
-          <div class="case-right">
-            <img src="3_Assets/Images/hero-latte.jpg" alt="Hero Latte coffee by the sea at Haksoss Café">
-            <div class="steam" aria-hidden><div></div><div></div><div></div></div>
-          </div>
+@@ -235,146 +228,159 @@
         </div>
       </section>
 
@@ -255,10 +139,13 @@
         <p class="muted">Performance summary and actionable **Cost-Per-Acquisition (CPA)** data, demonstrating a commitment to continuous, data-driven optimization.</p>
 
         <div class="kpi-grid">
+          <div class="kpi"><div>Total Reach</div><div class="num">80,800</div></div>
+          <div class="kpi"><div>Loyalty Sign-ups</div><div class="num">1,070</div></div>
+          <div class="kpi"><div>Avg Engagement</div><div class="num">11.3%</div></div>
+          <div class="kpi highlight-roi"><div class="num" style="color:var(--accent)">411%</div><div class="lab">Overall ROI</div></div>
           <div class="kpi"><div>Customer LTV (Est.)</div><div class="num">$480</div></div>
           <div class="kpi"><div>Avg CPA (Loyalty)</div><div class="num">$1.65</div></div>
           <div class="kpi"><div>**Budget Shift Mandate**</div><div class="num" style="color:var(--accent)">+100%</div></div>
-          <div class="kpi highlight-roi"><div class="num" style="color:var(--accent)">411%</div><div class="lab">Overall ROI</div></div>
         </div>
 
         <div class="charts">
@@ -272,9 +159,11 @@
           <table>
             <thead><tr><th>Metric</th><th>Result</th><th>Next Action (Optimization)</th></tr></thead>
             <tbody>
+              <tr><td>Total Reach</td><td>80,800</td><td>Combined social + ads + email distribution.</td></tr>
               <tr><td>**Total Conversions**</td><td>1,070 loyalty sign-ups</td><td>Develop a **dedicated, single-page landing page** to beat current sign-up rate.</td></tr>
               <tr><td>**Avg Engagement**</td><td>11.3%</td><td>Test **UGC (User-Generated Content)** from loyalty members as new ad creative.</td></tr>
               <tr><td>**Email Open Rate**</td><td>43% (Avg)</td><td>Segment audiences by **Mood** ("Focus" vs. "Indulgence") and A/B test subject lines.</td></tr>
+              <tr><td>Ad Spend (Total)</td><td>$1,770</td><td>Efficiently allocated across Meta / Google / TikTok.</td></tr>
               <tr><td>**TikTok Engagement**</td><td>15.1%</td><td>**Immediate Budget Reallocation:** Shift $400 from lowest performer to TikTok to test its CPA efficiency.</td></tr>
               <tr><td>**Overall ROI**</td><td>411%</td><td>Focus on driving **LTV** by pushing the "Gold Tier" loyalty membership.</td></tr>
             </tbody>
@@ -352,6 +241,13 @@
         <div class="section">
         <h3>1. Technical Foundation & Schema Mandate</h3>
         <div class="card">
+        <table>
+        <tr><th>Keyword</th><th>Search Volume</th><th>Difficulty</th><th>Intent</th><th>Priority</th></tr>
+        <tr><td>**Luxury café Alexandria**</td><td>1,200</td><td>Medium</td><td>Local/Branding</td><td>High</td></tr>
+        <tr><td>**Best morning coffee Alexandria**</td><td>900</td><td>Medium</td><td>Local/Intent</td><td>High</td></tr>
+        <tr><td>Premium breakfast Alexandria</td><td>800</td><td>Medium</td><td>Local/Offer</td><td>High</td></tr>
+        <tr><td>Hero Latte/Chocolate Croissant menu</td><td>400</td><td>Low</td><td>Brand/Product</td><td>Medium</td></tr>
+        </table>
         <ul class="muted">
         <li>**Schema Markup:** Mandate immediate implementation of **LocalBusiness Schema** (NAP, hours) to secure rich snippets and improve visibility in "Near Me" searches.</li>
         <li>**GMB Integration:** Treat Google My Business as a social channel—post **"Hero Latte Upgrade"** offers weekly to boost local search rankings.</li>
@@ -363,6 +259,8 @@
         <div class="section">
         <h3>2. Target Keywords & Geo-Content Strategy</h3>
         <div class="card">
+        <p><strong>Meta Title:</strong> <span class="highlight">Haksoss Café — Luxury Morning Experience in Alexandria</span></p>
+        <p><strong>Meta Description:</strong> <span class="highlight">Wake up to luxury with Haksoss Café. Savor our signature Hero Latte, fresh Chocolate Croissants, and seasonal treats. Premium breakfast by the sea, loyalty rewards, and elegant mornings await.</span></p>
         <table>
         <tr><th>Keyword</th><th>Intent</th><th>Priority</th><th>Geo-Content Mandate</th></tr>
         <tr><td>**Luxury café Alexandria**</td><td>Local/Branding</td><td>High</td><td>Create "The Haksoss View: Mornings by the Sea" section.</td></tr>
@@ -379,15 +277,15 @@
         <p><strong>Meta Description:</strong> <span class="highlight">Haksoss Café: Alexandria’s premier luxury morning experience. This campaign drove 411% ROI and demonstrated best-in-class LTV acquisition strategies focused on the signature Hero Latte and Chocolate Croissant.</span></p>
         <h4>Structural Mandate</h4>
         <ul class="muted">
+        <li>**Image Optimization:** Descriptive Alt Text used for key visuals (e.g., `<img alt="Hero Latte coffee by the sea at Haksoss Café">`).</li>
+        <li>**Schema Markup:** Recommended use of **LocalBusiness** and **Product Schema** on key pages to enhance SERP visibility.</li>
+        <li>**Internal Linking:** Highlight product pages from the homepage, blog, and emails to pass authority.</li>
         <li>H1: Haksoss Café — Elevate Your Mornings (Clear, single H1)</li>
         <li>H2: Hero Latte — Alexandria’s Signature Morning Experience</li>
         </ul>
         </div>
         </div>
-      </section>
-
-      <section id="guidelines" class="panel">
-        <h2>Brand & Execution Governance</h2>
+@@ -387,30 +382,27 @@
         <div class="flex" style="margin-top:16px">
           <div class="card" style="flex:1">
             <h4 style="margin-top:0">Visual Guidelines</h4>
@@ -408,6 +306,8 @@
           <div class="card" style="flex:1">
             <h4 style="margin-top:0">Content Loop & Rhythm</h4>
             <ul class="muted">
+              <li>**Organic:** 3 high-value posts / week.</li>
+              <li>**Stories:** Daily engagement & offer reminders.</li>
               <li>**Content Engine:** The **Seasonal Treat** rotation drives the entire six-week campaign cycle.</li>
               <li>**Social Fuel:** **UGC** from Loyalty Members must be prioritized for new ad creatives.</li>
             </ul>
@@ -463,29 +363,4 @@
     type: 'bar',
     data: {
       labels: ['IG Posts','IG Stories','Facebook','TikTok'],
-      datasets: [{ data:[12.5,9.3,8.4,15.1], backgroundColor:['#1b639e','#4c96d8','#7dd3fc','#a8e6cf'], borderRadius:6 }]
-    },
-    options:{ responsive:true, plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true, ticks:{callback:v=>v+'%'}}} }
-  });
-
-  new Chart(document.getElementById('spendPie'), {
-    type: 'pie',
-    data: { labels:['Meta','Google Display','TikTok'], datasets:[{ data:[850,420,500], backgroundColor:['#1b639e','#4c96d8','#a8e6cf'] }] },
-    options:{ responsive:true }
-  });
-
-  new Chart(document.getElementById('emailLine'), {
-    type:'line',
-    data:{ labels:['Awakening','Indulgence','Offer','Loyalty','Spotlight','Final'],
-           datasets:[{ data:[42,40,45,47,39,44], borderColor:'#d99b6c', fill:false, tension:0.25, pointRadius:5, borderWidth: 3 }] },
-    options:{ responsive:true, scales:{y:{beginAtZero:false, ticks:{callback:v=>v+'%'}}} }
-  });
-
-  new Chart(document.getElementById('convBar'), {
-    type:'bar',
-    data:{ labels:['IG Posts','IG Stories','Facebook','TikTok'], datasets:[{ data:[310,205,175,380], backgroundColor:['#1b639e','#4c96d8','#7dd3fc','#d99b6c'], borderRadius:6 }] },
-    options:{ responsive:true, plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true}} }
-  });
-</script>
-</body>
-</html>
+      datasets: [{ data:[12.5,9.3,8.4,15.1], backgroundColor:['#1b639e','#4c96d8
