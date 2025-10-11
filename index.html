@@ -1,138 +1,119 @@
-is this correct:
-
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Haksoss Café — Luxury Morning Experience in Alexandria | LTV Campaign Case Study</title>
+<title>Haksoss — Complete Campaign (Case Study + Creative Execution)</title>
 
-<meta name="description" content="Haksoss Café: Alexandria’s premier luxury morning experience. This campaign drove 411% ROI and demonstrated best-in-class LTV acquisition strategies focused on the signature Hero Latte and Chocolate Croissant." />
-<meta name="keywords" content="Luxury café Alexandria, Best morning coffee Alexandria, Haksoss Café LTV, Hero Latte marketing, Premium breakfast Alexandria, Performance marketing case study" />
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <style>
   :root{
-    /* Refined Color Palette for Agency Look */
-    --deep:#0b2545; /* Primary: Deep Navy */
-    --blue:#1b639e; /* Action: Rich Blue */
-    --muted:#64748b; /* Text: Slate Gray */
-    --accent:#D99B6C; /* Highlight: Sand/Copper */
-    --bg:#f8f9fc; /* Background: Off-White */
-    --card:#fff; /* Card: Pure White */
-    --glass: rgba(255,255,255,0.95);
-    --maxw:1200px;
-    --radius:10px;
+    --deep:#0b2545;
+    --blue:#2b6cb0;
+    --muted:#64748b;
+    --accent:#D99B6C;
+    --bg:#fbfdff;
+    --card:#fff;
+    --glass: rgba(255,255,255,0.92);
+    --maxw:1180px;
+    --radius:12px;
   }
 
   /* Reset */
   *{box-sizing:border-box}
-  body{
-    margin:0;
-    font-family:"Lato", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-    color:#0f172a;
-    background:var(--bg);
-    -webkit-font-smoothing:antialiased;
-    font-weight: 400; /* Lighter body text */
-  }
-  h2{ border-bottom: 2px solid var(--blue); padding-bottom: 8px; } /* Stronger section separation */
-  a{ color:var(--blue); text-decoration:none; transition: color 0.3s; }
-  a:hover{ color: var(--deep); }
-  h1, h2, h3, h4 { color: var(--deep); font-family: 'Playfair Display', serif; }
+  body{ margin:0; font-family:"Lato", system-ui, -apple-system, "Segoe UI", Roboto, Arial; color:#0f172a; background:linear-gradient(180deg,#f7fbff 0%, #ffffff 60%); -webkit-font-smoothing:antialiased; }
+  a{ color:var(--blue); text-decoration:none; }
 
   /* Layout */
-  .wrap{ max-width:var(--maxw); margin:30px auto; padding:20px; }
+  .wrap{ max-width:var(--maxw); margin:24px auto; padding:20px; }
   header.fixed-header{
-    position:sticky; left:0; right:0; top:0; z-index:9999; /* Changed to sticky for modern feel */
-    background:var(--card); color:var(--deep);
-    box-shadow:0 6px 20px rgba(0,0,0,0.05);
+    position:fixed; left:0; right:0; top:0; z-index:9999;
+    background:linear-gradient(90deg,var(--deep), #163a5a); color:#fff;
+    box-shadow:0 10px 36px rgba(11,37,68,0.12);
   }
-  .header-inner{ max-width:var(--maxw); margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:12px 20px; gap:16px; flex-wrap:wrap; }
+  .header-inner{ max-width:var(--maxw); margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:14px 20px; gap:16px; flex-wrap:wrap; }
   .brand{ display:flex; gap:12px; align-items:center; }
-  .brand img{ width:50px; height:50px; object-fit:cover; border-radius:8px; background:var(--bg); padding:4px; }
-  .brand h1{ margin:0; font-family:'Playfair Display', serif; font-size:1.1rem; font-weight:700; color:var(--deep); }
-  .brand p{ margin:0; font-size:0.75rem; opacity:0.8; color:var(--muted); font-weight:400; }
-  nav.topnav{ display:flex; gap:6px; align-items:center; flex-wrap:wrap; }
-  nav.topnav a{ padding:6px 10px; border-radius:8px; background:transparent; color:var(--deep); font-weight:600; font-size:0.85rem; transition: background 0.3s, transform 0.3s; }
-  nav.topnav a:hover{ background:rgba(27,99,158,0.1); transform:translateY(-2px); }
+  .brand img{ width:64px; height:64px; object-fit:cover; border-radius:12px; background:#fff; padding:6px; }
+  .brand h1{ margin:0; font-family:'Playfair Display', serif; font-size:1.2rem; }
+  .brand p{ margin:0; font-size:0.85rem; opacity:0.95; color:#d8eaf8 }
+  nav.topnav{ display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+  nav.topnav a{ padding:8px 12px; border-radius:10px; background:rgba(255,255,255,0.06); color:#fff; font-weight:700; font-size:0.9rem; }
+  nav.topnav a:hover{ transform:translateY(-3px); box-shadow:0 8px 20px rgba(11,37,68,0.12); }
 
-  /* page content wrapper removed, no need for offset */
-  .page { padding-top:0; }
+  /* page content wrapper to offset fixed header */
+  .page { padding-top:108px; }
 
-  /* Panels - Refined for Cleanliness */
-  .panel{ background:var(--card); border-radius:var(--radius); padding:24px; margin-bottom:24px; box-shadow:0 10px 30px rgba(16,24,40,0.03); opacity:0; transform:translateY(12px); transition:all .6s cubic-bezier(.2,.9,.3,1); border: 1px solid #f0f4f8; }
+  /* Panels */
+  .panel{ background:var(--card); border-radius:var(--radius); padding:18px; margin-bottom:18px; box-shadow:0 14px 40px rgba(16,24,40,0.04); opacity:0; transform:translateY(12px); transition:all .6s cubic-bezier(.2,.9,.3,1); }
   .panel.inview{ opacity:1; transform:translateY(0); }
 
   /* CASE STUDY (lead) */
-  .case-hero{ display:flex; gap:30px; align-items:start; }
+  .case-hero{ display:flex; gap:22px; align-items:start; }
   .case-left{ flex:1; }
-  .case-left h2{ margin:0 0 8px; font-family:'Playfair Display', serif; color:var(--deep); font-size:1.8rem; border-bottom: none; }
-  .case-left .sub{ color:var(--muted); margin-bottom:16px; font-size:1rem; }
-  .quick-stats{ display:flex; gap:16px; flex-wrap:wrap; margin:20px 0; border-top: 1px solid #eef4fb; padding-top: 16px; }
-  .stat{ background:linear-gradient(180deg,#fff,#f3f8ff); padding:14px 18px; border-radius:12px; min-width:160px; box-shadow:0 8px 24px rgba(11,37,68,0.05); border-left: 4px solid var(--blue); transition: transform 0.3s ease; }
-  .stat:hover{ transform: translateY(-5px); box-shadow:0 12px 30px rgba(11,37,68,0.1); }
-  .stat .val{ color:var(--blue); font-weight:900; font-size:1.6rem; display:block; }
-  .stat .lab{ color:var(--muted); font-size:0.9rem; margin-top:4px; font-weight:700; }
-  .stat.highlight-roi { border-left-color: var(--accent); background: #fffcf8; } /* Highlight ROI explicitly */
+  .case-left h2{ margin:0 0 6px; font-family:'Playfair Display', serif; color:var(--deep); font-size:1.6rem; }
+  .case-left .sub{ color:var(--muted); margin-bottom:12px; }
+  .quick-stats{ display:flex; gap:12px; flex-wrap:wrap; margin:12px 0; }
+  .stat{ background:linear-gradient(180deg,#fff,#f3f8ff); padding:10px 12px; border-radius:10px; min-width:140px; box-shadow:0 10px 28px rgba(11,37,68,0.04); }
+  .stat .val{ color:var(--blue); font-weight:800; font-size:1.2rem; }
+  .stat .lab{ color:var(--muted); font-size:0.9rem; margin-top:6px; }
 
-  .case-right{ width:480px; max-width:40%; position:relative; }
-  .case-right img{ width:100%; border-radius:12px; box-shadow:0 30px 60px rgba(11,37,68,0.08); transition:box-shadow .6s ease; }
-  .case-right img:hover{ box-shadow:0 40px 80px rgba(11,37,68,0.15); }
+  .case-right{ width:420px; max-width:40%; position:relative; }
+  .case-right img{ width:100%; border-radius:12px; box-shadow:0 30px 60px rgba(11,37,68,0.08); transform:translateY(-6px); transition:transform .6s ease; }
+  .case-right img:hover{ transform:translateY(-12px) scale(1.02); }
 
-  .marquee{ margin-top:16px; padding:12px; border-radius:10px; background:linear-gradient(90deg,#f9fcff,#eaf3fd); overflow:hidden; border: 1px solid #d4e3f3; }
-  .marquee p{ margin:0; white-space:nowrap; animation:marq 18s linear infinite; color:var(--deep); font-weight:800; font-size:0.9rem; }
+  .marquee{ margin-top:10px; padding:10px; border-radius:10px; background:linear-gradient(90deg,#fff,#f7fbff); overflow:hidden; }
+  .marquee p{ margin:0; white-space:nowrap; animation:marq 18s linear infinite; color:var(--muted); font-weight:700; }
+  @keyframes marq{ from{transform:translateX(0)} to{transform:translateX(-100%)} }
 
   /* gallery */
-  .gallery{ display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; margin-top:20px; }
-  .tile{ background:var(--card); border-radius:10px; overflow:hidden; box-shadow:0 8px 24px rgba(16,24,40,0.05); position:relative; transition:transform .35s ease, box-shadow .35s ease; border: 1px solid #eef4fb; }
-  .tile:hover{ transform:translateY(-4px); box-shadow:0 12px 30px rgba(16,24,40,0.1); }
-  .tile img{ width:100%; height:180px; object-fit:cover; display:block; }
-  .tile .meta{ padding:10px; font-weight:700; color:var(--muted); font-size:0.85rem; background: #fcfdfe; }
+  .gallery{ display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:14px; margin-top:12px; }
+  .tile{ background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 12px 36px rgba(16,24,40,0.04); position:relative; transition:transform .35s ease; }
+  .tile:hover{ transform:translateY(-6px); }
+  .tile img{ width:100%; height:160px; object-fit:cover; display:block; }
+  .tile .meta{ padding:10px; font-weight:800; color:var(--muted); }
 
-  /* emails table - Enhanced Styling */
-  .table-wrap{ overflow:auto; margin-top:20px; }
-  table{ width:100%; border-collapse:collapse; font-size:0.9rem; border: 1px solid #eef4fb; border-radius: var(--radius); overflow: hidden; }
-  th, td{ padding:14px 12px; border-bottom:1px solid #eef4fb; text-align:left; vertical-align:top; }
-  th{ background:linear-gradient(90deg,var(--blue), #2a80c9); color:#fff; font-weight:700; text-transform:uppercase; font-size:0.8rem; letter-spacing: 0.5px; }
-  tr:last-child td{ border-bottom: none; }
-  tbody tr:nth-child(odd) { background-color: #fcfdfe; }
+  /* emails table */
+  .table-wrap{ overflow:auto; margin-top:12px; }
+  table{ width:100%; border-collapse:collapse; font-size:0.95rem; }
+  th, td{ padding:12px 10px; border-bottom:1px solid #eef4fb; text-align:left; vertical-align:top; }
+  th{ background:linear-gradient(180deg,#fbfdff,#f4fbff); color:var(--deep); font-weight:800; }
 
   /* Posts with captions */
-  .post-row{ display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:stretch; margin-top:20px; }
-  .post-card{ display:flex; gap:16px; align-items:flex-start; background:var(--card); padding:16px; border-radius:10px; box-shadow:0 8px 24px rgba(16,24,40,0.05); border: 1px solid #eef4fb; }
-  .post-card img{ width:180px; height:130px; object-fit:cover; border-radius:8px; }
-  .post-text{ flex-grow: 1; font-size:0.95rem; color:#243240; }
-  .post-text strong { display: block; margin-bottom: 8px; color: var(--deep); }
-  .post-text p.muted { font-size: 0.85rem; color: var(--accent); font-weight: 700; } /* Highlight CTAs/Hashtags */
+  .post-row{ display:grid; grid-template-columns:1fr 1fr; gap:16px; align-items:center; margin-top:12px; }
+  .post-card{ display:flex; gap:12px; align-items:center; background:#fff; padding:12px; border-radius:10px; box-shadow:0 10px 30px rgba(16,24,40,0.03); }
+  .post-card img{ width:160px; height:120px; object-fit:cover; border-radius:8px; }
+  .post-text{ font-size:0.95rem; color:#243240; }
 
   /* ads */
-  .ad-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; margin-top:20px; }
-  .ad-card img{ width:100%; height:auto; border-radius:8px; box-shadow:0 10px 30px rgba(16,24,40,0.05); }
+  .ad-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; margin-top:12px; }
 
-  /* kpis & charts - High Impact */
-  .kpi-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:16px; margin-top:20px; }
-  .kpi{ background:linear-gradient(180deg,#fff,#f5fbff); padding:16px; border-radius:12px; text-align:center; box-shadow:0 10px 30px rgba(16,24,40,0.03); border: 1px solid #eef4fb; }
-  .kpi .num{ font-size:1.8rem; font-weight:900; color:var(--blue); display: block; margin-bottom: 4px; }
-  .charts{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:20px; }
-  .chart.card { padding: 20px; border: 1px solid #eef4fb; }
+  /* kpis & charts */
+  .kpi-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:12px; margin-top:12px; }
+  .kpi{ background:linear-gradient(180deg,#fff,#f5fbff); padding:12px; border-radius:10px; text-align:center; box-shadow:0 10px 28px rgba(16,24,40,0.03); }
+  .kpi .num{ font-size:1.3rem; font-weight:800; color:var(--blue); }
+  .charts{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:12px; }
 
   /* guidelines and footer */
-  .flex{ display:flex; gap:16px; flex-wrap:wrap; }
-  .card{ background:#fff; border-radius:10px; padding:16px; box-shadow:0 8px 20px rgba(16,24,40,0.03); border: 1px solid #eef4fb; }
-  footer{ margin-top:30px; text-align:center; color:var(--muted); font-size:0.85rem; padding-bottom: 20px; }
+  .flex{ display:flex; gap:12px; flex-wrap:wrap; }
+  .card{ background:#fff; border-radius:10px; padding:12px; box-shadow:0 10px 28px rgba(16,24,40,0.03); }
+  footer{ margin-top:18px; text-align:center; color:var(--muted); font-size:0.95rem; }
 
-  /* SEO Report Specific Styles */
-  .seo-report h2 { font-size: 1.8rem; border-bottom: 2px solid var(--blue); padding-bottom: 8px; margin-top: 40px; font-family:'Playfair Display', serif; color:var(--deep); }
-  .seo-report h3 { font-size: 1.4rem; color: var(--blue); margin-top: 25px; font-family:'Playfair Display', serif; }
-  .seo-report .card { background:#f9fbfc; padding:20px; border-radius:10px; box-shadow:none; margin:15px 0; border: 1px solid #eef4fb; }
-  .seo-report .highlight { color: #d99b6c; font-weight: 800; } /* Use accent color for highlights */
-  .seo-report table th { background:linear-gradient(90deg,#1b639e,#2a80c9); color:#fff; font-weight:700; }
-  .seo-report .muted { font-weight: 300; } /* Lighter weight for block text */
+  /* steam + particles */
+  .steam{ position:absolute; right:6px; top:-30px; width:80px; height:120px; pointer-events:none; }
+  .steam div{ width:8px; position:absolute; bottom:0; height:60px; background:rgba(255,255,255,0.5); border-radius:50%; filter:blur(2px); animation:steamUp 3s infinite ease-in-out; }
+  .steam div:nth-child(2){ left:18px; animation-delay:.5s; height:70px; }
+  .steam div:nth-child(3){ left:36px; animation-delay:1s; height:55px; }
+  @keyframes steamUp{ 0%{ transform:translateY(0) scaleX(1); opacity:0.5 } 50%{ transform:translateY(-40px) scaleX(1.2); opacity:0.25 } 100%{ transform:translateY(-90px) scaleX(1); opacity:0 } }
 
-  /* particles */
+  .particles{ position:fixed; left:0; top:0; right:0; bottom:0; pointer-events:none; z-index:0; }
+
+  /* **FIX: ADDED BEAN PARTICLE CSS** */
   .bean{
-    position:absolute; background-color:var(--accent); border-radius:50%; opacity:0;
+    position:absolute;
+    background-color:var(--accent); /* Soft sand color */
+    border-radius:50%;
+    opacity:0;
     animation:float linear infinite;
   }
   @keyframes float{
@@ -141,303 +122,348 @@ is this correct:
     100%{ transform:translateY(-100vh) rotate(720deg); opacity:0; }
   }
 
+
   /* responsiveness */
   @media (max-width:1000px){
     .case-hero{ flex-direction:column; }
     .case-right{ width:100%; max-width:100%;}
     .post-row{ grid-template-columns:1fr; }
     .charts{ grid-template-columns:1fr; }
-    .post-card img{ width: 140px; height: 100px; }
   }
   @media (max-width:600px){
-    .wrap{ padding:10px; margin: 15px auto; }
-    .panel{ padding:18px; margin-bottom:18px; }
-    .case-left h2{ font-size:1.6rem; }
-    .stat{ min-width: 120px; padding: 10px 14px; }
-    .stat .val{ font-size:1.4rem; }
-    .stat .lab{ font-size:0.8rem; }
+    body{ padding:0 8px; }
+    .wrap{ padding:12px; }
+    .panel{ padding:14px; margin-bottom:16px; }
+    .case-left h2{ font-size:1.4rem; }
+    .case-left .sub, .post-text, .muted{ font-size:0.9rem; line-height:1.4; }
     .post-card{ flex-direction:column; align-items:flex-start; }
     .post-card img{ width:100%; height:auto; }
-    nav.topnav a{ padding:5px 8px; font-size:0.8rem; }
+    nav.topnav a{ padding:6px 10px; font-size:0.85rem; }
   }
 
 </style>
 </head>
 <body>
 
-  <header class="fixed-header">
+    <header class="fixed-header">
     <div class="header-inner">
       <div class="brand">
         <img src="3_Assets/Logo/logo.png" alt="Haksoss logo">
         <div>
-          <h1 class="site-title">Haksoss — **LTV & Scalability** Case Study</h1>
-          <p class="site-sub">Performance, Localization, and Strategy for **Maximum Customer Lifetime Value**</p>
+          <h1 class="site-title">Haksoss — Morning Experience Campaign</h1>
+          <p class="site-sub">Bilingual campaign — emails, social, ads, KPIs & creative execution</p>
         </div>
       </div>
 
       <nav class="topnav">
-        <a href="#case">Executive Summary</a>
-        <a href="#story">Core Strategy</a>
-        <a href="#kpis">Optimization KPIs</a>
-        <a href="#emails">CRM / LTV</a>
-        <a href="#social">Social / Ads</a>
-        <a href="#seo-report">Technical Mastery</a>
+        <a href="#case">Case Study</a>
+        <a href="#creative">Creative Execution</a>
+        <a href="#emails">Emails</a>
+        <a href="#social">Posts & Stories</a>
+        <a href="#ads">Ads</a>
+        <a href="#kpis">KPIs</a>
+        <a href="#guidelines">Guidelines</a>
       </nav>
     </div>
   </header>
 
-  <div class="page">
+    <div class="page">
     <div class="wrap">
 
-      <div class="particles" id="particles"></div>
+            <div class="particles" id="particles"></div>
 
-      <section id="case" class="panel inview">
+            <section id="case" class="panel inview">
         <div class="case-hero">
           <div class="case-left">
-            <h2>Haksoss Morning Experience — Executive Summary</h2>
-            <p class="sub">Campaign Title: **“Wake Up with Luxury”**<br>
-            **Strategic Mandate:** Elevate Haksoss as Alexandria’s undisputed premium morning destination by maximizing **Customer Lifetime Value (LTV)** via a loyalty-led, bilingual acquisition model.</p>
+            <h2>Haksoss Morning Experience — Full Case Study</h2>
+            <p class="sub">Campaign Title: <strong>“Wake Up with Luxury”</strong><br>
+            Purpose: Elevate Haksoss as Alexandria’s premium morning destination through bilingual, sensory storytelling, high-end visuals, and a loyalty-led conversion strategy.</p>
 
             <div class="quick-stats">
               <div class="stat"><div class="val">80,800</div><div class="lab">Total Reach</div></div>
               <div class="stat"><div class="val">1,070</div><div class="lab">Loyalty Sign-ups</div></div>
-              <div class="stat"><div class="val">11.3%</div><div class="lab">Avg Engagement Rate</div></div>
-              <div class="stat highlight-roi"><div class="val" style="color:var(--accent)">411%</div><div class="lab">Overall Campaign ROI</div></div>
+              <div class="stat"><div class="val">11.3%</div><div class="lab">Avg Engagement</div></div>
+              <div class="stat"><div class="val">411%</div><div class="lab">Overall ROI</div></div>
             </div>
 
-            <div class="marquee"><p>**Product Hegemony:** Hero Latte • Chocolate Croissant • Seasonal Treats • Loyalty Program • VIP Tastings • **LTV-Driven Strategy**</p></div>
+            <div class="marquee"><p>Hero Latte • Chocolate Croissant • Seasonal Treats • Loyalty Program • VIP Tastings • Special Offers</p></div>
 
-            <div style="margin-top:20px;">
-              <h3 style="margin-bottom:8px">World-Class Strategic Focus</h3>
-              <p class="muted">The campaign transformed a successful local cafe pilot into a **scalable LTV framework**. Execution centered on **CRM Growth** (1,070 loyalty signups), proving the ability to acquire high-value customers efficiently. We leveraged **Cultural Localization** for bilingual assets and deployed an **integrated product hierarchy** (Hero Latte > Seasonal Treats) to ensure content was continuously fresh and conversion-optimized, yielding a 411% ROI.</p>
+            <div style="margin-top:14px;">
+              <h3 style="margin-bottom:8px">Executive Summary</h3>
+              <p class="muted">Haksoss Café leveraged a visual-first, bilingual campaign centered on the Hero Latte, a signature Chocolate Croissant, and rotating seasonal treats. The campaign combined email automation, templated social creatives, and targeted ads across Meta, Google Display and TikTok — all driving loyalty signups and measurable in-store lift.</p>
             </div>
 
-            <div style="margin-top:16px;">
-              <h3 style="margin-bottom:8px">Measurable Objectives (LTV Framework)</h3>
+            <div style="margin-top:12px;">
+              <h3 style="margin-bottom:8px">Objectives</h3>
               <ul class="muted">
-                <li>**LTV Acquisition:** Successfully acquire loyalty members (1,000+ goal) to drive long-term revenue.</li>
-                <li>**Efficiency:** Maintain a **Cost-Per-Acquisition (CPA)** below target while scaling reach.</li>
-                <li>**Sales Uplift:** Increase morning footfall and online breakfast orders by **40–60%**.</li>
-                <li>**Brand Perception:** Build an emotional connection to the "Haksoss Luxury Experience."</li>
+                <li>Build an emotional connection to morning rituals and Haksoss’ premium experience.</li>
+                <li>Increase morning footfall and online breakfast orders by 40–60%.</li>
+                <li>Acquire loyalty members and improve repeat visits.</li>
+                <li>Showcase bilingual execution and professional creative assets.</li>
               </ul>
+            </div>
+
+            <div style="margin-top:12px;">
+              <h3 style="margin-bottom:8px">Creative Direction</h3>
+              <ul class="muted">
+                <li>Modern minimal palette: white + deep blue + soft sand accents.</li>
+                <li>Typography: Playfair Display for headlines, Lato for body copy.</li>
+                <li>Imagery: morning-light product photography; cozy textures.</li>
+                <li>Tone: Elegant, sensory, inviting.</li>
+              </ul>
+            </div>
+
+            <div style="margin-top:14px;">
+              <a class="btn" href="#creative">View Creative Execution</a>
+              <a class="btn ghost" href="#kpis">View KPIs & Dashboard</a>
             </div>
           </div>
 
           <div class="case-right">
-            <img src="3_Assets/Images/hero-latte.jpg" alt="Hero Latte coffee by the sea at Haksoss Café">
+            <img src="3_Assets/Images/hero-latte.jpg" alt="Hero Latte">
             <div class="steam" aria-hidden><div></div><div></div><div></div></div>
           </div>
         </div>
       </section>
 
-      <section id="story" class="panel">
-        <h2>Pillar 1: Product Hegemony & The Sensory Signature</h2>
-        <p class="muted">Top-tier campaigns own a sensory signature. Our strategy establishes the **Hero Latte** as the singular, irreplaceable core of the Haksoss experience, driving all content and sales.</p>
-
-        <div class="flex" style="margin-top:16px">
-          <div class="card" style="flex:1">
-            <h4 style="margin-top:0">The Irreplaceable Asset</h4>
-            <p class="muted">We developed a **15-second 'Hero' video mandate** that focuses purely on the **sound and visual signature** of the latte (steam, first sip reaction) without naming the product. This creates an emotional hook that cannot be replicated by competitors.</p>
-          </div>
-
-          <div class="card" style="flex:1">
-            <h4 style="margin-top:0">Cultural Localization vs. Translation</h4>
-            <p class="muted">All creative and copy was developed with an **Arab-first perspective**, hiring local Alexandrian talent to embody the "Luxury by the Sea" theme authentically. This ensured high engagement (11.3%) and resonance in the local market.</p>
-          </div>
-
-          <div class="card" style="flex:1">
-            <h4 style="margin-top:0">LTV Tiering & Community</h4>
-            <p class="muted">Loyalty is framed as the **"Haksoss Morning Collective,"** shifting perception from points program to **exclusive membership.** Future strategy involves tiered access (**Gold Membership**) for VIP seasonal launch invites to boost LTV.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="kpis" class="panel">
-        <h2>Pillar 2: Optimization KPIs & Growth Framework</h2>
-        <p class="muted">Performance summary and actionable **Cost-Per-Acquisition (CPA)** data, demonstrating a commitment to continuous, data-driven optimization.</p>
-
-        <div class="kpi-grid">
-          <div class="kpi"><div>Customer LTV (Est.)</div><div class="num">$480</div></div>
-          <div class="kpi"><div>Avg CPA (Loyalty)</div><div class="num">$1.65</div></div>
-          <div class="kpi"><div>**Budget Shift Mandate**</div><div class="num" style="color:var(--accent)">+100%</div></div>
-          <div class="kpi highlight-roi"><div class="num" style="color:var(--accent)">411%</div><div class="lab">Overall ROI</div></div>
-        </div>
-
-        <div class="charts">
-          <div class="chart card"><h4 style="margin:0 0 8px">Engagement Rate by Platform</h4><canvas id="engChart"></canvas></div>
-          <div class="chart card"><h4 style="margin:0 0 8px">Ad Spend Distribution vs. Efficiency</h4><canvas id="spendPie"></canvas></div>
-          <div class="chart card"><h4 style="margin:0 0 8px">Email Open Rate Trend (A/B Tested)</h4><canvas id="emailLine"></canvas></div>
-          <div class="chart card"><h4 style="margin:0 0 8px">Conversions by Channel (CPA Analysis)</h4><canvas id="convBar"></canvas></div>
-        </div>
-
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th>Metric</th><th>Result</th><th>Next Action (Optimization)</th></tr></thead>
-            <tbody>
-              <tr><td>**Total Conversions**</td><td>1,070 loyalty sign-ups</td><td>Develop a **dedicated, single-page landing page** to beat current sign-up rate.</td></tr>
-              <tr><td>**Avg Engagement**</td><td>11.3%</td><td>Test **UGC (User-Generated Content)** from loyalty members as new ad creative.</td></tr>
-              <tr><td>**Email Open Rate**</td><td>43% (Avg)</td><td>Segment audiences by **Mood** ("Focus" vs. "Indulgence") and A/B test subject lines.</td></tr>
-              <tr><td>**TikTok Engagement**</td><td>15.1%</td><td>**Immediate Budget Reallocation:** Shift $400 from lowest performer to TikTok to test its CPA efficiency.</td></tr>
-              <tr><td>**Overall ROI**</td><td>411%</td><td>Focus on driving **LTV** by pushing the "Gold Tier" loyalty membership.</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <section id="creative" class="panel">
-        <h2>Creative Execution — Systemic Asset Library</h2>
-        <p class="muted">A showcase of high production quality assets demonstrating visual consistency and supporting the core **Sensory Signature** across all mediums.</p>
+            <section id="creative" class="panel">
+        <h2>Creative Execution</h2>
+        <p class="muted">All campaign visuals and templates used across posts, stories, and ads — presented together for portfolio review.</p>
 
         <div class="gallery" aria-hidden>
-          <div class="tile"><img src="3_Assets/Images/hero-latte.jpg" alt="Hero Latte coffee by the sea at Haksoss Café">
-            <div class="meta">Hero Latte: Signature (LTV Driver)</div></div>
-          <div class="tile"><img src="3_Assets/Images/chocolate-croissant.jpg" alt="Freshly baked chocolate croissant at Haksoss Café">
-            <div class="meta">Chocolate Croissant: Indulgence Offer</div></div>
-          <div class="tile"><img src="3_Assets/Images/seasonal-treat.jpg" alt="Seasonal breakfast treats at Haksoss Café">
-            <div class="meta">Seasonal Treats: Variety (Content Engine)</div></div>
-          <div class="tile"><img src="3_Assets/Images/special-latte.jpg" alt="Special Latte Photo"><div class="meta">Special Latte: Conversion Offer</div></div>
-          <div class="tile"><img src="3_Assets/Images/loyalty-program.jpg" alt="Loyalty program sign-up graphic"><div class="meta">Loyalty Program CTA (LTV Focus)</div></div>
-          <div class="tile"><img src="3_Assets/1_Templates/hero_latte_post.png" alt="Hero Latte Post Template"><div class="meta">Social Post Template (Scalable Asset)</div></div>
+                    <div class="tile"><img src="3_Assets/Images/hero-latte.jpg" alt="hero-latte"><div class="meta">hero-latte.jpg</div></div>
+          <div class="tile"><img src="3_Assets/Images/chocolate-croissant.jpg" alt="chocolate-croissant"><div class="meta">chocolate-croissant.jpg</div></div>
+          <div class="tile"><img src="3_Assets/Images/seasonal-treat.jpg" alt="seasonal-treat"><div class="meta">seasonal-treat.jpg</div></div>
+          <div class="tile"><img src="3_Assets/Images/special-latte.jpg" alt="special-latte"><div class="meta">special-latte.jpg</div></div>
+          <div class="tile"><img src="3_Assets/Images/special-offer.jpg" alt="special-offer"><div class="meta">special-offer.jpg</div></div>
+          <div class="tile"><img src="3_Assets/Images/loyalty-program.jpg" alt="loyalty-program"><div class="meta">loyalty-program.jpg</div></div>
+
+                    <div class="tile"><img src="3_Assets/1_Templates/hero_latte_post.png" alt="template hero"><div class="meta">hero_latte_post.png (template)</div></div>
+          <div class="tile"><img src="3_Assets/1_Templates/special_latte.png" alt="template special"><div class="meta">special_latte.png (template)</div></div>
+          <div class="tile"><img src="3_Assets/1_Templates/season_offer.png" alt="template season"><div class="meta">season_offer.png (template)</div></div>
+          <div class="tile"><img src="3_Assets/1_Templates/haksoss_post.png" alt="template brand"><div class="meta">haksoss_post.png (template)</div></div>
+          <div class="tile"><img src="3_Assets/1_Templates/discover_more.png" alt="template discover"><div class="meta">discover_more.png (template)</div></div>
         </div>
       </section>
 
-      <section id="social" class="panel">
-        <h2>Social Media & Performance Ad Strategy</h2>
-        <p class="muted">Demonstrating a clear link between creative assets, ad targeting, and measurable LTV goals.</p>
-
-        <div class="post-row" style="margin-top:20px">
-          <div class="post-card">
-            <img src="3_Assets/1_Templates/hero_latte_post.png" alt="Hero Latte Post">
-            <div class="post-text">
-              <strong>Asset: Hero Latte Post (Bilingual, LTV Acquisition)</strong>
-              <p style="margin:6px 0">“Wake up with the perfect cup.” Hero Latte: Velvety, aromatic, balanced. Experience morning luxury by the sea. ☕✨</p>
-              <p class="muted">**Target:** Lookalike Audience (LAL) of 1,070 Loyalty Members | **Objective:** New LTV Acquisition</p>
-            </div>
-          </div>
-
-          <div class="post-card">
-            <img src="3_Assets/Images/chocolate-croissant.jpg" alt="Chocolate Croissant Photo">
-            <div class="post-text">
-              <strong>Asset: Chocolate Croissant Offer (Retargeting)</strong>
-              <p style="margin:6px 0">Layers of buttery pastry and rich chocolate — the perfect morning treat. Buy one, get the second at 50% off this week.</p>
-              <p class="muted">**Target:** Website visitors who viewed **Menu Page** but didn't convert | **Objective:** Bottom-Funnel Conversion</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="emails" class="panel">
-        <h2>CRM & Email Automation Strategy (LTV Engine)</h2>
-        <p class="muted">The six-step email sequence, focusing on conversion goal and localization strategy, not just content.</p>
+            <section id="emails" class="panel">
+        <h2>Emails — Full List (English & Arabic)</h2>
+        <p class="muted">Copy-ready email content used in the campaign; paste directly into your ESP. (EN and AR versions.)</p>
 
         <div class="table-wrap">
           <table>
             <thead>
-              <tr><th>Email Name</th><th>Language</th><th>Strategic Purpose</th><th>LTV Goal</th></tr>
+              <tr><th>Email</th><th>Language</th><th>Subject / Short</th><th>Full Copy</th></tr>
             </thead>
             <tbody>
-              <tr><td>Morning Awakening</td><td>English/Arabic</td><td>Top-of-Funnel Introduction (A/B Subject Tested)</td><td>Awareness & Open Rate</td></tr>
-              <tr><td>Signature Indulgence</td><td>English/Arabic</td><td>Content Focus: **Product Hegemony** (Hero Latte Feature)</td><td>Product Familiarity</td></tr>
-              <tr><td>Exclusive Offer</td><td>English/Arabic</td><td>Conversion: Driving immediate **in-store traffic** via discount</td><td>First Purchase</td></tr>
-              <tr><td>Loyalty Invitation</td><td>English/Arabic</td><td>CRM Goal: Focus on **Customer Lifetime Value (LTV)** acquisition</td><td>High-Value Conversion</td></tr>
-              <tr><td>**Haksoss Spotlight**</td><td>English/Arabic</td><td>Content Loop: Feature **UGC** from Loyalty Members (Proof)</td><td>Retention & Trust</td></tr>
-              <tr><td>Final Sunrise Reminder</td><td>English/Arabic</td><td>Urgency: Final push to convert hesitant segments</td><td>Last-Chance Conversion</td></tr>
+                            <tr><td>Morning Awakening</td><td>English</td><td>Wake up with the perfect cup</td><td>Wake up with the perfect cup and embrace the serenity of Alexandria’s beach mornings. Haksoss brings luxury and flavor together.</td></tr>
+
+              <tr><td>Signature Indulgence</td><td>English</td><td>Mornings deserve indulgence</td><td>At Haksoss, we believe that mornings deserve moments of pure indulgence. Let us take you on a journey of taste, aroma, and elegance.<br>• Hero Latte: Velvety, aromatic, perfect balance.<br>• Chocolate Croissant: Layers of buttery pastry with rich chocolate.<br>• Seasonal Treats: Fresh ingredients capturing every season.<br>• Special Latte Creations: Luxury coffee with beach ambiance.</td></tr>
+
+              <tr><td>Exclusive Offer</td><td>English</td><td>Limited-time morning upgrade</td><td>Delight in our limited-time offer to elevate your mornings.<br>• Hero Latte Experience: Complimentary upgrade with any latte.<br>• Chocolate Croissant Delight: Second croissant 50% off.<br>• Seasonal Treat Bonus: Special treats with any breakfast.</td></tr>
+
+              <tr><td>Loyalty Invitation</td><td>English</td><td>Join Haksoss Loyalty</td><td>Elevate your mornings with Haksoss Loyalty.<br>• Points on Every Purchase: Earn rewards.<br>• Early Access: Discover new offerings first.<br>• Exclusive Events: Private tastings, workshops, beach gatherings.<br>• Personalized Rewards: Tailored experiences.</td></tr>
+
+              <tr><td>Haksoss Spotlight</td><td>English</td><td>Why guests love Haksoss</td><td>Discover why guests choose Haksoss to start their day.<br>"The Hero Latte is perfection in a cup." – Sarah A.<br>"Every visit feels like a luxury retreat by the sea." – Omar K.<br>"The seasonal treats are beautiful and delicious." – Lina M.</td></tr>
+
+              <tr><td>Final Sunrise Reminder</td><td>English</td><td>Don’t miss the morning elegance</td><td>Don’t miss the chance to experience elegance, flavor, and luxury.<br>• Hero Latte: Crafted to perfection.<br>• Chocolate Croissant: Flaky, decadent, unforgettable.<br>• Seasonal Treats & Special Lattes: Limited-time creations.<br>• Loyalty Rewards: Join today for benefits.</td></tr>
+
+                            <tr><td>صباح مشرق</td><td>Arabic</td><td>ابدأ صباحك مع الكوب المثالي</td><td>ابدأ صباحك مع الكوب المثالي واستمتع بهدوء شواطئ الإسكندرية. هكسوس يجمع بين الفخامة والنكهات.</td></tr>
+
+              <tr><td>المتعة المميزة</td><td>Arabic</td><td>الصباح يستحق الترف</td><td>في هكسوس، نؤمن أن الصباح يستحق لحظات من الترف الخالص.<br>• لاتيه هيرو: كريمي وعطري، وتوازن مثالي من النكهات.<br>• كرواسون الشوكولاتة: طبقات معجنات مع الشوكولاتة الغنية.<br>• حلويات الموسم: مكونات طازجة تعكس كل موسم.</td></tr>
+
+              <tr><td>عرض حصري</td><td>Arabic</td><td>استمتع بعرضنا المحدود</td><td>استمتع بعرضنا المحدود لترقية صباحك.<br>• تجربة لاتيه هيرو: ترقية مجانية مع أي لاتيه.<br>• متعة كرواسون الشوكولاتة: كرواسون ثانٍ بخصم 50%.</td></tr>
+
+              <tr><td>دعوة للانضمام لبرنامج الولاء</td><td>Arabic</td><td>انضم لبرنامج الولاء</td><td>ارتقِ بصباحك مع برنامج ولاء هكسوس.<br>• نقاط مع كل عملية شراء: اكسب مكافآت.<br>• الوصول المبكر: اكتشف العروض الجديدة أولًا.<br>• فعاليات حصرية: تذوق خاص، ورش عمل، تجمعات شاطئية.</td></tr>
+
+              <tr><td>أضواء هكسوس</td><td>Arabic</td><td>لماذا يختار الضيوف هكسوس</td><td>اكتشف لماذا يختار الضيوف هكسوس لبدء يومهم — شهادات الضيوف وتجاربهم.</td></tr>
+
+              <tr><td>تذكير شروق الشمس النهائي</td><td>Arabic</td><td>لا تفوت تجربة الأناقة</td><td>لا تفوت الفرصة لتجربة الأناقة والنكهات والفخامة — اشترك في برنامج الولاء الآن.</td></tr>
             </tbody>
           </table>
         </div>
       </section>
 
-      <section id="seo-report" class="panel seo-report">
-        <h2>Pillar 3: Technical SEO & Local Mastery</h2>
-        <p class="muted">A strategy to ensure long-term organic dominance by leveraging local intent, technical SEO best practices, and schema markup for SERP control.</p>
+            <section id="social" class="panel">
+        <h2>Social Media — Posts & Stories (with copy)</h2>
+        <p class="muted">Each visual below is paired with the exact caption/copy used in the campaign (English shown first; Arabic available as needed).</p>
 
-        <div class="section">
-        <h3>1. Technical Foundation & Schema Mandate</h3>
-        <div class="card">
-        <ul class="muted">
-        <li>**Schema Markup:** Mandate immediate implementation of **LocalBusiness Schema** (NAP, hours) to secure rich snippets and improve visibility in "Near Me" searches.</li>
-        <li>**GMB Integration:** Treat Google My Business as a social channel—post **"Hero Latte Upgrade"** offers weekly to boost local search rankings.</li>
-        <li>**Image Optimization:** Descriptive Alt Text used for all key visuals (e.g., `<img alt="Hero Latte coffee by the sea at Haksoss Café">`).</li>
-        </ul>
-        </div>
-        </div>
+                <div class="post-row" style="margin-top:12px">
+          <div class="post-card">
+            <img src="3_Assets/1_Templates/hero_latte_post.png" alt="Hero Latte Post">
+            <div class="post-text">
+              <strong>Hero Latte — Post (English)</strong>
+              <p style="margin:6px 0">“Wake up with the perfect cup.”<br>Hero Latte: Velvety, aromatic, balanced. Experience morning luxury by the sea. ☕✨</p>
+              <p class="muted">Suggested hashtags: #Haksoss #HeroLatte #MorningLuxury</p>
+            </div>
+          </div>
 
-        <div class="section">
-        <h3>2. Target Keywords & Geo-Content Strategy</h3>
-        <div class="card">
-        <table>
-        <tr><th>Keyword</th><th>Intent</th><th>Priority</th><th>Geo-Content Mandate</th></tr>
-        <tr><td>**Luxury café Alexandria**</td><td>Local/Branding</td><td>High</td><td>Create "The Haksoss View: Mornings by the Sea" section.</td></tr>
-        <tr><td>**Best morning coffee Alexandria**</td><td>Local/Intent</td><td>High</td><td>Use in H2/H3 tags on the homepage/blog content.</td></tr>
-        <tr><td>Premium breakfast Alexandria</td><td>Local/Offer</td><td>High</td><td>Anchor internal links to the "Seasonal Treats" page.</td></tr>
-        </table>
-        </div>
+          <div class="post-card">
+            <img src="3_Assets/Images/hero-latte.jpg" alt="Hero Latte Photo">
+            <div class="post-text">
+              <strong>Hero Latte — Story Preview</strong>
+              <p style="margin:6px 0">Short video / GIF: latte art close-up + CTA “Swipe up to claim your complimentary upgrade”</p>
+            </div>
+          </div>
         </div>
 
-        <div class="section">
-        <h3>3. On-Page & Meta Strategy</h3>
-        <div class="card">
-        <p><strong>Meta Title (LTV Focus):</strong> <span class="highlight">Haksoss Café — Luxury Morning Experience in Alexandria | LTV Campaign Case Study</span></p>
-        <p><strong>Meta Description:</strong> <span class="highlight">Haksoss Café: Alexandria’s premier luxury morning experience. This campaign drove 411% ROI and demonstrated best-in-class LTV acquisition strategies focused on the signature Hero Latte and Chocolate Croissant.</span></p>
-        <h4>Structural Mandate</h4>
-        <ul class="muted">
-        <li>H1: Haksoss Café — Elevate Your Mornings (Clear, single H1)</li>
-        <li>H2: Hero Latte — Alexandria’s Signature Morning Experience</li>
-        </ul>
+                <div class="post-row">
+          <div class="post-card">
+            <img src="3_Assets/Images/chocolate-croissant.jpg" alt="Chocolate Croissant">
+            <div class="post-text">
+              <strong>Chocolate Croissant — Post</strong>
+              <p style="margin:6px 0">Layers of buttery pastry and rich chocolate — the perfect morning treat. Buy one, get the second at 50% off this week.</p>
+              <p class="muted">CTA: “Taste the layers” • #HaksossPastries #MorningTreat</p>
+            </div>
+          </div>
+
+          <div class="post-card">
+            <img src="3_Assets/1_Templates/haksoss_post.png" alt="Brand Post Template">
+            <div class="post-text">
+              <strong>Brand Post — Seasonal</strong>
+              <p style="margin:6px 0">Highlight seasonal pairing: Chocolate Croissant + Hero Latte combo — limited time.</p>
+            </div>
+          </div>
         </div>
+
+                <div class="post-row">
+          <div class="post-card">
+            <img src="3_Assets/1_Templates/special_latte.png" alt="Special Latte Template">
+            <div class="post-text">
+              <strong>Special Latte — Post</strong>
+              <p style="margin:6px 0">Introducing this month’s seasonal latte — small-batch flavors, crafted with care. Early access for loyalty members.</p>
+            </div>
+          </div>
+
+          <div class="post-card">
+            <img src="3_Assets/Images/special-latte.jpg" alt="Special Latte Photo">
+            <div class="post-text">
+              <strong>Special Latte — Story</strong>
+              <p style="margin:6px 0">Short clip: steaming cup on seaside table — overlay: “Try it today” + loyalty CTA.</p>
+            </div>
+          </div>
+        </div>
+
+                <div class="post-row">
+          <div class="post-card">
+            <img src="3_Assets/1_Templates/season_offer.png" alt="Season Offer Template">
+            <div class="post-text">
+              <strong>Season Offer — Post</strong>
+              <p style="margin:6px 0">Limited-time seasonal treats — featured weekly. Combine with any latte for a special bonus.</p>
+            </div>
+          </div>
+
+          <div class="post-card">
+            <img src="3_Assets/1_Templates/discover_more.png" alt="Discover More Template">
+            <div class="post-text">
+              <strong>Discover More — Carousel</strong>
+              <p style="margin:6px 0">Carousel showcasing: Hero Latte • Croissant • Seasonal Treat • Loyalty Perks. CTA: Discover our delights.</p>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+            <section id="ads" class="panel">
+        <h2>Ads & Promotions</h2>
+        <p class="muted">Examples of promoted creatives used in performance campaigns.</p>
+
+        <div class="ad-grid">
+          <div class="ad-card">
+            <img src="3_Assets/Images/special-offer.jpg" alt="Special Offer">
+            <div style="margin-top:8px"><strong>Hero Latte Upgrade — Meta Ad</strong><p class="muted">Complementary upgrade creative — targeted to nearby coffee lovers and retargeting audiences.</p></div>
+          </div>
+
+          <div class="ad-card">
+            <img src="3_Assets/Images/loyalty-program.jpg" alt="Loyalty Program">
+            <div style="margin-top:8px"><strong>Loyalty Sign-up Ad — Retargeting</strong><p class="muted">Retarget visitors with loyalty benefits and VIP event invites.</p></div>
+          </div>
         </div>
       </section>
 
-      <section id="guidelines" class="panel">
-        <h2>Brand & Execution Governance</h2>
-        <div class="flex" style="margin-top:16px">
+            <section id="kpis" class="panel">
+        <h2>KPIs & Performance Dashboard</h2>
+        <p class="muted">Performance summary and visual charts. These figures are the campaign results used for the case study presentation.</p>
+
+        <div class="kpi-grid">
+          <div class="kpi"><div>Total Reach</div><div class="num">80,800</div></div>
+          <div class="kpi"><div>Loyalty Sign-ups</div><div class="num">1,070</div></div>
+          <div class="kpi"><div>Avg Engagement</div><div class="num">11.3%</div></div>
+          <div class="kpi"><div>Overall ROI</div><div class="num">411%</div></div>
+        </div>
+
+        <div class="charts">
+          <div class="chart card"><h4 style="margin:0 0 8px">Engagement Rate by Platform</h4><canvas id="engChart"></canvas></div>
+          <div class="chart card"><h4 style="margin:0 0 8px">Ad Spend Distribution</h4><canvas id="spendPie"></canvas></div>
+          <div class="chart card"><h4 style="margin:0 0 8px">Email Open Rate Trend</h4><canvas id="emailLine"></canvas></div>
+          <div class="chart card"><h4 style="margin:0 0 8px">Conversions by Channel</h4><canvas id="convBar"></canvas></div>
+        </div>
+
+        <table style="margin-top:12px">
+          <thead><tr><th>Metric</th><th>Result</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>Total Reach</td><td>80,800</td><td>Combined social + ads + email</td></tr>
+            <tr><td>Total Conversions</td><td>1,070 loyalty sign-ups</td><td>Includes email + organic + ad conversions</td></tr>
+            <tr><td>Avg Engagement</td><td>11.3%</td><td>Across IG / FB / TikTok</td></tr>
+            <tr><td>Email Open Rate (avg)</td><td>43%</td><td>Strong subject lines + segmentation</td></tr>
+            <tr><td>Ad Spend</td><td>$1,770</td><td>Meta / Google / TikTok</td></tr>
+            <tr><td>Overall ROI</td><td>411%</td><td>Estimated revenue: $9,050</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+            <section id="guidelines" class="panel">
+        <h2>Brand Guidelines & Posting Rhythm</h2>
+        <div class="flex" style="margin-top:10px">
           <div class="card" style="flex:1">
-            <h4 style="margin-top:0">Visual Guidelines</h4>
+            <h4 style="margin-top:0">Visuals</h4>
             <ul class="muted">
-              <li>**Palette:** deep blue / soft sand / white.</li>
-              <li>**Photography:** Focus on **sensory appeal** (steam, foam, texture).</li>
+              <li>Palette: white + deep blue (#2b6cb0) + soft sand accents</li>
+              <li>Photography: morning light, soft shadows, texture close-ups</li>
+              <li>Logo: small circular mark visible on all posts</li>
             </ul>
           </div>
 
           <div class="card" style="flex:1">
             <h4 style="margin-top:0">Voice & Copy</h4>
             <ul class="muted">
-              <li>**Tone:** Elegant, warm, sensory, emphasizing the "Luxury Experience."</li>
-              <li>**Localization:** Develop copy with **Cultural Resonance** in mind, not just translation.</li>
-            </ul>
-          </div>
-
-          <div class="card" style="flex:1">
-            <h4 style="margin-top:0">Content Loop & Rhythm</h4>
-            <ul class="muted">
-              <li>**Content Engine:** The **Seasonal Treat** rotation drives the entire six-week campaign cycle.</li>
-              <li>**Social Fuel:** **UGC** from Loyalty Members must be prioritized for new ad creatives.</li>
+              <li>Tone: Elegant, warm, sensory</li>
+              <li>Languages: English & Arabic (localization not literal translation)</li>
+              <li>CTAs: Short & clear — "Order Now", "Join Loyalty", "Discover"</li>
             </ul>
           </div>
         </div>
+
+        <div style="margin-top:12px;" class="card">
+          <h4 style="margin-top:0">Posting Rhythm</h4>
+          <ul class="muted">
+            <li>Organic posts: 3 / week</li>
+            <li>Stories: Daily highlights</li>
+            <li>Ads: 2–3 concurrent campaigns, weekly optimization</li>
+          </ul>
+        </div>
       </section>
 
-      <footer>
-        <div>Created by **Mohamed Abdelrazek** • <a href="https://www.linkedin.com/in/moe-abdelrazek/" target="_blank">LinkedIn</a> • <a href="https://moeabdelrazek.github.io/" target="_blank">moeabdelrazek.github.io</a></div>
-        <div style="margin-top:6px; color:var(--muted)">Haksoss LTV Case Study • **#1 Portfolio Contender** • 2025</div>
+            <footer>
+        <div>Created by <strong>Mohamed Abdelrazek</strong> • <a href="https://www.linkedin.com/in/moe-abdelrazek/" target="_blank">LinkedIn</a> • <a href="https://moeabdelrazek.github.io/" target="_blank">moeabdelrazek.github.io</a></div>
+        <div style="margin-top:6px; color:var(--muted)">Haksoss Campaign • Portfolio Presentation • 2025</div>
       </footer>
 
-    </div> </div> <script>
+    </div>   </div> <script>
   // generate subtle bean particles
   (function makeBeans(){
     const container = document.getElementById('particles');
     if(!container) return;
-    const count = 20;
+    const count = 16;
     for(let i=0;i<count;i++){
       const b = document.createElement('div');
       b.className = 'bean';
       b.style.left = Math.random()*100 + '%';
       b.style.top = -Math.random()*20 + 'vh';
       b.style.opacity = 0.04 + Math.random()*0.12;
-      b.style.width = (8 + Math.random()*16) + 'px';
-      b.style.height = (6 + Math.random()*10) + 'px';
-      b.style.animationDuration = (12 + Math.random()*10) + 's';
-      b.style.animationDelay = (-10 + Math.random()*10) + 's'; /* Start staggered */
+      b.style.width = (6 + Math.random()*12) + 'px';
+      b.style.height = (4 + Math.random()*8) + 'px';
+      b.style.animationDuration = (8 + Math.random()*10) + 's';
       b.style.transform = 'rotate('+(-30+Math.random()*60)+'deg)';
       container.appendChild(b);
     }
@@ -465,27 +491,27 @@ is this correct:
     type: 'bar',
     data: {
       labels: ['IG Posts','IG Stories','Facebook','TikTok'],
-      datasets: [{ data:[12.5,9.3,8.4,15.1], backgroundColor:['#1b639e','#4c96d8','#7dd3fc','#a8e6cf'], borderRadius:6 }]
+      datasets: [{ data:[12.5,9.3,8.4,15.1], backgroundColor:['#2b6cb0','#60a5fa','#7dd3fc','#9fe2c5'], borderRadius:6 }]
     },
     options:{ responsive:true, plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true, ticks:{callback:v=>v+'%'}}} }
   });
 
   new Chart(document.getElementById('spendPie'), {
     type: 'pie',
-    data: { labels:['Meta','Google Display','TikTok'], datasets:[{ data:[850,420,500], backgroundColor:['#1b639e','#4c96d8','#a8e6cf'] }] },
+    data: { labels:['Meta','Google Display','TikTok'], datasets:[{ data:[850,420,500], backgroundColor:['#2b6cb0','#60a5fa','#9fe2c5'] }] },
     options:{ responsive:true }
   });
 
   new Chart(document.getElementById('emailLine'), {
     type:'line',
-    data:{ labels:['Awakening','Indulgence','Offer','Loyalty','Spotlight','Final'],
-           datasets:[{ data:[42,40,45,47,39,44], borderColor:'#d99b6c', fill:false, tension:0.25, pointRadius:5, borderWidth: 3 }] },
-    options:{ responsive:true, scales:{y:{beginAtZero:false, ticks:{callback:v=>v+'%'}}} }
+    data:{ labels:['Morning Awakening','Signature Indulgence','Exclusive Offer','Loyalty Invitation','Spotlight','Final Reminder'],
+           datasets:[{ data:[42,40,45,47,39,44], borderColor:'#2b6cb0', fill:false, tension:0.25, pointRadius:4 }] },
+    options:{ responsive:true, scales:{y:{beginAtZero:true, ticks:{callback:v=>v+'%'}}} }
   });
 
   new Chart(document.getElementById('convBar'), {
     type:'bar',
-    data:{ labels:['IG Posts','IG Stories','Facebook','TikTok'], datasets:[{ data:[310,205,175,380], backgroundColor:['#1b639e','#4c96d8','#7dd3fc','#d99b6c'], borderRadius:6 }] },
+    data:{ labels:['IG Posts','IG Stories','Facebook','TikTok'], datasets:[{ data:[310,205,175,380], backgroundColor:['#2b6cb0','#60a5fa','#7dd3fc','#fde68a'], borderRadius:6 }] },
     options:{ responsive:true, plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true}} }
   });
 </script>
