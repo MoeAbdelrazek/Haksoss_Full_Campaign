@@ -413,24 +413,6 @@ footer{
   letter-spacing: 2px;
 }
 
-/* music control */
-#music-control {
-  position: fixed;
-  right: 24px;
-  bottom: 26px;
-  z-index: 99999;
-  background: var(--accent);
-  color: #0b2545;
-  border: none;
-  padding: 10px 14px;
-  border-radius: 999px;
-  box-shadow: 0 8px 30px rgba(11,37,68,0.12);
-  cursor: pointer;
-  font-weight: 700;
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-#music-control:hover { transform: translateY(-4px); }
-
 /* signature footer style override (Great Vibes) */
 .signature {
   font-family: 'Great Vibes', cursive;
@@ -460,11 +442,6 @@ a:focus, button:focus { outline: 3px solid rgba(217,155,108,0.25); outline-offse
   </div>
 </div>
 
-<audio id="bg-music" loop preload="auto" autoplay style="display:none">
-  <source src="3_Assets/Music/haksoss_theme.mp3" type="audio/mpeg">
-</audio>
-<button id="music-control" aria-pressed="false" title="Play background music">Play Music</button>
-
 <header class="fixed-header" role="banner">
   <div class="header-inner">
     <div class="brand">
@@ -491,13 +468,13 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
 <div class="stat"><div class="val">80,800</div><div class="lab">Total Reach</div></div>
 <div class="stat"><div class="val">1,070</div><div class="lab">Loyalty Sign-ups</div></div>
 <div class="stat"><div class="val">11.3%</div><div class="lab">Avg Engagement Rate</div></div>
-<div class="stat"><div class="val">411%</div><div class="lab">Overall Campaign ROI</div></div>
+<div class="stat"><div class="val">411.12%</div><div class="lab">Overall Campaign ROI</div></div>
 </div>
 
 <div class="financial-summary">
   <h3>Results at a Glance: High-Impact Financial Outcomes 🏆</h3>
-  <p>The AI-driven strategy delivered a market-leading **411% Overall Campaign ROI** and an exceptional **41.3:1 LTV:CAC Ratio**, establishing a highly scalable profitability model.</p>
-  <p>Total Campaign Spend: **$2,200** (Implied by ROI and Revenue)</p>
+  <p>The AI-driven strategy delivered a market-leading **411.12% Overall Campaign ROI** and an exceptional **41.3:1 LTV:CAC Ratio**, establishing a highly scalable profitability model.</p>
+  <p>Total Campaign Spend: **$2,290.00**</p>
 </div>
 
 <div style="margin-top:20px;">
@@ -637,7 +614,7 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
 <tr><td>Total Reach</td><td>80,800</td><td>Combined social + ads + email</td></tr>
 <tr><td>Total Conversions</td><td>1,070 loyalty sign-ups</td><td>Key Success Metric for repeat business</td></tr>
 <tr><td>Average CAC (AI Optimized)</td><td>$2.65</td><td>32% reduction from standard bidding</td></tr>
-<tr><td>Estimated Revenue</td><td>$9,050</td><td>High-impact campaign ROI (411%)</td></tr>
+<tr><td>**Real Estimated Revenue**</td><td>**$9,415.68**</td><td>High-impact campaign ROI (**411.12%**)</td></tr>
 <tr><td>Avg. LTV Projection (90-Day)</td><td>$68.20</td><td>51% increase over prior average ($45.00)</td></tr>
 <tr><td>**Breakeven Point**</td><td>**Day 28**</td><td>Campaign recovered total investment in 4 weeks.</td></tr>
 <tr><td>**Budget Pacing**</td><td>**60% Shifted**</td><td>Redirected to lowest-CAC channels (TikTok) in the final two weeks.</td></tr>
@@ -660,8 +637,8 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
 </section>
 
 <section id="conclusion" class="panel fade-section">
-<h2>Conclusion and Next Steps 🚀</h2>
-<p class="sub">The Haksoss campaign achieved its objective by merging bilingual creative with high-precision algorithmic intelligence. The resulting **41.3:1 LTV:CAC ratio** provides a highly scalable blueprint for brand expansion and growth.</p>
+<h2>Conclusion and Next Steps</h2>
+<p class="sub">The Haksoss campaign achieved its objective by merging bilingual creative with high-precision algorithmic intelligence. The resulting **41.3:1 LTV:CAC** ratio provides a highly scalable blueprint for brand expansion and growth.</p>
 
 <div style="margin-top:16px;">
 <h3 style="margin-bottom:8px; color:var(--deep);">Immediate Actionable Next Steps</h3>
@@ -712,7 +689,6 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
 (function(){
   const KEY = 'haksoss_intro_seen_v1';
   const overlay = document.getElementById('intro-overlay');
-  const music = document.getElementById('bg-music');
   document.body.classList.add('intro-active'); // prevent interactions while deciding
 
   function showIntro() {
@@ -724,26 +700,6 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
       setTimeout(() => {
         overlay.style.display = 'none';
         document.body.classList.remove('intro-active');
-
-        // --- NEW AUTOPLAY ATTEMPT ---
-        if (music) {
-            music.muted = false; // Unmute
-            music.play().then(() => {
-                // Success: If played, update button state
-                const btn = document.getElementById('music-control');
-                if (btn) {
-                  btn.textContent = 'Pause Music';
-                  btn.setAttribute('aria-pressed', 'true');
-                }
-            }).catch(e => {
-                // Failure (Autoplay blocked): Keep button as 'Play Music'
-                const btn = document.getElementById('music-control');
-                if (btn) btn.textContent = 'Play Music';
-                music.muted = true; // Ensure it remains muted until user clicks
-            });
-        }
-        // --- END AUTOPLAY ATTEMPT ---
-
       }, 600);
     }, 3300);
   }
@@ -759,13 +715,6 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
       // skip intro
       overlay.style.display = 'none';
       document.body.classList.remove('intro-active');
-
-      // Manual attempt to play on page load if intro is skipped (may still be blocked)
-      if (music) {
-          music.muted = true; // Start muted for general compliance
-          // Try to play muted, then unmute on user interaction/if already allowed
-          music.play().catch(e => console.log("Autoplay blocked on skip."));
-      }
     }
   } catch(e){
     // if localStorage blocked, show intro once
@@ -817,12 +766,12 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
     });
   }
 
-  // 2. Spend Pie
+  // 2. Spend Pie (Updated Spend)
   const spendPie = document.getElementById('spendPie');
   if (spendPie) {
     new Chart(spendPie, {
       type: 'doughnut',
-      data: { labels:['Meta','Google Display','TikTok'], datasets:[{ data:[850,420,500], backgroundColor:[OCEAN_BLUE, LIGHT_BLUE, SAND_GOLD] }] },
+      data: { labels:['Meta','Google Display','TikTok'], datasets:[{ data:[890,480,520], backgroundColor:[OCEAN_BLUE, LIGHT_BLUE, SAND_GOLD] }] }, // Adjusted spend distribution
       options:{ responsive:true }
     });
   }
@@ -899,48 +848,7 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
   }
 })();
 
-/* ======================
-   Background music control
-   ====================== */
-(function(){
-  const btn = document.getElementById('music-control');
-  const music = document.getElementById('bg-music');
-  // Initial state is controlled by the intro logic, but we need a state tracker
-  let playing = music && music.hasAttribute('autoplay') && !music.muted; // Assumes initial autoplay/unmuted attempt
-
-  // Initial check for button text based on browser outcome
-  if (music) {
-    music.addEventListener('play', () => {
-        playing = true;
-        btn.textContent = 'Pause Music';
-        btn.setAttribute('aria-pressed', 'true');
-    });
-    music.addEventListener('pause', () => {
-        playing = false;
-        btn.textContent = 'Play Music';
-        btn.setAttribute('aria-pressed', 'false');
-    });
-  }
-
-  btn && btn.addEventListener('click', async () => {
-    if (!music) return;
-    if (!playing) {
-      try {
-        music.muted = false;
-        await music.play();
-      } catch(e) {
-        // Autoplay prevented/error, rely on the event listeners to update state
-      }
-    } else {
-      music.pause();
-    }
-  });
-
-  // Hide button if no source
-  if (!music || !music.querySelector('source')) {
-    btn.style.display = 'none';
-  }
-})();
+// MUSIC CONTROL CODE REMOVED
 </script>
 
 </body>
