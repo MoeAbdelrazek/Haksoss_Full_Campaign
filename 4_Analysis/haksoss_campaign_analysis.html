@@ -1,335 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Haksoss Campaign Analysis</title>
-<link href="https://fonts.googleapis.com/css2?family=Lato&family=Playfair+Display&display=swap" rel="stylesheet">
-<style>
-  body { font-family:'Lato', sans-serif; margin:0; padding:0; background:#fdf6f0; color:#6B4C3B; }
-  header { background:#6B4C3B; color:#FFF8F0; padding:20px; text-align:center; font-family:'Playfair Display', serif; font-size:2em; position:relative; }
-  header img { position:absolute; top:10px; left:10px; width:60px; height:60px; border-radius:50%; }
-  h1 { font-family:'Playfair Display', serif; font-size:1.8em; margin-top:30px; text-align:center; color:#005C91; }
-  h2 { font-family:'Playfair Display', serif; font-size:1.4em; margin-top:25px; color:#D99B6C; }
-  section { max-width:1000px; margin:20px auto; padding:15px; background:rgba(255,248,240,0.95); border-radius:15px; box-shadow:0 6px 12px rgba(107,76,59,0.3); }
-  ul { margin-left:20px; }
-  img { max-width:150px; border-radius:10px; margin:10px; box-shadow:0 4px 8px rgba(107,76,59,0.2); transition: transform 0.3s; }
-  img:hover { transform: scale(1.05); }
-  table { width:100%; border-collapse:collapse; margin-top:15px; }
-  th, td { border:1px solid #D99B6C; padding:8px; text-align:left; }
-  th { background:#D99B6C; color:white; }
-  .flex-gallery { display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-start; }
-  @media print {
-    body { background:#fff; color:#000; }
-    header { background:#000; color:#fff; }
-    section { box-shadow:none; background:#fff; }
-    img { max-width:100px; }
-  }
-</style>
+    <meta charset="UTF-8">
+    <title>Haksoss Café Campaign Deep Dive: Maximum LTV & Scalability</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Base Styling */
+        body { font-family: 'Lato', Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f8f9fc; }
+        .container { max-width: 1100px; margin: 30px auto; background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(11, 37, 68, 0.08); }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: #0b2545; }
+        h1 { border-bottom: 3px solid #1b639e; padding-bottom: 10px; font-size: 32px; }
+        h2 { color: #1b639e; margin-top: 35px; border-bottom: 1px solid #eef4fb; padding-bottom: 5px; font-size: 24px; }
+        h3 { color: #D99B6C; margin-top: 20px; font-size: 18px; }
+
+        /* KPI Grid Styling */
+        .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 20px; text-align: center; }
+        .kpi-card { background: linear-gradient(180deg, #fff, #f3f8ff); padding: 20px; border-radius: 10px; border-left: 5px solid #1b639e; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04); transition: transform 0.3s ease; }
+        .kpi-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); }
+        .kpi-card .value { font-size: 2.5rem; font-weight: 900; color: #1b639e; display: block; }
+        .kpi-card .label { font-size: 0.9rem; color: #64748b; margin-top: 5px; font-weight: 700; }
+        .kpi-card.highlight { border-left-color: #D99B6C; }
+        .kpi-card.highlight .value { color: #D99B6C; }
+
+        /* Animation for Value Display (Initial Load) */
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .animated-stat { animation: fadeIn 0.8s ease-out both; }
+        
+        /* Table Styling */
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 0.95rem; }
+        th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #eef4fb; }
+        th { background-color: #0b2545; color: white; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.5px; }
+        tr:nth-child(even) { background-color: #fcfdfe; }
+
+        /* Chart Area Styling */
+        .chart-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 25px; }
+        .chart-wrapper { background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); }
+
+        /* Strategy Cards */
+        .strategy-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; }
+        .strategy-card { padding: 20px; border-radius: 8px; background: #eaf3fd; border: 1px solid #d4e3f3; }
+        .strategy-card h4 { color: #0b2545; margin-top: 0; }
+        .strategy-card p { font-size: 0.9rem; color: #4b5563; }
+        .critical-action { color: #D99B6C; font-weight: bold; }
+    </style>
 </head>
 <body>
 
-<header>
-  <img src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/3_Assets/logo.png" alt="Haksoss Logo">
-  Haksoss Campaign Analysis
-</header>
+<div class="container">
 
-<section>
-  <h1>1️⃣ Campaign Overview</h1>
-  <p><strong>Brand:</strong> Haksoss Café</p>
-  <p><strong>Objective:</strong> Showcase Haksoss as a luxury coffee experience in Alexandria; increase loyalty sign-ups, drive in-store visits, maximize engagement.</p>
-  <p><strong>Scope:</strong></p>
-  <ul>
-    <li>Email Marketing (English & Arabic)</li>
-    <li>Social Media Posts & Stories (English & Arabic)</li>
-    <li>Social Media Ads (English & Arabic)</li>
-    <li>Campaign Guidelines & Brand Strategy</li>
-  </ul>
-</section>
+    <h1>Haksoss Café Campaign Deep Dive: Maximum LTV & Scalability</h1>
+    <p><strong>Strategic Mandate:</strong> Elevate Haksoss as Alexandria’s premier morning destination by maximizing **Customer Lifetime Value (LTV)** via a loyalty-led, bilingual acquisition model.</p>
 
-<section>
-  <h1>2️⃣ Target Audience</h1>
-  <ul>
-    <li>Primary: Affluent coffee lovers in Alexandria; early risers; luxury seekers</li>
-    <li>Secondary: Tourists, lifestyle enthusiasts, young professionals</li>
-    <li>Demographics: 20–45 years old, middle-to-high income, socially active</li>
-    <li>Psychographics: Interested in premium experiences, aesthetics, social sharing, indulgence</li>
-  </ul>
-</section>
+    <h2>1. Executive Financial Breakdown & Core Metrics</h2>
+    
+    <div class="kpi-grid">
+        <div class="kpi-card animated-stat" style="animation-delay: 0s;">
+            <span class="value">411%</span>
+            <span class="label">Overall Campaign ROI</span>
+        </div>
+        <div class="kpi-card animated-stat highlight" style="animation-delay: 0.1s;">
+            <span class="value">$1.65</span>
+            <span class="label">Avg CPA (Loyalty Acquisition)</span>
+        </div>
+        <div class="kpi-card animated-stat" style="animation-delay: 0.2s;">
+            <span class="value">1:290</span>
+            <span class="label">CAC:LTV Ratio ($1.65:$480)</span>
+        </div>
+        <div class="kpi-card animated-stat" style="animation-delay: 0.3s;">
+            <span class="value">$0.11</span>
+            <span class="label">Revenue Per Reach ($9,010/80.8k)</span>
+        </div>
+    </div>
+    
+    <h3>Deep Dive: Financial Efficiency Justification</h3>
+    
+    <table class="financial-table">
+        <thead>
+            <tr>
+                <th>Metric</th>
+                <th>Calculation / Provided Data</th>
+                <th>Analysis & Scalability Check</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>**Estimated Spend**</td>
+                <td>$1.65 CPA &times; 1,070 Conversions $\approx$ **$1,765.50**</td>
+                <td>Highly capital-efficient. Low initial burn for market validation.</td>
+            </tr>
+            <tr>
+                <td>**Calculated Revenue**</td>
+                <td>$1,765.50 \times (1 + 4.11 \text{ ROI}) \approx$ **$9,010.51**</td>
+                <td>Generated over 5x the initial spend, justifying immediate scale-up.</td>
+            </tr>
+            <tr>
+                <td>**CAC:LTV Ratio**</td>
+                <td>$1.65 \text{ CAC} : $480 \text{ LTV} \Rightarrow$ **$1:290$**</td>
+                <td>**Unprecedented.** This ratio is the strongest argument for an *aggressive* budget increase, as the value of each customer far outweighs the cost to acquire them.</td>
+            </tr>
+        </tbody>
+    </table>
 
-<section>
-  <h1>3️⃣ English Emails</h1>
-  <h2>Morning Awakening</h2>
-  <p>Wake up with the perfect cup and embrace the serenity of Alexandria’s beach mornings. Haksoss brings luxury and flavor together.</p>
-  
-  <h2>Signature Indulgence</h2>
-  <ul>
-    <li>Hero Latte: Velvety, aromatic, perfect balance</li>
-    <li>Chocolate Croissant: Layers of buttery pastry with rich chocolate</li>
-    <li>Seasonal Treats: Fresh ingredients capturing every season</li>
-    <li>Special Latte Creations: Luxury coffee with beach ambiance</li>
-  </ul>
+    <h2>2. Channel Performance & Budget Reallocation</h2>
+    
+    <div class="chart-grid">
+        <div class="chart-wrapper">
+            <h4>Engagement Rate by Platform (Actionable Insights)</h4>
+            <canvas id="engChartNew"></canvas>
+        </div>
+        <div class="chart-wrapper">
+            <h4>Conversions by Channel (CPA Driver)</h4>
+            <canvas id="convBarNew"></canvas>
+        </div>
+    </div>
+    
+    <table class="channel-table">
+        <thead>
+            <tr>
+                <th>Channel</th>
+                <th>Engagement Rate</th>
+                <th>Conversions</th>
+                <th>Strategic Mandate</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>**TikTok**</td>
+                <td>**15.1%** (Highest)</td>
+                <td>**380** (Highest)</td>
+                <td class="critical-action">**IMMEDIATE BUDGET REALLOCATION:** Shift 100% of the lowest performer's budget (e.g., Google Display) to TikTok. This channel has proven the highest CPA efficiency.</td>
+            </tr>
+            <tr>
+                <td>Instagram Posts</td>
+                <td>12.5%</td>
+                <td>310</td>
+                <td>Maintain production cadence. Test LAL audience retargeting with UGC.</td>
+            </tr>
+            <tr>
+                <td>Facebook</td>
+                <td>8.4% (Lowest)</td>
+                <td>175 (Lowest)</td>
+                <td>Reduce investment here. Use only for lookalike audience generation/retargeting.</td>
+            </tr>
+        </tbody>
+    </table>
 
-  <h2>Exclusive Offer</h2>
-  <ul>
-    <li>Hero Latte Experience: Complimentary upgrade with any latte</li>
-    <li>Chocolate Croissant Delight: Second croissant 50% off</li>
-    <li>Seasonal Treat Bonus: Special treats with any breakfast</li>
-  </ul>
+    <h2>3. LTV Optimization & Retention Strategy</h2>
 
-  <h2>Loyalty Invitation</h2>
-  <ul>
-    <li>Points on Every Purchase: Earn rewards</li>
-    <li>Early Access: Discover new offerings first</li>
-    <li>Exclusive Events: Private tastings, workshops, beach gatherings</li>
-    <li>Personalized Rewards: Tailored experiences</li>
-  </ul>
+    <div class="strategy-cards">
+        <div class="strategy-card">
+            <h4>Conversion Funnel Tightening</h4>
+            <p><strong>Goal:</strong> Push CPA below $1.00.</p>
+            <p>The next action calls for a **dedicated landing page**. Since $1.65$ CPA was achieved without one, a highly-optimized page could drop acquisition costs significantly. Launch this page with a strong **"First-Time Luxury"** offer exclusive to the loyalty program sign-up.</p>
+        </div>
+        <div class="strategy-card">
+            <h4>CRM Strategy (43% Open Rate)</h4>
+            <p><strong>Goal:</strong> Drive Gold Tier Membership.</p>
+            <p>A/B test the planned "Mood" segmentation against a **Purchase History** segmentation (Latte-first vs. Croissant-first buyers). This allows for hyper-personalized email offers (e.g., a "Croissant & Coffee Pairing" loyalty offer) to maximize LTV contribution.</p>
+        </div>
+        <div class="strategy-card">
+            <h4>Creative Efficiency & UGC</h4>
+            <p><strong>Goal:</strong> Lower creative production cost.</p>
+            <p>Prioritize using **UGC (User-Generated Content)** from the 1,070 loyalty members. UGC is more authentic and cheaper to produce, often yielding superior results in retargeting campaigns to solidify the "Haksoss Morning Collective" community feel.</p>
+        </div>
+    </div>
+</div>
 
-  <h2>Haksoss Spotlight</h2>
-  <ul>
-    <li>"The Hero Latte is perfection in a cup. The ambiance is unmatched." – Sarah A.</li>
-    <li>"Every visit feels like a luxury retreat by the sea. Can’t get enough of the chocolate croissants!" – Omar K.</li>
-    <li>"The seasonal treats are beautiful and delicious. Haksoss never disappoints." – Lina M.</li>
-  </ul>
+<script>
+    // Animation trigger for KPI cards (using Intersection Observer)
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.2 });
 
-  <h2>Final Sunrise Reminder</h2>
-  <ul>
-    <li>Hero Latte: Crafted to perfection</li>
-    <li>Chocolate Croissant: Flaky, decadent, unforgettable</li>
-    <li>Seasonal Treats & Special Lattes: Limited-time creations</li>
-    <li>Loyalty Rewards: Join today for benefits</li>
-  </ul>
-</section>
+    document.querySelectorAll('.kpi-card').forEach(card => {
+        card.style.opacity = 0;
+        card.style.transform = 'translateY(20px)';
+        observer.observe(card);
+    });
 
-<section>
-  <h1>4️⃣ Arabic Emails</h1>
-  <h2>صباح مشرق</h2>
-  <p>ابدأ صباحك مع الكوب المثالي واستمتع بهدوء شواطئ الإسكندرية. هكسوس يجمع بين الفخامة والنكهات.</p>
-  
-  <h2>المتعة المميزة</h2>
-  <ul>
-    <li>لاتيه هيرو: كريمي وعطري، وتوازن مثالي من النكهات</li>
-    <li>كرواسون الشوكولاتة: طبقات معجنات مع الشوكولاتة الغنية</li>
-    <li>حلويات الموسم: مكونات طازجة تعكس كل موسم</li>
-    <li>ابتكارات لاتيه خاصة: قهوة فاخرة مع أجواء الشاطئ</li>
-  </ul>
+    // Chart.js Configuration
+    // Replicate and enhance engagement chart
+    new Chart(document.getElementById('engChartNew'), {
+        type: 'bar',
+        data: {
+            labels: ['IG Posts','IG Stories','Facebook','TikTok'],
+            datasets: [{ 
+                label: 'Engagement Rate (%)',
+                data: [12.5, 9.3, 8.4, 15.1], 
+                backgroundColor: ['#1b639e', '#4c96d8', '#7dd3fc', '#D99B6C'], 
+                borderRadius: 6 
+            }]
+        },
+        options:{ 
+            responsive: true, 
+            plugins: { legend: { display: false }, title: { display: true, text: 'Engagement Rate (%)' } }, 
+            scales: { y: { beginAtZero: true, max: 20, ticks: { callback: v => v + '%' } } } 
+        }
+    });
 
-  <h2>عرض حصري</h2>
-  <ul>
-    <li>تجربة لاتيه هيرو: ترقية مجانية مع أي لاتيه</li>
-    <li>متعة كرواسون الشوكولاتة: كرواسون ثانٍ بخصم 50%</li>
-    <li>مكافأة حلويات الموسم: حلويات موسمية مع أي وجبة إفطار</li>
-  </ul>
-
-  <h2>دعوة للانضمام لبرنامج الولاء</h2>
-  <ul>
-    <li>نقاط مع كل عملية شراء: اكسب مكافآت</li>
-    <li>الوصول المبكر: اكتشف العروض الجديدة أولًا</li>
-    <li>فعاليات حصرية: تذوق خاص، ورش عمل، تجمعات شاطئية</li>
-    <li>مكافآت مخصصة: تجارب مصممة لتفضيلاتك</li>
-  </ul>
-</section>
-
-<section>
-  <h1>5️⃣ English Social Media Posts</h1>
-  <div class="flex-gallery">
-    <img src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/3_Assets/1_Templates/hero_latte_post.png" alt="Hero Latte Post">
-    <img src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/3_Assets/1_Templates/special_latte.png" alt="Special Latte Post">
-    <img src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/3_Assets/1_Templates/season_offer.png" alt="Season Offer Post">
-    <img src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/3_Assets/1_Templates/discover_more.png" alt="Discover More Post">
-    <img src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/3_Assets/1_Templates/haksoss_post.png" alt="Haksoss Post">
-  </div>
-</section>
-
-<section>
-  <h1>6️⃣ Arabic Social Media Posts</h1>
-  <div class="flex-gallery">
-    <!-- Same templates reused -->
-    <img src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/3_Assets/1_Templates/hero_latte_post.png" alt="Hero Latte Post Arabic">
-    <img src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/3_Assets/1_Templates/special_latte.png" alt="Special Latte Post Arabic">
-    <img src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/3_Assets/1_Templates/season_offer.png" alt="Season Offer Post Arabic">
-    <img src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/3_Assets/1_Templates/discover_more.png" alt="Discover More Post Arabic">
-    <img src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/3_Assets/1_Templates/haksoss_post.png" alt="Haksoss Post Arabic">
-  </div>
-</section>
-
-<section>
-  <h1>7️⃣ Social Media Stories</h1>
-  <div class="flex-gallery">
-    <img src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/3_Assets/hero-latte.jpg" alt="Hero Latte Story">
-    <img src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/3_Assets/special-latte.jpg" alt="Special Latte Story">
-    <img src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/3_Assets/seasonal-treat.jpg" alt="Seasonal Treat Story">
-    <img src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/3_Assets/special-offer.jpg" alt="Special Offer Story">
-  </div>
-</section>
-
-<section>
-  <h1>8️⃣ Social Media Ads</h1>
-  <div class="flex-gallery">
-    <img src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/3_Assets/special-offer.jpg" alt="Ad Special Offer">
-    <img src="file:///D:/Studying/Digital%20Marketing/Portfolio/campaigns/Haksoss_Campaign/3_Assets/loyalty-program.jpg" alt="Ad Loyalty Program">
-  </div>
-</section>
-
-<section>
-  <h1>9️⃣ Guidelines</h1>
-  <ul>
-    <li>Brand Colors: Deep-sea blue + Sandy beige</li>
-    <li>Typography: Playfair Display for headings, Lato for body text</li>
-    <li>CTA buttons: Clear, visible, consistent style</li>
-    <li>Social Media: Posts & stories must maintain luxury aesthetic</li>
-    <li>Email Marketing: Engaging subject lines, bilingual content</li>
-  </ul>
-</section>
-<section>
-  <h1>🔟 Campaign KPIs & Performance Analysis</h1>
-  <p>This section presents the expected and achieved key performance indicators (KPIs) for the Haksoss Campaign, reflecting realistic marketing outcomes across all channels.</p>
-
-  <h2>📬 Email Marketing Performance</h2>
-  <table>
-    <tr>
-      <th>Email</th>
-      <th>Open Rate</th>
-      <th>Click-Through Rate (CTR)</th>
-      <th>Conversion (Loyalty Sign-ups)</th>
-      <th>Unsubscribe Rate</th>
-    </tr>
-    <tr>
-      <td>Morning Awakening</td>
-      <td>42%</td>
-      <td>18%</td>
-      <td>5.2%</td>
-      <td>0.4%</td>
-    </tr>
-    <tr>
-      <td>Signature Indulgence</td>
-      <td>40%</td>
-      <td>15%</td>
-      <td>4.8%</td>
-      <td>0.3%</td>
-    </tr>
-    <tr>
-      <td>Exclusive Offer</td>
-      <td>45%</td>
-      <td>21%</td>
-      <td>6.0%</td>
-      <td>0.2%</td>
-    </tr>
-    <tr>
-      <td>Loyalty Invitation</td>
-      <td>47%</td>
-      <td>24%</td>
-      <td>8.3%</td>
-      <td>0.2%</td>
-    </tr>
-    <tr>
-      <td>Haksoss Spotlight</td>
-      <td>39%</td>
-      <td>13%</td>
-      <td>3.5%</td>
-      <td>0.5%</td>
-    </tr>
-    <tr>
-      <td>Final Sunrise Reminder</td>
-      <td>44%</td>
-      <td>17%</td>
-      <td>5.0%</td>
-      <td>0.3%</td>
-    </tr>
-  </table>
-
-  <h2>📱 Social Media Performance</h2>
-  <table>
-    <tr>
-      <th>Platform</th>
-      <th>Post Type</th>
-      <th>Engagement Rate</th>
-      <th>Reach</th>
-      <th>Conversions</th>
-    </tr>
-    <tr>
-      <td>Instagram</td>
-      <td>Static Posts</td>
-      <td>12.5%</td>
-      <td>22,300</td>
-      <td>310 loyalty sign-ups</td>
-    </tr>
-    <tr>
-      <td>Instagram</td>
-      <td>Stories</td>
-      <td>9.3%</td>
-      <td>18,200</td>
-      <td>205 loyalty sign-ups</td>
-    </tr>
-    <tr>
-      <td>Facebook</td>
-      <td>Posts + Ads</td>
-      <td>8.4%</td>
-      <td>14,500</td>
-      <td>175 loyalty sign-ups</td>
-    </tr>
-    <tr>
-      <td>TikTok</td>
-      <td>Short Video Ads</td>
-      <td>15.1%</td>
-      <td>25,800</td>
-      <td>380 loyalty sign-ups</td>
-    </tr>
-  </table>
-
-  <h2>💰 Advertising ROI</h2>
-  <table>
-    <tr>
-      <th>Platform</th>
-      <th>Ad Spend</th>
-      <th>Clicks</th>
-      <th>Cost per Click (CPC)</th>
-      <th>Revenue Generated</th>
-      <th>ROI</th>
-    </tr>
-    <tr>
-      <td>Meta (Facebook + Instagram)</td>
-      <td>$850</td>
-      <td>4,220</td>
-      <td>$0.20</td>
-      <td>$4,600</td>
-      <td>441%</td>
-    </tr>
-    <tr>
-      <td>Google Display</td>
-      <td>$420</td>
-      <td>2,150</td>
-      <td>$0.19</td>
-      <td>$1,850</td>
-      <td>340%</td>
-    </tr>
-    <tr>
-      <td>TikTok Ads</td>
-      <td>$500</td>
-      <td>3,980</td>
-      <td>$0.13</td>
-      <td>$2,600</td>
-      <td>420%</td>
-    </tr>
-  </table>
-
-  <h2>🏆 Campaign Highlights</h2>
-  <ul>
-    <li><strong>Total Reach:</strong> 80,800 unique users</li>
-    <li><strong>Total Engagements:</strong> 17,450 (likes, shares, comments, saves)</li>
-    <li><strong>Loyalty Program Sign-ups:</strong> 1,070 new members</li>
-    <li><strong>Average Engagement Rate:</strong> 11.3% across platforms</li>
-    <li><strong>Average ROI:</strong> 400% across digital ads</li>
-  </ul>
-
-  <h2>📊 Insights Summary</h2>
-  <ul>
-    <li><strong>Best-performing Content:</strong> “Hero Latte” post and “Signature Indulgence” email sequence.</li>
-    <li><strong>Audience Peak Time:</strong> 8–10 AM on Instagram; 6–9 PM for email opens.</li>
-    <li><strong>Top Conversion Driver:</strong> Loyalty Program Invitation (8.3% conversion rate).</li>
-    <li><strong>Key Takeaway:</strong> Visual consistency and bilingual storytelling created trust and boosted engagement significantly.</li>
-  </ul>
-</section>
+    // Replicate and enhance conversion chart
+    new Chart(document.getElementById('convBarNew'), {
+        type:'doughnut',
+        data:{ 
+            labels:['IG Posts','IG Stories','Facebook','TikTok'], 
+            datasets:[{ 
+                label: 'Total Conversions',
+                data:[310, 205, 175, 380], 
+                backgroundColor: ['#1b639e', '#4c96d8', '#7dd3fc', '#D99B6C'], 
+            }] 
+        },
+        options:{ 
+            responsive: true, 
+            plugins: { 
+                legend: { position: 'right' }, 
+                title: { display: true, text: 'Conversions by Channel' } 
+            }
+        }
+    });
+</script>
 
 </body>
 </html>
