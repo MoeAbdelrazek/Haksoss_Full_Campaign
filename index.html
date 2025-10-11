@@ -365,6 +365,8 @@ footer{
     color: var(--accent);
     z-index: 99999;
     pointer-events: auto;
+    /* FIX: Add transition to allow opacity change to fade out */
+    transition: opacity 800ms ease-out; 
 }
 .intro-card {
     text-align:center;
@@ -1886,13 +1888,19 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
             observer.observe(el);
         });
 
-        // 5. Cinematic Intro (removed due to execution environment limitations, but style kept)
+        // 5. Cinematic Intro (FIXED)
         const introOverlay = document.getElementById('intro-overlay');
         setTimeout(() => {
             if (introOverlay) {
-                introOverlay.style.opacity = '0';
-                introOverlay.style.pointerEvents = 'none';
-                document.body.classList.remove('intro-active');
+                // 1. Start the fade-out (using the new CSS transition)
+                introOverlay.style.opacity = '0'; 
+                
+                // 2. Wait for the fade-out (800ms) to complete, then remove it completely
+                setTimeout(() => {
+                    introOverlay.style.display = 'none'; // CRITICAL FIX: Stops blocking the page
+                    introOverlay.style.pointerEvents = 'none';
+                    document.body.classList.remove('intro-active');
+                }, 800);
             }
         }, 1200);
         document.body.classList.add('intro-active');
