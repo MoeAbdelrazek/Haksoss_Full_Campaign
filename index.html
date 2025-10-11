@@ -200,7 +200,7 @@ td:nth-child(3) { font-weight: 700; color: var(--blue); }
     top: 0;
 }
 
-/* FOOTER IMPROVEMENT (New Icon Style) */
+/* FOOTER STYLES */
 footer{
     padding: 30px 20px;
     border-top: 1px solid rgba(74, 144, 226, 0.1);
@@ -212,7 +212,7 @@ footer{
     max-width: var(--maxw);
     margin: 0 auto;
     display: flex;
-    flex-direction: column; /* Stack on mobile */
+    flex-direction: column;
     gap: 15px;
     align-items: center;
     font-size: 0.9rem;
@@ -224,6 +224,24 @@ footer{
     align-items: center;
     gap: 5px;
 }
+
+/* SHINY/ICONIC NAME EFFECT */
+.author-name strong {
+    /* Make the text transparent to apply the gradient background */
+    color: transparent; 
+    /* Metallic Gold Gradient */
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 40%, #FFD700 60%, #FFA500 100%); 
+    /* Clip the background to the text (The magic for "shiny") */
+    -webkit-background-clip: text;
+    background-clip: text;
+    /* Subtle Glow/Shadow */
+    text-shadow: 0 0 4px rgba(255, 215, 0, 0.6), 0 0 8px rgba(255, 165, 0, 0.4);
+    font-weight: 900;
+    font-size: 1.1em;
+    letter-spacing: 0.5px;
+    display: inline-block;
+}
+
 .footer-links{
     display: flex;
     gap: 25px;
@@ -496,7 +514,7 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
 <div class="footer-wrap">
     <div class="footer-info">
         <div class="author-name">
-            Created by **Mohamed Abdelrazek**
+            Created by <strong>Mohamed Abdelrazek</strong>
         </div>
         <div class="footer-links">
             <a href="https://www.linkedin.com/in/moe-abdelrazek/" target="_blank" title="LinkedIn Profile">
