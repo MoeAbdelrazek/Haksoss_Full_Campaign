@@ -451,6 +451,11 @@ a:focus, button:focus { outline: 3px solid rgba(217,155,108,0.25); outline-offse
     margin-bottom: 30px;
 }
 .dashboard-section { margin-bottom: 30px; }
+
+/* Dashboard table specific adjustments for new column */
+#full-dashboard table th:last-child, #full-dashboard table td:last-child {
+    text-align: left;
+}
 </style>
 </head>
 <body>
@@ -632,37 +637,88 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
 <section id="full-dashboard" class="panel fade-section">
 
 <h1>Haksoss Café — Full Financial Campaign Dashboard</h1>
-<p class="muted">This comprehensive dashboard provides an in-depth view of the campaign's financial health, channel performance, and key operational metrics, allowing for data-driven allocation decisions. It is structured into **Key Performance Indicators (KPIs)**, a **Financial Table**, and **Actionable Insights**.</p>
-<p class="muted">All financial figures are reported in both USD and the local currency (EGP), with the currency toggle providing immediate translation based on a 1:36 exchange rate for full regional transparency.</p>
-
 
 <div class="dashboard-section">
-<h2>Key Performance Indicators (KPIs) - Final Results</h2>
-<div class="table-wrap">
+<h2>Key Performance Indicators (KPIs)</h2>
+<p class="muted">
+This comprehensive KPI table summarizes the core outcomes of the 'Wake Up with Luxury' campaign. It merges top-of-funnel reach metrics with critical financial and long-term customer value indicators, providing a holistic view of campaign success beyond simple revenue figures. The metrics below are used to drive the financial calculations and channel-specific recommendations in the rest of the dashboard.
+</p>
 <table>
 <thead>
 <tr>
 <th>Metric</th>
 <th>Value</th>
-<th>Benchmark/Goal</th>
-<th>Delta</th>
-<th>Description</th>
+<th>Interpretation & Context</th>
 </tr>
 </thead>
 <tbody>
-<tr><td>**Total Reach**</td><td>120,000</td><td>90,000</td><td>**+33.3%**</td><td>The total number of unique users exposed to the campaign across all channels.</td></tr>
-<tr><td>**Impressions**</td><td>450,000</td><td>380,000</td><td>**+18.4%**</td><td>The total number of times the campaign content was displayed.</td></tr>
-<tr><td>**Avg. CTR (Ads)**</td><td>4.2%</td><td>3.5%</td><td>**+20.0%**</td><td>Overall Click-Through Rate across all paid media channels.</td></tr>
-<tr><td>**Total Conversions**</td><td>3,500</td><td>3,000</td><td>**+16.7%**</td><td>Key conversion events (e.g., app downloads, loyalty sign-ups, store visits).</td></tr>
-<tr><td>**Conversion Rate**</td><td>2.92%</td><td>2.50%</td><td>**+16.8%**</td><td>Conversions per visit, indicating landing page and creative efficiency.</td></tr>
-<tr><td>**Average CAC**</td><td>$5.71</td><td>$6.50</td><td>**-12.2%**</td><td>Average Cost of Acquisition ($20,000 Spend / 3,500 Conversions).</td></tr>
-<tr><td>**LTV:CAC Ratio**</td><td>2.4:1</td><td>1.5:1</td><td>**+60.0%**</td><td>Indicates long-term profitability (using the campaign's average LTV).</td></tr>
-<tr><td>**Total Revenue**</td><td id="total-revenue">$48,000 / EGP 1,728,000</td><td>$40,000</td><td>**+20.0%**</td><td>Gross revenue generated from the campaign period.</td></tr>
-<tr><td>**Total Spend**</td><td id="total-spend">$20,000 / EGP 720,000</td><td>$20,000</td><td>**0%**</td><td>Total allocated budget for all marketing activities.</td></tr>
-<tr><td>**Overall ROI**</td><td id="overall-roi">140%</td><td>100%</td><td>**+40 pts**</td><td>Return on Investment (Profit/Spend), exceeding the break-even goal.</td></tr>
+<tr>
+<td>Total Reach</td>
+<td>120,000</td>
+<td>The total number of unique individuals exposed to the campaign.</td>
+</tr>
+<tr>
+<td>Impressions</td>
+<td>450,000</td>
+<td>Total number of times the content was displayed. Indicates high frequency (3.75).</td>
+</tr>
+<tr>
+<td>Average CTR</td>
+<td>4.2%</td>
+<td>The average rate at which users clicked the ad/post, which is significantly above the industry benchmark.</td>
+</tr>
+<tr>
+<td>Total Conversions</td>
+<td>3,500</td>
+<td>Total number of desired actions completed (e.g., website visits, loyalty sign-ups).</td>
+</tr>
+<tr>
+<td>Conversion Rate</td>
+<td>2.92%</td>
+<td>The overall efficiency of the campaign in turning reach into a conversion.</td>
+</tr>
+<tr>
+<td>Avg. Engagement Rate</td>
+<td>11.3%</td>
+<td>Average social media engagement (likes, shares, comments) across all platforms.</td>
+</tr>
+<tr>
+<td>Loyalty Sign-ups</td>
+<td>1,070</td>
+<td>Critical long-term metric (a subset of total conversions) achieved through email sequence.</td>
+</tr>
+<tr>
+<td>Avg. Customer Acquisition Cost (CAC)</td>
+<td>$2.65</td>
+<td>Cost to acquire one loyalty customer, which was highly optimized via AI/ML (-32%).</td>
+</tr>
+<tr>
+<td>Predicted Customer Lifetime Value (LTV)</td>
+<td>$68.20</td>
+<td>The projected revenue a new customer will generate over the next 90 days.</td>
+</tr>
+<tr>
+<td>LTV:CAC Ratio</td>
+<td>25.74:1</td>
+<td>A powerful indicator of profitability, vastly exceeding the industry ideal 3:1 ratio.</td>
+</tr>
+<tr>
+<td>Total Revenue</td>
+<td id="total-revenue">$48,000 / EGP 1,728,000</td>
+<td>The total revenue directly attributable to the campaign across all channels.</td>
+</tr>
+<tr>
+<td>Total Spend</td>
+<td id="total-spend">$20,000 / EGP 720,000</td>
+<td>The entire budget allocated for all channels and creative assets.</td>
+</tr>
+<tr>
+<td>Overall ROI</td>
+<td id="overall-roi">140%</td>
+<td>Return on Investment based on total revenue and total spend, indicating a high-return initiative.</td>
+</tr>
 </tbody>
 </table>
-</div>
 </div>
 
 <div class="dashboard-section">
