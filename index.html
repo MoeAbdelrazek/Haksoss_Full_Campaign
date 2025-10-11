@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>Haksoss Café — Mediterranean Sea Theme (Case Study)</title>
+<title>Haksoss Café — The Ultimate Luxury Morning Experience Campaign (Case Study)</title>
 
 <meta name="description" content="Wake up to luxury with Haksoss Café. Savor our signature Hero Latte, fresh Chocolate Croissants, and seasonal treats. Premium breakfast by the sea, loyalty rewards, and elegant mornings await."/>
 <meta name="keywords" content="Haksoss, Luxury café, Alexandria coffee, Hero Latte, Chocolate Croissant, loyalty program, premium breakfast">
@@ -24,24 +24,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
 
 <style>
-/* CSS START: MEDITERRANEAN SEA CAFE AESTHETIC */
+/* CSS START: LUXURY CAFE AESTHETIC */
 :root{
-    /* MEDITERRANEAN SEA CAFE PALETTE (Blue, White, Sand) */
-    --deep:#004C6D; /* Deep Sea Blue/Navy (Text & Header BG) */
-    --primary-blue:#398EBF; /* Primary Mediterranean Blue */
-    --muted-sand:#E9C46A; /* Muted Sand/Ochre (Subtle Contrast) */
-    --accent:#F4A261; /* Warm Terracotta/Coral Sand (Highlights) */
-    --bg-start:#F8F8F4; /* Clean Sand White */
-    --bg-end:#E0F2F7; /* Pale Sky Blue */
+    /* LUXURY CAFE PALETTE (Warm & Earthy) */
+    --deep:#331A00; /* Rich Espresso Brown/Very Dark Navy */
+    --primary-brown:#6D4C41; /* Primary Coffee Brown */
+    --muted-sage:#A0C4B8; /* Muted Sage Green (Subtle Contrast) */
+    --accent:#C07C4A; /* Warm Copper/Bronze (Gold replacement) */
+    --bg-start:#FAF0E6; /* Warm Ivory/Cream Paper */
+    --bg-end:#FFFFFF; /* Clean White */
     --card:rgba(255, 255, 255, 0.95);
-    --card-shadow: 0 10px 20px rgba(0, 76, 109, 0.1), 0 0 0 1px rgba(57, 142, 191, 0.1); /* Blue Shadow */
+    --card-shadow: 0 10px 20px rgba(51, 26, 0, 0.1), 0 0 0 1px rgba(192, 124, 74, 0.1); /* Warmer Shadow */
     --maxw:1200px;
     --radius:16px; /* Slightly larger radius for a softer feel */
 
     /* BORDER CHANGES: Warmer, more tactile */
     --fancy-border-outer: 0;
     --fancy-border-inner: 0;
-    --section-border: 1px solid rgba(57, 142, 191, 0.3); /* Soft Blue Line */
+    --section-border: 1px solid rgba(192, 124, 74, 0.3); /* Soft Copper Line */
 }
 
 /* Reset */
@@ -54,7 +54,7 @@ body{
     border: var(--fancy-border-outer);
     border-radius: 0;
     position: relative;
-    /* MEDITERRANEAN BACKGROUND AESTHETIC */
+    /* CAFE BACKGROUND AESTHETIC */
     background:linear-gradient(180deg, var(--bg-start) 0%, var(--bg-end) 100%);
     -webkit-font-smoothing:antialiased;
     min-height: 100vh;
@@ -67,7 +67,7 @@ body{
     to { opacity: 1; }
 }
 
-a{ color:var(--primary-blue); text-decoration:none; transition:color .3s; }
+a{ color:var(--primary-brown); text-decoration:none; transition:color .3s; }
 a:hover { color:var(--accent); }
 
 /* Layout */
@@ -118,7 +118,7 @@ header.fixed-header{
     color: var(--deep);
     font-family: 'Playfair Display', serif;
     font-size: 2.2rem; /* Slightly larger heading */
-    border-bottom: 2px solid var(--primary-blue); /* Sea Blue Line */
+    border-bottom: 2px solid var(--primary-brown); /* Coffee Brown Line */
     padding-bottom: 10px;
 }
 
@@ -132,16 +132,16 @@ header.fixed-header{
     padding:20px 25px;
     border-radius:12px;
     min-width:180px;
-    box-shadow:0 6px 15px rgba(0, 76, 109, 0.1);
+    box-shadow:0 6px 15px rgba(51, 26, 0, 0.1);
     transition:transform .4s ease-out, box-shadow .4s;
-    border: 1px solid rgba(57, 142, 191, 0.3); /* Soft Blue Border */
+    border: 1px solid rgba(192, 124, 74, 0.3);
 }
 .stat:hover{
     transform:translateY(-6px); /* Subtle lift */
-    box-shadow:0 15px 35px rgba(0, 76, 109, 0.2);
+    box-shadow:0 15px 35px rgba(51, 26, 0, 0.2);
 }
 .stat .val{ color:var(--accent); font-weight:900; font-size:2rem; }
-.stat .lab{ color:var(--primary-blue); font-size:1rem; margin-top:4px; font-weight: 700; }
+.stat .lab{ color:var(--primary-brown); font-size:1rem; margin-top:4px; font-weight: 700; }
 
 .case-right{ width:450px; max-width:40%; position:relative; }
 /* ANIMATION: Hero Image (Smooth Float) */
@@ -151,12 +151,12 @@ header.fixed-header{
     box-shadow:0 20px 50px rgba(0,0,0,0.1);
     transition:all 1s cubic-bezier(.2,.9,.3,1);
     animation: floating-shadow 6s ease-in-out infinite alternate;
-    border: 4px solid var(--accent); /* Thicker terracotta border */
+    border: 4px solid var(--accent); /* Thicker copper border */
 }
 
 @keyframes floating-shadow {
-    0% { transform: translateY(-8px); box-shadow: 0 15px 40px rgba(0, 76, 109, 0.3); } /* Deep Blue Shadow */
-    100% { transform: translateY(-12px); box-shadow: 0 25px 60px rgba(244, 162, 97, 0.4); } /* Terracotta Shadow */
+    0% { transform: translateY(-8px); box-shadow: 0 15px 40px rgba(109, 76, 65, 0.3); }
+    100% { transform: translateY(-12px); box-shadow: 0 25px 60px rgba(192, 124, 74, 0.4); }
 }
 
 
@@ -166,24 +166,24 @@ header.fixed-header{
     background:#fff;
     border-radius:12px;
     overflow:hidden;
-    box-shadow:0 10px 30px rgba(0, 76, 109, 0.08);
+    box-shadow:0 10px 30px rgba(51, 26, 0, 0.08);
     position:relative;
     transition:transform .5s ease-out, box-shadow .5s;
 }
 /* ANIMATION: Tile Hover (Elegant) */
 .tile:hover{
     transform:translateY(-8px) scale(1.02);
-    box-shadow:0 20px 45px rgba(0, 76, 109, 0.2);
+    box-shadow:0 20px 45px rgba(51, 26, 0, 0.2);
 }
 .tile img{ width:100%; height:200px; object-fit:cover; display:block; }
-.tile .meta{ padding:14px; font-weight:800; color:var(--deep); background:rgba(233, 196, 106, 0.2); } /* Muted Sand background */
+.tile .meta{ padding:14px; font-weight:800; color:var(--deep); background:rgba(160, 196, 184, 0.2); } /* Muted sage background */
 
 /* tables */
 .table-wrap{ overflow:auto; margin-top:25px; }
 table{ width:100%; border-collapse:collapse; font-size:1rem; }
 th, td{ padding:16px 14px; border-bottom:1px solid rgba(20,30,40,0.05); text-align:left; vertical-align:top; }
-th{ background:linear-gradient(180deg,var(--bg-start),#fdfdfd); color:var(--deep); font-weight:800; text-transform: uppercase; border-bottom: 3px solid var(--accent); /* Thicker terracotta line */ }
-td:nth-child(3) { font-weight: 700; color: var(--primary-blue); } /* Sea Blue for key column */
+th{ background:linear-gradient(180deg,var(--bg-start),#fdfdfd); color:var(--deep); font-weight:800; text-transform: uppercase; border-bottom: 3px solid var(--accent); /* Thicker copper line */ }
+td:nth-child(3) { font-weight: 700; color: var(--primary-brown); } /* Coffee brown for key column */
 
 /* AI Table specific styling */
 #ai-metrics .num {
@@ -191,13 +191,13 @@ td:nth-child(3) { font-weight: 700; color: var(--primary-blue); } /* Sea Blue fo
     font-size: 1.2rem;
     font-weight: 800;
 }
-#advanced-strategy h2 { color: var(--primary-blue); } /* Use Sea Blue for this section */
+#advanced-strategy h2 { color: var(--primary-brown); } /* Use coffee brown for this section */
 
 /* Chart size adjustment */
 .charts{ display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:30px; margin-top:30px; }
-.chart.card{ padding:25px; background:linear-gradient(135deg, #fff, var(--bg-start)); box-shadow:0 8px 20px rgba(0, 76, 109, 0.05); border-radius: var(--radius); }
+.chart.card{ padding:25px; background:linear-gradient(135deg, #fff, var(--bg-start)); box-shadow:0 8px 20px rgba(51, 26, 0, 0.05); border-radius: var(--radius); }
 
-/* Professional List Styling - Wave bullet */
+/* Professional List Styling - Coffee house bullet */
 .professional-list {
     list-style: none;
     padding-left: 0;
@@ -211,7 +211,7 @@ td:nth-child(3) { font-weight: 700; color: var(--primary-blue); } /* Sea Blue fo
     color: var(--deep);
 }
 .professional-list li:before {
-    content: "🌊"; /* Wave emoji bullet */
+    content: "☕"; /* Coffee cup bullet */
     position: absolute;
     left: 0;
     color: var(--accent);
@@ -222,7 +222,7 @@ td:nth-child(3) { font-weight: 700; color: var(--primary-blue); } /* Sea Blue fo
 /* FOOTER STYLES */
 footer{
     padding: 30px 20px;
-    border-top: 1px solid rgba(57, 142, 191, 0.3); /* Soft blue line */
+    border-top: 1px solid rgba(192, 124, 74, 0.3);
     background: var(--bg-start);
     color: var(--deep);
     text-align: center;
@@ -270,7 +270,7 @@ footer{
 }
 .footer-meta {
     font-size: 0.85rem;
-    color: var(--primary-blue);
+    color: var(--primary-brown);
 }
 .footer-meta .divider{
     color: var(--accent);
@@ -361,7 +361,7 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--deep); /* Deep Sea Blue background */
+    background: var(--deep); /* Deep espresso background */
     color: var(--accent);
     z-index: 99999;
     pointer-events: auto;
@@ -384,7 +384,7 @@ footer{
 }
 .intro-tagline {
     font-family: 'Poppins', sans-serif;
-    color: var(--bg-start); /* Use sand color */
+    color: var(--bg-start); /* Use cream color */
     margin-top: 8px;
     letter-spacing: 3px; /* Wider spacing */
     text-transform: uppercase;
@@ -401,12 +401,12 @@ footer{
     border: none;
     padding: 12px 18px;
     border-radius: 999px;
-    box-shadow: 0 8px 30px rgba(0, 76, 109, 0.2);
+    box-shadow: 0 8px 30px rgba(51, 26, 0, 0.2);
     cursor: pointer;
     font-weight: 700;
     transition: transform .3s ease, box-shadow .3s ease;
 }
-#music-control:hover { transform: translateY(-6px); box-shadow: 0 12px 35px rgba(0, 76, 109, 0.3); }
+#music-control:hover { transform: translateY(-6px); box-shadow: 0 12px 35px rgba(51, 26, 0, 0.3); }
 
 /* signature footer style override (Great Vibes) */
 .signature {
@@ -416,7 +416,7 @@ footer{
     margin: 0;
     transition: transform .25s ease;
 }
-.signature:hover { transform: scale(1.05); text-shadow: 0 0 12px rgba(244, 162, 97, 0.8); }
+.signature:hover { transform: scale(1.05); text-shadow: 0 0 12px rgba(192, 124, 74, 0.8); }
 
 /* small adjustments for charts and containers inside panels (preserve original layout) */
 .charts { margin-top: 30px; }
@@ -426,7 +426,7 @@ footer{
 body.intro-active header.fixed-header { z-index: 100000; pointer-events: none; }
 
 /* accessibility focus */
-a:focus, button:focus { outline: 3px solid rgba(57, 142, 191, 0.5); outline-offset: 4px; }
+a:focus, button:focus { outline: 3px solid rgba(192, 124, 74, 0.5); outline-offset: 4px; }
 
 /* =======================================
     DASHBOARD OVERRIDES (for integration)
@@ -440,12 +440,12 @@ a:focus, button:focus { outline: 3px solid rgba(57, 142, 191, 0.5); outline-offs
     margin-bottom: 20px;
 }
 #full-dashboard th, #full-dashboard td {
-    border: 1px solid rgba(57, 142, 191, 0.2); /* Sea blue faint border */
+    border: 1px solid rgba(109, 76, 65, 0.2); /* Coffee brown faint border */
     padding: 12px;
     text-align: center;
 }
 #full-dashboard th {
-    background: var(--primary-blue);
+    background: var(--primary-brown);
     color: var(--bg-start);
     border-bottom: 3px solid var(--accent);
 }
@@ -464,11 +464,11 @@ a:focus, button:focus { outline: 3px solid rgba(57, 142, 191, 0.5); outline-offs
 }
 .currency-toggle label {
     padding: 8px 15px;
-    border: 1px solid var(--primary-blue);
+    border: 1px solid var(--primary-brown);
     border-radius: 8px;
     cursor: pointer;
     font-weight: 700;
-    color: var(--primary-blue);
+    color: var(--primary-brown);
     background: #fff;
     transition: all 0.3s ease;
 }
@@ -479,7 +479,7 @@ a:focus, button:focus { outline: 3px solid rgba(57, 142, 191, 0.5); outline-offs
     background: var(--accent);
     color: var(--deep);
     border-color: var(--accent);
-    box-shadow: 0 4px 10px rgba(244, 162, 97, 0.3);
+    box-shadow: 0 4px 10px rgba(192, 124, 74, 0.3);
     transform: translateY(-2px);
 }
 
@@ -496,8 +496,8 @@ a:focus, button:focus { outline: 3px solid rgba(57, 142, 191, 0.5); outline-offs
     background: var(--card);
     border-radius: var(--radius);
     padding: 25px;
-    box-shadow: 0 5px 15px rgba(0, 76, 109, 0.1);
-    border: 1px solid rgba(57, 142, 191, 0.2);
+    box-shadow: 0 5px 15px rgba(51, 26, 0, 0.1);
+    border: 1px solid rgba(192, 124, 74, 0.2);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 
     /* Animation */
@@ -511,7 +511,7 @@ a:focus, button:focus { outline: 3px solid rgba(57, 142, 191, 0.5); outline-offs
 }
 .email-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0, 76, 109, 0.2);
+    box-shadow: 0 15px 35px rgba(51, 26, 0, 0.2);
     cursor: pointer;
 }
 .email-card h4 {
@@ -519,14 +519,14 @@ a:focus, button:focus { outline: 3px solid rgba(57, 142, 191, 0.5); outline-offs
     color: var(--deep);
     font-size: 1.25rem;
     font-family: 'Playfair Display', serif;
-    border-bottom: 2px solid var(--muted-sand);
+    border-bottom: 2px solid var(--muted-sage);
     padding-bottom: 5px;
 }
 .email-card .language-tag {
     font-size: 0.8rem;
     font-weight: 700;
     color: var(--bg-start);
-    background: var(--primary-blue);
+    background: var(--primary-brown);
     padding: 3px 8px;
     border-radius: 4px;
     display: inline-block;
@@ -540,7 +540,7 @@ a:focus, button:focus { outline: 3px solid rgba(57, 142, 191, 0.5); outline-offs
     font-weight: 600;
 }
 .email-card .copy-text {
-    background: rgba(233, 196, 106, 0.1); /* Muted Sand Light */
+    background: rgba(160, 196, 184, 0.1); /* Muted Sage Light */
     padding: 15px;
     border-radius: 8px;
     font-size: 0.9rem;
@@ -554,10 +554,10 @@ a:focus, button:focus { outline: 3px solid rgba(57, 142, 191, 0.5); outline-offs
     border-radius: 8px;
     font-size: 0.85rem;
     color: var(--deep);
-    border: 1px dashed rgba(57, 142, 191, 0.4);
+    border: 1px dashed rgba(192, 124, 74, 0.4);
 }
 .email-card .analysis strong {
-    color: var(--primary-blue);
+    color: var(--primary-brown);
     display: block;
     margin-bottom: 3px;
 }
@@ -565,11 +565,11 @@ a:focus, button:focus { outline: 3px solid rgba(57, 142, 191, 0.5); outline-offs
     display: flex;
     justify-content: space-between;
     padding: 5px 0;
-    border-bottom: 1px dashed rgba(0, 76, 109, 0.1);
+    border-bottom: 1px dashed rgba(109, 76, 65, 0.1);
     font-size: 0.95rem;
 }
 .email-card .metric-label {
-    color: var(--primary-blue);
+    color: var(--primary-brown);
     font-weight: 600;
 }
 .email-card .metric-value {
@@ -579,14 +579,14 @@ a:focus, button:focus { outline: 3px solid rgba(57, 142, 191, 0.5); outline-offs
 .email-card .metric-item:last-child {
     border-bottom: none;
 }
-/* CSS END: MEDITERRANEAN SEA CAFE AESTHETIC */
+/* CSS END: LUXURY CAFE AESTHETIC */
 </style>
 </head>
 <body>
 <div id="intro-overlay" aria-hidden="true">
     <div class="intro-card" role="dialog" aria-label="Haksoss introduction">
         <h1 class="intro-title">Haksoss Café</h1>
-        <p class="intro-tagline">Azure Mornings in Alexandria</p>
+        <p class="intro-tagline">A Morning Beyond Ordinary</p>
     </div>
 </div>
 
@@ -599,7 +599,7 @@ a:focus, button:focus { outline: 3px solid rgba(57, 142, 191, 0.5); outline-offs
         <div class="brand">
             <img src="3_Assets/Logo/logo.png" alt="Haksoss café logo">
             <div>
-                <h1 class="site-title">Haksoss — Azure Morning Campaign</h1>
+                <h1 class="site-title">Haksoss — Luxury Morning Experience Campaign</h1>
             </div>
         </div>
     </div>
@@ -845,396 +845,275 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
             <div class="metric-item"><span class="metric-label">Conversion Rate:</span> <span class="metric-value">5.2%</span></div>
         </div>
     </div>
+
 </div>
 </section>
 
-<section id="dashboard" class="panel fade-section">
-    <h2>Campaign Performance Dashboard</h2>
-
-    <div class="currency-toggle">
-        <input type="radio" id="usd-radio" name="currency" value="USD" checked><label for="usd-radio">USD</label>
-        <input type="radio" id="egp-radio" name="currency" value="EGP"><label for="egp-radio">EGP</label>
+<section id="advanced-strategy" class="panel fade-section">
+    <h2>Advanced Strategy & AI-Driven Copywriting</h2>
+    <p class="muted">This campaign leveraged generative AI tools for multi-language copy (English & Arabic) and A/B testing variations, optimizing emotional triggers and cultural relevance to maximize conversion.</p>
+    
+    <div class="table-wrap">
+        <table id="ai-metrics">
+            <thead>
+                <tr>
+                    <th>Metric</th>
+                    <th>AI-Generated Copy (Arabic)</th>
+                    <th>Human-Written Copy (English)</th>
+                    <th>Improvement (AI over Human)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Avg. Open Rate</td>
+                    <td class="num">43.7%</td>
+                    <td class="num">42.2%</td>
+                    <td class="num">**+1.5%**</td>
+                </tr>
+                <tr>
+                    <td>Avg. CTR</td>
+                    <td class="num">6.05%</td>
+                    <td class="num">5.03%</td>
+                    <td class="num">**+1.02%**</td>
+                </tr>
+                <tr>
+                    <td>Avg. Conversion Rate</td>
+                    <td class="num">5.82%</td>
+                    <td class="num">4.48%</td>
+                    <td class="num">**+1.34%**</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
-    <div id="full-dashboard">
-        <div class="dashboard-section">
-            <h3>Key Financial Metrics (Campaign Duration)</h3>
+    <div style="margin-top:30px;">
+        <h3>Key Strategic Drivers:</h3>
+        <ul class="professional-list">
+            <li>**Sensory Language**: Focusing on the 'aroma' and 'velvety texture' of the coffee to elicit emotional response (Luxury Cafe Aesthetic).</li>
+            <li>**Bilingual Precision**: AI was used to ensure the Arabic copy used high-register, culturally resonant terms for 'Luxury' and 'Elegance', resulting in higher engagement.</li>
+            <li>**Loyalty Gating**: The high-value offer (Email 3) was intentionally coupled with the Loyalty CTA (Email 4) to convert short-term visitors into long-term members.</li>
+            <li>**Scarcity & Exclusivity**: All promotional materials used time-limited or VIP/Loyalty-gated offers to create urgency and reinforce the brand’s premium positioning.</li>
+        </ul>
+    </div>
+</section>
+
+<section id="full-dashboard" class="panel fade-section">
+    <h2>Campaign Performance Dashboard</h2>
+    <p class="muted">Detailed, real-time metrics tracked over the 30-day campaign period, allowing for daily budget and creative optimization.</p>
+
+    <div class="currency-toggle">
+        <input type="radio" id="usd" name="currency" value="USD" checked>
+        <label for="usd">USD</label>
+        <input type="radio" id="egp" name="currency" value="EGP">
+        <label for="egp">EGP</label>
+    </div>
+
+    <div class="dashboard-section">
+        <h3>Summary Metrics</h3>
+        <div class="table-wrap">
             <table>
                 <thead>
                     <tr>
-                        <th>Metric</th>
-                        <th>Total Value</th>
-                        <th>% Change vs. Prior Period</th>
+                        <th>Total Ad Spend</th>
+                        <th>Total Revenue Generated</th>
+                        <th>Return On Ad Spend (ROAS)</th>
+                        <th>Cost Per Acquisition (CPA)</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Total Revenue</td>
-                        <td id="total-revenue">$108,000 / EGP 3,330,000</td>
-                        <td>+411%</td>
-                    </tr>
-                    <tr>
-                        <td>New Customer Revenue</td>
-                        <td id="new-customer-revenue">$43,200 / EGP 1,332,000</td>
-                        <td>+520%</td>
-                    </tr>
-                    <tr>
-                        <td>Total Ad Spend (Meta + TikTok)</td>
-                        <td id="total-ad-spend">$26,300 / EGP 810,000</td>
-                        <td>+380%</td>
-                    </tr>
-                    <tr>
-                        <td>Cost Per Acquisition (CPA)</td>
-                        <td id="cpa-value">$24.5 / EGP 756</td>
-                        <td>-21%</td>
+                        <td id="total-spend"></td>
+                        <td id="total-revenue"></td>
+                        <td id="roas"></td>
+                        <td id="cpa"></td>
                     </tr>
                 </tbody>
             </table>
         </div>
-
-        <div class="dashboard-section charts">
-            <div class="chart card">
-                <h4>Weekly Revenue Breakdown</h4>
-                <canvas id="revenueChart"></canvas>
-            </div>
-            <div class="chart card">
-                <h4>Loyalty vs. One-Time Revenue</h4>
-                <canvas id="loyaltyChart"></canvas>
-            </div>
-        </div>
-
-        <div class="dashboard-section charts">
-            <div class="chart card">
-                <h4>Platform Engagement Rate</h4>
-                <canvas id="engagementChart"></canvas>
-            </div>
-            <div class="chart card">
-                <h4>Email Campaign Performance (Overall)</h4>
-                <canvas id="emailChart"></canvas>
-            </div>
-        </div>
-
-        <div class="dashboard-section">
-            <h3>Customer Loyalty Metrics</h3>
-            <div class="table-wrap">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Metric</th>
-                            <th>Value</th>
-                            <th>Target Benchmark</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Loyalty Program Sign-ups</td>
-                            <td>1,070</td>
-                            <td>800</td>
-                            <td>Exceeded</td>
-                        </tr>
-                        <tr>
-                            <td>Repeat Purchase Rate (Loyalty Members)</td>
-                            <td>68%</td>
-                            <td>60%</td>
-                            <td>Exceeded</td>
-                        </tr>
-                        <tr>
-                            <td>Average Order Value (Loyalty Members)</td>
-                            <td id="aov-loyalty">EGP 345</td>
-                            <td>EGP 300</td>
-                            <td>Exceeded</td>
-                        </tr>
-                        <tr>
-                            <td>Churn Rate</td>
-                            <td>12%</td>
-                            <td>15%</td>
-                            <td>Met</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <script>
-            // Data for charts/tables
-            const REVENUE_DATA = [50000, 75000, 100000, 105000, 95000, 110000]; // EGP
-            const LOYALTY_DATA = [2600000, 730000]; // EGP [Loyalty, One-Time]
-            const PLATFORM_ENGAGEMENT = [12.5, 9.8, 11.6]; // Meta, TikTok, Instagram
-            const EMAIL_METRICS = [43.5, 5.2, 4.8]; // Open Rate, CTR, Conversion Rate
-
-            // Currency conversion rate (Example rate for simulation)
-            const EGP_RATE = 30.8;
-
-            // Initialize charts and tables
-            const chartConfigs = {
-                // ... (Chart configurations are omitted for brevity but remain in the original JS)
-            };
-        </script>
     </div>
-</section>
 
-<section id="professional-summary" class="panel fade-section">
-    <h2>Professional Summary of Campaign Success</h2>
-
-    <div class="case-hero" style="align-items: center;">
-        <div class="case-left">
-            <p class="muted">The Haksoss Café campaign successfully combined sensory creative assets with a data-driven, conversion-focused strategy to achieve substantial growth in a highly competitive market.</p>
-
-            <ul class="professional-list">
-                <li>**Strategy & Execution:** A bilingual (English/Arabic) content plan ensured high cultural relevance, maximizing reach in Alexandria’s diverse demographics.</li>
-                <li>**Creative Focus:** Emphasis on high-end photography of the Hero Latte and Chocolate Croissant drove strong initial ad click-through rates (CTR).</li>
-                <li>**Loyalty Engine:** The email automation funnel proved to be the highest-converting segment, culminating in a **9.8%** English and **11.1%** Arabic loyalty sign-up conversion rate from initial email open.</li>
-                <li>**Measured ROI:** The final return on investment (ROI) of **411%** far exceeded the initial 200% target, validating the premium positioning and execution quality.</li>
-            </ul>
-
-            <h3 id="advanced-strategy" style="margin-top:25px;">Advanced Strategy Breakdown</h3>
-            <p>The core success lay in applying AI-driven audience modeling to target "Luxury Morning Seekers" and deploying sequential email nurturing to convert leads into lifetime customers.</p>
+    <div class="charts">
+        <div class="chart card">
+            <h3>Revenue Trend (30 Days)</h3>
+            <canvas id="revenueChart"></canvas>
         </div>
-
-        <div class="case-right" style="max-width: 500px; max-width: 55%; position: unset;">
-            <div id="ai-metrics" class="stat" style="min-width: unset; text-align: center;">
-                <h3 style="border-bottom: 1px solid rgba(57, 142, 191, 0.4); padding-bottom: 10px; margin-bottom: 10px; color: var(--deep);">AI Audience Model Accuracy</h3>
-                <div style="display: flex; justify-content: space-around; gap: 10px;">
-                    <div style="flex: 1;">
-                        <div class="num">92%</div>
-                        <div class="lab">Prediction Accuracy</div>
-                    </div>
-                    <div style="flex: 1;">
-                        <div class="num">15%</div>
-                        <div class="lab">CPA Reduction</div>
-                    </div>
-                </div>
-                <p style="font-size: 0.85rem; margin-top: 15px; color: var(--primary-blue);">Model was trained on 6 months of historical luxury consumer data to optimize ad placement.</p>
-            </div>
+        <div class="chart card">
+            <h3>Loyalty Conversion Rate (Weekly)</h3>
+            <canvas id="conversionChart"></canvas>
         </div>
     </div>
+
 </section>
 
+</div>
+</div>
 
-</div></div><footer role="contentinfo">
+<footer role="contentinfo">
     <div class="footer-wrap">
         <div class="footer-info">
-            <p class="author-name">Designed and executed by <strong class="signature">Moe Abdelrazek</strong></p>
-            <div class="footer-links" aria-label="Social Media Links">
-                <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="#" target="_blank" title="Behance"><i class="fab fa-behance-square"></i></a>
-                <a href="#" target="_blank" title="GitHub"><i class="fab fa-github-square"></i></a>
+            <p class="author-name">Campaign & Case Study by <span class="signature">Moe Abdelrazek</span></p>
+            <div class="footer-links">
+                <a href="https://linkedin.com/in/moeabdelrazek" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/moeabdelrazek" target="_blank" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
             </div>
         </div>
         <div class="footer-meta">
-            <span>Haksoss Campaign Case Study</span>
+            <span>&copy; 2024 Haksoss Café. All Rights Reserved.</span>
             <span class="divider">|</span>
-            <span>2024</span>
-            <span class="divider">|</span>
-            <span>All Rights Reserved</span>
+            <span>Made with <i class="fas fa-heart" style="color: var(--accent);"></i> and Coffee.</span>
         </div>
     </div>
 </footer>
 
-<script>
-// =======================================
-// JAVASCRIPT FOR SCROLL/CHART ANIMATIONS
-// =======================================
 
-// Intersection Observer for scroll animations
-const observer = new IntersectionObserver((entries) => {
+<script>
+// ========================================
+// JAVASCRIPT: Page Interactions & Charting
+// ========================================
+
+// 1. SCROLL ANIMATION (Panel and Tile reveal)
+const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1 // Trigger when 10% of the element is visible
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('inview');
-            // Stop observing once it's in view if it's a permanent animation
-            if (!entry.target.classList.contains('fade-section')) {
-                observer.unobserve(entry.target);
+            // Check for the specific fade-section class which is meant for the main sections
+            if (entry.target.classList.contains('fade-section')) {
+                 entry.target.classList.add('visible');
             }
+        } else {
+             // Optional: remove inview if you want it to hide again when scrolling up
+             // entry.target.classList.remove('inview');
         }
     });
-}, { threshold: 0.1 }); // Trigger when 10% of the element is visible
+}, observerOptions);
 
-document.querySelectorAll('.panel, .tile, .stat, .email-card').forEach(element => {
+// Target all panels, tiles, and stats
+document.querySelectorAll('.panel:not(.inview), .tile, .stat').forEach(element => {
     observer.observe(element);
 });
 
-// Intro Animation
-document.addEventListener('DOMContentLoaded', () => {
-    const overlay = document.getElementById('intro-overlay');
-    document.body.classList.add('intro-active');
 
-    // Simulate load time, then fade out
-    setTimeout(() => {
-        overlay.style.opacity = '0';
-        overlay.style.pointerEvents = 'none';
-
-        // Remove overlay completely after transition
-        setTimeout(() => {
-            overlay.remove();
-            document.body.classList.remove('intro-active');
-        }, 1200); // Should match the CSS transition duration
-    }, 1500); // Display time
-});
-
-// =======================================
-// JAVASCRIPT FOR DASHBOARD FUNCTIONALITY
-// =======================================
+// 2. DASHBOARD LOGIC (Charts & Metrics)
 (function() {
-    const revenueData = REVENUE_DATA;
-    const loyaltyData = LOYALTY_DATA;
-    const platformEngagement = PLATFORM_ENGAGEMENT;
-    const emailMetrics = EMAIL_METRICS;
-    const EGP_RATE = 30.8; // Example exchange rate
+    const adSpend = 19700; // EGP
+    const totalRevenue = 101000; // EGP
+    const EGP_RATE = 47.76; // Example rate
 
-    let currentCurrency = 'USD'; // Default
+    // Data for charts
+    const labels = ['Week 1', 'Week 2', 'Week 3', 'Week 4'];
+    const revenueDataEGP = [18000, 25000, 31000, 28000];
+    const conversionData = [5.1, 7.3, 9.8, 11.1]; // Loyalty Conversion Rate
 
-    // Chart instances
-    let revenueChartInstance;
-    let loyaltyChartInstance;
-    let engagementChartInstance;
-    let emailChartInstance;
+    // Convert EGP to USD for charts
+    const revenueDataUSD = revenueDataEGP.map(rev => rev / EGP_RATE);
+    
+    // Calculate key metrics
+    const roas = (totalRevenue / adSpend) * 100;
+    const cpa = adSpend / 1070; // Total sign-ups from case study
 
-    function createOrUpdateChart(ctx, config, instance) {
-        if (instance) {
-            instance.data.labels = config.data.labels;
-            instance.data.datasets = config.data.datasets;
-            instance.options = config.options;
-            instance.update();
-            return instance;
-        } else {
-            return new Chart(ctx, config);
-        }
-    }
+    let revenueChart, conversionChart;
 
-    function generateChartConfigs(isUSD) {
+    const createCharts = (isUSD) => {
+        // Destroy existing charts if they exist
+        if (revenueChart) revenueChart.destroy();
+        if (conversionChart) conversionChart.destroy();
+
         const currencySymbol = isUSD ? '$' : 'EGP ';
-        const multiplier = isUSD ? 1 / EGP_RATE : 1;
-        const colorPrimary = getComputedStyle(document.documentElement).getPropertyValue('--primary-blue').trim();
-        const colorAccent = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim();
+        const revenueData = isUSD ? revenueDataUSD : revenueDataEGP;
 
-        return {
-            revenue: {
-                type: 'line',
-                data: {
-                    labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6'],
-                    datasets: [{
-                        label: 'Revenue',
-                        data: revenueData.map(d => d * multiplier),
-                        borderColor: colorAccent,
-                        backgroundColor: 'rgba(244, 162, 97, 0.2)',
-                        tension: 0.3,
-                        pointRadius: 5,
-                        pointBackgroundColor: colorAccent
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    scales: {
-                        y: { beginAtZero: true, ticks: { callback: (val) => currencySymbol + val.toLocaleString() } }
-                    },
-                    plugins: { tooltip: { callbacks: { label: (context) => context.dataset.label + ': ' + currencySymbol + context.parsed.y.toLocaleString() } } }
-                }
+        // Revenue Chart
+        const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+        revenueChart = new Chart(revenueCtx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Weekly Revenue',
+                    data: revenueData,
+                    borderColor: 'var(--accent)',
+                    backgroundColor: 'rgba(192, 124, 74, 0.2)',
+                    fill: true,
+                    tension: 0.4
+                }]
             },
-            loyalty: {
-                type: 'pie',
-                data: {
-                    labels: ['Loyalty Member Revenue', 'One-Time Customer Revenue'],
-                    datasets: [{
-                        data: loyaltyData.map(d => d * multiplier),
-                        backgroundColor: [colorPrimary, colorAccent],
-                        hoverOffset: 10
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        tooltip: { callbacks: { label: (context) => context.label + ': ' + currencySymbol + context.parsed.toLocaleString() } }
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: `Revenue (${currencySymbol})`
+                        },
+                        ticks: {
+                            callback: function(value) {
+                                return currencySymbol + value.toLocaleString(undefined, { maximumFractionDigits: 0 });
+                            }
+                        }
                     }
-                }
-            },
-            engagement: {
-                type: 'bar',
-                data: {
-                    labels: ['Meta (FB/IG)', 'TikTok', 'Instagram Stories'],
-                    datasets: [{
-                        label: 'Engagement Rate (%)',
-                        data: platformEngagement,
-                        backgroundColor: [colorPrimary, colorAccent, colorPrimary],
-                    }]
                 },
-                options: {
-                    responsive: true,
-                    scales: { y: { beginAtZero: true, max: 15, ticks: { callback: (val) => val + '%' } } },
-                    plugins: { tooltip: { callbacks: { label: (context) => context.dataset.label + ': ' + context.parsed.y + '%' } } }
-                }
-            },
-            email: {
-                type: 'radar',
-                data: {
-                    labels: ['Open Rate (%)', 'CTR (%)', 'Conversion Rate (%)'],
-                    datasets: [{
-                        label: 'Campaign Averages',
-                        data: emailMetrics,
-                        backgroundColor: 'rgba(57, 142, 191, 0.2)',
-                        borderColor: colorPrimary,
-                        pointBackgroundColor: colorPrimary,
-                        pointBorderColor: '#fff',
-                        pointHoverBackgroundColor: '#fff',
-                        pointHoverBorderColor: colorPrimary
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    scales: { r: { suggestedMin: 0, suggestedMax: 50, ticks: { backdropColor: 'transparent', color: 'rgba(0, 76, 109, 0.7)' } } },
-                    plugins: { legend: { display: false } }
+                plugins: {
+                    legend: { display: false }
                 }
             }
-        };
-    }
+        });
 
-    function updateCharts(isUSD) {
-        const configs = generateChartConfigs(isUSD);
+        // Conversion Chart
+        const conversionCtx = document.getElementById('conversionChart').getContext('2d');
+        conversionChart = new Chart(conversionCtx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Loyalty Sign-up Rate',
+                    data: conversionData,
+                    backgroundColor: 'var(--primary-brown)',
+                    borderColor: 'var(--deep)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Conversion Rate (%)'
+                        },
+                        max: 15,
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: { display: false }
+                }
+            }
+        });
+    };
+
+    const updateCharts = (isUSD) => {
+        createCharts(isUSD);
+
         const currencySymbol = isUSD ? '$' : 'EGP ';
+        const spendData = isUSD ? (adSpend / EGP_RATE) : adSpend;
+        const revenueData = isUSD ? (totalRevenue / EGP_RATE) : totalRevenue;
 
-        revenueChartInstance = createOrUpdateChart(document.getElementById('revenueChart').getContext('2d'), configs.revenue, revenueChartInstance);
-        loyaltyChartInstance = createOrUpdateChart(document.getElementById('loyaltyChart').getContext('2d'), configs.loyalty, loyaltyChartInstance);
-        engagementChartInstance = createOrUpdateChart(document.getElementById('engagementChart').getContext('2d'), configs.engagement, engagementChartInstance);
-        emailChartInstance = createOrUpdateChart(document.getElementById('emailChart').getContext('2d'), configs.email, emailChartInstance);
-
-        // Update table values
-        const totalRevenueEGP = revenueData.reduce((a, b) => a + b, 0);
-        const totalRevenueUSD = totalRevenueEGP / EGP_RATE;
-        const totalRevenueDisplay = isUSD
-            ? currencySymbol + totalRevenueUSD.toLocaleString(undefined, { maximumFractionDigits: 0 })
-            : currencySymbol + totalRevenueEGP.toLocaleString(undefined, { maximumFractionDigits: 0 });
-
-        const newCustomerRevenueEGP = 1332000;
-        const newCustomerRevenueUSD = newCustomerRevenueEGP / EGP_RATE;
-        const newCustomerRevenueDisplay = isUSD
-            ? currencySymbol + newCustomerRevenueUSD.toLocaleString(undefined, { maximumFractionDigits: 0 })
-            : currencySymbol + newCustomerRevenueEGP.toLocaleString(undefined, { maximumFractionDigits: 0 });
-
-        const totalAdSpendEGP = 810000;
-        const totalAdSpendUSD = totalAdSpendEGP / EGP_RATE;
-        const totalAdSpendDisplay = isUSD
-            ? currencySymbol + totalAdSpendUSD.toLocaleString(undefined, { maximumFractionDigits: 0 })
-            : currencySymbol + totalAdSpendEGP.toLocaleString(undefined, { maximumFractionDigits: 0 });
-
-        const cpaEGP = 756;
-        const cpaUSD = cpaEGP / EGP_RATE;
-        const cpaDisplay = isUSD
-            ? currencySymbol + cpaUSD.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-            : currencySymbol + cpaEGP.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 });
-
-        const aovLoyaltyEGP = 345;
-        const aovLoyaltyUSD = aovLoyaltyEGP / EGP_RATE;
-        const aovLoyaltyDisplay = isUSD
-            ? currencySymbol + aovLoyaltyUSD.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-            : currencySymbol + aovLoyaltyEGP.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 });
-
-
-        document.getElementById('total-revenue').textContent = totalRevenueDisplay;
-        document.getElementById('new-customer-revenue').textContent = newCustomerRevenueDisplay;
-        document.getElementById('total-ad-spend').textContent = totalAdSpendDisplay;
-        document.getElementById('cpa-value').textContent = cpaDisplay;
-        document.getElementById('aov-loyalty').textContent = aovLoyaltyDisplay;
-
+        // Update Summary Metrics Table
+        document.getElementById('total-spend').textContent = currencySymbol + spendData.toLocaleString(undefined, { maximumFractionDigits: isUSD ? 2 : 0 });
+        document.getElementById('total-revenue').textContent = currencySymbol + revenueData.toLocaleString(undefined, { maximumFractionDigits: isUSD ? 2 : 0 });
+        document.getElementById('roas').textContent = roas.toFixed(2) + '%';
+        document.getElementById('cpa').textContent = currencySymbol + cpa.toFixed(2);
     }
 
     // Initial load: calculate and display everything
@@ -1251,25 +1130,63 @@ document.addEventListener('DOMContentLoaded', () => {
 })();
 
 
-// Music control
-document.getElementById('music-control').addEventListener('click', function() {
-    const audio = document.getElementById('bg-music');
-    if (audio.paused) {
-        audio.play().then(() => {
-            this.textContent = 'Pause Music';
-            this.setAttribute('aria-pressed', 'true');
-        }).catch(error => {
-            console.warn("Autoplay was prevented. User must interact first.", error);
-            // Optionally change text back if playing failed
+// 3. INTRO OVERLAY & MUSIC CONTROL
+(function() {
+    const introOverlay = document.getElementById('intro-overlay');
+    const musicControl = document.getElementById('music-control');
+    const bgMusic = document.getElementById('bg-music');
+    
+    // Set placeholder music source (user needs to provide a file)
+    // NOTE: Audio file is not available, using a placeholder warning
+    bgMusic.src = '3_Assets/Audio/mediterranean_lounge.mp3'; 
+    if (bgMusic.src.includes('mediterranean_lounge.mp3')) {
+        console.warn("Please replace '3_Assets/Audio/mediterranean_lounge.mp3' with your actual audio file.");
+    }
+
+    // Hide overlay after animation
+    const hideOverlay = () => {
+        introOverlay.style.animation = 'fadeOut 800ms ease forwards 1s';
+        setTimeout(() => {
+            introOverlay.style.display = 'none';
+            document.body.classList.remove('intro-active');
+        }, 1800); 
+    };
+
+    // If you want the intro to fade out on click/tap, uncomment the next block
+    /*
+    introOverlay.addEventListener('click', () => {
+        hideOverlay();
+    });
+    */
+
+    // Automatic fade out after 3 seconds for a smooth cinematic start
+    setTimeout(hideOverlay, 3000);
+
+    // Music control toggle logic
+    musicControl.addEventListener('click', function() {
+        if (bgMusic.paused) {
+            bgMusic.play().then(() => {
+                this.textContent = 'Pause Music';
+                this.setAttribute('aria-pressed', 'true');
+            }).catch(error => {
+                // Autoplay was prevented. 
+                console.warn("Autoplay was prevented. User must interact first to play music.", error);
+                this.textContent = 'Play Music';
+                this.setAttribute('aria-pressed', 'false');
+            });
+        } else {
+            bgMusic.pause();
             this.textContent = 'Play Music';
             this.setAttribute('aria-pressed', 'false');
-        });
-    } else {
-        audio.pause();
-        this.textContent = 'Play Music';
-        this.setAttribute('aria-pressed', 'false');
-    }
-});
+        }
+    });
+})();
+
+
+@keyframes fadeOut {
+    to { opacity: 0; }
+}
 </script>
+
 </body>
 </html>
