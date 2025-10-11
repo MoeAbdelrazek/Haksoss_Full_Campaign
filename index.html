@@ -1,1021 +1,227 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-
-<title>Haksoss Café — The Ultimate Luxury Morning Experience Campaign (Full Case Study)</title>
-
-<meta name="description" content="Haksoss Café Campaign: 411% ROI, 1,070 Loyalty Sign-ups. Detailed case study with full KPIs, advanced SEO, Social Media performance, and A/B tested email sequences for Hero Latte and Chocolate Croissant."/>
-<meta name="keywords" content="Haksoss, Luxury café, Alexandria coffee, Hero Latte, Chocolate Croissant, loyalty program, premium breakfast, SEO case study, digital marketing KPI, social media metrics, email marketing ROI">
-<meta property="og:title" content="Haksoss Café — The Ultimate Luxury Morning Experience Campaign (Case Study)">
-<meta property="og:description" content="Wake up to luxury with Haksoss Café. Savor our signature Hero Latte, fresh Chocolate Croissants, and seasonal treats.">
-<meta property="og:image" content="3_Assets/Images/hero-latte.jpg">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://moeabdelrazek.github.io/">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Haksoss Café — The Ultimate Luxury Morning Experience">
-<meta name="twitter:description" content="Wake up to luxury with Haksoss...">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Haksoss Café — Full Campaign Case Study</title>
+<meta name="description" content="Haksoss Café Luxury Morning Campaign — Emails, Social Media, KPIs, Financials, SEO, Buyer Personas, and Creative Assets.">
+<link rel="stylesheet" href="styles.css">
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMD/2j/JcW8C1c7N+4B2bX8T8bF+x8Z8B/z/d7mXwYF6V8G5S2P8V7O8F5U9O4F8A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
-
 <style>
-/* CSS START: LUXURY CAFE AESTHETIC */
-:root{
-    /* LUXURY CAFE PALETTE (Warm & Earthy) */
-    --deep:#331A00; /* Rich Espresso Brown/Very Dark Navy */
-    --primary-brown:#6D4C41; /* Primary Coffee Brown */
-    --muted-sage:#A0C4B8; /* Muted Sage Green (Subtle Contrast) */
-    --accent:#C07C4A; /* Warm Copper/Bronze (Gold replacement) */
-    --bg-start:#FAF0E6; /* Warm Ivory/Cream Paper */
-    --bg-end:#FFFFFF; /* Clean White */
-    --card:rgba(255, 255, 255, 0.95);
-    --card-shadow: 0 10px 20px rgba(51, 26, 0, 0.1), 0 0 0 1px rgba(192, 124, 74, 0.1); /* Warmer Shadow */
-    --maxw:1200px;
-    --radius:16px; /* Slightly larger radius for a softer feel */
-
-    /* BORDER CHANGES: Warmer, more tactile */
-    --fancy-border-outer: 0;
-    --fancy-border-inner: 0;
-    --section-border: 1px solid rgba(192, 124, 74, 0.3); /* Soft Copper Line */
-}
-
-/* Reset */
-*{box-sizing:border-box}
-body{
-    margin:0;
-    font-family:"Lato", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-    color:var(--deep);
-    padding: 0;
-    border: var(--fancy-border-outer);
-    border-radius: 0;
-    position: relative;
-    /* CAFE BACKGROUND AESTHETIC */
-    background:linear-gradient(180deg, var(--bg-start) 0%, var(--bg-end) 100%);
-    -webkit-font-smoothing:antialiased;
-    min-height: 10vh;
-}
-
-
-a{ color:var(--primary-brown); text-decoration:none; transition:color .3s; }
-a:hover { color:var(--accent); }
-
-/* Layout */
-.wrap{ max-width:var(--maxw); margin:0 auto; padding:20px 20px 40px; }
-/* HEADER MODIFICATION (Minimalist) */
-header.fixed-header{
-    position:fixed; left:0; right:0; top:0; z-index:9999;
-    background:var(--deep);
-    color:#fff;
-    box-shadow:0 4px 15px rgba(0,0,0,0.4); /* Darker, richer shadow */
-}
-.header-inner{
-    max-width:var(--maxw); margin:0 auto; display:flex; align-items:center;
-    justify-content: flex-start;
-    padding:10px 20px; gap:16px;
-}
-.brand{ display:flex; gap:12px; align-items:center; }
-.brand img{ width:48px; height:48px; object-fit:cover; border-radius:8px; background:#fff; padding:4px; border: 1px solid var(--accent); }
-.brand h1{ margin:0; font-family:'Playfair Display', serif; font-size:1.6rem; color: var(--accent); }
-.brand p, nav.topnav { display:none; }
-
-/* page content wrapper to offset fixed header */
-.page { padding-top:80px; }
-
-/* Panels (The Core Look) - Looks like menu/paper */
-.panel{
-    background:var(--card);
-    border-radius:var(--radius);
-    padding:40px; /* Slightly more padding for a luxurious feel */
-    margin-bottom:40px;
-    /* Elegant Paper/Tray Shadow */
-    box-shadow: var(--card-shadow);
-    /* SMOOTHER ANIMATION (slidy) */
-    opacity:0;
-    transform:translateY(30px);
-    transition:all 1s cubic-bezier(.2,.9,.3,1.1);
-    border-bottom: var(--section-border);
-}
-.panel:last-child {
-    border-bottom: var(--section-border);
-    margin-bottom: 40px;
-}
-.panel.inview{
-    opacity:1;
-    transform:translateY(0);
-}
-.panel h2 {
-    color: var(--deep);
-    font-family: 'Playfair Display', serif;
-    font-size: 2.2rem; /* Slightly larger heading */
-    border-bottom: 2px solid var(--primary-brown); /* Coffee Brown Line */
-    padding-bottom: 10px;
-}
-
-/* CASE STUDY (lead) */
-.case-hero{ display:flex; gap:30px; align-items:start; }
-.case-left h2{ margin:0 0 10px; font-size:2.4rem; }
-.quick-stats{ display:flex; gap:20px; flex-wrap:wrap; margin:20px 0; }
-/* ANIMATION: Quick Stats (Looks like small wooden plaques) */
-.stat{
-    background:linear-gradient(135deg, var(--bg-start), #ffffff);
-    padding:20px 25px;
-    border-radius:12px;
-    min-width:180px;
-    box-shadow:0 6px 15px rgba(51, 26, 0, 0.1);
-    transition:transform .4s ease-out, box-shadow .4s;
-    border: 1px solid rgba(192, 124, 74, 0.3);
-}
-.stat:hover{
-    transform:translateY(-6px); /* Subtle lift */
-    box-shadow:0 15px 35px rgba(51, 26, 0, 0.2);
-}
-.stat .val{ color:var(--accent); font-weight:900; font-size:2rem; }
-.stat .lab{ color:var(--primary-brown); font-size:1rem; margin-top:4px; font-weight: 700; }
-
-.case-right{ width:450px; max-width:40%; position:relative; }
-/* ANIMATION: Hero Image (Smooth Float) */
-.case-right img{
-    width:100%;
-    border-radius:16px;
-    box-shadow:0 20px 50px rgba(0,0,0,0.1);
-    transition:all 1s cubic-bezier(.2,.9,.3,1);
-    animation: floating-shadow 6s ease-in-out infinite alternate;
-    border: 4px solid var(--accent); /* Thicker copper border */
-}
-
-@keyframes floating-shadow {
-    0% { transform: translateY(-8px); box-shadow: 0 15px 40px rgba(109, 76, 65, 0.3); }
-    100% { transform: translateY(-12px); box-shadow: 0 25px 60px rgba(192, 124, 74, 0.4); }
-}
-
-
-/* gallery - Looks like displayed products */
-.gallery{ display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; margin-top:25px; }
-.tile{
-    background:#fff;
-    border-radius:12px;
-    overflow:hidden;
-    box-shadow:0 10px 30px rgba(51, 26, 0, 0.08);
-    position:relative;
-    transition:transform .5s ease-out, box-shadow .5s;
-}
-/* ANIMATION: Tile Hover (Elegant) */
-.tile:hover{
-    transform:translateY(-8px) scale(1.02);
-    box-shadow:0 20px 45px rgba(51, 26, 0, 0.2);
-}
-.tile img{ width:100%; height:200px; object-fit:cover; display:block; }
-.tile .meta{ padding:14px; font-weight:800; color:var(--deep); background:rgba(160, 196, 184, 0.2); } /* Muted sage background */
-
-/* tables */
-.table-wrap{ overflow:auto; margin-top:25px; }
-table{ width:100%; border-collapse:collapse; font-size:1rem; }
-th, td{ padding:16px 14px; border-bottom:1px solid rgba(20,30,40,0.05); text-align:left; vertical-align:top; }
-th{ background:linear-gradient(180deg,var(--bg-start),#fdfdfd); color:var(--deep); font-weight:800; text-transform: uppercase; border-bottom: 3px solid var(--accent); /* Thicker copper line */ }
-td:nth-child(3) { font-weight: 700; color: var(--primary-brown); } /* Coffee brown for key column */
-
-/* AI Table specific styling */
-#ai-metrics .num {
-    color: var(--accent);
-    font-size: 1.2rem;
-    font-weight: 800;
-}
-#advanced-strategy h2 { color: var(--primary-brown); } /* Use coffee brown for this section */
-
-/* Chart size adjustment */
-.charts{ display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:30px; margin-top:30px; }
-.chart.card{ padding:25px; background:linear-gradient(135deg, #fff, var(--bg-start)); box-shadow:0 8px 20px rgba(51, 26, 0, 0.05); border-radius: var(--radius); }
-
-/* Professional List Styling - Coffee house bullet */
-.professional-list {
-    list-style: none;
-    padding-left: 0;
-    margin-top: 15px;
-}
-.professional-list li {
-    position: relative;
-    padding-left: 30px;
-    margin-bottom: 15px;
-    line-height: 1.6;
-    color: var(--deep);
-}
-.professional-list li:before {
-    content: "☕"; /* Coffee cup bullet */
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-    font-size: 1.2rem;
-    top: 0;
-}
-
-/* FOOTER STYLES */
-footer{
-    padding: 30px 20px;
-    border-top: 1px solid rgba(192, 124, 74, 0.3);
-    background: var(--bg-start);
-    color: var(--deep);
-    text-align: center;
-}
-.footer-wrap{
-    max-width: var(--maxw);
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
-    font-size: 0.9rem;
-    font-weight: 600;
-}
-.footer-info{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-}
-
-/* PROFESSIONAL NAME FORMAT - signature */
-.author-name strong {
-    color: var(--deep);
-    font-weight: 800;
-    font-size: 1.1em;
-    letter-spacing: 0.5px;
-    display: inline-block;
-}
-
-/* Footer links & signature adjustments */
-.footer-links{
-    display: flex;
-    gap: 25px;
-    margin-top: 10px;
-}
-.footer-links a{
-    color: var(--deep);
-    font-size: 1.6rem; /* Icon size used previously */
-    transition: color 0.3s, transform 0.3s;
-}
-.footer-links a:hover{
-    color: var(--accent); /* Hover effect using accent color */
-    transform: scale(1.15);
-}
-.footer-meta {
-    font-size: 0.85rem;
-    color: var(--primary-brown);
-}
-.footer-meta .divider{
-    color: var(--accent);
-    margin: 0 8px;
-    font-weight: 400;
-}
-
-/* Mobile Optimizations */
-@media (max-width: 768px) {
-    .case-hero {
-        flex-direction: column;
-        gap: 20px;
-    }
-    .case-right{
-        width: 100%;
-        max-width: 100%;
-    }
-    .panel {
-        padding: 30px 20px;
-    }
-    .footer-wrap {
-        flex-direction: column;
-        gap: 10px;
-    }
-    .footer-meta {
-        flex-direction: column;
-        gap: 5px;
-    }
-    .footer-meta .divider {
-        display: none; /* Hide vertical dividers on mobile stack */
-    }
-    .footer-info {
-        gap: 8px;
-    }
-}
-
-/* DESKTOP FOOTER LAYOUT */
-@media (min-width: 768px) {
-    .footer-wrap {
-        flex-direction: row; /* Split to two sides */
-        justify-content: space-between;
-    }
-    .footer-info {
-        flex-direction: row;
-        align-items: center;
-        gap: 20px;
-    }
-    .footer-links {
-        margin-top: 0;
-    }
-    .footer-meta {
-        text-align: right;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-    }
-}
-
-/* =========================
-    ADDITIONAL ANIMATIONS
-    (Cinematic, elegant)
-    ========================= */
-
-/* Fade-in on-scroll helper - used by sections + tiles + stats */
-.fade-section, .tile, .stat {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 1000ms cubic-bezier(.2,.9,.3,1.1), transform 1000ms cubic-bezier(.2,.9,.3,1.1);
-}
-.inview, .fade-section.visible, .tile.inview, .stat.inview {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Hero breathing */
-.hero-breath {
-    animation: heroPulse 8s ease-in-out infinite alternate;
-}
-@keyframes heroPulse {
-    from { transform: translateY(0) scale(1); }
-    to { transform: translateY(-8px) scale(1.02); }
-}
-
-/* music control - REMOVED CSS FOR #music-control */
-
-/* signature footer style override (Great Vibes) */
-.signature {
-    font-family: 'Great Vibes', cursive;
-    font-size: 34px;
-    color: var(--accent);
-    margin: 0;
-    transition: transform .25s ease;
-}
-.signature:hover { transform: scale(1.05); text-shadow: 0 0 12px rgba(192, 124, 74, 0.8); }
-
-/* small adjustments for charts and containers inside panels (preserve original layout) */
-.charts { margin-top: 30px; }
-.panel .chart { margin-top: 15px; }
-
-/* accessibility focus */
-a:focus, button:focus { outline: 3px solid rgba(192, 124, 74, 0.5); outline-offset: 4px; }
-
-/* =======================================
-    DASHBOARD OVERRIDES (for integration)
-    ======================================= */
-/* Scoping styles to the new dashboard section */
-#kpis-dashboard table {
-    border: none; /* Remove table borders to follow main file's style */
-    margin-bottom: 20px;
-}
-#kpis-dashboard th, #kpis-dashboard td {
-    border: 1px solid rgba(109, 76, 65, 0.2); /* Coffee brown faint border */
-    padding: 12px;
-    text-align: center;
-}
-#kpis-dashboard th {
-    background: var(--primary-brown);
-    color: var(--bg-start);
-    border-bottom: 3px solid var(--accent);
-}
-#kpis-dashboard canvas {
-    max-width: 100%;
-    margin-bottom: 30px;
-}
-.dashboard-section { margin-bottom: 35px; }
-
-/* Currency Toggle Styling (more physical feel) */
-.currency-toggle {
-    margin-bottom: 15px;
-    display: flex;
-    gap: 20px;
-    justify-content: flex-end;
-}
-.currency-toggle label {
-    padding: 8px 15px;
-    border: 1px solid var(--primary-brown);
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 700;
-    color: var(--primary-brown);
-    background: #fff;
-    transition: all 0.3s ease;
-}
-.currency-toggle input[type="radio"] {
-    display: none;
-}
-.currency-toggle input[type="radio"]:checked + label {
-    background: var(--accent);
-    color: var(--deep);
-    border-color: var(--accent);
-    box-shadow: 0 4px 10px rgba(192, 124, 74, 0.3);
-    transform: translateY(-2px);
-}
-
-/* =======================================
-    EMAIL CARD NEW STYLES (Requested Improvement)
-    ======================================= */
-.email-card-group {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-    margin-top: 30px;
-}
-.email-card {
-    background: var(--card);
-    border-radius: var(--radius);
-    padding: 25px;
-    box-shadow: 0 5px 15px rgba(51, 26, 0, 0.1);
-    border: 1px solid rgba(192, 124, 74, 0.2);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-
-    /* Animation */
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 1s cubic-bezier(.2,.9,.3,1.1);
-}
-.email-card.inview {
-    opacity: 1;
-    transform: translateY(0);
-}
-.email-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(51, 26, 0, 0.2);
-    cursor: pointer;
-}
-.email-card h4 {
-    margin: 0 0 10px;
-    color: var(--deep);
-    font-size: 1.25rem;
-    font-family: 'Playfair Display', serif;
-    border-bottom: 2px solid var(--muted-sage);
-    padding-bottom: 5px;
-}
-.email-card .language-tag {
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: var(--bg-start);
-    background: var(--primary-brown);
-    padding: 3px 8px;
-    border-radius: 4px;
-    display: inline-block;
-    margin-right: 10px;
-}
-.email-card .subject {
-    font-style: italic;
-    color: var(--deep);
-    margin: 8px 0;
-    font-size: 1.05rem;
-    font-weight: 600;
-}
-.email-card .copy-text {
-    background: rgba(160, 196, 184, 0.1); /* Muted Sage Light */
-    padding: 15px;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    margin-top: 15px;
-    border-left: 3px solid var(--accent);
-}
-.email-card .analysis {
-    margin-top: 15px;
-    padding: 10px;
-    background: var(--bg-start);
-    border-radius: 8px;
-    font-size: 0.85rem;
-    color: var(--deep);
-    border: 1px dashed rgba(192, 124, 74, 0.4);
-}
-.email-card .analysis strong {
-    color: var(--primary-brown);
-    display: block;
-    margin-bottom: 3px;
-}
-.email-card .metric-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 5px 0;
-    border-bottom: 1px dashed rgba(109, 76, 65, 0.1);
-    font-size: 0.95rem;
-}
-.email-card .metric-label {
-    color: var(--primary-brown);
-    font-weight: 600;
-}
-.email-card .metric-value {
-    color: var(--accent);
-    font-weight: 800;
-}
-.email-card .metric-item:last-child {
-    border-bottom: none;
-}
-
-/* =======================================
-    SOCIAL MEDIA CARD NEW STYLES
-    ======================================= */
-.social-card {
-    background: #fff;
-    border-radius: var(--radius);
-    overflow: hidden;
-    box-shadow: 0 10px 20px rgba(51, 26, 0, 0.1);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    /* Animation */
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 1s cubic-bezier(.2,.9,.3,1.1);
-}
-.social-card.inview {
-    opacity: 1;
-    transform: translateY(0);
-}
-.social-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(51, 26, 0, 0.15);
-}
-.social-card-header {
-    background: var(--primary-brown);
-    color: #fff;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.social-card-header h4 {
-    margin: 0;
-    font-size: 1.1rem;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-}
-.social-card-platform {
-    font-size: 1.5rem;
-    color: var(--bg-start);
-}
-.social-card-body {
-    padding: 20px;
-}
-.social-card-img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    display: block;
-}
-.social-card-metrics {
-    margin-top: 15px;
-    padding: 10px 0;
-    border-top: 1px dashed var(--muted-sage);
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
-}
-.social-metric .val {
-    color: var(--accent);
-    font-size: 1.4rem;
-    font-weight: 800;
-}
-.social-metric .lab {
-    font-size: 0.85rem;
-    color: var(--primary-brown);
-    font-weight: 600;
-    margin-top: 2px;
-}
-.social-card-text {
-    font-size: 0.95rem;
-    margin: 10px 0 15px;
-    font-style: italic;
-    color: var(--deep);
-}
-.social-card-hashtags {
-    font-size: 0.8rem;
-    color: var(--muted-sage);
-    font-weight: 600;
-}
-
-
-/* SEO Table overrides for distinct aesthetic */
-#seo-performance table {
-    text-align: center;
-}
-#seo-performance th {
-    background: var(--muted-sage);
-    color: var(--deep);
-    border-bottom: 3px solid var(--primary-brown);
-}
-#seo-performance td {
-    font-size: 0.95rem;
-}
-#seo-performance .pos {
-    font-weight: 800;
-    color: var(--accent);
-}
-#seo-performance .volume {
-    font-weight: 700;
-    color: var(--primary-brown);
-}
-
-/* CSS END: LUXURY CAFE AESTHETIC */
+    body { font-family: 'Arial', sans-serif; margin:0; padding:0; background:#f5f5f5; color:#333; }
+    .container { width:90%; max-width:1400px; margin:0 auto; padding:2rem 0; }
+    header { text-align:center; padding:4rem 0; background:linear-gradient(135deg, #fdf6f0, #f7e3d7); }
+    header h1 { font-family:'Playfair Display', serif; font-size:3rem; color:#6d4c41; margin-bottom:0.5rem; }
+    header p { font-size:1.2rem; color:#a0c4b8; }
+    .hero-img { width:100%; max-height:500px; object-fit:cover; border-radius:1rem; margin-top:2rem; }
 </style>
 </head>
 <body>
 
-<header class="fixed-header" role="banner">
-    <div class="header-inner">
-        <div class="brand">
-            <img src="3_Assets/Logo/logo.png" alt="Haksoss café logo">
-            <div>
-                <h1 class="site-title">Haksoss — Luxury Morning Experience Campaign</h1>
-            </div>
-        </div>
+<!-- Part 1: Header / Hero Section -->
+<header>
+    <div class="container">
+        <h1>Haksoss Café — Luxury Morning Campaign</h1>
+        <p>Full Campaign Case Study: Emails, Social Media, Buyer Personas, SEO, KPIs & Financial Analysis</p>
+        <img src="3_Assets/Images/hero-latte.jpg" alt="Haksoss Hero Latte on wooden tray" class="hero-img">
     </div>
 </header>
+<!-- Part 2: Gallery & Creative Assets -->
+<section id="gallery" class="panel fade-section">
+    <div class="container">
+        <h2>Creative Gallery & Assets</h2>
+        <p class="muted">Showcasing all images, social media templates, and campaign visuals.</p>
+        <div class="gallery" aria-hidden="true">
+            <div class="tile"><img src="3_Assets/Images/hero-latte.jpg" alt="Hero Latte coffee"><div class="meta">hero-latte.jpg</div></div>
+            <div class="tile"><img src="3_Assets/Images/chocolate-croissant.jpg" alt="Freshly baked chocolate croissant"><div class="meta">chocolate-croissant.jpg</div></div>
+            <div class="tile"><img src="3_Assets/Images/seasonal-treat.jpg" alt="Seasonal breakfast treat"><div class="meta">seasonal-treat.jpg</div></div>
+            <div class="tile"><img src="3_Assets/Images/special-latte.jpg" alt="Special latte creation"><div class="meta">special-latte.jpg</div></div>
+            <div class="tile"><img src="3_Assets/Images/special-offer.jpg" alt="Special offer on lattes"><div class="meta">special-offer.jpg</div></div>
+            <div class="tile"><img src="3_Assets/Images/loyalty-program.jpg" alt="Haksoss Loyalty Program benefits"><div class="meta">loyalty-program.jpg</div></div>
 
-<div class="page">
-<div class="wrap">
-
-<section id="case" class="panel inview">
-<div class="case-hero">
-<div class="case-left">
-<h2>Haksoss Café — Elevate Your Mornings: Full Case Study</h2>
-<p class="sub">Campaign Title: **“Wake Up with Luxury in Alexandria”**<br>
-Purpose: Establish Haksoss as Alexandria’s premium morning destination through bilingual, sensory storytelling, high-end visuals, and a loyalty-led conversion strategy.</p>
-
-<div class="quick-stats">
-<div class="stat"><div class="val">80,800</div><div class="lab">Total Reach</div></div>
-<div class="stat"><div class="val">1,070</div><div class="lab">Loyalty Sign-ups</div></div>
-<div class="stat"><div class="val">11.3%</div><div class="lab">Avg Engagement Rate</div></div>
-<div class="stat"><div class="val">411%</div><div class="lab">Overall Campaign ROI</div></div>
-</div>
-
-<div style="margin-top:20px;">
-<h3 style="margin-bottom:8px">Executive Summary</h3>
-    <!-- Place this at the very top of your Executive Summary section -->
-<section class="kpi-strip">
-    <div class="kpi">
-        <span class="kpi-value">25K</span>
-        <span class="kpi-label">Total Reach</span>
-    </div>
-    <div class="kpi">
-        <span class="kpi-value">10.7K</span>
-        <span class="kpi-label">Ad Clicks / Email Opens</span>
-    </div>
-    <div class="kpi">
-        <span class="kpi-value">4.5K</span>
-        <span class="kpi-label">Web Traffic</span>
-    </div>
-    <div class="kpi">
-        <span class="kpi-value">1,070</span>
-        <span class="kpi-label">Loyalty Sign-ups</span>
+            <!-- Social Media Templates -->
+            <div class="tile"><img src="3_Assets/1_Templates/hero_latte_post.png" alt="Hero Latte social media template"><div class="meta">hero_latte_post.png (template)</div></div>
+            <div class="tile"><img src="3_Assets/1_Templates/special_latte.png" alt="Special latte social media template"><div class="meta">special_latte.png (template)</div></div>
+            <div class="tile"><img src="3_Assets/1_Templates/season_offer.png" alt="Seasonal offer social media template"><div class="meta">season_offer.png (template)</div></div>
+            <div class="tile"><img src="3_Assets/1_Templates/haksoss_post.png" alt="Haksoss brand post template"><div class="meta">haksoss_post.png (template)</div></div>
+            <div class="tile"><img src="3_Assets/1_Templates/discover_more.png" alt="Discover more carousel template"><div class="meta">discover_more.png (template)</div></div>
+        </div>
     </div>
 </section>
 
 <style>
-.kpi-strip {
-    display: flex;
-    justify-content: space-around;
-    background: var(--muted-sage);
-    padding: 1rem;
-    border-radius: 10px;
-    margin-bottom: 2rem;
-    text-align: center;
-}
-.kpi-strip .kpi-value {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: var(--primary-brown);
-}
-.kpi-strip .kpi-label {
-    font-size: 0.9rem;
-    display: block;
-    color: var(--deep);
-}
+.gallery { display: grid; grid-template-columns: repeat(auto-fill,minmax(250px,1fr)); gap:1rem; margin-top:2rem; }
+.tile { position:relative; overflow:hidden; border-radius:0.5rem; }
+.tile img { width:100%; display:block; transition: transform 0.3s ease; }
+.tile:hover img { transform: scale(1.05); }
+.meta { position:absolute; bottom:0; left:0; width:100%; background:rgba(0,0,0,0.6); color:#fff; padding:0.3rem; font-size:0.85rem; text-align:center; }
 </style>
-
-<p class="muted">Haksoss Café executed a visual-first, bilingual campaign centered on the signature **Hero Latte** and **Chocolate Croissant**. The strategy integrated targeted ads across Meta and TikTok with a loyalty-driven email automation sequence, resulting in a measurable lift in morning footfall and a high return on investment.</p>
-</div>
-</div>
-
-<div class="case-right">
-<img src="3_Assets/Images/hero-latte.jpg" alt="Hero Latte coffee by the sea at Haksoss Café">
-</div>
-</div>
-</section>
-
-<section id="creative" class="panel fade-section">
-<h2>Creative Execution & Visual Assets (Photo Gallery)</h2>
-<p class="muted">All campaign visuals and templates used across posts, stories, and ads—optimized for morning light and high-end aesthetic.</p>
-
-<div class="gallery" aria-hidden>
-<div class="tile"><img src="3_Assets/Images/hero-latte.jpg" alt="Hero Latte coffee"><div class="meta">hero-latte.jpg</div></div>
-<div class="tile"><img src="3_Assets/Images/chocolate-croissant.jpg" alt="Freshly baked chocolate croissant"><div class="meta">chocolate-croissant.jpg</div></div>
-<div class="tile"><img src="3_Assets/Images/seasonal-treat.jpg" alt="Seasonal breakfast treat"><div class="meta">seasonal-treat.jpg</div></div>
-<div class="tile"><img src="3_Assets/Images/special-latte.jpg" alt="Special latte creation"><div class="meta">special-latte.jpg</div></div>
-<div class="tile"><img src="3_Assets/Images/special-offer.jpg" alt="Special offer on lattes"><div class="meta">special-offer.jpg</div></div>
-<div class="tile"><img src="3_Assets/Images/loyalty-program.jpg" alt="Haksoss Loyalty Program benefits"><div class="meta">loyalty-program.jpg</div></div>
-
-<div class="tile"><img src="3_Assets/1_Templates/hero_latte_post.png" alt="Hero Latte social media template"><div class="meta">hero_latte_post.png (template)</div></div>
-<div class="tile"><img src="3_Assets/1_Templates/special_latte.png" alt="Special latte social media template"><div class="meta">special_latte.png (template)</div></div>
-<div class="tile"><img src="3_Assets/1_Templates/season_offer.png" alt="Seasonal offer social media template"><div class="meta">season_offer.png (template)</div></div>
-<div class="tile"><img src="3_Assets/1_Templates/haksoss_post.png" alt="Haksoss brand post template"><div class="meta">haksoss_post.png (template)</div></div>
-<div class="tile"><img src="3_Assets/1_Templates/discover_more.png" alt="Discover more carousel template"><div class="meta">discover_more.png (template)</div></div>
-</div>
-</section>
-
+<!-- Part 3: Email Campaigns & Performance -->
 <section id="emails" class="panel fade-section">
-<h2>Emails — Full Campaign Sequence & Performance Analysis </h2>
-<p class="muted"> </p>
+    <div class="container">
+        <h2>Email Campaigns — English & Arabic</h2>
+        <p class="muted">A complete overview of email marketing efforts, conversion rates, and audience engagement.</p>
 
-<div class="email-card-group">
+        <div class="email-card-group">
+            <!-- Email 1 -->
+            <div class="email-card">
+                <div class="email-card-header">
+                    <h4>Morning Awakening — EN</h4>
+                </div>
+                <img src="3_Assets/Emails/morning-awakening-en.png" alt="Morning Awakening Email" class="email-card-img">
+                <div class="email-card-body">
+                    <p class="email-card-text">Kickstart mornings with Haksoss’ signature latte experience.</p>
+                    <div class="email-card-metrics">
+                        <div class="email-metric"><div class="val">2.5%</div><div class="lab">Conversion Rate</div></div>
+                        <div class="email-metric"><div class="val">3,200</div><div class="lab">Opens</div></div>
+                        <div class="email-metric"><div class="val">1,050</div><div class="lab">Clicks</div></div>
+                    </div>
+                </div>
+            </div>
 
-    <div class="email-card">
-        <h4>Morning Awakening (1/6)</h4>
-        <span class="language-tag"><i class="fas fa-globe"></i> English</span>
-        <p class="subject"><i class="fas fa-envelope"></i> Subject: Wake up with the perfect cup</p>
-        <div class="analysis">
-            <strong>Goal:</strong> Establish Haksoss as the essential start to the day. High-intent keyword inclusion ('morning').
-            Analysis: Highest open rate due to first-email novelty and strong subject line focus.
+            <!-- Email 1 Arabic -->
+            <div class="email-card">
+                <div class="email-card-header">
+                    <h4>Morning Awakening — AR</h4>
+                </div>
+                <img src="3_Assets/Emails/morning-awakening-ar.png" alt="Morning Awakening Email Arabic" class="email-card-img">
+                <div class="email-card-body">
+                    <p class="email-card-text">ابدأ صباحك مع تجربة لاتيه هكسوس المميزة.</p>
+                    <div class="email-card-metrics">
+                        <div class="email-metric"><div class="val">3.1%</div><div class="lab">Conversion Rate</div></div>
+                        <div class="email-metric"><div class="val">4,000</div><div class="lab">Opens</div></div>
+                        <div class="email-metric"><div class="val">1,280</div><div class="lab">Clicks</div></div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="copy-text">Wake up with the perfect cup and embrace the serenity of Alexandria’s beach mornings. Haksoss brings luxury and flavor together.</div>
-        <div style="margin-top:15px;">
-            <div class="metric-item"><span class="metric-label">Open Rate:</span> <span class="metric-value">46.2%</span></div>
-            <div class="metric-item"><span class="metric-label">CTR:</span> <span class="metric-value">4.1%</span></div>
-            <div class="metric-item"><span class="metric-label">Conversion Rate:</span> <span class="metric-value">2.5%</span></div>
+
+        <!-- Email Performance Chart -->
+        <div class="email-trends" style="margin-top:2rem;">
+            <p class="muted">Conversion rate progression for English and Arabic campaigns</p>
+            <canvas id="emailPerformanceChart" width="400" height="200"></canvas>
         </div>
     </div>
-
-    <div class="email-card">
-        <h4>Signature Indulgence (2/6)</h4>
-        <span class="language-tag"><i class="fas fa-globe"></i> English</span>
-        <p class="subject"><i class="fas fa-envelope"></i> Subject: Mornings deserve indulgence</p>
-        <div class="analysis">
-            <strong>Goal:</strong> Showcase primary products (Hero Latte & Croissant) using rich, sensory language (Velvety, Aromatic).
-            Analysis: Strong engagement, validating the use of emotional/sensory copy over generic product listings.
-        </div>
-        <div class="copy-text">At Haksoss, we believe that mornings deserve moments of pure indulgence. Let us take you on a journey of taste, aroma, and elegance.<br>• **Hero Latte**: Velvety, aromatic, perfect balance.<br>• **Chocolate Croissant**: Layers of buttery pastry with rich chocolate.</div>
-        <div style="margin-top:15px;">
-            <div class="metric-item"><span class="metric-label">Open Rate:</span> <span class="metric-value">42.5%</span></div>
-            <div class="metric-item"><span class="metric-label">CTR:</span> <span class="metric-value">5.8%</span></div>
-            <div class="metric-item"><span class="metric-label">Conversion Rate:</span> <span class="metric-value">3.2%</span></div>
-        </div>
-    </div>
-
-    <div class="email-card">
-        <h4>Exclusive Offer (3/6)</h4>
-        <span class="language-tag"><i class="fas fa-globe"></i> English</span>
-        <p class="subject"><i class="fas fa-envelope"></i> Subject: Limited-time morning upgrade</p>
-        <div class="analysis">
-            <strong>Goal:</strong> Drive immediate footfall using scarcity (limited-time) and value-adds (free upgrade, 50% off).
-            Analysis: High conversion rate per click (CPC) driven by strong financial incentive.
-        </div>
-        <div class="copy-text">Delight in our limited-time offer to elevate your mornings.<br>• Hero Latte Experience: Complimentary upgrade with any latte.<br>• Chocolate Croissant Delight: Second croissant 50% off.</div>
-        <div style="margin-top:15px;">
-            <div class="metric-item"><span class="metric-label">Open Rate:</span> <span class="metric-value">45.0%</span></div>
-            <div class="metric-item"><span class="metric-label">CTR:</span> <span class="metric-value">4.5%</span></div>
-            <div class="metric-item"><span class="metric-label">Conversion Rate:</span> <span class="metric-value">6.1%</span></div>
-        </div>
-    </div>
-
-    <div class="email-card">
-        <h4>Loyalty Invitation (4/6)</h4>
-        <span class="language-tag"><i class="fas fa-globe"></i> English</span>
-        <p class="subject"><i class="fas fa-envelope"></i> Subject: Join Haksoss Loyalty: Unlock VIP Status</p>
-        <div class="analysis">
-            <strong>Goal:</strong> Convert engaged users into lifetime loyalty members. Focus on long-term benefits (Rewards, Early Access).
-            Analysis: Lower Open Rate, but the highest Conversion Rate, proving high intent from subscribers who reach this stage.
-        </div>
-        <div class="copy-text">Elevate your mornings with Haksoss Loyalty.<br>• Points on Every Purchase: Earn rewards.<br>• Early Access: Discover new offerings first.<br>• Exclusive Events: Private tastings, workshops, beach gatherings.</div>
-        <div style="margin-top:15px;">
-            <div class="metric-item"><span class="metric-label">Open Rate:</span> <span class="metric-value">40.5%</span></div>
-            <div class="metric-item"><span class="metric-label">CTR:</span> <span class="metric-value">6.5%</span></div>
-            <div class="metric-item"><span class="metric-label">Conversion Rate:</span> <span class="metric-value">9.8%</span></div>
-        </div>
-    </div>
-
-    <div class="email-card">
-        <h4>Haksoss Spotlight (5/6)</h4>
-        <span class="language-tag"><i class="fas fa-globe"></i> English</span>
-        <p class="subject"><i class="fas fa-envelope"></i> Subject: Why guests choose Haksoss (Social Proof)</p>
-        <div class="analysis">
-            <strong>Goal:</strong> Use social proof (testimonials) to build trust and overcome any remaining hesitation.
-            Analysis: Excellent CTR indicates high interest in peer-driven content.
-        </div>
-        <div class="copy-text">Discover why guests choose Haksoss to start their day. "The Hero Latte is perfection in a cup." – Sarah A.</div>
-        <div style="margin-top:15px;">
-            <div class="metric-item"><span class="metric-label">Open Rate:</span> <span class="metric-value">43.0%</span></div>
-            <div class="metric-item"><span class="metric-label">CTR:</span> <span class="metric-value">5.3%</span></div>
-            <div class="metric-item"><span class="metric-label">Conversion Rate:</span> <span class="metric-value">2.8%</span></div>
-        </div>
-    </div>
-
-    <div class="email-card">
-        <h4>Final Sunrise Reminder (6/6)</h4>
-        <span class="language-tag"><i class="fas fa-globe"></i> English</span>
-        <p class="subject"><i class="fas fa-envelope"></i> Subject: Don’t miss the morning elegance</p>
-        <div class="analysis">
-            <strong>Goal:</strong> Final urgency trigger to capture remaining unconverted subscribers before the campaign phase ends.
-            Analysis: Good final boost in conversion from last-chance framing.
-        </div>
-        <div class="copy-text">Don’t miss the chance to experience elegance and flavor—your ultimate morning upgrade ends soon. Visit Haksoss or join the loyalty program today.</div>
-        <div style="margin-top:15px;">
-            <div class="metric-item"><span class="metric-label">Open Rate:</span> <span class="metric-value">44.0%</span></div>
-            <div class="metric-item"><span class="metric-label">CTR:</span> <span class="metric-value">3.9%</span></div>
-            <div class="metric-item"><span class="metric-label">Conversion Rate:</span> <span class="metric-value">4.5%</span></div>
-        </div>
-    </div>
-
-    <div class="email-card">
-        <h4>صحوة الصباح (1/6)</h4>
-        <span class="language-tag"><i class="fas fa-language"></i> Arabic</span>
-        <p class="subject" dir="rtl" style="text-align:right;"><i class="fas fa-envelope"></i> الموضوع: ابدأ صباحك بأفضل فنجان</p>
-        <div class="analysis" dir="rtl" style="text-align:right;">
-            <strong>الهدف:</strong> ترسيخ هكسوس كبداية أساسية لليوم. تضمين الكلمات المفتاحية عالية القصد ('صباح').
-            التحليل: أعلى معدل فتح بسبب حداثة الرسالة الأولى وقوة عنوان الموضوع.
-        </div>
-        <div class="copy-text" dir="rtl" style="text-align:right;">استيقظ بأفضل فنجان واستمتع بهدوء شواطئ الإسكندرية. هكسوس يجمع بين الفخامة والنكهات.</div>
-        <div style="margin-top:15px;">
-            <div class="metric-item"><span class="metric-label">Open Rate:</span> <span class="metric-value">47.5%</span></div>
-            <div class="metric-item"><span class="metric-label">CTR:</span> <span class="metric-value">5.1%</span></div>
-            <div class="metric-item"><span class="metric-label">Conversion Rate:</span> <span class="metric-value">3.1%</span></div>
-        </div>
-    </div>
-
-    <div class="email-card">
-        <h4>المتعة المميزة (2/6)</h4>
-        <span class="language-tag"><i class="fas fa-language"></i> Arabic</span>
-        <p class="subject" dir="rtl" style="text-align:right;"><i class="fas fa-envelope"></i> الموضوع: الصباح يستحق الترف</p>
-        <div class="analysis" dir="rtl" style="text-align:right;">
-            <strong>الهدف:</strong> عرض المنتجات الرئيسية بلغة حسية ومحفزة للشراء (كريمي، عطري، ترف خالص).
-            التحليل: تفاعل قوي، حيث يتجاوز معدل النقر نظيره الإنجليزي، مما يدل على نجاح الترجمة في نقل الإحساس.
-        </div>
-        <div class="copy-text" dir="rtl" style="text-align:right;">في هكسوس، نؤمن أن الصباح يستحق لحظات من الترف الخالص.<br>• لاتيه هيرو: كريمي وعطري، وتوازن مثالي من النكهات.<br>• كرواسون الشوكولاتة: طبقات معجنات مع الشوكولاتة الغنية.</div>
-        <div style="margin-top:15px;">
-            <div class="metric-item"><span class="metric-label">Open Rate:</span> <span class="metric-value">43.2%</span></div>
-            <div class="metric-item"><span class="metric-label">CTR:</span> <span class="metric-value">6.8%</span></div>
-            <div class="metric-item"><span class="metric-label">Conversion Rate:</span> <span class="metric-value">4.0%</span></div>
-        </div>
-    </div>
-
-    <div class="email-card">
-        <h4>عرض حصري (3/6)</h4>
-        <span class="language-tag"><i class="fas fa-language"></i> Arabic</span>
-        <p class="subject" dir="rtl" style="text-align:right;"><i class="fas fa-envelope"></i> الموضوع: استمتع بعرضنا المحدود لترقية صباحك</p>
-        <div class="analysis" dir="rtl" style="text-align:right;">
-            <strong>الهدف:</strong> تحفيز الزيارة الفورية عبر العروض المحدودة والقيمة المضافة (ترقية مجانية).
-            التحليل: أعلى معدل تحويل بين رسائل العروض، مما يشير إلى أن العرض قوي في هذه السوق.
-        </div>
-        <div class="copy-text" dir="rtl" style="text-align:right;">استمتع بعرضنا المحدود لترقية صباحك.<br>• تجربة لاتيه هيرو: ترقية مجانية مع أي لاتيه.<br>• متعة كرواسون الشوكولاتة: الكرواسون الثاني بخصم 50%.</div>
-        <div style="margin-top:15px;">
-            <div class="metric-item"><span class="metric-label">Open Rate:</span> <span class="metric-value">45.8%</span></div>
-            <div class="metric-item"><span class="metric-label">CTR:</span> <span class="metric-value">5.2%</span></div>
-            <div class="metric-item"><span class="metric-label">Conversion Rate:</span> <span class="metric-value">7.5%</span></div>
-        </div>
-    </div>
-
-    <div class="email-card">
-        <h4>دعوة الولاء (4/6)</h4>
-        <span class="language-tag"><i class="fas fa-language"></i> Arabic</span>
-        <p class="subject" dir="rtl" style="text-align:right;"><i class="fas fa-envelope"></i> الموضوع: انضم لولاء هكسوس: افتح حالة الـ VIP</p>
-        <div class="analysis" dir="rtl" style="text-align:right;">
-            <strong>الهدف:</strong> تحويل المستخدمين المهتمين إلى أعضاء ولاء مدى الحياة. التركيز على المزايا طويلة الأمد.
-            التحليل: أفضل معدل تحويل في السلسلة، مما يبرهن على نجاح الحث على الانضمام لبرنامج الولاء.
-        </div>
-        <div class="copy-text" dir="rtl" style="text-align:right;">ارتقِ بصباحك مع ولاء هكسوس.<br>• نقاط على كل عملية شراء: اكسب مكافآت قيمة.<br>• وصول مبكر: اكتشف عروضنا الجديدة أولاً.<br>• فعاليات حصرية: تذوق خاص، وورش عمل على الشاطئ.</div>
-        <div style="margin-top:15px;">
-            <div class="metric-item"><span class="metric-label">Open Rate:</span> <span class="metric-value">41.1%</span></div>
-            <div class="metric-item"><span class="metric-label">CTR:</span> <span class="metric-value">7.0%</span></div>
-            <div class="metric-item"><span class="metric-label">Conversion Rate:</span> <span class="metric-value">10.5%</span></div>
-        </div>
-    </div>
-
-    <div class="email-card">
-        <h4>تسليط الضوء على هكسوس (5/6)</h4>
-        <span class="language-tag"><i class="fas fa-language"></i> Arabic</span>
-        <p class="subject" dir="rtl" style="text-align:right;"><i class="fas fa-envelope"></i> الموضوع: لماذا يختار الضيوف هكسوس (الدليل الاجتماعي)</p>
-        <div class="analysis" dir="rtl" style="text-align:right;">
-            <strong>الهدف:</strong> استخدام الدليل الاجتماعي (شهادات) لبناء الثقة وترسيخ صورة العلامة التجارية الفاخرة.
-            التحليل: تفاعل ممتاز يشير إلى اهتمام عالٍ بالمحتوى المدفوع من الأقران.
-        </div>
-        <div class="copy-text" dir="rtl" style="text-align:right;">اكتشف لماذا يختار الضيوف هكسوس لبدء يومهم. "لاتيه هيرو هو الكمال في فنجان." – سارة أ.</div>
-        <div style="margin-top:15px;">
-            <div class="metric-item"><span class="metric-label">Open Rate:</span> <span class="metric-value">43.8%</span></div>
-            <div class="metric-item"><span class="metric-label">CTR:</span> <span class="metric-value">6.1%</span></div>
-            <div class="metric-item"><span class="metric-label">Conversion Rate:</span> <span class="metric-value">3.4%</span></div>
-        </div>
-    </div>
-
-    <div class="email-card">
-        <h4>تذكير شروق الشمس الأخير (6/6)</h4>
-        <span class="language-tag"><i class="fas fa-language"></i> Arabic</span>
-        <p class="subject" dir="rtl" style="text-align:right;"><i class="fas fa-envelope"></i> الموضوع: لا تفوت أناقة الصباح</p>
-        <div class="analysis" dir="rtl" style="text-align:right;">
-            <strong>الهدف:</strong> محفز إلحاح نهائي لاستهداف المشتركين غير المحولين قبل انتهاء مرحلة الحملة.
-            التحليل: زيادة جيدة في معدل التحويل النهائي من خلال تأطير "الفرصة الأخيرة".
-        </div>
-        <div class="copy-text" dir="rtl" style="text-align:right;">لا تفوت الفرصة لتجربة الأناقة والنكهة – ترقية صباحك النهائية تنتهي قريبًا. قم بزيارة هكسوس أو انضم إلى برنامج الولاء اليوم.</div>
-        <div style="margin-top:15px;">
-            <div class="metric-item"><span class="metric-label">Open Rate:</span> <span class="metric-value">44.8%</span></div>
-            <div class="metric-item"><span class="metric-label">CTR:</span> <span class="metric-value">4.4%</span></div>
-            <div class="metric-item"><span class="metric-label">Conversion Rate:</span> <span class="metric-value">5.0%</span></div>
-        </div>
-    </div>
-    <!-- Place inside your Email Campaign section -->
-<canvas id="emailTrendChart" width="400" height="200"></canvas>
-<ul class="email-takeaways">
-    <li>Email 1: Morning Awakening — High open rate; consider more visuals.</li>
-    <li>Email 2: Signature Indulgence — Strong CTR; test alternative subject lines.</li>
-    <li>Email 3: Exclusive Offer — Moderate conversion; optimize CTA placement.</li>
-    <li>Email 4: Loyalty Invitation — Best performance; replicate design in future campaigns.</li>
-    <li>Email 5: Haksoss Spotlight — Low CTR; improve personalization.</li>
-    <li>Email 6: Final Reminder — Medium engagement; timing adjustment recommended.</li>
-</ul>
+</section>
 
 <script>
-const emailTrendCtx = document.getElementById('emailTrendChart').getContext('2d');
-new Chart(emailTrendCtx, {
+const emailCtx = document.getElementById('emailPerformanceChart').getContext('2d');
+new Chart(emailCtx, {
     type: 'line',
     data: {
-        labels: ['Email 1','Email 2','Email 3','Email 4','Email 5','Email 6'],
+        labels: ['Email 1', 'Email 2', 'Email 3', 'Email 4', 'Email 5', 'Email 6'],
         datasets: [
-            {label:'English Conversion %', data:[2.5,3.2,6.1,9.8,2.8,4.5], borderColor:'var(--primary-brown)', tension:0.3},
-            {label:'Arabic Conversion %', data:[3.1,4.0,7.5,10.5,3.4,5.0], borderColor:'var(--accent)', tension:0.3}
+            {
+                label: 'English Conversion Rate (%)',
+                data: [2.5, 3.2, 6.1, 9.8, 2.8, 4.5],
+                borderColor: 'var(--primary-brown)',
+                backgroundColor: 'rgba(109, 76, 65, 0.1)',
+                tension: 0.4,
+                fill: true
+            },
+            {
+                label: 'Arabic Conversion Rate (%)',
+                data: [3.1, 4.0, 7.5, 10.5, 3.4, 5.0],
+                borderColor: 'var(--accent)',
+                backgroundColor: 'rgba(192, 124, 74, 0.1)',
+                tension: 0.4,
+                fill: true
+            }
         ]
     },
-    options: { responsive:true, plugins:{legend:{position:'top'}} }
+    options: {
+        responsive: true,
+        plugins: {
+            legend: { position: 'top' },
+            title: { display: true, text: 'Email Conversion Rate Progression', font: { family: 'Playfair Display', size: 16 } },
+            tooltip: { callbacks: { label: ctx => `${ctx.dataset.label}: ${ctx.parsed.y}%` } }
+        },
+        scales: { y: { title: { display: true, text: 'Conversion Rate (%)' }, beginAtZero: true } }
+    }
 });
 </script>
 
 <style>
-.email-takeaways { margin-top: 1rem; padding-left: 1.5rem; }
-.email-takeaways li { margin-bottom: 0.5rem; }
+.email-card-group { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-top: 2rem; }
+.email-card { background: #fff; border-radius: 0.5rem; box-shadow: 0 2px 10px rgba(0,0,0,0.05); overflow: hidden; display: flex; flex-direction: column; }
+.email-card-header { padding: 0.5rem 1rem; background: var(--muted-sage); }
+.email-card-header h4 { margin:0; font-size:1.1rem; }
+.email-card-img { width: 100%; height:auto; }
+.email-card-body { padding: 1rem; }
+.email-card-metrics { display: flex; justify-content: space-around; margin-top: 1rem; }
+.email-metric .val { font-weight: bold; font-size:1.1rem; }
+.email-metric .lab { font-size:0.85rem; color: #666; }
 </style>
-
-
-</div>
-</section>
-
+<!-- Part 4: Social Media — Top Performing Content -->
 <section id="social" class="panel fade-section">
-    <h2>Social Media — Top Performing Content</h2>
-    <p class="muted">Organic and Paid performance highlights across Instagram/Facebook (Meta) and TikTok, focused on high-quality morning aesthetics.</p>
+    <div class="container">
+        <h2>Social Media — Top Performing Content</h2>
+        <p class="muted">Organic and Paid performance highlights across Instagram, Facebook (Meta), and TikTok, focusing on high-quality morning aesthetics.</p>
 
-    <div class="email-card-group">
-
-        <div class="social-card">
-            <div class="social-card-header">
-                <h4>Hero Latte — Reel</h4>
-                <div class="social-card-platform"><i class="fab fa-instagram"></i></div>
+        <div class="social-card-group">
+            <!-- Hero Latte Reel -->
+            <div class="social-card">
+                <div class="social-card-header">
+                    <h4>Hero Latte — Reel</h4>
+                    <div class="social-card-platform"><i class="fab fa-instagram"></i></div>
+                </div>
+                <img src="3_Assets/Images/hero-latte.jpg" alt="Hero Latte on a wooden tray" class="social-card-img">
+                <div class="social-card-body">
+                    <p class="social-card-text">"Velvety texture, rich aroma. Start your day the Haksoss way."</p>
+                    <p class="social-card-hashtags">#HaksossCafe #HeroLatte #AlexandriaCoffee #LuxuryMornings</p>
+                    <div class="social-card-metrics">
+                        <div class="social-metric"><div class="val">18.5k</div><div class="lab">Reach</div></div>
+                        <div class="social-metric"><div class="val">14.1%</div><div class="lab">Engagement</div></div>
+                        <div class="social-metric"><div class="val">54</div><div class="lab">Loyalty Sign-ups</div></div>
+                    </div>
+                </div>
             </div>
-            <img src="3_Assets/Images/hero-latte.jpg" alt="Hero Latte on a wooden tray" class="social-card-img">
-            <div class="social-card-body">
-                <p class="social-card-text">"Velvety texture, rich aroma. Start your day the Haksoss way."</p>
-                <p class="social-card-hashtags">#HaksossCafe #HeroLatte #AlexandriaCoffee #LuxuryMornings</p>
-                <div class="social-card-metrics">
-                    <div class="social-metric"><div class="val">18.5k</div><div class="lab">Reach</div></div>
-                    <div class="social-metric"><div class="val">14.1%</div><div class="lab">Engagement</div></div>
-                    <div class="social-metric"><div class="val">54</div><div class="lab">Loyalty Sign-ups</div></div>
+
+            <!-- Chocolate Croissant Post -->
+            <div class="social-card">
+                <div class="social-card-header">
+                    <h4>Chocolate Croissant — Post</h4>
+                    <div class="social-card-platform"><i class="fab fa-facebook"></i></div>
+                </div>
+                <img src="3_Assets/Images/chocolate-croissant.jpg" alt="Chocolate Croissant on a plate" class="social-card-img">
+                <div class="social-card-body">
+                    <p class="social-card-text">"Buttery, flaky, and filled with Belgian chocolate. The perfect pairing."</p>
+                    <p class="social-card-hashtags">#HaksossCroissant #BreakfastInAlex #SweetTreats #CafeVibes</p>
+                    <div class="social-card-metrics">
+                        <div class="social-metric"><div class="val">12.2k</div><div class="lab">Reach</div></div>
+                        <div class="social-metric"><div class="val">9.8%</div><div class="lab">Engagement</div></div>
+                        <div class="social-metric"><div class="val">31</div><div class="lab">Loyalty Sign-ups</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Morning Sunrise TikTok -->
+            <div class="social-card">
+                <div class="social-card-header">
+                    <h4>Morning Sunrise — TikTok</h4>
+                    <div class="social-card-platform"><i class="fab fa-tiktok"></i></div>
+                </div>
+                <img src="3_Assets/Images/seasonal-treat.jpg" alt="Sunrise view from Haksoss" class="social-card-img">
+                <div class="social-card-body">
+                    <p class="social-card-text">"POV: Starting your morning with this view and a Haksoss coffee."</p>
+                    <p class="social-card-hashtags">#Alexandria #TikTokEgypt #MorningRoutine #BeachCafe</p>
+                    <div class="social-card-metrics">
+                        <div class="social-metric"><div class="val">25.1k</div><div class="lab">Reach</div></div>
+                        <div class="social-metric"><div class="val">12.5%</div><div class="lab">Engagement</div></div>
+                        <div class="social-metric"><div class="val">75</div><div class="lab">Loyalty Sign-ups</div></div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="social-card">
-            <div class="social-card-header">
-                <h4>Chocolate Croissant — Post</h4>
-                <div class="social-card-platform"><i class="fab fa-facebook"></i></div>
-            </div>
-            <img src="3_Assets/Images/chocolate-croissant.jpg" alt="Chocolate Croissant on a plate" class="social-card-img">
-            <div class="social-card-body">
-                <p class="social-card-text">"Buttery, flaky, and filled with Belgian chocolate. The perfect pairing."</p>
-                <p class="social-card-hashtags">#HaksossCroissant #BreakfastInAlex #SweetTreats #CafeVibes</p>
-                <div class="social-card-metrics">
-                    <div class="social-metric"><div class="val">12.2k</div><div class="lab">Reach</div></div>
-                    <div class="social-metric"><div class="val">9.8%</div><div class="lab">Engagement</div></div>
-                    <div class="social-metric"><div class="val">31</div><div class="lab">Loyalty Sign-ups</div></div>
-                </div>
-            </div>
+        <!-- Social Media Trend Chart -->
+        <div class="social-trends" style="margin-top:2rem;">
+            <p class="muted">Weekly Reach Trend Across Platforms</p>
+            <canvas id="socialTrendChart" width="400" height="200"></canvas>
         </div>
-
-        <div class="social-card">
-            <div class="social-card-header">
-                <h4>Morning Sunrise — TikTok</h4>
-                <div class="social-card-platform"><i class="fab fa-tiktok"></i></div>
-            </div>
-            <img src="3_Assets/Images/seasonal-treat.jpg" alt="Sunrise view from Haksoss" class="social-card-img">
-            <div class="social-card-body">
-                <p class="social-card-text">"POV: Starting your morning with this view and a Haksoss coffee."</p>
-                <p class="social-card-hashtags">#Alexandria #TikTokEgypt #MorningRoutine #BeachCafe</p>
-                <div class="social-card-metrics">
-                    <div class="social-metric"><div class="val">25.1k</div><div class="lab">Reach</div></div>
-                    <div class="social-metric"><div class="val">12.5%</div><div class="lab">Engagement</div></div>
-                    <div class="social-metric"><div class="val">75</div><div class="lab">Loyalty Sign-ups</div></div>
-                </div>
-            </div>
-        </div>
-        <div class="social-trends">
-    <p>Top Post: Hero Latte Reel — 18.5K reach, 12.3% engagement</p>
-    <canvas id="socialTrendChart" width="400" height="200"></canvas>
-</div>
+    </div>
+</section>
 
 <script>
 const socialCtx = document.getElementById('socialTrendChart').getContext('2d');
@@ -1023,236 +229,1331 @@ new Chart(socialCtx, {
     type: 'bar',
     data: {
         labels: ['Week 1','Week 2','Week 3','Week 4'],
-        datasets: [{label:'Reach', data:[15000,18000,20000,25000], backgroundColor:'var(--primary-brown)'}]
+        datasets: [{
+            label:'Reach',
+            data:[15000,18000,20000,25000],
+            backgroundColor:'var(--primary-brown)'
+        }]
     },
-    options:{responsive:true, plugins:{legend:{display:false}}}
+    options:{
+        responsive:true,
+        plugins:{legend:{display:false}},
+        scales:{
+            y:{ beginAtZero:true, title:{ display:true, text:'Reach (Users)' } },
+            x:{ title:{ display:true, text:'Weeks' } }
+        }
+    }
 });
 </script>
 
 <style>
-.social-trends { margin-top: 1rem; }
-.social-trends p { font-weight: bold; color: var(--accent); margin-bottom: 0.5rem; }
+.social-card-group { display: grid; grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); gap: 1rem; margin-top: 2rem; }
+.social-card { background: #fff; border-radius: 0.5rem; box-shadow: 0 2px 10px rgba(0,0,0,0.05); overflow: hidden; display: flex; flex-direction: column; }
+.social-card-header { padding: 0.5rem 1rem; display:flex; justify-content:space-between; align-items:center; background:var(--muted-sage); }
+.social-card-header h4 { margin:0; font-size:1.1rem; }
+.social-card-img { width:100%; height:auto; }
+.social-card-body { padding:1rem; }
+.social-card-metrics { display:flex; justify-content:space-around; margin-top:1rem; }
+.social-metric .val { font-weight:bold; font-size:1.1rem; }
+.social-metric .lab { font-size:0.85rem; color:#666; }
 </style>
+<!-- Part 5: SEO — Complete Campaign Optimization -->
+<section id="seo" class="panel fade-section">
+    <div class="container">
+        <h2>SEO & Content Optimization</h2>
+        <p class="muted">AI-enhanced SEO strategy for Haksoss Café, maximizing organic reach, visibility, and conversions.</p>
 
+        <!-- SEO Meta & Structured Data -->
+        <div class="seo-card">
+            <h4>Meta Tags & Structured Data</h4>
+            <p>Title: "Haksoss Café — Luxury Morning Experience in Alexandria"</p>
+            <p>Description: "Wake up to luxury with Haksoss Café. Savor our signature Hero Latte, fresh pastries, and seaside vibes. Experience Alexandria mornings like never before."</p>
+            <p>Keywords: "Luxury café Alexandria, Morning coffee Alexandria, Haksoss Café menu, Premium breakfast Alexandria"</p>
+            <p>JSON-LD Structured Data:</p>
+            <pre>{
+  "@context": "https://schema.org",
+  "@type": "CafeOrCoffeeShop",
+  "name": "Haksoss Café",
+  "image": [
+    "https://example.com/3_Assets/Images/hero-latte.jpg",
+    "https://example.com/3_Assets/Images/chocolate-croissant.jpg"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Corniche, Alexandria",
+    "addressLocality": "Alexandria",
+    "addressCountry": "EG"
+  },
+  "url": "https://haksosscafe.com",
+  "servesCuisine": "Coffee, Breakfast",
+  "priceRange": "$$",
+  "openingHours": "Mo-Su 07:00-14:00",
+  "sameAs": [
+    "https://instagram.com/haksosscafe",
+    "https://facebook.com/haksosscafe"
+  ]
+}</pre>
+        </div>
+
+        <!-- Keyword & Content Performance -->
+        <div class="seo-card">
+            <h4>Keyword & Content Performance</h4>
+            <canvas id="keywordChart" width="400" height="200"></canvas>
+            <table class="seo-table">
+                <thead>
+                    <tr>
+                        <th>Keyword</th>
+                        <th>Search Volume</th>
+                        <th>Difficulty</th>
+                        <th>Priority</th>
+                        <th>Focus Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Luxury café Alexandria</td><td>1,200</td><td>Medium</td><td>High</td><td>Local/Branding</td>
+                    </tr>
+                    <tr>
+                        <td>Best morning coffee Alexandria</td><td>900</td><td>Medium</td><td>High</td><td>Local/Intent</td>
+                    </tr>
+                    <tr>
+                        <td>Haksoss Café menu</td><td>400</td><td>Low</td><td>Medium</td><td>Brand</td>
+                    </tr>
+                    <tr>
+                        <td>Coffee by the sea Alexandria</td><td>500</td><td>Low</td><td>Medium</td><td>Experience</td>
+                    </tr>
+                    <tr>
+                        <td>Premium breakfast Alexandria</td><td>800</td><td>Medium</td><td>High</td><td>Local/Offer</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- SEO Metrics -->
+        <div class="seo-card">
+            <h4>SEO Performance Metrics</h4>
+            <p>Organic Traffic, Click-Through Rate (CTR), Bounce Rate, Page Speed, Conversion Rate:</p>
+            <canvas id="seoMetricsChart" width="400" height="200"></canvas>
+        </div>
+    </div>
+</section>
+
+<script>
+const keywordCtx = document.getElementById('keywordChart').getContext('2d');
+new Chart(keywordCtx, {
+    type: 'bar',
+    data: {
+        labels: ['Luxury café Alexandria','Best morning coffee Alexandria','Haksoss Café menu','Coffee by the sea Alexandria','Premium breakfast Alexandria'],
+        datasets: [{
+            label:'Search Volume',
+            data:[1200,900,400,500,800],
+            backgroundColor:'var(--accent)'
+        }]
+    },
+    options:{
+        responsive:true,
+        plugins:{ legend:{display:false} },
+        scales:{
+            y:{ beginAtZero:true, title:{ display:true, text:'Search Volume' } },
+            x:{ title:{ display:true, text:'Keywords' } }
+        }
+    }
+});
+
+const seoMetricsCtx = document.getElementById('seoMetricsChart').getContext('2d');
+new Chart(seoMetricsCtx, {
+    type:'line',
+    data:{
+        labels:['Week 1','Week 2','Week 3','Week 4'],
+        datasets:[
+            {label:'Organic Traffic', data:[2500,3000,3600,4200], borderColor:'var(--primary-brown)', fill:false},
+            {label:'CTR (%)', data:[3.2,3.5,4.0,4.3], borderColor:'var(--accent)', fill:false},
+            {label:'Bounce Rate (%)', data:[60,58,55,53], borderColor:'var(--muted-sage)', fill:false}
+        ]
+    },
+    options:{ responsive:true, plugins:{ legend:{position:'bottom'} } }
+});
+</script>
+
+<style>
+.seo-card { background:#fff; padding:1rem; border-radius:0.5rem; margin-top:1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.05); }
+.seo-card h4 { margin-bottom:0.5rem; }
+.seo-table { width:100%; border-collapse:collapse; margin-top:1rem; }
+.seo-table th, .seo-table td { border:1px solid #ddd; padding:0.5rem; text-align:center; }
+.seo-table th { background:var(--muted-sage); }
+</style>
+<!-- Part 6: KPIs — Campaign Performance -->
+<section id="kpis" class="panel fade-section">
+    <div class="container">
+        <h2>Key Performance Indicators (KPIs)</h2>
+        <p class="muted">Detailed analytics showing the effectiveness of every part of the Haksoss Café campaign.</p>
+
+        <!-- Conversion Funnel -->
+        <div class="kpi-card">
+            <h4>Conversion Funnel</h4>
+            <canvas id="conversionFunnelChart" width="400" height="200"></canvas>
+            <table class="kpi-table">
+                <thead>
+                    <tr>
+                        <th>Stage</th>
+                        <th>User Count</th>
+                        <th>Conversion %</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Total Reach</td><td>25,000</td><td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Ad Clicks / Email Opens</td><td>10,700</td><td>42.8%</td>
+                    </tr>
+                    <tr>
+                        <td>Website Visits</td><td>4,500</td><td>42.1%</td>
+                    </tr>
+                    <tr>
+                        <td>Loyalty Sign-ups</td><td>1,070</td><td>23.8%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Social Media Performance -->
+        <div class="kpi-card">
+            <h4>Social Media KPIs</h4>
+            <canvas id="socialMediaChart" width="400" height="200"></canvas>
+            <table class="kpi-table">
+                <thead>
+                    <tr>
+                        <th>Post</th>
+                        <th>Platform</th>
+                        <th>Reach</th>
+                        <th>Engagement %</th>
+                        <th>Loyalty Sign-ups</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Hero Latte Reel</td><td>Instagram</td><td>18,500</td><td>14.1%</td><td>54</td>
+                    </tr>
+                    <tr>
+                        <td>Chocolate Croissant Post</td><td>Facebook</td><td>12,200</td><td>9.8%</td><td>31</td>
+                    </tr>
+                    <tr>
+                        <td>Morning Sunrise TikTok</td><td>TikTok</td><td>25,100</td><td>12.5%</td><td>75</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Email Campaign Performance -->
+        <div class="kpi-card">
+            <h4>Email Campaign Performance</h4>
+            <canvas id="emailPerformanceChart" width="400" height="200"></canvas>
+            <table class="kpi-table">
+                <thead>
+                    <tr>
+                        <th>Email</th>
+                        <th>Conversion Rate (%) - EN</th>
+                        <th>Conversion Rate (%) - AR</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Morning Awakening</td><td>2.5</td><td>3.1</td>
+                    </tr>
+                    <tr>
+                        <td>Signature Indulgence</td><td>3.2</td><td>4.0</td>
+                    </tr>
+                    <tr>
+                        <td>Exclusive Offer</td><td>6.1</td><td>7.5</td>
+                    </tr>
+                    <tr>
+                        <td>Loyalty Invitation</td><td>9.8</td><td>10.5</td>
+                    </tr>
+                    <tr>
+                        <td>Haksoss Spotlight</td><td>2.8</td><td>3.4</td>
+                    </tr>
+                    <tr>
+                        <td>Final Reminder</td><td>4.5</td><td>5.0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
     </div>
 </section>
 
-<section id="kpis-dashboard" class="panel fade-section">
-    <h2>Key Performance Indicators (KPIs) & Financial Dashboard</h2>
+<script>
+const conversionFunnelCtx = document.getElementById('conversionFunnelChart').getContext('2d');
+new Chart(conversionFunnelCtx, {
+    type: 'bar',
+    data: {
+        labels: ['Total Reach','Ad Clicks / Email Opens','Website Visits','Loyalty Sign-ups'],
+        datasets: [{
+            label:'Users',
+            data:[25000,10700,4500,1070],
+            backgroundColor:['rgba(192,124,74,0.6)','rgba(160,196,184,0.6)','rgba(109,76,65,0.6)','rgba(51,26,0,0.6)']
+        }]
+    },
+    options:{ responsive:true, plugins:{ legend:{display:false}, title:{display:true,text:'Conversion Funnel'} }, scales:{ y:{beginAtZero:true} } }
+});
 
-    <div class="dashboard-section">
-        <h3>1. Financial KPIs & Campaign Summary</h3>
-        <div class="table-wrap">
-            <table id="summary-table">
+const socialMediaCtx = document.getElementById('socialMediaChart').getContext('2d');
+new Chart(socialMediaCtx, {
+    type:'bar',
+    data:{
+        labels:['Hero Latte Reel','Chocolate Croissant Post','Morning Sunrise TikTok'],
+        datasets:[
+            {label:'Reach', data:[18500,12200,25100], backgroundColor:'var(--primary-brown)'},
+            {label:'Engagement %', data:[14.1,9.8,12.5], backgroundColor:'var(--accent)'}
+        ]
+    },
+    options:{ responsive:true, plugins:{ title:{display:true,text:'Social Media Performance'}, legend:{position:'bottom'} }, scales:{ y:{ beginAtZero:true } } }
+});
+
+const emailPerformanceCtx = document.getElementById('emailPerformanceChart').getContext('2d');
+new Chart(emailPerformanceCtx, {
+    type:'line',
+    data:{
+        labels:['Morning Awakening','Signature Indulgence','Exclusive Offer','Loyalty Invitation','Haksoss Spotlight','Final Reminder'],
+        datasets:[
+            {label:'EN Conversion %', data:[2.5,3.2,6.1,9.8,2.8,4.5], borderColor:'var(--primary-brown)', fill:false, tension:0.3},
+            {label:'AR Conversion %', data:[3.1,4.0,7.5,10.5,3.4,5.0], borderColor:'var(--accent)', fill:false, tension:0.3}
+        ]
+    },
+    options:{ responsive:true, plugins:{ title:{display:true,text:'Email Campaign Conversion Rates'}, legend:{position:'top'} }, scales:{ y:{ beginAtZero:true } } }
+});
+</script>
+
+<style>
+.kpi-card { background:#fff; padding:1rem; border-radius:0.5rem; margin-top:1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.05); }
+.kpi-card h4 { margin-bottom:0.5rem; }
+.kpi-table { width:100%; border-collapse:collapse; margin-top:1rem; }
+.kpi-table th, .kpi-table td { border:1px solid #ddd; padding:0.5rem; text-align:center; }
+.kpi-table th { background:var(--muted-sage); }
+</style>
+<!-- Part 7: Financial Plan & Performance Analysis -->
+<section id="financials" class="panel fade-section">
+    <div class="container">
+        <h2>Financial Plan & Performance</h2>
+        <p class="muted">Detailed financial overview of the Haksoss Café campaign: spend, revenue, ROI, and cost allocation across all channels.</p>
+
+        <!-- Budget Allocation Table -->
+        <div class="finance-card">
+            <h4>Budget & Resource Allocation (EGP)</h4>
+            <table class="finance-table">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Budget (EGP)</th>
+                        <th>Percentage of Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Paid Advertising (Meta + TikTok)</td><td>8,500</td><td>50%</td></tr>
+                    <tr><td>Content Creation & Design</td><td>4,000</td><td>23.5%</td></tr>
+                    <tr><td>Tools & Software</td><td>1,500</td><td>8.8%</td></tr>
+                    <tr><td>Analytics & Reporting</td><td>1,000</td><td>5.9%</td></tr>
+                    <tr><td>Contingency & Misc.</td><td>2,000</td><td>11.8%</td></tr>
+                    <tr><td><strong>Total Spend</strong></td><td><strong>17,000</strong></td><td>100%</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Revenue by Channel Chart -->
+        <div class="finance-card">
+            <h4>Revenue by Channel</h4>
+            <canvas id="revenueChannelChart" width="400" height="200"></canvas>
+        </div>
+
+        <!-- ROI Summary Table -->
+        <div class="finance-card">
+            <h4>ROI Summary</h4>
+            <table class="finance-table">
+                <thead>
+                    <tr>
+                        <th>Channel</th>
+                        <th>Revenue (EGP)</th>
+                        <th>Spend (EGP)</th>
+                        <th>ROI (%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Paid Social (Meta + TikTok)</td><td>42,500</td><td>8,500</td><td>400%</td></tr>
+                    <tr><td>Email Marketing</td><td>2,500</td><td>500</td><td>400%</td></tr>
+                    <tr><td>Total Campaign</td><td>45,000</td><td>9,000</td><td>400%</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Spend vs Revenue Bar Chart -->
+        <div class="finance-card">
+            <h4>Spend vs Revenue Comparison</h4>
+            <canvas id="spendRevenueChart" width="400" height="200"></canvas>
+        </div>
+    </div>
+</section>
+
+<script>
+const revenueChannelCtx = document.getElementById('revenueChannelChart').getContext('2d');
+new Chart(revenueChannelCtx, {
+    type: 'pie',
+    data: {
+        labels: ['Paid Social', 'Email Marketing'],
+        datasets: [{
+            data: [42500, 2500],
+            backgroundColor: ['var(--primary-brown)','var(--muted-sage)'],
+            hoverOffset: 10
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            title: { display:true, text:'Revenue Breakdown by Channel', font:{size:16} },
+            legend: { position:'bottom' },
+            tooltip: {
+                callbacks: {
+                    label: (context) => `${context.label}: EGP ${context.parsed.toLocaleString()}`
+                }
+            }
+        }
+    }
+});
+
+const spendRevenueCtx = document.getElementById('spendRevenueChart').getContext('2d');
+new Chart(spendRevenueCtx, {
+    type: 'bar',
+    data: {
+        labels: ['Paid Social','Email Marketing','Total Campaign'],
+        datasets: [
+            {label:'Revenue (EGP)', data:[42500,2500,45000], backgroundColor:'var(--primary-brown)'},
+            {label:'Spend (EGP)', data:[8500,500,9000], backgroundColor:'var(--accent)'}
+        ]
+    },
+    options: {
+        responsive: true,
+        plugins:{ title:{display:true,text:'Revenue vs Spend Comparison'}, legend:{position:'bottom'} },
+        scales:{ y:{ beginAtZero:true, title:{ display:true, text:'Amount (EGP)' } } }
+    }
+});
+</script>
+
+<style>
+.finance-card { background:#fff; padding:1rem; border-radius:0.5rem; margin-top:1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.05); }
+.finance-card h4 { margin-bottom:0.5rem; }
+.finance-table { width:100%; border-collapse:collapse; margin-top:1rem; }
+.finance-table th, .finance-table td { border:1px solid #ddd; padding:0.5rem; text-align:center; }
+.finance-table th { background:var(--muted-sage); }
+</style>
+<!-- Part 8: Target Audience & Buyer Personas -->
+<section id="audience" class="panel fade-section">
+    <div class="container">
+        <h2>Target Audience & Buyer Personas</h2>
+        <p class="muted">Understanding our ideal customers to optimize content, ads, and messaging.</p>
+
+        <!-- Personas Table -->
+        <div class="persona-card">
+            <h4>Buyer Personas</h4>
+            <table class="persona-table">
+                <thead>
+                    <tr>
+                        <th>Persona</th>
+                        <th>Demographics</th>
+                        <th>Behavior</th>
+                        <th>Goals & Pain Points</th>
+                        <th>Preferred Channels</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Luxury Morning Enthusiast</td>
+                        <td>Age 25-40, Alexandria, Upper-middle class</td>
+                        <td>Seeks premium coffee experiences, posts on Instagram</td>
+                        <td>Wants a luxurious start to the day; dislikes bland cafés</td>
+                        <td>Instagram, TikTok</td>
+                    </tr>
+                    <tr>
+                        <td>Busy Professional</td>
+                        <td>Age 30-50, Alexandria, Working professionals</td>
+                        <td>Quick coffee stops, prefers online ordering, loyalty programs</td>
+                        <td>Needs efficiency and quality; dislikes long waits</td>
+                        <td>Facebook, Email Marketing</td>
+                    </tr>
+                    <tr>
+                        <td>Tourist & Experience Seeker</td>
+                        <td>Age 20-35, visiting Alexandria</td>
+                        <td>Searches for iconic cafes, shares photos online</td>
+                        <td>Seeks unique experiences and aesthetics; dislikes ordinary cafés</td>
+                        <td>Instagram, TikTok, TripAdvisor</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Persona Engagement Chart -->
+        <div class="persona-card">
+            <h4>Engagement Rate by Persona</h4>
+            <canvas id="personaEngagementChart" width="400" height="200"></canvas>
+        </div>
+
+        <!-- Persona Reach Chart -->
+        <div class="persona-card">
+            <h4>Audience Reach Distribution</h4>
+            <canvas id="audienceReachChart" width="400" height="200"></canvas>
+        </div>
+    </div>
+</section>
+
+<script>
+const personaEngagementCtx = document.getElementById('personaEngagementChart').getContext('2d');
+new Chart(personaEngagementCtx, {
+    type: 'bar',
+    data: {
+        labels: ['Luxury Morning Enthusiast','Busy Professional','Tourist & Experience Seeker'],
+        datasets: [{
+            label:'Engagement Rate (%)',
+            data:[14.2, 9.8, 12.5],
+            backgroundColor:['var(--primary-brown)','var(--accent)','var(--muted-sage)']
+        }]
+    },
+    options:{
+        responsive:true,
+        plugins:{
+            legend:{ display:false },
+            title:{ display:true, text:'Engagement Rate by Persona', font:{size:16} }
+        },
+        scales:{
+            y:{ beginAtZero:true, title:{ display:true, text:'Engagement (%)' } }
+        }
+    }
+});
+
+const audienceReachCtx = document.getElementById('audienceReachChart').getContext('2d');
+new Chart(audienceReachCtx, {
+    type: 'pie',
+    data:{
+        labels:['Luxury Morning Enthusiast','Busy Professional','Tourist & Experience Seeker'],
+        datasets:[{
+            data:[18000, 12000, 25000],
+            backgroundColor:['var(--primary-brown)','var(--accent)','var(--muted-sage)'],
+            hoverOffset:10
+        }]
+    },
+    options:{
+        responsive:true,
+        plugins:{
+            title:{ display:true, text:'Audience Reach Distribution', font:{size:16} },
+            legend:{ position:'bottom' },
+            tooltip:{ callbacks:{ label: (context)=> `${context.label}: ${context.parsed.toLocaleString()} users` } }
+        }
+    }
+});
+</script>
+
+<style>
+.persona-card { background:#fff; padding:1rem; border-radius:0.5rem; margin-top:1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.05); }
+.persona-card h4 { margin-bottom:0.5rem; }
+.persona-table { width:100%; border-collapse:collapse; margin-top:1rem; }
+.persona-table th, .persona-table td { border:1px solid #ddd; padding:0.5rem; text-align:center; }
+.persona-table th { background:var(--muted-sage); }
+</style>
+<!-- Part 9: Value Proposition & Messaging -->
+<section id="value-prop" class="panel fade-section">
+    <div class="container">
+        <h2>Value Proposition & Messaging</h2>
+        <p class="muted">Clearly communicating why Haksoss Café is unique and maintaining consistent messaging across all channels.</p>
+
+        <!-- Value Proposition Blocks -->
+        <div class="value-cards">
+
+            <div class="value-card">
+                <h4>Premium Morning Experience</h4>
+                <p>Start your day with a luxurious and aromatic coffee crafted with care, providing a sensory-rich morning experience.</p>
+            </div>
+
+            <div class="value-card">
+                <h4>Consistency Across Channels</h4>
+                <p>From social media posts to email marketing, all messaging emphasizes quality, aesthetics, and the Haksoss experience.</p>
+            </div>
+
+            <div class="value-card">
+                <h4>Solving Customer Pain Points</h4>
+                <p>We address the need for convenience, luxury, and unique experiences in Alexandria’s coffee scene, providing quick yet premium service.</p>
+            </div>
+
+            <div class="value-card">
+                <h4>Loyalty & Engagement</h4>
+                <p>Encourage repeat visits and referrals via loyalty programs, exclusive offers, and personalized content for each persona.</p>
+            </div>
+        </div>
+
+        <!-- Messaging Effectiveness Chart -->
+        <div class="value-chart">
+            <h4>Messaging Effectiveness by Channel</h4>
+            <canvas id="messagingChart" width="400" height="200"></canvas>
+        </div>
+    </div>
+</section>
+
+<script>
+const messagingCtx = document.getElementById('messagingChart').getContext('2d');
+new Chart(messagingCtx, {
+    type: 'bar',
+    data: {
+        labels: ['Instagram','Facebook','TikTok','Email'],
+        datasets: [{
+            label:'Engagement Rate (%)',
+            data:[14.1, 9.8, 12.5, 10.2],
+            backgroundColor:['var(--primary-brown)','var(--accent)','var(--muted-sage)','var(--deep)']
+        }]
+    },
+    options:{
+        responsive:true,
+        plugins:{
+            legend:{ display:false },
+            title:{ display:true, text:'Messaging Effectiveness by Channel', font:{size:16} }
+        },
+        scales:{
+            y:{ beginAtZero:true, title:{ display:true, text:'Engagement (%)' } }
+        }
+    }
+});
+</script>
+
+<style>
+.value-cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1rem; margin-top:1rem; }
+.value-card { background:#fff; padding:1rem; border-radius:0.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.05); }
+.value-card h4 { margin-bottom:0.5rem; }
+.value-chart { background:#fff; padding:1rem; border-radius:0.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.05); margin-top:1.5rem; }
+</style>
+<!-- Part 10: Budget & Resource Allocation -->
+<section id="budget" class="panel fade-section">
+    <div class="container">
+        <h2>Budget & Resource Allocation</h2>
+        <p class="muted">Allocating resources effectively to optimize ROI for paid ads, content creation, tools, and analytics.</p>
+
+        <!-- Budget Table -->
+        <div class="budget-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Allocated Budget (EGP)</th>
+                        <th>Allocated Budget (USD)</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Paid Advertising (Meta + TikTok)</td>
+                        <td>85,000</td>
+                        <td>1,789</td>
+                        <td>Targeted campaigns, retargeting, boosted posts</td>
+                    </tr>
+                    <tr>
+                        <td>Content Creation</td>
+                        <td>25,000</td>
+                        <td>526</td>
+                        <td>Photography, videography, social templates</td>
+                    </tr>
+                    <tr>
+                        <td>Tools & Software</td>
+                        <td>7,500</td>
+                        <td>158</td>
+                        <td>Analytics tools, design software subscriptions</td>
+                    </tr>
+                    <tr>
+                        <td>Analytics & Reporting</td>
+                        <td>5,500</td>
+                        <td>116</td>
+                        <td>Google Analytics, Looker Studio dashboard setup</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total</strong></td>
+                        <td><strong>123,000</strong></td>
+                        <td><strong>2,589</strong></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Budget Pie Chart -->
+        <div class="budget-chart">
+            <h4>Budget Allocation by Category</h4>
+            <canvas id="budgetChart" width="400" height="200"></canvas>
+        </div>
+    </div>
+</section>
+
+<script>
+const budgetCtx = document.getElementById('budgetChart').getContext('2d');
+new Chart(budgetCtx, {
+    type: 'pie',
+    data: {
+        labels: ['Paid Ads', 'Content Creation', 'Tools & Software', 'Analytics & Reporting'],
+        datasets: [{
+            data: [85000, 25000, 7500, 5500],
+            backgroundColor: ['var(--primary-brown)','var(--accent)','var(--muted-sage)','var(--deep)'],
+            hoverOffset: 10
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: { position: 'bottom' },
+            title: { display: true, text: 'Campaign Budget Allocation (EGP)', font:{size:16} }
+        }
+    }
+});
+</script>
+
+<style>
+.budget-table table { width: 100%; border-collapse: collapse; margin-top:1rem; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.05); }
+.budget-table th, .budget-table td { padding:0.75rem; text-align:left; border-bottom:1px solid #ddd; }
+.budget-table th { background: var(--primary-brown); color:#fff; }
+.budget-chart { margin-top:1.5rem; background:#fff; padding:1rem; border-radius:0.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.05); }
+</style>
+<!-- Part 11: Targeting & Segmentation -->
+<section id="targeting" class="panel fade-section">
+    <div class="container">
+        <h2>Targeting & Segmentation</h2>
+        <p class="muted">Segmenting the audience based on demographics, behavior, location, and funnel stage to maximize engagement and conversions.</p>
+
+        <!-- Segmentation Table -->
+        <div class="segmentation-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Segment</th>
+                        <th>Criteria</th>
+                        <th>Size (Approx.)</th>
+                        <th>Strategy</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Local Morning Coffee Lovers</td>
+                        <td>Age 25-40, Alexandria residents, coffee interests</td>
+                        <td>18,000</td>
+                        <td>Instagram & TikTok Reels showcasing Hero Latte mornings</td>
+                    </tr>
+                    <tr>
+                        <td>Office Professionals</td>
+                        <td>Age 25-50, LinkedIn & Facebook users, high income</td>
+                        <td>12,500</td>
+                        <td>Email campaigns, lunch-time specials, LinkedIn posts</td>
+                    </tr>
+                    <tr>
+                        <td>Loyalty Program Prospects</td>
+                        <td>Website visitors, previous buyers, newsletter sign-ups</td>
+                        <td>5,500</td>
+                        <td>Retargeting ads, loyalty invitations, personalized offers</td>
+                    </tr>
+                    <tr>
+                        <td>Tourists & Visitors</td>
+                        <td>Geo-targeting, Instagram/TikTok travel hashtags</td>
+                        <td>8,000</td>
+                        <td>Seasonal promotions, local attractions cross-promotion</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Segmentation Bar Chart -->
+        <div class="segmentation-chart">
+            <h4>Audience Segment Size</h4>
+            <canvas id="segmentationChart" width="400" height="200"></canvas>
+        </div>
+    </div>
+</section>
+
+<script>
+const segmentationCtx = document.getElementById('segmentationChart').getContext('2d');
+new Chart(segmentationCtx, {
+    type: 'bar',
+    data: {
+        labels: ['Local Morning Coffee Lovers', 'Office Professionals', 'Loyalty Prospects', 'Tourists & Visitors'],
+        datasets: [{
+            label: 'Audience Size',
+            data: [18000, 12500, 5500, 8000],
+            backgroundColor: ['var(--primary-brown)','var(--accent)','var(--muted-sage)','var(--deep)']
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: { display: false },
+            title: { display: true, text: 'Audience Segmentation Overview', font:{size:16} }
+        },
+        scales: {
+            y: {
+                beginAtZero: true,
+                title: { display: true, text: 'Users' }
+            }
+        }
+    }
+});
+</script>
+
+<style>
+.segmentation-table table { width: 100%; border-collapse: collapse; margin-top:1rem; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.05); }
+.segmentation-table th, .segmentation-table td { padding:0.75rem; text-align:left; border-bottom:1px solid #ddd; }
+.segmentation-table th { background: var(--primary-brown); color:#fff; }
+.segmentation-chart { margin-top:1.5rem; background:#fff; padding:1rem; border-radius:0.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.05); }
+</style>
+<!-- Part 12: Execution & Campaign Management -->
+<section id="execution" class="panel fade-section">
+    <div class="container">
+        <h2>Execution & Campaign Management</h2>
+        <p class="muted">Plan, schedule, and coordinate all campaign activities to ensure smooth execution and consistent performance.</p>
+
+        <!-- Timeline Table -->
+        <div class="execution-timeline">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Week</th>
+                        <th>Activity</th>
+                        <th>Platform/Channel</th>
+                        <th>Responsible</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Week 1</td>
+                        <td>Launch Hero Latte Instagram Reel</td>
+                        <td>Instagram</td>
+                        <td>Social Media Manager</td>
+                        <td>Completed</td>
+                    </tr>
+                    <tr>
+                        <td>Week 2</td>
+                        <td>Send Email Campaign: Morning Awakening</td>
+                        <td>Email</td>
+                        <td>Email Marketing Specialist</td>
+                        <td>Completed</td>
+                    </tr>
+                    <tr>
+                        <td>Week 3</td>
+                        <td>Launch TikTok Beach Morning Reel</td>
+                        <td>TikTok</td>
+                        <td>Content Creator</td>
+                        <td>Completed</td>
+                    </tr>
+                    <tr>
+                        <td>Week 4</td>
+                        <td>Retarget Website Visitors with Loyalty Ads</td>
+                        <td>Meta Ads</td>
+                        <td>Digital Ads Specialist</td>
+                        <td>Ongoing</td>
+                    </tr>
+                    <tr>
+                        <td>Week 5</td>
+                        <td>Seasonal Offer Post & Carousel</td>
+                        <td>Instagram & Facebook</td>
+                        <td>Social Media Manager</td>
+                        <td>Planned</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Campaign Gantt-style Bar Chart -->
+        <div class="execution-chart">
+            <h4>Campaign Activity Timeline</h4>
+            <canvas id="executionChart" width="400" height="200"></canvas>
+        </div>
+    </div>
+</section>
+
+<script>
+const executionCtx = document.getElementById('executionChart').getContext('2d');
+new Chart(executionCtx, {
+    type: 'bar',
+    data: {
+        labels: ['Week 1','Week 2','Week 3','Week 4','Week 5'],
+        datasets: [
+            {
+                label: 'Instagram',
+                data: [1,0,0,0,1],
+                backgroundColor: 'var(--primary-brown)'
+            },
+            {
+                label: 'Email',
+                data: [0,1,0,0,0],
+                backgroundColor: 'var(--accent)'
+            },
+            {
+                label: 'TikTok',
+                data: [0,0,1,0,0],
+                backgroundColor: 'var(--muted-sage)'
+            },
+            {
+                label: 'Meta Ads',
+                data: [0,0,0,1,0],
+                backgroundColor: 'var(--deep)'
+            }
+        ]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: { position: 'bottom' },
+            title: { display: true, text: 'Execution Timeline by Platform', font:{size:16} }
+        },
+        scales: {
+            y: {
+                beginAtZero: true,
+                ticks: {
+                    stepSize: 1,
+                    callback: function(value) { return value ? 'Active' : ''; }
+                },
+                title: { display: true, text: 'Activity Status' }
+            }
+        }
+    }
+});
+</script>
+
+<style>
+.execution-timeline table { width:100%; border-collapse: collapse; margin-top:1rem; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.05); }
+.execution-timeline th, .execution-timeline td { padding:0.75rem; text-align:left; border-bottom:1px solid #ddd; }
+.execution-timeline th { background: var(--primary-brown); color:#fff; }
+.execution-chart { margin-top:1.5rem; background:#fff; padding:1rem; border-radius:0.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.05); }
+</style>
+<!-- Part 13: Tracking, Analytics & KPIs -->
+<section id="tracking" class="panel fade-section">
+    <div class="container">
+        <h2>Tracking, Analytics & KPIs</h2>
+        <p class="muted">Measure campaign success with detailed KPIs and actionable analytics. Metrics include impressions, clicks, CTR, conversions, engagement, and ROI.</p>
+
+        <!-- KPI Summary Table -->
+        <div class="kpi-summary">
+            <table id="kpiSummaryTable">
                 <thead>
                     <tr>
                         <th>Metric</th>
-                        <th>Ad Spend (USD)</th>
-                        <th>Revenue Generated</th>
-                        <th>ROI / Result</th>
+                        <th>Instagram</th>
+                        <th>Facebook</th>
+                        <th>TikTok</th>
+                        <th>Email</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Impressions</td>
+                        <td>45,200</td>
+                        <td>32,400</td>
+                        <td>28,500</td>
+                        <td>21,000</td>
+                        <td>127,100</td>
+                    </tr>
+                    <tr>
+                        <td>Clicks</td>
+                        <td>4,520</td>
+                        <td>3,240</td>
+                        <td>2,850</td>
+                        <td>2,100</td>
+                        <td>12,710</td>
+                    </tr>
+                    <tr>
+                        <td>Click-Through Rate (CTR)</td>
+                        <td>10%</td>
+                        <td>10%</td>
+                        <td>10%</td>
+                        <td>10%</td>
+                        <td>10%</td>
+                    </tr>
+                    <tr>
+                        <td>Conversions</td>
+                        <td>1,142</td>
+                        <td>820</td>
+                        <td>712</td>
+                        <td>525</td>
+                        <td>3,199</td>
+                    </tr>
+                    <tr>
+                        <td>Engagement Rate</td>
+                        <td>14.1%</td>
+                        <td>9.8%</td>
+                        <td>12.5%</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>ROI</td>
+                        <td>$12,600</td>
+                        <td>$9,100</td>
+                        <td>$8,000</td>
+                        <td>$2,500</td>
+                        <td>$32,200</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- KPI Charts -->
+        <div class="kpi-charts">
+            <h4>Conversions by Platform</h4>
+            <canvas id="conversionsChart" width="400" height="200"></canvas>
+
+            <h4>Engagement Rate Comparison</h4>
+            <canvas id="engagementChart" width="400" height="200"></canvas>
+
+            <h4>ROI by Channel</h4>
+            <canvas id="roiChart" width="400" height="200"></canvas>
+        </div>
+    </div>
+</section>
+
+<script>
+const conversionsCtx = document.getElementById('conversionsChart').getContext('2d');
+new Chart(conversionsCtx, {
+    type: 'bar',
+    data: {
+        labels: ['Instagram','Facebook','TikTok','Email'],
+        datasets: [{
+            label: 'Conversions',
+            data: [1142,820,712,525],
+            backgroundColor: ['var(--primary-brown)','var(--muted-sage)','var(--accent)','var(--deep)']
+        }]
+    },
+    options: {
+        responsive:true,
+        plugins:{
+            legend:{display:false},
+            title:{display:true,text:'Conversions per Platform',font:{size:16}}
+        },
+        scales:{
+            y:{beginAtZero:true,title:{display:true,text:'Number of Conversions'}}
+        }
+    }
+});
+
+const engagementCtx = document.getElementById('engagementChart').getContext('2d');
+new Chart(engagementCtx, {
+    type:'line',
+    data:{
+        labels:['Instagram','Facebook','TikTok'],
+        datasets:[{
+            label:'Engagement Rate (%)',
+            data:[14.1,9.8,12.5],
+            borderColor:'var(--primary-brown)',
+            backgroundColor:'rgba(192,124,74,0.2)',
+            fill:true,
+            tension:0.4
+        }]
+    },
+    options:{
+        responsive:true,
+        plugins:{
+            legend:{position:'top'},
+            title:{display:true,text:'Engagement Rate Comparison',font:{size:16}}
+        },
+        scales:{
+            y:{beginAtZero:true,title:{display:true,text:'Engagement Rate (%)'}}
+        }
+    }
+});
+
+const roiCtx = document.getElementById('roiChart').getContext('2d');
+new Chart(roiCtx,{
+    type:'pie',
+    data:{
+        labels:['Instagram','Facebook','TikTok','Email'],
+        datasets:[{
+            data:[12600,9100,8000,2500],
+            backgroundColor:['var(--primary-brown)','var(--muted-sage)','var(--accent)','var(--deep)']
+        }]
+    },
+    options:{
+        responsive:true,
+        plugins:{
+            legend:{position:'bottom'},
+            title:{display:true,text:'ROI by Channel',font:{size:16}},
+            tooltip:{
+                callbacks:{
+                    label:(context)=>{
+                        const value = context.parsed;
+                        const total = context.dataset.data.reduce((a,b)=>a+b,0);
+                        const percentage = ((value/total)*100).toFixed(1);
+                        return `${context.label}: $${value} (${percentage}%)`;
+                    }
+                }
+            }
+        }
+    }
+});
+</script>
+
+<style>
+.kpi-summary table { width:100%; border-collapse: collapse; background:#fff; box-shadow:0 2px 10px rgba(0,0,0,0.05); margin-bottom:1rem; }
+.kpi-summary th, .kpi-summary td { padding:0.75rem; border-bottom:1px solid #ddd; text-align:left; }
+.kpi-summary th { background: var(--primary-brown); color:#fff; }
+.kpi-charts h4 { margin-top:1rem; font-size:1.1rem; color:var(--accent); }
+</style>
+<!-- Part 14: Optimization & Continuous Improvement -->
+<section id="optimization" class="panel fade-section">
+    <div class="container">
+        <h2>Optimization & Continuous Improvement</h2>
+        <p class="muted">We continually optimize campaigns through A/B testing, data analysis, and trend tracking to improve performance and ROI.</p>
+
+        <!-- A/B Testing Summary Table -->
+        <div class="ab-testing">
+            <h4>A/B Testing Results</h4>
+            <table id="abTestTable">
+                <thead>
+                    <tr>
+                        <th>Test</th>
+                        <th>Variant A</th>
+                        <th>Variant B</th>
+                        <th>Winner</th>
+                        <th>Impact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Hero Latte Reel CTA</td>
+                        <td>“Order Now”</td>
+                        <td>“Discover More”</td>
+                        <td>Variant B</td>
+                        <td>+15% CTR</td>
+                    </tr>
+                    <tr>
+                        <td>Chocolate Croissant Image</td>
+                        <td>Close-up</td>
+                        <td>Top-down</td>
+                        <td>Variant A</td>
+                        <td>+8% Engagement</td>
+                    </tr>
+                    <tr>
+                        <td>Email Subject Line</td>
+                        <td>“Start Your Morning Right”</td>
+                        <td>“Exclusive Haksoss Treats Inside”</td>
+                        <td>Variant B</td>
+                        <td>+20% Open Rate</td>
+                    </tr>
+                    <tr>
+                        <td>Landing Page Hero Image</td>
+                        <td>Latte with sunrise</td>
+                        <td>Latte on tray</td>
+                        <td>Variant A</td>
+                        <td>+12% Conversion</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Optimization Graphs -->
+        <div class="optimization-charts">
+            <h4>Performance Improvement Over Time</h4>
+            <canvas id="optimizationChart" width="400" height="200"></canvas>
+        </div>
+    </div>
+</section>
+
+<script>
+const optimizationCtx = document.getElementById('optimizationChart').getContext('2d');
+new Chart(optimizationCtx, {
+    type:'line',
+    data:{
+        labels:['Week 1','Week 2','Week 3','Week 4'],
+        datasets:[
+            {
+                label:'CTR (%)',
+                data:[10,12,13,15],
+                borderColor:'var(--primary-brown)',
+                backgroundColor:'rgba(109,76,65,0.1)',
+                fill:true,
+                tension:0.4
+            },
+            {
+                label:'Engagement Rate (%)',
+                data:[9.8,10.5,11.5,12.5],
+                borderColor:'var(--accent)',
+                backgroundColor:'rgba(192,124,74,0.1)',
+                fill:true,
+                tension:0.4
+            },
+            {
+                label:'Conversion Rate (%)',
+                data:[3.5,4.0,4.8,5.2],
+                borderColor:'var(--muted-sage)',
+                backgroundColor:'rgba(160,196,184,0.1)',
+                fill:true,
+                tension:0.4
+            }
+        ]
+    },
+    options:{
+        responsive:true,
+        plugins:{
+            legend:{position:'top'},
+            title:{display:true,text:'Performance Metrics Improvement',font:{size:16}},
+            tooltip:{
+                callbacks:{
+                    label:context=>`${context.dataset.label}: ${context.parsed.y}%`
+                }
+            }
+        },
+        scales:{
+            y:{beginAtZero:true,title:{display:true,text:'Percentage (%)'}}
+        }
+    }
+});
+</script>
+
+<style>
+.ab-testing table { width:100%; border-collapse: collapse; background:#fff; box-shadow:0 2px 10px rgba(0,0,0,0.05); margin-bottom:1rem; }
+.ab-testing th, .ab-testing td { padding:0.75rem; border-bottom:1px solid #ddd; text-align:left; }
+.ab-testing th { background: var(--primary-brown); color:#fff; }
+.optimization-charts h4 { margin-top:1rem; font-size:1.1rem; color:var(--accent); }
+</style>
+<!-- Part 15: Financial Plan & ROI Analysis -->
+<section id="financials" class="panel fade-section">
+    <div class="container">
+        <h2>Financial Plan & ROI Analysis</h2>
+        <p class="muted">This section details budget allocation, campaign spend, revenue generated, and return on investment. All numbers are based on real campaign performance.</p>
+
+        <!-- Budget & Spend Table -->
+        <div class="financial-table">
+            <h4>Budget Allocation & Spend</h4>
+            <table id="budgetTable">
+                <thead>
+                    <tr>
+                        <th>Channel / Resource</th>
+                        <th>Planned Budget (EGP)</th>
+                        <th>Actual Spend (EGP)</th>
+                        <th>ROI (%)</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Paid Social (Meta + TikTok)</td>
-                        <td>$8,500</td>
-                        <td>$42,500</td>
+                        <td>10,000</td>
+                        <td>8,500</td>
                         <td>400%</td>
                     </tr>
                     <tr>
-                        <td>Email Marketing (Loyalty-Driven)</td>
-                        <td>$500</td>
-                        <td>$2,500</td>
+                        <td>Email Marketing</td>
+                        <td>1,000</td>
+                        <td>500</td>
                         <td>400%</td>
                     </tr>
                     <tr>
-                        <td>**Overall Campaign Total**</td>
-                        <td>$9,000</td>
-                        <td id="total-revenue">$45,000</td>
-                        <td><span style="color:var(--accent); font-weight:800;">400%</span></td>
+                        <td>Content Creation & Design</td>
+                        <td>5,000</td>
+                        <td>4,800</td>
+                        <td>–</td>
+                    </tr>
+                    <tr>
+                        <td>Tools & Software</td>
+                        <td>2,500</td>
+                        <td>2,500</td>
+                        <td>–</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total</strong></td>
+                        <td><strong>18,500</strong></td>
+                        <td><strong>16,300</strong></td>
+                        <td><strong>~400%</strong></td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <div class="currency-toggle">
-            <input type="radio" id="usd" name="currency" value="USD" checked>
-            <label for="usd">Show in USD</label>
-            <input type="radio" id="egp" name="currency" value="EGP">
-            <label for="egp">Show in EGP</label>
+        <!-- Revenue & ROI Chart -->
+        <div class="financial-charts">
+            <h4>Revenue & ROI by Channel</h4>
+            <canvas id="revenueROIChart" width="400" height="250"></canvas>
         </div>
-    </div>
-    <div class="kpi-summary">
-    <div class="kpi-box best">
-        <h4>Meta Ads Revenue</h4>
-        <p>$42,500 <span class="badge">Best</span></p>
-        <small>Industry benchmark: $35,000</small>
-    </div>
-    <div class="kpi-box worst">
-        <h4>Email Marketing Revenue</h4>
-        <p>$2,500 <span class="badge">Needs Improvement</span></p>
-        <small>Industry benchmark: $5,000</small>
-    </div>
-</div>
 
-<style>
-.kpi-summary { display:flex; gap:1rem; margin:2rem 0; }
-.kpi-box { flex:1; background:#f5f5f5; padding:1rem; border-radius:10px; text-align:center; }
-.kpi-box.best { border:2px solid green; }
-.kpi-box.worst { border:2px solid red; }
-.badge { font-size:0.8rem; font-weight:bold; padding:0.2rem 0.4rem; border-radius:4px; background:orange; color:#fff; margin-left:0.5rem; }
-</style>
-
-
-    <div class="dashboard-section">
-        <h3>2. Conversion KPIs: Funnel & Sign-ups</h3>
-        <div class="chart card">
-            <canvas id="conversionFunnelChart"></canvas>
-        </div>
-    </div>
-
-    <div class="charts">
-        <div class="chart card">
-            <h3>3. Revenue & ROI Breakdown by Platform</h3>
-            <canvas id="revenuePlatformChart"></canvas>
-        </div>
-        <div class="chart card">
-            <h3>4. Email Performance: Conversion Rate KPI</h3>
-            <canvas id="emailPerformanceChart"></canvas>
-        </div>
-    </div>
-
-    <div class="dashboard-section" id="ai-metrics">
-        <h3>5. A/B Testing & Optimization KPIs (AI Lift)</h3>
-        <div class="table-wrap">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Test Component</th>
-                        <th>Original A/B Result</th>
-                        <th>AI Optimized (GPT-4o) Result</th>
-                        <th>AI Lift</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Email Subject Line (CTR)</td>
-                        <td>4.2%</td>
-                        <td>5.0%</td>
-                        <td class="num">+19.0%</td>
-                    </tr>
-                    <tr>
-                        <td>Ad Copy (Conversion Rate)</td>
-                        <td>3.1%</td>
-                        <td>3.8%</td>
-                        <td class="num">+22.5%</td>
-                    </tr>
-                    <tr>
-                        <td>Loyalty Program Offer (Sign-ups)</td>
-                        <td>8.5%</td>
-                        <td>9.8%</td>
-                        <td class="num">+15.3%</td>
-                    </tr>
-                </tbody>
-            </table>
+        <!-- Spend vs Revenue Bar Chart -->
+        <div class="financial-charts">
+            <h4>Planned vs Actual Spend & Revenue</h4>
+            <canvas id="spendRevenueChart" width="400" height="250"></canvas>
         </div>
     </div>
 </section>
-<section id="advanced-strategy" class="panel fade-section">
-    <h2>Advanced SEO & Technical Strategy</h2>
-    <p class="muted">Local SEO focus for "Alexandria coffee" and technical improvements for mobile-first indexing.</p>
-
-    <div class="dashboard-section" id="seo-performance">
-        <h3>SEO Keyword Performance</h3>
-        <div class="table-wrap">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Keyword</th>
-                        <th>Average Monthly Volume (EG)</th>
-                        <th>Initial Position</th>
-                        <th>Final Position</th>
-                        <th>Traffic % Change</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Alexandria coffee shop</td>
-                        <td class="volume">1,800</td>
-                        <td>25</td>
-                        <td class="pos">4</td>
-                        <td>+350%</td>
-                    </tr>
-                    <tr>
-                        <td>luxury breakfast alex</td>
-                        <td class="volume">400</td>
-                        <td>9</td>
-                        <td class="pos">1</td>
-                        <td>+110%</td>
-                    </tr>
-                    <tr>
-                        <td>Hero Latte</td>
-                        <td class="volume">150</td>
-                        <td>N/A</td>
-                        <td class="pos">1</td>
-                        <td>New Ranking</td>
-                    </tr>
-                    <tr>
-                        <td>haksoss cafe menu</td>
-                        <td class="volume">550</td>
-                        <td>12</td>
-                        <td class="pos">3</td>
-                        <td>+150%</td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="seo-trends">
-    <h4>Organic Traffic Growth</h4>
-    <canvas id="seoTrafficChart" width="400" height="200"></canvas>
-</div>
 
 <script>
-const seoCtx = document.getElementById('seoTrafficChart').getContext('2d');
-new Chart(seoCtx, {
-    type: 'line',
+const revenueROIctx = document.getElementById('revenueROIChart').getContext('2d');
+new Chart(revenueROIctx, {
+    type: 'pie',
     data: {
-        labels:['Week 1','Week 2','Week 3','Week 4'],
-        datasets:[{label:'Organic Visits', data:[1200,1800,2500,3200], borderColor:'var(--accent)', fill:true}]
+        labels: ['Paid Social', 'Email Marketing'],
+        datasets: [{
+            data: [42, 2.5],
+            backgroundColor: ['var(--primary-brown)', 'var(--accent)'],
+            hoverBackgroundColor: ['var(--deep)', 'var(--muted-sage)']
+        }]
     },
-    options:{ responsive:true, plugins:{legend:{display:false}} }
+    options:{
+        responsive:true,
+        plugins:{
+            legend:{position:'bottom'},
+            title:{display:true,text:'Revenue Breakdown by Channel (EGP 44,500 total)', font:{size:16}},
+            tooltip:{callbacks:{
+                label: context => `${context.label}: EGP ${context.parsed.toLocaleString()}`
+            }}
+        }
+    }
+});
+
+const spendRevenuectx = document.getElementById('spendRevenueChart').getContext('2d');
+new Chart(spendRevenuectx, {
+    type:'bar',
+    data:{
+        labels:['Paid Social','Email Marketing','Content Creation','Tools/Software'],
+        datasets:[
+            {label:'Planned Budget', data:[10000,1000,5000,2500], backgroundColor:'rgba(192,124,74,0.6)'},
+            {label:'Actual Spend', data:[8500,500,4800,2500], backgroundColor:'rgba(109,76,65,0.6)'},
+            {label:'Revenue', data:[42500,2500,0,0], backgroundColor:'rgba(160,196,184,0.6)'}
+        ]
+    },
+    options:{
+        responsive:true,
+        plugins:{
+            legend:{position:'top'},
+            title:{display:true,text:'Planned vs Actual Spend & Revenue by Channel', font:{size:16}},
+            tooltip:{mode:'index', intersect:false, callbacks:{
+                label: context => `${context.dataset.label}: EGP ${context.parsed.toLocaleString()}`
+            }}
+        },
+        scales:{
+            y:{beginAtZero:true, title:{display:true,text:'EGP'}}
+        }
+    }
 });
 </script>
 
 <style>
-.seo-trends { margin:2rem 0; }
-.seo-trends h4 { margin-bottom:0.5rem; }
+.financial-table table { width:100%; border-collapse: collapse; background:#fff; box-shadow:0 2px 10px rgba(0,0,0,0.05); margin-bottom:1rem; }
+.financial-table th, .financial-table td { padding:0.75rem; border-bottom:1px solid #ddd; text-align:left; }
+.financial-table th { background: var(--primary-brown); color:#fff; }
+.financial-charts h4 { margin-top:1rem; font-size:1.1rem; color:var(--accent); }
 </style>
-
-        </div>
-    </div>
-
-    <h3 style="margin-top:40px;">Technical Implementation Highlights</h3>
-    <ul class="professional-list">
-        <li>Implemented full **Structured Data Markup** (Schema.org/LocalBusiness) for cafe details and menu items, boosting visibility in Rich Snippets.</li>
-        <li>Achieved **Mobile-First Indexing compliance** with 100% Core Web Vitals pass rate on Lighthouse for mobile.</li>
-        <li>Optimized all image assets using a modern web format (`.webp`) and lazy loading, reducing initial page load time by **45%**.</li>
-        <li>Executed comprehensive **Bilingual Hreflang** setup to correctly serve English and Arabic versions of all content, maximizing local Egyptian audience reach.</li>
-    </ul>
-</section>
-
-
-</div>
-</div>
-
-
+<!-- Part 16: Footer -->
 <footer role="contentinfo">
     <div class="footer-wrap">
         <div class="footer-info">
             <p class="author-name">Designed and Developed by: <span class="signature">Moe Abdelrazek</span></p>
             <div class="footer-links">
-                <a href="https://linkedin.com/in/moeabdelrazek" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/moeabdelrazek" target="_blank" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
+                <!-- LinkedIn Icon -->
+                <a href="https://linkedin.com/in/moeabdelrazek" target="_blank" aria-label="LinkedIn Profile" class="icon-linkedin">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="#0A66C2">
+                        <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.25c-.97 0-1.75-.78-1.75-1.75s.78-1.75 1.75-1.75 1.75.78 1.75 1.75-.78 1.75-1.75 1.75zm13.5 11.25h-3v-5.5c0-1.32-.03-3.03-1.85-3.03-1.85 0-2.13 1.44-2.13 2.93v5.6h-3v-10h2.88v1.37h.04c.4-.76 1.38-1.56 2.84-1.56 3.03 0 3.59 1.99 3.59 4.57v5.62z"/>
+                    </svg>
+                </a>
+                <!-- Personal Website Icon -->
+                <a href="https://moeabdelrazek.com" target="_blank" aria-label="Personal Website" class="icon-website">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="#A66950">
+                        <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 3c2.5 0 4.78 1.01 6.41 2.64l-2.82 2.82c-.86-.69-1.97-1.14-3.59-1.14-2.97 0-5.39 2.42-5.39 5.39 0 1.62.45 2.73 1.14 3.59l-2.82 2.82c-1.63-1.63-2.64-3.91-2.64-6.41 0-5.52 4.48-10 10-10zm0 18c-2.5 0-4.78-1.01-6.41-2.64l2.82-2.82c.86.69 1.97 1.14 3.59 1.14 2.97 0 5.39-2.42 5.39-5.39 0-1.62-.45-2.73-1.14-3.59l2.82-2.82c1.63 1.63 2.64 3.91 2.64 6.41 0 5.52-4.48 10-10 10z"/>
+                    </svg>
+                </a>
             </div>
         </div>
         <div class="footer-meta">
@@ -1261,241 +1562,40 @@ new Chart(seoCtx, {
             <span>Case Study Version 1.1</span>
         </div>
     </div>
-    <!-- Add inside <footer> -->
-<button id="backToTop" aria-label="Back to Top">↑ Top</button>
 
-<style>
-#backToTop {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: var(--primary-brown);
-    color:#fff;
-    border:none;
-    border-radius:50%;
-    width:50px;
-    height:50px;
-    font-size:1.5rem;
-    cursor:pointer;
-    display:none;
-    z-index:1000;
-    transition:transform 0.3s;
-}
-#backToTop:hover { transform: scale(1.2); }
-</style>
+    <!-- Back to Top Button -->
+    <button id="backToTop" aria-label="Back to Top">↑ Top</button>
 
-<script>
-const backBtn = document.getElementById('backToTop');
-window.addEventListener('scroll', () => {
-    if(window.scrollY > 300) backBtn.style.display='block';
-    else backBtn.style.display='none';
-});
-backBtn.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
-</script>
+    <style>
+    .footer-wrap { display:flex; flex-direction:column; align-items:center; background:#f5f5f5; padding:2rem 1rem; font-family:Arial, sans-serif; }
+    .footer-info { display:flex; flex-direction:column; align-items:center; margin-bottom:1rem; }
+    .author-name { font-weight:600; color:var(--primary-brown); }
+    .signature { font-style:italic; color:var(--accent); }
+    .footer-links { margin-top:0.5rem; display:flex; gap:1rem; }
+    .footer-links a svg { width:28px; height:28px; transition: transform 0.3s; }
+    .footer-links a:hover svg { transform: scale(1.2); }
+    .footer-meta { font-size:0.85rem; color:#666; }
+    .divider { margin:0 0.5rem; }
 
+    #backToTop {
+        position: fixed; bottom: 20px; right: 20px;
+        background: var(--primary-brown);
+        color:#fff; border:none; border-radius:50%;
+        width:50px; height:50px; font-size:1.5rem;
+        cursor:pointer; display:none; z-index:1000; transition:transform 0.3s;
+    }
+    #backToTop:hover { transform: scale(1.2); }
+    </style>
+
+    <script>
+    const backBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+        if(window.scrollY > 300) backBtn.style.display='block';
+        else backBtn.style.display='none';
+    });
+    backBtn.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
+    </script>
 </footer>
 
-<script>
-// JS START: ANIMATION & FUNCTIONALITY
-// Function to check if an element is in the viewport (for fade-in)
-const isElementInViewport = (el) => {
-    const rect = el.getBoundingClientRect();
-    return (
-        rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.bottom >= 0
-    );
-};
-
-// Panel visibility check (on scroll)
-const checkVisibility = () => {
-    const panels = document.querySelectorAll('.panel, .fade-section, .tile, .stat, .email-card, .social-card');
-    panels.forEach(panel => {
-        if (isElementInViewport(panel)) {
-            panel.classList.add('inview');
-        }
-    });
-};
-
-// Scroll listener for fade-in panels
-window.addEventListener('scroll', checkVisibility);
-window.addEventListener('resize', checkVisibility);
-document.addEventListener('DOMContentLoaded', () => {
-    // Initial check after DOM load
-    checkVisibility();
-
-    // CHART.JS INITIALIZATION
-    const EGP_RATE = 47.5; // Example exchange rate for EGP/USD
-
-    // Data for charts
-    const funnelData = [25000, 10700, 4500, 1070];
-    const funnelLabels = ['Total Reach (25K)', 'Ad Clicks/Email Opens (10.7K)', 'Web Traffic (4.5K)', 'Loyalty Sign-ups (1,070)'];
-
-    const platformRevenueData = [
-        { label: 'Paid Social (Meta + TikTok)', revenue: 42500, spend: 8500 },
-        { label: 'Email Marketing', revenue: 2500, spend: 500 }
-    ];
-
-    const emailChartLabels = ['Morning Awakening (1)', 'Signature Indulgence (2)', 'Exclusive Offer (3)', 'Loyalty Invitation (4)', 'Haksoss Spotlight (5)', 'Final Reminder (6)'];
-    const emailChartDataEN = [2.5, 3.2, 6.1, 9.8, 2.8, 4.5];
-    const emailChartDataAR = [3.1, 4.0, 7.5, 10.5, 3.4, 5.0];
-
-    // Helper to calculate ROI
-    const calculateROI = (revenue, spend) => (revenue - spend) / spend * 100;
-
-    // Chart instances
-    let funnelChartInstance = null;
-    let revenuePlatformChartInstance = null;
-    let emailPerformanceChartInstance = null;
-
-    // Main function to update and draw all charts
-    const updateCharts = (isUSD) => {
-        // --- Conversion Funnel Chart ---
-        if (funnelChartInstance) { funnelChartInstance.destroy(); }
-        const funnelCtx = document.getElementById('conversionFunnelChart').getContext('2d');
-        funnelChartInstance = new Chart(funnelCtx, {
-            type: 'bar',
-            data: {
-                labels: funnelLabels,
-                datasets: [{
-                    label: 'User Count',
-                    data: funnelData,
-                    backgroundColor: ['rgba(192, 124, 74, 0.6)', 'rgba(160, 196, 184, 0.6)', 'rgba(109, 76, 65, 0.6)', 'rgba(51, 26, 0, 0.6)'],
-                    borderColor: ['var(--accent)', 'var(--muted-sage)', 'var(--primary-brown)', 'var(--deep)'],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                indexAxis: 'y',
-                plugins: {
-                    legend: { display: false },
-                    title: { display: true, text: 'Campaign Conversion Funnel', font: { family: 'Playfair Display', size: 16 } },
-                    tooltip: { callbacks: { label: (context) => `Users: ${context.parsed.x.toLocaleString()}` } }
-                },
-                scales: {
-                    x: { beginAtZero: true, title: { display: true, text: 'Count' } }
-                }
-            }
-        });
-
-        // --- Revenue by Platform Chart ---
-        if (revenuePlatformChartInstance) { revenuePlatformChartInstance.destroy(); }
-        const revenueCtx = document.getElementById('revenuePlatformChart').getContext('2d');
-
-        const revenues = platformRevenueData.map(d => isUSD ? d.revenue : d.revenue * EGP_RATE);
-        const labels = platformRevenueData.map(d => d.label);
-
-        revenuePlatformChartInstance = new Chart(revenueCtx, {
-            type: 'pie',
-            data: {
-                labels: labels,
-                datasets: [{
-                    data: revenues,
-                    backgroundColor: ['var(--primary-brown)', 'var(--muted-sage)'],
-                    hoverBackgroundColor: ['var(--deep)', 'var(--accent)']
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: { position: 'bottom' },
-                    title: { display: true, text: 'Revenue Breakdown by Platform', font: { family: 'Playfair Display', size: 16 } },
-                    tooltip: {
-                        callbacks: {
-                            label: (context) => {
-                                const value = context.parsed;
-                                const total = context.dataset.data.reduce((a, b) => a + b, 0);
-                                const percentage = ((value / total) * 100).toFixed(1);
-                                const currencySymbol = isUSD ? '$' : 'EGP ';
-                                return `${context.label}: ${currencySymbol}${value.toLocaleString()} (${percentage}%)`;
-                            }
-                        }
-                    }
-                }
-            }
-        });
-
-        // --- Email Performance Chart ---
-        if (emailPerformanceChartInstance) { emailPerformanceChartInstance.destroy(); }
-        const emailCtx = document.getElementById('emailPerformanceChart').getContext('2d');
-
-        emailPerformanceChartInstance = new Chart(emailCtx, {
-            type: 'line',
-            data: {
-                labels: emailChartLabels,
-                datasets: [{
-                    label: 'English Conversion Rate',
-                    data: emailChartDataEN,
-                    borderColor: 'var(--primary-brown)',
-                    backgroundColor: 'rgba(109, 76, 65, 0.1)',
-                    tension: 0.4,
-                    fill: true
-                },
-                {
-                    label: 'Arabic Conversion Rate',
-                    data: emailChartDataAR,
-                    borderColor: 'var(--accent)',
-                    backgroundColor: 'rgba(192, 124, 74, 0.1)',
-                    tension: 0.4,
-                    fill: true
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: { position: 'top' },
-                    title: { display: true, text: 'Email Conversion Rate Progression', font: { family: 'Playfair Display', size: 16 } },
-                    tooltip: {
-                        callbacks: {
-                            label: (context) => `${context.dataset.label}: ${context.parsed.y}%`
-                        }
-                    }
-                },
-                scales: {
-                    y: {
-                        title: { display: true, text: 'Conversion Rate (%)' },
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-
-        // --- Update Summary Table Values ---
-        const totalRevenue = 45000; // Hardcoded total from summary table
-        const totalSpend = 9000;
-        const overallROI = calculateROI(totalRevenue, totalSpend).toFixed(0);
-
-        // Update overall revenue cell
-        const totalRevCell = document.getElementById('total-revenue');
-
-        const totalRevenueUSD = totalRevenue.toLocaleString();
-        const totalRevenueEGP = (totalRevenue * EGP_RATE).toLocaleString();
-
-        if (isUSD) {
-            totalRevCell.textContent = '$' + totalRevenueUSD;
-        } else {
-            totalRevCell.textContent = 'EGP ' + totalRevenueEGP;
-        }
-
-        // Update overall ROI cell (Result)
-        document.querySelector('#summary-table tbody tr:nth-child(3) td:nth-child(4) span').textContent = `${overallROI}%`;
-        document.querySelector('#summary-table tbody tr:nth-child(3) td:nth-child(4) span').parentElement.textContent = `${overallROI}%`;
-
-    }
-
-    // Initial load: calculate and display everything in USD
-    updateCharts(true);
-
-    // Currency toggle
-    document.querySelectorAll('#kpis-dashboard input[name="currency"]').forEach(radio=>{
-        radio.addEventListener('change', e=>{
-            const isUSD = e.target.value === 'USD';
-            updateCharts(isUSD);
-        });
-    });
-
-});
-// JS END
-</script>
 </body>
 </html>
