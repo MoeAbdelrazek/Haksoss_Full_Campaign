@@ -57,7 +57,7 @@ body{
     /* CAFE BACKGROUND AESTHETIC */
     background:linear-gradient(180deg, var(--bg-start) 0%, var(--bg-end) 100%);
     -webkit-font-smoothing:antialiased;
-    min-height: 100vh;
+    min-height: 10vh; /* Reduced from 100vh just in case, but usually 100vh is fine */
 
     /* Page fade-in */
     opacity: 0;
@@ -365,6 +365,8 @@ footer{
     color: var(--accent);
     z-index: 99999;
     pointer-events: auto;
+    opacity: 1; /* Start visible */
+    transition: opacity 800ms ease;
 }
 .intro-card {
     text-align:center;
@@ -952,6 +954,25 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
 </footer>
 
 <script>
+
+// FIX: Hides the intro overlay after a delay so the content is visible
+document.addEventListener('DOMContentLoaded', () => {
+    const introOverlay = document.getElementById('intro-overlay');
+    if (introOverlay) {
+        // Wait for 2200ms (2.2 seconds) to allow the visual animation to complete
+        setTimeout(() => {
+            introOverlay.style.opacity = '0'; // Start the fade-out CSS transition
+            
+            // After the fade-out, completely hide it and disable mouse interaction
+            setTimeout(() => {
+                introOverlay.style.display = 'none';
+                introOverlay.style.pointerEvents = 'none';
+            }, 800); // 800ms is the duration of the opacity transition in CSS
+        }, 2200);
+    }
+});
+
+
 // START: New Social Media Charts Logic
 // This script initializes the CPL and Ad Spend charts for the Social Media section.
 const cplData = {
