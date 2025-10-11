@@ -24,7 +24,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
 
 <style>
-/* CSS START: LUXURY CAFE AESTHETIC */
+/* CSS START: LUXURY CAFE AESTHETIC V2 (Perfected Design) */
 :root{
     /* LUXURY CAFE PALETTE (Warm & Earthy) */
     --deep:#331A00; /* Rich Espresso Brown/Very Dark Navy */
@@ -34,14 +34,18 @@
     --bg-start:#FAF0E6; /* Warm Ivory/Cream Paper */
     --bg-end:#FFFFFF; /* Clean White */
     --card:rgba(255, 255, 255, 0.95);
-    --card-shadow: 0 10px 20px rgba(51, 26, 0, 0.1), 0 0 0 1px rgba(192, 124, 74, 0.1); /* Warmer Shadow */
+    /* REFINED SHADOW: Layered for depth (Paper effect) */
+    --card-shadow: 
+        0 4px 6px rgba(51, 26, 0, 0.05),
+        0 10px 20px rgba(51, 26, 0, 0.1), 
+        0 0 0 1px rgba(192, 124, 74, 0.15); /* Warmer, softer shadow */
     --maxw:1200px;
-    --radius:16px; /* Slightly larger radius for a softer feel */
+    --radius:16px;
+    --section-border: 1px solid rgba(192, 124, 74, 0.3);
 
-    /* BORDER CHANGES: Warmer, more tactile */
-    --fancy-border-outer: 0;
-    --fancy-border-inner: 0;
-    --section-border: 1px solid rgba(192, 124, 74, 0.3); /* Soft Copper Line */
+    /* Animation variables */
+    --animation-duration: 1.1s;
+    --animation-ease: cubic-bezier(.2,.9,.3,1.1);
 }
 
 /* Reset */
@@ -51,15 +55,11 @@ body{
     font-family:"Lato", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
     color:var(--deep);
     padding: 0;
-    border: var(--fancy-border-outer);
     border-radius: 0;
     position: relative;
-    /* CAFE BACKGROUND AESTHETIC */
     background:linear-gradient(180deg, var(--bg-start) 0%, var(--bg-end) 100%);
     -webkit-font-smoothing:antialiased;
     min-height: 10vh;
-
-    /* Page fade-in */
     opacity: 0;
     animation: bodyFadeIn 900ms ease forwards;
 }
@@ -72,12 +72,18 @@ a:hover { color:var(--accent); }
 
 /* Layout */
 .wrap{ max-width:var(--maxw); margin:0 auto; padding:20px 20px 40px; }
-/* HEADER MODIFICATION (Minimalist) */
+
+/* HEADER MODIFICATION (Frosted Glass Effect & Better Details) */
 header.fixed-header{
-    position:fixed; left:0; right:0; top:0; z-index:9999;
-    background:var(--deep);
+    position:sticky; /* Changed to sticky for modern, fast scrolling */
+    left:0; right:0; top:0; z-index:9999;
+    background:rgba(51, 26, 0, 0.9); /* Slightly transparent deep brown */
     color:#fff;
-    box-shadow:0 4px 15px rgba(0,0,0,0.4); /* Darker, richer shadow */
+    box-shadow:0 4px 15px rgba(0,0,0,0.4);
+    /* FROSTED GLASS EFFECT */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transition: box-shadow 0.3s ease;
 }
 .header-inner{
     max-width:var(--maxw); margin:0 auto; display:flex; align-items:center;
@@ -87,27 +93,26 @@ header.fixed-header{
 .brand{ display:flex; gap:12px; align-items:center; }
 .brand img{ width:48px; height:48px; object-fit:cover; border-radius:8px; background:#fff; padding:4px; border: 1px solid var(--accent); }
 .brand h1{ margin:0; font-family:'Playfair Display', serif; font-size:1.6rem; color: var(--accent); }
-.brand p, nav.topnav { display:none; }
 
 /* page content wrapper to offset fixed header */
-.page { padding-top:80px; }
+.page { padding-top:40px; } /* Reduced padding since header is sticky now */
 
 /* Panels (The Core Look) - Looks like menu/paper */
 .panel{
     background:var(--card);
     border-radius:var(--radius);
-    padding:40px; /* Slightly more padding for a luxurious feel */
-    margin-bottom:40px;
-    /* Elegant Paper/Tray Shadow */
+    padding:40px;
+    margin-bottom:50px; /* Increased margin for better separation */
     box-shadow: var(--card-shadow);
+    border-bottom: 2px solid var(--accent); /* Thicker accent line for elegance */
+    
     /* SMOOTHER ANIMATION (slidy) */
     opacity:0;
-    transform:translateY(30px);
-    transition:all 1s cubic-bezier(.2,.9,.3,1.1);
-    border-bottom: var(--section-border);
+    transform:translateY(40px);
+    transition:opacity var(--animation-duration) var(--animation-ease), transform var(--animation-duration) var(--animation-ease);
+    will-change: transform, opacity;
 }
 .panel:last-child {
-    border-bottom: var(--section-border);
     margin-bottom: 40px;
 }
 .panel.inview{
@@ -117,41 +122,65 @@ header.fixed-header{
 .panel h2 {
     color: var(--deep);
     font-family: 'Playfair Display', serif;
-    font-size: 2.2rem; /* Slightly larger heading */
-    border-bottom: 2px solid var(--primary-brown); /* Coffee Brown Line */
+    font-size: 2.2rem;
+    border-bottom: 2px solid var(--primary-brown);
     padding-bottom: 10px;
+    margin-bottom: 20px;
 }
+
+/* HORIZONTAL RULE FOR VISUAL SEPARATION */
+.section-divider {
+    border: none;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, var(--accent) 50%, rgba(0, 0, 0, 0) 100%);
+    margin: 50px auto;
+    width: 80%;
+}
+
 
 /* CASE STUDY (lead) */
 .case-hero{ display:flex; gap:30px; align-items:start; }
 .case-left h2{ margin:0 0 10px; font-size:2.4rem; }
 .quick-stats{ display:flex; gap:20px; flex-wrap:wrap; margin:20px 0; }
-/* ANIMATION: Quick Stats (Looks like small wooden plaques) */
+/* ANIMATION: Quick Stats (Staggered Fade) */
 .stat{
     background:linear-gradient(135deg, var(--bg-start), #ffffff);
     padding:20px 25px;
     border-radius:12px;
     min-width:180px;
     box-shadow:0 6px 15px rgba(51, 26, 0, 0.1);
-    transition:transform .4s ease-out, box-shadow .4s;
+    transition:transform .4s ease-out, box-shadow .4s, opacity var(--animation-duration) var(--animation-ease), transform var(--animation-duration) var(--animation-ease);
     border: 1px solid rgba(192, 124, 74, 0.3);
+    
+    /* Staggered animation properties */
+    opacity:0;
+    transform:translateY(20px);
+    transition-delay: var(--delay, 0ms); /* Use JS set delay */
+    will-change: transform, opacity;
+}
+.stat.inview{
+    opacity:1;
+    transform:translateY(0);
 }
 .stat:hover{
-    transform:translateY(-6px); /* Subtle lift */
+    transform:translateY(-6px);
     box-shadow:0 15px 35px rgba(51, 26, 0, 0.2);
 }
 .stat .val{ color:var(--accent); font-weight:900; font-size:2rem; }
 .stat .lab{ color:var(--primary-brown); font-size:1rem; margin-top:4px; font-weight: 700; }
 
 .case-right{ width:450px; max-width:40%; position:relative; }
-/* ANIMATION: Hero Image (Smooth Float) */
+/* ANIMATION: Hero Image (Subtle Parallax effect on scroll) */
 .case-right img{
     width:100%;
     border-radius:16px;
     box-shadow:0 20px 50px rgba(0,0,0,0.1);
     transition:all 1s cubic-bezier(.2,.9,.3,1);
     animation: floating-shadow 6s ease-in-out infinite alternate;
-    border: 4px solid var(--accent); /* Thicker copper border */
+    border: 4px solid var(--accent);
+    /* Initial state for subtle parallax on scroll */
+    transform: translateY(0);
+    transition: transform 0.5s ease-out;
 }
 
 @keyframes floating-shadow {
@@ -168,7 +197,17 @@ header.fixed-header{
     overflow:hidden;
     box-shadow:0 10px 30px rgba(51, 26, 0, 0.08);
     position:relative;
-    transition:transform .5s ease-out, box-shadow .5s;
+    transition:transform .5s ease-out, box-shadow .5s, opacity var(--animation-duration) var(--animation-ease), transform var(--animation-duration) var(--animation-ease);
+    
+    /* Staggered animation properties */
+    opacity:0;
+    transform:translateY(20px);
+    transition-delay: var(--delay, 0ms);
+    will-change: transform, opacity;
+}
+.tile.inview{
+    opacity:1;
+    transform:translateY(0);
 }
 /* ANIMATION: Tile Hover (Elegant) */
 .tile:hover{
@@ -176,14 +215,14 @@ header.fixed-header{
     box-shadow:0 20px 45px rgba(51, 26, 0, 0.2);
 }
 .tile img{ width:100%; height:200px; object-fit:cover; display:block; }
-.tile .meta{ padding:14px; font-weight:800; color:var(--deep); background:rgba(160, 196, 184, 0.2); } /* Muted sage background */
+.tile .meta{ padding:14px; font-weight:800; color:var(--deep); background:rgba(160, 196, 184, 0.2); }
 
 /* tables */
 .table-wrap{ overflow:auto; margin-top:25px; }
 table{ width:100%; border-collapse:collapse; font-size:1rem; }
 th, td{ padding:16px 14px; border-bottom:1px solid rgba(20,30,40,0.05); text-align:left; vertical-align:top; }
-th{ background:linear-gradient(180deg,var(--bg-start),#fdfdfd); color:var(--deep); font-weight:800; text-transform: uppercase; border-bottom: 3px solid var(--accent); /* Thicker copper line */ }
-td:nth-child(3) { font-weight: 700; color: var(--primary-brown); } /* Coffee brown for key column */
+th{ background:linear-gradient(180deg,var(--bg-start),#fdfdfd); color:var(--deep); font-weight:800; text-transform: uppercase; border-bottom: 3px solid var(--accent); }
+td:nth-child(3) { font-weight: 700; color: var(--primary-brown); }
 
 /* AI Table specific styling */
 #ai-metrics .num {
@@ -191,7 +230,7 @@ td:nth-child(3) { font-weight: 700; color: var(--primary-brown); } /* Coffee bro
     font-size: 1.2rem;
     font-weight: 800;
 }
-#advanced-strategy h2 { color: var(--primary-brown); } /* Use coffee brown for this section */
+#advanced-strategy h2 { color: var(--primary-brown); }
 
 /* Chart size adjustment */
 .charts{ display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:30px; margin-top:30px; }
@@ -209,22 +248,31 @@ td:nth-child(3) { font-weight: 700; color: var(--primary-brown); } /* Coffee bro
     margin-bottom: 15px;
     line-height: 1.6;
     color: var(--deep);
+    /* Subtle hover effect */
+    transition: color 0.3s;
+}
+.professional-list li:hover {
+    color: var(--primary-brown);
 }
 .professional-list li:before {
-    content: "☕"; /* Coffee cup bullet */
+    content: "☕";
     position: absolute;
     left: 0;
     color: var(--accent);
     font-size: 1.2rem;
     top: 0;
+    transition: transform 0.3s ease;
+}
+.professional-list li:hover:before {
+    transform: rotate(-10deg) scale(1.1);
 }
 
-/* FOOTER STYLES */
+/* FOOTER STYLES (Improved Details) */
 footer{
     padding: 30px 20px;
-    border-top: 1px solid rgba(192, 124, 74, 0.3);
-    background: var(--bg-start);
-    color: var(--deep);
+    border-top: 3px solid var(--accent); /* Thicker accent border */
+    background: var(--deep); /* Dark background for high contrast */
+    color: var(--bg-start);
     text-align: center;
 }
 .footer-wrap{
@@ -246,11 +294,20 @@ footer{
 
 /* PROFESSIONAL NAME FORMAT - signature */
 .author-name strong {
-    color: var(--deep);
+    color: var(--bg-start);
     font-weight: 800;
     font-size: 1.1em;
     letter-spacing: 0.5px;
-    display: inline-block;
+    display: block;
+    margin-bottom: 5px;
+}
+.author-role {
+    color: var(--muted-sage);
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
 }
 
 /* Footer links & signature adjustments */
@@ -260,17 +317,18 @@ footer{
     margin-top: 10px;
 }
 .footer-links a{
-    color: var(--deep);
-    font-size: 1.6rem; /* Icon size used previously */
+    color: var(--bg-start);
+    font-size: 1.6rem;
     transition: color 0.3s, transform 0.3s;
 }
 .footer-links a:hover{
-    color: var(--accent); /* Hover effect using accent color */
-    transform: scale(1.15);
+    color: var(--accent);
+    transform: scale(1.15) translateY(-2px);
 }
 .footer-meta {
     font-size: 0.85rem;
     color: var(--primary-brown);
+    color: rgba(255, 255, 255, 0.6);
 }
 .footer-meta .divider{
     color: var(--accent);
@@ -280,37 +338,19 @@ footer{
 
 /* Mobile Optimizations */
 @media (max-width: 768px) {
-    .case-hero {
-        flex-direction: column;
-        gap: 20px;
-    }
-    .case-right{
-        width: 100%;
-        max-width: 100%;
-    }
-    .panel {
-        padding: 30px 20px;
-    }
-    .footer-wrap {
-        flex-direction: column;
-        gap: 10px;
-    }
-    .footer-meta {
-        flex-direction: column;
-        gap: 5px;
-    }
-    .footer-meta .divider {
-        display: none; /* Hide vertical dividers on mobile stack */
-    }
-    .footer-info {
-        gap: 8px;
-    }
+    .case-hero { flex-direction: column; gap: 20px; }
+    .case-right{ width: 100%; max-width: 100%; }
+    .panel { padding: 30px 20px; }
+    .footer-wrap { flex-direction: column; gap: 10px; }
+    .footer-meta { flex-direction: column; gap: 5px; }
+    .footer-meta .divider { display: none; }
+    .footer-info { gap: 8px; }
 }
 
 /* DESKTOP FOOTER LAYOUT */
 @media (min-width: 768px) {
     .footer-wrap {
-        flex-direction: row; /* Split to two sides */
+        flex-direction: row;
         justify-content: space-between;
     }
     .footer-info {
@@ -329,39 +369,26 @@ footer{
     }
 }
 
-/* =========================
-    ADDITIONAL ANIMATIONS
-    (Cinematic, elegant)
-    ========================= */
-
-/* Fade-in on-scroll helper - used by sections + tiles + stats */
-.fade-section, .tile, .stat {
+/* ADDITIONAL ANIMATIONS (Cinematic, elegant) */
+.fade-section, .tile, .stat, .email-card, .social-card {
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 1000ms cubic-bezier(.2,.9,.3,1.1), transform 1000ms cubic-bezier(.2,.9,.3,1.1);
+    /* Base transition overridden by specific elements using --delay */
+    transition: opacity var(--animation-duration) var(--animation-ease), transform var(--animation-duration) var(--animation-ease);
 }
-.inview, .fade-section.visible, .tile.inview, .stat.inview {
+.inview, .fade-section.visible, .tile.inview, .stat.inview, .email-card.inview, .social-card.inview {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Hero breathing */
-.hero-breath {
-    animation: heroPulse 8s ease-in-out infinite alternate;
-}
-@keyframes heroPulse {
-    from { transform: translateY(0) scale(1); }
-    to { transform: translateY(-8px) scale(1.02); }
-}
-
-/* Intro overlay (full-screen cinematic) - Cafe welcome */
+/* Intro overlay */
 #intro-overlay {
     position: fixed;
     inset: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--deep); /* Deep espresso background */
+    background: var(--deep);
     color: var(--accent);
     z-index: 99999;
     pointer-events: auto;
@@ -377,20 +404,18 @@ footer{
 }
 .intro-title {
     font-family: 'Great Vibes', cursive;
-    font-size: 72px; /* A bit grander */
+    font-size: 72px;
     color: var(--accent);
     margin: 0;
     letter-spacing: 2px;
 }
 .intro-tagline {
     font-family: 'Poppins', sans-serif;
-    color: var(--bg-start); /* Use cream color */
+    color: var(--bg-start);
     margin-top: 8px;
-    letter-spacing: 3px; /* Wider spacing */
+    letter-spacing: 3px;
     text-transform: uppercase;
 }
-
-/* music control - REMOVED CSS FOR #music-control */
 
 /* signature footer style override (Great Vibes) */
 .signature {
@@ -399,95 +424,24 @@ footer{
     color: var(--accent);
     margin: 0;
     transition: transform .25s ease;
+    line-height: 1;
 }
 .signature:hover { transform: scale(1.05); text-shadow: 0 0 12px rgba(192, 124, 74, 0.8); }
 
-/* small adjustments for charts and containers inside panels (preserve original layout) */
-.charts { margin-top: 30px; }
-.panel .chart { margin-top: 15px; }
-
-/* ensure high z for header while intro is active */
-body.intro-active header.fixed-header { z-index: 100000; pointer-events: none; }
-
-/* accessibility focus */
-a:focus, button:focus { outline: 3px solid rgba(192, 124, 74, 0.5); outline-offset: 4px; }
-
-/* =======================================
-    DASHBOARD OVERRIDES (for integration)
-    ======================================= */
-/* Scoping styles to the new dashboard section */
-#full-dashboard {
-    /* Use main file's panel styling */
-}
-#full-dashboard table {
-    border: none; /* Remove table borders to follow main file's style */
-    margin-bottom: 20px;
-}
-#full-dashboard th, #full-dashboard td {
-    border: 1px solid rgba(109, 76, 65, 0.2); /* Coffee brown faint border */
-    padding: 12px;
-    text-align: center;
-}
-#full-dashboard th {
-    background: var(--primary-brown);
-    color: var(--bg-start);
-    border-bottom: 3px solid var(--accent);
-}
-#full-dashboard canvas {
-    max-width: 100%;
-    margin-bottom: 30px;
-}
-.dashboard-section { margin-bottom: 35px; }
-
-/* Currency Toggle Styling (more physical feel) */
-.currency-toggle {
-    margin-bottom: 15px;
-    display: flex;
-    gap: 20px;
-    justify-content: flex-end;
-}
-.currency-toggle label {
-    padding: 8px 15px;
-    border: 1px solid var(--primary-brown);
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 700;
-    color: var(--primary-brown);
-    background: #fff;
-    transition: all 0.3s ease;
-}
-.currency-toggle input[type="radio"] {
-    display: none;
-}
-.currency-toggle input[type="radio"]:checked + label {
-    background: var(--accent);
-    color: var(--deep);
-    border-color: var(--accent);
-    box-shadow: 0 4px 10px rgba(192, 124, 74, 0.3);
-    transform: translateY(-2px);
-}
-
-/* =======================================
-    EMAIL CARD NEW STYLES (Requested Improvement)
-    ======================================= */
-.email-card-group {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-    margin-top: 30px;
-}
+/* EMAIL CARD NEW STYLES (Staggered Animation) */
 .email-card {
     background: var(--card);
     border-radius: var(--radius);
     padding: 25px;
     box-shadow: 0 5px 15px rgba(51, 26, 0, 0.1);
     border: 1px solid rgba(192, 124, 74, 0.2);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-
-    /* Animation */
+    transition: transform 0.4s ease, box-shadow 0.4s ease, opacity var(--animation-duration) var(--animation-ease), transform var(--animation-duration) var(--animation-ease);
+    
+    /* Staggered animation properties */
     opacity: 0;
     transform: translateY(20px);
-    transition: all 1s cubic-bezier(.2,.9,.3,1.1);
+    transition-delay: var(--delay, 0ms);
+    will-change: transform, opacity;
 }
 .email-card.inview {
     opacity: 1;
@@ -498,85 +452,20 @@ a:focus, button:focus { outline: 3px solid rgba(192, 124, 74, 0.5); outline-offs
     box-shadow: 0 15px 35px rgba(51, 26, 0, 0.2);
     cursor: pointer;
 }
-.email-card h4 {
-    margin: 0 0 10px;
-    color: var(--deep);
-    font-size: 1.25rem;
-    font-family: 'Playfair Display', serif;
-    border-bottom: 2px solid var(--muted-sage);
-    padding-bottom: 5px;
-}
-.email-card .language-tag {
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: var(--bg-start);
-    background: var(--primary-brown);
-    padding: 3px 8px;
-    border-radius: 4px;
-    display: inline-block;
-    margin-right: 10px;
-}
-.email-card .subject {
-    font-style: italic;
-    color: var(--deep);
-    margin: 8px 0;
-    font-size: 1.05rem;
-    font-weight: 600;
-}
-.email-card .copy-text {
-    background: rgba(160, 196, 184, 0.1); /* Muted Sage Light */
-    padding: 15px;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    margin-top: 15px;
-    border-left: 3px solid var(--accent);
-}
-.email-card .analysis {
-    margin-top: 15px;
-    padding: 10px;
-    background: var(--bg-start);
-    border-radius: 8px;
-    font-size: 0.85rem;
-    color: var(--deep);
-    border: 1px dashed rgba(192, 124, 74, 0.4);
-}
-.email-card .analysis strong {
-    color: var(--primary-brown);
-    display: block;
-    margin-bottom: 3px;
-}
-.email-card .metric-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 5px 0;
-    border-bottom: 1px dashed rgba(109, 76, 65, 0.1);
-    font-size: 0.95rem;
-}
-.email-card .metric-label {
-    color: var(--primary-brown);
-    font-weight: 600;
-}
-.email-card .metric-value {
-    color: var(--accent);
-    font-weight: 800;
-}
-.email-card .metric-item:last-child {
-    border-bottom: none;
-}
 
-/* =======================================
-    SOCIAL MEDIA CARD NEW STYLES
-    ======================================= */
+/* SOCIAL MEDIA CARD NEW STYLES (Staggered Animation) */
 .social-card {
     background: #fff;
     border-radius: var(--radius);
     overflow: hidden;
     box-shadow: 0 10px 20px rgba(51, 26, 0, 0.1);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    /* Animation */
+    transition: transform 0.4s ease, box-shadow 0.4s ease, opacity var(--animation-duration) var(--animation-ease), transform var(--animation-duration) var(--animation-ease);
+
+    /* Staggered animation properties */
     opacity: 0;
     transform: translateY(20px);
-    transition: all 1s cubic-bezier(.2,.9,.3,1.1);
+    transition-delay: var(--delay, 0ms);
+    will-change: transform, opacity;
 }
 .social-card.inview {
     opacity: 1;
@@ -586,87 +475,8 @@ a:focus, button:focus { outline: 3px solid rgba(192, 124, 74, 0.5); outline-offs
     transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(51, 26, 0, 0.15);
 }
-.social-card-header {
-    background: var(--primary-brown);
-    color: #fff;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.social-card-header h4 {
-    margin: 0;
-    font-size: 1.1rem;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-}
-.social-card-platform {
-    font-size: 1.5rem;
-    color: var(--bg-start);
-}
-.social-card-body {
-    padding: 20px;
-}
-.social-card-img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    display: block;
-}
-.social-card-metrics {
-    margin-top: 15px;
-    padding: 10px 0;
-    border-top: 1px dashed var(--muted-sage);
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
-}
-.social-metric .val {
-    color: var(--accent);
-    font-size: 1.4rem;
-    font-weight: 800;
-}
-.social-metric .lab {
-    font-size: 0.85rem;
-    color: var(--primary-brown);
-    font-weight: 600;
-    margin-top: 2px;
-}
-.social-card-text {
-    font-size: 0.95rem;
-    margin: 10px 0 15px;
-    font-style: italic;
-    color: var(--deep);
-}
-.social-card-hashtags {
-    font-size: 0.8rem;
-    color: var(--muted-sage);
-    font-weight: 600;
-}
 
-
-/* SEO Table overrides for distinct aesthetic */
-#seo-performance table {
-    text-align: center;
-}
-#seo-performance th {
-    background: var(--muted-sage);
-    color: var(--deep);
-    border-bottom: 3px solid var(--primary-brown);
-}
-#seo-performance td {
-    font-size: 0.95rem;
-}
-#seo-performance .pos {
-    font-weight: 800;
-    color: var(--accent);
-}
-#seo-performance .volume {
-    font-weight: 700;
-    color: var(--primary-brown);
-}
-
-/* CSS END: LUXURY CAFE AESTHETIC */
+/* CSS END: LUXURY CAFE AESTHETIC V2 */
 </style>
 </head>
 <body>
@@ -680,7 +490,7 @@ a:focus, button:focus { outline: 3px solid rgba(192, 124, 74, 0.5); outline-offs
 <header class="fixed-header" role="banner">
     <div class="header-inner">
         <div class="brand">
-            <img src="3_Assets/Logo/logo.png" alt="Haksoss café logo">
+            <img src="3_Assets/Logo/logo.png" alt="Haksoss café logo" loading="lazy">
             <div>
                 <h1 class="site-title">Haksoss — Luxury Morning Experience Campaign</h1>
             </div>
@@ -699,10 +509,10 @@ a:focus, button:focus { outline: 3px solid rgba(192, 124, 74, 0.5); outline-offs
 Purpose: Establish Haksoss as Alexandria’s premium morning destination through bilingual, sensory storytelling, high-end visuals, and a loyalty-led conversion strategy.</p>
 
 <div class="quick-stats">
-<div class="stat"><div class="val">80,800</div><div class="lab">Total Reach</div></div>
-<div class="stat"><div class="val">1,070</div><div class="lab">Loyalty Sign-ups</div></div>
-<div class="stat"><div class="val">11.3%</div><div class="lab">Avg Engagement Rate</div></div>
-<div class="stat"><div class="val">411%</div><div class="lab">Overall Campaign ROI</div></div>
+<div class="stat" data-delay="0"><div class="val">80,800</div><div class="lab">Total Reach</div></div>
+<div class="stat" data-delay="100"><div class="val">1,070</div><div class="lab">Loyalty Sign-ups</div></div>
+<div class="stat" data-delay="200"><div class="val">11.3%</div><div class="lab">Avg Engagement Rate</div></div>
+<div class="stat" data-delay="300"><div class="val">411%</div><div class="lab">Overall Campaign ROI</div></div>
 </div>
 
 <div style="margin-top:20px;">
@@ -712,38 +522,42 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
 </div>
 
 <div class="case-right">
-<img src="3_Assets/Images/hero-latte.jpg" alt="Hero Latte coffee by the sea at Haksoss Café">
+<img src="3_Assets/Images/hero-latte.jpg" alt="Hero Latte coffee by the sea at Haksoss Café" loading="lazy">
 </div>
 </div>
 </section>
+
+<hr class="section-divider">
 
 <section id="creative" class="panel fade-section">
 <h2>Creative Execution & Visual Assets (Photo Gallery)</h2>
 <p class="muted">All campaign visuals and templates used across posts, stories, and ads—optimized for morning light and high-end aesthetic.</p>
 
 <div class="gallery" aria-hidden>
-<div class="tile"><img src="3_Assets/Images/hero-latte.jpg" alt="Hero Latte coffee"><div class="meta">hero-latte.jpg</div></div>
-<div class="tile"><img src="3_Assets/Images/chocolate-croissant.jpg" alt="Freshly baked chocolate croissant"><div class="meta">chocolate-croissant.jpg</div></div>
-<div class="tile"><img src="3_Assets/Images/seasonal-treat.jpg" alt="Seasonal breakfast treat"><div class="meta">seasonal-treat.jpg</div></div>
-<div class="tile"><img src="3_Assets/Images/special-latte.jpg" alt="Special latte creation"><div class="meta">special-latte.jpg</div></div>
-<div class="tile"><img src="3_Assets/Images/special-offer.jpg" alt="Special offer on lattes"><div class="meta">special-offer.jpg</div></div>
-<div class="tile"><img src="3_Assets/Images/loyalty-program.jpg" alt="Haksoss Loyalty Program benefits"><div class="meta">loyalty-program.jpg</div></div>
+<div class="tile" data-delay="0"><img src="3_Assets/Images/hero-latte.jpg" alt="Hero Latte coffee" loading="lazy"><div class="meta">hero-latte.jpg</div></div>
+<div class="tile" data-delay="50"><img src="3_Assets/Images/chocolate-croissant.jpg" alt="Freshly baked chocolate croissant" loading="lazy"><div class="meta">chocolate-croissant.jpg</div></div>
+<div class="tile" data-delay="100"><img src="3_Assets/Images/seasonal-treat.jpg" alt="Seasonal breakfast treat" loading="lazy"><div class="meta">seasonal-treat.jpg</div></div>
+<div class="tile" data-delay="150"><img src="3_Assets/Images/special-latte.jpg" alt="Special latte creation" loading="lazy"><div class="meta">special-latte.jpg</div></div>
+<div class="tile" data-delay="200"><img src="3_Assets/Images/special-offer.jpg" alt="Special offer on lattes" loading="lazy"><div class="meta">special-offer.jpg</div></div>
+<div class="tile" data-delay="250"><img src="3_Assets/Images/loyalty-program.jpg" alt="Haksoss Loyalty Program benefits" loading="lazy"><div class="meta">loyalty-program.jpg</div></div>
 
-<div class="tile"><img src="3_Assets/1_Templates/hero_latte_post.png" alt="Hero Latte social media template"><div class="meta">hero_latte_post.png (template)</div></div>
-<div class="tile"><img src="3_Assets/1_Templates/special_latte.png" alt="Special latte social media template"><div class="meta">special_latte.png (template)</div></div>
-<div class="tile"><img src="3_Assets/1_Templates/season_offer.png" alt="Seasonal offer social media template"><div class="meta">season_offer.png (template)</div></div>
-<div class="tile"><img src="3_Assets/1_Templates/haksoss_post.png" alt="Haksoss brand post template"><div class="meta">haksoss_post.png (template)</div></div>
-<div class="tile"><img src="3_Assets/1_Templates/discover_more.png" alt="Discover more carousel template"><div class="meta">discover_more.png (template)</div></div>
+<div class="tile" data-delay="300"><img src="3_Assets/1_Templates/hero_latte_post.png" alt="Hero Latte social media template" loading="lazy"><div class="meta">hero_latte_post.png (template)</div></div>
+<div class="tile" data-delay="350"><img src="3_Assets/1_Templates/special_latte.png" alt="Special latte social media template" loading="lazy"><div class="meta">special_latte.png (template)</div></div>
+<div class="tile" data-delay="400"><img src="3_Assets/1_Templates/season_offer.png" alt="Seasonal offer social media template" loading="lazy"><div class="meta">season_offer.png (template)</div></div>
+<div class="tile" data-delay="450"><img src="3_Assets/1_Templates/haksoss_post.png" alt="Haksoss brand post template" loading="lazy"><div class="meta">haksoss_post.png (template)</div></div>
+<div class="tile" data-delay="500"><img src="3_Assets/1_Templates/discover_more.png" alt="Discover more carousel template" loading="lazy"><div class="meta">discover_more.png (template)</div></div>
 </div>
 </section>
 
+<hr class="section-divider">
+
 <section id="emails" class="panel fade-section">
-<h2>Emails — Full Campaign Sequence & Performance Analysis </h2>
-<p class="muted"> </p>
+<h2>Emails — Full Campaign Sequence & Performance Analysis (12 Emails)</h2>
+<p class="muted">Copy-ready email content used in the bilingual (English/Arabic) campaign, optimized for open rate and intent. Click/hover on a card for full details.</p>
 
 <div class="email-card-group">
 
-    <div class="email-card">
+    <div class="email-card" data-delay="0">
         <h4>Morning Awakening (1/6)</h4>
         <span class="language-tag"><i class="fas fa-globe"></i> English</span>
         <p class="subject"><i class="fas fa-envelope"></i> Subject: Wake up with the perfect cup</p>
@@ -759,7 +573,7 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
         </div>
     </div>
 
-    <div class="email-card">
+    <div class="email-card" data-delay="50">
         <h4>Signature Indulgence (2/6)</h4>
         <span class="language-tag"><i class="fas fa-globe"></i> English</span>
         <p class="subject"><i class="fas fa-envelope"></i> Subject: Mornings deserve indulgence</p>
@@ -775,7 +589,7 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
         </div>
     </div>
 
-    <div class="email-card">
+    <div class="email-card" data-delay="100">
         <h4>Exclusive Offer (3/6)</h4>
         <span class="language-tag"><i class="fas fa-globe"></i> English</span>
         <p class="subject"><i class="fas fa-envelope"></i> Subject: Limited-time morning upgrade</p>
@@ -791,7 +605,7 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
         </div>
     </div>
 
-    <div class="email-card">
+    <div class="email-card" data-delay="150">
         <h4>Loyalty Invitation (4/6)</h4>
         <span class="language-tag"><i class="fas fa-globe"></i> English</span>
         <p class="subject"><i class="fas fa-envelope"></i> Subject: Join Haksoss Loyalty: Unlock VIP Status</p>
@@ -807,7 +621,7 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
         </div>
     </div>
 
-    <div class="email-card">
+    <div class="email-card" data-delay="200">
         <h4>Haksoss Spotlight (5/6)</h4>
         <span class="language-tag"><i class="fas fa-globe"></i> English</span>
         <p class="subject"><i class="fas fa-envelope"></i> Subject: Why guests choose Haksoss (Social Proof)</p>
@@ -823,7 +637,7 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
         </div>
     </div>
 
-    <div class="email-card">
+    <div class="email-card" data-delay="250">
         <h4>Final Sunrise Reminder (6/6)</h4>
         <span class="language-tag"><i class="fas fa-globe"></i> English</span>
         <p class="subject"><i class="fas fa-envelope"></i> Subject: Don’t miss the morning elegance</p>
@@ -839,7 +653,7 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
         </div>
     </div>
 
-    <div class="email-card">
+    <div class="email-card" data-delay="300">
         <h4>صحوة الصباح (1/6)</h4>
         <span class="language-tag"><i class="fas fa-language"></i> Arabic</span>
         <p class="subject" dir="rtl" style="text-align:right;"><i class="fas fa-envelope"></i> الموضوع: ابدأ صباحك بأفضل فنجان</p>
@@ -855,7 +669,7 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
         </div>
     </div>
 
-    <div class="email-card">
+    <div class="email-card" data-delay="350">
         <h4>المتعة المميزة (2/6)</h4>
         <span class="language-tag"><i class="fas fa-language"></i> Arabic</span>
         <p class="subject" dir="rtl" style="text-align:right;"><i class="fas fa-envelope"></i> الموضوع: الصباح يستحق الترف</p>
@@ -871,7 +685,7 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
         </div>
     </div>
 
-    <div class="email-card">
+    <div class="email-card" data-delay="400">
         <h4>عرض حصري (3/6)</h4>
         <span class="language-tag"><i class="fas fa-language"></i> Arabic</span>
         <p class="subject" dir="rtl" style="text-align:right;"><i class="fas fa-envelope"></i> الموضوع: استمتع بعرضنا المحدود لترقية صباحك</p>
@@ -887,7 +701,7 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
         </div>
     </div>
 
-    <div class="email-card">
+    <div class="email-card" data-delay="450">
         <h4>دعوة الولاء (4/6)</h4>
         <span class="language-tag"><i class="fas fa-language"></i> Arabic</span>
         <p class="subject" dir="rtl" style="text-align:right;"><i class="fas fa-envelope"></i> الموضوع: انضم لولاء هكسوس: افتح حالة الـ VIP</p>
@@ -903,7 +717,7 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
         </div>
     </div>
 
-    <div class="email-card">
+    <div class="email-card" data-delay="500">
         <h4>تسليط الضوء على هكسوس (5/6)</h4>
         <span class="language-tag"><i class="fas fa-language"></i> Arabic</span>
         <p class="subject" dir="rtl" style="text-align:right;"><i class="fas fa-envelope"></i> الموضوع: لماذا يختار الضيوف هكسوس (الدليل الاجتماعي)</p>
@@ -919,7 +733,7 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
         </div>
     </div>
 
-    <div class="email-card">
+    <div class="email-card" data-delay="550">
         <h4>تذكير شروق الشمس (6/6)</h4>
         <span class="language-tag"><i class="fas fa-language"></i> Arabic</span>
         <p class="subject" dir="rtl" style="text-align:right;"><i class="fas fa-envelope"></i> الموضوع: لا تفوت تجربة الأناقة</p>
@@ -948,6 +762,8 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
 </section>
 </section>
 
+<hr class="section-divider">
+
 <section id="social-media" class="panel fade-section">
     <h2>Social Media Marketing & Ad Performance (Meta & TikTok)</h2>
     <p class="muted">Detailed metrics and content for the top 10 best-performing social media ads/posts, optimized for reach and conversion intent.</p>
@@ -958,12 +774,12 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
     </div>
 
     <div class="email-card-group" style="margin-top: 40px;">
-        <div class="social-card">
+        <div class="social-card" data-delay="0">
             <div class="social-card-header">
                 <h4>Hero Latte Launch (EN)</h4>
                 <div class="social-card-platform"><i class="fab fa-facebook-square"></i></div>
             </div>
-            <img class="social-card-img" src="3_Assets/1_Templates/hero_latte_post.png" alt="Hero Latte social media ad">
+            <img class="social-card-img" src="3_Assets/1_Templates/hero_latte_post.png" alt="Hero Latte social media ad" loading="lazy">
             <div class="social-card-body">
                 <div class="social-card-text">Velvety, aromatic, perfect balance – Your morning luxury awaits. Start your day with the Hero Latte, crafted to perfection at Haksoss.</div>
                 <div class="social-card-hashtags">#HeroLatte #LuxuryCoffee #AlexandriaMornings</div>
@@ -975,12 +791,12 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
             </div>
         </div>
 
-        <div class="social-card">
+        <div class="social-card" data-delay="100">
             <div class="social-card-header" dir="rtl" style="justify-content: flex-end;">
                 <div class="social-card-platform" style="margin-left: 10px;"><i class="fab fa-instagram"></i></div>
                 <h4>كرواسون الشوكولاتة (AR)</h4>
             </div>
-            <img class="social-card-img" src="3_Assets/Images/chocolate-croissant.jpg" alt="Chocolate Croissant social media ad">
+            <img class="social-card-img" src="3_Assets/Images/chocolate-croissant.jpg" alt="Chocolate Croissant social media ad" loading="lazy">
             <div class="social-card-body" dir="rtl" style="text-align: right;">
                 <div class="social-card-text">استمتع بكرواسون الشوكولاتة – طبقات من المعجنات مع الشوكولاتة الغنية. اكتشف المزيج المثالي مع قهوتك في هكسوس.</div>
                 <div class="social-card-hashtags">#كرواسون_الشوكولاتة #إفطار_فاخر #ترف_الصباح</div>
@@ -992,12 +808,12 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
             </div>
         </div>
 
-        <div class="social-card">
+        <div class="social-card" data-delay="200">
             <div class="social-card-header">
                 <h4>Seasonal Offer (EN)</h4>
                 <div class="social-card-platform"><i class="fab fa-tiktok"></i></div>
             </div>
-            <img class="social-card-img" src="3_Assets/Images/seasonal-treat.jpg" alt="Seasonal Treat social media ad">
+            <img class="social-card-img" src="3_Assets/Images/seasonal-treat.jpg" alt="Seasonal Treat social media ad" loading="lazy">
             <div class="social-card-body">
                 <div class="social-card-text">Don’t miss our limited-time Seasonal Treats – fresh, delicious, and capturing every season. Elevate your mornings with Haksoss’ exclusive offers.</div>
                 <div class="social-card-hashtags">#SeasonalTreats #LuxuryBreakfast #LimitedTimeOffer</div>
@@ -1009,12 +825,12 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
             </div>
         </div>
 
-        <div class="social-card">
+        <div class="social-card" data-delay="300">
             <div class="social-card-header" dir="rtl" style="justify-content: flex-end;">
                 <div class="social-card-platform" style="margin-left: 10px;"><i class="fab fa-facebook-f"></i></div>
                 <h4>برنامج الولاء (AR)</h4>
             </div>
-            <img class="social-card-img" src="3_Assets/Images/loyalty-program.jpg" alt="Loyalty Program social media ad">
+            <img class="social-card-img" src="3_Assets/Images/loyalty-program.jpg" alt="Loyalty Program social media ad" loading="lazy">
             <div class="social-card-body" dir="rtl" style="text-align: right;">
                 <div class="social-card-text">ارتقِ بصباحك مع ولاء هكسوس. اكتشف الفخامة في كل زيارة. انضم الآن لبرنامج الـ VIP واحصل على مكافآت حصرية.</div>
                 <div class="social-card-hashtags">#ولاء_هكسوس #برنامج_VIP #ترف_الصباح</div>
@@ -1036,6 +852,8 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
         </ul>
     </div>
 </section>
+
+<hr class="section-divider">
 
 <section id="seo-performance" class="panel fade-section">
     <h2>SEO & Organic Performance: Dominating Local Luxury Search</h2>
@@ -1085,6 +903,8 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
         </ul>
     </div>
 </section>
+
+<hr class="section-divider">
 
 <section id="full-dashboard" class="panel fade-section">
     <h2>Full KPIs & Performance Dashboard: Financials, ROI, & Predictive Analytics</h2>
@@ -1195,6 +1015,8 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
     </div>
 </section>
 
+<hr class="section-divider">
+
 
 <section id="advanced-strategy" class="panel fade-section">
 <h2>Advanced Strategy & Next Steps</h2>
@@ -1212,6 +1034,7 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
     <div class="footer-wrap">
         <div class="footer-info">
             <p class="signature">Moe Abdelrazek</p>
+            <p class="author-role">Digital Marketing & Strategy</p>
             <div class="footer-links">
                 <a href="#" target="_blank" aria-label="LinkedIn profile"><i class="fab fa-linkedin"></i></a>
                 <a href="#" target="_blank" aria-label="Behance portfolio"><i class="fab fa-behance-square"></i></a>
@@ -1222,7 +1045,7 @@ Purpose: Establish Haksoss as Alexandria’s premium morning destination through
         <div class="footer-meta">
             <span>&copy; 2024 Haksoss Café Case Study</span>
             <span class="divider">|</span>
-            <span>Marketing & Strategy</span>
+            <span>All Data Protected</span>
         </div>
     </div>
 </footer>
@@ -1242,13 +1065,12 @@ const BACKGROUND_CREAM = '#FAF0E6';
 (function(){
     const KEY = 'haksoss_intro_seen';
     const overlay = document.getElementById('intro-overlay');
-    if (!overlay) return; // Exit if overlay is missing
+    if (!overlay) return;
 
-    document.body.classList.add('intro-active'); // prevent interactions while deciding
+    document.body.classList.add('intro-active');
 
     function showIntro() {
         overlay.style.display = 'flex';
-        // automatically hide after 3.3s
         setTimeout(() => {
             overlay.style.opacity = '0';
             overlay.style.transition = 'opacity 600ms ease';
@@ -1259,44 +1081,58 @@ const BACKGROUND_CREAM = '#FAF0E6';
         }, 3300);
     }
 
-    // show only if not seen before
     try {
         const seen = localStorage.getItem(KEY);
         if (!seen) {
-            // show intro and set flag
             showIntro();
             localStorage.setItem(KEY, 'true');
         } else {
-            // hide immediately if seen before
             overlay.style.display = 'none';
             document.body.classList.remove('intro-active');
         }
     } catch(e) {
-        // If localStorage fails (e.g., security restrictions), just hide after a delay
         showIntro();
     }
 })();
 
-/* ====================== Intersection Observer (Scroll Animation) ====================== */
+/* ====================== Staggered Animation & Intersection Observer ====================== */
 (function(){
-    const targets = document.querySelectorAll('.fade-section, .tile, .stat, .email-card, .social-card');
+    const targets = document.querySelectorAll('.panel, .fade-section');
+    const staggeredTargets = document.querySelectorAll('.stat, .tile, .email-card, .social-card');
 
+    // 1. Set Staggered Delays
+    staggeredTargets.forEach(target => {
+        const delay = target.getAttribute('data-delay');
+        if (delay) {
+            target.style.setProperty('--delay', `${delay}ms`);
+        }
+    });
+
+    // 2. Intersection Observer Logic (Handles both simple panels and staggered elements)
     const options = {
-        root: null, // viewport
+        root: null,
         rootMargin: '0px',
-        threshold: 0.1 // visible 10%
+        threshold: 0.05 // 5% visible
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('inview');
-                observer.unobserve(entry.target);
+                // For non-staggered panels, unobserve immediately
+                if (!entry.target.hasAttribute('data-delay')) {
+                     observer.unobserve(entry.target);
+                }
             }
         });
     }, options);
 
+    // Observe panels first
     targets.forEach(target => {
+        observer.observe(target);
+    });
+    // Observe all staggered elements
+    staggeredTargets.forEach(target => {
         observer.observe(target);
     });
 })();
@@ -1313,7 +1149,7 @@ const BACKGROUND_CREAM = '#FAF0E6';
                 labels: ['Facebook', 'Instagram', 'TikTok', 'Email (Open Rate)'],
                 datasets: [{
                     label: 'Avg. Engagement Rate',
-                    data: [13.2, 16.5, 12.2, 43.5], // Email is Open Rate for comparison
+                    data: [13.2, 16.5, 12.2, 43.5],
                     backgroundColor: [COFFEE_BROWN, COPPER_ACCENT, ESPRESSO_BROWN, MUTED_SAGE]
                 }]
             },
@@ -1325,9 +1161,6 @@ const BACKGROUND_CREAM = '#FAF0E6';
             }
         });
     }
-
-    // 2. Ad Spend Distribution (Pie Chart) - REMOVED AS NOT USED IN FINAL TEMPLATE
-    // const spendPie = document.getElementById('spendPie'); 
 
     // 3. Organic Traffic Trend (New Chart)
     const organicTrafficChart = document.getElementById('organicTrafficChart');
@@ -1414,7 +1247,7 @@ const BACKGROUND_CREAM = '#FAF0E6';
             data: {
                 labels: ['18-24', '25-34', '35-44', '45+'],
                 datasets: [{
-                    data: [22, 48, 19, 11], // Distribution of loyalty sign-ups by age
+                    data: [22, 48, 19, 11],
                     backgroundColor: [COFFEE_BROWN, COPPER_ACCENT, MUTED_SAGE, ESPRESSO_BROWN]
                 }]
             },
@@ -1436,7 +1269,7 @@ const BACKGROUND_CREAM = '#FAF0E6';
             data: {
                 labels: ['Loyalty Members', 'Standard Users'],
                 datasets: [{
-                    data: [78, 22], // 78% of LTV comes from loyalty members (increased metric)
+                    data: [78, 22],
                     backgroundColor: [COPPER_ACCENT, MUTED_SAGE]
                 }]
             },
@@ -1457,12 +1290,12 @@ const BACKGROUND_CREAM = '#FAF0E6';
 (function(){
     // Financial Data (Revenue breakdown adjusted for 411% ROI)
     const financialData = [
-        {channel:"Facebook Ads", spend:7000, revenue:35800}, // 411% ROI
-        {channel:"Google Ads", spend:5000, revenue:10200}, // 104% ROI
-        {channel:"Influencers", spend:3000, revenue:4500}, // 50% ROI
-        {channel:"Email Marketing", spend:1500, revenue:1800}, // 20% ROI
-        {channel:"Creative Production", spend:1000, revenue:0}, // No direct revenue
-        {channel:"Miscellaneous", spend:500, revenue:200} // Small revenue stream
+        {channel:"Facebook Ads", spend:7000, revenue:35800},
+        {channel:"Google Ads", spend:5000, revenue:10200},
+        {channel:"Influencers", spend:3000, revenue:4500},
+        {channel:"Email Marketing", spend:1500, revenue:1800},
+        {channel:"Creative Production", spend:1000, revenue:0},
+        {channel:"Miscellaneous", spend:500, revenue:200}
     ];
 
     const calculateROI = (revenue, spend) => {
@@ -1560,7 +1393,7 @@ const BACKGROUND_CREAM = '#FAF0E6';
         let totalSpend = 0;
 
         rows.forEach((row, index) => {
-            if (index >= financialData.length) return; // Skip N/A rows
+            if (index >= financialData.length) return;
 
             const data = financialData[index];
             const spend = data.spend;
@@ -1572,7 +1405,6 @@ const BACKGROUND_CREAM = '#FAF0E6';
             const displaySpend = spend * multiplier;
             const displayRevenue = revenue * multiplier;
 
-            // Only sum up direct ad/marketing spend channels for total calcs
             if (data.channel !== 'Creative Production') {
                 totalSpend += spend;
                 totalRevenue += revenue;
@@ -1582,7 +1414,6 @@ const BACKGROUND_CREAM = '#FAF0E6';
             row.cells[2].textContent = (data.channel === 'Creative Production' ? 'N/A' : currencySymbol + displayRevenue.toLocaleString());
             row.cells[3].textContent = (data.channel === 'Creative Production' ? 'N/A' : roi);
 
-            // Update Insights Table ROI
             if (insightsRows[index]) {
                 insightsRows[index].cells[1].textContent = roi;
             }
