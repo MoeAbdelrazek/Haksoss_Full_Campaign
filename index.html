@@ -228,7 +228,6 @@ header.fixed-header{
 </html>
 
 
-
 <section id="campaign-intro">
   <h2 class="section-title">Campaign Introduction</h2>
   <p class="section-intro">
@@ -266,94 +265,90 @@ header.fixed-header{
 </section>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Times+New+Roman&display=swap');
-
 #campaign-intro {
   border-radius: 20px;
   padding: 50px 30px;
   margin: 60px auto;
-  background: linear-gradient(145deg, #fdf5ed, #fceedd);
-  max-width: 1200px;
-  animation: fadeInUp 1s ease forwards;
-  font-family: 'Times New Roman', serif;
-  font-size: 16px; /* Base font */
-  line-height: 1.8;
-  color: #5a3e36;
+  background: linear-gradient(145deg, var(--latte), #fff9f2);
+  max-width: var(--maxw);
+  animation: fadeUp 1s ease forwards;
+  font-family: "Times New Roman", serif;
+  color: var(--deep);
+  box-shadow: var(--card-shadow);
 }
 
-/* Force all text inside to 16px and same color */
+/* Inner typography follows case study */
 #campaign-intro * {
-  font-size: 16px !important;
-  font-family: 'Times New Roman', serif !important;
-  color: #5a3e36;
+  color: var(--deep);
 }
 
-/* Elegant Title Style */
-.section-title {
+/* Section title */
+#campaign-intro .section-title {
   text-align: center;
-  margin-bottom: 25px;
-  font-family: 'Playfair Display', serif !important;
-  font-size: 20px !important;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  color: #3b2314;
-  text-shadow: 1px 2px 3px rgba(90,62,54,0.15);
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: var(--deep);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 8px;
+  margin-bottom: 20px;
 }
 
-/* Intro paragraph */
-.section-intro {
+/* Section intro paragraph */
+#campaign-intro .section-intro {
   text-align: center;
   max-width: 900px;
   margin: 0 auto 40px auto;
+  font-family: "Times New Roman", serif;
+  font-size: 1.2rem;
   line-height: 1.8;
 }
 
 /* Cards layout */
-.intro-cards {
+#campaign-intro .intro-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 25px;
   margin-top: 40px;
 }
 
-/* Card style */
-.intro-card {
-  background-color: #e6c9aa; /* latte tone */
-  border-radius: 16px;
+/* Individual card */
+#campaign-intro .intro-card {
+  background-color: #f5e6d0; /* latte tone */
+  border-radius: var(--radius);
   padding: 25px 20px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  box-shadow: var(--card-shadow);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.intro-card:hover {
+#campaign-intro .intro-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 30px rgba(0,0,0,0.15);
 }
 
-/* Headings inside cards */
-.intro-card h3 {
+/* Card headings */
+#campaign-intro .intro-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: var(--deep);
   margin-bottom: 12px;
-  font-weight: bold;
-  font-size: 16px !important;
-  color: #3b2314;
+  font-weight: 700;
 }
 
-/* Paragraphs inside cards */
-.intro-card p {
+/* Card paragraphs */
+#campaign-intro .intro-card p {
+  font-family: "Times New Roman", serif;
+  font-size: 1.2rem;
   line-height: 1.8;
-  font-size: 16px !important;
-  color: #5a3e36;
 }
 
-/* Responsive adjustments */
+/* Responsive */
 @media(max-width:768px){
   #campaign-intro { padding: 36px 20px; margin: 40px 18px; }
-  .intro-cards { gap: 18px; }
-  .intro-card { padding: 20px 16px; }
+  #campaign-intro .intro-cards { gap: 18px; }
+  #campaign-intro .intro-card { padding: 20px 16px; }
 }
 </style>
-
 
 
 
