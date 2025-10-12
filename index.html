@@ -1052,7 +1052,7 @@ document.addEventListener("DOMContentLoaded", () => {
     High-value, measurable objectives that guided the Haksoss Café campaign, ensuring all efforts contributed directly to revenue and brand loyalty.
   </p>
 
-  <!-- SMART Goals Table with Progress Bars -->
+  <!-- SMART Goals Table -->
   <div class="smart-goals-table">
     <table>
       <thead>
@@ -1066,104 +1066,189 @@ document.addEventListener("DOMContentLoaded", () => {
         <tr>
           <td>Specific</td>
           <td>Establish Haksoss Café as Alexandria’s top luxury morning destination via premium loyalty conversion.</td>
-          <td>
-            <div class="progress-container">
-              <div class="progress-bar" data-percent="107">1,070 / 1,000 Sign-ups</div>
-            </div>
-          </td>
+          <td>Target: 1,000 Sign-ups<br>Actual: 1,070 Sign-ups</td>
         </tr>
         <tr>
           <td>Measurable</td>
           <td>Maximize financial efficiency and scalability of digital spend.</td>
-          <td>
-            <div class="progress-container">
-              <div class="progress-bar" data-percent="411">ROI: 411%</div>
-            </div>
-          </td>
+          <td>Target ROI: 350%<br>Actual ROI: 411%</td>
         </tr>
         <tr>
           <td>Achievable</td>
           <td>Leverage superior creative assets to generate interest.</td>
-          <td>
-            <div class="progress-container">
-              <div class="progress-bar" data-percent="108">80,800 / 75,000 Reach</div>
-            </div>
-          </td>
+          <td>Target Reach: 75,000<br>Actual Reach: 80,800</td>
         </tr>
         <tr>
           <td>Relevant</td>
           <td>Support the brand vision: "Ultimate Luxury Morning Experience."</td>
-          <td>
-            <div class="progress-container">
-              <div class="progress-bar" data-percent="116">58% / 50% Sales Mix</div>
-            </div>
-          </td>
+          <td>Target Sales Mix: 50%<br>Actual: 58%</td>
         </tr>
         <tr>
           <td>Time-bound</td>
           <td>Execute full 10-step campaign sequence within 90 days.</td>
-          <td>
-            <div class="progress-container">
-              <div class="progress-bar" data-percent="100">90 Days Completed</div>
-            </div>
-          </td>
+          <td>Duration: 90 Days<br>Goal Achieved</td>
         </tr>
       </tbody>
     </table>
   </div>
+
+  <!-- KPI Graphs -->
+  <div class="kpi-graphs">
+    <canvas id="kpiGraph" width="600" height="250"></canvas>
+  </div>
+</section>
+
+<section id="budget-flighting">
+  <h2 class="section-title">Budget Allocation & Flighting Plan</h2>
+  <p class="section-intro">
+    Optimized spend across channels and a structured 90-day funnel to maximize reach, conversions, and loyalty sign-ups.
+  </p>
+
+  <div class="budget-graphs">
+    <canvas id="budgetGraph" width="600" height="250"></canvas>
+    <canvas id="flightingGraph" width="600" height="200"></canvas>
+  </div>
 </section>
 
 <style>
-.smart-goals-table table {
+section {
+  border-radius: 20px;
+  padding: 50px 30px;
+  margin: 60px auto;
+  background: #1e1e1e; /* Dark background for contrast */
+  box-shadow: 0 12px 28px rgba(0,0,0,0.3);
+  max-width: 1100px;
+  font-family: 'Lora', serif;
+  color: #f0f0f0;
+  animation: fadeInUp 1s ease forwards;
+}
+.section-title {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.3rem;
+  color: #ffcf7f;
+  margin-bottom: 15px;
+}
+.section-intro {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 35px auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #f3e1c0;
+}
+
+/* Table Dark Theme */
+table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
 }
-.smart-goals-table th, .smart-goals-table td {
+th, td {
   border: 1px solid #444;
   padding: 12px 15px;
   text-align: left;
   background-color: #2a2a2a;
   color: #f0f0f0;
 }
-.smart-goals-table th {
+th {
   background-color: #333;
   color: #ffcf7f;
 }
 
-/* Progress Bar Styles */
-.progress-container {
-  width: 100%;
-  height: 22px;
-  background-color: #3a3a3a;
-  border-radius: 12px;
-  overflow: hidden;
-  margin-top: 5px;
-}
-.progress-bar {
-  height: 100%;
-  width: 0;
-  background: linear-gradient(90deg, #ff7f50, #ffcf7f);
-  color: #1e1e1e;
-  font-weight: 600;
+/* Canvas Graph Styling */
+.kpi-graphs, .budget-graphs {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 12px 0 0 12px;
-  transition: width 2s ease-out, background 1s ease;
-  white-space: nowrap;
-  font-size: 0.9rem;
+  flex-direction: column;
+  gap: 35px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% {opacity:0; transform: translateY(20px);}
+  100% {opacity:1; transform: translateY(0);}
 }
 </style>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  const progressBars = document.querySelectorAll('.progress-bar');
-  progressBars.forEach(bar => {
-    const percent = bar.getAttribute('data-percent');
-    setTimeout(() => {
-      bar.style.width = percent + '%';
-    }, 300);
+  // KPI Graph
+  const ctxKPI = document.getElementById('kpiGraph').getContext('2d');
+  new Chart(ctxKPI, {
+    type: 'bar',
+    data: {
+      labels: ['ROAS', 'Loyalty Sign-ups', 'Reach', 'Conversion Rate', 'Engagement'],
+      datasets: [{
+        label: 'Performance (%)',
+        data: [100, 107, 108, 85, 92],
+        backgroundColor: '#ffb85c',
+        borderRadius: 6
+      }]
+    },
+    options: {
+      responsive: true,
+      animation: { duration: 1500, easing: 'easeOutBounce' },
+      plugins: { legend: { display: false } },
+      scales: {
+        y: { beginAtZero: true, grid: { color: '#444' }, ticks: { color: '#f0f0f0' } },
+        x: { grid: { color: '#444' }, ticks: { color: '#f0f0f0' } }
+      }
+    }
+  });
+
+  // Budget Allocation Graph
+  const ctxBudget = document.getElementById('budgetGraph').getContext('2d');
+  new Chart(ctxBudget, {
+    type: 'horizontalBar',
+    data: {
+      labels: ['Social Media', 'Email/CRM', 'Search SEO/SEM', 'Creative Production'],
+      datasets: [{
+        label: 'Budget Allocation (%)',
+        data: [40,30,20,10],
+        backgroundColor: ['#ff7f50','#ffa500','#ffcf7f','#f4e285'],
+        borderRadius: 5
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      animation: { duration: 1500, easing: 'easeOutCubic' },
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { grid: { color: '#444' }, ticks: { color: '#f0f0f0', beginAtZero: true } },
+        y: { grid: { color: '#444' }, ticks: { color: '#f0f0f0' } }
+      }
+    }
+  });
+
+  // Flighting Plan Graph
+  const ctxFlighting = document.getElementById('flightingGraph').getContext('2d');
+  new Chart(ctxFlighting, {
+    type: 'line',
+    data: {
+      labels: ['Launch & Awareness','Sustain & Conversion','Retention & Remarketing'],
+      datasets: [{
+        label: 'Conversion Funnel (%)',
+        data: [100,90,75],
+        backgroundColor: 'rgba(255,191,64,0.2)',
+        borderColor: '#ffbf40',
+        borderWidth: 3,
+        tension: 0.4,
+        fill: true,
+        pointRadius: 6,
+        pointBackgroundColor: '#ffcf7f'
+      }]
+    },
+    options: {
+      responsive: true,
+      animation: { duration: 1800, easing: 'easeOutQuart' },
+      plugins: { legend: { display: false } },
+      scales: {
+        y: { beginAtZero: true, max: 110, grid: { color: '#444' }, ticks: { color: '#f0f0f0' } },
+        x: { grid: { color: '#444' }, ticks: { color: '#f0f0f0' } }
+      }
+    }
   });
 });
 </script>
@@ -1172,12 +1257,12 @@ document.addEventListener("DOMContentLoaded", () => {
 <section id="kpis">
   <h2 class="section-title">Campaign KPIs & Performance Dashboard</h2>
   <p class="section-intro">
-    A comprehensive view of campaign performance, tracking ROAS, Loyalty Sign-ups, Engagement, Conversions, and Retention metrics with dynamic charts.
+    Track ROAS, Loyalty Sign-ups, Engagement, Conversions, and Retention with dynamic visuals.
   </p>
 
   <div class="kpi-grid">
 
-    <!-- ROAS Horizontal Bar -->
+    <!-- ROAS -->
     <div class="kpi-card">
       <h3>ROAS</h3>
       <div class="progress-bar">
@@ -1186,34 +1271,32 @@ document.addEventListener("DOMContentLoaded", () => {
       <p>Target: 3.5:1 | Actual: 4.11:1</p>
     </div>
 
-    <!-- Loyalty Sign-ups Horizontal Bar -->
+    <!-- Loyalty Sign-ups -->
     <div class="kpi-card">
       <h3>Loyalty Sign-ups</h3>
       <div class="progress-bar">
-        <div class="progress-fill" data-fill="107%">1,070 Sign-ups</div>
+        <div class="progress-fill" data-fill="107%">1,070</div>
       </div>
       <p>Target: 1,000 | Actual: 1,070</p>
     </div>
 
-    <!-- Email Open Rate Circular Donut -->
-    <div class="kpi-card">
+    <!-- Email Open Rate Donut -->
+    <div class="kpi-card donut-container">
       <h3>Email Open Rate</h3>
-      <div class="donut-chart" data-percent="35">
-        <div class="donut-value">35%</div>
-      </div>
+      <canvas class="donut-chart" data-percent="35"></canvas>
       <p>Target: 30% | Actual: 35%</p>
     </div>
 
-    <!-- CTR Horizontal Bar -->
+    <!-- CTR -->
     <div class="kpi-card">
-      <h3>CTR (Click-Through Rate)</h3>
+      <h3>CTR</h3>
       <div class="progress-bar">
         <div class="progress-fill" data-fill="3.8%">3.8%</div>
       </div>
       <p>Target: 3% | Actual: 3.8%</p>
     </div>
 
-    <!-- Conversion Rate Horizontal Bar -->
+    <!-- Conversion Rate -->
     <div class="kpi-card">
       <h3>Conversion Rate</h3>
       <div class="progress-bar">
@@ -1222,25 +1305,21 @@ document.addEventListener("DOMContentLoaded", () => {
       <p>Target: 5% | Actual: 6.2%</p>
     </div>
 
-    <!-- Retention Rate Circular Donut -->
-    <div class="kpi-card">
+    <!-- Retention Rate Donut -->
+    <div class="kpi-card donut-container">
       <h3>Retention Rate</h3>
-      <div class="donut-chart" data-percent="15">
-        <div class="donut-value">15%</div>
-      </div>
+      <canvas class="donut-chart" data-percent="15"></canvas>
       <p>Target: 12% | Actual: 15%</p>
     </div>
 
-    <!-- Social Engagement Circular Donut -->
-    <div class="kpi-card">
+    <!-- Social Engagement Donut -->
+    <div class="kpi-card donut-container">
       <h3>Social Engagement</h3>
-      <div class="donut-chart" data-percent="11.3">
-        <div class="donut-value">11.3%</div>
-      </div>
+      <canvas class="donut-chart" data-percent="11.3"></canvas>
       <p>Target: 10% | Actual: 11.3%</p>
     </div>
 
-    <!-- Ad Spend Efficiency Sparkline -->
+    <!-- Ad Spend Sparkline -->
     <div class="kpi-card">
       <h3>Ad Spend Efficiency</h3>
       <canvas id="sparkline"></canvas>
@@ -1251,153 +1330,156 @@ document.addEventListener("DOMContentLoaded", () => {
 </section>
 
 <style>
-  #kpis {
-    border: 2px solid #c9a073;
-    border-radius: 15px;
-    padding: 50px 30px;
-    margin: 60px auto;
-    background-color: #fff7f2;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    max-width: 1200px;
-    animation: fadeInUp 1s ease forwards;
-  }
+#kpis {
+  border-radius: 20px;
+  padding: 50px 30px;
+  margin: 60px auto;
+  background: #2b2b2b;
+  max-width: 1200px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.3);
+  color: #fff;
+  animation: fadeInUp 1s ease forwards;
+}
 
-  .section-intro {
-    text-align: center;
-    max-width:900px;
-    margin: 0 auto 40px auto;
-    color:#6b4f44;
-    font-size: 1.1rem;
-    line-height: 1.6;
-  }
+.section-title {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.3rem;
+  color: #ffd57f;
+  margin-bottom: 15px;
+}
 
-  .kpi-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-  }
+.section-intro {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 40px;
+  color: #d3d3d3;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
 
-  .kpi-card {
-    background: #fffaf4;
-    border: 1px solid #d6bfa3;
-    border-radius: 12px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
 
-  .kpi-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  }
+.kpi-card {
+  background: #1e1e1e;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
 
-  .kpi-card h3 {
-    color: #8b5e3c;
-    margin-bottom: 15px;
-  }
+.kpi-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(255, 220, 120, 0.5);
+}
 
-  .kpi-card p {
-    font-size: 14px;
-    color: #5a3e2b;
-    margin-top: 12px;
-  }
+.kpi-card h3 {
+  color: #ff9c5b;
+  margin-bottom: 15px;
+}
 
-  .progress-bar {
-    width: 100%;
-    height: 25px;
-    background-color: #e6d4c1;
-    border-radius: 12px;
-    overflow: hidden;
-    margin-bottom: 8px;
-  }
+.kpi-card p {
+  font-size: 14px;
+  color: #ccc;
+  margin-top: 12px;
+}
 
-  .progress-fill {
-    height: 100%;
-    width: 0;
-    background: linear-gradient(90deg, #c08054, #a65f3b);
-    text-align: right;
-    color: #fff;
-    font-weight: bold;
-    line-height: 25px;
-    padding-right: 10px;
-    border-radius: 12px 0 0 12px;
-    transition: width 2s ease;
-  }
+/* Horizontal bars */
+.progress-bar {
+  width: 100%;
+  height: 25px;
+  background-color: #444;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+.progress-fill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg,#ff9c5b,#ffd57f);
+  color: #1e1e1e;
+  font-weight: bold;
+  line-height: 25px;
+  text-align: right;
+  padding-right: 10px;
+  border-radius: 12px 0 0 12px;
+  transition: width 2s ease, box-shadow 0.5s ease;
+}
 
-  /* Donut Chart Styling */
-  .donut-chart {
-    position: relative;
-    width: 120px;
-    height: 120px;
-    margin: 0 auto;
-    border-radius: 50%;
-    background: conic-gradient(#c08054 0% 0%, #e6d4c1 0% 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+/* Donut canvas size */
+.donut-container canvas {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+}
 
-  .donut-value {
-    font-weight: 700;
-    color: #5a3e36;
-    font-size: 1.2rem;
-  }
-
-  canvas#sparkline {
-    width: 100%;
-    height: 60px;
-  }
-
-  @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+/* Sparkline */
+canvas#sparkline { width: 100%; height: 60px; }
 </style>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    // Animate horizontal bars
-    const fills = document.querySelectorAll('.progress-fill');
-    fills.forEach((bar, i) => {
-      setTimeout(() => { bar.style.width = bar.getAttribute('data-fill'); }, 200*i);
-    });
+document.addEventListener("DOMContentLoaded", () => {
+  // Animate horizontal bars
+  document.querySelectorAll('.progress-fill').forEach((bar, i) => {
+    setTimeout(() => {
+      bar.style.width = bar.getAttribute('data-fill');
+      bar.style.boxShadow = '0 0 12px #ffd57f';
+    }, 200*i);
+  });
 
-    // Animate donut charts
-    const donuts = document.querySelectorAll('.donut-chart');
-    donuts.forEach(donut => {
-      const percent = donut.getAttribute('data-percent');
-      setTimeout(() => {
-        donut.style.background = `conic-gradient(#c08054 0% ${percent}%, #e6d4c1 ${percent}% 100%)`;
-      }, 400);
-    });
-
-    // Sparkline for Ad Spend Efficiency
-    const ctx = document.getElementById('sparkline').getContext('2d');
-    new Chart(ctx, {
-      type: 'line',
+  // Donut charts with radial gradient
+  document.querySelectorAll('.donut-chart').forEach(canvas => {
+    const percent = canvas.getAttribute('data-percent');
+    new Chart(canvas.getContext('2d'), {
+      type: 'doughnut',
       data: {
-        labels: ["Week1","Week2","Week3","Week4","Week5","Week6"],
+        labels: ['Achieved','Remaining'],
         datasets: [{
-          label: 'Efficiency',
-          data: [80, 85, 88, 90, 87, 90],
-          fill: true,
-          backgroundColor: 'rgba(192,128,84,0.2)',
-          borderColor: '#c08054',
-          borderWidth: 2,
-          tension: 0.4,
-          pointRadius: 4,
-          pointBackgroundColor: '#a65f3b'
+          data: [percent, 100-percent],
+          backgroundColor: ['#ff9c5b', '#444'],
+          borderWidth: 0
         }]
       },
       options: {
+        responsive: false,
+        cutout: '70%',
         plugins: { legend: { display: false } },
-        scales: { x: { display: false }, y: { display: false } }
+        animation: { animateRotate: true, duration: 1500 }
       }
     });
   });
+
+  // Sparkline for Ad Spend Efficiency
+  const ctx = document.getElementById('sparkline').getContext('2d');
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ["Week1","Week2","Week3","Week4","Week5","Week6"],
+      datasets: [{
+        data: [80, 85, 88, 90, 87, 90],
+        borderColor: '#ff9c5b',
+        backgroundColor: 'rgba(255,156,91,0.2)',
+        fill: true,
+        tension: 0.4,
+        pointRadius: 4,
+        pointBackgroundColor: '#ffd57f'
+      }]
+    },
+    options: {
+      plugins: { legend: { display: false } },
+      scales: { x: { display: false }, y: { display: false } },
+      animation: { duration: 1500 }
+    }
+  });
+});
 </script>
+
 
 <section id="funnels">
   <h2 class="section-title">High-Value Conversion Funnels</h2>
