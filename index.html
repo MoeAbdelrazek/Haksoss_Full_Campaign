@@ -21,10 +21,8 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMD/2j/JcW8C1c7N+4B2bX8T8bF+x8Z8B/z/d7mXwYF6V8G5S2P8V7O8F5U9O4F8A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
-
 <style>
-/* ========== REFINED LATTE-THEMED STYLING ========== */
+/* ========== REFINED LATTE-THEMED STYLING & TIMES NEW ROMAN FONT ========== */
 :root{
     --deep:#331A00;
     --primary-brown:#6D4C41;
@@ -45,7 +43,7 @@
 html,body{height:100%}
 body{
     margin:0;
-    font-family:"Lato", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+    font-family:"Times New Roman", serif;
     color:var(--deep);
     background: linear-gradient(180deg, var(--bg-start) 0%, var(--bg-end) 100%);
     -webkit-font-smoothing:antialiased;
@@ -95,7 +93,7 @@ header.fixed-header{
     box-shadow:0 14px 28px rgba(51,26,0,0.2);
 }
 .site-title{
-    font-family:'Playfair Display', serif;
+    font-family:'Times New Roman', serif;
     font-size:1.7rem;
     color: var(--accent);
     line-height:1.1;
@@ -110,8 +108,8 @@ body.scrolled .fixed-header{
 
 /* INTRO OVERLAY */
 #intro-overlay{ text-align:center; padding:60px 20px; }
-.intro-card h1{ font-family:'Playfair Display', serif; font-size:3rem; color:var(--accent); margin:0; }
-.intro-card p{ font-family:'Lato', sans-serif; font-size:1.3rem; color:var(--deep); }
+.intro-card h1{ font-family:'Times New Roman', serif; font-size:3rem; color:var(--accent); margin:0; }
+.intro-card p{ font-family:'Times New Roman', serif; font-size:1.3rem; color:var(--deep); }
 
 /* HERO SECTION */
 .hero-section{
@@ -132,17 +130,17 @@ body.scrolled .fixed-header{
     animation: floatingShadow 7s ease-in-out infinite alternate;
 }
 .hero-section .hero-text h1{
-    font-family:'Playfair Display', serif; font-size:2.8rem; color:var(--accent); margin:12px 0 6px 0;
+    font-family:'Times New Roman', serif; font-size:2.8rem; color:var(--accent); margin:12px 0 6px 0;
 }
 .hero-section .hero-text .hero-tagline{
-    font-family:'Lato', sans-serif; font-size:1.2rem; color:var(--deep); font-weight:400; line-height:1.5;
+    font-family:'Times New Roman', serif; font-size:1.2rem; color:var(--deep); font-weight:400; line-height:1.5;
 }
 
 /* CASE HERO & QUICK STATS */
 .case-hero{ display:flex; gap:32px; align-items:flex-start; margin:60px 0; }
 .case-left{ flex:1; animation:fadeSlideIn 900ms var(--fast-ease) forwards; opacity:0; }
-.case-left h2{ font-family:'Playfair Display', serif; font-size:2.5rem; color:var(--accent); margin-bottom:12px; border-bottom:2px solid rgba(192,124,74,0.6); padding-bottom:8px; }
-.case-left .hero-description{ font-family:'Lato', sans-serif; font-size:1.15rem; color:var(--deep); margin-bottom:24px; line-height:1.6; }
+.case-left h2{ font-family:'Times New Roman', serif; font-size:2.5rem; color:var(--accent); margin-bottom:12px; border-bottom:2px solid rgba(192,124,74,0.6); padding-bottom:8px; }
+.case-left .hero-description{ font-family:'Times New Roman', serif; font-size:1.15rem; color:var(--deep); margin-bottom:24px; line-height:1.6; }
 .quick-stats{ display:flex; gap:20px; flex-wrap:wrap; }
 .stat{
     background: linear-gradient(145deg, #FFF8F0, #FAF0E6);
@@ -204,15 +202,13 @@ window.addEventListener('scroll', function(){
 <div class="page">
 <div class="wrap">
 
-    
-
 <style>
 /* ===== Haksoss Café Latte-Themed Section (Refined) ===== */
 #case {
   background: linear-gradient(180deg, #fdf6f0 0%, #f7ede3 100%);
   padding: 60px 8%;
   color: #3e2f27;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Times New Roman', serif;
   position: relative;
   overflow: hidden;
   border-radius: 20px;
@@ -220,7 +216,7 @@ window.addEventListener('scroll', function(){
 }
 
 #case h2, #case h3, #case h4, #case h5 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Times New Roman', serif;
   color: #4a3427;
   margin-bottom: 15px;
 }
@@ -352,6 +348,7 @@ window.addEventListener('scroll', function(){
   #case table { font-size: 0.9rem; }
 }
 </style>
+
 
 <section id="case" class="panel inview">
   <div class="case-hero">
@@ -517,15 +514,24 @@ window.addEventListener('scroll', function(){
 </section>
 
 <style>
-/* ===== Latte-Themed Refinements ===== */
-#case { background: #f8f5f0; padding:60px 8%; font-family:'Poppins', sans-serif; color:#3e2f27; border-radius:18px; box-shadow:0 14px 36px rgba(51,26,0,0.08); }
-#case h2, #case h3, #case h4 { font-family:'Playfair Display', serif; color:#4a3427; }
+/* === FULL LATTE-THEMED STYLING === */
+#case {
+  font-family:'Poppins', sans-serif;
+  color:#3e2f27;
+  background:#f8f5f0;
+  padding:60px 8%;
+  border-radius:18px;
+  box-shadow:0 14px 36px rgba(51,26,0,0.08);
+}
+#case h2, #case h3, #case h4 { font-family:'Playfair Display', serif; color:#4a3427; margin-bottom:12px; }
 #case h2 { font-size:2rem; border-left:4px solid #d4a574; padding-left:12px; margin-bottom:18px; }
-#case .subsection { margin-top:40px; animation:fadeInUp 1s ease; }
+#case h3, #case h4, #case h5 { margin-bottom:12px; }
 #case p, #case li { line-height:1.7; font-size:1rem; color:#4f4036; margin-bottom:14px; }
+#case .subsection { margin-top:40px; animation:fadeInUp 1s ease; }
 #case table { width:100%; border-collapse:collapse; margin:25px 0; border-radius:12px; overflow:hidden; background:#fffaf5; box-shadow:0 4px 12px rgba(0,0,0,0.05); }
 #case th { background:#d4a574; color:#fff; padding:14px; font-weight:600; font-size:1rem; text-align:left; }
-#case td { padding:14px; border-bottom:1px solid #e5d6c5; font-size:0.95rem; }
+#case td { padding:14px; border-bottom:1px solid #e5d6c5; font-size:0.95rem; transition: background 0.3s ease, transform 0.3s ease; }
+#case .data-table tr:hover td { background:#f9f1ea; transform:translateX(2px); }
 #case .highlight-row td { background:#f2e5d3; font-weight:600; }
 .chart-container { background:#fffaf5; border-radius:12px; padding:20px; box-shadow:0 2px 12px rgba(0,0,0,0.05); margin-top:20px; }
 .chart-placeholder { text-align:center; padding:25px; background:#f8f5f0; border:1px solid #e3d7ca; border-radius:10px; transition: transform 0.4s ease, box-shadow 0.4s ease; }
@@ -539,8 +545,9 @@ window.addEventListener('scroll', function(){
 </style>
 
 
+
     
-    <section id="market-audience-research" class="campaign-section">
+   <section id="market-audience-research" class="campaign-section">
   <style>
     /* ===== LATTE THEME STYLING ===== */
     #market-audience-research {
@@ -785,9 +792,10 @@ window.addEventListener('scroll', function(){
   </div>
 </section>
 
+
     
 
-    <section id="objectives-kpis" class="campaign-section">
+ <section id="objectives-kpis" class="campaign-section">
   <style>
     /* ===== LATTE THEME — OBJECTIVES & KPI SECTION ===== */
     #objectives-kpis {
@@ -830,13 +838,16 @@ window.addEventListener('scroll', function(){
     .subsection {
       margin-bottom: 60px;
       padding: 35px 40px;
-      background: rgba(255,255,255,0.9);
+      background: rgba(255,255,255,0.95);
       border-radius: 16px;
       box-shadow: 0 2px 12px rgba(80,58,45,0.05);
       animation: fadeUp 1.2s ease both;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .subsection:hover { transform: translateY(-2px); }
+    .subsection:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(80,58,45,0.1);
+    }
 
     h3 {
       font-size: 1.55rem;
@@ -846,7 +857,12 @@ window.addEventListener('scroll', function(){
       padding-left: 14px;
       font-weight: 600;
     }
-    p { font-size: 1rem; line-height: 1.7; color: #4f3c2f; margin-bottom: 16px; }
+    p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #4f3c2f;
+      margin-bottom: 16px;
+    }
 
     /* ===== TABLES ===== */
     .data-table {
@@ -871,7 +887,9 @@ window.addEventListener('scroll', function(){
       border-bottom: 1px solid #e8dcd2;
       vertical-align: top;
     }
-    .data-table tr:hover { background-color: #f8f3ee; }
+    .data-table tr:hover {
+      background-color: #f8f3ee;
+    }
     .highlight-row td {
       background: #f1e4da;
       font-weight: 600;
@@ -885,10 +903,17 @@ window.addEventListener('scroll', function(){
       padding: 25px;
       box-shadow: 0 2px 12px rgba(95,66,43,0.05);
       margin-top: 20px;
-      transition: transform 0.4s ease;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
-    .chart-container:hover { transform: scale(1.02); }
-    .chart-title { font-weight: 600; color: #704f3e; margin-bottom: 12px; }
+    .chart-container:hover {
+      transform: scale(1.02);
+      box-shadow: 0 6px 20px rgba(95,66,43,0.08);
+    }
+    .chart-title {
+      font-weight: 600;
+      color: #704f3e;
+      margin-bottom: 12px;
+    }
 
     /* ===== ANIMATIONS ===== */
     @keyframes fadeUp {
@@ -1036,7 +1061,6 @@ window.addEventListener('scroll', function(){
   </div>
 </section>
 
-    
 
    <section id="budget-timeline" class="campaign-section">
   <style>
@@ -1145,7 +1169,7 @@ window.addEventListener('scroll', function(){
       padding: 20px;
       margin-top: 25px;
       text-align: center;
-      transition: 0.3s ease;
+      transition: 0.3s ease, box-shadow 0.3s ease;
     }
     .chart-container:hover {
       background: #fdf7f1;
@@ -1268,19 +1292,17 @@ window.addEventListener('scroll', function(){
 </section>
 
     
-    <section id="core-message" class="campaign-section">
+   <section id="haksoss-campaign" class="campaign-section">
   <style>
-    /* ===== LATTE-THEMED CORE MESSAGE ===== */
-    #core-message {
-      background: linear-gradient(180deg, #f7f2ec 0%, #f3ebe3 100%);
+    /* ===== LATTE-THEMED CAMPAIGN SECTIONS ===== */
+    #haksoss-campaign {
+      font-family: "Poppins", sans-serif;
       color: #3e2f23;
       padding: 60px 8%;
-      border-radius: 20px;
-      box-shadow: 0 8px 25px rgba(80,60,40,0.08);
-      font-family: "Poppins", sans-serif;
-      animation: fadeIn 1.2s ease-in-out;
+      background: #f9f5f0;
     }
 
+    /* ===== SECTION HEADINGS ===== */
     h2 {
       font-size: 2.2rem;
       font-weight: 700;
@@ -1301,6 +1323,15 @@ window.addEventListener('scroll', function(){
       border-radius: 4px;
     }
 
+    h3 {
+      font-size: 1.5rem;
+      color: #4a3628;
+      border-left: 6px solid #b89365;
+      padding-left: 14px;
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+
     .section-intro {
       text-align: center;
       font-size: 1.05rem;
@@ -1310,6 +1341,7 @@ window.addEventListener('scroll', function(){
       line-height: 1.7;
     }
 
+    /* ===== SUBSECTION CARDS ===== */
     .subsection {
       background: #fffdfb;
       border-radius: 16px;
@@ -1323,202 +1355,7 @@ window.addEventListener('scroll', function(){
       box-shadow: 0 10px 25px rgba(100,75,50,0.1);
     }
 
-    h3 {
-      font-size: 1.5rem;
-      color: #4a3628;
-      border-left: 6px solid #b89365;
-      padding-left: 14px;
-      margin-bottom: 18px;
-      font-weight: 600;
-    }
-
-    p { font-size: 1rem; line-height: 1.8; color: #5a4635; margin-bottom: 25px; }
-
-    /* ===== TABLE STYLING ===== */
-    .data-table {
-      width: 100%;
-      border-collapse: collapse;
-      border-radius: 12px;
-      overflow: hidden;
-      margin-top: 20px;
-      box-shadow: 0 4px 12px rgba(120,90,60,0.05);
-      font-size: 0.95rem;
-    }
-    .data-table th {
-      background-color: #d9c3a9;
-      color: #3e2f23;
-      padding: 12px 16px;
-      font-weight: 600;
-      text-align: left;
-      text-transform: uppercase;
-    }
-    .data-table td {
-      background: #fffaf6;
-      padding: 12px 16px;
-      border-bottom: 1px solid #eee2d3;
-      color: #4e3d2d;
-    }
-    .data-table tr:hover td { background-color: #f8efe5; }
-    .highlight-row td { background-color: #f2e0c9; font-weight: 600; }
-
-    /* ===== LIST STYLING ===== */
-    .data-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .data-list li {
-      position: relative;
-      background: #fffaf6;
-      margin-bottom: 15px;
-      padding: 14px 18px 14px 38px;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(100,75,50,0.05);
-      font-size: 0.98rem;
-      color: #4a3628;
-      transition: background 0.3s ease, transform 0.3s ease;
-    }
-    .data-list li::before {
-      content: "☕";
-      position: absolute;
-      left: 12px;
-      top: 11px;
-      font-size: 1rem;
-      color: #b89365;
-    }
-    .data-list li:hover {
-      background: #fdf6ef;
-      transform: translateY(-3px);
-      box-shadow: 0 4px 12px rgba(100,75,50,0.08);
-    }
-
-    /* ===== ANIMATIONS ===== */
-    @keyframes fadeIn { from {opacity: 0; transform: translateY(10px);} to {opacity: 1; transform: translateY(0);} }
-    @keyframes fadeUp { from {opacity: 0; transform: translateY(20px);} to {opacity: 1; transform: translateY(0);} }
-    @keyframes slideDown { from {opacity: 0; transform: translateY(-20px);} to {opacity: 1; transform: translateY(0);} }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 768px) {
-      #core-message { padding: 40px 5%; }
-      h2 { font-size: 1.8rem; }
-      h3 { font-size: 1.3rem; }
-      .subsection { padding: 25px; }
-      .data-table th, .data-table td { font-size: 0.85rem; padding: 10px; }
-      .data-list li { font-size: 0.9rem; }
-    }
-  </style>
-
-  <h2>6.0 Core Message: The Uncompromised Morning Ritual</h2>
-  <p class="section-intro">
-    Cohesive brand voice leveraging emotional storytelling and clear value to position Haksoss Café as the ultimate luxury morning ritual.
-  </p>
-
-  <!-- Big Idea -->
-  <div class="subsection">
-    <h3>6.1 Central Theme & Big Idea</h3>
-    <p>Reposition Haksoss as an essential component of the affluent lifestyle, shifting focus from product to ritual.</p>
-    <table class="data-table theme-table">
-      <thead>
-        <tr>
-          <th>Component</th>
-          <th>Definition</th>
-          <th>Strategic Goal</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="highlight-row">
-          <td>Big Idea</td>
-          <td>Wake Up to Luxury: The Ultimate Morning Experience.</td>
-          <td>Transforms brand into an exclusive destination, justifying premium pricing.</td>
-        </tr>
-        <tr>
-          <td>Value Proposition</td>
-          <td>Hero Combo Guarantee: Hero Latte + Artisanal Croissant in an exclusive setting.</td>
-          <td>Concentrates demand on high-margin morning offerings (58% of morning sales).</td>
-        </tr>
-        <tr>
-          <td>Pillar Statement</td>
-          <td>“Savor provenance. Demand the ritual.”</td>
-          <td>Positions customers as discerning, valuing authenticity and sophistication.</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- Storytelling -->
-  <div class="subsection">
-    <h3>6.2 Emotional Hook & Storytelling</h3>
-    <p>Highlighting craftsmanship and ingredient provenance to create aspirational, exclusive narratives.</p>
-    <ul class="data-list storytelling-list">
-      <li>Cinematic Vlogs: Slow, detailed visual storytelling emphasizing the luxury ritual.</li>
-      <li>Emotional Hook: Inclusion in an elite community signaling status and taste.</li>
-      <li>Tone: Artisanal, elegant, and timeless, reinforcing brand sophistication.</li>
-    </ul>
-  </div>
-
-  <!-- Conversion Messaging -->
-  <div class="subsection">
-    <h3>6.3 Value Proposition Clarity</h3>
-    <p>Messaging links premium price directly to exceptional value, driving conversions.</p>
-    <ul class="data-list clarity-metrics-list">
-      <li>Product Focus: Hero Combo accounted for 58% of morning sales.</li>
-      <li>Financial Justification: Messaging supported 4.11:1 ROAS.</li>
-      <li>Digital Resonance: Achieved 11.3% Engagement Rate, surpassing competitors by 376%.</li>
-    </ul>
-  </div>
-</section>
-
-    
-   <section id="visual-identity" class="campaign-section">
-  <style>
-    /* ===== VISUAL IDENTITY & CONTENT STRATEGY ===== */
-    #visual-identity {
-      background: #f9f7f4;
-      color: #2c2c2c;
-      padding: 80px 8%;
-      border-radius: 20px;
-      box-shadow: 0 4px 20px rgba(58,40,30,0.08);
-      font-family: 'Inter', sans-serif;
-    }
-
-    /* Section Headings */
-    #visual-identity h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
-      color: #3A281E;
-      margin-bottom: 25px;
-      position: relative;
-      text-align: center;
-    }
-    #visual-identity h2::after {
-      content: "";
-      display: block;
-      width: 80px;
-      height: 4px;
-      background: #C5A069;
-      margin: 10px auto 0;
-      border-radius: 4px;
-    }
-
-    h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      color: #3A281E;
-      margin-top: 45px;
-      margin-bottom: 15px;
-    }
-
-    .section-intro {
-      font-size: 1.05rem;
-      color: #5c4d3d;
-      margin-bottom: 35px;
-      line-height: 1.6;
-      text-align: justify;
-    }
-
-    p { line-height: 1.7; margin-bottom: 20px; color: #3b3229; }
-
-    /* ===== TABLE STYLING ===== */
+    /* ===== TABLES ===== */
     .data-table {
       width: 100%;
       border-collapse: separate;
@@ -1532,58 +1369,166 @@ window.addEventListener('scroll', function(){
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .data-table:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.08); }
-
     .data-table thead { background-color: #3A281E; color: #F5F0E6; text-align: left; }
-    .data-table th, .data-table td {
-      padding: 14px 18px;
-      border-bottom: 1px solid #e5ddd0;
-    }
+    .data-table th, .data-table td { padding: 14px 18px; border-bottom: 1px solid #e5ddd0; }
     .data-table tbody tr:hover { background-color: #f5f0e6; transition: background 0.3s ease; }
     .highlight-row { background-color: #C5A06920; font-weight: 600; }
 
-    /* ===== LIST STYLING ===== */
-    .data-list {
-      margin: 25px 0;
-      padding-left: 25px;
-    }
+    /* ===== LISTS ===== */
+    .data-list { margin: 25px 0; padding-left: 25px; }
     .data-list li {
       margin-bottom: 14px;
       line-height: 1.7;
       position: relative;
       color: #3b3229;
     }
-    .data-list li::before {
-      content: "▹";
-      color: #C5A069;
-      position: absolute;
-      left: -20px;
-    }
+    .data-list li::before { content: "▹"; color: #C5A069; position: absolute; left: -20px; }
 
-    /* ===== SUBSECTION CARD STYLE ===== */
-    .subsection {
+    /* ===== CHART PLACEHOLDER ===== */
+    .chart-container {
       background: #fffaf6;
-      border-radius: 16px;
-      padding: 35px 40px;
-      margin-bottom: 45px;
-      box-shadow: 0 4px 12px rgba(120,90,60,0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px dashed #d4bfa1;
+      border-radius: 14px;
+      padding: 20px;
+      margin-top: 25px;
+      text-align: center;
+      transition: 0.3s ease;
     }
-    .subsection:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(100,75,50,0.1);
-    }
+    .chart-container:hover { background: #fdf7f1; box-shadow: 0 0 12px rgba(100,75,50,0.08); }
+    .chart-title { font-weight: 600; color: #4a3628; margin-bottom: 12px; }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeIn { from {opacity: 0; transform: translateY(10px);} to {opacity: 1; transform: translateY(0);} }
+    @keyframes fadeUp { from {opacity: 0; transform: translateY(20px);} to {opacity: 1; transform: translateY(0);} }
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
-      #visual-identity { padding: 50px 5%; }
-      h2 { font-size: 1.7rem; }
-      h3 { font-size: 1.2rem; margin-top: 35px; }
-      .data-table th, .data-table td { padding: 10px; font-size: 0.85rem; }
+      #haksoss-campaign { padding: 40px 5%; }
+      h2 { font-size: 1.8rem; }
+      h3 { font-size: 1.3rem; }
+      .subsection { padding: 25px; }
+      .data-table th, .data-table td { font-size: 0.85rem; padding: 10px; }
       .data-list li { font-size: 0.9rem; }
     }
   </style>
 
-  <!-- Visual Identity Section -->
+  <!-- 5.0 Budget & Timeline -->
+  <h2>5.0 Budget & Timeline: 90-Day High-Efficiency Plan</h2>
+  <p class="section-intro">
+    Financial blueprint and chronological execution for the Haksoss Café Luxury Campaign. $18,000 USD budget strategically allocated across three phases to maximize ROAS.
+  </p>
+
+  <div class="subsection">
+    <h3>5.1 Budget Allocation</h3>
+    <p>Funds prioritized toward high-ROI, visual-first channels supporting Hero Combo and loyalty acquisition.</p>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Channel</th>
+          <th>Budget %</th>
+          <th>Amount (USD)</th>
+          <th>Rationale</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Social Media</td><td>40%</td><td>$7,200</td><td>Primary conversion driver; cinematic Hero Combo ads.</td></tr>
+        <tr><td>Email/CRM</td><td>30%</td><td>$5,400</td><td>High-LTV acquisition; 10-step email sequence.</td></tr>
+        <tr><td>Search (SEO/SEM)</td><td>20%</td><td>$3,600</td><td>High-intent traffic capture.</td></tr>
+        <tr><td>Creative Production</td><td>10%</td><td>$1,800</td><td>High-fidelity imagery and video assets.</td></tr>
+        <tr class="highlight-row"><td>Total</td><td>100%</td><td>$18,000</td><td>Delivered 411% ROI.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="chart-container">
+      <h5 class="chart-title">Budget Allocation by Channel</h5>
+      <p>[Donut Chart Placeholder]</p>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <h3>5.2 Flighting Plan</h3>
+    <p>Three-phase, 90-day schedule to sequentially build awareness, conversions, and retention.</p>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Phase</th>
+          <th>Duration</th>
+          <th>Focus</th>
+          <th>Activities & Channels</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Phase 1: Launch</td><td>Days 1–30</td><td>Awareness</td><td>Social media cinematic ads, SEO content.</td></tr>
+        <tr><td>Phase 2: Sustain</td><td>Days 31–60</td><td>Conversions</td><td>Email 10-step sequence, SEM high-intent ads.</td></tr>
+        <tr><td>Phase 3: Retention</td><td>Days 61–90</td><td>Loyalty</td><td>Remarketing ads, personalized email offers.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="subsection">
+    <h3>5.3 ROI Targets & Projections</h3>
+    <p>Financial outcomes exceeded all primary targets, demonstrating scalability and efficiency.</p>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Metric</th>
+          <th>Target</th>
+          <th>Actual</th>
+          <th>Variance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Total Revenue</td><td>$63,000</td><td>$73,980</td><td>+17.4%</td></tr>
+        <tr class="highlight-row"><td>ROAS</td><td>3.5:1</td><td>4.11:1</td><td>+0.61</td></tr>
+        <tr><td>Loyalty LTV</td><td>EGP 10M</td><td>EGP 16.05M</td><td>+60.5%</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 6.0 Core Message -->
+  <h2>6.0 Core Message: The Uncompromised Morning Ritual</h2>
+  <p class="section-intro">
+    Cohesive brand voice leveraging emotional storytelling and clear value to position Haksoss Café as the ultimate luxury morning ritual.
+  </p>
+
+  <div class="subsection">
+    <h3>6.1 Central Theme & Big Idea</h3>
+    <p>Reposition Haksoss as an essential component of the affluent lifestyle, shifting focus from product to ritual.</p>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Component</th>
+          <th>Definition</th>
+          <th>Strategic Goal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="highlight-row"><td>Big Idea</td><td>Wake Up to Luxury: The Ultimate Morning Experience.</td><td>Transforms brand into an exclusive destination, justifying premium pricing.</td></tr>
+        <tr><td>Value Proposition</td><td>Hero Combo Guarantee: Hero Latte + Artisanal Croissant in an exclusive setting.</td><td>Concentrates demand on high-margin morning offerings (58% of morning sales).</td></tr>
+        <tr><td>Pillar Statement</td><td>“Savor provenance. Demand the ritual.”</td><td>Positions customers as discerning, valuing authenticity and sophistication.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="subsection">
+    <h3>6.2 Emotional Hook & Storytelling</h3>
+    <ul class="data-list">
+      <li>Cinematic Vlogs: Slow, detailed visual storytelling emphasizing the luxury ritual.</li>
+      <li>Emotional Hook: Inclusion in an elite community signaling status and taste.</li>
+      <li>Tone: Artisanal, elegant, and timeless, reinforcing brand sophistication.</li>
+    </ul>
+  </div>
+
+  <div class="subsection">
+    <h3>6.3 Value Proposition Clarity</h3>
+    <ul class="data-list">
+      <li>Product Focus: Hero Combo accounted for 58% of morning sales.</li>
+      <li>Financial Justification: Messaging supported 4.11:1 ROAS.</li>
+      <li>Digital Resonance: Achieved 11.3% Engagement Rate, surpassing competitors by 376%.</li>
+    </ul>
+  </div>
+
+  <!-- 7.0 Visual Identity & Content Strategy -->
   <h2>7.0 Visual Identity & Creative Guidelines</h2>
   <p class="section-intro">
     Codifying visual and textual elements ensures all executions reflect the "Artisanal Luxury" positioning and support the high **11.3% Engagement Rate**.
@@ -1591,7 +1536,6 @@ window.addEventListener('scroll', function(){
 
   <div class="subsection">
     <h3>7.1 Color Palette, Typography & Imagery</h3>
-    <p>Restraint, high contrast, and timeless sophistication define the aesthetic.</p>
     <table class="data-table">
       <thead>
         <tr>
@@ -1601,28 +1545,15 @@ window.addEventListener('scroll', function(){
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Primary Colors</td>
-          <td>Deep Cocoa (#3A281E), Muted Gold (#C5A069), Parchment (#F5F0E6)</td>
-          <td>Evokes premium sensory experience; supports luxury ritual positioning.</td>
-        </tr>
-        <tr>
-          <td>Typography</td>
-          <td>Serif Display (Garamond/Playfair), Sans-Serif Body (Montserrat/Inter)</td>
-          <td>Balances timeless luxury with modern digital readability.</td>
-        </tr>
-        <tr>
-          <td>Imagery</td>
-          <td>Macro-focused, cinematic shots; natural light; ingredient textures emphasized.</td>
-          <td>Supports "Art of Provenance" storytelling; product is the object of desire.</td>
-        </tr>
+        <tr><td>Primary Colors</td><td>Deep Cocoa (#3A281E), Muted Gold (#C5A069), Parchment (#F5F0E6)</td><td>Evokes premium sensory experience; supports luxury ritual positioning.</td></tr>
+        <tr><td>Typography</td><td>Serif Display (Garamond/Playfair), Sans-Serif Body (Montserrat/Inter)</td><td>Balances timeless luxury with modern digital readability.</td></tr>
+        <tr><td>Imagery</td><td>Macro-focused, cinematic shots; natural light; ingredient textures emphasized.</td><td>Supports "Art of Provenance" storytelling; product is the object of desire.</td></tr>
       </tbody>
     </table>
   </div>
 
   <div class="subsection">
     <h3>7.2 Creative Formats & Execution</h3>
-    <p>Guidelines enforced across channels to maximize engagement and conversions.</p>
     <table class="data-table">
       <thead>
         <tr>
@@ -1632,21 +1563,9 @@ window.addEventListener('scroll', function(){
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Hero Video Ads</td>
-          <td>Short cinematic vlogs (6-15s), vertical 9:16; slow-motion Hero Combo shots; muted gold logo</td>
-          <td>Achieved **11.3% Engagement Rate**, encouraging organic sharing.</td>
-        </tr>
-        <tr>
-          <td>Display Banners</td>
-          <td>High-contrast product on off-white; low-CPL CTA: "Acquire Your Loyalty Membership"</td>
-          <td>Supported **3.8% Email CTR** by visually priming high-intent users.</td>
-        </tr>
-        <tr>
-          <td>Email Creative</td>
-          <td>Minimalist, Off-White/Cocoa, single product image, personalized exclusivity cues</td>
-          <td>Nurtured **1,070 Loyalty Sign-ups**; reinforced premium perception.</td>
-        </tr>
+        <tr><td>Hero Video Ads</td><td>Short cinematic vlogs (6-15s), vertical 9:16; slow-motion Hero Combo shots; muted gold logo</td><td>Achieved **11.3% Engagement Rate**, encouraging organic sharing.</td></tr>
+        <tr><td>Display Banners</td><td>High-contrast product on off-white; low-CPL CTA: "Acquire Your Loyalty Membership"</td><td>Supported **3.8% Email CTR** by visually priming high-intent users.</td></tr>
+        <tr><td>Email Creative</td><td>Minimalist, Off-White/Cocoa, single product image, personalized exclusivity cues</td><td>Nurtured **1,070 Loyalty Sign-ups**; reinforced premium perception.</td></tr>
       </tbody>
     </table>
   </div>
@@ -1660,7 +1579,6 @@ window.addEventListener('scroll', function(){
     </ul>
   </div>
 
-  <!-- Content Strategy Section -->
   <h2>8.0 Content Strategy: High-LTV Conversion Funnel</h2>
   <p class="section-intro">
     Converts the "Artisanal Luxury" visual identity into action, guiding the Urban Professional Elite persona through a 4-pillar content funnel to maximize high-value loyalty sign-ups.
@@ -1668,7 +1586,6 @@ window.addEventListener('scroll', function(){
 
   <div class="subsection">
     <h3>8.1 Content Pillars</h3>
-    <p>Balanced content addresses emotional and rational drivers, supporting the **4.11:1 ROAS**.</p>
     <table class="data-table">
       <thead>
         <tr>
@@ -1679,30 +1596,10 @@ window.addEventListener('scroll', function(){
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Emotional/Aspirational</td>
-          <td>Create 'Ultimate Morning Ritual' & status desire</td>
-          <td>Cinematic Vlogs; ambient café shots</td>
-          <td>Awareness & Interest</td>
-        </tr>
-        <tr>
-          <td>Educational/Provenance</td>
-          <td>Justify premium through ingredient craft stories</td>
-          <td>Blog: "12-Hour Cold Proof"; Coffee sourcing emails</td>
-          <td>Consideration</td>
-        </tr>
-        <tr class="highlight-row">
-          <td>Promotional/Conversion</td>
-          <td>Drive immediate action on Hero Combo & Loyalty</td>
-          <td>Social Ads; 10-step Email Sequence</td>
-          <td>Conversion</td>
-        </tr>
-        <tr>
-          <td>UGC</td>
-          <td>Validate luxury status & organic reach</td>
-          <td>Patron photos; "My Haksoss Moment" contest</td>
-          <td>Retention & Advocacy</td>
-        </tr>
+        <tr><td>Emotional/Aspirational</td><td>Create 'Ultimate Morning Ritual' & status desire</td><td>Cinematic Vlogs; ambient café shots</td><td>Awareness & Interest</td></tr>
+        <tr><td>Educational/Provenance</td><td>Justify premium through ingredient craft stories</td><td>Blog: "12-Hour Cold Proof"; Coffee sourcing emails</td><td>Consideration</td></tr>
+        <tr class="highlight-row"><td>Promotional/Conversion</td><td>Drive immediate action on Hero Combo & Loyalty</td><td>Social Ads; 10-step Email Sequence</td><td>Conversion</td></tr>
+        <tr><td>UGC</td><td>Validate luxury status & organic reach</td><td>Patron photos; "My Haksoss Moment" contest</td><td>Retention & Advocacy</td></tr>
       </tbody>
     </table>
   </div>
@@ -1719,24 +1616,9 @@ window.addEventListener('scroll', function(){
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Social Posts</td>
-          <td>5/week (Video/Carousels)</td>
-          <td>3/week (UGC/Education)</td>
-          <td>High volume during launch captures market share</td>
-        </tr>
-        <tr>
-          <td>Blog/SEO</td>
-          <td>1/week</td>
-          <td>2/month</td>
-          <td>Builds search authority & supports SEM campaigns</td>
-        </tr>
-        <tr>
-          <td>Email Drops</td>
-          <td>2/week (Soft Sell)</td>
-          <td>3/week (10-step Loyalty)</td>
-          <td>Drives high volume of loyalty sign-ups</td>
-        </tr>
+        <tr><td>Social Posts</td><td>5/week (Video/Carousels)</td><td>3/week (UGC/Education)</td><td>High volume during launch captures market share</td></tr>
+        <tr><td>Blog/SEO</td><td>1/week</td><td>2/month</td><td>Builds search authority & supports SEM campaigns</td></tr>
+        <tr><td>Email Drops</td><td>2/week (Soft Sell)</td><td>3/week (10-step Loyalty)</td><td>Drives high volume of loyalty sign-ups</td></tr>
       </tbody>
     </table>
   </div>
@@ -1753,38 +1635,19 @@ window.addEventListener('scroll', function(){
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Instagram/TikTok</td>
-          <td>9:16 Cinematic Vlogs, Carousels</td>
-          <td>Emotional/Aspirational</td>
-          <td>Maximize engagement & organic sharing</td>
-        </tr>
-        <tr>
-          <td>Email</td>
-          <td>Minimalist HTML, single image</td>
-          <td>Promotional/Educational</td>
-          <td>Move from consideration → conversion</td>
-        </tr>
-        <tr>
-          <td>Blog/SEO</td>
-          <td>Long-form 800-1200 words</td>
-          <td>Educational/Provenance</td>
-          <td>Capture high-intent search traffic</td>
-        </tr>
-        <tr>
-          <td>Search Ads</td>
-          <td>Concise, high-intent copy</td>
-          <td>Promotional</td>
-          <td>Convert existing demand immediately</td>
-        </tr>
+        <tr><td>Instagram/TikTok</td><td>9:16 Cinematic Vlogs, Carousels</td><td>Emotional/Aspirational</td><td>Maximize engagement & organic sharing</td></tr>
+        <tr><td>Email</td><td>Minimalist HTML, single image</td><td>Promotional/Educational</td><td>Move from consideration → conversion</td></tr>
+        <tr><td>Blog/SEO</td><td>Long-form 800-1200 words</td><td>Educational/Provenance</td><td>Capture high-intent search traffic</td></tr>
+        <tr><td>Search Ads</td><td>Concise, high-intent copy</td><td>Promotional</td><td>Convert existing demand immediately</td></tr>
       </tbody>
     </table>
   </div>
+
 </section>
 
 <section id="creative" class="campaign-section">
   <style>
-    /* ===== CONTENT STRATEGY & SEARCH ===== */
+    /* ===== CAMPAIGN SECTION BASE ===== */
     #creative, #search-seo-ppc {
       background: #fffdf9;
       color: #2c2c2c;
@@ -1794,14 +1657,13 @@ window.addEventListener('scroll', function(){
       font-family: 'Inter', sans-serif;
     }
 
-    /* Section Headings */
     h2 {
       font-family: 'Playfair Display', serif;
       font-size: 2.2rem;
       color: #3A281E;
       text-align: center;
-      position: relative;
       margin-bottom: 25px;
+      position: relative;
     }
     h2::after {
       content: "";
@@ -1849,6 +1711,8 @@ window.addEventListener('scroll', function(){
       width: 100%;
       display: block;
       transition: transform 0.3s ease;
+      object-fit: cover;
+      border-radius: 12px;
     }
     .tile:hover img { transform: scale(1.05); }
     .tile .meta {
@@ -1884,7 +1748,7 @@ window.addEventListener('scroll', function(){
     .data-table tbody tr:hover { background-color: #f5f0e6; transition: background 0.3s ease; }
     .highlight-row { background-color: #C5A06920; font-weight: 600; }
 
-    /* ===== SUBSECTION CARD STYLE ===== */
+    /* ===== SUBSECTION CARDS ===== */
     .subsection {
       background: #fffaf6;
       border-radius: 16px;
@@ -1913,505 +1777,25 @@ window.addEventListener('scroll', function(){
     }
   </style>
 
-  <!-- Creative Execution Section -->
+  <!-- Creative Execution -->
   <h2>Creative Execution & Visual Assets</h2>
   <p class="muted">Optimized visuals for posts, stories, and ads—capturing morning light and premium aesthetic.</p>
   <div class="gallery">
-    <div class="tile"><img src="3_Assets/Images/hero-latte.jpg" alt="Hero Latte coffee"><div class="meta">hero-latte.jpg</div></div>
-    <div class="tile"><img src="3_Assets/Images/chocolate-croissant.jpg" alt="Chocolate croissant"><div class="meta">chocolate-croissant.jpg</div></div>
-    <div class="tile"><img src="3_Assets/Images/seasonal-treat.jpg" alt="Seasonal breakfast treat"><div class="meta">seasonal-treat.jpg</div></div>
-    <div class="tile"><img src="3_Assets/Images/special-latte.jpg" alt="Special latte creation"><div class="meta">special-latte.jpg</div></div>
-    <div class="tile"><img src="3_Assets/Images/special-offer.jpg" alt="Special offer on lattes"><div class="meta">special-offer.jpg</div></div>
-    <div class="tile"><img src="3_Assets/Images/loyalty-program.jpg" alt="Haksoss Loyalty Program"><div class="meta">loyalty-program.jpg</div></div>
-    <div class="tile"><img src="3_Assets/1_Templates/hero_latte_post.png" alt="Hero Latte social template"><div class="meta">hero_latte_post.png (template)</div></div>
-    <div class="tile"><img src="3_Assets/1_Templates/special_latte.png" alt="Special latte social template"><div class="meta">special_latte.png (template)</div></div>
-    <div class="tile"><img src="3_Assets/1_Templates/season_offer.png" alt="Seasonal offer template"><div class="meta">season_offer.png (template)</div></div>
-    <div class="tile"><img src="3_Assets/1_Templates/haksoss_post.png" alt="Haksoss brand template"><div class="meta">haksoss_post.png (template)</div></div>
-    <div class="tile"><img src="3_Assets/1_Templates/discover_more.png" alt="Discover more carousel template"><div class="meta">discover_more.png (template)</div></div>
+    <div class="tile"><img src="3_Assets/Images/hero-latte.jpg" alt="Hero Latte coffee" loading="lazy"><div class="meta">hero-latte.jpg</div></div>
+    <div class="tile"><img src="3_Assets/Images/chocolate-croissant.jpg" alt="Chocolate croissant" loading="lazy"><div class="meta">chocolate-croissant.jpg</div></div>
+    <div class="tile"><img src="3_Assets/Images/seasonal-treat.jpg" alt="Seasonal breakfast treat" loading="lazy"><div class="meta">seasonal-treat.jpg</div></div>
+    <div class="tile"><img src="3_Assets/Images/special-latte.jpg" alt="Special latte creation" loading="lazy"><div class="meta">special-latte.jpg</div></div>
+    <div class="tile"><img src="3_Assets/Images/special-offer.jpg" alt="Special offer on lattes" loading="lazy"><div class="meta">special-offer.jpg</div></div>
+    <div class="tile"><img src="3_Assets/Images/loyalty-program.jpg" alt="Haksoss Loyalty Program" loading="lazy"><div class="meta">loyalty-program.jpg</div></div>
+    <div class="tile"><img src="3_Assets/1_Templates/hero_latte_post.png" alt="Hero Latte social template" loading="lazy"><div class="meta">hero_latte_post.png (template)</div></div>
+    <div class="tile"><img src="3_Assets/1_Templates/special_latte.png" alt="Special latte social template" loading="lazy"><div class="meta">special_latte.png (template)</div></div>
+    <div class="tile"><img src="3_Assets/1_Templates/season_offer.png" alt="Seasonal offer template" loading="lazy"><div class="meta">season_offer.png (template)</div></div>
+    <div class="tile"><img src="3_Assets/1_Templates/haksoss_post.png" alt="Haksoss brand template" loading="lazy"><div class="meta">haksoss_post.png (template)</div></div>
+    <div class="tile"><img src="3_Assets/1_Templates/discover_more.png" alt="Discover more carousel template" loading="lazy"><div class="meta">discover_more.png (template)</div></div>
   </div>
 
-  <!-- Search & SEO Section -->
-  <section id="search-seo-ppc" class="campaign-section">
-    <h2>9.0 Search Strategy: SEO & PPC</h2>
-    <p class="section-intro">Capturing high-intent UPE traffic; reduced CPL <strong>54.5% below</strong> industry average.</p>
 
-    <div class="subsection">
-      <h3>9.1 Keyword & Intent Strategy</h3>
-      <table class="data-table">
-        <thead>
-          <tr><th>Focus</th><th>Keyword Cluster</th><th>Intent</th><th>Goal</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>PPC</td><td>Luxury breakfast Alexandria, Premium coffee Gleem, Exclusive brunch San Stefano</td><td>Immediate Purchase</td><td>Drive paid traffic → Loyalty Sign-up</td></tr>
-          <tr><td>SEO</td><td>Artisanal croissant Alexandria, Specialty coffee sourcing Egypt, Alexandria cafe provenance</td><td>Research/Educational</td><td>Build brand authority & justify quality</td></tr>
-          <tr><td>Hero Product Focus</td><td>Haksoss Hero Latte, Signature chocolate croissant</td><td>Navigational/Brand</td><td>Accelerate purchase path</td></tr>
-        </tbody>
-      </table>
-      <p class="insight-note"><strong>Insight:</strong> $3,600 search budget contributed effectively to <strong>4.11:1 ROAS</strong>.</p>
-    </div>
-
-    <div class="subsection">
-      <h3>9.2 Ad Copy & PPC Performance</h3>
-      <table class="data-table">
-        <thead>
-          <tr><th>Element</th><th>Execution</th><th>Strategic Hook</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Headline 1</td><td>Haksoss: The Ultimate Morning Ritual</td><td>Status signaling</td></tr>
-          <tr><td>Headline 2</td><td>VIP Invitation: Claim Your Hero Combo</td><td>Exclusivity & scarcity</td></tr>
-          <tr><td>Description</td><td>Uncompromised Craftsmanship. Savor the Artisanal Croissant & Signature Latte.</td><td>Price justification via Provenance</td></tr>
-          <tr class="highlight-row"><td>PPC Efficiency</td><td>CPL: EGP 45.5 / USD 1.47</td><td>54.5% below industry benchmark</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="subsection">
-      <h3>9.3 Landing Page & SEO Impact</h3>
-      <table class="data-table">
-        <thead>
-          <tr><th>Component</th><th>Strategy</th><th>Impact</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Landing Page CR</td><td>Hero visual + UVP, mobile-first fast-loading</td><td>CR 1.2% (+50% vs 0.8% industry)</td></tr>
-          <tr><td>SEO Content</td><td>Long-form provenance articles</td><td>Session duration +25%, brand trust</td></tr>
-          <tr><td>Technical SEO</td><td>Mobile usability, schema, <2s load</td><td>High Ad Quality Score, efficient CPC</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-</section>
-
-    <!-- 10.0 Social Media Section -->
-<section id="social-media" class="campaign-section">
-  <style>
-    /* ===== SOCIAL MEDIA SECTION ===== */
-    #social-media {
-      background: #fdfbf8;
-      padding: 70px 6%;
-      color: #2e2e2e;
-      font-family: 'Inter', sans-serif;
-      border-radius: 24px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    }
-
-    #social-media h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.2em;
-      color: #3A281E;
-      text-align: center;
-      margin-bottom: 0.8em;
-      position: relative;
-    }
-    #social-media h2::after {
-      content: "";
-      display: block;
-      width: 90px;
-      height: 4px;
-      background: #C5A069;
-      margin: 10px auto 0;
-      border-radius: 4px;
-    }
-
-    #social-media .section-intro {
-      max-width: 900px;
-      margin: 0 auto 2.5em;
-      text-align: center;
-      font-size: 1.05em;
-      line-height: 1.7;
-      color: #4b3e35;
-    }
-
-    .subsection { margin-bottom: 3.5em; }
-    h3 {
-      font-family: 'Playfair Display', serif;
-      color: #3A281E;
-      font-size: 1.5em;
-      margin-bottom: 1em;
-      border-left: 5px solid #C5A069;
-      padding-left: 12px;
-    }
-
-    /* ===== TABLE STYLE ===== */
-    .data-table {
-      width: 100%;
-      border-collapse: separate;
-      border-spacing: 0;
-      margin-top: 1.5em;
-      background: #fff;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-    .data-table:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,0.08); }
-    .data-table th, .data-table td { padding: 14px 18px; text-align: left; border-bottom: 1px solid #eee; }
-    .data-table th {
-      background: #3A281E;
-      color: #fff;
-      font-weight: 600;
-      text-transform: uppercase;
-      font-size: 0.9em;
-    }
-    .highlight-row td {
-      background: #fffaf2;
-      font-weight: bold;
-      color: #3A281E;
-    }
-
-    /* ===== SOCIAL POST CARDS ===== */
-    .content-showcase-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2em;
-      margin-top: 2em;
-    }
-    .social-post-card {
-      background: #fff;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.06);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      display: flex;
-      flex-direction: column;
-    }
-    .social-post-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 22px rgba(0,0,0,0.1);
-    }
-    .social-post-card h4 {
-      background: #3A281E;
-      color: #fff;
-      padding: 12px 18px;
-      font-size: 1.1em;
-      margin: 0;
-    }
-    .post-design-placeholder {
-      width: 100%;
-      height: 200px;
-      background-size: cover;
-      background-position: center;
-      position: relative;
-    }
-    .post-image { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .post-copy { padding: 16px 20px; line-height: 1.6; color: #4b3e35; font-size: 0.95em; }
-    .post-copy p { margin-bottom: 0.6em; }
-    .post-data { font-weight: bold; color: #3A281E; margin-top: 6px; }
-
-    /* ===== LIST STYLE ===== */
-    .data-list {
-      background: #fff;
-      border-radius: 16px;
-      padding: 20px 25px;
-      line-height: 1.7;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      margin-top: 1.5em;
-    }
-    .data-list li {
-      margin-bottom: 0.5em;
-      padding-left: 10px;
-      border-left: 4px solid #C5A069;
-    }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 768px) {
-      #social-media { padding: 50px 20px; }
-      .data-table th, .data-table td { padding: 10px 12px; font-size: 0.85em; }
-      .social-post-card h4 { font-size: 1em; }
-      .content-showcase-grid { gap: 1.5em; }
-    }
-  </style>
-
-  <h2>10.0 Social Media: Awareness & Engagement</h2>
-  <p class="section-intro">Social media amplified the "Artisanal Luxury" identity, achieving **11.3% Avg. Engagement Rate** and reaching **80,800 unique users**.</p>
-
-  <!-- 10.1 Strategy & Performance -->
-  <div class="subsection">
-    <h3>10.1 Strategy & Performance</h3>
-    <table class="data-table">
-      <thead>
-        <tr><th>Metric</th><th>Performance</th><th>Rationale</th></tr>
-      </thead>
-      <tbody>
-        <tr class="highlight-row">
-          <td>Primary KPI</td>
-          <td>11.3% Engagement Rate</td>
-          <td>+376% vs. 3.0% benchmark, validating cinematic content approach.</td>
-        </tr>
-        <tr>
-          <td>Reach</td>
-          <td>80,800 Users</td>
-          <td>40% budget allocation for high-frequency exposure to UPE persona.</td>
-        </tr>
-        <tr>
-          <td>Key Activity</td>
-          <td>Micro-Influencer Collabs</td>
-          <td>5 creators, achieving 2.1% UGC Rate.</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- 10.2 Social Content Showcase -->
-  <div class="subsection">
-    <h3>10.2 High-Converting Content Examples (Bilingual)</h3>
-    <div class="content-showcase-grid">
-
-      <!-- Awareness Post -->
-      <div class="social-post-card awareness-post">
-        <h4>Awareness: Cinematic Reel (Hero Combo)</h4>
-        <div class="post-design-placeholder" style="background-image: url('3_Assets/1_Templates/hero_latte_post.png');">
-          <img src="3_Assets/Images/hero-latte.jpg" alt="Hero Latte" class="post-image">
-        </div>
-        <div class="post-copy">
-          <p class="lang-en"><strong>Post:</strong> Wake up to luxury. Signature Hero Latte, crafted with uncompromised provenance. #HaksossRitual</p>
-          <p class="lang-ar"><strong>نص:</strong> استيقظ على الفخامة. لاتي هيرو المميز، صُنع بعناية فائقة. #طقوس_هاكسوس</p>
-          <p class="post-data">Impressions: 21,500 | Organic ER: 14.1%</p>
-        </div>
-      </div>
-
-      <!-- Conversion Post -->
-      <div class="social-post-card conversion-ad">
-        <h4>Conversion: Paid Carousel (Loyalty)</h4>
-        <div class="post-design-placeholder" style="background-image: url('3_Assets/1_Templates/discover_more.png');">
-          <img src="3_Assets/Images/loyalty-program.jpg" alt="Loyalty Program" class="post-image">
-        </div>
-        <div class="post-copy">
-          <p class="lang-en"><strong>Headline:</strong> VIP Invitation. <strong>CTA:</strong> Sign Up Now.</p>
-          <p class="lang-ar"><strong>العنوان:</strong> دعوة للنخبة. <strong>دعوة للإجراء:</strong> سجل الآن.</p>
-          <p class="post-data">CPL Paid: EGP 45.5 | Total Sign-ups: 1,070</p>
-        </div>
-      </div>
-
-      <!-- Retention Post -->
-      <div class="social-post-card retention-post">
-        <h4>Retention: UGC Story Repost</h4>
-        <div class="post-design-placeholder" style="background-image: url('3_Assets/1_Templates/haksoss_post.png');">
-          <img src="3_Assets/Images/seasonal-treat.jpg" alt="Seasonal Treat" class="post-image">
-        </div>
-        <div class="post-copy">
-          <p class="lang-en"><strong>Story:</strong> Your moment of luxury shared. Tag us!</p>
-          <p class="lang-ar"><strong>نص:</strong> لحظتك الفاخرة التي شاركتها معنا. شاركنا تجربتك!</p>
-          <p class="post-data">Referral Rate: 15% | UGC Rate: 2.1%</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- 10.3 Influencer & Community -->
-  <div class="subsection">
-    <h3>10.3 Influencer & Community Management</h3>
-    <ul class="data-list">
-      <li>Influencer Target: 5 Alexandrian creators (5k-20k followers) in luxury lifestyle.</li>
-      <li>Deliverable: Cinematic "Day in the Life" showcasing Haksoss visit.</li>
-      <li>Result: Authentic UGC drove 15% Referral Rate into loyalty program.</li>
-    </ul>
-  </div>
-</section>
-
-    <!-- 11.0 Email Marketing Section -->
-<section id="email-marketing" class="campaign-section">
-  <style>
-    /* ==============================
-       EMAIL MARKETING SECTION STYLE
-    ============================== */
-    #email-marketing {
-      background: #fdfbf8;
-      padding: 70px 6%;
-      border-radius: 24px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-      font-family: 'Inter', sans-serif;
-      color: #2f2a26;
-    }
-
-    #email-marketing h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.2em;
-      color: #3A281E;
-      text-align: center;
-      margin-bottom: 0.8em;
-      position: relative;
-    }
-    #email-marketing h2::after {
-      content: "";
-      display: block;
-      width: 90px;
-      height: 4px;
-      background: #C5A069;
-      margin: 10px auto 0;
-      border-radius: 4px;
-    }
-
-    #email-marketing .section-intro {
-      max-width: 900px;
-      margin: 0 auto 2.5em;
-      text-align: center;
-      line-height: 1.7;
-      font-size: 1.05em;
-      color: #4b3e35;
-    }
-
-    h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5em;
-      color: #3A281E;
-      margin-bottom: 1em;
-      border-left: 5px solid #C5A069;
-      padding-left: 12px;
-    }
-
-    /* ===== TABLE STYLE ===== */
-    .data-table {
-      width: 100%;
-      border-collapse: separate;
-      border-spacing: 0;
-      margin-top: 1.5em;
-      background: #fff;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-    .data-table:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,0.08); }
-    .data-table th, .data-table td { padding: 14px 18px; text-align: left; border-bottom: 1px solid #eee; }
-    .data-table th { background: #3A281E; color: #fff; text-transform: uppercase; font-weight: 600; font-size: 0.9em; }
-    .highlight-row td { background: #fffaf2; font-weight: bold; color: #3A281E; }
-
-    /* ===== EMAIL CARD STYLE ===== */
-    .email-example-card {
-      background: #fff;
-      border-radius: 20px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.06);
-      margin: 2em 0;
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .email-example-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 22px rgba(0,0,0,0.1);
-    }
-    .email-title {
-      background: #3A281E;
-      color: #fff;
-      padding: 14px 20px;
-      margin: 0;
-      font-size: 1.15em;
-    }
-    .email-copy-block {
-      padding: 20px 24px;
-      font-size: 0.96em;
-      line-height: 1.7;
-      color: #4b3e35;
-    }
-    .email-copy-block p { margin-bottom: 0.7em; }
-    .email-body-snippet { font-style: italic; color: #2f2a26; }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      #email-marketing { padding: 50px 20px; }
-      .data-table th, .data-table td { padding: 10px 12px; font-size: 0.85em; }
-      .email-title { font-size: 1em; }
-    }
-  </style>
-
-  <h2>11.0 Email Marketing: Retention & Conversion</h2>
-  <p class="section-intro">Email Marketing nurtured leads into high-LTV loyalty members using a **10-step automated sequence** based on the "Exclusivity Signal," achieving a **6.2% Conversion Rate**.</p>
-
-  <!-- 11.1 Strategy & Performance -->
-  <div class="subsection">
-    <h3>11.1 Strategy & Performance</h3>
-    <table class="data-table">
-      <thead>
-        <tr><th>Metric</th><th>Performance</th><th>Rationale</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Open Rate (OR)</td>
-          <td>35%</td>
-          <td>Personalization & exclusivity signal drove superior attention.</td>
-        </tr>
-        <tr class="highlight-row">
-          <td>Conversion Rate (CR)</td>
-          <td>6.2%</td>
-          <td>10-step automated nurture effectively removed purchase barriers.</td>
-        </tr>
-        <tr>
-          <td>Click-Through Rate (CTR)</td>
-          <td>3.8%</td>
-          <td>Minimalist design with single CTA focused all user action.</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- 11.2 Segmentation & Automation -->
-  <div class="subsection">
-    <h3>11.2 Segmentation & Automation</h3>
-    <table class="data-table">
-      <thead>
-        <tr><th>Segment</th><th>Automation</th><th>Objective & Offer</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Prospects</td>
-          <td>Abandoned Loyalty Flow (3 Emails / 7 Days)</td>
-          <td>Secure CPL target; 24-hour Hero Combo offer.</td>
-        </tr>
-        <tr>
-          <td>New Members</td>
-          <td>Welcome & Onboarding (5 Emails / 15 Days)</td>
-          <td>Drive first repeat visit; showcase provenance & craft.</td>
-        </tr>
-        <tr>
-          <td>Dormant Members</td>
-          <td>Re-engagement Flow (2 Emails)</td>
-          <td>Recapture LTV; personalized 15% discount.</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- 11.3 Email Examples -->
-  <div class="subsection">
-    <h3>11.3 Email Examples (Bilingual)</h3>
-
-    <!-- Conversion Email -->
-    <div class="email-example-card">
-      <h4 class="email-title">1. Conversion Email (Prospects)</h4>
-      <div class="email-copy-block">
-        <p class="lang-en"><strong>Subject:</strong> An Invitation to Exclusivity: Claim Your Haksoss Loyalty Access.</p>
-        <p class="lang-ar"><strong>الموضوع:</strong> دعوة للتميز: احجز مكانك في برنامج ولاء هاكسوس.</p>
-        <p class="lang-en email-body-snippet">"Your invitation is reserved. Claim VIP status & complimentary Hero Combo. Offer expires in 24 hours."</p>
-        <p class="lang-ar email-body-snippet">"دعوتك محفوظة. احصل على عضويتك وقهوة هيرو مجانية. يسري العرض لمدة 24 ساعة."</p>
-      </div>
-    </div>
-
-    <!-- Retention Email -->
-    <div class="email-example-card">
-      <h4 class="email-title">2. Retention Email (New Members)</h4>
-      <div class="email-copy-block">
-        <p class="lang-en"><strong>Subject:</strong> Welcome to the Ritual: The Story Behind Your Hero Latte.</p>
-        <p class="lang-ar"><strong>الموضوع:</strong> مرحباً بك في الطقس: قصة قهوة هيرو المميزة.</p>
-        <p class="lang-en email-body-snippet">"As a valued member, discover the provenance of our Hero Latte. Luxury lies in the craft."</p>
-        <p class="lang-ar email-body-snippet">"اكتشف سر قهوة هيرو المميزة. الفخامة الحقيقية تكمن في المصدر."</p>
-      </div>
-    </div>
-
-    <!-- Re-engagement Email -->
-    <div class="email-example-card">
-      <h4 class="email-title">3. Re-engagement Email (Dormant)</h4>
-      <div class="email-copy-block">
-        <p class="lang-en"><strong>Subject:</strong> We Miss Your Morning Ritual. A Gift from Haksoss.</p>
-        <p class="lang-ar"><strong>الموضوع:</strong> نفتقد طقس صباحك. هدية خاصة من هاكسوس.</p>
-        <p class="lang-en email-body-snippet">"Reclaim your table & enjoy personalized 15% discount. Fresh croissants await."</p>
-        <p class="lang-ar email-body-snippet">"استعد طاولتك وتمتع بخصم شخصي 15%. مجموعة الكرواسان الجديدة في انتظارك."</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-    <!-- ========== 12.0 CONTENT MARKETING SECTION (Refined) ========== -->
+<!-- ========== 12.0 CONTENT MARKETING SECTION (Refined) ========== -->
 <section id="content-marketing" class="campaign-section">
   <style>
     /* ==============================
@@ -2424,7 +1808,7 @@ window.addEventListener('scroll', function(){
       padding: 60px 6%;
       border-radius: 20px;
       box-shadow: 0 6px 22px rgba(0,0,0,0.1);
-      transition: all 0.5s ease;
+      transition: all 0.4s ease;
     }
     #content-marketing h2 {
       font-size: 2.2rem;
@@ -2450,9 +1834,7 @@ window.addEventListener('scroll', function(){
       font-size: 1.05rem;
       line-height: 1.7;
     }
-    .subsection {
-      margin-bottom: 50px;
-    }
+    .subsection { margin-bottom: 50px; }
     h3 {
       font-size: 1.5rem;
       color: #5a3d2a;
@@ -2461,7 +1843,7 @@ window.addEventListener('scroll', function(){
       margin-bottom: 20px;
     }
 
-    /* Table Styles */
+    /* Tables */
     table {
       width: 100%;
       border-collapse: separate;
@@ -2474,24 +1856,11 @@ window.addEventListener('scroll', function(){
       transition: transform 0.3s ease;
     }
     table:hover { transform: translateY(-2px); }
-    th, td {
-      padding: 12px 15px;
-      text-align: left;
-    }
-    th {
-      background-color: #e6d3b7;
-      color: #3b2a1f;
-      font-weight: 600;
-    }
-    td {
-      background: #fffdfb;
-      border-bottom: 1px solid #e4d6c7;
-    }
+    th, td { padding: 12px 15px; text-align: left; }
+    th { background-color: #e6d3b7; color: #3b2a1f; font-weight: 600; }
+    td { background: #fffdfb; border-bottom: 1px solid #e4d6c7; }
     tr:hover td { background-color: #f9f1e8; }
-    .highlight-row td {
-      background-color: #f4e3c2;
-      font-weight: 600;
-    }
+    .highlight-row td { background-color: #f4e3c2; font-weight: 600; }
 
     /* Blog Snippet */
     .blog-snippet-container {
@@ -2516,7 +1885,10 @@ window.addEventListener('scroll', function(){
     }
 
     /* Hover & Animation */
-    #content-marketing:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(0,0,0,0.12); }
+    #content-marketing:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+    }
     @keyframes fadeInUp { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
   </style>
 
@@ -2553,7 +1925,7 @@ window.addEventListener('scroll', function(){
     </table>
   </div>
 
-  <!-- Content Assets & Performance -->
+  <!-- Key Content Assets -->
   <div class="subsection">
     <h3>12.2 Key Content Assets & Performance</h3>
     <table>
@@ -2601,7 +1973,8 @@ window.addEventListener('scroll', function(){
   </div>
 </section>
 
-    <section id="display-video-ads" class="campaign-section">
+<!-- ========== 13.0 DISPLAY & VIDEO ADS SECTION (Refined) ========== -->
+<section id="display-video-ads" class="campaign-section">
   <style>
     /* ==============================
        DISPLAY & VIDEO ADS
@@ -2613,7 +1986,7 @@ window.addEventListener('scroll', function(){
       padding: 60px 6%;
       border-radius: 20px;
       box-shadow: 0 6px 22px rgba(0,0,0,0.1);
-      transition: all 0.5s ease;
+      transition: all 0.4s ease;
     }
     #display-video-ads h2 {
       font-size: 2.2rem;
@@ -2633,16 +2006,10 @@ window.addEventListener('scroll', function(){
       border-radius: 4px;
     }
     .section-intro { text-align: center; max-width: 750px; margin: 0 auto 40px; font-size: 1rem; line-height: 1.6; }
-
-    h3 { 
-      font-size: 1.5rem; color: #5a3d2a; border-left: 5px solid #c49a6c; padding-left: 12px; margin-bottom: 20px;
-    }
+    h3 { font-size: 1.5rem; color: #5a3d2a; border-left: 5px solid #c49a6c; padding-left: 12px; margin-bottom: 20px; }
 
     /* Tables */
-    table { 
-      width: 100%; border-collapse: separate; border-spacing: 0; margin: 20px 0; border-radius: 12px; overflow: hidden; 
-      box-shadow: 0 3px 14px rgba(0,0,0,0.08); font-size: 0.95rem; transition: transform 0.3s ease;
-    }
+    table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 20px 0; border-radius: 12px; overflow: hidden; box-shadow: 0 3px 14px rgba(0,0,0,0.08); font-size: 0.95rem; transition: transform 0.3s ease; }
     table:hover { transform: translateY(-2px); }
     th, td { padding: 12px 15px; text-align: left; }
     th { background-color: #e6d3b7; color: #3b2a1f; font-weight: 600; }
@@ -2652,14 +2019,26 @@ window.addEventListener('scroll', function(){
 
     /* Ad Creative Cards */
     .ad-creative-card {
-      background: #fffdfb; border-radius: 14px; box-shadow: 0 3px 14px rgba(0,0,0,0.08); margin: 25px 0; padding: 18px; transition: transform 0.25s ease;
+      background: #fffdfb;
+      border-radius: 14px;
+      box-shadow: 0 3px 14px rgba(0,0,0,0.08);
+      margin: 25px 0;
+      padding: 18px;
+      transition: transform 0.25s ease;
     }
     .ad-creative-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
     .ad-creative-card h4 { font-size: 1.1rem; margin-bottom: 12px; color: #3a2d25; }
 
     .ad-visual-placeholder {
-      display: flex; align-items: center; justify-content: center; border-radius: 10px; height: 150px; margin-bottom: 12px;
-      font-weight: bold; font-size: 1.1rem; text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      height: 150px;
+      margin-bottom: 12px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      text-align: center;
     }
     .ad-details-list { margin: 0; padding-left: 20px; }
     .ad-details-list li { margin-bottom: 6px; }
@@ -2737,168 +2116,47 @@ window.addEventListener('scroll', function(){
 </section>
 
 <section id="advocacy-conversion-hub" class="campaign-section">
-  <style>
-    /* ==============================
-       ADVOCACY & CONVERSION HUB
-    ============================== */
-    #advocacy-conversion-hub { background:#fefbf7; padding:60px 6%; border-radius:20px; box-shadow:0 6px 22px rgba(0,0,0,0.1); font-family:"Poppins", sans-serif; }
-    #advocacy-conversion-hub h2 { text-align:center; font-size:2.2rem; color:#4b3526; margin-bottom:25px; position:relative; }
-    #advocacy-conversion-hub h2::after { content:""; display:block; width:80px; height:4px; background:#c5a069; margin:10px auto 0; border-radius:4px; }
-    .subsection { margin-bottom:50px; }
-    h3 { font-size:1.5rem; color:#5a3d2a; border-left:5px solid #c49a6c; padding-left:12px; margin-bottom:20px; }
-
-    table { width:100%; border-collapse:separate; border-spacing:0; margin:20px 0; border-radius:12px; overflow:hidden; box-shadow:0 3px 14px rgba(0,0,0,0.08); font-size:0.95rem; }
-    th, td { padding:12px 15px; text-align:left; }
-    th { background:#e6d3b7; color:#3b2a1f; font-weight:600; }
-    td { background:#fffdfb; border-bottom:1px solid #e4d6c7; }
-    tr:hover td { background:#f9f1e8; }
-    .highlight-row td { background:#f4e3c2; font-weight:600; }
-  </style>
-
   <h2>14.0 Advocacy & Conversion Hub</h2>
   <p class="section-intro">
     Final strategic pillars to drive organic advocacy and optimize the digital conversion hub, resulting in <strong>1,070 Loyalty Sign-ups</strong>.
   </p>
 
-  <!-- Advocacy & Partnerships -->
   <div class="subsection">
     <h3>14.1 Advocacy & Partnerships: Micro-Influencer Seeding</h3>
-    <table>
+    <table class="data-table">
       <thead><tr><th>Component</th><th>Execution</th><th>Goal</th></tr></thead>
       <tbody>
-        <tr>
-          <td>Micro-Influencer Seeding</td>
-          <td>5 Alexandrian creators (5K–20K followers) in luxury food/lifestyle.</td>
-          <td>Authentic peer-to-peer UGC</td>
-        </tr>
-        <tr>
-          <td>Referral Tracking</td>
-          <td>Unique promo codes per influencer for Loyalty Sign-up page.</td>
-          <td>Measurable advocacy attribution</td>
-        </tr>
-        <tr class="highlight-row">
-          <td>Key Performance</td>
-          <td>15% referral rate via promo codes</td>
-          <td>Demonstrated conversion through social proof</td>
-        </tr>
+        <tr><td>Micro-Influencer Seeding</td><td>5 Alexandrian creators (5K–20K followers) in luxury food/lifestyle.</td><td>Authentic peer-to-peer UGC</td></tr>
+        <tr><td>Referral Tracking</td><td>Unique promo codes per influencer for Loyalty Sign-up page.</td><td>Measurable advocacy attribution</td></tr>
+        <tr class="highlight-row"><td>Key Performance</td><td>15% referral rate via promo codes</td><td>Demonstrated conversion through social proof</td></tr>
       </tbody>
     </table>
   </div>
 
-  <!-- Conversion Hub -->
   <div class="subsection">
     <h3>14.2 Website / Landing Page: The Conversion Hub</h3>
-    <table>
+    <table class="data-table">
       <thead><tr><th>Pillar</th><th>Execution</th><th>Impact</th></tr></thead>
       <tbody>
-        <tr>
-          <td>UX/UI Clarity</td>
-          <td>Hero Combo + UVP above the fold</td>
-          <td>1.2% Loyalty Sign-up CR (50% above benchmark)</td>
-        </tr>
-        <tr>
-          <td>CTA Design</td>
-          <td>Single Muted Gold CTA (“Acquire VIP Access”)</td>
-          <td>Focused user action, drove conversions</td>
-        </tr>
-        <tr>
-          <td>Load Speed & Mobile</td>
-          <td>Mobile-first + compressed assets</td>
-          <td>&lt;2s load, high Ad Quality Score</td>
-        </tr>
-        <tr>
-          <td>Scarcity Integration</td>
-          <td>Real-time counters (“Only 50 memberships left”)</td>
-          <td>Final psychological push for immediate sign-ups</td>
-        </tr>
+        <tr><td>UX/UI Clarity</td><td>Hero Combo + UVP above the fold</td><td>1.2% Loyalty Sign-up CR (50% above benchmark)</td></tr>
+        <tr><td>CTA Design</td><td>Single Muted Gold CTA (“Acquire VIP Access”)</td><td>Focused user action, drove conversions</td></tr>
+        <tr><td>Load Speed & Mobile</td><td>Mobile-first + compressed assets</td><td>&lt;2s load, high Ad Quality Score</td></tr>
+        <tr><td>Scarcity Integration</td><td>Real-time counters (“Only 50 memberships left”)</td><td>Final psychological push for immediate sign-ups</td></tr>
       </tbody>
     </table>
   </div>
 </section>
 
-
 <section id="tracking-setup" class="campaign-section">
-  <style>
-    /* ==============================
-       TRACKING & PERFORMANCE DESIGN
-    ============================== */
-    .campaign-section {
-      font-family: "Poppins", sans-serif;
-      padding: 60px 6%;
-      border-radius: 20px;
-      background: linear-gradient(180deg, #fefcf8 0%, #f7f3eb 100%);
-      box-shadow: 0 6px 22px rgba(0,0,0,0.08);
-      margin-bottom: 50px;
-      transition: all 0.4s ease;
-    }
-
-    .campaign-section h2 {
-      text-align: center;
-      font-size: 2.2rem;
-      color: #4b3526;
-      position: relative;
-      margin-bottom: 25px;
-    }
-    .campaign-section h2::after {
-      content: "";
-      display: block;
-      width: 80px;
-      height: 4px;
-      background: #c5a069;
-      margin: 10px auto 0;
-      border-radius: 4px;
-    }
-
-    .section-intro { text-align: center; max-width: 750px; margin: 0 auto 40px; font-size: 1rem; line-height: 1.6; }
-
-    h3 { 
-      font-size: 1.5rem; 
-      color: #5a3d2a; 
-      border-left: 5px solid #c49a6c; 
-      padding-left: 12px; 
-      margin-bottom: 20px;
-    }
-
-    table {
-      width: 100%; 
-      border-collapse: separate; 
-      border-spacing: 0; 
-      margin: 20px 0; 
-      border-radius: 12px; 
-      overflow: hidden; 
-      box-shadow: 0 4px 16px rgba(0,0,0,0.08); 
-      font-size: 0.95rem;
-      transition: transform 0.3s ease;
-    }
-    table:hover { transform: translateY(-2px); }
-    th, td { padding: 14px 16px; text-align: left; }
-    th { background: #e6d3b7; color: #3b2a1f; font-weight: 600; }
-    td { background: #fffdfb; border-bottom: 1px solid #e4d6c7; }
-    tr:hover td { background-color: #f9f4ec; }
-    .highlight-row td { background: #f4e3c2; font-weight: 600; }
-
-    .insight-note {
-      background: #fff8e1; 
-      padding: 12px 18px; 
-      border-left: 5px solid #c5a069; 
-      margin-top: 12px; 
-      font-weight: 500;
-      border-radius: 6px;
-    }
-  </style>
-
   <h2>15.0 Tracking Setup: Engine of the 411% ROI</h2>
   <p class="section-intro">
     Multi-platform tracking via GTM ensured every EGP spent was accounted for, delivering the granular insights to validate a <strong>4.11:1 ROAS</strong>.
   </p>
 
-  <!-- 15.1 UTM Parameters -->
   <div class="subsection">
     <h3>15.1 UTM Parameters & Link Hygiene</h3>
-    <table>
-      <thead>
-        <tr><th>UTM Component</th><th>Example</th><th>Purpose</th></tr>
-      </thead>
+    <table class="data-table">
+      <thead><tr><th>UTM Component</th><th>Example</th><th>Purpose</th></tr></thead>
       <tbody>
         <tr><td>Source (<code>utm_source</code>)</td><td><code>facebook_paid</code>, <code>email_promo</code></td><td>Identifies traffic origin.</td></tr>
         <tr><td>Medium (<code>utm_medium</code>)</td><td><code>carousel_ad</code>, <code>abandon_flow</code></td><td>Defines channel type/placement.</td></tr>
@@ -2908,10 +2166,9 @@ window.addEventListener('scroll', function(){
     </table>
   </div>
 
-  <!-- 15.2 Platform Integration -->
   <div class="subsection">
     <h3>15.2 Platform Integration: GA4, GTM & Pixels</h3>
-    <table>
+    <table class="data-table">
       <thead><tr><th>Platform</th><th>Configuration</th><th>Cross-Validation</th></tr></thead>
       <tbody>
         <tr><td>GA4</td><td>Custom Event: <code>loyalty_sign_up</code></td><td>Matched Facebook Pixel within &lt;1% variance.</td></tr>
@@ -2921,10 +2178,9 @@ window.addEventListener('scroll', function(){
     </table>
   </div>
 
-  <!-- 15.3 Funnel Tracking -->
   <div class="subsection">
     <h3>15.3 Conversion Events & Funnel Tracking</h3>
-    <table>
+    <table class="data-table">
       <thead><tr><th>Event</th><th>Funnel Stage</th><th>Insight</th></tr></thead>
       <tbody>
         <tr><td><code>loyalty_page_view</code></td><td>Interest</td><td>15,300 unique views.</td></tr>
@@ -2943,10 +2199,9 @@ window.addEventListener('scroll', function(){
     Comprehensive metrics across funnel stages confirmed premium, conversion-driven execution, culminating in a verified <strong>411% ROAS</strong>.
   </p>
 
-  <!-- 16.1 TOFU Metrics -->
   <div class="subsection">
     <h3>16.1 Top-of-Funnel Metrics: Reach & Cost Efficiency</h3>
-    <table>
+    <table class="data-table">
       <thead><tr><th>Metric</th><th>Result</th><th>Benchmark</th><th>Insight</th></tr></thead>
       <tbody>
         <tr><td>Total Impressions</td><td>1,200,000</td><td>N/A</td><td>High-frequency brand exposure to UPE segment.</td></tr>
@@ -2956,10 +2211,9 @@ window.addEventListener('scroll', function(){
     </table>
   </div>
 
-  <!-- 16.2 Conversion Metrics -->
   <div class="subsection">
     <h3>16.2 Conversion & Financial Metrics</h3>
-    <table>
+    <table class="data-table">
       <thead><tr><th>Metric</th><th>Result</th><th>Benchmark</th><th>Insight</th></tr></thead>
       <tbody>
         <tr class="highlight-row"><td>Loyalty Sign-up CR</td><td>1.2%</td><td>0.8%</td><td>+50% above benchmark via LP UX & Email Nurture.</td></tr>
@@ -2970,10 +2224,9 @@ window.addEventListener('scroll', function(){
     </table>
   </div>
 
-  <!-- 16.3 Engagement Metrics -->
   <div class="subsection">
     <h3>16.3 Engagement & Site Behavior</h3>
-    <table>
+    <table class="data-table">
       <thead><tr><th>Metric</th><th>Result</th><th>Benchmark</th><th>Insight</th></tr></thead>
       <tbody>
         <tr><td>Social ER</td><td>11.3%</td><td>3.0%</td><td>+376% vs competitors; "Cinematic Luxury" content highly effective.</td></tr>
@@ -2984,300 +2237,19 @@ window.addEventListener('scroll', function(){
   </div>
 </section>
 
-    <!-- DASHBOARD & TESTING SECTION (REFINED STYLE) -->
-<section id="dashboard-reporting" class="campaign-section">
-  <h2>Dashboard & Reporting</h2>
-  <p class="section-intro">
-    A sample Looker Studio dashboard provided a real-time overview of key metrics across organic and paid channels.
-  </p>
-  <ul class="data-list dashboard-list">
-    <li>Organic Traffic Growth & Quality</li>
-    <li>Ad Campaign Performance</li>
-    <li>Email Engagement & Conversions</li>
-    <li>Social Media Reach & Interactions</li>
-  </ul>
-</section>
-
-<section id="ab-multivariate-testing" class="campaign-section">
-  <h2>A/B & Multivariate Testing</h2>
-  <p class="section-intro">
-    Continuous experimentation optimized ad copies, subject lines, and landing page variants for maximum performance.
-  </p>
-  <table class="data-table testing-table">
-    <thead>
-      <tr><th>Test Type</th><th>Variable</th><th>Version A</th><th>Version B</th><th>Result</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>Email</td><td>Subject Line</td><td>“Wake Up to Haksoss Luxury”</td><td>“Start Your Day the Haksoss Way”</td><td>B +17% CTR</td></tr>
-      <tr><td>Ad</td><td>CTA</td><td>“Order Now”</td><td>“Experience Luxury”</td><td>B +11% CR</td></tr>
-    </tbody>
-  </table>
-</section>
-
-<section id="retargeting-remarketing" class="campaign-section">
-  <h2>19.0 Retargeting & Remarketing</h2>
-  <p class="section-intro">
-    Bottom-of-funnel retargeting recaptured high-intent users, reducing CPL and boosting conversions.
-  </p>
-
-  <div class="subsection">
-    <h3>19.1 Custom Audience Strategy</h3>
-    <table class="data-table retargeting-table">
-      <thead>
-        <tr><th>Audience</th><th>Drop-Off Signal</th><th>Messaging & Offer</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Loyalty Form Starters (3,500)</td><td>Started form, no submission</td><td>Friction-focused: "Free Artisanal Side upon Sign-up"</td></tr>
-        <tr><td>Blog Readers (6,000)</td><td>Spent >3 mins on Provenance content</td><td>Value justification: "Experience provenance in person"</td></tr>
-        <tr><td>Website Visitors (Last 30 days)</td><td>Visited >2x, missed LP</td><td>Awareness reminder: Cinematic Luxury promotion</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="subsection">
-    <h3>19.2 High-Leverage Retargeting Results</h3>
-    <table class="data-table retargeting-results-table">
-      <thead><tr><th>Metric</th><th>Retargeting</th><th>Cold Traffic</th><th>Insight</th></tr></thead>
-      <tbody>
-        <tr><td>CTR (Display)</td><td>2.5%</td><td>1.1%</td><td>+127% increase, high message relevance</td></tr>
-        <tr class="highlight-row"><td>CPL (Meta Ads)</td><td>$0.75</td><td>$1.47</td><td>49% lower than blended CPL, proving efficiency</td></tr>
-        <tr><td>Loyalty Sign-ups</td><td>285</td><td>N/A</td><td>26.6% of total 1,070 sign-ups via retargeting</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="subsection">
-    <h3>19.3 Email Re-engagement</h3>
-    <ul class="data-list email-reengagement-list">
-      <li>
-        <strong>Abandoned Loyalty Flow:</strong> New Leads
-        <p class="insight-note">Conversion Rate 6.2% — highest-performing email flow.</p>
-      </li>
-      <li>
-        <strong>Dormant Member Flow:</strong> Existing Customers
-        <p class="insight-note">Reactivation Rate 18% via personalized 15% discount; recaptured 1 in 5 dormant users.</p>
-      </li>
-    </ul>
-  </div>
-</section>
-
-<section id="automation-ai" class="campaign-section">
-  <h2>20.0 Automation & AI</h2>
-  <p class="section-intro">
-    Automation and AI enabled scalable, hyper-personalized campaigns while maintaining premium brand experience.
-  </p>
-
-  <div class="subsection">
-    <h3>20.1 Ad Automation & Dynamic Budgeting</h3>
-    <table class="data-table automation-table">
-      <thead><tr><th>Tool</th><th>Execution</th><th>Result</th></tr></thead>
-      <tbody>
-        <tr><td>Meta Advantage+</td><td>10 creatives + 5 copy variants dynamic assembly</td><td>CPL -15% vs manual campaigns</td></tr>
-        <tr><td>Google Performance Max</td><td>Budget auto-allocation across channels</td><td>40% of Search conversions; CPL -10%</td></tr>
-        <tr><td>Target CPA Bidding</td><td>Set $1.50 CPL goal</td><td>Maintained blended CPL $1.47 while scaling impressions</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="subsection">
-    <h3>20.2 AI Personalization & Predictive Analytics</h3>
-    <ul class="data-list personalization-list">
-      <li>
-        <strong>Chatbot:</strong> Handled 80% common queries
-        <p class="insight-note">Reduced human response time 65%, maintaining luxury service standards.</p>
-      </li>
-      <li>
-        <strong>Predictive CRM:</strong> Tagged "High Propensity to Churn"
-        <p class="insight-note">Triggered re-engagement emails, increasing LTV of at-risk users.</p>
-      </li>
-      <li>
-        <strong>Personalized Emails:</strong> Recommendations based on last 3 purchases
-        <p class="insight-note">+18% CTR on personalized blocks.</p>
-      </li>
-    </ul>
-  </div>
-</section>
-
 <style>
-/* ===== CINEMATIC LUXURY CAMPAIGN STYLE ===== */
+/* ===== UNIFIED CAMPAIGN STYLE ===== */
 .campaign-section {
   font-family: "Poppins", "Cairo", sans-serif;
   padding: 60px 6%;
-  background: linear-gradient(180deg,#f8f3ed 0%,#f2e6d9 100%);
-  border-radius: 20px;
-  box-shadow: 0 6px 25px rgba(0,0,0,0.08);
-  margin-bottom: 50px;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s ease;
-}
-.campaign-section:hover { transform: translateY(-2px); }
-
-.campaign-section h2 {
-  font-size: 2rem;
-  color: #3d2b1f;
-  border-left: 5px solid #b38b59;
-  padding-left: 12px;
-  margin-bottom: 20px;
-}
-
-.section-intro { font-size: 1rem; line-height: 1.6; margin-bottom: 30px; text-align: center; }
-
-h3 {
-  font-size: 1.5rem; color: #5a3d2a; border-left: 4px solid #c49a69; padding-left: 10px; margin-bottom: 18px;
-}
-
-.data-list {
-  list-style: none; padding: 0; margin: 0; 
-}
-.data-list li {
-  background: rgba(255,255,255,0.6); margin: 10px 0; padding: 12px 18px; border-radius: 12px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.05); transition: all 0.3s ease;
-}
-.data-list li:hover { transform: translateX(6px); background: #fff; }
-
-.data-table {
-  width: 100%; border-collapse: separate; border-spacing: 0; border-radius: 12px; overflow: hidden;
-  margin-top: 25px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); font-size: 0.95rem;
-}
-.data-table th, .data-table td { padding: 14px 16px; text-align: left; border-bottom: 1px solid #e4d6c7; }
-.data-table th { background: #e9d8c0; color: #3b2b20; font-weight: 600; }
-.data-table tr:hover td { background: #f7efe6; }
-.highlight-row td { background: #f4e3c2; font-weight: 600; }
-
-.insight-note { background: #fff8e1; padding: 10px 16px; border-left: 5px solid #c5a069; margin-top: 10px; border-radius: 6px; font-weight: 500; }
-
-/* Responsive */
-@media (max-width: 768px){
-  .campaign-section { padding: 40px 5%; }
-  h2 { font-size: 1.6rem; }
-  h3 { font-size: 1.3rem; }
-  .data-table th, .data-table td { font-size: 0.85rem; padding: 10px; }
-}
-</style>
-
-<section id="scaling-strategy" class="campaign-section">
-  <h2>21.0 Scaling Strategy: Geographic & Budget Expansion</h2>
-  <p class="section-intro">
-    With a 411% ROAS, scaling focused on disciplined budget allocation and targeted market expansion while maintaining performance.
-  </p>
-
-  <div class="subsection">
-    <h3>21.1 Phase 1: Budget Optimization</h3>
-    <table class="data-table scaling-table">
-      <thead>
-        <tr><th>Action</th><th>Rationale</th><th>Budget Strategy</th></tr>
-      </thead>
-      <tbody>
-        <tr class="highlight-row">
-          <td>Increase PMax & Retargeting Budget</td>
-          <td>Retargeting CPL 49% cheaper; PMax drove 40% of Search conversions</td>
-          <td>+30% allocated to high-efficiency channels</td>
-        </tr>
-        <tr>
-          <td>Shift from Video to Static/Carousel</td>
-          <td>Static ads +11% CTR vs cinematic video</td>
-          <td>-20% Video Spend → Meta Carousel & Google Display</td>
-        </tr>
-        <tr>
-          <td>Keyword Expansion</td>
-          <td>High-intent long-tail terms → low CPC, high CR</td>
-          <td>Expand seed list from 25 → 100+ new terms</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="subsection">
-    <h3>21.2 Phase 2: Geographic Expansion</h3>
-    <ul class="data-list geographic-expansion-list">
-      <li>
-        <strong>New Market Launch:</strong> New Cairo & Sheikh Zayed using Alexandria creatives
-        <p class="insight-note">Start with 20% of budget, 30-day test. KPI: CPL within ±10% of Alexandria benchmark ($1.47)</p>
-      </li>
-      <li>
-        <strong>Lookalike Audiences:</strong> 1% Lookalike based on Alexandria Loyalty Sign-ups
-        <p class="insight-note">A/B test vs demographic targeting. Scale if Loyalty Sign-up CR improves</p>
-      </li>
-    </ul>
-  </div>
-
-  <div class="subsection">
-    <h3>21.3 Long-Term Vision</h3>
-    <table class="data-table vision-table">
-      <thead><tr><th>Vision</th><th>Value</th></tr></thead>
-      <tbody>
-        <tr>
-          <td>Predictive LTV Targeting</td>
-          <td>Maximize ROAS via predicted LTV, allowing higher bids on high-value users</td>
-        </tr>
-        <tr>
-          <td>International Franchise Model</td>
-          <td>Package strategy & paid media blueprint for scalable Middle East expansion</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<section id="compliance-standards" class="campaign-section">
-  <h2>22.0 Compliance & Professional Standards</h2>
-  <p class="section-intro">
-    Ethical and professional standards safeguarded the premium brand and long-term trust of UPE audiences.
-  </p>
-
-  <div class="subsection">
-    <h3>22.1 Data Privacy & Transparency</h3>
-    <table class="data-table compliance-table">
-      <thead><tr><th>Pillar</th><th>Execution</th><th>Benefit</th></tr></thead>
-      <tbody>
-        <tr>
-          <td>GDPR & Privacy Compliance</td>
-          <td>Double opt-in & clear Privacy Policy links</td>
-          <td>Reduced legal risk; highly engaged email list</td>
-        </tr>
-        <tr>
-          <td>Clear Disclaimers</td>
-          <td>*Terms & Conditions Apply on high-value offers</td>
-          <td>Transparency; prevents dissatisfaction</td>
-        </tr>
-        <tr>
-          <td>Data Retention Policy</td>
-          <td>24-month rolling for non-engaged users</td>
-          <td>Lean CRM & cost-efficient</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="subsection">
-    <h3>22.2 Brand Safety & Ad Policy</h3>
-    <ul class="data-list brand-safety-list">
-      <li>
-        <strong>Brand Safety:</strong> Exclude low-quality/controversial GDN sites
-        <p class="insight-note">Maintained high Ad Quality Score → lower CPC, better inventory</p>
-      </li>
-      <li>
-        <strong>Ad Policy Compliance:</strong> Use factual, transparent language in ads
-      </li>
-    </ul>
-  </div>
-</section>
-
-<style>
-/* === ELEGANT LUXURY CAMPAIGN STYLE === */
-.campaign-section {
   background: linear-gradient(180deg,#faf6f2 0%,#f3e9df 100%);
-  padding: 70px 8%;
   border-radius: 22px;
   box-shadow: 0 6px 25px rgba(0,0,0,0.08);
-  margin: 60px auto;
-  font-family: "Poppins","Cairo",sans-serif;
+  margin: 50px auto;
   color: #3f2f25;
   max-width: 1150px;
   position: relative;
   overflow: hidden;
-  animation: fadeIn 1.2s ease;
   transition: transform 0.3s ease;
 }
 .campaign-section:hover { transform: translateY(-3px); }
@@ -3289,15 +2261,17 @@ h3 {
   padding-left: 14px;
   margin-bottom: 24px;
 }
+
 .campaign-section h3 {
   font-size: 1.35rem;
   color: #4a3628;
   margin-top: 35px;
   margin-bottom: 16px;
 }
-.section-intro { font-size: 1.05rem; line-height: 1.7; color: #5a4634; margin-bottom: 30px; }
 
-.subsection { margin-bottom: 60px; padding-left: 1rem; border-left: 3px solid #d9a441; animation: fadeUp 0.8s ease both; }
+.section-intro { font-size: 1.05rem; line-height: 1.7; color: #5a4634; margin-bottom: 30px; text-align:center; }
+
+.subsection { margin-bottom: 60px; padding-left: 1rem; border-left: 3px solid #d9a441; }
 
 .data-table {
   width: 100%; border-collapse: separate; border-spacing: 0; border-radius: 12px; overflow: hidden; margin-top: 20px; background:#fff;
@@ -3306,7 +2280,7 @@ h3 {
 .data-table th, .data-table td { padding: 14px 16px; text-align: left; }
 .data-table th { background:#e8d7c3; color:#2e1f15; font-weight:600; }
 .data-table tr.highlight-row { background:#f8f1e9; font-weight:600; }
-.data-table tr:hover td { background:#f7eee6; transition:0.25s ease; }
+.data-table tr:hover td { background:#f7eee6; }
 
 .data-list { list-style:none; padding-left:0; margin:0; }
 .data-list li {
@@ -3317,9 +2291,6 @@ h3 {
 .data-list li:hover { transform: translateX(6px); background:#fff; box-shadow:0 5px 18px rgba(0,0,0,0.06); }
 .insight-note { font-size:0.9rem; color:#555; margin-top:8px; border-left:3px solid #d9a441; padding-left:10px; }
 
-@keyframes fadeIn { from { opacity:0; transform:translateY(20px);} to { opacity:1; transform:translateY(0);} }
-@keyframes fadeUp { from { opacity:0; transform:translateY(25px);} to { opacity:1; transform:translateY(0);} }
-
 @media(max-width:768px){
   .campaign-section { padding:50px 6%; }
   .campaign-section h2 { font-size:1.6rem; }
@@ -3327,7 +2298,6 @@ h3 {
   .data-table th, .data-table td { font-size:0.85rem; padding:10px; }
 }
 </style>
-
 
 </div>
 </div>
@@ -3361,14 +2331,13 @@ h3 {
 </footer>
 
 <style>
-/* === FOOTER ELEGANCE & LUXURY STYLE === */
 footer {
   background: linear-gradient(135deg, #f8f3ec, #f3e7d3);
   padding: 60px 6%;
   color: #3b2f25;
   font-family: "Poppins", sans-serif;
   border-top: 2px solid #d2b48c;
-  box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 -6px 20px rgba(0,0,0,0.05);
   text-align: center;
   overflow: hidden;
   opacity: 0;
@@ -3390,9 +2359,7 @@ footer {
   letter-spacing: 1px;
   transition: color 0.3s ease;
 }
-.signature:hover {
-  color: #a46a3d;
-}
+.signature:hover { color: #a46a3d; }
 
 .footer-links {
   display: flex;
@@ -3429,9 +2396,7 @@ footer {
   opacity: 0.85;
 }
 
-.footer-meta .divider {
-  color: #bba27c;
-}
+.footer-meta .divider { color: #bba27c; }
 
 @keyframes fadeInFooter {
   from { opacity: 0; transform: translateY(25px); }
