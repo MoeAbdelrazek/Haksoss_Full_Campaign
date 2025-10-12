@@ -266,6 +266,16 @@ header.fixed-header{
 </section>
 
 <style>
+/* Make every text element inside #campaign-intro exactly 16px */
+#campaign-intro,
+#campaign-intro * {
+  font-size: 16px !important;
+  line-height: 1.7 !important;
+  font-family: 'Times New Roman', serif !important;
+  color: inherit;
+}
+
+/* container */
 #campaign-intro {
   border-radius: 20px;
   padding: 50px 30px;
@@ -273,10 +283,9 @@ header.fixed-header{
   background: linear-gradient(145deg, #fdf5ed, #fceedd);
   max-width: 1200px;
   animation: fadeInUp 1s ease forwards;
-  font-family: 'Times New Roman', serif;
-  font-size: 16px; /* Increased from 13px */
 }
 
+/* cards grid */
 .intro-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -284,6 +293,7 @@ header.fixed-header{
   margin-top: 40px;
 }
 
+/* individual card */
 .intro-card {
   background-color: #e6c9aa; /* latte tone */
   border-radius: 16px;
@@ -298,34 +308,41 @@ header.fixed-header{
   box-shadow: 0 12px 30px rgba(0,0,0,0.15);
 }
 
+/* headings & paragraphs inside cards — still 16px due to the global rule above */
 .intro-card h3 {
   color: #8b5e3c;
   margin-bottom: 12px;
-  font-size: 1.5rem; /* increased */
+  font-weight: 700;
 }
 
 .intro-card p {
   color: #5a3e36;
-  font-size: 16px; /* increased from 13px */
-  line-height: 1.8;
+  margin: 0;
 }
 
+/* section title and intro paragraph */
 #campaign-intro .section-title {
   text-align: center;
-  font-family: 'Times New Roman', serif;
-  font-size: 20px; /* increased from 14px */
   color: #5a3e36;
+  margin-bottom: 20px;
+  font-weight: 700;
 }
 
 #campaign-intro .section-intro {
   text-align: center;
   max-width: 900px;
   margin: 0 auto 40px auto;
-  font-size: 16px; /* increased from 13px */
-  line-height: 1.9;
   color: #6b4f44;
 }
+
+/* responsive adjustments */
+@media(max-width:768px){
+  #campaign-intro { padding: 36px 20px; margin: 40px 18px; }
+  .intro-cards { gap: 18px; }
+  .intro-card { padding: 20px 16px; }
+}
 </style>
+
 
 
 
