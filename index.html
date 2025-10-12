@@ -1950,20 +1950,44 @@ canvas#sparkline { width: 100%; height: 70px; } /* slightly taller */
 
 <section id="campaign-analysis">
   <h2 class="section-title">Complete Campaign Analysis & Insights</h2>
-  <p style="text-align:center; max-width:900px; margin:0 auto 40px auto; color:#6b4f44;">
+  <p class="section-intro">
     Consolidated performance metrics across all channels, highlighting ROI, engagement, loyalty growth, conversions, and retention trends.
   </p>
 
   <!-- KPI Cards Grid -->
   <div class="analysis-cards">
-    <div class="card"><h3>Total Reach</h3><p>80,800 Unique Users</p></div>
-    <div class="card"><h3>Engagement Rate</h3><p>11.3%</p></div>
-    <div class="card"><h3>Loyalty Sign-ups</h3><p>1,070 Members</p></div>
-    <div class="card"><h3>Conversion Rate</h3><p>6.2%</p></div>
-    <div class="card"><h3>ROAS</h3><p>4.11:1</p></div>
-    <div class="card"><h3>Retention Rate</h3><p>15%</p></div>
-    <div class="card"><h3>Email Open Rate</h3><p>35%</p></div>
-    <div class="card"><h3>CTR</h3><p>3.8%</p></div>
+    <div class="card">
+      <h3>Total Reach</h3>
+      <p><strong>80,800</strong> Unique Users</p>
+    </div>
+    <div class="card">
+      <h3>Engagement Rate</h3>
+      <p><strong>11.3%</strong></p>
+    </div>
+    <div class="card">
+      <h3>Loyalty Sign-ups</h3>
+      <p><strong>1,070</strong> Members</p>
+    </div>
+    <div class="card">
+      <h3>Conversion Rate</h3>
+      <p><strong>6.2%</strong></p>
+    </div>
+    <div class="card">
+      <h3>ROAS</h3>
+      <p><strong>4.11:1</strong></p>
+    </div>
+    <div class="card">
+      <h3>Retention Rate</h3>
+      <p><strong>15%</strong></p>
+    </div>
+    <div class="card">
+      <h3>Email Open Rate</h3>
+      <p><strong>35%</strong></p>
+    </div>
+    <div class="card">
+      <h3>CTR</h3>
+      <p><strong>3.8%</strong></p>
+    </div>
   </div>
 
   <!-- Channel Allocation Bars -->
@@ -2015,10 +2039,10 @@ canvas#sparkline { width: 100%; height: 70px; } /* slightly taller */
 
 <style>
 #campaign-analysis {
-  border-radius: 15px;
+  border-radius: 20px;
   padding: 50px 30px;
   margin: 60px auto;
-  background-color: #fff7f2;
+  background-color: #f9ede3; /* light latte */
   box-shadow: 0 8px 25px rgba(0,0,0,0.12);
   max-width: 1200px;
   font-family: 'Playfair Display', serif;
@@ -2030,14 +2054,14 @@ canvas#sparkline { width: 100%; height: 70px; } /* slightly taller */
   margin-bottom:20px; 
   font-size:2rem; 
 }
-#campaign-analysis p { 
+#campaign-analysis .section-intro { 
   color:#5a3e2b; 
   margin-bottom:40px; 
-  font-size:15px; 
+  font-size:1.15rem; 
   text-align:center; 
 }
 
-/* Dark Latte Cards for KPI Grid */
+/* KPI Cards */
 .analysis-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -2046,27 +2070,27 @@ canvas#sparkline { width: 100%; height: 70px; } /* slightly taller */
 }
 
 .analysis-cards .card {
-  border-radius: 12px;
+  border-radius: 14px;
   padding: 25px;
-  background-color: #5a4534; /* Dark latte color */
-  color: #fff7e6; /* Clear, readable text */
-  text-align:center;
+  background-color: #5a4534; /* dark latte */
+  color: #f3e0d6; /* light text for contrast */
+  text-align: center;
   box-shadow: 0 6px 18px rgba(0,0,0,0.25);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.analysis-cards .card:hover { 
-  transform: translateY(-5px); 
+.analysis-cards .card:hover {
+  transform: translateY(-5px);
   box-shadow: 0 12px 30px rgba(255,220,120,0.4);
 }
 .analysis-cards h3 { 
-  margin-bottom:10px; 
+  margin-bottom:12px; 
   color:#ffd57f; 
-  font-size:1.2rem;
+  font-size:1.1rem;
 }
 .analysis-cards p { 
   font-size:1rem; 
-  color:#f3e0d6; 
-  font-weight:600;
+  font-weight:700; 
+  color:#fff; 
 }
 
 /* Allocation bars */
@@ -2101,7 +2125,7 @@ canvas#sparkline { width: 100%; height: 70px; } /* slightly taller */
 .segment.creative { background:#f0b189; color:#5a3e2b; }
 .allocation-bar .segment:hover { transform: scale(1.05); opacity:0.9; }
 
-/* Trend charts */
+/* Trend Charts */
 .trend-charts {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
@@ -2118,7 +2142,7 @@ canvas#sparkline { width: 100%; height: 70px; } /* slightly taller */
   text-align:center;
 }
 
-.trend-card h4 { color:#8b5e3c; margin-bottom:12px; }
+.trend-card h4 { color:#8b5e3c; margin-bottom:12px; font-size:1.1rem; }
 
 /* Table */
 .analysis-table {
@@ -2133,7 +2157,8 @@ canvas#sparkline { width: 100%; height: 70px; } /* slightly taller */
   color:#5a3e2b;
 }
 
-.analysis-table th { background-color:#f9e5d6; }
+.analysis-table th { background-color:#f9e5d6; font-weight:700; }
+.analysis-table td { background-color:#fff7f2; }
 </style>
 
 <footer id="campaign-footer">
