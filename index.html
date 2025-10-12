@@ -2161,6 +2161,75 @@ canvas#sparkline { width: 100%; height: 70px; } /* slightly taller */
 .analysis-table td { background-color:#fff7f2; }
 </style>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // Animate Allocation Bars
+  const segments = document.querySelectorAll('.allocation-bar .segment');
+  segments.forEach(seg => {
+    const fill = seg.dataset.fill;
+    setTimeout(() => { seg.style.width = fill; }, 300);
+  });
+
+  // Engagement Trend Chart
+  const ctxEngagement = document.getElementById('engagementTrend').getContext('2d');
+  new Chart(ctxEngagement, {
+    type: 'line',
+    data: {
+      labels: ['Week 1','Week 2','Week 3','Week 4'],
+      datasets: [{
+        label: 'Engagement Rate (%)',
+        data: [9,10.5,11,11.3],
+        borderColor: '#c08054',
+        backgroundColor: 'rgba(192,128,84,0.2)',
+        fill: true,
+        tension:0.3,
+        pointBackgroundColor:'#c08054',
+      }]
+    },
+    options: { responsive:true, plugins:{ legend:{ display:false } } }
+  });
+
+  // Conversion Trend Chart
+  const ctxConversion = document.getElementById('conversionTrend').getContext('2d');
+  new Chart(ctxConversion, {
+    type: 'line',
+    data: {
+      labels: ['Week 1','Week 2','Week 3','Week 4'],
+      datasets: [{
+        label:'Conversions',
+        data:[4.8,5.5,6,6.2],
+        borderColor:'#a65f3b',
+        backgroundColor:'rgba(166,95,59,0.2)',
+        fill:true,
+        tension:0.3,
+        pointBackgroundColor:'#a65f3b',
+      }]
+    },
+    options:{ responsive:true, plugins:{ legend:{ display:false } } }
+  });
+
+  // Loyalty Sign-ups Trend Chart
+  const ctxSignups = document.getElementById('signupsTrend').getContext('2d');
+  new Chart(ctxSignups,{
+    type:'line',
+    data:{
+      labels:['Week 1','Week 2','Week 3','Week 4'],
+      datasets:[{
+        label:'Sign-ups',
+        data:[900,980,1020,1070],
+        borderColor:'#8b5e3c',
+        backgroundColor:'rgba(139,94,60,0.2)',
+        fill:true,
+        tension:0.3,
+        pointBackgroundColor:'#8b5e3c'
+      }]
+    },
+    options:{ responsive:true, plugins:{ legend:{ display:false } } }
+  });
+});
+</script>
+
 <footer id="campaign-footer">
   <div class="footer-container">
     <h2>Contact & Portfolio</h2>
