@@ -38,9 +38,9 @@ a:hover{color:var(--accent);}
 header.fixed-header{
     position:fixed; top:0; left:0; right:0; z-index:9999;
     background:linear-gradient(90deg, rgba(43,26,9,0.95), rgba(90,55,25,0.85));
-    color:#fff;
+    color:var(--latte);
     box-shadow:0 6px 20px rgba(0,0,0,0.3);
-    border-bottom: 2px solid rgba(255,255,255,0.2);
+    border-bottom: 2px solid rgba(245,230,208,0.2);
     backdrop-filter: blur(6px);
 }
 .header-inner{
@@ -58,7 +58,7 @@ header.fixed-header{
 .brand img{
     width:54px; height:54px; object-fit:cover;
     border-radius:10px;
-    background:#fff; padding:4px;
+    background:var(--latte); padding:4px;
     border:2px solid var(--accent);
     box-shadow:0 0 10px rgba(216,161,90,0.6);
     transition:transform 0.4s ease;
@@ -68,7 +68,7 @@ header.fixed-header{
     margin:0;
     font-family:'Playfair Display', serif;
     font-size:1.2rem;
-    color:#fff;
+    color:var(--latte);
     letter-spacing:0.5px;
     text-shadow:0 2px 5px rgba(0,0,0,0.4);
 }
@@ -78,6 +78,9 @@ header.fixed-header{
     display:flex; gap:25px; align-items:flex-start;
     flex-wrap:wrap; margin-top:20px;
     animation: fadeUp 1.2s ease forwards;
+    background: var(--latte);
+    padding:20px;
+    border-radius:16px;
 }
 @keyframes fadeUp{
     from{opacity:0; transform:translateY(20px);}
@@ -105,7 +108,7 @@ header.fixed-header{
     line-height:1.6;
     color:var(--deep);
     padding:14px;
-    background:#fff;
+    background:var(--latte);
     border-left:4px solid var(--accent);
     border-radius:12px;
     box-shadow:0 4px 15px rgba(0,0,0,0.08);
@@ -172,7 +175,7 @@ header.fixed-header{
     margin:20px 0; 
 }
 .section-card{
-    background:#fff;
+    background:var(--latte);
     border-radius:16px;
     padding:18px;
     box-shadow:0 6px 15px rgba(0,0,0,0.1);
@@ -269,6 +272,7 @@ header.fixed-header{
 </div>
 </body>
 </html>
+
 
 <section id="campaign-intro">
   <h2 class="section-title">Campaign Introduction</h2>
@@ -593,28 +597,29 @@ header.fixed-header{
 
 
 <!-- Brand Identity & Core Positioning Section -->
-<section id="brand-identity" style="background-color:#f5ede4; padding:50px 20px; font-family: 'Arial', sans-serif;">
+<!-- Brand Identity & Core Positioning Section -->
+<section id="brand-identity" style="background-color:#f5ede4; padding:50px 20px; font-family: 'Times New Roman', serif;">
   <div style="max-width:1200px; margin:0 auto;">
 
     <!-- Section Header -->
-    <h2 style="color:#3e2f1c; font-size:2.5rem; margin-bottom:20px; text-align:center;">Brand Identity & Core Positioning</h2>
-    <p style="color:#5a4632; font-size:1.1rem; text-align:center; max-width:800px; margin:0 auto 50px;">
+    <h2 style="color:#2E8BC0; font-size:2.5rem; margin-bottom:20px; text-align:center;">Brand Identity & Core Positioning</h2>
+    <p style="color:#3a3a3a; font-size:1.1rem; text-align:center; max-width:800px; margin:0 auto 50px;">
       Defining the essence of Haksoss Café: positioning it as Alexandria’s ultimate luxury morning destination and creating a memorable, premium experience for loyal customers.
     </p>
 
     <!-- Core Identity Cards -->
     <div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center; transition: all 0.3s ease;">
 
-      <!-- Card Template -->
       <style>
         .brand-card {
           flex:1 1 250px;
-          background-color:#3e2f1c;
+          background-color:#2E8BC0;
           color:#f5ede4;
           padding:25px;
           border-radius:20px;
           box-shadow:0 4px 12px rgba(0,0,0,0.1);
           transition: transform 0.3s ease, box-shadow 0.3s ease;
+          font-family: 'Times New Roman', serif;
         }
         .brand-card:hover {
           transform: translateY(-5px);
@@ -622,19 +627,20 @@ header.fixed-header{
         }
         .brand-diagram-block {
           flex:1 1 200px;
-          background-color:#3e2f1c;
+          background-color:#2E8BC0;
           color:#f5ede4;
           padding:20px;
           border-radius:15px;
           text-align:center;
           transition: transform 0.3s ease, box-shadow 0.3s ease;
+          font-family: 'Times New Roman', serif;
         }
         .brand-diagram-block:hover {
           transform: translateY(-3px) scale(1.02);
           box-shadow:0 6px 16px rgba(0,0,0,0.15);
         }
         .brand-arrow {
-          font-size:2rem; color:#3e2f1c; transition: transform 0.3s ease;
+          font-size:2rem; color:#2E8BC0; transition: transform 0.3s ease;
         }
         .brand-arrow:hover {
           transform: scale(1.2);
@@ -682,9 +688,9 @@ header.fixed-header{
     </div>
 
     <!-- Core Positioning Statement -->
-    <div style="margin-top:60px; background-color:#e6d8c8; padding:30px; border-radius:15px; text-align:center; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
-      <h3 style="color:#3e2f1c; font-size:1.8rem; margin-bottom:15px;">Core Positioning Statement</h3>
-      <p style="color:#5a4632; font-size:1.1rem; max-width:800px; margin:0 auto;">
+    <div style="margin-top:60px; background-color:#d1e7f0; padding:30px; border-radius:15px; text-align:center; box-shadow:0 4px 12px rgba(0,0,0,0.08); font-family: 'Times New Roman', serif;">
+      <h3 style="color:#2E8BC0; font-size:1.8rem; margin-bottom:15px;">Core Positioning Statement</h3>
+      <p style="color:#3a3a3a; font-size:1.1rem; max-width:800px; margin:0 auto;">
         "Haksoss Café is Alexandria’s ultimate luxury morning destination, offering curated experiences, exceptional quality, and exclusive VIP loyalty programs that transform an ordinary morning into an extraordinary ritual."
       </p>
     </div>
@@ -722,481 +728,408 @@ header.fixed-header{
 </section>
 
 
-<section id="persona-summary">
-  <h2 class="section-title">Buyer Persona: Urban Professional Elite</h2>
-  <p class="section-intro">
-    Focused targeting of high-value customers (ages 20-50) in Alexandria to drive premium loyalty and Hero Combo adoption.
-  </p>
 
-  <!-- Persona Attributes Table -->
-  <table class="persona-table">
-    <thead>
-      <tr>
-        <th>Attribute</th>
-        <th>Detail</th>
-        <th>Impact</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Age Range</td>
-        <td>20-50 years</td>
-        <td>High spending power and frequent café visitors</td>
-      </tr>
-      <tr>
-        <td>Income Level</td>
-        <td>High-Net-Worth Individuals (Top 15% in Alexandria)</td>
-        <td>Justifies premium pricing and Hero Combo adoption</td>
-      </tr>
-      <tr>
-        <td>Motivations</td>
-        <td>Status, exclusivity, effortless luxury</td>
-        <td>Drives engagement with loyalty program and social sharing</td>
-      </tr>
-      <tr>
-        <td>Barriers</td>
-        <td>Time constraints, perceived inauthenticity, price sensitivity</td>
-        <td>Addressed with Click & Collect, premium quality, and curated messaging</td>
-      </tr>
-    </tbody>
-  </table>
+<!-- Buyer Persona: Young Urban Trendsetter -->
+<section id="buyer-persona-trendsetter" style="background-color:#f5ede4; padding:50px 20px; font-family: 'Times New Roman', serif;">
+  <div style="max-width:1200px; margin:0 auto;">
 
-  <!-- Persona Engagement Radial Charts (Dark & Subtle) -->
-  <div class="charts-container">
-    <div class="chart" data-percent="85">
-      <div class="chart-value">85%</div>
-      <div class="chart-label">Interest in Luxury Experience</div>
-    </div>
-    <div class="chart" data-percent="74">
-      <div class="chart-value">74%</div>
-      <div class="chart-label">Social Media Engagement</div>
-    </div>
-    <div class="chart" data-percent="63">
-      <div class="chart-value">63%</div>
-      <div class="chart-label">Loyalty Program Likelihood</div>
-    </div>
-  </div>
+    <!-- Section Header -->
+    <h2 style="color:#2E8BC0; font-size:2.5rem; margin-bottom:20px; text-align:center;">Buyer Persona: Young Urban Trendsetter</h2>
+    <p style="color:#3a3a3a; font-size:1.1rem; text-align:center; max-width:800px; margin:0 auto 50px;">
+      This persona represents the young, urban, trend-conscious individuals who seek premium experiences, social recognition, and Instagram-worthy moments at Haksoss Café.
+    </p>
 
-  <style>
-    #persona-summary {
-      background: linear-gradient(145deg, #fffaf0, #fff4e6); /* latte background stays */
-      padding: 80px 10%;
-      border-radius: 20px;
-      box-shadow: 0 12px 28px rgba(0,0,0,0.08);
-      margin-bottom: 60px;
-      position: relative;
-      overflow: hidden;
-    }
+    <!-- Persona Cards -->
+    <div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center; transition: all 0.3s ease;">
 
-    .persona-table {
-      width: 100%;
-      border-collapse: separate;
-      border-spacing: 0;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-      font-family: 'Lato', sans-serif;
-      margin-bottom: 50px;
-      background: #fffaf0;
-    }
+      <style>
+        .persona-card {
+          flex:1 1 250px;
+          background-color:#2E8BC0;
+          color:#f5ede4;
+          padding:25px;
+          border-radius:20px;
+          box-shadow:0 4px 12px rgba(0,0,0,0.1);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          font-family: 'Times New Roman', serif;
+        }
+        .persona-card:hover {
+          transform: translateY(-5px);
+          box-shadow:0 8px 20px rgba(0,0,0,0.2);
+        }
+        .persona-diagram-block {
+          flex:1 1 200px;
+          background-color:#2E8BC0;
+          color:#f5ede4;
+          padding:20px;
+          border-radius:15px;
+          text-align:center;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          font-family: 'Times New Roman', serif;
+        }
+        .persona-diagram-block:hover {
+          transform: translateY(-3px) scale(1.02);
+          box-shadow:0 6px 16px rgba(0,0,0,0.15);
+        }
+        .persona-arrow {
+          font-size:2rem; color:#2E8BC0; transition: transform 0.3s ease;
+        }
+        .persona-arrow:hover {
+          transform: scale(1.2);
+        }
+        @media (max-width:768px){
+          .persona-card, .persona-diagram-block {
+            flex:1 1 100%;
+          }
+          .persona-arrow {
+            display:none;
+          }
+        }
+      </style>
 
-    .persona-table th, .persona-table td {
-      padding: 14px 20px;
-      text-align: left;
-      font-size: 1rem;
-      color: #5a3e36;
-    }
-
-    .persona-table th { background-color: #d4bfa3; }
-    .persona-table td { background-color: rgba(255,248,243,0.9); }
-    .persona-table tr:nth-child(even) td { background-color: rgba(253,246,240,0.9); }
-    .persona-table tr:hover td { background-color: #fbe9e0; transition: 0.3s; }
-
-    .charts-container {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      gap: 40px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .chart {
-      position: relative;
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      background: conic-gradient(#222 0% 0%, #333 0% 100%); /* dark and subtle base */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.25);
-      font-family: 'Lora', serif;
-      transition: transform 0.3s;
-    }
-
-    .chart:hover { transform: scale(1.05); }
-
-    .chart-value {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #ffffff; /* white text */
-      margin-bottom: 6px;
-    }
-
-    .chart-label {
-      text-align: center;
-      font-size: 0.95rem;
-      color: #ffffff; /* white text */
-    }
-  </style>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const charts = document.querySelectorAll(".chart");
-      charts.forEach(chart => {
-        const percent = chart.getAttribute("data-percent");
-        chart.style.background = `conic-gradient(#555 ${percent}%, #222 ${percent}% 100%)`; // subtle dark fill
-      });
-    });
-  </script>
-</section>
-
-<section id="customer-journey">
-  <h2 class="section-title">Customer Journey Mapping</h2>
-  <p class="section-intro">
-    Visualizing the Urban Professional Elite’s path from awareness to high-value loyalty, highlighting key touchpoints, emotions, and KPIs.
-  </p>
-
-  <div class="journey-container">
-    <!-- Stage: Awareness -->
-    <div class="journey-stage" data-aos="fade-up">
-      <div class="stage-header" style="background:#d9bfa3;">
-        <span class="stage-name">Awareness</span>
-        <span class="stage-emotion">Curiosity</span>
+      <!-- Demographics -->
+      <div class="persona-card">
+        <h3 style="font-size:1.5rem; margin-bottom:15px;">Demographics</h3>
+        <ul style="font-size:1rem; line-height:1.6;">
+          <li>Age: 20–32</li>
+          <li>Gender: 50% Male / 50% Female</li>
+          <li>Location: Alexandria, urban neighborhoods</li>
+          <li>Income: $25k–$50k/year</li>
+          <li>Education: College students / young professionals</li>
+        </ul>
       </div>
-      <ul class="stage-touchpoints">
-        <li>Social Media Cinematic Vlogs</li>
-        <li>SEO Articles & Blog Posts</li>
-        <li>Influencer Micro-Videos</li>
-      </ul>
-      <div class="stage-bars">
-        <div class="bar" data-value="85"><span>Engagement Rate</span></div>
-        <div class="bar" data-value="80"><span>Reach (Unique Users)</span></div>
+
+      <!-- Psychographics -->
+      <div class="persona-card">
+        <h3 style="font-size:1.5rem; margin-bottom:15px;">Psychographics</h3>
+        <ul style="font-size:1rem; line-height:1.6;">
+          <li>Lifestyle: Trend-focused, social, digitally connected</li>
+          <li>Values: Experiences, social recognition, aesthetics</li>
+          <li>Interests: Specialty coffee, photography, social media trends, urban lifestyle</li>
+          <li>Personality: Outgoing, expressive, adventurous, social influencer</li>
+        </ul>
       </div>
+
+      <!-- Goals & Motivations -->
+      <div class="persona-card">
+        <h3 style="font-size:1.5rem; margin-bottom:15px;">Goals & Motivations</h3>
+        <ul style="font-size:1rem; line-height:1.6;">
+          <li>Share Instagram-worthy experiences with peers</li>
+          <li>Discover new cafés with unique, premium offerings</li>
+          <li>Be recognized as a trendsetter in their social circle</li>
+          <li>Access exclusive promotions, seasonal offerings, and events</li>
+        </ul>
+      </div>
+
+      <!-- Challenges & Pain Points -->
+      <div class="persona-card">
+        <h3 style="font-size:1.5rem; margin-bottom:15px;">Challenges & Pain Points</h3>
+        <ul style="font-size:1rem; line-height:1.6;">
+          <li>Limited budget compared to elite professionals</li>
+          <li>High demand for trendy, photogenic, and unique experiences</li>
+          <li>Over-saturation of café options; needs differentiation</li>
+          <li>Expect fast, seamless service in a social setting</li>
+        </ul>
+      </div>
+
+      <!-- Preferred Channels -->
+      <div class="persona-card">
+        <h3 style="font-size:1.5rem; margin-bottom:15px;">Preferred Channels</h3>
+        <ul style="font-size:1rem; line-height:1.6;">
+          <li>Instagram & TikTok for visual inspiration</li>
+          <li>YouTube / lifestyle content creators</li>
+          <li>Email / app notifications for seasonal offers</li>
+          <li>Social sharing & referral campaigns</li>
+        </ul>
+      </div>
+
+      <!-- Buying Behavior -->
+      <div class="persona-card">
+        <h3 style="font-size:1.5rem; margin-bottom:15px;">Buying Behavior</h3>
+        <ul style="font-size:1rem; line-height:1.6;">
+          <li>High willingness to try new trendy offerings</li>
+          <li>Responds to social proof, influencer endorsements</li>
+          <li>Loyalty programs drive repeat visits</li>
+          <li>Engages in referrals and shares premium experiences online</li>
+        </ul>
+      </div>
+
     </div>
 
-    <!-- Stage: Consideration -->
-    <div class="journey-stage" data-aos="fade-up" data-aos-delay="100">
-      <div class="stage-header" style="background:#c8a17f;">
-        <span class="stage-name">Consideration</span>
-        <span class="stage-emotion">Interest & Evaluation</span>
+    <!-- Persona Flow Diagram -->
+    <div style="margin-top:60px; display:flex; justify-content:center; flex-wrap:wrap; gap:40px; align-items:center;">
+
+      <!-- Awareness Block -->
+      <div class="persona-diagram-block">
+        <h4 style="margin-bottom:10px;">Awareness</h4>
+        <p style="font-size:0.95rem;">Discovers Haksoss via social media trends, influencers, and peer recommendations</p>
       </div>
-      <ul class="stage-touchpoints">
-        <li>Email Sequence Step 1-5 (Provenance & Exclusivity)</li>
-        <li>Search Ads & Landing Page</li>
-        <li>Social Proof / Testimonials</li>
-      </ul>
-      <div class="stage-bars">
-        <div class="bar" data-value="78"><span>Email Open Rate</span></div>
-        <div class="bar" data-value="72"><span>Click-Through Rate</span></div>
+
+      <!-- Arrow -->
+      <div class="persona-arrow">→</div>
+
+      <!-- Consideration Block -->
+      <div class="persona-diagram-block">
+        <h4 style="margin-bottom:10px;">Consideration</h4>
+        <p style="font-size:0.95rem;">Evaluates visual appeal, seasonal offerings, and social recognition opportunities</p>
       </div>
+
+      <!-- Arrow -->
+      <div class="persona-arrow">→</div>
+
+      <!-- Conversion Block -->
+      <div class="persona-diagram-block">
+        <h4 style="margin-bottom:10px;">Conversion</h4>
+        <p style="font-size:0.95rem;">Purchases curated coffee experiences, signs up for loyalty perks, shares first visit online</p>
+      </div>
+
+      <!-- Arrow -->
+      <div class="persona-arrow">→</div>
+
+      <!-- Retention Block -->
+      <div class="persona-diagram-block">
+        <h4 style="margin-bottom:10px;">Retention</h4>
+        <p style="font-size:0.95rem;">Becomes regular visitor, participates in seasonal events, shares content, and refers peers</p>
+      </div>
+
     </div>
 
-    <!-- Stage: Conversion -->
-    <div class="journey-stage" data-aos="fade-up" data-aos-delay="200">
-      <div class="stage-header" style="background:#b58e6a;">
-        <span class="stage-name">Conversion</span>
-        <span class="stage-emotion">Excitement & Action</span>
-      </div>
-      <ul class="stage-touchpoints">
-        <li>Loyalty Program Sign-up</li>
-        <li>Hero Combo Purchase</li>
-        <li>Email CTAs & Social Ads Retargeting</li>
-      </ul>
-      <div class="stage-bars">
-        <div class="bar" data-value="62"><span>Conversion Rate</span></div>
-        <div class="bar" data-value="46"><span>Cost per Loyalty Sign-up</span></div>
-      </div>
-    </div>
-
-    <!-- Stage: Loyalty -->
-    <div class="journey-stage" data-aos="fade-up" data-aos-delay="300">
-      <div class="stage-header" style="background:#a37752;">
-        <span class="stage-name">Loyalty & Advocacy</span>
-        <span class="stage-emotion">Satisfaction & Pride</span>
-      </div>
-      <ul class="stage-touchpoints">
-        <li>Exclusive Member Emails</li>
-        <li>User-Generated Content Sharing</li>
-        <li>Repeat Visits & Referral Offers</li>
-      </ul>
-      <div class="stage-bars">
-        <div class="bar" data-value="90"><span>LTV Projection</span></div>
-        <div class="bar" data-value="15"><span>Referral Rate</span></div>
-      </div>
-    </div>
   </div>
 </section>
 
-<style>
-#customer-journey {
-  border-radius: 20px;
-  padding: 60px 30px;
-  margin: 60px auto;
-  background: linear-gradient(145deg, #f9f3ed, #fef6f0);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
-  max-width: 1100px;
-  font-family: 'Lora', serif;
-  animation: fadeInUp 1s ease forwards;
-  font-size: 1.1rem; /* increased font */
-}
 
-/* Titles */
-#customer-journey .section-title {
-  text-align: center;
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem; /* increased */
-  color: #5a3e36;
-  margin-bottom: 20px;
-}
+<!-- Customer Journey Mapping: Super Elite -->
+<section id="customer-journey" style="background-color:#f5ede4; padding:50px 20px; font-family: 'Times New Roman', serif;">
+  <div style="max-width:1200px; margin:0 auto;">
 
-#customer-journey .section-intro {
-  text-align: center;
-  max-width: 900px;
-  margin: 0 auto 45px auto;
-  color: #6b4f44;
-  font-size: 1.2rem; /* increased */
-  line-height: 1.8;
-}
+    <!-- Section Header -->
+    <h2 style="color:#2E8BC0; font-size:2.5rem; margin-bottom:20px; text-align:center;">Customer Journey Mapping</h2>
+    <p style="color:#3a3a3a; font-size:1.1rem; text-align:center; max-width:800px; margin:0 auto 50px;">
+      Mapping the complete journey of Haksoss Café’s super-elite clientele—from awareness to advocacy—highlighting touchpoints, channels, and key metrics.
+    </p>
 
-/* Journey Stages Container */
-.journey-container {
-  display: flex;
-  flex-direction: column;
-  gap: 45px;
-}
+    <style>
+      .journey-stage {
+        flex:1 1 250px;
+        background-color:#2E8BC0;
+        color:#f5ede4;
+        padding:25px;
+        border-radius:20px;
+        box-shadow:0 4px 12px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        font-family: 'Times New Roman', serif;
+      }
+      .journey-stage:hover {
+        transform: translateY(-5px);
+        box-shadow:0 8px 20px rgba(0,0,0,0.2);
+      }
+      .journey-arrow {
+        font-size:2rem; color:#2E8BC0; transition: transform 0.3s ease;
+      }
+      .journey-arrow:hover {
+        transform: scale(1.2);
+      }
+      @media (max-width:768px){
+        .journey-stage {
+          flex:1 1 100%;
+        }
+        .journey-arrow {
+          display:none;
+        }
+      }
+    </style>
 
-/* Each Stage Card */
-.journey-stage {
-  border-radius: 15px;
-  padding: 30px 25px;
-  background-color: rgba(255,248,243,0.95);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-  overflow: hidden;
-  transition: transform 0.5s, box-shadow 0.5s;
-}
-.journey-stage:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 25px rgba(0,0,0,0.12);
-}
+    <!-- Journey Stages -->
+    <div style="display:flex; flex-wrap:wrap; gap:30px; justify-content:center; align-items:flex-start;">
 
-/* Stage Header */
-.stage-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: 600;
-  padding: 14px 20px;
-  border-radius: 12px;
-  color: #fff;
-  margin-bottom: 22px;
-}
-.stage-name {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.4rem; /* increased */
-}
-.stage-emotion {
-  font-style: italic;
-  font-size: 1.15rem; /* increased */
-}
+      <!-- Awareness -->
+      <div class="journey-stage">
+        <h3 style="font-size:1.5rem; margin-bottom:10px;">Awareness</h3>
+        <ul style="font-size:1rem; line-height:1.6;">
+          <li>Touchpoints: Instagram, TikTok, LinkedIn, Lifestyle blogs</li>
+          <li>Content: Hero visuals, influencer endorsements, premium offers</li>
+          <li>Metrics: 80,800 unique users reached, 11.3% engagement rate</li>
+          <li>Goal: Introduce Haksoss Café as Alexandria’s luxury morning destination</li>
+        </ul>
+      </div>
 
-/* Touchpoints */
-.stage-touchpoints {
-  list-style: disc;
-  padding-left: 24px;
-  margin-bottom: 22px;
-  color: #6b4f44;
-  font-size: 1.1rem; /* increased */
-}
+      <div class="journey-arrow">→</div>
 
-/* Bar charts */
-.stage-bars {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 22px;
-}
-.bar {
-  flex: 1 1 45%;
-  height: 26px; /* slightly taller */
-  background: #e6d4c1;
-  border-radius: 12px;
-  position: relative;
-  margin-bottom: 12px;
-}
-.bar span {
-  position: absolute;
-  left: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1rem; /* increased */
-  font-weight: 600;
-  color: #5a3e36;
-}
-.bar::after {
-  content: '';
-  position: absolute;
-  left:0; top:0;
-  height:100%;
-  width:0;
-  background-color: #c08054;
-  border-radius: 12px;
-  transition: width 1.2s ease-in-out;
-}
+      <!-- Consideration -->
+      <div class="journey-stage">
+        <h3 style="font-size:1.5rem; margin-bottom:10px;">Consideration</h3>
+        <ul style="font-size:1rem; line-height:1.6;">
+          <li>Touchpoints: Social media ads, Email campaigns, Landing pages</li>
+          <li>Content: VIP offers, curated menu highlights, testimonials</li>
+          <li>Metrics: CTR 3.8%, Email open rate 35%</li>
+          <li>Goal: Engage prospects and nurture interest in loyalty program</li>
+        </ul>
+      </div>
 
-@media (max-width: 768px) {
-  .stage-bars {
-    flex-direction: column;
-  }
-}
-</style>
+      <div class="journey-arrow">→</div>
 
-<section id="audience-insights">
-  <h2 class="section-title">Audience Insights & Behavioral Trends</h2>
-  <p class="section-intro">
-    Understanding the Urban Professional Elite’s preferences, habits, and engagement patterns to optimize high-value conversions.
-  </p>
+      <!-- Conversion -->
+      <div class="journey-stage">
+        <h3 style="font-size:1.5rem; margin-bottom:10px;">Conversion</h3>
+        <ul style="font-size:1rem; line-height:1.6;">
+          <li>Touchpoints: Loyalty program sign-up, In-store interactions, Checkout process</li>
+          <li>Content: Exclusive offers, first-time VIP benefits, premium coffee experience</li>
+          <li>Metrics: 1,070 loyalty sign-ups, 6.2% conversion rate, ROAS 4.11:1</li>
+          <li>Goal: Turn engaged prospects into loyal customers</li>
+        </ul>
+      </div>
 
-  <div class="insights-container">
-    <div class="insight-card" data-aos="fade-right">
-      <h3>Demographics</h3>
-      <p>Target Age: 20-50 | Urban Professionals | Coffee & Luxury Lifestyle Enthusiasts</p>
-      <div class="bar-chart" data-value="65" data-label="Age 25-35"></div>
-      <div class="bar-chart" data-value="35" data-label="Age 36-50"></div>
+      <div class="journey-arrow">→</div>
+
+      <!-- Retention -->
+      <div class="journey-stage">
+        <h3 style="font-size:1.5rem; margin-bottom:10px;">Retention</h3>
+        <ul style="font-size:1rem; line-height:1.6;">
+          <li>Touchpoints: Personalized Email, SMS, VIP events, Seasonal menus</li>
+          <li>Content: Exclusive seasonal offers, personalized recommendations, loyalty rewards</li>
+          <li>Metrics: 15% retention rate, 18% re-engagement of dormant members</li>
+          <li>Goal: Maintain long-term loyalty and repeat visits</li>
+        </ul>
+      </div>
+
+      <div class="journey-arrow">→</div>
+
+      <!-- Advocacy -->
+      <div class="journey-stage">
+        <h3 style="font-size:1.5rem; margin-bottom:10px;">Advocacy</h3>
+        <ul style="font-size:1rem; line-height:1.6;">
+          <li>Touchpoints: Social sharing, Referral programs, VIP testimonials</li>
+          <li>Content: Referral incentives, user-generated content campaigns, testimonials</li>
+          <li>Metrics: Positive reviews, referrals from VIPs, social engagement growth</li>
+          <li>Goal: Transform loyal customers into brand advocates</li>
+        </ul>
+      </div>
+
     </div>
-    <div class="insight-card" data-aos="fade-left">
-      <h3>Digital Engagement</h3>
-      <p>Channels with the highest interaction and conversion potential.</p>
-      <canvas id="digitalEngagementChart" width="250" height="150"></canvas>
-    </div>
-    <div class="insight-card" data-aos="fade-right">
-      <h3>Behavioral Trends</h3>
-      <ul>
-        <li>High responsiveness to visual, aspirational content</li>
-        <li>Strong preference for limited-time, exclusive offers</li>
-        <li>Loyalty program sign-ups increase with storytelling content</li>
-        <li>UGC participation amplifies organic reach and credibility</li>
-      </ul>
-    </div>
-    <div class="insight-card" data-aos="fade-left">
-      <h3>Engagement Metrics</h3>
-      <div class="sparkline-chart" data-values="11,35,6.2,22,28,18,30"></div>
-      <div class="bar-chart" data-value="11.3" data-label="Avg Engagement Rate"></div>
-      <div class="bar-chart" data-value="35" data-label="Email Open Rate"></div>
-      <div class="bar-chart" data-value="6.2" data-label="Conversion Rate"></div>
-    </div>
+
   </div>
 </section>
 
-<style>
-#audience-insights {
-  border-radius: 20px;
-  padding: 60px 30px;
-  margin: 60px auto;
-  background: linear-gradient(145deg, #fef8f2, #fceedd);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
-  max-width: 1100px;
-  font-family: 'Lora', serif;
-  animation: fadeInUp 1s ease forwards;
-  font-size: 1.1rem; /* increased */
-}
 
-#audience-insights .section-title {
-  text-align: center;
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem; /* increased */
-  color: #5a3e36;
-  margin-bottom: 20px;
-}
+<!-- Audience Insights & Behavioral Trends -->
+<section id="audience-insights" style="background-color:#f5ede4; padding:50px 20px; font-family: 'Times New Roman', serif;">
+  <div style="max-width:1200px; margin:0 auto;">
 
-#audience-insights .section-intro {
-  text-align: center;
-  max-width: 900px;
-  margin: 0 auto 45px auto;
-  color: #6b4f44;
-  font-size: 1.2rem; /* increased */
-  line-height: 1.8;
-}
+    <!-- Section Header -->
+    <h2 style="color:#2E8BC0; font-size:2.5rem; margin-bottom:20px; text-align:center;">Audience Insights & Behavioral Trends</h2>
+    <p style="color:#3a3a3a; font-size:1.1rem; text-align:center; max-width:800px; margin:0 auto 50px;">
+      Comprehensive analysis of Haksoss Café’s combined super-elite and aspirational clientele, including behavioral patterns, engagement trends, and actionable insights for targeting and retention.
+    </p>
 
-.insights-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: space-between;
-}
+    <style>
+      .insight-card {
+        flex:1 1 280px;
+        background-color:#2E8BC0;
+        color:#f5ede4;
+        padding:25px;
+        border-radius:20px;
+        box-shadow:0 4px 12px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        font-family: 'Times New Roman', serif;
+      }
+      .insight-card:hover {
+        transform: translateY(-5px);
+        box-shadow:0 8px 20px rgba(0,0,0,0.2);
+      }
+      .insight-arrow {
+        font-size:2rem; color:#2E8BC0; transition: transform 0.3s ease;
+      }
+      .insight-arrow:hover {
+        transform: scale(1.2);
+      }
+      @media (max-width:768px){
+        .insight-card {
+          flex:1 1 100%;
+        }
+        .insight-arrow {
+          display:none;
+        }
+      }
+    </style>
 
-.insight-card {
-  flex: 1 1 45%;
-  border-radius: 15px;
-  padding: 30px;
-  background: linear-gradient(120deg, #fef6ed, #fbe8d3);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-  transition: transform 0.4s, box-shadow 0.4s;
-  position: relative;
-  overflow: hidden;
-}
-.insight-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.12);
-}
-.insight-card h3 {
-  color: #6b4f3b;
-  margin-bottom: 14px;
-  font-family: 'Playfair Display', serif;
-  font-size: 1.5rem; /* increased */
-}
-.insight-card p, .insight-card li {
-  color: #5a3e36;
-  font-size: 1.15rem; /* increased */
-  margin-bottom: 12px;
-}
+    <!-- Insights Cards -->
+    <div style="display:flex; flex-wrap:wrap; gap:30px; justify-content:center; align-items:flex-start;">
 
-.bar-chart {
-  position: relative;
-  height: 22px; /* taller */
-  background: #e6d4c1;
-  border-radius: 10px;
-  margin: 14px 0;
-  overflow: hidden;
-}
-.bar-chart::after {
-  content: attr(data-value) '%';
-  position: absolute;
-  left: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-weight: 600;
-  color: #5a3e36;
-  z-index: 2;
-}
-.bar-chart::before {
-  content: '';
-  position: absolute;
-  top:0; left:0;
-  width:0;
-  height:100%;
-  background-color: #c08054;
-  border-radius: 10px;
-  transition: width 1.2s ease-in-out;
-}
+      <!-- Demographics -->
+      <div class="insight-card">
+        <h3 style="font-size:1.5rem; margin-bottom:10px;">Demographics</h3>
+        <ul style="font-size:1rem; line-height:1.6;">
+          <li>Age: 20–50 (Young Urban Trendsetters & Urban Professional Elite)</li>
+          <li>Income: $25k–$120k/year</li>
+          <li>Gender: 55% Male / 45% Female</li>
+          <li>Location: Alexandria, urban districts</li>
+          <li>Education: College to Master’s or higher</li>
+        </ul>
+      </div>
 
-.sparkline-chart {
-  width: 100%;
-  height: 70px; /* taller */
-  margin: 18px 0;
-}
-</style>
+      <!-- Psychographics -->
+      <div class="insight-card">
+        <h3 style="font-size:1.5rem; margin-bottom:10px;">Psychographics</h3>
+        <ul style="font-size:1rem; line-height:1.6;">
+          <li>Lifestyle: Busy professionals and trend-focused young adults seeking premium and social experiences</li>
+          <li>Values: Quality, exclusivity, aesthetics, prestige, convenience</li>
+          <li>Interests: Specialty coffee, fine dining, lifestyle content, social networking</li>
+          <li>Personality: Sophisticated, ambitious, socially influential, adventurous</li>
+        </ul>
+      </div>
+
+      <!-- Engagement Behavior -->
+      <div class="insight-card">
+        <h3 style="font-size:1.5rem; margin-bottom:10px;">Engagement Behavior</h3>
+        <ul style="font-size:1rem; line-height:1.6;">
+          <li>Social Media Engagement: 11.3% average rate across channels</li>
+          <li>Email Open Rate: 35%</li>
+          <li>CTR: 3.8% on campaigns featuring VIP offers</li>
+          <li>Top Platforms: Instagram, TikTok, LinkedIn</li>
+          <li>Content Preference: Hero visuals, curated experiences, seasonal offers</li>
+        </ul>
+      </div>
+
+      <!-- Purchase Behavior -->
+      <div class="insight-card">
+        <h3 style="font-size:1.5rem; margin-bottom:10px;">Purchase Behavior</h3>
+        <ul style="font-size:1rem; line-height:1.6;">
+          <li>Average Spend: $25–$50 per visit</li>
+          <li>Loyalty Sign-ups: 1,070 members</li>
+          <li>Conversion Rate: 6.2%</li>
+          <li>Repeat Purchase Frequency: 1.5–2 visits/week</li>
+          <li>ROAS: 4.11:1</li>
+        </ul>
+      </div>
+
+      <!-- Preferences & Influencers -->
+      <div class="insight-card">
+        <h3 style="font-size:1.5rem; margin-bottom:10px;">Preferences & Influencers</h3>
+        <ul style="font-size:1rem; line-height:1.6;">
+          <li>Favors premium coffee blends, seasonal specials, and curated offerings</li>
+          <li>Influenced by social proof, VIP exclusivity, and peer recommendations</li>
+          <li>Responds to personalized campaigns and loyalty perks</li>
+          <li>Engages in referral programs and shares premium experiences online</li>
+        </ul>
+      </div>
+
+      <!-- Opportunities & Insights -->
+      <div class="insight-card">
+        <h3 style="font-size:1.5rem; margin-bottom:10px;">Opportunities & Insights</h3>
+        <ul style="font-size:1rem; line-height:1.6;">
+          <li>Introduce short-form videos for Instagram/TikTok to boost engagement</li>
+          <li>Offer dynamic, exclusive seasonal offers for retention</li>
+          <li>Leverage email segmentation for personalized VIP campaigns</li>
+          <li>Use influencer partnerships to attract aspirational young urban elites</li>
+          <li>Highlight premium, curated experiences to differentiate from competitors</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
 <!-- SMART Goals & KPI Section -->
 <section id="smart-goals">
   <h2 class="section-title">SMART Goals & Performance</h2>
