@@ -411,14 +411,14 @@ header.fixed-header{
   color: #5a3e36;
 }
 
-/* Apply consistent font & color across inner elements */
+/* Enforce consistent font + color */
 #market-analysis * {
-  font-size: 16px !important;
   font-family: 'Times New Roman', serif !important;
+  font-size: 16px !important;
   color: #5a3e36;
 }
 
-/* Section title and intro */
+/* Section title & intro */
 .section-title {
   text-align: center;
   margin-bottom: 20px;
@@ -431,17 +431,16 @@ header.fixed-header{
   margin: 0 auto 40px auto;
 }
 
-/* Insights grid */
+/* Market insights cards */
 .market-insights {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 25px;
   margin-bottom: 50px;
 }
 
-/* Insight cards */
 .insight-card {
-  background-color: #e6c9aa; /* latte tone */
+  background-color: #e6c9aa;
   border-radius: 16px;
   padding: 25px 20px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.1);
@@ -454,26 +453,25 @@ header.fixed-header{
   box-shadow: 0 12px 30px rgba(0,0,0,0.15);
 }
 
-/* Headings inside cards */
 .insight-card h3 {
   margin-bottom: 12px;
   font-weight: bold;
 }
 
-/* Other sections */
+.insight-card p {
+  line-height: 1.8;
+}
+
+/* Subsections */
 .competitive-landscape,
 .strategic-positioning {
   margin-bottom: 50px;
-  background-color: #f2dfcb;
-  border-radius: 16px;
-  padding: 25px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
 }
 
 .competitive-landscape h3,
 .strategic-positioning h3 {
-  margin-bottom: 12px;
   font-weight: bold;
+  margin-bottom: 12px;
 }
 
 .competitive-landscape p,
@@ -485,7 +483,7 @@ header.fixed-header{
 @media(max-width:768px){
   #market-analysis { padding: 36px 20px; margin: 40px 18px; }
   .market-insights { gap: 18px; }
-  .insight-card, .competitive-landscape, .strategic-positioning { padding: 20px 16px; }
+  .insight-card { padding: 20px 16px; }
 }
 </style>
 
