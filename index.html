@@ -13,31 +13,28 @@
 :root {
     --deep:#2b1a09;
     --accent:#d8a15a;
+    --bg-start:#f9f5f0;
+    --bg-end:#fffaf5;
     --card:rgba(255,255,255,0.95);
     --card-shadow:0 10px 25px rgba(51,26,0,0.12),0 0 0 1px rgba(216,161,90,0.1);
     --radius:16px;
     --maxw:1200px;
 }
-
 *{box-sizing:border-box;}
 body{
     margin:0;
     font-family:"Lato", sans-serif;
     color: var(--deep);
-
-    /* ✨ Unified background image behind all sections */
-    background:
-        linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.9)),
-        url('3_assets/Images/header-bg.jpg') center top / cover no-repeat fixed;
-
+    /* ✅ Background moved here to be global */
+    background: 
+        linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)),
+        url('3_assets/Images/header-bg.jpg') center/cover no-repeat fixed;
     background-attachment: fixed;
-    background-repeat: no-repeat;
     background-size: cover;
     opacity:0; 
     animation: bodyFadeIn 900ms ease forwards;
 }
 @keyframes bodyFadeIn{ to {opacity:1;} }
-
 a{color:var(--deep); text-decoration:none; transition:.3s;}
 a:hover{color:var(--accent);}
 .page{padding-top:100px; max-width:var(--maxw); margin:0 auto;}
@@ -47,7 +44,7 @@ header.fixed-header{
     position:fixed; top:0; left:0; right:0; z-index:9999;
     background:
         linear-gradient(rgba(25,15,5,0.7), rgba(25,15,5,0.7)),
-        url('3_assets/Images/header-bg.jpg') center/cover no-repeat;
+        url('3_Assets/Images/header-bg.jpg') center/cover no-repeat;
     color:#fff;
     box-shadow:0 6px 25px rgba(0,0,0,0.3);
     border-bottom: 2px solid rgba(255, 255, 255, 0.25);
@@ -124,7 +121,7 @@ header.fixed-header{
     gap:12px; margin:14px 0;
 }
 .stat{
-    background:linear-gradient(135deg,rgba(255,255,255,0.95),rgba(255,255,255,0.9));
+    background:linear-gradient(135deg,var(--bg-start),#fff);
     padding:10px 14px;
     border-radius:14px;
     min-width:95px;
@@ -171,13 +168,13 @@ header.fixed-header{
 }
 </style>
 </head>
-
 <body>
+
 <!-- HEADER -->
 <header class="fixed-header" role="banner">
     <div class="header-inner">
         <div class="brand">
-            <img src="3_assets/Logo/logo.png" alt="Haksoss Café Logo">
+            <img src="3_Assets/Logo/logo.png" alt="Haksoss Café Logo">
             <div>
                 <h1 class="site-title">Haksoss — Luxury Morning Experience</h1>
             </div>
@@ -209,15 +206,14 @@ header.fixed-header{
                 </div>
             </div>
             <div class="case-right">
-                <img src="3_assets/Images/hero-latte.jpg" alt="Hero Latte Image">
+                <img src="3_Assets/Images/hero-latte.jpg" alt="Hero Latte Image">
             </div>
         </div>
     </section>
 </div>
+
 </body>
 </html>
-
-
 
 <section id="brand-identity">
   <h2 class="section-title">Brand Identity & Core Positioning</h2>
