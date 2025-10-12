@@ -751,44 +751,33 @@ footer{ padding:10px 5px; border-top:1px solid rgba(192,124,74,0.3); background:
 
 <section id="audience-insights">
   <h2 class="section-title">Audience Insights & Behavioral Trends</h2>
-  <p style="text-align:center; max-width:900px; margin:0 auto 30px auto; color:#6b4f44;">
+  <p class="section-intro">
     Understanding the Urban Professional Elite’s preferences, habits, and engagement patterns to optimize high-value conversions.
   </p>
 
   <div class="insights-container">
-    <!-- Insight Card 1 -->
+    <!-- Insight Card 1: Demographics -->
     <div class="insight-card">
       <h3>Demographics</h3>
       <p>Target Age: 20-50 | Urban Professionals | Coffee & Luxury Lifestyle Enthusiasts</p>
-      <div class="trend-bar">
-        <span>Core Age 25-35</span>
-        <div class="bar-bg"><div class="bar-fill" data-fill="65%"></div></div>
+      <div class="chart-donut" data-percent="65">
+        <div class="donut-value">65%</div>
+        <div class="donut-label">Age 25-35</div>
       </div>
-      <div class="trend-bar">
-        <span>Core Age 36-50</span>
-        <div class="bar-bg"><div class="bar-fill" data-fill="35%"></div></div>
+      <div class="chart-donut" data-percent="35">
+        <div class="donut-value">35%</div>
+        <div class="donut-label">Age 36-50</div>
       </div>
     </div>
 
-    <!-- Insight Card 2 -->
+    <!-- Insight Card 2: Digital Engagement -->
     <div class="insight-card">
       <h3>Digital Engagement</h3>
       <p>Channels with the highest interaction and conversion potential.</p>
-      <div class="trend-bar">
-        <span>Instagram / TikTok</span>
-        <div class="bar-bg"><div class="bar-fill" data-fill="80%"></div></div>
-      </div>
-      <div class="trend-bar">
-        <span>Email Campaign</span>
-        <div class="bar-bg"><div class="bar-fill" data-fill="60%"></div></div>
-      </div>
-      <div class="trend-bar">
-        <span>Search (SEO / SEM)</span>
-        <div class="bar-bg"><div class="bar-fill" data-fill="50%"></div></div>
-      </div>
+      <canvas id="digitalEngagementChart" width="200" height="200"></canvas>
     </div>
 
-    <!-- Insight Card 3 -->
+    <!-- Insight Card 3: Behavioral Trends -->
     <div class="insight-card">
       <h3>Behavioral Trends</h3>
       <ul>
@@ -799,84 +788,54 @@ footer{ padding:10px 5px; border-top:1px solid rgba(192,124,74,0.3); background:
       </ul>
     </div>
 
-    <!-- Insight Card 4 -->
+    <!-- Insight Card 4: Engagement Metrics -->
     <div class="insight-card">
       <h3>Engagement Metrics</h3>
-      <div class="trend-bar">
-        <span>Average Engagement Rate</span>
-        <div class="bar-bg"><div class="bar-fill" data-fill="11.3%"></div></div>
+      <div class="chart-sparkline" data-values="11,35,6.2,22,28,18,30"></div>
+      <div class="chart-donut" data-percent="11.3">
+        <div class="donut-value">11.3%</div>
+        <div class="donut-label">Avg Engagement Rate</div>
       </div>
-      <div class="trend-bar">
-        <span>Email Open Rate</span>
-        <div class="bar-bg"><div class="bar-fill" data-fill="35%"></div></div>
+      <div class="chart-donut" data-percent="35">
+        <div class="donut-value">35%</div>
+        <div class="donut-label">Email Open Rate</div>
       </div>
-      <div class="trend-bar">
-        <span>Conversion Rate</span>
-        <div class="bar-bg"><div class="bar-fill" data-fill="6.2%"></div></div>
+      <div class="chart-donut" data-percent="6.2">
+        <div class="donut-value">6.2%</div>
+        <div class="donut-label">Conversion Rate</div>
       </div>
     </div>
   </div>
 </section>
 
 <style>
-  .section-title {
-    text-align: center;
-    font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
-    color: #5a3e36;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
-  }
-
-  section {
+  #audience-insights {
     border: 2px solid #d4bfa3;
-    border-radius: 15px;
+    border-radius: 20px;
     padding: 50px 30px;
     margin: 60px auto;
-    background-color: #fff8f3;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    background: linear-gradient(135deg, #fffaf0, #fff4e6);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.08);
     max-width: 1100px;
+    font-family: 'Lora', serif;
     animation: fadeInUp 1s ease forwards;
   }
 
-  .journey-container {
-    display: flex;
-    flex-direction: column;
-    gap: 35px;
-  }
-
-  .journey-stage {
-    border: 1px solid #c9b299;
-    border-radius: 12px;
-    padding: 25px;
-    background-color: #fff7f0;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  }
-
-  .stage-header {
-    display: flex;
-    justify-content: space-between;
+  .section-title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.3rem;
+    color: #5a3e36;
     margin-bottom: 15px;
-    font-weight: 600;
-    color: #6b4f3b;
   }
 
-  .stage-touchpoints {
-    margin-bottom: 15px;
-    list-style: disc;
-    padding-left: 20px;
-    color: #5a3e2b;
-  }
-
-  .stage-kpis .kpi-bar {
-    margin-bottom: 12px;
-  }
-
-  .stage-kpis .kpi-bar span {
-    display: block;
-    font-weight: 600;
-    color: #6b4f3b;
-    margin-bottom: 5px;
+  .section-intro {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+    color: #6b4f44;
+    font-size: 1.1rem;
+    line-height: 1.6;
   }
 
   .insights-container {
@@ -889,75 +848,148 @@ footer{ padding:10px 5px; border-top:1px solid rgba(192,124,74,0.3); background:
   .insight-card {
     flex: 1 1 45%;
     border: 1px solid #c9b299;
-    border-radius: 12px;
+    border-radius: 15px;
     padding: 25px;
     background-color: #fefaf5;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
   }
 
   .insight-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
   }
 
   .insight-card h3 {
     color: #6b4f3b;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
   }
 
-  .trend-bar {
-    margin: 12px 0;
-  }
-
-  .trend-bar span {
-    display: block;
-    font-weight: 600;
+  .insight-card p {
     color: #5a3e2b;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
   }
 
-  .bar-bg {
+  /* Donut Charts */
+  .chart-donut {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 15px 10px;
+    background: conic-gradient(#c08054 0% 0%, #e6d4c1 0% 100%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: transform 0.3s;
+  }
+
+  .chart-donut:hover {
+    transform: scale(1.1);
+  }
+
+  .donut-value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #5a3e36;
+  }
+
+  .donut-label {
+    font-size: 0.85rem;
+    color: #6b4f44;
+    text-align: center;
+  }
+
+  /* Sparkline */
+  .chart-sparkline {
     width: 100%;
-    background-color: #e6d4c1;
-    border-radius: 8px;
-    overflow: hidden;
-    height: 22px;
-  }
-
-  .bar-fill {
-    height: 100%;
-    width: 0%;
-    background: linear-gradient(90deg, #c08054, #a65f3b);
-    border-radius: 8px 0 0 8px;
-    transition: width 2s ease;
+    height: 60px;
+    margin: 15px 0;
   }
 
   @keyframes fadeInUp {
     0% {opacity:0; transform: translateY(20px);}
     100% {opacity:1; transform: translateY(0);}
   }
+
+  @media (max-width: 768px) {
+    .insight-card {
+      flex: 1 1 100%;
+    }
+    .chart-donut {
+      width: 100px;
+      height: 100px;
+    }
+  }
 </style>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const journeyBars = document.querySelectorAll("#customer-journey .bar-fill");
-    journeyBars.forEach(bar => {
-      setTimeout(() => {
-        bar.style.width = bar.getAttribute("data-fill");
-      }, 500);
+    // Animate donut charts
+    const donuts = document.querySelectorAll(".chart-donut");
+    donuts.forEach(donut => {
+      const percent = donut.getAttribute("data-percent");
+      donut.style.background = `conic-gradient(#c08054 0% ${percent}%, #e6d4c1 ${percent}% 100%)`;
     });
 
-    const insightBars = document.querySelectorAll("#audience-insights .bar-fill");
-    insightBars.forEach(bar => {
-      setTimeout(() => {
-        bar.style.width = bar.getAttribute("data-fill");
-      }, 400);
+    // Sparkline Trend Line
+    const sparklineEl = document.querySelector(".chart-sparkline");
+    const sparklineData = sparklineEl.getAttribute("data-values").split(',').map(Number);
+    new Chart(sparklineEl.getContext('2d'), {
+      type: 'line',
+      data: {
+        labels: sparklineData.map((_, i) => i+1),
+        datasets: [{
+          data: sparklineData,
+          borderColor: '#c08054',
+          backgroundColor: 'rgba(192,128,84,0.2)',
+          tension: 0.4,
+          fill: true,
+          pointRadius: 3,
+          pointBackgroundColor: '#a65f3b'
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: { display: false },
+          y: { display: false, min: 0 }
+        },
+        elements: { line: { borderWidth: 2 } }
+      }
+    });
+
+    // Digital Engagement Pie Chart
+    const ctx = document.getElementById('digitalEngagementChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Instagram / TikTok', 'Email Campaign', 'Search SEO/SEM'],
+        datasets: [{
+          data: [80, 60, 50],
+          backgroundColor: ['#c08054', '#a65f3b', '#e6d4c1'],
+          borderWidth: 2
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'bottom', labels: { color: '#5a3e36', font: { size: 14 } } },
+          tooltip: { enabled: true }
+        },
+        cutout: '65%'
+      }
     });
   });
 </script>
 <section id="smart-goals">
   <h2 class="section-title">SMART Goals & Primary KPI Performance</h2>
-  <p style="text-align:center; max-width:900px; margin:0 auto 30px auto; color:#6b4f44;">
+  <p class="section-intro">
     High-value, measurable objectives that guided the Haksoss Café campaign, ensuring all efforts contributed directly to revenue and brand loyalty.
   </p>
 
@@ -1001,151 +1033,89 @@ footer{ padding:10px 5px; border-top:1px solid rgba(192,124,74,0.3); background:
     </table>
   </div>
 
-  <!-- KPI Performance -->
-  <div class="kpi-performance">
-    <h3>Primary KPI Performance</h3>
-    <div class="kpi-bar">
-      <span>ROAS</span>
-      <div class="bar-bg">
-        <div class="bar-fill" data-fill="100%"></div>
-      </div>
-      <p style="color:#5a3e2b; margin-top:5px;">Target: 3.5:1 | Actual: 4.11:1</p>
+  <!-- KPI Donuts -->
+  <div class="kpi-donuts">
+    <div class="donut-chart" data-percent="100">
+      <div class="donut-value">100%</div>
+      <div class="donut-label">ROAS</div>
     </div>
-    <div class="kpi-bar">
-      <span>Loyalty Sign-ups</span>
-      <div class="bar-bg">
-        <div class="bar-fill" data-fill="107%"></div>
-      </div>
-      <p style="color:#5a3e2b; margin-top:5px;">Target: 1,000 | Actual: 1,070</p>
+    <div class="donut-chart" data-percent="107">
+      <div class="donut-value">107%</div>
+      <div class="donut-label">Loyalty Sign-ups</div>
     </div>
   </div>
 </section>
 
 <section id="budget-flighting">
   <h2 class="section-title">Budget Allocation & Flighting Plan</h2>
-  <p style="text-align:center; max-width:900px; margin:0 auto 30px auto; color:#6b4f44;">
+  <p class="section-intro">
     Optimized spend across channels and a structured 90-day funnel to maximize reach, conversions, and loyalty sign-ups.
   </p>
 
-  <!-- Budget Allocation Table + Animated Bars -->
+  <!-- Budget Allocation -->
   <div class="budget-section">
-    <table>
-      <thead>
-        <tr>
-          <th>Channel</th>
-          <th>Budget %</th>
-          <th>Spend (USD)</th>
-          <th>Performance</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Social Media</td>
-          <td>40%</td>
-          <td>$7,200</td>
-          <td>
-            <div class="bar-bg">
-              <div class="bar-fill" data-fill="40%"></div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>Email / CRM Automation</td>
-          <td>30%</td>
-          <td>$5,400</td>
-          <td>
-            <div class="bar-bg">
-              <div class="bar-fill" data-fill="30%"></div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>Search (SEO / SEM)</td>
-          <td>20%</td>
-          <td>$3,600</td>
-          <td>
-            <div class="bar-bg">
-              <div class="bar-fill" data-fill="20%"></div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>Creative Production</td>
-          <td>10%</td>
-          <td>$1,800</td>
-          <td>
-            <div class="bar-bg">
-              <div class="bar-fill" data-fill="10%"></div>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <h3>Budget Allocation</h3>
+    <div class="budget-bar" data-percent="40">
+      <span>Social Media - 40%</span>
+      <div class="bar-bg"><div class="bar-fill"></div></div>
+    </div>
+    <div class="budget-bar" data-percent="30">
+      <span>Email / CRM Automation - 30%</span>
+      <div class="bar-bg"><div class="bar-fill"></div></div>
+    </div>
+    <div class="budget-bar" data-percent="20">
+      <span>Search SEO / SEM - 20%</span>
+      <div class="bar-bg"><div class="bar-fill"></div></div>
+    </div>
+    <div class="budget-bar" data-percent="10">
+      <span>Creative Production - 10%</span>
+      <div class="bar-bg"><div class="bar-fill"></div></div>
+    </div>
   </div>
 
-  <!-- Flighting Plan Table -->
+  <!-- Flighting Plan Mini Bars -->
   <div class="flighting-section">
     <h3>90-Day Conversion Funnel</h3>
-    <table>
-      <thead>
-        <tr>
-          <th>Phase</th>
-          <th>Duration</th>
-          <th>Primary Goal</th>
-          <th>Key Activities & Channels</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Launch & Awareness</td>
-          <td>Days 1-30</td>
-          <td>Maximize reach, establish luxury positioning</td>
-          <td>Social Media Video Ads, SEO Blog Articles</td>
-        </tr>
-        <tr>
-          <td>Sustain & Conversion</td>
-          <td>Days 31-60</td>
-          <td>Drive Loyalty Sign-ups & Hero Combo sales</td>
-          <td>Email 10-step Sequence, SEM High-Intent Ads</td>
-        </tr>
-        <tr>
-          <td>Retention & Remarketing</td>
-          <td>Days 61-90</td>
-          <td>Re-engage non-converters, nurture repeat visits</td>
-          <td>Social Media Remarketing, Email Personalized Offers</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="funnel-bar" data-percent="100"><span>Launch & Awareness</span><div class="bar-bg"><div class="bar-fill"></div></div></div>
+    <div class="funnel-bar" data-percent="90"><span>Sustain & Conversion</span><div class="bar-bg"><div class="bar-fill"></div></div></div>
+    <div class="funnel-bar" data-percent="75"><span>Retention & Remarketing</span><div class="bar-bg"><div class="bar-fill"></div></div></div>
   </div>
 </section>
 
 <style>
+  /* Section Styling */
   .section-title {
     text-align: center;
     font-family: 'Playfair Display', serif;
     font-size: 2.2rem;
     color: #5a3e36;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
+    margin-bottom: 15px;
   }
-
+  .section-intro {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 35px auto;
+    color: #6b4f44;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
   section {
     border: 2px solid #d4bfa3;
-    border-radius: 15px;
+    border-radius: 20px;
     padding: 50px 30px;
     margin: 60px auto;
     background-color: #fff8f3;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.08);
     max-width: 1100px;
     animation: fadeInUp 1s ease forwards;
   }
 
-  .smart-goals-table table, .budget-section table, .flighting-section table {
+  /* Tables */
+  table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
   }
-
   th, td {
     border: 1px solid #d6bfa3;
     padding: 12px 15px;
@@ -1153,42 +1123,59 @@ footer{ padding:10px 5px; border-top:1px solid rgba(192,124,74,0.3); background:
     background-color: #fffaf4;
     color: #5a3e2b;
   }
-
   th {
     background-color: #f5e6da;
     color: #6b4f3b;
   }
 
-  .kpi-performance h3, .flighting-section h3 {
-    color: #6b4f3b;
-    margin-bottom: 20px;
+  /* KPI Donuts */
+  .kpi-donuts {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 30px;
+    flex-wrap: wrap;
   }
-
-  .kpi-bar {
-    margin-bottom: 20px;
+  .donut-chart {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: conic-gradient(#c08054 0% 0%, #e6d4c1 0% 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: transform 0.4s;
   }
+  .donut-chart:hover { transform: scale(1.1); }
+  .donut-value { font-size: 1.2rem; font-weight: 700; color: #5a3e36; }
+  .donut-label { font-size: 0.85rem; color: #6b4f44; text-align: center; }
 
-  .kpi-bar span {
-    display: block;
-    font-weight: 600;
-    color: #6b4f3b;
-    margin-bottom: 5px;
+  /* Budget Bars */
+  .budget-section h3 { color: #6b4f3b; margin-bottom: 15px; }
+  .budget-bar {
+    margin-bottom: 18px;
   }
-
-  .bar-bg {
-    width: 100%;
-    background-color: #e6d4c1;
-    border-radius: 8px;
-    overflow: hidden;
-    height: 25px;
+  .budget-bar span { display: block; margin-bottom: 5px; font-weight: 600; color: #5a3e2b; }
+  .budget-bar .bar-bg {
+    width: 100%; height: 24px; background: #e6d4c1; border-radius: 12px; overflow: hidden;
   }
-
-  .bar-fill {
-    height: 100%;
-    width: 0%;
+  .budget-bar .bar-fill {
+    width: 0%; height: 100%;
     background: linear-gradient(90deg, #c08054, #a65f3b);
-    border-radius: 8px 0 0 8px;
+    border-radius: 12px 0 0 12px;
     transition: width 2s ease;
+  }
+
+  /* Flighting Plan Bars */
+  .flighting-section h3 { color: #6b4f3b; margin-bottom: 15px; }
+  .funnel-bar { margin-bottom: 18px; }
+  .funnel-bar span { display: block; font-weight: 600; color: #5a3e2b; margin-bottom: 5px; }
+  .funnel-bar .bar-bg { width: 100%; height: 20px; background: #e6d4c1; border-radius: 10px; overflow: hidden; }
+  .funnel-bar .bar-fill {
+    width: 0%; height: 100%; background: linear-gradient(90deg, #c08054, #a65f3b);
+    border-radius: 10px 0 0 10px; transition: width 2s ease;
   }
 
   @keyframes fadeInUp {
@@ -1199,14 +1186,33 @@ footer{ padding:10px 5px; border-top:1px solid rgba(192,124,74,0.3); background:
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const bars = document.querySelectorAll("#smart-goals .bar-fill, #budget-flighting .bar-fill");
-    bars.forEach(bar => {
+    // Animate KPI Donuts
+    const donuts = document.querySelectorAll(".donut-chart");
+    donuts.forEach(donut => {
+      const percent = donut.getAttribute("data-percent");
       setTimeout(() => {
-        bar.style.width = bar.getAttribute("data-fill");
+        donut.style.background = `conic-gradient(#c08054 0% ${percent}%, #e6d4c1 ${percent}% 100%)`;
       }, 400);
+    });
+
+    // Animate Budget Bars
+    const budgetBars = document.querySelectorAll(".budget-bar .bar-fill");
+    budgetBars.forEach(bar => {
+      const parent = bar.closest(".budget-bar");
+      const percent = parent.getAttribute("data-percent");
+      setTimeout(() => { bar.style.width = percent + "%"; }, 500);
+    });
+
+    // Animate Flighting Plan Bars
+    const funnelBars = document.querySelectorAll(".funnel-bar .bar-fill");
+    funnelBars.forEach(bar => {
+      const parent = bar.closest(".funnel-bar");
+      const percent = parent.getAttribute("data-percent");
+      setTimeout(() => { bar.style.width = percent + "%"; }, 600);
     });
   });
 </script>
+
 <section id="kpis">
   <h2 class="section-title">Campaign KPIs & Performance Dashboard</h2>
   <p style="text-align:center; max-width:900px; margin:0 auto 40px auto; color:#6b4f44;">
