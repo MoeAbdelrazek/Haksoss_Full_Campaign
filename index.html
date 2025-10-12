@@ -500,7 +500,7 @@ header.fixed-header{
     </tbody>
   </table>
 
-  <!-- Persona Engagement Radial Charts (Dark Accent) -->
+  <!-- Persona Engagement Radial Charts (Dark & Subtle) -->
   <div class="charts-container">
     <div class="chart" data-percent="85">
       <div class="chart-value">85%</div>
@@ -565,7 +565,7 @@ header.fixed-header{
       width: 160px;
       height: 160px;
       border-radius: 50%;
-      background: conic-gradient(#2b2b2b 0% 0%, #444 0% 100%); /* dark charts */
+      background: conic-gradient(#222 0% 0%, #333 0% 100%); /* dark and subtle base */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -575,9 +575,20 @@ header.fixed-header{
       transition: transform 0.3s;
     }
 
-    .chart:hover { transform: scale(1.1); }
-    .chart-value { font-size: 1.5rem; font-weight: 700; color: #ffd57f; margin-bottom: 6px; }
-    .chart-label { text-align: center; font-size: 0.95rem; color: #2b2b2b; }
+    .chart:hover { transform: scale(1.05); }
+
+    .chart-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #ffffff; /* white text */
+      margin-bottom: 6px;
+    }
+
+    .chart-label {
+      text-align: center;
+      font-size: 0.95rem;
+      color: #ffffff; /* white text */
+    }
   </style>
 
   <script>
@@ -585,7 +596,7 @@ header.fixed-header{
       const charts = document.querySelectorAll(".chart");
       charts.forEach(chart => {
         const percent = chart.getAttribute("data-percent");
-        chart.style.background = `conic-gradient(#ffd57f 0% ${percent}%, #2b2b2b ${percent}% 100%)`;
+        chart.style.background = `conic-gradient(#555 ${percent}%, #222 ${percent}% 100%)`; // subtle dark fill
       });
     });
   </script>
