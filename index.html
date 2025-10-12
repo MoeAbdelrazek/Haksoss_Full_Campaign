@@ -1425,7 +1425,7 @@
     padding: 50px 30px;
     margin: 60px auto;
     background-color: #fff8f3;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.08);
     max-width: 1100px;
     animation: fadeInUp 1s ease forwards;
   }
@@ -1447,27 +1447,47 @@
   }
 
   .search-card, .ad-card {
-    background: #fffaf4;
-    border: 1px solid #d6bfa3;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    padding: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 15px;
+    padding: 25px 20px;
+    color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    background: linear-gradient(135deg, #c08054, #d6bfa3);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .search-card::before, .ad-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 20%, transparent 20%);
+    transform: rotate(45deg);
+    pointer-events: none;
+  }
+
+  .search-card:hover, .ad-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.25);
   }
 
   .search-card h3, .ad-card h4 {
-    color: #8b5e3c;
+    color: #fff;
     margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
   }
 
   .search-card p, .ad-card p {
     font-size: 14px;
-    line-height: 1.5;
+    line-height: 1.6;
     margin-bottom: 8px;
-    color: #5a3e2b;
+    color: #fdf7f2;
   }
 
   .seo-table {
@@ -1505,6 +1525,7 @@
     });
   });
 </script>
+
 <section id="social-media">
   <h2 class="section-title">Social Media Campaign: Building Engagement & Awareness</h2>
   <p style="text-align:center; max-width:900px; margin:0 auto 30px auto; color:#6b4f44;">
