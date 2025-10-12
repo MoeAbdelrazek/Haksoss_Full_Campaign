@@ -1052,7 +1052,7 @@ document.addEventListener("DOMContentLoaded", () => {
     High-value, measurable objectives that guided the Haksoss Café campaign, ensuring all efforts contributed directly to revenue and brand loyalty.
   </p>
 
-  <!-- SMART Goals Table -->
+  <!-- SMART Goals Table with Progress Bars -->
   <div class="smart-goals-table">
     <table>
       <thead>
@@ -1066,211 +1066,108 @@ document.addEventListener("DOMContentLoaded", () => {
         <tr>
           <td>Specific</td>
           <td>Establish Haksoss Café as Alexandria’s top luxury morning destination via premium loyalty conversion.</td>
-          <td>Target: 1,000 Sign-ups<br>Actual: 1,070 Sign-ups</td>
+          <td>
+            <div class="progress-container">
+              <div class="progress-bar" data-percent="107">1,070 / 1,000 Sign-ups</div>
+            </div>
+          </td>
         </tr>
         <tr>
           <td>Measurable</td>
           <td>Maximize financial efficiency and scalability of digital spend.</td>
-          <td>Target ROI: 350%<br>Actual ROI: 411%</td>
+          <td>
+            <div class="progress-container">
+              <div class="progress-bar" data-percent="411">ROI: 411%</div>
+            </div>
+          </td>
         </tr>
         <tr>
           <td>Achievable</td>
           <td>Leverage superior creative assets to generate interest.</td>
-          <td>Target Reach: 75,000<br>Actual Reach: 80,800</td>
+          <td>
+            <div class="progress-container">
+              <div class="progress-bar" data-percent="108">80,800 / 75,000 Reach</div>
+            </div>
+          </td>
         </tr>
         <tr>
           <td>Relevant</td>
           <td>Support the brand vision: "Ultimate Luxury Morning Experience."</td>
-          <td>Target Sales Mix: 50%<br>Actual: 58%</td>
+          <td>
+            <div class="progress-container">
+              <div class="progress-bar" data-percent="116">58% / 50% Sales Mix</div>
+            </div>
+          </td>
         </tr>
         <tr>
           <td>Time-bound</td>
           <td>Execute full 10-step campaign sequence within 90 days.</td>
-          <td>Duration: 90 Days<br>Goal Achieved</td>
+          <td>
+            <div class="progress-container">
+              <div class="progress-bar" data-percent="100">90 Days Completed</div>
+            </div>
+          </td>
         </tr>
       </tbody>
     </table>
   </div>
-
-  <!-- KPI Donuts -->
-  <div class="kpi-donuts">
-    <div class="donut-chart" data-percent="100">
-      <div class="donut-value">100%</div>
-      <div class="donut-label">ROAS</div>
-    </div>
-    <div class="donut-chart" data-percent="107">
-      <div class="donut-value">107%</div>
-      <div class="donut-label">Loyalty Sign-ups</div>
-    </div>
-  </div>
-</section>
-
-<section id="budget-flighting">
-  <h2 class="section-title">Budget Allocation & Flighting Plan</h2>
-  <p class="section-intro">
-    Optimized spend across channels and a structured 90-day funnel to maximize reach, conversions, and loyalty sign-ups.
-  </p>
-
-  <!-- Budget Allocation -->
-  <div class="budget-section">
-    <h3>Budget Allocation</h3>
-    <div class="budget-bar" data-percent="40">
-      <span>Social Media - 40%</span>
-      <div class="bar-bg"><div class="bar-fill"></div></div>
-    </div>
-    <div class="budget-bar" data-percent="30">
-      <span>Email / CRM Automation - 30%</span>
-      <div class="bar-bg"><div class="bar-fill"></div></div>
-    </div>
-    <div class="budget-bar" data-percent="20">
-      <span>Search SEO / SEM - 20%</span>
-      <div class="bar-bg"><div class="bar-fill"></div></div>
-    </div>
-    <div class="budget-bar" data-percent="10">
-      <span>Creative Production - 10%</span>
-      <div class="bar-bg"><div class="bar-fill"></div></div>
-    </div>
-  </div>
-
-  <!-- Flighting Plan Mini Bars -->
-  <div class="flighting-section">
-    <h3>90-Day Conversion Funnel</h3>
-    <div class="funnel-bar" data-percent="100"><span>Launch & Awareness</span><div class="bar-bg"><div class="bar-fill"></div></div></div>
-    <div class="funnel-bar" data-percent="90"><span>Sustain & Conversion</span><div class="bar-bg"><div class="bar-fill"></div></div></div>
-    <div class="funnel-bar" data-percent="75"><span>Retention & Remarketing</span><div class="bar-bg"><div class="bar-fill"></div></div></div>
-  </div>
 </section>
 
 <style>
-  /* Section Styling */
-  .section-title {
-    text-align: center;
-    font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
-    color: #5a3e36;
-    margin-bottom: 15px;
-  }
-  .section-intro {
-    text-align: center;
-    max-width: 900px;
-    margin: 0 auto 35px auto;
-    color: #6b4f44;
-    font-size: 1.1rem;
-    line-height: 1.6;
-  }
-  section {
-    border: 2px solid #d4bfa3;
-    border-radius: 20px;
-    padding: 50px 30px;
-    margin: 60px auto;
-    background-color: #fff8f3;
-    box-shadow: 0 12px 28px rgba(0,0,0,0.08);
-    max-width: 1100px;
-    animation: fadeInUp 1s ease forwards;
-  }
+.smart-goals-table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+.smart-goals-table th, .smart-goals-table td {
+  border: 1px solid #444;
+  padding: 12px 15px;
+  text-align: left;
+  background-color: #2a2a2a;
+  color: #f0f0f0;
+}
+.smart-goals-table th {
+  background-color: #333;
+  color: #ffcf7f;
+}
 
-  /* Tables */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 30px;
-  }
-  th, td {
-    border: 1px solid #d6bfa3;
-    padding: 12px 15px;
-    text-align: left;
-    background-color: #fffaf4;
-    color: #5a3e2b;
-  }
-  th {
-    background-color: #f5e6da;
-    color: #6b4f3b;
-  }
-
-  /* KPI Donuts */
-  .kpi-donuts {
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-    margin-top: 30px;
-    flex-wrap: wrap;
-  }
-  .donut-chart {
-    position: relative;
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    background: conic-gradient(#c08054 0% 0%, #e6d4c1 0% 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    transition: transform 0.4s;
-  }
-  .donut-chart:hover { transform: scale(1.1); }
-  .donut-value { font-size: 1.2rem; font-weight: 700; color: #5a3e36; }
-  .donut-label { font-size: 0.85rem; color: #6b4f44; text-align: center; }
-
-  /* Budget Bars */
-  .budget-section h3 { color: #6b4f3b; margin-bottom: 15px; }
-  .budget-bar {
-    margin-bottom: 18px;
-  }
-  .budget-bar span { display: block; margin-bottom: 5px; font-weight: 600; color: #5a3e2b; }
-  .budget-bar .bar-bg {
-    width: 100%; height: 24px; background: #e6d4c1; border-radius: 12px; overflow: hidden;
-  }
-  .budget-bar .bar-fill {
-    width: 0%; height: 100%;
-    background: linear-gradient(90deg, #c08054, #a65f3b);
-    border-radius: 12px 0 0 12px;
-    transition: width 2s ease;
-  }
-
-  /* Flighting Plan Bars */
-  .flighting-section h3 { color: #6b4f3b; margin-bottom: 15px; }
-  .funnel-bar { margin-bottom: 18px; }
-  .funnel-bar span { display: block; font-weight: 600; color: #5a3e2b; margin-bottom: 5px; }
-  .funnel-bar .bar-bg { width: 100%; height: 20px; background: #e6d4c1; border-radius: 10px; overflow: hidden; }
-  .funnel-bar .bar-fill {
-    width: 0%; height: 100%; background: linear-gradient(90deg, #c08054, #a65f3b);
-    border-radius: 10px 0 0 10px; transition: width 2s ease;
-  }
-
-  @keyframes fadeInUp {
-    0% {opacity:0; transform: translateY(20px);}
-    100% {opacity:1; transform: translateY(0);}
-  }
+/* Progress Bar Styles */
+.progress-container {
+  width: 100%;
+  height: 22px;
+  background-color: #3a3a3a;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 5px;
+}
+.progress-bar {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #ff7f50, #ffcf7f);
+  color: #1e1e1e;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px 0 0 12px;
+  transition: width 2s ease-out, background 1s ease;
+  white-space: nowrap;
+  font-size: 0.9rem;
+}
 </style>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    // Animate KPI Donuts
-    const donuts = document.querySelectorAll(".donut-chart");
-    donuts.forEach(donut => {
-      const percent = donut.getAttribute("data-percent");
-      setTimeout(() => {
-        donut.style.background = `conic-gradient(#c08054 0% ${percent}%, #e6d4c1 ${percent}% 100%)`;
-      }, 400);
-    });
-
-    // Animate Budget Bars
-    const budgetBars = document.querySelectorAll(".budget-bar .bar-fill");
-    budgetBars.forEach(bar => {
-      const parent = bar.closest(".budget-bar");
-      const percent = parent.getAttribute("data-percent");
-      setTimeout(() => { bar.style.width = percent + "%"; }, 500);
-    });
-
-    // Animate Flighting Plan Bars
-    const funnelBars = document.querySelectorAll(".funnel-bar .bar-fill");
-    funnelBars.forEach(bar => {
-      const parent = bar.closest(".funnel-bar");
-      const percent = parent.getAttribute("data-percent");
-      setTimeout(() => { bar.style.width = percent + "%"; }, 600);
-    });
+document.addEventListener("DOMContentLoaded", () => {
+  const progressBars = document.querySelectorAll('.progress-bar');
+  progressBars.forEach(bar => {
+    const percent = bar.getAttribute('data-percent');
+    setTimeout(() => {
+      bar.style.width = percent + '%';
+    }, 300);
   });
+});
 </script>
+
 
 <section id="kpis">
   <h2 class="section-title">Campaign KPIs & Performance Dashboard</h2>
