@@ -1215,13 +1215,13 @@ footer{ padding:10px 5px; border-top:1px solid rgba(192,124,74,0.3); background:
 
 <section id="kpis">
   <h2 class="section-title">Campaign KPIs & Performance Dashboard</h2>
-  <p style="text-align:center; max-width:900px; margin:0 auto 40px auto; color:#6b4f44;">
+  <p class="section-intro">
     A comprehensive view of campaign performance, tracking ROAS, Loyalty Sign-ups, Engagement, Conversions, and Retention metrics with dynamic charts.
   </p>
 
   <div class="kpi-grid">
 
-    <!-- ROAS Progress Bar -->
+    <!-- ROAS Horizontal Bar -->
     <div class="kpi-card">
       <h3>ROAS</h3>
       <div class="progress-bar">
@@ -1230,7 +1230,7 @@ footer{ padding:10px 5px; border-top:1px solid rgba(192,124,74,0.3); background:
       <p>Target: 3.5:1 | Actual: 4.11:1</p>
     </div>
 
-    <!-- Loyalty Sign-ups -->
+    <!-- Loyalty Sign-ups Horizontal Bar -->
     <div class="kpi-card">
       <h3>Loyalty Sign-ups</h3>
       <div class="progress-bar">
@@ -1239,16 +1239,16 @@ footer{ padding:10px 5px; border-top:1px solid rgba(192,124,74,0.3); background:
       <p>Target: 1,000 | Actual: 1,070</p>
     </div>
 
-    <!-- Email Open Rate -->
+    <!-- Email Open Rate Circular Donut -->
     <div class="kpi-card">
       <h3>Email Open Rate</h3>
-      <div class="progress-bar">
-        <div class="progress-fill" data-fill="35%">35%</div>
+      <div class="donut-chart" data-percent="35">
+        <div class="donut-value">35%</div>
       </div>
       <p>Target: 30% | Actual: 35%</p>
     </div>
 
-    <!-- Click-Through Rate -->
+    <!-- CTR Horizontal Bar -->
     <div class="kpi-card">
       <h3>CTR (Click-Through Rate)</h3>
       <div class="progress-bar">
@@ -1257,7 +1257,7 @@ footer{ padding:10px 5px; border-top:1px solid rgba(192,124,74,0.3); background:
       <p>Target: 3% | Actual: 3.8%</p>
     </div>
 
-    <!-- Conversion Rate -->
+    <!-- Conversion Rate Horizontal Bar -->
     <div class="kpi-card">
       <h3>Conversion Rate</h3>
       <div class="progress-bar">
@@ -1266,32 +1266,28 @@ footer{ padding:10px 5px; border-top:1px solid rgba(192,124,74,0.3); background:
       <p>Target: 5% | Actual: 6.2%</p>
     </div>
 
-    <!-- Retention Rate Circular Chart -->
-    <!-- Retention Rate Card (updated) -->
+    <!-- Retention Rate Circular Donut -->
     <div class="kpi-card">
       <h3>Retention Rate</h3>
-      <div class="progress-bar">
-        <div class="progress-fill" data-fill="15%">15%</div>
+      <div class="donut-chart" data-percent="15">
+        <div class="donut-value">15%</div>
       </div>
       <p>Target: 12% | Actual: 15%</p>
     </div>
 
-
-    <!-- Social Engagement -->
+    <!-- Social Engagement Circular Donut -->
     <div class="kpi-card">
       <h3>Social Engagement</h3>
-      <div class="progress-bar">
-        <div class="progress-fill" data-fill="11.3%">11.3%</div>
+      <div class="donut-chart" data-percent="11.3">
+        <div class="donut-value">11.3%</div>
       </div>
       <p>Target: 10% | Actual: 11.3%</p>
     </div>
 
-    <!-- Ad Spend Efficiency -->
+    <!-- Ad Spend Efficiency Sparkline -->
     <div class="kpi-card">
       <h3>Ad Spend Efficiency</h3>
-      <div class="progress-bar">
-        <div class="progress-fill" data-fill="90%">90%</div>
-      </div>
+      <canvas id="sparkline"></canvas>
       <p>Target: 100% | Actual: 90%</p>
     </div>
 
@@ -1308,6 +1304,15 @@ footer{ padding:10px 5px; border-top:1px solid rgba(192,124,74,0.3); background:
     box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     max-width: 1200px;
     animation: fadeInUp 1s ease forwards;
+  }
+
+  .section-intro {
+    text-align: center;
+    max-width:900px;
+    margin: 0 auto 40px auto;
+    color:#6b4f44;
+    font-size: 1.1rem;
+    line-height: 1.6;
   }
 
   .kpi-grid {
@@ -1364,44 +1369,28 @@ footer{ padding:10px 5px; border-top:1px solid rgba(192,124,74,0.3); background:
     transition: width 2s ease;
   }
 
-  /* Circular chart */
-  .circular-chart {
+  /* Donut Chart Styling */
+  .donut-chart {
     position: relative;
-    width: 140px;
-    height: 140px;
+    width: 120px;
+    height: 120px;
     margin: 0 auto;
+    border-radius: 50%;
+    background: conic-gradient(#c08054 0% 0%, #e6d4c1 0% 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .circular-bar {
+  .donut-value {
+    font-weight: 700;
+    color: #5a3e36;
+    font-size: 1.2rem;
+  }
+
+  canvas#sparkline {
     width: 100%;
-    height: 100%;
-    transform: rotate(-90deg);
-  }
-
-  .circle-bg {
-    fill: none;
-    stroke: #e6d4c1;
-    stroke-width: 3.8;
-  }
-
-  .circle {
-    fill: none;
-    stroke: #c08054;
-    stroke-width: 3.8;
-    stroke-linecap: round;
-    stroke-dasharray: 15,100;
-    animation: progress 1.5s ease forwards;
-  }
-
-  .percentage {
-    font-size: 18px;
-    fill: #5a3e2b;
-    text-anchor: middle;
-  }
-
-  @keyframes progress {
-    0% { stroke-dasharray: 0,100; }
-    100% { stroke-dasharray: 15,100; }
+    height: 60px;
   }
 
   @keyframes fadeInUp {
@@ -1410,16 +1399,50 @@ footer{ padding:10px 5px; border-top:1px solid rgba(192,124,74,0.3); background:
   }
 </style>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
+    // Animate horizontal bars
     const fills = document.querySelectorAll('.progress-fill');
     fills.forEach((bar, i) => {
+      setTimeout(() => { bar.style.width = bar.getAttribute('data-fill'); }, 200*i);
+    });
+
+    // Animate donut charts
+    const donuts = document.querySelectorAll('.donut-chart');
+    donuts.forEach(donut => {
+      const percent = donut.getAttribute('data-percent');
       setTimeout(() => {
-        bar.style.width = bar.getAttribute('data-fill');
-      }, 200 * i);
+        donut.style.background = `conic-gradient(#c08054 0% ${percent}%, #e6d4c1 ${percent}% 100%)`;
+      }, 400);
+    });
+
+    // Sparkline for Ad Spend Efficiency
+    const ctx = document.getElementById('sparkline').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ["Week1","Week2","Week3","Week4","Week5","Week6"],
+        datasets: [{
+          label: 'Efficiency',
+          data: [80, 85, 88, 90, 87, 90],
+          fill: true,
+          backgroundColor: 'rgba(192,128,84,0.2)',
+          borderColor: '#c08054',
+          borderWidth: 2,
+          tension: 0.4,
+          pointRadius: 4,
+          pointBackgroundColor: '#a65f3b'
+        }]
+      },
+      options: {
+        plugins: { legend: { display: false } },
+        scales: { x: { display: false }, y: { display: false } }
+      }
     });
   });
 </script>
+
 <section id="funnels">
   <h2 class="section-title">High-Value Conversion Funnels</h2>
   <p style="text-align:center; max-width:900px; margin:0 auto 40px auto; color:#6b4f44;">
