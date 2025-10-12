@@ -271,393 +271,201 @@ header.fixed-header{
 </html>
 
 
-<section id="brand-identity">
-  <h2 class="section-title">Brand Identity & Core Positioning</h2>
-  <p class="section-intro">Haksoss Café is positioned as Alexandria's ultimate luxury morning destination, appealing to the Urban Professional Elite (ages 20-50) through exclusivity, premium quality, and aspirational experience.</p>
-
-  <!-- Brand Attributes Table -->
-  <table class="brand-table">
-    <thead>
-      <tr>
-        <th>Attribute</th>
-        <th>Description</th>
-        <th>Strategic Impact</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Brand Personality</td>
-        <td>Exclusive, sophisticated, aspirational</td>
-        <td>Appeals to UPE lifestyle, creates status signaling</td>
-      </tr>
-      <tr>
-        <td>Visual Identity</td>
-        <td>Muted luxury tones, elegant typography, cinematic imagery</td>
-        <td>High recall and premium perception</td>
-      </tr>
-      <tr>
-        <td>Core Value Proposition</td>
-        <td>The Hero Combo: signature latte + artisanal croissant</td>
-        <td>Focuses demand on high-margin items, drives conversions</td>
-      </tr>
-      <tr>
-        <td>Tagline / Pillar Statement</td>
-        <td>"Savor provenance. Demand the ritual."</td>
-        <td>Reinforces authenticity and sophistication</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <!-- Brand Pillars Cards Horizontal -->
-  <div class="card-container-horizontal">
-    <div class="card">
-      <h3>Luxury Experience</h3>
-      <img src="3_Assets/Images/hero-latte.jpg" alt="Hero Latte coffee">
-      <p>Every touchpoint emphasizes exclusivity and a high-end morning ritual.</p>
-    </div>
-    <div class="card">
-      <h3>Provenance & Craft</h3>
-      <img src="3_Assets/Images/chocolate-croissant.jpg" alt="Chocolate croissant">
-      <p>Highlighting the source and craftsmanship behind every product to justify premium pricing.</p>
-    </div>
-    <div class="card">
-      <h3>Emotional Connection</h3>
-      <img src="3_Assets/Images/special-latte.jpg" alt="Special latte creation">
-      <p>Creating status and belonging within an exclusive community of UPE customers.</p>
-    </div>
-  </div>
-
-  <style>
-    /* Section Title & Intro */
-    .section-title {
-      text-align: center;
-      font-family: 'Playfair Display', serif;
-      font-size: 2.8rem;
-      color: #5a3e36;
-      margin-bottom: 15px;
-      letter-spacing: 1px;
-    }
-    .section-intro {
-      text-align: center;
-      font-family: 'Lora', serif;
-      color: #6b4f44;
-      font-size: 1.1rem;
-      max-width: 800px;
-      margin: 0 auto 50px auto;
-      line-height: 1.6;
-    }
-
-    /* Brand Table Styles */
-    .brand-table {
-      width: 100%;
-      border-collapse: separate;
-      border-spacing: 0;
-      margin: 40px 0;
-      font-family: 'Lato', sans-serif;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-      background: linear-gradient(135deg, #fffaf0, #fff4e6);
-    }
-    .brand-table th, .brand-table td {
-      padding: 16px 20px;
-      text-align: left;
-    }
-    .brand-table th {
-      background-color: #d4bfa3;
-      color: #3e2f2f;
-      font-size: 1.05rem;
-    }
-    .brand-table td {
-      background-color: rgba(255,248,243,0.9);
-      font-size: 0.98rem;
-      color: #5a3e36;
-    }
-    .brand-table tr:nth-child(even) td {
-      background-color: rgba(253,246,240,0.9);
-    }
-    .brand-table tr:hover td {
-      background-color: #fbe9e0;
-      transition: 0.3s;
-    }
-
-    /* Horizontal Card Container */
-    .card-container-horizontal {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 25px;
-      margin: 50px 0;
-    }
-    .card-container-horizontal .card {
-      flex: 1 1 30%;
-      background: url('https://www.transparenttextures.com/patterns/sandpaper.png'); /* subtle sand texture */
-      background-color: #fff8f3;
-      background-blend-mode: lighten;
-      border: 2px solid #d4bfa3;
-      border-radius: 20px;
-      box-shadow: 0 12px 28px rgba(0,0,0,0.08);
-      text-align: center;
-      padding: 25px 20px;
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-    /* Light reflection animation */
-    .card-container-horizontal .card::after {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(120deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.0) 50%, rgba(255,255,255,0.15) 100%);
-      transform: rotate(25deg) translateX(-200%);
-      transition: transform 0.8s ease;
-    }
-    .card-container-horizontal .card:hover::after {
-      transform: rotate(25deg) translateX(200%);
-    }
-    .card-container-horizontal .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 18px 30px rgba(0,0,0,0.12);
-    }
-    .card-container-horizontal img {
-      width: 100%;
-      max-height: 220px;
-      object-fit: cover;
-      border-radius: 15px;
-      margin: 15px 0;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.06);
-    }
-    .card-container-horizontal h3 {
-      color: #5a3e36;
-      margin-bottom: 12px;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-    }
-    .card-container-horizontal p {
-      color: #6b4f44;
-      font-size: 1rem;
-      line-height: 1.5;
-      font-family: 'Lora', serif;
-    }
-
-    /* Responsive */
-    @media(max-width:992px){
-      .card-container-horizontal { flex-direction: column; gap: 30px; }
-      .card-container-horizontal .card { flex: 1 1 100%; max-width: 100%; }
-    }
-  </style>
-</section>
-
-<section id="persona-summary">
-  <h2 class="section-title">Buyer Persona: Urban Professional Elite</h2>
-  <p class="section-intro">
-    Focused targeting of high-value customers (ages 20-50) in Alexandria to drive premium loyalty and Hero Combo adoption.
-  </p>
-
-  <!-- Persona Attributes Table -->
-  <table class="persona-table">
-    <thead>
-      <tr>
-        <th>Attribute</th>
-        <th>Detail</th>
-        <th>Impact</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Age Range</td>
-        <td>20-50 years</td>
-        <td>High spending power and frequent café visitors</td>
-      </tr>
-      <tr>
-        <td>Income Level</td>
-        <td>High-Net-Worth Individuals (Top 15% in Alexandria)</td>
-        <td>Justifies premium pricing and Hero Combo adoption</td>
-      </tr>
-      <tr>
-        <td>Motivations</td>
-        <td>Status, exclusivity, effortless luxury</td>
-        <td>Drives engagement with loyalty program and social sharing</td>
-      </tr>
-      <tr>
-        <td>Barriers</td>
-        <td>Time constraints, perceived inauthenticity, price sensitivity</td>
-        <td>Addressed with Click & Collect, premium quality, and curated messaging</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <!-- Persona Engagement Radial Charts -->
-  <div class="charts-container">
-    <div class="chart" data-percent="85">
-      <div class="chart-value">85%</div>
-      <div class="chart-label">Interest in Luxury Experience</div>
-    </div>
-    <div class="chart" data-percent="74">
-      <div class="chart-value">74%</div>
-      <div class="chart-label">Social Media Engagement</div>
-    </div>
-    <div class="chart" data-percent="63">
-      <div class="chart-value">63%</div>
-      <div class="chart-label">Loyalty Program Likelihood</div>
-    </div>
-  </div>
-</section>
-
 <style>
-
-    /* === Section Backgrounds with Overlay === */
+/* === Luxury Latte Background & Typography Upgrade === */
 section {
   position: relative;
   padding: 80px 10%;
-  background-image: url('3_Assets/Images/header-bg.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  color: #fff;
-  border-radius: 16px;
+  background: linear-gradient(145deg, #f8efe7 0%, #e8d3b8 50%, #d6b898 100%);
+  color: #4b3025;
+  border-radius: 24px;
   overflow: hidden;
-  margin-bottom: 60px;
+  margin-bottom: 70px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 30px rgba(75,48,37,0.08);
+  transition: background-position 8s ease-in-out;
+  background-size: 200% 200%;
+  animation: latteFlow 20s ease-in-out infinite;
 }
 
-/* Add a soft overlay for readability */
-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45); /* overlay tint */
-  z-index: 0;
+@keyframes latteFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-/* Make sure content stays above the overlay */
-section > * {
+/* Maintain readability */
+.section-title {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.6rem;
+  color: #4b3025;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 4px rgba(255,255,255,0.4);
+}
+
+.section-intro {
+  text-align: center;
+  font-family: 'Lora', serif;
+  color: #6e5244;
+  font-size: 1.1rem;
+  max-width: 850px;
+  margin: 0 auto 50px auto;
+  line-height: 1.7;
+}
+
+/* === Brand Table === */
+.brand-table, .persona-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.5);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  font-family: 'Lato', sans-serif;
+  margin: 40px 0;
+  transition: transform 0.4s ease;
+}
+.brand-table:hover, .persona-table:hover {
+  transform: translateY(-4px);
+}
+
+.brand-table th, .brand-table td,
+.persona-table th, .persona-table td {
+  padding: 16px 20px;
+  text-align: left;
+}
+
+.brand-table th, .persona-table th {
+  background-color: rgba(214,184,152,0.75);
+  color: #4b3025;
+  font-size: 1.05rem;
+  letter-spacing: 0.5px;
+}
+
+.brand-table td, .persona-table td {
+  background-color: rgba(255,248,243,0.85);
+  color: #6e5244;
+  font-size: 0.98rem;
+  border-bottom: 1px solid rgba(214,184,152,0.2);
+}
+
+.brand-table tr:nth-child(even) td,
+.persona-table tr:nth-child(even) td {
+  background-color: rgba(253,246,240,0.85);
+}
+
+/* === Cards === */
+.card-container-horizontal {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin: 60px 0;
+}
+
+.card-container-horizontal .card {
+  flex: 1 1 30%;
+  background: rgba(255,255,255,0.55);
+  border: 2px solid rgba(214,184,152,0.6);
+  border-radius: 22px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  text-align: center;
+  padding: 28px 20px;
   position: relative;
-  z-index: 1;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  backdrop-filter: blur(10px);
 }
 
-  #persona-summary {
-    border: 2px solid #d4bfa3;
-    border-radius: 20px;
-    padding: 50px 30px;
-    margin: 60px auto;
-    background: linear-gradient(145deg, #fffaf0, #fff4e6);
-    box-shadow: 0 12px 28px rgba(0,0,0,0.08);
-    max-width: 1100px;
-    animation: fadeInUp 1s ease forwards;
-  }
+.card-container-horizontal .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 35px rgba(0,0,0,0.12);
+}
 
-  .section-title {
-    text-align: center;
-    font-family: 'Playfair Display', serif;
-    font-size: 2.3rem;
-    color: #5a3e36;
-    margin-bottom: 15px;
-  }
+.card-container-horizontal .card img {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: 18px;
+  margin: 15px 0;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
 
-  .section-intro {
-    text-align: center;
-    max-width: 900px;
-    margin: 0 auto 40px auto;
-    color: #6b4f44;
-    font-family: 'Lora', serif;
-    font-size: 1.1rem;
-    line-height: 1.6;
-  }
+.card-container-horizontal h3 {
+  color: #4b3025;
+  margin-bottom: 10px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.45rem;
+}
 
-  /* Persona Table */
-  .persona-table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-    font-family: 'Lato', sans-serif;
-    margin-bottom: 50px;
-    background: url('https://www.transparenttextures.com/patterns/sandpaper.png');
-    background-color: #fff8f3;
-    background-blend-mode: lighten;
-  }
+.card-container-horizontal p {
+  color: #6e5244;
+  font-size: 1rem;
+  line-height: 1.55;
+  font-family: 'Lora', serif;
+}
 
-  .persona-table th, .persona-table td {
-    padding: 14px 20px;
-    text-align: left;
-    font-size: 1rem;
-    color: #5a3e36;
-  }
+/* === Persona Charts === */
+.charts-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}
 
-  .persona-table th {
-    background-color: #d4bfa3;
-  }
+.chart {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: conic-gradient(#c08054 0% 0%, #e6d4c1 0% 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  font-family: 'Lora', serif;
+  transition: transform 0.4s ease;
+  background-color: rgba(255,255,255,0.4);
+  backdrop-filter: blur(8px);
+}
 
-  .persona-table td {
-    background-color: rgba(255,248,243,0.9);
-  }
+.chart:hover {
+  transform: scale(1.08);
+}
 
-  .persona-table tr:nth-child(even) td {
-    background-color: rgba(253,246,240,0.9);
-  }
+.chart-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #4b3025;
+  margin-bottom: 6px;
+}
 
-  .persona-table tr:hover td {
-    background-color: #fbe9e0;
-    transition: 0.3s;
-  }
+.chart-label {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #6e5244;
+}
 
-  /* Radial Charts Container */
-  .charts-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 40px;
-    max-width: 900px;
-    margin: 0 auto;
-  }
+/* === Smooth Entry Animations === */
+@keyframes fadeInUp {
+  from {opacity:0; transform:translateY(30px);}
+  to {opacity:1; transform:translateY(0);}
+}
+section { animation: fadeInUp 1.2s ease both; }
 
-  .chart {
-    position: relative;
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    background: conic-gradient(#c08054 0% 0%, #e6d4c1 0% 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.06);
-    font-family: 'Lora', serif;
-    transition: transform 0.3s;
-  }
-
-  .chart:hover {
-    transform: scale(1.1);
-  }
-
-  .chart-value {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #5a3e36;
-    margin-bottom: 6px;
-  }
-
-  .chart-label {
-    text-align: center;
-    font-size: 0.95rem;
-    color: #6b4f44;
-  }
+@media(max-width:992px){
+  .card-container-horizontal { flex-direction: column; gap: 30px; }
+  .card-container-horizontal .card { flex: 1 1 100%; max-width: 100%; }
+}
 </style>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const charts = document.querySelectorAll(".chart");
-    charts.forEach(chart => {
-      const percent = chart.getAttribute("data-percent");
-      chart.style.background = `conic-gradient(#c08054 0% ${percent}%, #e6d4c1 ${percent}% 100%)`;
-    });
-  });
-</script>
 <section id="customer-journey">
   <h2 class="section-title">Customer Journey Mapping</h2>
   <p class="section-intro">
