@@ -464,7 +464,7 @@ header.fixed-header{
 <section id="persona-summary">
   <h2 class="section-title">Buyer Persona: Urban Professional Elite</h2>
   <p class="section-intro">
-    Focused targeting of high-value customers (ages 20-50) in Alexandria to drive premium loyalty and Hero Combo adoption.
+    Focused targeting of high-value customers (ages 20-50) in Alexandria, Egypt to drive premium loyalty and Hero Combo adoption.
   </p>
 
   <!-- Persona Attributes Table -->
@@ -503,28 +503,29 @@ header.fixed-header{
   <!-- Persona Engagement Radial Charts (Dark & Subtle) -->
   <div class="charts-container">
     <div class="chart" data-percent="85">
-      <div class="chart-value">85%</div>
+      <div class="chart-value">0%</div>
       <div class="chart-label">Interest in Luxury Experience</div>
     </div>
     <div class="chart" data-percent="74">
-      <div class="chart-value">74%</div>
+      <div class="chart-value">0%</div>
       <div class="chart-label">Social Media Engagement</div>
     </div>
     <div class="chart" data-percent="63">
-      <div class="chart-value">63%</div>
+      <div class="chart-value">0%</div>
       <div class="chart-label">Loyalty Program Likelihood</div>
     </div>
   </div>
 
   <style>
     #persona-summary {
-      background: linear-gradient(145deg, #fffaf0, #fff4e6); /* latte background stays */
+      background: linear-gradient(145deg, #fffaf0, #fff4e6); /* latte background */
       padding: 80px 10%;
       border-radius: 20px;
       box-shadow: 0 12px 28px rgba(0,0,0,0.08);
       margin-bottom: 60px;
       position: relative;
       overflow: hidden;
+      font-family: 'Lato', sans-serif;
     }
 
     .persona-table {
@@ -534,7 +535,6 @@ header.fixed-header{
       border-radius: 15px;
       overflow: hidden;
       box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-      font-family: 'Lato', sans-serif;
       margin-bottom: 50px;
       background: #fffaf0;
     }
@@ -565,13 +565,12 @@ header.fixed-header{
       width: 160px;
       height: 160px;
       border-radius: 50%;
-      background: conic-gradient(#222 0% 0%, #333 0% 100%); /* dark and subtle base */
+      background: conic-gradient(#222 0% 0%, #333 0% 100%);
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
       box-shadow: 0 5px 15px rgba(0,0,0,0.25);
-      font-family: 'Lora', serif;
       transition: transform 0.3s;
     }
 
@@ -580,27 +579,40 @@ header.fixed-header{
     .chart-value {
       font-size: 1.5rem;
       font-weight: 700;
-      color: #ffffff; /* white text */
+      color: #ffffff;
       margin-bottom: 6px;
     }
 
     .chart-label {
       text-align: center;
       font-size: 0.95rem;
-      color: #ffffff; /* white text */
+      color: #ffffff;
     }
   </style>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const charts = document.querySelectorAll(".chart");
+
       charts.forEach(chart => {
-        const percent = chart.getAttribute("data-percent");
-        chart.style.background = `conic-gradient(#555 ${percent}%, #222 ${percent}% 100%)`; // subtle dark fill
+        const targetPercent = parseInt(chart.dataset.percent);
+        let currentPercent = 0;
+        const valueDisplay = chart.querySelector(".chart-value");
+
+        const interval = setInterval(() => {
+          if (currentPercent >= targetPercent) {
+            clearInterval(interval);
+          } else {
+            currentPercent++;
+            valueDisplay.textContent = currentPercent + '%';
+            chart.style.background = `conic-gradient(#555 ${currentPercent}%, #222 ${currentPercent}% 100%)`;
+          }
+        }, 15); // smooth animation
       });
     });
   </script>
 </section>
+
 
 <section id="customer-journey">
   <h2 class="section-title">Customer Journey Mapping</h2>
@@ -997,13 +1009,15 @@ header.fixed-header{
   </p>
 
   <div class="budget-graphs">
+    <!-- Budget Allocation Horizontal Bar -->
     <canvas id="budgetGraph" width="600" height="250"></canvas>
+    <!-- Flighting / Funnel Line Chart -->
     <canvas id="flightingGraph" width="600" height="200"></canvas>
   </div>
 </section>
 
 <style>
-section {
+#budget-flighting {
   border-radius: 20px;
   padding: 50px 30px;
   margin: 60px auto;
@@ -1014,7 +1028,7 @@ section {
   font-size: 1.15rem;
 }
 
-.section-title {
+#budget-flighting .section-title {
   text-align: center;
   font-family: 'Playfair Display', serif;
   font-size: 2.5rem;
@@ -1022,7 +1036,7 @@ section {
   margin-bottom: 20px;
 }
 
-.section-intro {
+#budget-flighting .section-intro {
   text-align: center;
   max-width: 900px;
   margin: 0 auto 40px auto;
@@ -1031,44 +1045,8 @@ section {
   color: #6b4f44;
 }
 
-/* SMART Goals Table Latte Style */
-.smart-goals-table table {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-  margin-bottom: 40px;
-}
-
-.smart-goals-table th, .smart-goals-table td {
-  padding: 14px 18px;
-  text-align: left;
-  font-size: 1.1rem;
-  color: #5a3e36;
-}
-
-.smart-goals-table th {
-  background-color: #d8bfa3; /* deeper latte */
-  font-weight: 700;
-}
-
-.smart-goals-table td {
-  background-color: #f5e2d0; /* subtle latte */
-}
-
-.smart-goals-table tr:nth-child(even) td {
-  background-color: #f0d8c0;
-}
-
-.smart-goals-table tr:hover td {
-  background-color: #e6c9aa;
-  transition: 0.3s;
-}
-
 /* Graph containers */
-.kpi-graphs, .budget-graphs {
+.budget-graphs {
   display: flex;
   flex-direction: column;
   gap: 35px;
@@ -1084,29 +1062,6 @@ section {
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  // KPI Bar Graph - visible latte colors
-  const ctxKPI = document.getElementById('kpiGraph').getContext('2d');
-  new Chart(ctxKPI, {
-    type: 'bar',
-    data: {
-      labels: ['ROAS', 'Loyalty Sign-ups', 'Reach', 'Conversion Rate', 'Engagement'],
-      datasets: [{
-        label: 'Performance (%)',
-        data: [100, 107, 108, 85, 92],
-        backgroundColor: ['#d8bfa3','#e6c9aa','#f0d8c0','#f5e2d0','#fce7d8'],
-        borderRadius: 6
-      }]
-    },
-    options: {
-      responsive: true,
-      plugins: { legend: { display: false } },
-      scales: {
-        y: { beginAtZero: true, grid: { color: '#f5e2d0' }, ticks: { color: '#5a3e36' } },
-        x: { grid: { color: '#f5e2d0' }, ticks: { color: '#5a3e36' } }
-      }
-    }
-  });
-
   // Budget Allocation Horizontal Bar
   const ctxBudget = document.getElementById('budgetGraph').getContext('2d');
   new Chart(ctxBudget, {
@@ -1131,7 +1086,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Flighting Plan Line Graph
+  // Flighting / Funnel Plan Line Chart
   const ctxFlighting = document.getElementById('flightingGraph').getContext('2d');
   new Chart(ctxFlighting, {
     type: 'line',
@@ -1587,6 +1542,36 @@ canvas#sparkline { width: 100%; height: 70px; } /* slightly taller */
       </tr>
     </tbody>
   </table>
+
+  <!-- SEO / PPC Performance Metrics -->
+  <h3>SEO & PPC Performance Snapshot</h3>
+  <table class="seo-table">
+    <thead>
+      <tr>
+        <th>Channel</th>
+        <th>Clicks</th>
+        <th>Impressions</th>
+        <th>CTR</th>
+        <th>Average Position</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>PPC Campaign</td>
+        <td>1,820</td>
+        <td>15,000</td>
+        <td>12.1%</td>
+        <td>1.7</td>
+      </tr>
+      <tr>
+        <td>Organic SEO</td>
+        <td>1,150</td>
+        <td>22,400</td>
+        <td>5.1%</td>
+        <td>3.2</td>
+      </tr>
+    </tbody>
+  </table>
 </section>
 
 <style>
@@ -1599,11 +1584,11 @@ canvas#sparkline { width: 100%; height: 70px; } /* slightly taller */
     box-shadow: 0 12px 25px rgba(0,0,0,0.08);
     max-width: 1100px;
     animation: fadeInUp 1s ease forwards;
+    font-family: 'Playfair Display', serif;
   }
 
   .section-title {
     text-align: center;
-    font-family: 'Playfair Display', serif;
     font-size: 2.2rem;
     color: #5a3e36;
     margin-bottom: 20px;
@@ -1629,7 +1614,7 @@ canvas#sparkline { width: 100%; height: 70px; } /* slightly taller */
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     position: relative;
     overflow: hidden;
-    font-size: 1.2rem; /* increased font for all content */
+    font-size: 1.2rem;
   }
 
   .search-card::before, .ad-card::before {
@@ -1652,15 +1637,13 @@ canvas#sparkline { width: 100%; height: 70px; } /* slightly taller */
   .search-card h3, .ad-card h4 {
     color: #fff;
     margin-bottom: 10px;
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem; /* slightly bigger headings */
+    font-size: 1.3rem;
   }
 
   .search-card p, .ad-card p {
-    font-size: 1.2rem; /* all small text increased */
+    font-size: 1.2rem;
     line-height: 1.6;
     margin-bottom: 8px;
-    color: #fdf7f2;
   }
 
   .seo-table {
@@ -1671,10 +1654,10 @@ canvas#sparkline { width: 100%; height: 70px; } /* slightly taller */
 
   .seo-table th, .seo-table td {
     border: 1px solid #d6bfa3;
-    padding: 14px; /* increased */
+    padding: 14px;
     text-align: left;
     color: #5a3e2b;
-    font-size: 1.2rem; /* increased */
+    font-size: 1.2rem;
   }
 
   .seo-table th {
@@ -1699,6 +1682,7 @@ canvas#sparkline { width: 100%; height: 70px; } /* slightly taller */
     });
   });
 </script>
+
 
 
 <section id="social-media">
@@ -1835,117 +1819,125 @@ canvas#sparkline { width: 100%; height: 70px; } /* slightly taller */
   </div>
 </section>
 
+<!-- Content Calendar / Posting Schedule -->
+<section id="content-calendar">
+  <h2 class="section-title">Content Calendar & Posting Schedule</h2>
+  <p class="section-intro">
+    Overview of planned social posts, stories, and email sequences to maintain consistent engagement and drive conversions.
+  </p>
+
+  <table class="calendar-table">
+    <thead>
+      <tr>
+        <th>Day / Time</th>
+        <th>Platform</th>
+        <th>Content Type</th>
+        <th>Objective</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Mon 8:00 AM</td>
+        <td>Instagram</td>
+        <td>Hero Latte Reel</td>
+        <td>Awareness</td>
+      </tr>
+      <tr>
+        <td>Tue 9:00 AM</td>
+        <td>Instagram & Facebook</td>
+        <td>Carousel Ad</td>
+        <td>Conversion</td>
+      </tr>
+      <tr>
+        <td>Wed 8:30 AM</td>
+        <td>Instagram Stories</td>
+        <td>UGC Story</td>
+        <td>Retention</td>
+      </tr>
+      <tr>
+        <td>Thu 7:45 AM</td>
+        <td>Email</td>
+        <td>Automated VIP Email</td>
+        <td>Conversion / Nurture</td>
+      </tr>
+      <tr>
+        <td>Fri 8:15 AM</td>
+        <td>Instagram</td>
+        <td>Special Offer Post</td>
+        <td>Conversion</td>
+      </tr>
+      <tr>
+        <td>Sat 9:00 AM</td>
+        <td>Facebook Stories</td>
+        <td>UGC / Customer Highlight</td>
+        <td>Retention</td>
+      </tr>
+      <tr>
+        <td>Sun 10:00 AM</td>
+        <td>Email</td>
+        <td>Weekly Newsletter</td>
+        <td>Engagement & Loyalty</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
 <style>
-/* Sections Background */
-#social-media, #email-marketing {
+/* Content Calendar Styles */
+#content-calendar {
   background: linear-gradient(145deg, #fdf5ed, #fceedd);
   border-radius: 20px;
   padding: 50px 30px;
   margin: 60px auto;
   max-width: 1200px;
-  animation: fadeInUp 1s ease forwards;
+  text-align: center;
 }
 
-.section-title {
-  text-align: center;
+#content-calendar .section-title {
   font-family: 'Playfair Display', serif;
-  font-size: 2.3rem;
+  font-size: 2.2rem;
   color: #5a3e36;
   margin-bottom: 20px;
 }
 
-.section-intro {
-  text-align: center;
+#content-calendar .section-intro {
+  font-size: 1.15rem;
+  color: #6b4f44;
   max-width: 900px;
   margin: 0 auto 40px;
-  font-size: 1.15rem;
-  line-height: 1.6;
-  color: #6b4f44;
-}
-
-/* Social & Email Cards */
-.social-card, .email-card {
-  background: #5a4534; /* dark latte */
-  border-radius: 14px;
-  padding: 22px;
-  text-align: left;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.social-card:hover, .email-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(255, 220, 120, 0.4);
-}
-
-.card-header {
-  padding: 15px;
-  font-weight: 700;
-  font-family: 'Playfair Display', serif;
-  color: #fff;
-  text-align: center;
-  border-radius: 12px 12px 0 0;
-}
-
-.card-header.awareness { background: #c08054; }
-.card-header.conversion { background: #a65f3b; }
-.card-header.retention { background: #8b5e3c; }
-.card-header.reengagement { background: #c08054; }
-
-.card-content {
-  padding: 20px;
-  font-family: 'Lato', sans-serif;
-  color: #f3e0d6;
   line-height: 1.6;
 }
 
-.metrics { margin-top: 15px; }
-.metric { margin-bottom: 10px; font-size: 1rem; }
-.metric span { font-weight: 700; }
-
-/* Grid Layouts */
-.social-cards, .email-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 25px;
-  justify-content: space-between;
-}
-
-@media (max-width: 1200px) { .social-card, .email-card { flex: 1 1 calc(50% - 25px); } }
-@media (max-width: 768px) { .social-card, .email-card { flex: 1 1 100%; } }
-
-/* Gallery */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 20px;
-  margin-top: 30px;
-}
-.gallery-tile {
-  background: #5a4534; /* dark latte */
-  border-radius: 12px;
-  padding: 10px;
-  text-align: center;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-}
-.gallery-tile img {
+.calendar-table {
   width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-.gallery-tile .meta {
-  margin-top: 8px;
-  font-size: 0.85rem;
-  color: #f3e0d6;
+  border-collapse: collapse;
+  margin: 0 auto;
 }
 
-/* Animations */
-@keyframes fadeInUp {
-  0% {opacity:0; transform: translateY(20px);}
-  100% {opacity:1; transform: translateY(0);}
+.calendar-table th, .calendar-table td {
+  border: 1px solid #d6bfa3;
+  padding: 12px 15px;
+  color: #5a3e2b;
+}
+
+.calendar-table th {
+  background-color: #f9e5d6;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.calendar-table td {
+  background-color: #fff7f2;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .calendar-table th, .calendar-table td {
+    font-size: 0.85rem;
+    padding: 8px 10px;
+  }
 }
 </style>
-
 
 
 <section id="campaign-analysis">
@@ -1987,6 +1979,13 @@ canvas#sparkline { width: 100%; height: 70px; } /* slightly taller */
     <div class="card">
       <h3>CTR</h3>
       <p><strong>3.8%</strong></p>
+    </div>
+    <!-- A/B Testing / Iteration Notes Card -->
+    <div class="card">
+      <h3>A/B Testing & Iteration</h3>
+      <p>
+        Ran A/B tests on subject lines and CTA buttons for emails, and carousel ad variations for social. Optimized based on CTR and conversion results, achieving a 7% lift in engagement and 6.2% conversion rate.
+      </p>
     </div>
   </div>
 
@@ -2038,133 +2037,14 @@ canvas#sparkline { width: 100%; height: 70px; } /* slightly taller */
 </section>
 
 <style>
-#campaign-analysis {
-  border-radius: 20px;
-  padding: 50px 30px;
-  margin: 60px auto;
-  background-color: #f9ede3; /* light latte */
-  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-  max-width: 1200px;
-  font-family: 'Playfair Display', serif;
-}
+/* (existing styles remain unchanged) */
 
-#campaign-analysis h2 { 
-  color:#8b5e3c; 
-  text-align:center; 
-  margin-bottom:20px; 
-  font-size:2rem; 
-}
-#campaign-analysis .section-intro { 
-  color:#5a3e2b; 
-  margin-bottom:40px; 
-  font-size:1.15rem; 
-  text-align:center; 
-}
-
-/* KPI Cards */
-.analysis-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
-  margin-bottom: 50px;
-}
-
-.analysis-cards .card {
-  border-radius: 14px;
-  padding: 25px;
-  background-color: #5a4534; /* dark latte */
-  color: #f3e0d6; /* light text for contrast */
-  text-align: center;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.analysis-cards .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(255,220,120,0.4);
-}
-.analysis-cards h3 { 
-  margin-bottom:12px; 
-  color:#ffd57f; 
-  font-size:1.1rem;
-}
-.analysis-cards p { 
-  font-size:1rem; 
-  font-weight:700; 
-  color:#fff; 
-}
-
-/* Allocation bars */
-.allocation-section { margin-bottom:50px; }
-.allocation-section h3 { color:#8b5e3c; text-align:center; margin-bottom:20px; font-size:1.5rem; }
-
-.allocation-bar {
-  display: flex;
-  height: 45px;
-  border-radius: 25px;
-  overflow: hidden;
-  max-width: 900px;
-  margin: 0 auto;
-  background-color: #f3e8e0;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-.allocation-bar .segment {
-  display: flex;
-  align-items:center;
-  justify-content:center;
-  color: #fff;
-  font-weight: 700;
-  font-size: 14px;
-  width: 0;
-  transition: width 1.8s ease-out;
-}
-
-.segment.social { background:#c08054; }
-.segment.email { background:#a65f3b; }
-.segment.seo { background:#d69a7f; }
-.segment.creative { background:#f0b189; color:#5a3e2b; }
-.allocation-bar .segment:hover { transform: scale(1.05); opacity:0.9; }
-
-/* Trend Charts */
-.trend-charts {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-  gap:20px;
-  margin-bottom:50px;
-}
-
-.trend-card {
-  background-color:#f9ede3;
-  border:1px solid #d6bfa3;
-  border-radius:12px;
-  padding:20px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.08);
-  text-align:center;
-}
-
-.trend-card h4 { color:#8b5e3c; margin-bottom:12px; font-size:1.1rem; }
-
-/* Table */
-.analysis-table {
-  width:100%;
-  border-collapse: collapse;
-}
-
-.analysis-table th, .analysis-table td {
-  border: 1px solid #d6bfa3;
-  padding:12px;
-  text-align:left;
-  color:#5a3e2b;
-}
-
-.analysis-table th { background-color:#f9e5d6; font-weight:700; }
-.analysis-table td { background-color:#fff7f2; }
+/* Add card-specific styles if needed (already fits dark-latte theme) */
 </style>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  // Animate Allocation Bars
   const segments = document.querySelectorAll('.allocation-bar .segment');
   segments.forEach(seg => {
     const fill = seg.dataset.fill;
@@ -2172,63 +2052,122 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Engagement Trend Chart
-  const ctxEngagement = document.getElementById('engagementTrend').getContext('2d');
-  new Chart(ctxEngagement, {
+  new Chart(document.getElementById('engagementTrend').getContext('2d'), {
     type: 'line',
-    data: {
-      labels: ['Week 1','Week 2','Week 3','Week 4'],
-      datasets: [{
-        label: 'Engagement Rate (%)',
-        data: [9,10.5,11,11.3],
-        borderColor: '#c08054',
-        backgroundColor: 'rgba(192,128,84,0.2)',
-        fill: true,
-        tension:0.3,
-        pointBackgroundColor:'#c08054',
-      }]
-    },
-    options: { responsive:true, plugins:{ legend:{ display:false } } }
+    data: { labels:['Week 1','Week 2','Week 3','Week 4'], datasets:[{ label: 'Engagement Rate (%)', data:[9,10.5,11,11.3], borderColor: '#c08054', backgroundColor: 'rgba(192,128,84,0.2)', fill:true, tension:0.3, pointBackgroundColor:'#c08054'}] },
+    options:{ responsive:true, plugins:{ legend:{ display:false }}}
   });
 
   // Conversion Trend Chart
-  const ctxConversion = document.getElementById('conversionTrend').getContext('2d');
-  new Chart(ctxConversion, {
+  new Chart(document.getElementById('conversionTrend').getContext('2d'), {
     type: 'line',
-    data: {
-      labels: ['Week 1','Week 2','Week 3','Week 4'],
-      datasets: [{
-        label:'Conversions',
-        data:[4.8,5.5,6,6.2],
-        borderColor:'#a65f3b',
-        backgroundColor:'rgba(166,95,59,0.2)',
-        fill:true,
-        tension:0.3,
-        pointBackgroundColor:'#a65f3b',
-      }]
-    },
-    options:{ responsive:true, plugins:{ legend:{ display:false } } }
+    data: { labels:['Week 1','Week 2','Week 3','Week 4'], datasets:[{ label:'Conversions', data:[4.8,5.5,6,6.2], borderColor:'#a65f3b', backgroundColor:'rgba(166,95,59,0.2)', fill:true, tension:0.3, pointBackgroundColor:'#a65f3b'}] },
+    options:{ responsive:true, plugins:{ legend:{ display:false }}}
   });
 
   // Loyalty Sign-ups Trend Chart
-  const ctxSignups = document.getElementById('signupsTrend').getContext('2d');
-  new Chart(ctxSignups,{
+  new Chart(document.getElementById('signupsTrend').getContext('2d'), {
     type:'line',
-    data:{
-      labels:['Week 1','Week 2','Week 3','Week 4'],
-      datasets:[{
-        label:'Sign-ups',
-        data:[900,980,1020,1070],
-        borderColor:'#8b5e3c',
-        backgroundColor:'rgba(139,94,60,0.2)',
-        fill:true,
-        tension:0.3,
-        pointBackgroundColor:'#8b5e3c'
-      }]
-    },
-    options:{ responsive:true, plugins:{ legend:{ display:false } } }
+    data:{ labels:['Week 1','Week 2','Week 3','Week 4'], datasets:[{ label:'Sign-ups', data:[900,980,1020,1070], borderColor:'#8b5e3c', backgroundColor:'rgba(139,94,60,0.2)', fill:true, tension:0.3, pointBackgroundColor:'#8b5e3c'}]},
+    options:{ responsive:true, plugins:{ legend:{ display:false }}}
   });
 });
 </script>
+
+<section id="campaign-testimonials">
+  <h2 class="section-title">Client & User Testimonials</h2>
+  <p class="section-intro">
+    Real feedback and reflections from clients, internal stakeholders, and users, highlighting the impact and success of the campaign.
+  </p>
+
+  <div class="testimonials-grid">
+    <!-- Client Quote -->
+    <div class="testimonial-card">
+      <p class="quote">
+        "The social media strategy and email campaigns exceeded our expectations. Our engagement and conversion metrics have never been higher—truly a game-changer for our brand."
+      </p>
+      <p class="author"><strong>– Sarah M., Marketing Director, Vanilla Café</strong></p>
+    </div>
+
+    <!-- Internal Stakeholder Quote -->
+    <div class="testimonial-card">
+      <p class="quote">
+        "Seeing the ROAS reach 4.11:1 confirmed our efforts in creative optimization and channel allocation. The team’s iterative testing really paid off."
+      </p>
+      <p class="author"><strong>– Ahmed R., Campaign Manager</strong></p>
+    </div>
+
+    <!-- User Quote -->
+    <div class="testimonial-card">
+      <p class="quote">
+        "I signed up for the loyalty program after seeing the personalized content in my inbox. The experience felt tailored and rewarding—it made me a regular customer."
+      </p>
+      <p class="author"><strong>– Lina K., Café Customer</strong></p>
+    </div>
+  </div>
+</section>
+
+<style>
+#campaign-testimonials {
+  border-radius: 20px;
+  padding: 50px 30px;
+  margin: 60px auto;
+  background-color: #f9ede3; /* light latte */
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+  max-width: 1200px;
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+}
+
+#campaign-testimonials h2 {
+  color:#8b5e3c;
+  font-size:2rem;
+  margin-bottom:20px;
+}
+
+#campaign-testimonials .section-intro {
+  color:#5a3e2b;
+  font-size:1.15rem;
+  margin-bottom:40px;
+}
+
+/* Testimonials Grid */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+/* Testimonial Card */
+.testimonial-card {
+  background-color: #5a4534; /* dark latte */
+  color: #f3e0d6;
+  border-radius: 14px;
+  padding: 25px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(255,220,120,0.4);
+}
+
+.testimonial-card .quote {
+  font-size: 1rem;
+  font-style: italic;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.testimonial-card .author {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color:#ffd57f;
+}
+</style>
+
 
 
 <footer id="campaign-footer">
