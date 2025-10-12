@@ -1953,6 +1953,138 @@ footer{ padding:10px 5px; border-top:1px solid rgba(192,124,74,0.3); background:
     border-radius: 6px;
   }
 </style>
+<section id="email-marketing">
+  <h2 class="section-title">Email Marketing Campaign: Retention & Conversion Engine</h2>
+  <p class="section-intro">
+    Nurturing leads into high-LTV loyalty members using a 10-step automated sequence with deep segmentation.
+  </p>
+
+  <div class="email-cards">
+
+    <!-- Conversion Email Card -->
+    <div class="email-card">
+      <div class="card-header conversion">
+        <h3>Conversion: Prospects</h3>
+      </div>
+      <div class="card-content">
+        <p><strong>English Subject:</strong> An Invitation to Exclusivity: Claim Your Haksoss Loyalty Access.</p>
+        <p><strong>Arabic Subject:</strong> دعوة للتميز: احجز مكانك في برنامج ولاء هاكسوس.</p>
+        <p><strong>Content:</strong> Your invitation is reserved. Do not miss the opportunity to join Alexandria’s most discerning morning ritual. Claim your VIP status and a complimentary Hero Combo today. Offer expires in 24 hours.</p>
+        <p><strong>Arabic Content:</strong> دعوتك محفوظة. لا تفوت فرصة الانضمام إلى أرقى طقوس الصباح في الإسكندرية. احصل على عضويتك الخاصة وقهوة هيرو مجانية اليوم. يسري العرض لمدة 24 ساعة.</p>
+        <div class="metrics">
+          <div class="metric"><span>Open Rate:</span> 35%</div>
+          <div class="metric"><span>CTR:</span> 3.8%</div>
+          <div class="metric"><span>Conversion:</span> 6.2%</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Retention Email Card -->
+    <div class="email-card">
+      <div class="card-header retention">
+        <h3>Retention: New Members</h3>
+      </div>
+      <div class="card-content">
+        <p><strong>English Subject:</strong> Welcome to the Ritual: The Story Behind Your Hero Latte.</p>
+        <p><strong>Arabic Subject:</strong> مرحباً بك في الطقس: قصة قهوة هيرو المميزة.</p>
+        <p><strong>Content:</strong> As a valued member, we invite you deeper into our craft. Our Hero Latte features beans sourced exclusively from Yirgacheffe, roasted to precision. True luxury is in the provenance.</p>
+        <p><strong>Arabic Content:</strong> بصفتك عضواً قيماً، ندعوك لاكتشاف سر حرفتنا. قهوة هيرو مصنوعة من حبوب يرجاشيف الحصرية، المحمصة بدقة. الفخامة الحقيقية تكمن في المصدر.</p>
+        <div class="metrics">
+          <div class="metric"><span>Open Rate:</span> 35%</div>
+          <div class="metric"><span>CTR:</span> 3.8%</div>
+          <div class="metric"><span>Conversion:</span> 6.2%</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Re-engagement Email Card -->
+    <div class="email-card">
+      <div class="card-header reengagement">
+        <h3>Re-engagement: Dormant Members</h3>
+      </div>
+      <div class="card-content">
+        <p><strong>English Subject:</strong> We Miss Your Morning Ritual. A Gift from Haksoss.</p>
+        <p><strong>Arabic Subject:</strong> نفتقد طقس صباحك. هدية خاصة من هاكسوس.</p>
+        <p><strong>Content:</strong> We noticed it's been a while. Reclaim your table and enjoy a personalized 15% discount on your next visit. Our freshest batch of croissants awaits you.</p>
+        <p><strong>Arabic Content:</strong> لقد لاحظنا غيابك. استعد طاولتك الخاصة وتمتع بخصم شخصي 15% على زيارتك القادمة. مجموعة الكرواسان الجديدة في انتظارك.</p>
+        <div class="metrics">
+          <div class="metric"><span>Open Rate:</span> 35%</div>
+          <div class="metric"><span>CTR:</span> 3.8%</div>
+          <div class="metric"><span>Conversion:</span> 6.2%</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* Email Cards */
+  .email-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: space-between;
+  }
+
+  .email-card {
+    background: linear-gradient(145deg, #fffaf4, #fdf2eb);
+    border: 1px solid #d6bfa3;
+    border-radius: 15px;
+    flex: 1 1 calc(33% - 25px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .email-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+  }
+
+  .card-header {
+    padding: 15px;
+    border-bottom: 1px solid #d6bfa3;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    color: #fff;
+    text-align: center;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+
+  .card-header.conversion { background: #a65f3b; }
+  .card-header.retention { background: #8b5e3c; }
+  .card-header.reengagement { background: #c08054; }
+
+  .card-content {
+    padding: 20px;
+    font-family: 'Lato', sans-serif;
+    color: #5a3e2b;
+    line-height: 1.6;
+  }
+
+  .card-content h3 { margin-bottom: 12px; font-size: 1.3rem; }
+
+  .metrics { margin-top: 15px; }
+  .metric { margin-bottom: 10px; font-size: 14px; }
+  .metric span { font-weight: 700; }
+
+  @media (max-width: 1200px) { .email-card { flex: 1 1 calc(50% - 25px); } }
+  @media (max-width: 768px) { .email-card { flex: 1 1 100%; } }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const emailCards = document.querySelectorAll('.email-card');
+    emailCards.forEach((card, index) => {
+      card.style.opacity = 0;
+      setTimeout(() => {
+        card.style.transition = 'opacity 0.8s ease';
+        card.style.opacity = 1;
+      }, 200 * index);
+    });
+  });
+</script>
 
 
 <section id="campaign-analysis">
