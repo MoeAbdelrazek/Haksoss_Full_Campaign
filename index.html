@@ -1030,7 +1030,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 <section id="smart-goals">
-  <h2 class="section-title">SMART Goals & Primary KPI Performance</h2>
+  <h2 class="section-title">SMART Goals & Performance</h2>
   <p class="section-intro">
     High-value, measurable objectives that guided the Haksoss Café campaign, ensuring all efforts contributed directly to revenue and brand loyalty.
   </p>
@@ -1094,52 +1094,54 @@ document.addEventListener("DOMContentLoaded", () => {
 </section>
 
 <style>
+/* Latte background for sections */
 section {
   border-radius: 20px;
   padding: 50px 30px;
   margin: 60px auto;
-  background: #1e1e1e; /* Dark background for contrast */
-  box-shadow: 0 12px 28px rgba(0,0,0,0.3);
+  background: linear-gradient(145deg, #fdf5ed, #fceedd);
   max-width: 1100px;
   font-family: 'Lora', serif;
-  color: #f0f0f0;
   animation: fadeInUp 1s ease forwards;
 }
+
+/* Section Titles */
 .section-title {
   text-align: center;
   font-family: 'Playfair Display', serif;
   font-size: 2.3rem;
-  color: #ffcf7f;
+  color: #5a3e36;
   margin-bottom: 15px;
 }
+
 .section-intro {
   text-align: center;
   max-width: 900px;
   margin: 0 auto 35px auto;
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #f3e1c0;
+  color: #6b4f44;
 }
 
-/* Table Dark Theme */
-table {
+/* SMART Goals Table Dark Theme */
+.smart-goals-table table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 35px;
 }
-th, td {
+.smart-goals-table th, .smart-goals-table td {
   border: 1px solid #444;
   padding: 12px 15px;
   text-align: left;
-  background-color: #2a2a2a;
-  color: #f0f0f0;
+  background-color: #2b2b2b; /* dark table rows */
+  color: #fff;
 }
-th {
-  background-color: #333;
-  color: #ffcf7f;
+.smart-goals-table th {
+  background-color: #333; /* dark header */
+  color: #ffcf7f; /* highlight header */
 }
 
-/* Canvas Graph Styling */
+/* KPI & Budget Graph Containers */
 .kpi-graphs, .budget-graphs {
   display: flex;
   flex-direction: column;
@@ -1156,7 +1158,7 @@ th {
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  // KPI Graph
+  // KPI Bar Graph
   const ctxKPI = document.getElementById('kpiGraph').getContext('2d');
   new Chart(ctxKPI, {
     type: 'bar',
@@ -1165,47 +1167,47 @@ document.addEventListener("DOMContentLoaded", () => {
       datasets: [{
         label: 'Performance (%)',
         data: [100, 107, 108, 85, 92],
-        backgroundColor: '#ffb85c',
+        backgroundColor: '#444', // dark bars
+        borderColor: '#ffcf7f',
+        borderWidth: 1,
         borderRadius: 6
       }]
     },
     options: {
       responsive: true,
-      animation: { duration: 1500, easing: 'easeOutBounce' },
       plugins: { legend: { display: false } },
       scales: {
-        y: { beginAtZero: true, grid: { color: '#444' }, ticks: { color: '#f0f0f0' } },
-        x: { grid: { color: '#444' }, ticks: { color: '#f0f0f0' } }
+        y: { beginAtZero: true, grid: { color: '#666' }, ticks: { color: '#fff' } },
+        x: { grid: { color: '#666' }, ticks: { color: '#fff' } }
       }
     }
   });
 
-  // Budget Allocation Graph
+  // Budget Horizontal Bar Graph
   const ctxBudget = document.getElementById('budgetGraph').getContext('2d');
   new Chart(ctxBudget, {
-    type: 'horizontalBar',
+    type: 'bar',
     data: {
       labels: ['Social Media', 'Email/CRM', 'Search SEO/SEM', 'Creative Production'],
       datasets: [{
         label: 'Budget Allocation (%)',
         data: [40,30,20,10],
-        backgroundColor: ['#ff7f50','#ffa500','#ffcf7f','#f4e285'],
+        backgroundColor: ['#555','#666','#777','#888'], // dark slices
         borderRadius: 5
       }]
     },
     options: {
       indexAxis: 'y',
       responsive: true,
-      animation: { duration: 1500, easing: 'easeOutCubic' },
       plugins: { legend: { display: false } },
       scales: {
-        x: { grid: { color: '#444' }, ticks: { color: '#f0f0f0', beginAtZero: true } },
-        y: { grid: { color: '#444' }, ticks: { color: '#f0f0f0' } }
+        x: { grid: { color: '#666' }, ticks: { color: '#fff', beginAtZero: true } },
+        y: { grid: { color: '#666' }, ticks: { color: '#fff' } }
       }
     }
   });
 
-  // Flighting Plan Graph
+  // Flighting Plan Line Graph
   const ctxFlighting = document.getElementById('flightingGraph').getContext('2d');
   new Chart(ctxFlighting, {
     type: 'line',
@@ -1214,8 +1216,8 @@ document.addEventListener("DOMContentLoaded", () => {
       datasets: [{
         label: 'Conversion Funnel (%)',
         data: [100,90,75],
-        backgroundColor: 'rgba(255,191,64,0.2)',
-        borderColor: '#ffbf40',
+        backgroundColor: 'rgba(255,255,255,0.1)',
+        borderColor: '#fff',
         borderWidth: 3,
         tension: 0.4,
         fill: true,
@@ -1225,16 +1227,16 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     options: {
       responsive: true,
-      animation: { duration: 1800, easing: 'easeOutQuart' },
       plugins: { legend: { display: false } },
       scales: {
-        y: { beginAtZero: true, max: 110, grid: { color: '#444' }, ticks: { color: '#f0f0f0' } },
-        x: { grid: { color: '#444' }, ticks: { color: '#f0f0f0' } }
+        y: { beginAtZero: true, max: 110, grid: { color: '#666' }, ticks: { color: '#fff' } },
+        x: { grid: { color: '#666' }, ticks: { color: '#fff' } }
       }
     }
   });
 });
 </script>
+
 
 
 <section id="kpis">
