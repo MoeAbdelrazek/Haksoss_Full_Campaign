@@ -94,14 +94,14 @@ header.fixed-header{
     display:flex; align-items:center; gap:10px;
 }
 .case-left p.sub{
-    font-size:1.2rem; /* updated to match page font */
+    font-size:1.2rem; 
     color:#4a3321;
     line-height:1.6;
     margin:10px 0;
 }
 .exec-summary{
     margin-top:15px;
-    font-size:1.2rem; /* updated */
+    font-size:1.2rem;
     line-height:1.6;
     color:var(--deep);
     padding:14px;
@@ -171,7 +171,7 @@ header.fixed-header{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
     gap:20px;
-    margin:20px 0; /* moved above case title */
+    margin:20px 0; 
 }
 .section-card{
     background:#fff;
@@ -194,7 +194,7 @@ header.fixed-header{
 }
 .section-card h3{
     font-family:'Playfair Display', serif;
-    font-size:1.2rem; /* increased */
+    font-size:1.2rem; 
     margin:0;
     color:var(--deep);
 }
@@ -240,6 +240,7 @@ header.fixed-header{
         <div class="section-card" onclick="document.getElementById('analysis').scrollIntoView({behavior:'smooth'});"><i class="fas fa-chart-bar"></i><h3>Analysis</h3></div>
     </section>
 
+    <!-- CASE STUDY HERO -->
     <section id="case" class="panel inview">
         <div class="case-hero">
             <div class="case-left">
@@ -267,6 +268,19 @@ header.fixed-header{
             </div>
         </div>
     </section>
+
+    <!-- PLACEHOLDER SECTIONS FOR ICON SCROLL -->
+    <section id="brand" class="panel inview"><h2>Brand Identity</h2></section>
+    <section id="persona" class="panel inview"><h2>Persona</h2></section>
+    <section id="mapping" class="panel inview"><h2>Mapping</h2></section>
+    <section id="kpi" class="panel inview"><h2>Primary KPI</h2></section>
+    <section id="budget" class="panel inview"><h2>Budget</h2></section>
+    <section id="kpis" class="panel inview"><h2>KPIs</h2></section>
+    <section id="funnels" class="panel inview"><h2>Funnels</h2></section>
+    <section id="seo" class="panel inview"><h2>SEO</h2></section>
+    <section id="social" class="panel inview"><h2>Social Media</h2></section>
+    <section id="emails" class="panel inview"><h2>Emails</h2></section>
+    <section id="analysis" class="panel inview"><h2>Analysis</h2></section>
 
 </div>
 </body>
@@ -938,7 +952,7 @@ header.fixed-header{
   margin: 18px 0;
 }
 </style>
-
+<!-- SMART Goals & KPI Section -->
 <section id="smart-goals">
   <h2 class="section-title">SMART Goals & Performance</h2>
   <p class="section-intro">
@@ -991,6 +1005,7 @@ header.fixed-header{
   </div>
 </section>
 
+<!-- Budget & Flighting -->
 <section id="budget-flighting">
   <h2 class="section-title">Budget Allocation & Flighting Plan</h2>
   <p class="section-intro">
@@ -1051,20 +1066,20 @@ section {
 }
 
 .smart-goals-table th {
-  background-color: #e6d4c1;
+  background-color: #d8bfa3; /* deeper latte */
   font-weight: 700;
 }
 
 .smart-goals-table td {
-  background-color: #fff8f3;
+  background-color: #f5e2d0; /* subtle latte */
 }
 
 .smart-goals-table tr:nth-child(even) td {
-  background-color: #fdf1e6;
+  background-color: #f0d8c0;
 }
 
 .smart-goals-table tr:hover td {
-  background-color: #fbe9df;
+  background-color: #e6c9aa;
   transition: 0.3s;
 }
 
@@ -1085,7 +1100,7 @@ section {
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  // KPI Bar Graph - Latte Palette
+  // KPI Bar Graph - visible latte colors
   const ctxKPI = document.getElementById('kpiGraph').getContext('2d');
   new Chart(ctxKPI, {
     type: 'bar',
@@ -1094,7 +1109,7 @@ document.addEventListener("DOMContentLoaded", () => {
       datasets: [{
         label: 'Performance (%)',
         data: [100, 107, 108, 85, 92],
-        backgroundColor: ['#e6d4c1','#f0cfa0','#f5d7b0','#f7e1c5','#fdf1e6'],
+        backgroundColor: ['#d8bfa3','#e6c9aa','#f0d8c0','#f5e2d0','#fce7d8'],
         borderRadius: 6
       }]
     },
@@ -1102,13 +1117,13 @@ document.addEventListener("DOMContentLoaded", () => {
       responsive: true,
       plugins: { legend: { display: false } },
       scales: {
-        y: { beginAtZero: true, grid: { color: '#fbe8d7' }, ticks: { color: '#5a3e36' } },
-        x: { grid: { color: '#fbe8d7' }, ticks: { color: '#5a3e36' } }
+        y: { beginAtZero: true, grid: { color: '#f5e2d0' }, ticks: { color: '#5a3e36' } },
+        x: { grid: { color: '#f5e2d0' }, ticks: { color: '#5a3e36' } }
       }
     }
   });
 
-  // Budget Allocation Horizontal Bar - Latte Palette
+  // Budget Allocation Horizontal Bar
   const ctxBudget = document.getElementById('budgetGraph').getContext('2d');
   new Chart(ctxBudget, {
     type: 'bar',
@@ -1117,7 +1132,7 @@ document.addEventListener("DOMContentLoaded", () => {
       datasets: [{
         label: 'Budget Allocation (%)',
         data: [40,30,20,10],
-        backgroundColor: ['#f0cfa0','#f5d7b0','#f7e1c5','#fdf1e6'],
+        backgroundColor: ['#d8bfa3','#e6c9aa','#f0d8c0','#f5e2d0'],
         borderRadius: 5
       }]
     },
@@ -1126,13 +1141,13 @@ document.addEventListener("DOMContentLoaded", () => {
       responsive: true,
       plugins: { legend: { display: false } },
       scales: {
-        x: { grid: { color: '#fbe8d7' }, ticks: { color: '#5a3e36', beginAtZero: true } },
-        y: { grid: { color: '#fbe8d7' }, ticks: { color: '#5a3e36' } }
+        x: { grid: { color: '#f5e2d0' }, ticks: { color: '#5a3e36', beginAtZero: true } },
+        y: { grid: { color: '#f5e2d0' }, ticks: { color: '#5a3e36' } }
       }
     }
   });
 
-  // Flighting Plan Line Graph - Latte Palette
+  // Flighting Plan Line Graph
   const ctxFlighting = document.getElementById('flightingGraph').getContext('2d');
   new Chart(ctxFlighting, {
     type: 'line',
@@ -1141,27 +1156,26 @@ document.addEventListener("DOMContentLoaded", () => {
       datasets: [{
         label: 'Conversion Funnel (%)',
         data: [100,90,75],
-        backgroundColor: 'rgba(246,225,197,0.4)',
-        borderColor: '#f5d7b0',
+        backgroundColor: 'rgba(216,191,163,0.4)',
+        borderColor: '#d8bfa3',
         borderWidth: 3,
         tension: 0.4,
         fill: true,
         pointRadius: 6,
-        pointBackgroundColor: '#e6d4c1'
+        pointBackgroundColor: '#e6c9aa'
       }]
     },
     options: {
       responsive: true,
       plugins: { legend: { display: false } },
       scales: {
-        y: { beginAtZero: true, max: 110, grid: { color: '#fbe8d7' }, ticks: { color: '#5a3e36' } },
-        x: { grid: { color: '#fbe8d7' }, ticks: { color: '#5a3e36' } }
+        y: { beginAtZero: true, max: 110, grid: { color: '#f5e2d0' }, ticks: { color: '#5a3e36' } },
+        x: { grid: { color: '#f5e2d0' }, ticks: { color: '#5a3e36' } }
       }
     }
   });
 });
 </script>
-
 
 
 
@@ -1245,7 +1259,7 @@ document.addEventListener("DOMContentLoaded", () => {
   border-radius: 20px;
   padding: 50px 30px;
   margin: 60px auto;
-  background: linear-gradient(145deg, #fdf5ed, #fceedd); /* Latte background */
+  background: linear-gradient(145deg, #fdf5ed, #fceedd);
   max-width: 1200px;
   animation: fadeInUp 1s ease forwards;
 }
@@ -1263,23 +1277,24 @@ document.addEventListener("DOMContentLoaded", () => {
   max-width: 900px;
   margin: 0 auto 40px;
   color: #6b4f44;
-  font-size: 1.2rem;
+  font-size: 1.25rem; /* increased font */
   line-height: 1.8;
 }
 
-/* Keep cards exactly as they were */
+/* KPI Grid */
 .kpi-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 25px;
 }
 
+/* KPI Cards - Dark Latte */
 .kpi-card {
-  background: #1e1e1e;
-  border-radius: 12px;
-  padding: 20px;
+  background: #5a4534; /* dark latte */
+  border-radius: 14px;
+  padding: 22px;
   text-align: center;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -1289,48 +1304,50 @@ document.addEventListener("DOMContentLoaded", () => {
 }
 
 .kpi-card h3 {
-  color: #ff9c5b;
-  margin-bottom: 15px;
+  color: #ffd27f; /* lighter accent */
+  margin-bottom: 18px;
+  font-size: 1.5rem; /* slightly bigger */
 }
 
 .kpi-card p {
-  font-size: 14px;
-  color: #ccc;
-  margin-top: 12px;
+  font-size: 1.1rem; /* larger for readability */
+  color: #f3e0d6;
+  margin-top: 14px;
 }
 
-/* Horizontal bars */
+/* Horizontal Bars */
 .progress-bar {
   width: 100%;
-  height: 25px;
-  background-color: #444;
-  border-radius: 12px;
+  height: 28px;
+  background-color: #7a6250; /* medium-dark latte */
+  border-radius: 14px;
   overflow: hidden;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 .progress-fill {
   height: 100%;
   width: 0;
-  background: linear-gradient(90deg,#ff9c5b,#ffd57f);
-  color: #1e1e1e;
+  background: linear-gradient(90deg,#ffd27f,#ffb957);
+  color: #5a4534;
   font-weight: bold;
-  line-height: 25px;
+  line-height: 28px;
   text-align: right;
-  padding-right: 10px;
-  border-radius: 12px 0 0 12px;
+  padding-right: 12px;
+  border-radius: 14px 0 0 14px;
   transition: width 2s ease, box-shadow 0.5s ease;
 }
 
-/* Donut canvas size */
+/* Donut Charts */
 .donut-container canvas {
-  width: 120px;
-  height: 120px;
+  width: 130px;
+  height: 130px;
   margin: 0 auto;
 }
 
 /* Sparkline */
-canvas#sparkline { width: 100%; height: 60px; }
+canvas#sparkline { width: 100%; height: 70px; } /* slightly taller */
 
+/* Animations */
 @keyframes fadeInUp {
   0% {opacity:0; transform: translateY(20px);}
   100% {opacity:1; transform: translateY(0);}
@@ -1397,22 +1414,31 @@ canvas#sparkline { width: 100%; height: 60px; }
 
 <style>
   #funnels {
-    border: 2px solid #d4bfa3;
-    border-radius: 15px;
+    border: 2px solid #c9a073;
+    border-radius: 18px;
     padding: 50px 30px;
     margin: 60px auto;
-    background-color: #fff8f3;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    background-color: #4a3827; /* dark latte tone */
+    box-shadow: 0 12px 25px rgba(0,0,0,0.1);
     max-width: 1100px;
     animation: fadeInUp 1s ease forwards;
+    color: #000; /* default text black */
+  }
+
+  .section-title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #ffcc9c; /* warm accent */
+    margin-bottom: 20px;
   }
 
   .section-intro {
     text-align: center;
     max-width: 900px;
     margin: 0 auto 40px auto;
-    color: #6b4f44;
-    font-size: 1.2rem; /* increased */
+    color: #000;
+    font-size: 1.25rem;
     line-height: 1.6;
   }
 
@@ -1434,13 +1460,13 @@ canvas#sparkline { width: 100%; height: 60px; }
 
   .funnel-shape {
     height: 50px;
-    background: linear-gradient(90deg, #d6bfa3, #c9a073);
+    background: linear-gradient(90deg, #6b4f3a, #5a3e2b); /* dark latte gradient */
     border-radius: 25px;
     text-align: center;
     line-height: 50px;
-    color: #fff;
+    color: #000; /* text black */
     font-weight: bold;
-    font-size: 1.2rem; /* increased */
+    font-size: 1.2rem;
     transition: width 1.5s ease;
   }
 
@@ -1448,18 +1474,19 @@ canvas#sparkline { width: 100%; height: 60px; }
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    color: #000;
   }
 
   .funnel-table th, .funnel-table td {
-    border: 1px solid #d6bfa3;
-    padding: 14px; /* slightly increased */
+    border: 1px solid #c9a073;
+    padding: 14px;
     text-align: left;
-    color: #5a3e2b;
-    font-size: 1.2rem; /* increased */
+    font-size: 1.2rem;
+    color: #000;
   }
 
   .funnel-table th {
-    background-color: #f9e5d6;
+    background-color: #e6d4c1; /* light latte header */
   }
 
   @keyframes fadeInUp {
@@ -1488,6 +1515,7 @@ canvas#sparkline { width: 100%; height: 60px; }
     });
   });
 </script>
+
 
 <section id="search-campaign">
   <h2 class="section-title">Search (SEO & PPC): Capturing High-Intent, High-Value Traffic</h2>
@@ -1742,24 +1770,24 @@ canvas#sparkline { width: 100%; height: 60px; }
 
   <!-- Creative Assets Gallery -->
   <section id="creative" class="panel fade-section">
-    <h2>Creative Execution & Visual Assets (Photo Gallery)</h2>
+    <h2>Creative Execution & Visual Assets</h2>
     <p class="muted">
       All campaign visuals and templates used across posts, stories, and ads—optimized for morning light and high-end aesthetic.
     </p>
 
     <div class="gallery">
-      <div class="tile"><img src="3_Assets/Images/hero-latte.jpg" alt="Hero Latte coffee"><div class="meta">hero-latte.jpg</div></div>
-      <div class="tile"><img src="3_Assets/Images/chocolate-croissant.jpg" alt="Freshly baked chocolate croissant"><div class="meta">chocolate-croissant.jpg</div></div>
-      <div class="tile"><img src="3_Assets/Images/seasonal-treat.jpg" alt="Seasonal breakfast treat"><div class="meta">seasonal-treat.jpg</div></div>
-      <div class="tile"><img src="3_Assets/Images/special-latte.jpg" alt="Special latte creation"><div class="meta">special-latte.jpg</div></div>
-      <div class="tile"><img src="3_Assets/Images/special-offer.jpg" alt="Special offer on lattes"><div class="meta">special-offer.jpg</div></div>
-      <div class="tile"><img src="3_Assets/Images/loyalty-program.jpg" alt="Haksoss Loyalty Program benefits"><div class="meta">loyalty-program.jpg</div></div>
+      <div class="gallery-tile"><img src="3_Assets/Images/hero-latte.jpg" alt="Hero Latte coffee"><div class="meta">hero-latte.jpg</div></div>
+      <div class="gallery-tile"><img src="3_Assets/Images/chocolate-croissant.jpg" alt="Chocolate croissant"><div class="meta">chocolate-croissant.jpg</div></div>
+      <div class="gallery-tile"><img src="3_Assets/Images/seasonal-treat.jpg" alt="Seasonal breakfast treat"><div class="meta">seasonal-treat.jpg</div></div>
+      <div class="gallery-tile"><img src="3_Assets/Images/special-latte.jpg" alt="Special latte creation"><div class="meta">special-latte.jpg</div></div>
+      <div class="gallery-tile"><img src="3_Assets/Images/special-offer.jpg" alt="Special offer"><div class="meta">special-offer.jpg</div></div>
+      <div class="gallery-tile"><img src="3_Assets/Images/loyalty-program.jpg" alt="Loyalty Program benefits"><div class="meta">loyalty-program.jpg</div></div>
 
-      <div class="tile"><img src="3_Assets/1_Templates/hero_latte_post.png" alt="Hero Latte social media template"><div class="meta">hero_latte_post.png (template)</div></div>
-      <div class="tile"><img src="3_Assets/1_Templates/special_latte.png" alt="Special latte social media template"><div class="meta">special_latte.png (template)</div></div>
-      <div class="tile"><img src="3_Assets/1_Templates/season_offer.png" alt="Seasonal offer social media template"><div class="meta">season_offer.png (template)</div></div>
-      <div class="tile"><img src="3_Assets/1_Templates/haksoss_post.png" alt="Haksoss brand post template"><div class="meta">haksoss_post.png (template)</div></div>
-      <div class="tile"><img src="3_Assets/1_Templates/discover_more.png" alt="Discover more carousel template"><div class="meta">discover_more.png (template)</div></div>
+      <div class="gallery-tile"><img src="3_Assets/1_Templates/hero_latte_post.png" alt="Hero Latte template"><div class="meta">hero_latte_post.png</div></div>
+      <div class="gallery-tile"><img src="3_Assets/1_Templates/special_latte.png" alt="Special latte template"><div class="meta">special_latte.png</div></div>
+      <div class="gallery-tile"><img src="3_Assets/1_Templates/season_offer.png" alt="Seasonal offer template"><div class="meta">season_offer.png</div></div>
+      <div class="gallery-tile"><img src="3_Assets/1_Templates/haksoss_post.png" alt="Brand post template"><div class="meta">haksoss_post.png</div></div>
+      <div class="gallery-tile"><img src="3_Assets/1_Templates/discover_more.png" alt="Discover more template"><div class="meta">discover_more.png</div></div>
     </div>
   </section>
 </section>
@@ -1824,7 +1852,7 @@ canvas#sparkline { width: 100%; height: 60px; }
 </section>
 
 <style>
-/* Sections Latte Background */
+/* Sections Background */
 #social-media, #email-marketing {
   background: linear-gradient(145deg, #fdf5ed, #fceedd);
   border-radius: 20px;
@@ -1846,24 +1874,24 @@ canvas#sparkline { width: 100%; height: 60px; }
   text-align: center;
   max-width: 900px;
   margin: 0 auto 40px;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   line-height: 1.6;
   color: #6b4f44;
 }
 
-/* Social & Email Cards Dark as KPIs */
+/* Social & Email Cards */
 .social-card, .email-card {
-  background: #1e1e1e;
-  border-radius: 12px;
-  padding: 20px;
-  text-align: center;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+  background: #5a4534; /* dark latte */
+  border-radius: 14px;
+  padding: 22px;
+  text-align: left;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .social-card:hover, .email-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(255, 220, 120, 0.5);
+  box-shadow: 0 12px 30px rgba(255, 220, 120, 0.4);
 }
 
 .card-header {
@@ -1883,14 +1911,15 @@ canvas#sparkline { width: 100%; height: 60px; }
 .card-content {
   padding: 20px;
   font-family: 'Lato', sans-serif;
-  color: #ccc;
+  color: #f3e0d6;
   line-height: 1.6;
 }
 
 .metrics { margin-top: 15px; }
-.metric { margin-bottom: 10px; font-size: 14px; }
+.metric { margin-bottom: 10px; font-size: 1rem; }
 .metric span { font-weight: 700; }
 
+/* Grid Layouts */
 .social-cards, .email-cards {
   display: flex;
   flex-wrap: wrap;
@@ -1901,6 +1930,32 @@ canvas#sparkline { width: 100%; height: 60px; }
 @media (max-width: 1200px) { .social-card, .email-card { flex: 1 1 calc(50% - 25px); } }
 @media (max-width: 768px) { .social-card, .email-card { flex: 1 1 100%; } }
 
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+.gallery-tile {
+  background: #5a4534; /* dark latte */
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+.gallery-tile img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.gallery-tile .meta {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: #f3e0d6;
+}
+
+/* Animations */
 @keyframes fadeInUp {
   0% {opacity:0; transform: translateY(20px);}
   100% {opacity:1; transform: translateY(0);}
@@ -1976,7 +2031,6 @@ canvas#sparkline { width: 100%; height: 60px; }
 
 <style>
 #campaign-analysis {
-  border: 2px solid #c9a073;
   border-radius: 15px;
   padding: 50px 30px;
   margin: 60px auto;
@@ -1986,10 +2040,20 @@ canvas#sparkline { width: 100%; height: 60px; }
   font-family: 'Playfair Display', serif;
 }
 
-#campaign-analysis h2 { color:#8b5e3c; text-align:center; margin-bottom:20px; font-size:2rem; }
-#campaign-analysis p { color:#5a3e2b; margin-bottom:40px; font-size:15px; text-align:center; }
+#campaign-analysis h2 { 
+  color:#8b5e3c; 
+  text-align:center; 
+  margin-bottom:20px; 
+  font-size:2rem; 
+}
+#campaign-analysis p { 
+  color:#5a3e2b; 
+  margin-bottom:40px; 
+  font-size:15px; 
+  text-align:center; 
+}
 
-/* Dark Cards for KPI Grid */
+/* Dark Latte Cards for KPI Grid */
 .analysis-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -2000,17 +2064,28 @@ canvas#sparkline { width: 100%; height: 60px; }
 .analysis-cards .card {
   border-radius: 12px;
   padding: 25px;
-  background-color: #1e1e1e;
-  color: #fff;
+  background-color: #5a4534; /* Dark latte color */
+  color: #fff7e6; /* Clear, readable text */
   text-align:center;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.analysis-cards .card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(255,220,120,0.5);}
-.analysis-cards h3 { margin-bottom:10px; color:#ffd57f;}
-.analysis-cards p { font-size:14px; color:#ccc; }
+.analysis-cards .card:hover { 
+  transform: translateY(-5px); 
+  box-shadow: 0 12px 30px rgba(255,220,120,0.4);
+}
+.analysis-cards h3 { 
+  margin-bottom:10px; 
+  color:#ffd57f; 
+  font-size:1.2rem;
+}
+.analysis-cards p { 
+  font-size:1rem; 
+  color:#f3e0d6; 
+  font-weight:600;
+}
 
-/* Allocation bars remain Latte */
+/* Allocation bars */
 .allocation-section { margin-bottom:50px; }
 .allocation-section h3 { color:#8b5e3c; text-align:center; margin-bottom:20px; font-size:1.5rem; }
 
@@ -2042,7 +2117,7 @@ canvas#sparkline { width: 100%; height: 60px; }
 .segment.creative { background:#f0b189; color:#5a3e2b; }
 .allocation-bar .segment:hover { transform: scale(1.05); opacity:0.9; }
 
-/* Trend charts remain Latte */
+/* Trend charts */
 .trend-charts {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
@@ -2061,7 +2136,7 @@ canvas#sparkline { width: 100%; height: 60px; }
 
 .trend-card h4 { color:#8b5e3c; margin-bottom:12px; }
 
-/* Table remains Latte */
+/* Table */
 .analysis-table {
   width:100%;
   border-collapse: collapse;
@@ -2093,63 +2168,67 @@ canvas#sparkline { width: 100%; height: 60px; }
 </footer>
 
 <style>
-  #campaign-footer {
-    border-top: 2px solid #c9a073;
-    background-color: #fff7f2; /* Latte background */
-    padding: 50px 20px;
-    text-align: center;
-    color: #5a3e2b;
-    animation: fadeInUp 1s ease forwards;
-  }
+#campaign-footer {
+  border-top: 2px solid #c9a073;
+  background-color: #5a4534; /* Dark latte background */
+  padding: 50px 20px;
+  text-align: center;
+  color: #f3e0d6; /* Text readable on dark latte */
+  animation: fadeInUp 1s ease forwards;
+}
 
-  #campaign-footer h2 {
-    color: #8b5e3c;
-    margin-bottom: 10px;
-  }
+#campaign-footer h2 {
+  color: #ffd57f; /* Highlighted heading */
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+}
 
-  #campaign-footer p {
-    margin-bottom: 15px;
-    font-size: 15px;
-  }
+#campaign-footer p {
+  margin-bottom: 15px;
+  font-size: 15px;
+  color: #f3e0d6;
+}
 
-  /* Dark Card */
-  .personal-card {
-    display: inline-block;
-    border: 2px solid #d6bfa3;
-    border-radius: 15px;
-    padding: 25px 30px;
-    background-color: #1e1e1e; /* Dark card */
-    color: #fff; /* White text inside card */
-    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-    text-align: center;
-    max-width: 300px;
-    transition: transform 0.3s ease;
-  }
+/* Clear, elegant card */
+.personal-card {
+  display: inline-block;
+  border: 2px solid #d6bfa3;
+  border-radius: 15px;
+  padding: 25px 30px;
+  background-color: #7a6047; /* Dark latte card, lighter than footer bg */
+  color: #fff7e6; /* Clear text */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  text-align: center;
+  max-width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-  .personal-card:hover {
-    transform: translateY(-5px);
-  }
+.personal-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(255, 215, 120, 0.4);
+}
 
-  .personal-card h3 {
-    margin: 10px 0;
-    color: #ffd57f; /* Highlighted heading in card */
-  }
+.personal-card h3 {
+  margin: 10px 0;
+  color: #ffd57f; /* Highlighted heading in card */
+  font-size: 1.2rem;
+}
 
-  .personal-card a {
-    color: #ffd57f; /* White-ish link for contrast */
-    text-decoration: none;
-    font-weight: bold;
-  }
+.personal-card a {
+  color: #ffd57f; /* Clear link for contrast */
+  text-decoration: none;
+  font-weight: bold;
+}
 
-  .personal-card a:hover {
-    text-decoration: underline;
-  }
+.personal-card a:hover {
+  text-decoration: underline;
+}
 
-  /* Reuse animations from previous sections */
-  @keyframes fadeInUp {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
-  }
+/* Fade-in animation */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
 </style>
 
 </script> 
