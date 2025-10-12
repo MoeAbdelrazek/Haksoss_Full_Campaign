@@ -1398,40 +1398,39 @@ canvas#sparkline { width: 100%; height: 70px; } /* slightly taller */
 
 <style>
   #funnels {
-    border: 2px solid #c9a073;
-    border-radius: 18px;
-    padding: 50px 30px;
+    border-radius: 20px;
+    padding: 50px 40px;
     margin: 60px auto;
-    background-color: #4a3827; /* dark latte tone */
-    box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+    background: #f9ede3; /* soft latte background */
+    box-shadow: 0 12px 25px rgba(0,0,0,0.08);
     max-width: 1100px;
+    font-family: 'Playfair Display', serif;
+    color: #5a3e2b;
     animation: fadeInUp 1s ease forwards;
-    color: #000; /* default text black */
   }
 
   .section-title {
     text-align: center;
-    font-family: 'Playfair Display', serif;
     font-size: 2.5rem;
-    color: #ffcc9c; /* warm accent */
     margin-bottom: 20px;
+    color: #8b5e3c; /* darker latte accent */
   }
 
   .section-intro {
     text-align: center;
     max-width: 900px;
-    margin: 0 auto 40px auto;
-    color: #000;
+    margin: 0 auto 50px auto;
     font-size: 1.25rem;
     line-height: 1.6;
+    color: #6b4f44; /* soft latte text */
   }
 
+  /* Funnel Chart */
   .funnel-chart {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    align-items: center;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
   }
 
   .funnel-stage {
@@ -1444,33 +1443,35 @@ canvas#sparkline { width: 100%; height: 70px; } /* slightly taller */
 
   .funnel-shape {
     height: 50px;
-    background: linear-gradient(90deg, #6b4f3a, #5a3e2b); /* dark latte gradient */
     border-radius: 25px;
     text-align: center;
     line-height: 50px;
-    color: #000; /* text black */
     font-weight: bold;
     font-size: 1.2rem;
+    color: #fff;
+    background: linear-gradient(90deg, #c08054, #d6bfa3); /* latte gradient */
     transition: width 1.5s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
   }
 
+  /* Funnel Table */
   .funnel-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    color: #000;
+    font-size: 1.1rem;
   }
 
   .funnel-table th, .funnel-table td {
-    border: 1px solid #c9a073;
+    border: 1px solid #d6bfa3;
     padding: 14px;
     text-align: left;
-    font-size: 1.2rem;
-    color: #000;
+    color: #5a3e2b;
   }
 
   .funnel-table th {
-    background-color: #e6d4c1; /* light latte header */
+    background-color: #f3e8e0; /* light latte header */
+    font-weight: 700;
   }
 
   @keyframes fadeInUp {
@@ -1479,7 +1480,7 @@ canvas#sparkline { width: 100%; height: 70px; } /* slightly taller */
   }
 
   @media (max-width: 768px) {
-    .funnel-shape { font-size: 1.2rem; line-height: 50px; height: 50px; }
+    .funnel-shape { font-size: 1.1rem; line-height: 50px; }
   }
 </style>
 
@@ -1490,11 +1491,7 @@ canvas#sparkline { width: 100%; height: 70px; } /* slightly taller */
       const shape = stage.querySelector('.funnel-shape');
       const width = shape.style.width;
       shape.style.width = '0';
-      setTimeout(() => {
-        shape.style.width = width;
-      }, 200 * index);
-
-      // Fade in stage
+      setTimeout(() => { shape.style.width = width; }, 200 * index);
       setTimeout(() => { stage.style.opacity = 1; }, 200 * index);
     });
   });
@@ -1702,7 +1699,7 @@ canvas#sparkline { width: 100%; height: 70px; } /* slightly taller */
 
 
 <section id="social-media">
-  <h2 class="section-title">Social Media Campaign: Building Engagement & Awareness</h2>
+  <h2 class="section-title">Social Media Campaign: Engagement & Awareness</h2>
   <p class="section-intro">
     Driving premium audience interaction and high-LTV Loyalty Sign-ups through cinematic content, curated UGC, and targeted paid campaigns.
   </p>
@@ -1719,6 +1716,7 @@ canvas#sparkline { width: 100%; height: 70px; } /* slightly taller */
         <div class="metrics">
           <div class="metric"><span>Impressions:</span> 21,500</div>
           <div class="metric"><span>Organic ER:</span> 14.1%</div>
+          <div class="metric"><span>Shares:</span> 580</div>
         </div>
       </div>
     </div>
@@ -1733,6 +1731,7 @@ canvas#sparkline { width: 100%; height: 70px; } /* slightly taller */
         <div class="metrics">
           <div class="metric"><span>CPL:</span> EGP 45.5</div>
           <div class="metric"><span>Conversion Rate:</span> 6.2%</div>
+          <div class="metric"><span>CTR:</span> 3.8%</div>
         </div>
       </div>
     </div>
@@ -1746,6 +1745,36 @@ canvas#sparkline { width: 100%; height: 70px; } /* slightly taller */
         <p>Your moment of luxury, shared. Thank you @UPEliteAlex for capturing the essence of the Haksoss ritual.</p>
         <div class="metrics">
           <div class="metric"><span>UGC Rate:</span> 2.1%</div>
+          <div class="metric"><span>Engagement:</span> 11.3%</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- New Post Card -->
+    <div class="social-card">
+      <div class="card-header awareness">
+        <h3>Awareness: Instagram Story</h3>
+      </div>
+      <div class="card-content">
+        <p>Morning perfection captured. Swipe up to discover our seasonal Hero Latte blend. #HaksossMoments</p>
+        <div class="metrics">
+          <div class="metric"><span>Impressions:</span> 18,200</div>
+          <div class="metric"><span>Story CTR:</span> 4.2%</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Paid Video Ad Card -->
+    <div class="social-card">
+      <div class="card-header conversion">
+        <h3>Conversion: Paid Video</h3>
+      </div>
+      <div class="card-content">
+        <p>Experience the Hero Latte live. Join our loyalty program today for exclusive morning rituals.</p>
+        <div class="metrics">
+          <div class="metric"><span>CPL:</span> EGP 42.7</div>
+          <div class="metric"><span>Conversion Rate:</span> 6.5%</div>
+          <div class="metric"><span>Video Views:</span> 15,900</div>
         </div>
       </div>
     </div>
@@ -1766,7 +1795,6 @@ canvas#sparkline { width: 100%; height: 70px; } /* slightly taller */
       <div class="gallery-tile"><img src="3_Assets/Images/special-latte.jpg" alt="Special latte creation"><div class="meta">special-latte.jpg</div></div>
       <div class="gallery-tile"><img src="3_Assets/Images/special-offer.jpg" alt="Special offer"><div class="meta">special-offer.jpg</div></div>
       <div class="gallery-tile"><img src="3_Assets/Images/loyalty-program.jpg" alt="Loyalty Program benefits"><div class="meta">loyalty-program.jpg</div></div>
-
       <div class="gallery-tile"><img src="3_Assets/1_Templates/hero_latte_post.png" alt="Hero Latte template"><div class="meta">hero_latte_post.png</div></div>
       <div class="gallery-tile"><img src="3_Assets/1_Templates/special_latte.png" alt="Special latte template"><div class="meta">special_latte.png</div></div>
       <div class="gallery-tile"><img src="3_Assets/1_Templates/season_offer.png" alt="Seasonal offer template"><div class="meta">season_offer.png</div></div>
@@ -1791,7 +1819,7 @@ canvas#sparkline { width: 100%; height: 70px; } /* slightly taller */
       </div>
       <div class="card-content">
         <p><strong>Subject:</strong> An Invitation to Exclusivity: Claim Your Haksoss Loyalty Access.</p>
-        <p><strong>Content:</strong> Your invitation is reserved. Do not miss the opportunity to join Alexandria’s most discerning morning ritual. Claim your VIP status and a complimentary Hero Combo today. Offer expires in 24 hours.</p>
+        <p><strong>Content:</strong> Your invitation is reserved. Join Alexandria’s most discerning morning ritual. Claim your VIP status and a complimentary Hero Combo today. Offer expires in 24 hours.</p>
         <div class="metrics">
           <div class="metric"><span>Open Rate:</span> 35%</div>
           <div class="metric"><span>CTR:</span> 3.8%</div>
@@ -1807,7 +1835,7 @@ canvas#sparkline { width: 100%; height: 70px; } /* slightly taller */
       </div>
       <div class="card-content">
         <p><strong>Subject:</strong> Welcome to the Ritual: The Story Behind Your Hero Latte.</p>
-        <p><strong>Content:</strong> As a valued member, we invite you deeper into our craft. Our Hero Latte features beans sourced exclusively from Yirgacheffe, roasted to precision. True luxury is in the provenance.</p>
+        <p><strong>Content:</strong> As a valued member, explore our craft. Hero Latte beans sourced exclusively from Yirgacheffe, roasted to perfection. Luxury in provenance.</p>
         <div class="metrics">
           <div class="metric"><span>Open Rate:</span> 35%</div>
           <div class="metric"><span>CTR:</span> 3.8%</div>
@@ -1823,11 +1851,27 @@ canvas#sparkline { width: 100%; height: 70px; } /* slightly taller */
       </div>
       <div class="card-content">
         <p><strong>Subject:</strong> We Miss Your Morning Ritual. A Gift from Haksoss.</p>
-        <p><strong>Content:</strong> We noticed it's been a while. Reclaim your table and enjoy a personalized 15% discount on your next visit. Our freshest batch of croissants awaits you.</p>
+        <p><strong>Content:</strong> Reclaim your table and enjoy a personalized 15% discount. Our freshest batch of croissants awaits you.</p>
         <div class="metrics">
           <div class="metric"><span>Open Rate:</span> 35%</div>
           <div class="metric"><span>CTR:</span> 3.8%</div>
           <div class="metric"><span>Conversion:</span> 6.2%</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- New Email Card -->
+    <div class="email-card">
+      <div class="card-header retention">
+        <h3>Engagement: VIP Members</h3>
+      </div>
+      <div class="card-content">
+        <p><strong>Subject:</strong> Exclusive Recipe: Craft the Perfect Hero Latte at Home.</p>
+        <p><strong>Content:</strong> Delight in the ritual even away from our café. Receive insider tips and VIP-only recipes to enhance your morning experience.</p>
+        <div class="metrics">
+          <div class="metric"><span>Open Rate:</span> 42%</div>
+          <div class="metric"><span>CTR:</span> 5.1%</div>
+          <div class="metric"><span>Conversion:</span> 7.0%</div>
         </div>
       </div>
     </div>
@@ -1838,7 +1882,7 @@ canvas#sparkline { width: 100%; height: 70px; } /* slightly taller */
 <style>
 /* Sections Background */
 #social-media, #email-marketing {
-  background: linear-gradient(145deg, #fdf5ed, #fceedd);
+  background: linear-gradient(145deg, #fdf5ed, #fef1e3);
   border-radius: 20px;
   padding: 50px 30px;
   margin: 60px auto;
@@ -1846,11 +1890,12 @@ canvas#sparkline { width: 100%; height: 70px; } /* slightly taller */
   animation: fadeInUp 1s ease forwards;
 }
 
+/* Titles & Intros */
 .section-title {
   text-align: center;
   font-family: 'Playfair Display', serif;
   font-size: 2.3rem;
-  color: #5a3e36;
+  color: #8b5e3c;
   margin-bottom: 20px;
 }
 
@@ -1865,17 +1910,17 @@ canvas#sparkline { width: 100%; height: 70px; } /* slightly taller */
 
 /* Social & Email Cards */
 .social-card, .email-card {
-  background: #5a4534; /* dark latte */
+  background: #d6bfa3; /* light latte */
   border-radius: 14px;
   padding: 22px;
   text-align: left;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .social-card:hover, .email-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(255, 220, 120, 0.4);
+  box-shadow: 0 12px 30px rgba(138, 96, 60, 0.3);
 }
 
 .card-header {
@@ -1895,13 +1940,12 @@ canvas#sparkline { width: 100%; height: 70px; } /* slightly taller */
 .card-content {
   padding: 20px;
   font-family: 'Lato', sans-serif;
-  color: #f3e0d6;
+  color: #5a3e36;
   line-height: 1.6;
 }
 
-.metrics { margin-top: 15px; }
-.metric { margin-bottom: 10px; font-size: 1rem; }
-.metric span { font-weight: 700; }
+.metrics { margin-top: 15px; display: flex; flex-wrap: wrap; gap: 15px; }
+.metric { font-size: 1rem; background: #f9ede3; padding: 5px 10px; border-radius: 6px; color: #5a3e36; font-weight: 600; }
 
 /* Grid Layouts */
 .social-cards, .email-cards {
@@ -1922,11 +1966,11 @@ canvas#sparkline { width: 100%; height: 70px; } /* slightly taller */
   margin-top: 30px;
 }
 .gallery-tile {
-  background: #5a4534; /* dark latte */
+  background: #f9ede3;
   border-radius: 12px;
   padding: 10px;
   text-align: center;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
 }
 .gallery-tile img {
   width: 100%;
@@ -1936,7 +1980,7 @@ canvas#sparkline { width: 100%; height: 70px; } /* slightly taller */
 .gallery-tile .meta {
   margin-top: 8px;
   font-size: 0.85rem;
-  color: #f3e0d6;
+  color: #5a3e36;
 }
 
 /* Animations */
@@ -1945,7 +1989,6 @@ canvas#sparkline { width: 100%; height: 70px; } /* slightly taller */
   100% {opacity:1; transform: translateY(0);}
 }
 </style>
-
 
 
 <section id="campaign-analysis">
