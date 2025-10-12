@@ -266,6 +266,8 @@ header.fixed-header{
 </section>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Times+New+Roman&display=swap');
+
 #campaign-intro {
   border-radius: 20px;
   padding: 50px 30px;
@@ -279,11 +281,31 @@ header.fixed-header{
   color: #5a3e36;
 }
 
-/* Force all inner text to 16px */
+/* Force all text inside to 16px and same color */
 #campaign-intro * {
   font-size: 16px !important;
   font-family: 'Times New Roman', serif !important;
   color: #5a3e36;
+}
+
+/* Elegant Title Style */
+.section-title {
+  text-align: center;
+  margin-bottom: 25px;
+  font-family: 'Playfair Display', serif !important;
+  font-size: 20px !important;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #3b2314;
+  text-shadow: 1px 2px 3px rgba(90,62,54,0.15);
+}
+
+/* Intro paragraph */
+.section-intro {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  line-height: 1.8;
 }
 
 /* Cards layout */
@@ -294,7 +316,7 @@ header.fixed-header{
   margin-top: 40px;
 }
 
-/* Individual card */
+/* Card style */
 .intro-card {
   background-color: #e6c9aa; /* latte tone */
   border-radius: 16px;
@@ -309,30 +331,22 @@ header.fixed-header{
   box-shadow: 0 12px 30px rgba(0,0,0,0.15);
 }
 
-/* Headings and paragraphs — same size */
+/* Headings inside cards */
 .intro-card h3 {
   margin-bottom: 12px;
   font-weight: bold;
+  font-size: 16px !important;
+  color: #3b2314;
 }
 
+/* Paragraphs inside cards */
 .intro-card p {
   line-height: 1.8;
+  font-size: 16px !important;
+  color: #5a3e36;
 }
 
-/* Section title and intro */
-.section-title {
-  text-align: center;
-  margin-bottom: 20px;
-  font-weight: bold;
-}
-
-.section-intro {
-  text-align: center;
-  max-width: 900px;
-  margin: 0 auto 40px auto;
-}
-
-/* Responsive */
+/* Responsive adjustments */
 @media(max-width:768px){
   #campaign-intro { padding: 36px 20px; margin: 40px 18px; }
   .intro-cards { gap: 18px; }
