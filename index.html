@@ -1445,34 +1445,23 @@ footer{ padding:10px 5px; border-top:1px solid rgba(192,124,74,0.3); background:
 
 <section id="funnels">
   <h2 class="section-title">High-Value Conversion Funnels</h2>
-  <p style="text-align:center; max-width:900px; margin:0 auto 40px auto; color:#6b4f44;">
+  <p class="section-intro">
     Our campaign funnels translate awareness into loyalty, driving measurable engagement and high-LTV customer acquisition.
   </p>
 
-  <!-- Funnel Flow Grid -->
-  <div class="funnel-grid">
-    <div class="funnel-stage">
-      <h3>Awareness</h3>
-      <p>Goal: Capture attention of the Urban Professional Elite (UPE) audience</p>
-      <div class="funnel-bar" style="width:100%;">Reach: 80,800 users</div>
+  <!-- Funnel Chart Grid -->
+  <div class="funnel-chart">
+    <div class="funnel-stage" data-percent="100">
+      <div class="funnel-shape" style="width:100%;">Awareness<br>80,800 users</div>
     </div>
-
-    <div class="funnel-stage">
-      <h3>Consideration</h3>
-      <p>Goal: Engage audience with provenance storytelling & cinematic content</p>
-      <div class="funnel-bar" style="width:75%;">Engagement Rate: 11.3%</div>
+    <div class="funnel-stage" data-percent="75">
+      <div class="funnel-shape" style="width:75%;">Consideration<br>Engagement 11.3%</div>
     </div>
-
-    <div class="funnel-stage">
-      <h3>Conversion</h3>
-      <p>Goal: Convert prospects to loyalty program & high-margin Hero Combo buyers</p>
-      <div class="funnel-bar" style="width:60%;">Conversion Rate: 6.2%</div>
+    <div class="funnel-stage" data-percent="60">
+      <div class="funnel-shape" style="width:60%;">Conversion<br>6.2%</div>
     </div>
-
-    <div class="funnel-stage">
-      <h3>Retention & Advocacy</h3>
-      <p>Goal: Re-engage members for repeat visits and UGC</p>
-      <div class="funnel-bar" style="width:40%;">Referral Rate: 15%</div>
+    <div class="funnel-stage" data-percent="40">
+      <div class="funnel-shape" style="width:40%;">Retention & Advocacy<br>15% Referral</div>
     </div>
   </div>
 
@@ -1523,60 +1512,40 @@ footer{ padding:10px 5px; border-top:1px solid rgba(192,124,74,0.3); background:
     animation: fadeInUp 1s ease forwards;
   }
 
-  .section-title {
+  .section-intro {
     text-align: center;
-    font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
-    color: #5a3e36;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+    color: #6b4f44;
+    font-size: 1.1rem;
+    line-height: 1.6;
   }
 
-  .funnel-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
+  .funnel-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
     margin-bottom: 40px;
   }
 
   .funnel-stage {
-    background: #fffaf4;
-    border: 1px solid #d6bfa3;
-    border-radius: 12px;
-    padding: 20px;
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 1s ease;
   }
 
-  .funnel-stage:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  }
-
-  .funnel-stage h3 {
-    color: #8b5e3c;
-    margin-bottom: 8px;
-  }
-
-  .funnel-stage p {
-    font-size: 14px;
-    color: #5a3e2b;
-    margin-bottom: 12px;
-  }
-
-  .funnel-bar {
-    height: 28px;
+  .funnel-shape {
+    height: 50px;
     background: linear-gradient(90deg, #d6bfa3, #c9a073);
-    border-radius: 14px;
-    text-align: right;
-    padding-right: 12px;
+    border-radius: 25px;
+    text-align: center;
+    line-height: 50px;
     color: #fff;
     font-weight: bold;
-    line-height: 28px;
-    animation: growBar 1s ease forwards;
+    transition: width 1.5s ease;
   }
 
   .funnel-table {
@@ -1596,18 +1565,13 @@ footer{ padding:10px 5px; border-top:1px solid rgba(192,124,74,0.3); background:
     background-color: #f9e5d6;
   }
 
-  @keyframes growBar {
-    from { width: 0; }
-    to { width: inherit; }
-  }
-
   @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
   @media (max-width: 768px) {
-    .funnel-bar { font-size: 12px; padding-right: 8px; line-height: 24px; height: 24px; }
+    .funnel-shape { font-size: 12px; line-height: 40px; height: 40px; }
   }
 </style>
 
@@ -1615,14 +1579,19 @@ footer{ padding:10px 5px; border-top:1px solid rgba(192,124,74,0.3); background:
   document.addEventListener("DOMContentLoaded", () => {
     const funnelStages = document.querySelectorAll('.funnel-stage');
     funnelStages.forEach((stage, index) => {
-      stage.style.opacity = 0;
+      const shape = stage.querySelector('.funnel-shape');
+      const width = shape.style.width;
+      shape.style.width = '0';
       setTimeout(() => {
-        stage.style.transition = 'opacity 0.8s ease';
-        stage.style.opacity = 1;
+        shape.style.width = width;
       }, 200 * index);
+
+      // Fade in stage
+      setTimeout(() => { stage.style.opacity = 1; }, 200 * index);
     });
   });
 </script>
+
 <section id="search-campaign">
   <h2 class="section-title">Search (SEO & PPC): Capturing High-Intent, High-Value Traffic</h2>
   <p style="text-align:center; max-width:900px; margin:0 auto 30px auto; color:#6b4f44;">
