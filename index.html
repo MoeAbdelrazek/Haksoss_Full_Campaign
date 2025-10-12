@@ -17,40 +17,67 @@
   /* Header Container */
   .header-container {
     text-align: center;
-    padding: 60px 20px 40px 20px;
+    padding: 80px 20px 60px 20px;
     background: linear-gradient(135deg, #f8efe6, #f3e7d3);
     border-bottom: 4px solid #d4bfa3;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    animation: fadeInDown 1s ease-out;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Background gradient overlay behind text */
+  .header-overlay {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, transparent 70%);
+    z-index: 0;
+    pointer-events: none;
   }
 
   /* Logo */
   .header-container img {
-    max-width: 150px;
+    max-width: 160px;
     height: auto;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: logoFadeIn 1s forwards 0.5s;
+    z-index: 1;
+    position: relative;
   }
 
   /* Welcome Text */
   .header-container h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 2.4rem;
-    margin-bottom: 15px;
+    font-size: 2.6rem;
+    margin-bottom: 20px;
     color: #5a3e36;
     letter-spacing: 1px;
-    animation: fadeIn 2s ease-in-out;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: textFadeIn 1s forwards 1.2s;
+    z-index: 1;
+    position: relative;
   }
 
   .header-container p {
     font-family: 'Lora', serif;
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     max-width: 900px;
     margin: 0 auto;
     color: #6b4f44;
-    animation: fadeIn 2.5s ease-in-out;
     line-height: 1.6;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: textFadeIn 1s forwards 1.5s;
+    z-index: 1;
+    position: relative;
   }
 
   /* Section Title Style (for all future sections) */
@@ -91,15 +118,26 @@
     100% { opacity: 1; transform: translateY(0); }
   }
 
+  @keyframes logoFadeIn {
+    0% { opacity: 0; transform: translateY(-30px) scale(0.8); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  @keyframes textFadeIn {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
 </style>
 </head>
 <body>
 
 <div class="header-container">
-  <img src="3_assets/Logo/logo.png" alt="Haksoss Café Logo">
+  <div class="header-overlay"></div>
+  <img src="3_Assets/Logo/logo.png" alt="Haksoss Café Logo">
   <h1>Welcome to the Haksoss Luxury Campaign Presentation</h1>
   <p>Discover how Haksoss Café became Alexandria's ultimate morning ritual for the Urban Professional Elite, through precision targeting, high-impact content, and an unparalleled luxury experience.</p>
 </div>
+
 </body>
 <section id="brand-identity">
   <h2 class="section-title">Brand Identity & Core Positioning</h2>
