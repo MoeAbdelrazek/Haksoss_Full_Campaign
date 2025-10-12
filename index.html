@@ -449,6 +449,36 @@ header.fixed-header{
 </section>
 
 <style>
+
+    /* === Section Backgrounds with Overlay === */
+section {
+  position: relative;
+  padding: 80px 10%;
+  background-image: url('3_Assets/Images/header-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 60px;
+}
+
+/* Add a soft overlay for readability */
+section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45); /* overlay tint */
+  z-index: 0;
+}
+
+/* Make sure content stays above the overlay */
+section > * {
+  position: relative;
+  z-index: 1;
+}
+
   #persona-summary {
     border: 2px solid #d4bfa3;
     border-radius: 20px;
