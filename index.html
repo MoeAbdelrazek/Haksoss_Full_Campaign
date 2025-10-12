@@ -601,8 +601,8 @@ header.fixed-header{
 
   <div class="journey-container">
     <!-- Stage: Awareness -->
-    <div class="journey-stage">
-      <div class="stage-header">
+    <div class="journey-stage" data-aos="fade-up">
+      <div class="stage-header" style="background:#d9bfa3;">
         <span class="stage-name">Awareness</span>
         <span class="stage-emotion">Curiosity</span>
       </div>
@@ -611,21 +611,15 @@ header.fixed-header{
         <li>SEO Articles & Blog Posts</li>
         <li>Influencer Micro-Videos</li>
       </ul>
-      <div class="stage-charts">
-        <div class="chart" data-percent="85">
-          <div class="chart-value">85%</div>
-          <div class="chart-label">Engagement Rate</div>
-        </div>
-        <div class="chart" data-percent="80">
-          <div class="chart-value">80%</div>
-          <div class="chart-label">Reach (Unique Users)</div>
-        </div>
+      <div class="stage-bars">
+        <div class="bar" data-value="85"><span>Engagement Rate</span></div>
+        <div class="bar" data-value="80"><span>Reach (Unique Users)</span></div>
       </div>
     </div>
 
     <!-- Stage: Consideration -->
-    <div class="journey-stage">
-      <div class="stage-header">
+    <div class="journey-stage" data-aos="fade-up" data-aos-delay="100">
+      <div class="stage-header" style="background:#c8a17f;">
         <span class="stage-name">Consideration</span>
         <span class="stage-emotion">Interest & Evaluation</span>
       </div>
@@ -634,21 +628,15 @@ header.fixed-header{
         <li>Search Ads & Landing Page</li>
         <li>Social Proof / Testimonials</li>
       </ul>
-      <div class="stage-charts">
-        <div class="chart" data-percent="78">
-          <div class="chart-value">78%</div>
-          <div class="chart-label">Email Open Rate</div>
-        </div>
-        <div class="chart" data-percent="72">
-          <div class="chart-value">72%</div>
-          <div class="chart-label">Click-Through Rate</div>
-        </div>
+      <div class="stage-bars">
+        <div class="bar" data-value="78"><span>Email Open Rate</span></div>
+        <div class="bar" data-value="72"><span>Click-Through Rate</span></div>
       </div>
     </div>
 
     <!-- Stage: Conversion -->
-    <div class="journey-stage">
-      <div class="stage-header">
+    <div class="journey-stage" data-aos="fade-up" data-aos-delay="200">
+      <div class="stage-header" style="background:#b58e6a;">
         <span class="stage-name">Conversion</span>
         <span class="stage-emotion">Excitement & Action</span>
       </div>
@@ -657,21 +645,15 @@ header.fixed-header{
         <li>Hero Combo Purchase</li>
         <li>Email CTAs & Social Ads Retargeting</li>
       </ul>
-      <div class="stage-charts">
-        <div class="chart" data-percent="62">
-          <div class="chart-value">62%</div>
-          <div class="chart-label">Conversion Rate</div>
-        </div>
-        <div class="chart" data-percent="46">
-          <div class="chart-value">46%</div>
-          <div class="chart-label">Cost per Loyalty Sign-up</div>
-        </div>
+      <div class="stage-bars">
+        <div class="bar" data-value="62"><span>Conversion Rate</span></div>
+        <div class="bar" data-value="46"><span>Cost per Loyalty Sign-up</span></div>
       </div>
     </div>
 
     <!-- Stage: Loyalty -->
-    <div class="journey-stage">
-      <div class="stage-header">
+    <div class="journey-stage" data-aos="fade-up" data-aos-delay="300">
+      <div class="stage-header" style="background:#a37752;">
         <span class="stage-name">Loyalty & Advocacy</span>
         <span class="stage-emotion">Satisfaction & Pride</span>
       </div>
@@ -680,155 +662,169 @@ header.fixed-header{
         <li>User-Generated Content Sharing</li>
         <li>Repeat Visits & Referral Offers</li>
       </ul>
-      <div class="stage-charts">
-        <div class="chart" data-percent="90">
-          <div class="chart-value">90%</div>
-          <div class="chart-label">LTV Projection</div>
-        </div>
-        <div class="chart" data-percent="15">
-          <div class="chart-value">15%</div>
-          <div class="chart-label">Referral Rate</div>
-        </div>
+      <div class="stage-bars">
+        <div class="bar" data-value="90"><span>LTV Projection</span></div>
+        <div class="bar" data-value="15"><span>Referral Rate</span></div>
       </div>
     </div>
   </div>
 </section>
 
 <style>
-  #customer-journey {
-    border: 2px solid #d4bfa3;
-    border-radius: 20px;
-    padding: 50px 30px;
-    margin: 60px auto;
-    background: linear-gradient(145deg, #fffaf0, #fff4e6);
-    box-shadow: 0 12px 28px rgba(0,0,0,0.08);
-    max-width: 1100px;
-    font-family: 'Lora', serif;
-    animation: fadeInUp 1s ease forwards;
-  }
+#customer-journey {
+  border-radius: 20px;
+  padding: 50px 30px;
+  margin: 60px auto;
+  background: linear-gradient(145deg, #f9f3ed, #fef6f0);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+  max-width: 1100px;
+  font-family: 'Lora', serif;
+  animation: fadeInUp 1s ease forwards;
+}
 
-  .section-title {
-    text-align: center;
-    font-family: 'Playfair Display', serif;
-    font-size: 2.3rem;
-    color: #5a3e36;
-    margin-bottom: 15px;
-  }
+/* Titles */
+#customer-journey .section-title {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.3rem;
+  color: #5a3e36;
+  margin-bottom: 15px;
+}
 
-  .section-intro {
-    text-align: center;
-    max-width: 900px;
-    margin: 0 auto 40px auto;
-    color: #6b4f44;
-    font-size: 1.1rem;
-    line-height: 1.6;
-  }
+#customer-journey .section-intro {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  color: #6b4f44;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
 
-  .journey-container {
-    display: flex;
+/* Journey Stages Container */
+.journey-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Each Stage Card */
+.journey-stage {
+  border-radius: 15px;
+  padding: 25px 20px;
+  background-color: rgba(255,248,243,0.95);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  overflow: hidden;
+  transition: transform 0.5s, box-shadow 0.5s;
+}
+.journey-stage:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.12);
+}
+
+/* Stage Header */
+.stage-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  padding: 12px 18px;
+  border-radius: 12px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.stage-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+}
+.stage-emotion {
+  font-style: italic;
+  font-size: 1rem;
+}
+
+/* Touchpoints */
+.stage-touchpoints {
+  list-style: disc;
+  padding-left: 20px;
+  margin-bottom: 20px;
+  color: #6b4f44;
+}
+
+/* Bar charts */
+.stage-bars {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.bar {
+  flex: 1 1 45%;
+  height: 24px;
+  background: #e6d4c1;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.bar span {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #5a3e36;
+}
+.bar::after {
+  content: '';
+  position: absolute;
+  left:0; top:0;
+  height:100%;
+  width:0;
+  background-color: #c08054;
+  border-radius: 12px;
+  transition: width 1.2s ease-in-out;
+}
+
+/* Animate bars on load */
+.journey-stage.inview .bar::after {
+  width: attr(data-value '%'); /* will set via JS */
+}
+
+@keyframes fadeInUp {
+  0% {opacity:0; transform: translateY(20px);}
+  100% {opacity:1; transform: translateY(0);}
+}
+
+@media (max-width: 768px) {
+  .stage-bars {
     flex-direction: column;
-    gap: 50px;
   }
-
-  .journey-stage {
-    border: 1px solid #d4bfa3;
-    border-radius: 15px;
-    padding: 25px 20px;
-    background-color: rgba(255,248,243,0.95);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-  }
-
-  .stage-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 600;
-    margin-bottom: 15px;
-    color: #5a3e36;
-  }
-
-  .stage-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
-  }
-
-  .stage-emotion {
-    font-style: italic;
-    font-size: 1rem;
-    color: #8c5e4d;
-  }
-
-  .stage-touchpoints {
-    list-style: disc;
-    padding-left: 20px;
-    margin-bottom: 25px;
-    color: #6b4f44;
-  }
-
-  /* Radial Charts */
-  .stage-charts {
-    display: flex;
-    gap: 40px;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-  }
-
-  .chart {
-    position: relative;
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    background: conic-gradient(#c08054 0% 0%, #e6d4c1 0% 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.06);
-    transition: transform 0.3s;
-  }
-
-  .chart:hover {
-    transform: scale(1.05);
-  }
-
-  .chart-value {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: #5a3e36;
-    margin-bottom: 5px;
-  }
-
-  .chart-label {
-    text-align: center;
-    font-size: 0.9rem;
-    color: #6b4f44;
-  }
-
-  @keyframes fadeInUp {
-    0% {opacity:0; transform: translateY(20px);}
-    100% {opacity:1; transform: translateY(0);}
-  }
-
-  @media (max-width: 768px) {
-    .stage-charts {
-      justify-content: center;
-    }
-    .chart {
-      width: 120px;
-      height: 120px;
-    }
-  }
+}
 </style>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const charts = document.querySelectorAll(".chart");
-    charts.forEach(chart => {
-      const percent = chart.getAttribute("data-percent");
-      chart.style.background = `conic-gradient(#c08054 0% ${percent}%, #e6d4c1 ${percent}% 100%)`;
+document.addEventListener("DOMContentLoaded", () => {
+  const stages = document.querySelectorAll(".journey-stage");
+  stages.forEach(stage => {
+    const bars = stage.querySelectorAll(".bar");
+    bars.forEach(bar => {
+      const value = bar.getAttribute("data-value");
+      bar.querySelector("span").textContent = bar.querySelector("span").textContent;
+      bar.querySelector("span").style.opacity = 0;
+      setTimeout(() => {
+        bar.querySelector("span").style.opacity = 1;
+        bar.querySelector("span").style.transition = "opacity 1s ease";
+        bar.querySelector("::after");
+        bar.querySelector("::after"); // placeholder for bar fill
+      }, 300);
+      bar.style.setProperty('--fill', value + '%');
+      bar.querySelector("span").textContent += ` (${value}%)`;
+      bar.querySelector("::after"); // will fill via next step
+      bar.style.width = value + '%';
     });
   });
+});
 </script>
+
 
 <section id="audience-insights">
   <h2 class="section-title">Audience Insights & Behavioral Trends</h2>
@@ -838,28 +834,22 @@ header.fixed-header{
 
   <div class="insights-container">
     <!-- Insight Card 1: Demographics -->
-    <div class="insight-card">
+    <div class="insight-card" data-aos="fade-right">
       <h3>Demographics</h3>
       <p>Target Age: 20-50 | Urban Professionals | Coffee & Luxury Lifestyle Enthusiasts</p>
-      <div class="chart-donut" data-percent="65">
-        <div class="donut-value">65%</div>
-        <div class="donut-label">Age 25-35</div>
-      </div>
-      <div class="chart-donut" data-percent="35">
-        <div class="donut-value">35%</div>
-        <div class="donut-label">Age 36-50</div>
-      </div>
+      <div class="bar-chart" data-value="65" data-label="Age 25-35"></div>
+      <div class="bar-chart" data-value="35" data-label="Age 36-50"></div>
     </div>
 
     <!-- Insight Card 2: Digital Engagement -->
-    <div class="insight-card">
+    <div class="insight-card" data-aos="fade-left">
       <h3>Digital Engagement</h3>
       <p>Channels with the highest interaction and conversion potential.</p>
-      <canvas id="digitalEngagementChart" width="200" height="200"></canvas>
+      <canvas id="digitalEngagementChart" width="250" height="150"></canvas>
     </div>
 
     <!-- Insight Card 3: Behavioral Trends -->
-    <div class="insight-card">
+    <div class="insight-card" data-aos="fade-right">
       <h3>Behavioral Trends</h3>
       <ul>
         <li>High responsiveness to visual, aspirational content</li>
@@ -870,204 +860,192 @@ header.fixed-header{
     </div>
 
     <!-- Insight Card 4: Engagement Metrics -->
-    <div class="insight-card">
+    <div class="insight-card" data-aos="fade-left">
       <h3>Engagement Metrics</h3>
-      <div class="chart-sparkline" data-values="11,35,6.2,22,28,18,30"></div>
-      <div class="chart-donut" data-percent="11.3">
-        <div class="donut-value">11.3%</div>
-        <div class="donut-label">Avg Engagement Rate</div>
-      </div>
-      <div class="chart-donut" data-percent="35">
-        <div class="donut-value">35%</div>
-        <div class="donut-label">Email Open Rate</div>
-      </div>
-      <div class="chart-donut" data-percent="6.2">
-        <div class="donut-value">6.2%</div>
-        <div class="donut-label">Conversion Rate</div>
-      </div>
+      <div class="sparkline-chart" data-values="11,35,6.2,22,28,18,30"></div>
+      <div class="bar-chart" data-value="11.3" data-label="Avg Engagement Rate"></div>
+      <div class="bar-chart" data-value="35" data-label="Email Open Rate"></div>
+      <div class="bar-chart" data-value="6.2" data-label="Conversion Rate"></div>
     </div>
   </div>
 </section>
 
 <style>
-  #audience-insights {
-    border: 2px solid #d4bfa3;
-    border-radius: 20px;
-    padding: 50px 30px;
-    margin: 60px auto;
-    background: linear-gradient(135deg, #fffaf0, #fff4e6);
-    box-shadow: 0 12px 28px rgba(0,0,0,0.08);
-    max-width: 1100px;
-    font-family: 'Lora', serif;
-    animation: fadeInUp 1s ease forwards;
-  }
+#audience-insights {
+  border-radius: 20px;
+  padding: 50px 30px;
+  margin: 60px auto;
+  background: linear-gradient(145deg, #fef8f2, #fceedd);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+  max-width: 1100px;
+  font-family: 'Lora', serif;
+  animation: fadeInUp 1s ease forwards;
+}
 
-  .section-title {
-    text-align: center;
-    font-family: 'Playfair Display', serif;
-    font-size: 2.3rem;
-    color: #5a3e36;
-    margin-bottom: 15px;
-  }
+#audience-insights .section-title {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.3rem;
+  color: #5a3e36;
+  margin-bottom: 15px;
+}
 
-  .section-intro {
-    text-align: center;
-    max-width: 900px;
-    margin: 0 auto 40px auto;
-    color: #6b4f44;
-    font-size: 1.1rem;
-    line-height: 1.6;
-  }
+#audience-insights .section-intro {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  color: #6b4f44;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
 
-  .insights-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 25px;
-    justify-content: space-between;
-  }
+.insights-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: space-between;
+}
 
+/* Insight Card */
+.insight-card {
+  flex: 1 1 45%;
+  border-radius: 15px;
+  padding: 25px;
+  background: linear-gradient(120deg, #fef6ed, #fbe8d3);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  transition: transform 0.4s, box-shadow 0.4s;
+  position: relative;
+  overflow: hidden;
+}
+.insight-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+.insight-card h3 {
+  color: #6b4f3b;
+  margin-bottom: 12px;
+  font-family: 'Playfair Display', serif;
+}
+.insight-card p, .insight-card li {
+  color: #5a3e36;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+/* Horizontal bar charts */
+.bar-chart {
+  position: relative;
+  height: 20px;
+  background: #e6d4c1;
+  border-radius: 10px;
+  margin: 12px 0;
+  overflow: hidden;
+}
+.bar-chart::after {
+  content: attr(data-value) '%';
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 600;
+  color: #5a3e36;
+  z-index: 2;
+}
+.bar-chart::before {
+  content: '';
+  position: absolute;
+  top:0; left:0;
+  width:0;
+  height:100%;
+  background-color: #c08054;
+  border-radius: 10px;
+  transition: width 1.2s ease-in-out;
+}
+
+/* Sparkline chart placeholder */
+.sparkline-chart {
+  width: 100%;
+  height: 60px;
+  margin: 15px 0;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% {opacity:0; transform: translateY(20px);}
+  100% {opacity:1; transform: translateY(0);}
+}
+
+@media (max-width: 768px) {
   .insight-card {
-    flex: 1 1 45%;
-    border: 1px solid #c9b299;
-    border-radius: 15px;
-    padding: 25px;
-    background-color: #fefaf5;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.06);
-    transition: transform 0.3s, box-shadow 0.3s;
-    position: relative;
-    overflow: hidden;
+    flex: 1 1 100%;
   }
-
-  .insight-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-  }
-
-  .insight-card h3 {
-    color: #6b4f3b;
-    margin-bottom: 12px;
-  }
-
-  .insight-card p {
-    color: #5a3e2b;
-    margin-bottom: 15px;
-  }
-
-  /* Donut Charts */
-  .chart-donut {
-    position: relative;
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    margin: 15px 10px;
-    background: conic-gradient(#c08054 0% 0%, #e6d4c1 0% 100%);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    transition: transform 0.3s;
-  }
-
-  .chart-donut:hover {
-    transform: scale(1.1);
-  }
-
-  .donut-value {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #5a3e36;
-  }
-
-  .donut-label {
-    font-size: 0.85rem;
-    color: #6b4f44;
-    text-align: center;
-  }
-
-  /* Sparkline */
-  .chart-sparkline {
-    width: 100%;
-    height: 60px;
-    margin: 15px 0;
-  }
-
-  @keyframes fadeInUp {
-    0% {opacity:0; transform: translateY(20px);}
-    100% {opacity:1; transform: translateY(0);}
-  }
-
-  @media (max-width: 768px) {
-    .insight-card {
-      flex: 1 1 100%;
-    }
-    .chart-donut {
-      width: 100px;
-      height: 100px;
-    }
-  }
+}
 </style>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    // Animate donut charts
-    const donuts = document.querySelectorAll(".chart-donut");
-    donuts.forEach(donut => {
-      const percent = donut.getAttribute("data-percent");
-      donut.style.background = `conic-gradient(#c08054 0% ${percent}%, #e6d4c1 ${percent}% 100%)`;
-    });
-
-    // Sparkline Trend Line
-    const sparklineEl = document.querySelector(".chart-sparkline");
-    const sparklineData = sparklineEl.getAttribute("data-values").split(',').map(Number);
-    new Chart(sparklineEl.getContext('2d'), {
-      type: 'line',
-      data: {
-        labels: sparklineData.map((_, i) => i+1),
-        datasets: [{
-          data: sparklineData,
-          borderColor: '#c08054',
-          backgroundColor: 'rgba(192,128,84,0.2)',
-          tension: 0.4,
-          fill: true,
-          pointRadius: 3,
-          pointBackgroundColor: '#a65f3b'
-        }]
-      },
-      options: {
-        responsive: true,
-        plugins: { legend: { display: false } },
-        scales: {
-          x: { display: false },
-          y: { display: false, min: 0 }
-        },
-        elements: { line: { borderWidth: 2 } }
-      }
-    });
-
-    // Digital Engagement Pie Chart
-    const ctx = document.getElementById('digitalEngagementChart').getContext('2d');
-    new Chart(ctx, {
-      type: 'doughnut',
-      data: {
-        labels: ['Instagram / TikTok', 'Email Campaign', 'Search SEO/SEM'],
-        datasets: [{
-          data: [80, 60, 50],
-          backgroundColor: ['#c08054', '#a65f3b', '#e6d4c1'],
-          borderWidth: 2
-        }]
-      },
-      options: {
-        responsive: true,
-        plugins: {
-          legend: { position: 'bottom', labels: { color: '#5a3e36', font: { size: 14 } } },
-          tooltip: { enabled: true }
-        },
-        cutout: '65%'
-      }
-    });
+document.addEventListener("DOMContentLoaded", () => {
+  // Animate bar charts
+  const bars = document.querySelectorAll('.bar-chart');
+  bars.forEach(bar => {
+    const value = bar.getAttribute('data-value');
+    setTimeout(() => { bar.querySelector('::before'); }, 100); // placeholder
+    bar.querySelector('::before');
+    bar.style.setProperty('--fill', value + '%');
+    bar.querySelector('::before');
+    bar.querySelector('::before'); // placeholder for bar fill
+    bar.style.backgroundSize = `${value}% 100%`;
   });
+
+  // Sparkline Trend Line
+  const sparklineEl = document.querySelector(".sparkline-chart");
+  const sparklineData = sparklineEl.getAttribute("data-values").split(',').map(Number);
+  new Chart(sparklineEl.getContext('2d'), {
+    type: 'line',
+    data: {
+      labels: sparklineData.map((_, i) => i+1),
+      datasets: [{
+        data: sparklineData,
+        borderColor: '#c08054',
+        backgroundColor: 'rgba(192,128,84,0.2)',
+        tension: 0.4,
+        fill: true,
+        pointRadius: 3,
+        pointBackgroundColor: '#a65f3b'
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { display: false } },
+      scales: { x: { display: false }, y: { display: false, min: 0 } },
+      elements: { line: { borderWidth: 2 } }
+    }
+  });
+
+  // Digital Engagement Pie Chart
+  const ctx = document.getElementById('digitalEngagementChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ['Instagram / TikTok', 'Email Campaign', 'Search SEO/SEM'],
+      datasets: [{
+        data: [80, 60, 50],
+        backgroundColor: ['#c08054', '#a65f3b', '#e6d4c1'],
+        borderWidth: 2
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { position: 'bottom', labels: { color: '#5a3e36', font: { size: 14 } } },
+        tooltip: { enabled: true }
+      },
+      cutout: '65%'
+    }
+  });
+});
 </script>
+
 <section id="smart-goals">
   <h2 class="section-title">SMART Goals & Primary KPI Performance</h2>
   <p class="section-intro">
