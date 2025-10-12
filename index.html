@@ -212,46 +212,57 @@ footer{ padding:10px 5px; border-top:1px solid rgba(192,124,74,0.3); background:
   </div>
 
   <style>
-    /* Elegant Section Title */
+    /* Section Title & Intro */
     .section-title {
       text-align: center;
-      font-family: 'Playfair Display', serif; /* Luxurious serif font */
+      font-family: 'Playfair Display', serif;
       font-size: 2.8rem;
       color: #5a3e36;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
       letter-spacing: 1px;
     }
-
     .section-intro {
       text-align: center;
       font-family: 'Lora', serif;
       color: #6b4f44;
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       max-width: 800px;
-      margin: 0 auto 40px auto;
+      margin: 0 auto 50px auto;
       line-height: 1.6;
     }
 
-    /* Table Styles */
+    /* Brand Table Styles */
     .brand-table {
       width: 100%;
-      border-collapse: collapse;
-      margin: 30px 0;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-      border-radius: 12px;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin: 40px 0;
+      font-family: 'Lato', sans-serif;
+      border-radius: 15px;
       overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      background: linear-gradient(135deg, #fffaf0, #fff4e6);
     }
     .brand-table th, .brand-table td {
-      padding: 15px;
+      padding: 16px 20px;
       text-align: left;
-      background-color: #fff8f3;
     }
     .brand-table th {
       background-color: #d4bfa3;
       color: #3e2f2f;
+      font-size: 1.05rem;
+    }
+    .brand-table td {
+      background-color: rgba(255,248,243,0.9);
+      font-size: 0.98rem;
+      color: #5a3e36;
     }
     .brand-table tr:nth-child(even) td {
-      background-color: #fdf6f0;
+      background-color: rgba(253,246,240,0.9);
+    }
+    .brand-table tr:hover td {
+      background-color: #fbe9e0;
+      transition: 0.3s;
     }
 
     /* Horizontal Card Container */
@@ -259,47 +270,71 @@ footer{ padding:10px 5px; border-top:1px solid rgba(192,124,74,0.3); background:
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      margin: 40px 0;
-      gap: 20px;
+      gap: 25px;
+      margin: 50px 0;
     }
-
     .card-container-horizontal .card {
       flex: 1 1 30%;
+      background: url('https://www.transparenttextures.com/patterns/sandpaper.png'); /* subtle sand texture */
       background-color: #fff8f3;
+      background-blend-mode: lighten;
       border: 2px solid #d4bfa3;
-      border-radius: 15px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      border-radius: 20px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.08);
       text-align: center;
-      padding: 20px;
-      transition: transform 0.3s, box-shadow 0.3s;
+      padding: 25px 20px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
-
+    /* Light reflection animation */
+    .card-container-horizontal .card::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(120deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.0) 50%, rgba(255,255,255,0.15) 100%);
+      transform: rotate(25deg) translateX(-200%);
+      transition: transform 0.8s ease;
+    }
+    .card-container-horizontal .card:hover::after {
+      transform: rotate(25deg) translateX(200%);
+    }
     .card-container-horizontal .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+      transform: translateY(-8px);
+      box-shadow: 0 18px 30px rgba(0,0,0,0.12);
     }
-
     .card-container-horizontal img {
       width: 100%;
-      max-height: 200px;
+      max-height: 220px;
       object-fit: cover;
-      border-radius: 10px;
+      border-radius: 15px;
       margin: 15px 0;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.06);
     }
-
     .card-container-horizontal h3 {
       color: #5a3e36;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
     }
-
     .card-container-horizontal p {
       color: #6b4f44;
-      font-size: 0.95rem;
+      font-size: 1rem;
+      line-height: 1.5;
       font-family: 'Lora', serif;
+    }
+
+    /* Responsive */
+    @media(max-width:992px){
+      .card-container-horizontal { flex-direction: column; gap: 30px; }
+      .card-container-horizontal .card { flex: 1 1 100%; max-width: 100%; }
     }
   </style>
 </section>
+
 <section id="persona-summary">
   <h2 class="section-title">Buyer Persona: Urban Professional Elite</h2>
   <p style="text-align:center; max-width:900px; margin:0 auto 30px auto; color:#6b4f44;">
