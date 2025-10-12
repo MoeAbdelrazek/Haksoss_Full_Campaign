@@ -11,97 +11,159 @@
 
 <style>
 :root {
-    --deep:#331A00;
-    --primary-brown:#6D4C41;
-    --accent:#C07C4A;
-    --bg-start:#FAF0E6;
-    --bg-end:#FFFFFF;
+    --deep:#2b1a09;
+    --accent:#d8a15a;
+    --bg-start:#f9f5f0;
+    --bg-end:#fffaf5;
     --card:rgba(255,255,255,0.95);
-    --card-shadow:0 10px 20px rgba(51,26,0,0.1),0 0 0 1px rgba(192,124,74,0.1);
+    --card-shadow:0 10px 25px rgba(51,26,0,0.12),0 0 0 1px rgba(216,161,90,0.1);
     --radius:16px;
     --maxw:1200px;
 }
 *{box-sizing:border-box;}
 body{
-    margin:0; font-family:"Lato", sans-serif;
+    margin:0;
+    font-family:"Lato", sans-serif;
     color: var(--deep);
-    background: linear-gradient(180deg, var(--bg-start), var(--bg-end));
-    opacity:0; animation: bodyFadeIn 900ms ease forwards;
+    /* ✅ Background moved here to be global */
+    background: 
+        linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)),
+        url('3_assets/Images/header-bg.jpg') center/cover no-repeat fixed;
+    background-attachment: fixed;
+    background-size: cover;
+    opacity:0; 
+    animation: bodyFadeIn 900ms ease forwards;
 }
 @keyframes bodyFadeIn{ to {opacity:1;} }
-a{color:var(--primary-brown); text-decoration:none; transition:.3s;}
+a{color:var(--deep); text-decoration:none; transition:.3s;}
 a:hover{color:var(--accent);}
-.page{padding-top:70px; max-width:var(--maxw); margin:0 auto;}
+.page{padding-top:100px; max-width:var(--maxw); margin:0 auto;}
 
 /* HEADER */
 header.fixed-header{
     position:fixed; top:0; left:0; right:0; z-index:9999;
-    background:var(--deep); color:#fff;
-    box-shadow:0 4px 15px rgba(0,0,0,0.4);
+    background:
+        linear-gradient(rgba(25,15,5,0.7), rgba(25,15,5,0.7)),
+        url('3_Assets/Images/header-bg.jpg') center/cover no-repeat;
+    color:#fff;
+    box-shadow:0 6px 25px rgba(0,0,0,0.3);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(4px);
 }
 .header-inner{
-    max-width:var(--maxw); margin:0 auto;
-    display:flex; align-items:center; justify-content:flex-start;
-    padding:8px 20px; gap:12px;
+    max-width:var(--maxw);
+    margin:0 auto;
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    padding:14px 24px;
+    gap:14px;
 }
 .brand{
-    display:flex; align-items:center; gap:12px;
+    display:flex; align-items:center; gap:14px;
 }
 .brand img{
-    width:40px; height:40px; object-fit:cover;
-    border-radius:6px; background:#fff; padding:3px;
-    border:1px solid var(--accent);
+    width:54px; height:54px; object-fit:cover;
+    border-radius:10px;
+    background:#fff; padding:4px;
+    border:2px solid var(--accent);
+    box-shadow:0 0 10px rgba(216,161,90,0.6);
 }
 .brand .site-title{
-    margin:0; font-family:'Playfair Display', serif; font-size:1rem; color:var(--accent);
+    margin:0; font-family:'Playfair Display', serif;
+    font-size:1.15rem; color:#fff; letter-spacing:0.5px;
+    text-shadow:0 2px 5px rgba(0,0,0,0.4);
 }
 
 /* HERO CASE STUDY */
-.case-hero{ display:flex; gap:20px; align-items:flex-start; flex-wrap:wrap; margin-top:20px; }
-.case-left{ flex:1; min-width:250px; }
-.case-left h2{ font-size:1.4rem; margin:0 0 10px; font-family:'Playfair Display', serif; color:var(--deep); border-bottom:2px solid var(--primary-brown); padding-bottom:4px;}
-.case-left p.sub{ font-size:1rem; color:var(--primary-brown); line-height:1.4; margin:6px 0;}
-.case-left .exec-summary{ margin-top:10px; font-size:1rem; line-height:1.5; color:var(--deep); }
-.case-right{ flex:1; max-width:220px; position:relative;}
+.case-hero{
+    display:flex; gap:25px; align-items:flex-start;
+    flex-wrap:wrap; margin-top:20px;
+}
+.case-left{ flex:1; min-width:280px; }
+.case-left h2{
+    font-size:1.6rem;
+    margin:0 0 12px;
+    font-family:'Playfair Display', serif;
+    color:var(--deep);
+    border-bottom:3px double var(--accent);
+    padding-bottom:6px;
+}
+.case-left p.sub{
+    font-size:1rem;
+    color:#4a3321;
+    line-height:1.6;
+    margin:10px 0;
+}
+.case-left .exec-summary{
+    margin-top:15px;
+    font-size:1rem;
+    line-height:1.6;
+    color:var(--deep);
+    padding:14px;
+    background:rgba(255,255,255,0.9);
+    border-left:4px solid var(--accent);
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+}
+.case-right{ flex:1; max-width:260px; position:relative;}
 .case-right img{
-    width:100%; border-radius:var(--radius);
-    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    width:100%;
+    border-radius:var(--radius);
+    box-shadow:0 12px 30px rgba(0,0,0,0.12);
     transition: transform 0.5s ease;
 }
-.case-right img:hover{ transform: translateY(-5px); }
+.case-right img:hover{ transform: translateY(-6px) scale(1.02); }
 
 /* QUICK STATS */
-.quick-stats{ display:flex; flex-wrap:wrap; gap:10px; margin:12px 0;}
+.quick-stats{
+    display:flex; flex-wrap:wrap;
+    gap:12px; margin:14px 0;
+}
 .stat{
     background:linear-gradient(135deg,var(--bg-start),#fff);
-    padding:8px 12px; border-radius:12px; min-width:90px;
-    box-shadow:0 4px 10px rgba(51,26,0,0.08);
-    border:1px solid rgba(192,124,74,0.2);
+    padding:10px 14px;
+    border-radius:14px;
+    min-width:95px;
+    box-shadow:0 6px 15px rgba(51,26,0,0.1);
+    border:1px solid rgba(216,161,90,0.25);
     text-align:center;
+    display:flex; flex-direction:column;
+    align-items:center; justify-content:center;
+    gap:4px;
 }
-.stat .val{ color:var(--accent); font-weight:900; font-size:1rem;}
-.stat .lab{ color:var(--primary-brown); font-weight:700; font-size:0.8rem; margin-top:2px; }
+.stat i{ font-size:1.1rem; color:var(--accent);}
+.stat .val{ color:var(--accent); font-weight:900; font-size:1.05rem;}
+.stat .lab{ color:#4a3321; font-weight:700; font-size:0.85rem; }
 
 /* PANELS */
 .panel{
-    background:var(--card); border-radius:var(--radius);
-    padding:20px; margin-bottom:25px; box-shadow:var(--card-shadow);
-    opacity:0; transform:translateY(10px);
+    background:var(--card);
+    border-radius:var(--radius);
+    padding:25px; margin-bottom:28px;
+    box-shadow:var(--card-shadow);
+    opacity:0; transform:translateY(12px);
     transition:all 0.7s cubic-bezier(.2,.9,.3,1.1);
 }
 .panel.inview{ opacity:1; transform:translateY(0); }
-.panel h2{ font-family:'Playfair Display', serif; color:var(--deep); font-size:1.3rem; border-bottom:2px solid var(--primary-brown); padding-bottom:4px; margin-bottom:8px; }
-
-/* FOOTER */
-footer{ padding:10px 5px; border-top:1px solid rgba(192,124,74,0.3); background:var(--bg-start); color:var(--deep); text-align:center; }
+.panel h2{
+    font-family:'Playfair Display', serif;
+    color:var(--deep);
+    font-size:1.4rem;
+    border-bottom:2px solid var(--accent);
+    padding-bottom:6px;
+    margin-bottom:12px;
+    display:flex; align-items:center; gap:8px;
+}
+.panel h2 i{ color:var(--accent); }
 
 /* RESPONSIVE */
 @media(max-width:768px){
     .case-hero{ flex-direction:column; align-items:flex-start; }
-    .case-right{ max-width:100%; margin-top:10px; }
+    .case-right{ max-width:100%; margin-top:12px; }
     .quick-stats{ justify-content:flex-start; }
-    .stat{ min-width:70px; font-size:0.75rem; padding:6px 8px; }
-    .case-left h2{ font-size:1.2rem; }
+    .stat{ min-width:75px; font-size:0.75rem; padding:8px 10px; }
+    .case-left h2{ font-size:1.3rem; }
     .case-left p.sub, .case-left .exec-summary{ font-size:0.95rem; }
 }
 </style>
@@ -124,17 +186,17 @@ footer{ padding:10px 5px; border-top:1px solid rgba(192,124,74,0.3); background:
     <section id="case" class="panel inview">
         <div class="case-hero">
             <div class="case-left">
-                <h2>Haksoss Café — Elevate Your Mornings: Full Case Study</h2>
+                <h2><i class="fas fa-coffee"></i> Haksoss Café — Elevate Your Mornings: Full Case Study</h2>
                 <p class="sub">
-                    Campaign Title: <strong>“Wake Up with Luxury in Alexandria”</strong><br>
-                    Purpose: Establish Haksoss as Alexandria’s premium morning destination through bilingual, sensory storytelling, high-end visuals, and a loyalty-led conversion strategy.
+                    <i class="fas fa-bullseye"></i> Campaign: <strong>“Wake Up with Luxury in Alexandria”</strong><br>
+                    <i class="fas fa-lightbulb"></i> Purpose: Establish Haksoss as Alexandria’s premium morning destination through bilingual, sensory storytelling, high-end visuals, and a loyalty-led conversion strategy.
                 </p>
 
                 <div class="quick-stats">
-                    <div class="stat"><div class="val">80,800</div><div class="lab">Total Reach</div></div>
-                    <div class="stat"><div class="val">1,070</div><div class="lab">Loyalty Sign-ups</div></div>
-                    <div class="stat"><div class="val">11.3%</div><div class="lab">Avg Engagement Rate</div></div>
-                    <div class="stat"><div class="val">411%</div><div class="lab">Overall Campaign ROI</div></div>
+                    <div class="stat"><i class="fas fa-users"></i><div class="val">80,800</div><div class="lab">Total Reach</div></div>
+                    <div class="stat"><i class="fas fa-star"></i><div class="val">1,070</div><div class="lab">Loyalty Sign-ups</div></div>
+                    <div class="stat"><i class="fas fa-chart-line"></i><div class="val">11.3%</div><div class="lab">Avg Engagement</div></div>
+                    <div class="stat"><i class="fas fa-dollar-sign"></i><div class="val">411%</div><div class="lab">ROI</div></div>
                 </div>
 
                 <div class="exec-summary">
@@ -149,8 +211,6 @@ footer{ padding:10px 5px; border-top:1px solid rgba(192,124,74,0.3); background:
         </div>
     </section>
 </div>
-
-<footer></footer>
 
 </body>
 </html>
@@ -392,6 +452,36 @@ footer{ padding:10px 5px; border-top:1px solid rgba(192,124,74,0.3); background:
 </section>
 
 <style>
+
+    /* === Section Backgrounds with Overlay === */
+section {
+  position: relative;
+  padding: 80px 10%;
+  background-image: url('3_Assets/Images/header-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 60px;
+}
+
+/* Add a soft overlay for readability */
+section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45); /* overlay tint */
+  z-index: 0;
+}
+
+/* Make sure content stays above the overlay */
+section > * {
+  position: relative;
+  z-index: 1;
+}
+
   #persona-summary {
     border: 2px solid #d4bfa3;
     border-radius: 20px;
