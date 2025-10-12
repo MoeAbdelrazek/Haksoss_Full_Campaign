@@ -611,7 +611,7 @@ header.fixed-header{
   <div class="journey-container">
     <!-- Stage: Awareness -->
     <div class="journey-stage" data-aos="fade-up">
-      <div class="stage-header" style="background:#2b2b2b;">
+      <div class="stage-header" style="background:#d9bfa3;">
         <span class="stage-name">Awareness</span>
         <span class="stage-emotion">Curiosity</span>
       </div>
@@ -628,7 +628,7 @@ header.fixed-header{
 
     <!-- Stage: Consideration -->
     <div class="journey-stage" data-aos="fade-up" data-aos-delay="100">
-      <div class="stage-header" style="background:#444;">
+      <div class="stage-header" style="background:#c8a17f;">
         <span class="stage-name">Consideration</span>
         <span class="stage-emotion">Interest & Evaluation</span>
       </div>
@@ -645,7 +645,7 @@ header.fixed-header{
 
     <!-- Stage: Conversion -->
     <div class="journey-stage" data-aos="fade-up" data-aos-delay="200">
-      <div class="stage-header" style="background:#555;">
+      <div class="stage-header" style="background:#b58e6a;">
         <span class="stage-name">Conversion</span>
         <span class="stage-emotion">Excitement & Action</span>
       </div>
@@ -662,7 +662,7 @@ header.fixed-header{
 
     <!-- Stage: Loyalty -->
     <div class="journey-stage" data-aos="fade-up" data-aos-delay="300">
-      <div class="stage-header" style="background:#666;">
+      <div class="stage-header" style="background:#a37752;">
         <span class="stage-name">Loyalty & Advocacy</span>
         <span class="stage-emotion">Satisfaction & Pride</span>
       </div>
@@ -682,41 +682,45 @@ header.fixed-header{
 <style>
 #customer-journey {
   border-radius: 20px;
-  padding: 50px 30px;
+  padding: 60px 30px;
   margin: 60px auto;
   background: linear-gradient(145deg, #f9f3ed, #fef6f0);
   box-shadow: 0 12px 28px rgba(0,0,0,0.08);
   max-width: 1100px;
   font-family: 'Lora', serif;
   animation: fadeInUp 1s ease forwards;
+  font-size: 1.1rem; /* increased font */
 }
 
+/* Titles */
 #customer-journey .section-title {
   text-align: center;
   font-family: 'Playfair Display', serif;
-  font-size: 2.3rem;
+  font-size: 2.5rem; /* increased */
   color: #5a3e36;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 #customer-journey .section-intro {
   text-align: center;
   max-width: 900px;
-  margin: 0 auto 40px auto;
+  margin: 0 auto 45px auto;
   color: #6b4f44;
-  font-size: 1.1rem;
-  line-height: 1.6;
+  font-size: 1.2rem; /* increased */
+  line-height: 1.8;
 }
 
+/* Journey Stages Container */
 .journey-container {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 45px;
 }
 
+/* Each Stage Card */
 .journey-stage {
   border-radius: 15px;
-  padding: 25px 20px;
+  padding: 30px 25px;
   background-color: rgba(255,248,243,0.95);
   box-shadow: 0 8px 20px rgba(0,0,0,0.05);
   overflow: hidden;
@@ -727,54 +731,57 @@ header.fixed-header{
   box-shadow: 0 15px 25px rgba(0,0,0,0.12);
 }
 
+/* Stage Header */
 .stage-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-weight: 600;
-  padding: 12px 18px;
+  padding: 14px 20px;
   border-radius: 12px;
   color: #fff;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 .stage-name {
   font-family: 'Playfair Display', serif;
-  font-size: 1.3rem;
+  font-size: 1.4rem; /* increased */
 }
 .stage-emotion {
   font-style: italic;
-  font-size: 1rem;
+  font-size: 1.15rem; /* increased */
 }
 
+/* Touchpoints */
 .stage-touchpoints {
   list-style: disc;
-  padding-left: 20px;
-  margin-bottom: 20px;
+  padding-left: 24px;
+  margin-bottom: 22px;
   color: #6b4f44;
+  font-size: 1.1rem; /* increased */
 }
 
+/* Bar charts */
 .stage-bars {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 22px;
 }
 .bar {
   flex: 1 1 45%;
-  height: 24px;
-  background: #2b2b2b; /* dark bar background */
+  height: 26px; /* slightly taller */
+  background: #e6d4c1;
   border-radius: 12px;
   position: relative;
-  overflow: hidden;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 .bar span {
   position: absolute;
   left: 12px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 0.9rem;
+  font-size: 1rem; /* increased */
   font-weight: 600;
-  color: #fff; /* white text */
+  color: #5a3e36;
 }
 .bar::after {
   content: '';
@@ -782,37 +789,18 @@ header.fixed-header{
   left:0; top:0;
   height:100%;
   width:0;
-  background-color: #444; /* dark fill */
+  background-color: #c08054;
   border-radius: 12px;
   transition: width 1.2s ease-in-out;
 }
 
-@keyframes fadeInUp {
-  0% {opacity:0; transform: translateY(20px);}
-  100% {opacity:1; transform: translateY(0);}
-}
-
 @media (max-width: 768px) {
-  .stage-bars { flex-direction: column; }
+  .stage-bars {
+    flex-direction: column;
+  }
 }
 </style>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const stages = document.querySelectorAll(".journey-stage");
-  stages.forEach(stage => {
-    const bars = stage.querySelectorAll(".bar");
-    bars.forEach(bar => {
-      const value = bar.getAttribute("data-value");
-      setTimeout(() => {
-        bar.querySelector("::after"); // placeholder
-        bar.style.width = value + '%';
-      }, 300);
-      bar.querySelector("span").textContent += ` (${value}%)`;
-    });
-  });
-});
-</script>
 <section id="audience-insights">
   <h2 class="section-title">Audience Insights & Behavioral Trends</h2>
   <p class="section-intro">
@@ -820,22 +808,17 @@ document.addEventListener("DOMContentLoaded", () => {
   </p>
 
   <div class="insights-container">
-    <!-- Insight Card 1: Demographics -->
     <div class="insight-card" data-aos="fade-right">
       <h3>Demographics</h3>
       <p>Target Age: 20-50 | Urban Professionals | Coffee & Luxury Lifestyle Enthusiasts</p>
       <div class="bar-chart" data-value="65" data-label="Age 25-35"></div>
       <div class="bar-chart" data-value="35" data-label="Age 36-50"></div>
     </div>
-
-    <!-- Insight Card 2: Digital Engagement -->
     <div class="insight-card" data-aos="fade-left">
       <h3>Digital Engagement</h3>
       <p>Channels with the highest interaction and conversion potential.</p>
       <canvas id="digitalEngagementChart" width="250" height="150"></canvas>
     </div>
-
-    <!-- Insight Card 3: Behavioral Trends -->
     <div class="insight-card" data-aos="fade-right">
       <h3>Behavioral Trends</h3>
       <ul>
@@ -845,8 +828,6 @@ document.addEventListener("DOMContentLoaded", () => {
         <li>UGC participation amplifies organic reach and credibility</li>
       </ul>
     </div>
-
-    <!-- Insight Card 4: Engagement Metrics -->
     <div class="insight-card" data-aos="fade-left">
       <h3>Engagement Metrics</h3>
       <div class="sparkline-chart" data-values="11,35,6.2,22,28,18,30"></div>
@@ -860,82 +841,82 @@ document.addEventListener("DOMContentLoaded", () => {
 <style>
 #audience-insights {
   border-radius: 20px;
-  padding: 50px 30px;
+  padding: 60px 30px;
   margin: 60px auto;
-  background: linear-gradient(145deg, #fef8f2, #fceedd); /* latte background stays */
+  background: linear-gradient(145deg, #fef8f2, #fceedd);
   box-shadow: 0 12px 28px rgba(0,0,0,0.08);
   max-width: 1100px;
   font-family: 'Lora', serif;
   animation: fadeInUp 1s ease forwards;
+  font-size: 1.1rem; /* increased */
 }
 
 #audience-insights .section-title {
   text-align: center;
   font-family: 'Playfair Display', serif;
-  font-size: 2.3rem;
+  font-size: 2.5rem; /* increased */
   color: #5a3e36;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 #audience-insights .section-intro {
   text-align: center;
   max-width: 900px;
-  margin: 0 auto 40px auto;
+  margin: 0 auto 45px auto;
   color: #6b4f44;
-  font-size: 1.1rem;
-  line-height: 1.6;
+  font-size: 1.2rem; /* increased */
+  line-height: 1.8;
 }
 
 .insights-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 25px;
+  gap: 30px;
   justify-content: space-between;
 }
 
-/* Insight Card Dark Style */
 .insight-card {
   flex: 1 1 45%;
   border-radius: 15px;
-  padding: 25px;
-  background: #2b2b2b; /* dark card */
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  padding: 30px;
+  background: linear-gradient(120deg, #fef6ed, #fbe8d3);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
   transition: transform 0.4s, box-shadow 0.4s;
   position: relative;
   overflow: hidden;
 }
 .insight-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.12);
 }
 .insight-card h3 {
-  color: #fff;
-  margin-bottom: 12px;
+  color: #6b4f3b;
+  margin-bottom: 14px;
   font-family: 'Playfair Display', serif;
+  font-size: 1.5rem; /* increased */
 }
 .insight-card p, .insight-card li {
-  color: #fff;
-  font-size: 1rem;
-  margin-bottom: 10px;
+  color: #5a3e36;
+  font-size: 1.15rem; /* increased */
+  margin-bottom: 12px;
 }
 
-/* Horizontal bar charts Dark */
 .bar-chart {
   position: relative;
-  height: 20px;
-  background: #444; /* dark background */
+  height: 22px; /* taller */
+  background: #e6d4c1;
   border-radius: 10px;
-  margin: 12px 0;
+  margin: 14px 0;
   overflow: hidden;
 }
 .bar-chart::after {
   content: attr(data-value) '%';
   position: absolute;
-  left: 10px;
+  left: 12px;
   top: 50%;
   transform: translateY(-50%);
   font-weight: 600;
-  color: #fff; /* white text */
+  color: #5a3e36;
   z-index: 2;
 }
 .bar-chart::before {
@@ -944,89 +925,17 @@ document.addEventListener("DOMContentLoaded", () => {
   top:0; left:0;
   width:0;
   height:100%;
-  background-color: #666; /* dark fill */
+  background-color: #c08054;
   border-radius: 10px;
   transition: width 1.2s ease-in-out;
 }
 
-/* Sparkline chart dark */
 .sparkline-chart {
   width: 100%;
-  height: 60px;
-  margin: 15px 0;
-}
-
-/* Animations */
-@keyframes fadeInUp {
-  0% {opacity:0; transform: translateY(20px);}
-  100% {opacity:1; transform: translateY(0);}
-}
-
-@media (max-width: 768px) {
-  .insight-card { flex: 1 1 100%; }
+  height: 70px; /* taller */
+  margin: 18px 0;
 }
 </style>
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  // Animate bar charts
-  const bars = document.querySelectorAll('.bar-chart');
-  bars.forEach(bar => {
-    const value = bar.getAttribute('data-value');
-    bar.style.setProperty('--fill', value + '%');
-    bar.style.backgroundSize = `${value}% 100%`;
-  });
-
-  // Sparkline Trend Line Dark
-  const sparklineEl = document.querySelector(".sparkline-chart");
-  const sparklineData = sparklineEl.getAttribute("data-values").split(',').map(Number);
-  new Chart(sparklineEl.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: sparklineData.map((_, i) => i+1),
-      datasets: [{
-        data: sparklineData,
-        borderColor: '#fff',
-        backgroundColor: 'rgba(255,255,255,0.15)',
-        tension: 0.4,
-        fill: true,
-        pointRadius: 3,
-        pointBackgroundColor: '#fff'
-      }]
-    },
-    options: {
-      responsive: true,
-      plugins: { legend: { display: false } },
-      scales: { x: { display: false }, y: { display: false, min: 0 } },
-      elements: { line: { borderWidth: 2 } }
-    }
-  });
-
-  // Digital Engagement Pie Chart Dark
-  const ctx = document.getElementById('digitalEngagementChart').getContext('2d');
-  new Chart(ctx, {
-    type: 'doughnut',
-    data: {
-      labels: ['Instagram / TikTok', 'Email Campaign', 'Search SEO/SEM'],
-      datasets: [{
-        data: [80, 60, 50],
-        backgroundColor: ['#666', '#555', '#444'], // dark slices
-        borderColor: ['#2b2b2b','#2b2b2b','#2b2b2b'], 
-        borderWidth: 2
-      }]
-    },
-    options: {
-      responsive: true,
-      plugins: {
-        legend: { position: 'bottom', labels: { color: '#fff', font: { size: 14 } } },
-        tooltip: { enabled: true, titleColor:'#fff', bodyColor:'#fff' }
-      },
-      cutout: '65%'
-    }
-  });
-});
-</script>
 
 
 <section id="smart-goals">
