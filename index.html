@@ -25,9 +25,8 @@ body{
     font-family:"Times New Roman", serif;
     font-size:13px;
     color:var(--deep);
-    background: var(--latte);
-    background-image: url('3_Assets/Images/pattern-light.png');
-    background-repeat: repeat;
+    background: var(--latte) url('3_Assets/Images/Cafe-background.jpg') center/cover no-repeat fixed;
+    background-blend-mode: lighten;
     opacity:0; animation: bodyFadeIn 900ms ease forwards;
 }
 @keyframes bodyFadeIn{ to {opacity:1;} }
@@ -79,9 +78,10 @@ header.fixed-header{
     display:flex; gap:25px; align-items:flex-start;
     flex-wrap:wrap; margin-top:20px;
     animation: fadeUp 1.2s ease forwards;
-    background: var(--latte);
+    background: rgba(255,255,255,0.92);
     padding:20px;
     border-radius:16px;
+    box-shadow:var(--card-shadow);
 }
 @keyframes fadeUp{
     from{opacity:0; transform:translateY(20px);}
@@ -226,6 +226,7 @@ header.fixed-header{
 </div>
 </body>
 </html>
+
 
 
 <section id="campaign-intro">
