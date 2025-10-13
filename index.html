@@ -398,120 +398,110 @@ header.fixed-header{
 </section>
 
 <style>
-/* Force this section to use the case-study fonts/colors/sizes */
 #market-analysis {
   border-radius: 20px;
   padding: 50px 30px;
   margin: 60px auto;
   background: linear-gradient(145deg, #fdf5ed, #fceedd);
   max-width: 1200px;
-  animation: fadeUp 1s ease forwards;
-  /* base body inside this section */
   font-family: "Times New Roman", serif !important;
-  font-size: 16px !important;       /* explicit px to avoid rem/root differences */
-  line-height: 1.8 !important;
-  color: #5a3e36 !important;        /* espresso tone from the case study */
+  font-size: 18px !important;
+  line-height: 1.9 !important;
+  color: #5a3e36 !important;
   box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-  -webkit-font-smoothing:antialiased;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Ensure inner elements inherit exactly (override other selectors) */
-#market-analysis,
+/* enforce inheritance */
+#market-analysis, 
 #market-analysis * {
   font-family: "Times New Roman", serif !important;
   color: #5a3e36 !important;
-  -webkit-font-smoothing:antialiased;
 }
 
-/* Section title matches the case-study heading style (Playfair Display) */
+/* title */
 #market-analysis .section-title {
   font-family: 'Playfair Display', serif !important;
-  font-size: 28px !important;        /* ~1.6rem on a 16px base */
-  line-height: 1.2 !important;
+  font-size: 32px !important;
+  line-height: 1.2;
   color: var(--deep) !important;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   border-bottom: 2px solid var(--accent);
-  padding-bottom: 8px;
+  padding-bottom: 10px;
 }
 
-/* Intro paragraph */
+/* intro */
 #market-analysis .section-intro {
-  font-family: "Times New Roman", serif !important;
-  font-size: 18px !important;        /* slightly larger for lead text */
+  font-size: 20px !important;
   max-width: 900px;
-  margin: 0 auto 40px auto;
+  margin: 0 auto 45px auto;
   text-align: center;
 }
 
-/* Market insights grid */
+/* cards grid */
 #market-analysis .market-insights {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 25px;
-  margin-bottom: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
 }
 
-/* Cards */
+/* cards */
 #market-analysis .insight-card {
   background-color: #e6c9aa;
   border-radius: 16px;
-  padding: 25px 20px;
+  padding: 28px 22px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.10);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  font-size: 16px !important;
 }
 
-#market-analysis .insight-card:hover{
-  transform: translateY(-5px);
+#market-analysis .insight-card:hover {
+  transform: translateY(-6px);
   box-shadow: 0 12px 30px rgba(0,0,0,0.15);
 }
 
-#market-analysis .insight-card h3{
+#market-analysis .insight-card h3 {
   font-family: 'Playfair Display', serif !important;
-  font-size: 20px !important;
-  margin-bottom: 12px;
+  font-size: 22px !important;
+  margin-bottom: 14px;
   color: var(--deep) !important;
-  font-weight:700;
+  font-weight: 700;
 }
 
-#market-analysis .insight-card p{
-  font-family: "Times New Roman", serif !important;
-  font-size: 16px !important;
-  line-height: 1.8 !important;
-  color: #5a3e36 !important;
+#market-analysis .insight-card p {
+  font-size: 18px !important;
+  line-height: 1.9 !important;
 }
 
-/* Subsections */
+/* subsections */
 #market-analysis .competitive-landscape,
 #market-analysis .strategic-positioning {
-  margin-bottom: 50px;
+  margin-bottom: 55px;
 }
 
 #market-analysis .competitive-landscape h3,
 #market-analysis .strategic-positioning h3 {
   font-family: 'Playfair Display', serif !important;
-  font-size: 20px !important;
+  font-size: 22px !important;
   margin-bottom: 12px;
   color: var(--deep) !important;
-  font-weight:700;
+  font-weight: 700;
 }
 
 #market-analysis .competitive-landscape p,
 #market-analysis .strategic-positioning p {
-  font-family: "Times New Roman", serif !important;
-  font-size: 16px !important;
-  color: #5a3e36 !important;
-  line-height: 1.8 !important;
+  font-size: 18px !important;
+  line-height: 1.9 !important;
 }
 
-/* Responsive */
+/* responsive */
 @media (max-width:768px){
-  #market-analysis { padding: 36px 20px; margin: 40px 18px; }
-  #market-analysis .section-title { font-size: 22px !important; }
-  #market-analysis .section-intro { font-size: 16px !important; }
-  #market-analysis .insight-card { padding: 20px 16px; }
+  #market-analysis { padding: 36px 20px; margin: 40px 18px; font-size: 16px !important; }
+  #market-analysis .section-title { font-size: 26px !important; }
+  #market-analysis .section-intro { font-size: 18px !important; }
+  #market-analysis .insight-card h3 { font-size: 20px !important; }
 }
 </style>
 
