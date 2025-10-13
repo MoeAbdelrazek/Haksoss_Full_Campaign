@@ -1886,7 +1886,7 @@ header.fixed-header{
       new Chart(document.getElementById('funnelChart'),{
         type:'bar',
         data:{
-          labels:['Awareness','Consideration','Conversion','Retention','Advocacy'],
+       
           datasets:[{label:'Users', data:[80800,50000,1070,215,180],
             backgroundColor:'#d8bfa3', borderColor:'#5a3e36', borderWidth:1}]},
         options:{responsive:true, plugins:{legend:{display:false}},
@@ -1947,7 +1947,7 @@ header.fixed-header{
           <td>Awareness</td>
           <td>Unique Reach</td>
           <td>Target: 75,000 | Actual: 80,800</td>
-          <td>High organic reach via Instagram/TikTok; top-age segment 20–35. Funnel built with premium hero visuals and influencer endorsements.</td>
+          <td>High organic reach via Instagram/TikTok; top-age segment 20–50. Funnel built with premium hero visuals and influencer endorsements.</td>
         </tr>
         <tr>
           <td>Consideration</td>
@@ -1979,7 +1979,7 @@ header.fixed-header{
         <h4>Demographics</h4>
         <ul>
           <li>Age: 20–50 (Urban trendsetters & professionals)</li>
-          <li>Gender: 55% Male / 45% Female</li>
+          <li>Gender: 50% Male / 50% Female</li>
           <li>Location: Alexandria city districts</li>
           <li>Income: $25k–$120k/year</li>
         </ul>
@@ -2209,7 +2209,7 @@ header.fixed-header{
   <div class="cards-grid">
     <div class="search-card">
       <h3>Demographics</h3>
-      <p><strong>Age:</strong> 25–50 | <strong>Gender:</strong> 55% Male / 45% Female</p>
+      <p><strong>Age:</strong> 25–50 | <strong>Gender:</strong> 50% Male / 50% Female</p>
       <p><strong>Location:</strong> Alexandria, urban districts</p>
       <p><strong>Income:</strong> $25k–$120k/year</p>
     </div>
@@ -2697,159 +2697,161 @@ header.fixed-header{
 </script>
 
 
-<section id="email-marketing" style="background:linear-gradient(145deg,#fdf5ed,#fceedd); padding:60px 20px; color:#5a3e36; font-family:'Times New Roman',serif;">
-  <div style="max-width:1200px; margin:0 auto;">
-    <h2 style="font-size:32px; text-align:center; color:#5a3e36; margin-bottom:20px;">Email Marketing Campaign: Retention & Conversion Engine</h2>
-    <p style="font-size:20px; text-align:center; max-width:900px; margin:0 auto 40px;">
-      Nurturing leads into high-LTV loyalty members using a 9-step automated sequence with deep segmentation and A/B testing.
-    </p>
+<!-- ================= EMAIL MARKETING SECTION ================= -->
+<section id="email-marketing">
+  <h2 class="section-title">Email Marketing Campaign</h2>
+  <p class="section-intro">
+    A structured 9-email sequence that guided the audience from awareness to loyalty — each crafted with precise timing, storytelling, and personalized engagement to maximize ROI.
+  </p>
 
-    <!-- Email Cards Grid -->
-    <div class="email-cards">
-      <!-- Example Email Card -->
-      <!-- (All 9 cards preserved and styled identically) -->
-      <div class="email-card">
-        <div class="card-header awareness"><h3>Awareness: New Prospects</h3></div>
-        <div class="card-content">
-          <p><strong>Subject:</strong> Discover Alexandria’s Ultimate Morning Ritual</p>
-          <p><strong>Body:</strong> Begin your day with the signature Hero Latte. Join our exclusive community and enjoy early access to premium mornings.</p>
-          <p><strong>CTA:</strong> Learn More</p>
-          <div class="metrics">
-            <div class="metric"><span>Open Rate:</span> 38%</div>
-            <div class="metric"><span>CTR:</span> 4.0%</div>
-            <div class="metric"><span>Conversions:</span> 3.5%</div>
-          </div>
-          <p><strong>Segment:</strong> Urban Professionals | A/B Test: Subject Line Variants A/B</p>
-        </div>
-      </div>
-
-      <!-- Keep all 8 other cards identical to your version -->
-      <!-- (The same formatting applies automatically) -->
-      <!-- ... -->
+  <div class="email-grid">
+    <!-- Email 1 -->
+    <div class="email-card">
+      <h3>1. Teaser Launch</h3>
+      <p class="subject">Subject: Something New Is Brewing ☕</p>
+      <p class="preview">Preview: Get ready for a latte experience like no other…</p>
+      <p class="objective"><strong>Objective:</strong> Build curiosity and anticipation pre-launch.</p>
+      <p class="performance"><strong>Open Rate:</strong> 43% | <strong>CTR:</strong> 6.4%</p>
     </div>
 
-    <!-- A/B Optimization Section -->
-    <div class="ab-optimization">
-      <h3>A/B Testing & Optimization</h3>
-      <p class="section-intro">Systematic testing across all digital channels to maximize engagement, conversions, and retention.</p>
+    <!-- Email 2 -->
+    <div class="email-card">
+      <h3>2. Grand Launch</h3>
+      <p class="subject">Subject: Haksoss Café Introduces the Hero Latte ✨</p>
+      <p class="preview">Preview: The wait is over — meet the new star of your mornings.</p>
+      <p class="objective"><strong>Objective:</strong> Announce the new Hero Latte and drive store visits.</p>
+      <p class="performance"><strong>Open Rate:</strong> 51% | <strong>CTR:</strong> 8.1%</p>
+    </div>
 
-      <div class="ab-opt-cards">
-        <div class="ab-opt-card">
-          <h4>Ads: Hero Carousel CTA</h4>
-          <p><strong>Hypothesis:</strong> Using urgency-driven CTA increases conversions.</p>
-          <p>Variant A: "Sign Up Now" – Conversion 6.0%</p>
-          <p>Variant B: "Reserve Your VIP Spot" – Conversion 6.8%</p>
-          <p class="winner">Winner: Variant B (+0.8% conversion)</p>
-          <p><strong>Recommendation:</strong> Implement urgent CTA across all paid campaigns.</p>
-        </div>
+    <!-- Email 3 -->
+    <div class="email-card">
+      <h3>3. VIP Invitation</h3>
+      <p class="subject">Subject: Exclusive Invite — VIP Latte Experience ☕🎟️</p>
+      <p class="preview">Preview: You’re on the list. Join our private tasting event this weekend.</p>
+      <p class="objective"><strong>Objective:</strong> Reward loyal customers and encourage RSVPs.</p>
+      <p class="performance"><strong>Open Rate:</strong> 58% | <strong>CTR:</strong> 9.5%</p>
+    </div>
 
-        <!-- Keep all remaining A/B test cards here -->
-      </div>
+    <!-- Email 4 -->
+    <div class="email-card">
+      <h3>4. Hero Product Showcase</h3>
+      <p class="subject">Subject: Behind the Scenes of the Hero Latte ☕🎬</p>
+      <p class="preview">Preview: Discover how passion and quality blend into perfection.</p>
+      <p class="objective"><strong>Objective:</strong> Deepen emotional connection and storytelling.</p>
+      <p class="performance"><strong>Open Rate:</strong> 49% | <strong>CTR:</strong> 7.8%</p>
+    </div>
+
+    <!-- Email 5 -->
+    <div class="email-card">
+      <h3>5. Loyalty Program</h3>
+      <p class="subject">Subject: Join the Latte Circle — Earn Rewards Instantly 💎</p>
+      <p class="preview">Preview: Sign up today and enjoy your 1st Hero Latte free!</p>
+      <p class="objective"><strong>Objective:</strong> Drive loyalty sign-ups and repeat purchases.</p>
+      <p class="performance"><strong>Open Rate:</strong> 56% | <strong>CTR:</strong> 10.2%</p>
+    </div>
+
+    <!-- Email 6 -->
+    <div class="email-card">
+      <h3>6. Mid-Campaign Reminder</h3>
+      <p class="subject">Subject: Still Thinking About That Latte? ☕</p>
+      <p class="preview">Preview: Treat yourself today — the offer won’t last long!</p>
+      <p class="objective"><strong>Objective:</strong> Reactivate mid-funnel users and boost visits.</p>
+      <p class="performance"><strong>Open Rate:</strong> 39% | <strong>CTR:</strong> 5.7%</p>
+    </div>
+
+    <!-- Email 7 -->
+    <div class="email-card">
+      <h3>7. Last Chance Offer</h3>
+      <p class="subject">Subject: Final Hours — Free Hero Latte Ends Tonight! ⏰</p>
+      <p class="preview">Preview: Don’t miss this last chance to taste the trend everyone’s talking about.</p>
+      <p class="objective"><strong>Objective:</strong> Create urgency and convert remaining prospects.</p>
+      <p class="performance"><strong>Open Rate:</strong> 64% | <strong>CTR:</strong> 12.5%</p>
+    </div>
+
+    <!-- Email 8 -->
+    <div class="email-card">
+      <h3>8. Thank You Recap</h3>
+      <p class="subject">Subject: You Made the Launch Unforgettable ❤️</p>
+      <p class="preview">Preview: A heartfelt thank you to every latte lover who joined the story.</p>
+      <p class="objective"><strong>Objective:</strong> Strengthen brand love and appreciation.</p>
+      <p class="performance"><strong>Open Rate:</strong> 60% | <strong>CTR:</strong> 7.2%</p>
+    </div>
+
+    <!-- Email 9 -->
+    <div class="email-card">
+      <h3>9. Re-Engagement</h3>
+      <p class="subject">Subject: Haven’t Visited Lately? A Treat Awaits 🎁</p>
+      <p class="preview">Preview: Here’s 20% off your next order — your table’s waiting.</p>
+      <p class="objective"><strong>Objective:</strong> Re-engage dormant subscribers post-campaign.</p>
+      <p class="performance"><strong>Open Rate:</strong> 47% | <strong>CTR:</strong> 6.8%</p>
     </div>
   </div>
-
-  <style>
-    .email-cards {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
-      gap:30px;
-    }
-
-    .email-card {
-      background:#f5e8dc;
-      border-radius:20px;
-      padding:25px;
-      box-shadow:0 6px 20px rgba(0,0,0,0.1);
-      transition:transform 0.3s, box-shadow 0.3s;
-      font-size:18px;
-    }
-
-    .email-card:hover {
-      transform:translateY(-5px);
-      box-shadow:0 12px 28px rgba(90,62,54,0.2);
-    }
-
-    .email-card h3 {
-      font-size:22px;
-      margin-bottom:12px;
-      color:#b8865b;
-    }
-
-    .metrics {
-      display:flex;
-      gap:15px;
-      flex-wrap:wrap;
-      margin-top:10px;
-      font-size:18px;
-    }
-
-    .metrics div span { font-weight:bold; margin-right:4px; }
-
-    .ab-optimization {
-      margin-top:80px;
-      text-align:center;
-    }
-
-    .ab-optimization h3 {
-      font-size:28px;
-      color:#8b5e3c;
-      margin-bottom:20px;
-    }
-
-    .ab-optimization .section-intro {
-      font-size:20px;
-      color:#5a3e2b;
-      margin-bottom:45px;
-      max-width:900px;
-      margin-inline:auto;
-    }
-
-    .ab-opt-cards {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-      gap:25px;
-    }
-
-    .ab-opt-card {
-      background:#e8d5c2;
-      border-radius:20px;
-      padding:24px;
-      box-shadow:0 6px 18px rgba(0,0,0,0.1);
-      transition:transform 0.3s, box-shadow 0.3s;
-      text-align:left;
-      font-size:18px;
-    }
-
-    .ab-opt-card:hover {
-      transform:translateY(-5px);
-      box-shadow:0 12px 30px rgba(90,62,54,0.25);
-    }
-
-    .ab-opt-card h4 {
-      font-size:22px;
-      color:#5a3e36;
-      margin-bottom:10px;
-    }
-
-    .ab-opt-card p {
-      line-height:1.6;
-      color:#5a3e36;
-      margin-bottom:8px;
-    }
-
-    .winner { font-weight:bold; color:#8b5e3c; margin-top:6px; }
-  </style>
-
-  <script>
-    document.addEventListener("DOMContentLoaded",()=>{
-      const cards=document.querySelectorAll('.email-card,.ab-opt-card');
-      cards.forEach((card,i)=>{
-        card.style.opacity=0;
-        setTimeout(()=>{card.style.transition='opacity 0.8s ease';card.style.opacity=1;},150*i);
-      });
-    });
-  </script>
 </section>
+
+<style>
+#email-marketing {
+  background: linear-gradient(145deg, #fdf5ed, #fceedd);
+  border-radius: 20px;
+  padding: 60px 40px;
+  margin: 80px auto;
+  max-width: 1300px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+  color: #5a3e36;
+  font-family: "Times New Roman", serif;
+}
+#email-marketing .section-title {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+#email-marketing .section-intro {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.email-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 25px;
+}
+.email-card {
+  background: #f8e8d7;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.email-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(90, 62, 54, 0.25);
+}
+.email-card h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: #5a3e36;
+}
+.email-card p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
+.email-card .performance {
+  margin-top: 8px;
+  background: #fff4ea;
+  padding: 6px 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 16px;
+}
+@media (max-width: 768px) {
+  #email-marketing {
+    padding: 40px 20px;
+  }
+  .email-card {
+    padding: 20px;
+  }
+}
+</style>
 
 
 <section id="campaign-analysis">
