@@ -398,92 +398,120 @@ header.fixed-header{
 </section>
 
 <style>
+/* Force this section to use the case-study fonts/colors/sizes */
 #market-analysis {
   border-radius: 20px;
   padding: 50px 30px;
   margin: 60px auto;
   background: linear-gradient(145deg, #fdf5ed, #fceedd);
   max-width: 1200px;
-  animation: fadeInUp 1s ease forwards;
-  font-family: 'Times New Roman', serif;
-  font-size: 16px;
-  line-height: 1.8;
-  color: #5a3e36;
+  animation: fadeUp 1s ease forwards;
+  /* base body inside this section */
+  font-family: "Times New Roman", serif !important;
+  font-size: 16px !important;       /* explicit px to avoid rem/root differences */
+  line-height: 1.8 !important;
+  color: #5a3e36 !important;        /* espresso tone from the case study */
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+  -webkit-font-smoothing:antialiased;
 }
 
-/* Enforce consistent font + color */
+/* Ensure inner elements inherit exactly (override other selectors) */
+#market-analysis,
 #market-analysis * {
-  font-family: 'Times New Roman', serif !important;
-  font-size: 16px !important;
-  color: #5a3e36;
+  font-family: "Times New Roman", serif !important;
+  color: #5a3e36 !important;
+  -webkit-font-smoothing:antialiased;
 }
 
-/* Section title & intro */
-.section-title {
+/* Section title matches the case-study heading style (Playfair Display) */
+#market-analysis .section-title {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 28px !important;        /* ~1.6rem on a 16px base */
+  line-height: 1.2 !important;
+  color: var(--deep) !important;
   text-align: center;
   margin-bottom: 20px;
-  font-weight: bold;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 8px;
 }
 
-.section-intro {
-  text-align: center;
+/* Intro paragraph */
+#market-analysis .section-intro {
+  font-family: "Times New Roman", serif !important;
+  font-size: 18px !important;        /* slightly larger for lead text */
   max-width: 900px;
   margin: 0 auto 40px auto;
+  text-align: center;
 }
 
-/* Market insights cards */
-.market-insights {
+/* Market insights grid */
+#market-analysis .market-insights {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 25px;
   margin-bottom: 50px;
 }
 
-.insight-card {
+/* Cards */
+#market-analysis .insight-card {
   background-color: #e6c9aa;
   border-radius: 16px;
   padding: 25px 20px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.10);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 16px !important;
 }
 
-.insight-card:hover {
+#market-analysis .insight-card:hover{
   transform: translateY(-5px);
   box-shadow: 0 12px 30px rgba(0,0,0,0.15);
 }
 
-.insight-card h3 {
+#market-analysis .insight-card h3{
+  font-family: 'Playfair Display', serif !important;
+  font-size: 20px !important;
   margin-bottom: 12px;
-  font-weight: bold;
+  color: var(--deep) !important;
+  font-weight:700;
 }
 
-.insight-card p {
-  line-height: 1.8;
+#market-analysis .insight-card p{
+  font-family: "Times New Roman", serif !important;
+  font-size: 16px !important;
+  line-height: 1.8 !important;
+  color: #5a3e36 !important;
 }
 
 /* Subsections */
-.competitive-landscape,
-.strategic-positioning {
+#market-analysis .competitive-landscape,
+#market-analysis .strategic-positioning {
   margin-bottom: 50px;
 }
 
-.competitive-landscape h3,
-.strategic-positioning h3 {
-  font-weight: bold;
+#market-analysis .competitive-landscape h3,
+#market-analysis .strategic-positioning h3 {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 20px !important;
   margin-bottom: 12px;
+  color: var(--deep) !important;
+  font-weight:700;
 }
 
-.competitive-landscape p,
-.strategic-positioning p {
-  line-height: 1.8;
+#market-analysis .competitive-landscape p,
+#market-analysis .strategic-positioning p {
+  font-family: "Times New Roman", serif !important;
+  font-size: 16px !important;
+  color: #5a3e36 !important;
+  line-height: 1.8 !important;
 }
 
 /* Responsive */
-@media(max-width:768px){
+@media (max-width:768px){
   #market-analysis { padding: 36px 20px; margin: 40px 18px; }
-  .market-insights { gap: 18px; }
-  .insight-card { padding: 20px 16px; }
+  #market-analysis .section-title { font-size: 22px !important; }
+  #market-analysis .section-intro { font-size: 16px !important; }
+  #market-analysis .insight-card { padding: 20px 16px; }
 }
 </style>
 
