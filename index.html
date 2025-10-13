@@ -512,20 +512,22 @@ header.fixed-header{
     A carefully designed plan to drive awareness, engagement, conversions, and loyalty for Haksoss Café, leveraging premium creative assets, data-driven channels, and measurable objectives.
   </p>
 
-  <!-- Strategy Overview Cards -->
   <div class="strategy-cards">
     <div class="card">
       <h3>Primary Objective</h3>
       <p>Establish Haksoss Café as Alexandria’s top luxury morning destination while growing a high-LTV loyalty audience.</p>
     </div>
+
     <div class="card">
       <h3>Target Audience</h3>
       <p>Affluent morning coffee enthusiasts aged 25–45, who value premium experiences and are active on social media and email channels.</p>
     </div>
+
     <div class="card">
       <h3>Key Channels</h3>
       <p>Social Media (Instagram & Facebook), Email CRM, SEO & SEM, In-store experiences, and Creative Content Production.</p>
     </div>
+
     <div class="card">
       <h3>Core Tactics</h3>
       <ul>
@@ -536,6 +538,7 @@ header.fixed-header{
         <li>Retention strategies through VIP offers and referral incentives</li>
       </ul>
     </div>
+
     <div class="card">
       <h3>Metrics for Success</h3>
       <ul>
@@ -552,71 +555,97 @@ header.fixed-header{
 
 <style>
 #campaign-strategy {
-  border-radius: 20px;
-  padding: 50px 30px;
-  margin: 60px auto;
   background: linear-gradient(145deg, #fdf5ed, #fceedd);
+  border-radius: 20px;
+  padding: 60px 40px;
+  margin: 70px auto;
   max-width: 1200px;
   font-family: 'Times New Roman', serif;
-  font-size: 13px;
+  color: #5a3e36;
+  line-height: 1.8;
   animation: fadeInUp 1s ease forwards;
 }
 
+/* Typography hierarchy */
+#campaign-strategy h2.section-title {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 25px;
+  color: #5a3e36;
+  font-weight: bold;
+}
+
+#campaign-strategy .section-intro {
+  font-size: 20px;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 50px auto;
+}
+
+/* Strategy Cards Layout */
 .strategy-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
+  gap: 30px;
   margin-top: 40px;
 }
 
 .strategy-cards .card {
   background-color: #e6c9aa;
-  border-radius: 16px;
-  padding: 25px 20px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  border-radius: 20px;
+  padding: 30px 25px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .strategy-cards .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
   box-shadow: 0 12px 30px rgba(0,0,0,0.15);
 }
 
 .strategy-cards h3 {
-  color: #8b5e3c;
+  font-size: 22px;
+  color: #5a3e36;
   margin-bottom: 12px;
-  font-size: 14px;
-  font-family: 'Times New Roman', serif;
+  font-weight: bold;
 }
 
-.strategy-cards p, .strategy-cards li {
-  font-size: 13px;
+.strategy-cards p,
+.strategy-cards li {
+  font-size: 18px;
   color: #5a3e36;
-  line-height: 1.6;
-  font-family: 'Times New Roman', serif;
+  line-height: 1.8;
 }
 
 .strategy-cards ul {
-  padding-left: 18px;
+  padding-left: 22px;
   margin: 0;
 }
 
-.section-title {
-  text-align: center;
-  font-family: 'Times New Roman', serif;
-  font-size: 14px;
-  color: #5a3e36;
-  margin-bottom: 20px;
-}
-
-.section-intro {
-  text-align: center;
-  max-width: 900px;
-  margin: 0 auto 40px auto;
-  font-size: 13px;
-  line-height: 1.8;
-  color: #6b4f44;
-  font-family: 'Times New Roman', serif;
+/* Responsive Design */
+@media (max-width: 768px) {
+  #campaign-strategy {
+    padding: 40px 20px;
+    margin: 40px 15px;
+  }
+  #campaign-strategy h2.section-title {
+    font-size: 26px;
+  }
+  #campaign-strategy .section-intro {
+    font-size: 18px;
+  }
+  .strategy-cards {
+    gap: 20px;
+  }
+  .strategy-cards .card {
+    padding: 22px 18px;
+  }
+  .strategy-cards h3 {
+    font-size: 20px;
+  }
+  .strategy-cards p, .strategy-cards li {
+    font-size: 16px;
+  }
 }
 </style>
 
