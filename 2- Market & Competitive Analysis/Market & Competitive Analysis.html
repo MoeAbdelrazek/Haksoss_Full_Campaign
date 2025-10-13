@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Haksoss Café Market & Competitive Analysis</title>
+  <style>
+    :root {
+      --deep: #5a3e36;
+      --accent: #d4a373;
+    }
+
+    body {
+      font-family: "Times New Roman", serif;
+      background: linear-gradient(145deg, #fdf5ed, #fceedd);
+      margin: 0;
+      padding: 0;
+      color: var(--deep);
+    }
+
+    #market-analysis {
+      border-radius: 20px;
+      padding: 50px 30px;
+      margin: 60px auto;
+      background: linear-gradient(145deg, #fdf5ed, #fceedd);
+      max-width: 1200px;
+      font-family: "Times New Roman", serif !important;
+      font-size: 18px !important;
+      line-height: 1.9 !important;
+      color: var(--deep) !important;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* enforce inheritance */
+    #market-analysis, 
+    #market-analysis * {
+      font-family: "Times New Roman", serif !important;
+      color: var(--deep) !important;
+    }
+
+    /* title */
+    #market-analysis .section-title {
+      font-family: 'Playfair Display', serif !important;
+      font-size: 32px !important;
+      line-height: 1.2;
+      color: var(--deep) !important;
+      text-align: center;
+      margin-bottom: 25px;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 10px;
+    }
+
+    /* intro */
+    #market-analysis .section-intro {
+      font-size: 20px !important;
+      max-width: 900px;
+      margin: 0 auto 45px auto;
+      text-align: center;
+    }
+
+    /* cards grid */
+    #market-analysis .market-insights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+
+    /* cards */
+    #market-analysis .insight-card {
+      background-color: #e6c9aa;
+      border-radius: 16px;
+      padding: 28px 22px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.10);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    #market-analysis .insight-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
+
+    #market-analysis .insight-card h3 {
+      font-family: 'Playfair Display', serif !important;
+      font-size: 22px !important;
+      margin-bottom: 14px;
+      color: var(--deep) !important;
+      font-weight: 700;
+    }
+
+    #market-analysis .insight-card p {
+      font-size: 18px !important;
+      line-height: 1.9 !important;
+    }
+
+    /* subsections */
+    #market-analysis .competitive-landscape,
+    #market-analysis .strategic-positioning {
+      margin-bottom: 55px;
+    }
+
+    #market-analysis .competitive-landscape h3,
+    #market-analysis .strategic-positioning h3 {
+      font-family: 'Playfair Display', serif !important;
+      font-size: 22px !important;
+      margin-bottom: 12px;
+      color: var(--deep) !important;
+      font-weight: 700;
+    }
+
+    #market-analysis .competitive-landscape p,
+    #market-analysis .strategic-positioning p {
+      font-size: 18px !important;
+      line-height: 1.9 !important;
+    }
+
+    /* responsive */
+    @media (max-width:768px){
+      #market-analysis { padding: 36px 20px; margin: 40px 18px; font-size: 16px !important; }
+      #market-analysis .section-title { font-size: 26px !important; }
+      #market-analysis .section-intro { font-size: 18px !important; }
+      #market-analysis .insight-card h3 { font-size: 20px !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <section id="market-analysis">
+    <h2 class="section-title">Market & Competitive Analysis</h2>
+    <p class="section-intro">
+      A strategic overview of Egypt's evolving coffee culture, highlighting growth trends, consumer behaviors, and Haksoss Café's positioning in Alexandria's competitive landscape.
+    </p>
+
+    <div class="market-insights">
+      <div class="insight-card">
+        <h3>Egypt's Coffee Market Growth</h3>
+        <p>
+          Egypt's coffee consumption is projected to reach 33,000 metric tons by 2028, up from 31,000 metric tons in 2023, reflecting a steady annual growth rate of 1.2%.
+        </p>
+      </div>
+
+      <div class="insight-card">
+        <h3>Rise of Specialty Coffee</h3>
+        <p>
+          Nearly 60% of Egypt's population is expected to be considered "middle class" by 2025, with a growing appetite for high-quality, ethically sourced coffee.
+        </p>
+      </div>
+
+      <div class="insight-card">
+        <h3>Consumer Preferences</h3>
+        <p>
+          Consumers are increasingly favoring premium coffee options, with a notable shift towards single-origin and organic blends, indicating a move away from traditional instant coffee.
+        </p>
+      </div>
+    </div>
+
+    <div class="competitive-landscape">
+      <h3>Competitive Landscape in Alexandria</h3>
+      <p>
+        Alexandria's coffee scene is vibrant, with a mix of local cafés and international chains. Haksoss Café differentiates itself by offering a unique blend of traditional Egyptian flavors and modern coffee trends, catering to both local patrons and tourists seeking an authentic experience.
+      </p>
+    </div>
+
+    <div class="strategic-positioning">
+      <h3>Haksoss Café's Strategic Positioning</h3>
+      <p>
+        Positioned at the intersection of tradition and innovation, Haksoss Café leverages Alexandria's rich cultural heritage to offer a distinctive coffee experience. By focusing on quality, community engagement, and a unique brand identity, Haksoss Café aims to capture the growing demand for specialty coffee in Egypt's evolving market.
+      </p>
+    </div>
+  </section>
+
+</body>
+</html>
