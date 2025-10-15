@@ -1,0 +1,168 @@
+<section id="audience-insights" class="audience-section">
+  <h2 class="section-title">Audience Insights & Behavioral Trends</h2>
+  <p class="section-intro">
+    Comprehensive data analysis revealed patterns among Haksoss Café’s high-value segments: aspirational young urban trendsetters and super-elite professionals. Insights guided segmentation, messaging, and channel strategy for maximal engagement and conversion.
+  </p>
+
+  <div class="data-visuals">
+    <div class="chart-container">
+      <h3>Audience Segmentation by Age & Income</h3>
+      <canvas id="audienceChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+      <h3>Social Engagement Rates by Platform</h3>
+      <canvas id="socialChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+      <h3>Purchase & Loyalty Metrics</h3>
+      <canvas id="purchaseChart"></canvas>
+    </div>
+  </div>
+
+  <h3 class="section-subtitle">Key Insights</h3>
+  <ul class="insights-list">
+    <li>Trendsetters (20–35) prefer visually-driven content, short-form videos, and shareable experiences.</li>
+    <li>Super-elite professionals (35–50) value exclusivity, personalized perks, and curated seasonal offerings.</li>
+    <li>Average social engagement: 11.3% across Instagram, TikTok, LinkedIn; Email open rate: 35%; CTR: 3.8%</li>
+    <li>Loyalty program adoption: 1,070 members; conversion rate: 6.2%; ROAS: 4.11:1</li>
+    <li>High-impact visuals, influencer collaborations, and VIP personalization maximize engagement and advocacy.</li>
+  </ul>
+</section>
+
+<style>
+  .audience-section {
+    background: linear-gradient(145deg, #fdf5ed, #fceedd);
+    border-radius: 20px;
+    padding: 50px 30px;
+    max-width: 1200px;
+    margin: 60px auto;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    font-family: "Times New Roman", serif;
+    color: #5a3e36;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 25px;
+  }
+
+  .section-intro {
+    text-align: center;
+    font-size: 18px;
+    max-width: 900px;
+    margin: 0 auto 40px;
+  }
+
+  .data-visuals {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+
+  .chart-container {
+    background-color: #f5e6d0;
+    border-radius: 20px;
+    padding: 25px 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .chart-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  }
+
+  .chart-container h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  .insights-list li {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: 768px) {
+    .data-visuals { grid-template-columns: 1fr; }
+  }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const audienceCtx = document.getElementById('audienceChart').getContext('2d');
+  const audienceChart = new Chart(audienceCtx, {
+    type: 'doughnut',
+    data: {
+      labels: ['Trendsetters 20-35', 'Super-Elite 35-50'],
+      datasets: [{
+        data: [45, 55],
+        backgroundColor: ['#FFD700', '#C19A6B'],
+        hoverOffset: 10
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { position: 'bottom', labels: { font: { size: 16 } } },
+        tooltip: { enabled: true }
+      },
+      animation: { animateScale: true, animateRotate: true }
+    }
+  });
+
+  const socialCtx = document.getElementById('socialChart').getContext('2d');
+  const socialChart = new Chart(socialCtx, {
+    type: 'bar',
+    data: {
+      labels: ['Instagram', 'TikTok', 'LinkedIn'],
+      datasets: [{
+        label: 'Engagement Rate (%)',
+        data: [11.3, 11.0, 11.5],
+        backgroundColor: ['#FFD700', '#C19A6B', '#B8860B']
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: false },
+        tooltip: { enabled: true }
+      },
+      scales: {
+        y: { beginAtZero: true, ticks: { font: { size: 14 } } },
+        x: { ticks: { font: { size: 14 } } }
+      },
+      animation: { duration: 1200 }
+    }
+  });
+
+  const purchaseCtx = document.getElementById('purchaseChart').getContext('2d');
+  const purchaseChart = new Chart(purchaseCtx, {
+    type: 'line',
+    data: {
+      labels: ['Spend EGP 200', 'Spend EGP 500', 'Spend EGP 1000', 'Spend EGP 2000'],
+      datasets: [{
+        label: 'Conversion & Loyalty',
+        data: [4, 6.2, 5.8, 6.5],
+        backgroundColor: 'rgba(255,215,0,0.3)',
+        borderColor: '#FFD700',
+        borderWidth: 3,
+        fill: true,
+        tension: 0.3,
+        pointRadius: 6,
+        pointHoverRadius: 8
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { labels: { font: { size: 16 } } } },
+      scales: { y: { beginAtZero: true, ticks: { font: { size: 14 } } },
+                x: { ticks: { font: { size: 14 } } } },
+      animation: { duration: 1400 }
+    }
+  });
+</script>

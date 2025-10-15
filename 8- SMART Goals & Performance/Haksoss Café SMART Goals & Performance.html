@@ -1,0 +1,186 @@
+<section id="smart-kpi" class="kpi-section">
+  <h2 class="section-title">SMART Goals & KPI – Data Foundation</h2>
+  <p class="section-intro">
+    Data-driven reformulation of Haksoss Café’s campaign objectives ensured measurable, realistic, and time-bound outcomes for loyalty, reach, conversion, and ROI. Visual insights highlight performance against market benchmarks.
+  </p>
+
+  <div class="charts-grid">
+    <div class="chart-box">
+      <h3>Reach vs Target</h3>
+      <canvas id="reachChart"></canvas>
+    </div>
+    <div class="chart-box">
+      <h3>Loyalty Sign-ups</h3>
+      <canvas id="signupChart"></canvas>
+    </div>
+    <div class="chart-box">
+      <h3>Conversion Rate</h3>
+      <canvas id="conversionChart"></canvas>
+    </div>
+    <div class="chart-box">
+      <h3>ROI Achievement</h3>
+      <canvas id="roiChart"></canvas>
+    </div>
+  </div>
+
+  <h3 class="section-subtitle">Key Data Insights</h3>
+  <ul class="insights-list">
+    <li>Target reach: 75,000 → achieved 80,800 (↑8%) through influencer amplification and optimized ad delivery.</li>
+    <li>Loyalty sign-ups exceeded target by 7%, driven by premium incentive funnels and reduced friction.</li>
+    <li>Conversion Rate reached 6.2%, outperforming segment average by +1.1% via form optimization and precise targeting.</li>
+    <li>ROI achieved 411%, surpassing client expectation by 61%, thanks to cross-channel data-driven allocation.</li>
+    <li>Segmented campaign approach allowed measurable differentiation between aspirational trendsetters and super-elite professionals.</li>
+  </ul>
+</section>
+
+<style>
+  .kpi-section {
+    background: linear-gradient(145deg, #fdf5ed, #fceedd);
+    border-radius: 20px;
+    padding: 50px 40px;
+    max-width: 1200px;
+    margin: 60px auto;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    font-family: "Times New Roman", serif;
+    color: #5a3e36;
+  }
+
+  .section-title {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .section-intro {
+    font-size: 18px;
+    max-width: 900px;
+    margin: 0 auto 40px;
+    text-align: center;
+  }
+
+  .charts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+
+  .chart-box {
+    background-color: #f5e6d0;
+    padding: 25px 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .chart-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  }
+
+  .chart-box h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  .insights-list li {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  @media (max-width: 768px) {
+    .charts-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const reachCtx = document.getElementById('reachChart').getContext('2d');
+  const reachChart = new Chart(reachCtx, {
+    type: 'bar',
+    data: {
+      labels: ['Target', 'Actual'],
+      datasets: [{
+        label: 'Users Reached',
+        data: [75000, 80800],
+        backgroundColor: ['#C19A6B', '#FFD700']
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { display: false } },
+      scales: {
+        y: { beginAtZero: true, ticks: { font: { size: 14 } } },
+        x: { ticks: { font: { size: 14 } } }
+      },
+      animation: { duration: 1200 }
+    }
+  });
+
+  const signupCtx = document.getElementById('signupChart').getContext('2d');
+  const signupChart = new Chart(signupCtx, {
+    type: 'doughnut',
+    data: {
+      labels: ['Target Sign-ups', 'Achieved'],
+      datasets: [{
+        data: [1000, 1070],
+        backgroundColor: ['#C19A6B', '#FFD700'],
+        hoverOffset: 10
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { position: 'bottom', labels: { font: { size: 16 } } } },
+      animation: { animateRotate: true, animateScale: true }
+    }
+  });
+
+  const conversionCtx = document.getElementById('conversionChart').getContext('2d');
+  const conversionChart = new Chart(conversionCtx, {
+    type: 'line',
+    data: {
+      labels: ['Benchmark', 'Achieved'],
+      datasets: [{
+        label: 'Conversion Rate (%)',
+        data: [5.1, 6.2],
+        borderColor: '#FFD700',
+        backgroundColor: 'rgba(255,215,0,0.3)',
+        tension: 0.3,
+        fill: true,
+        pointRadius: 6,
+        pointHoverRadius: 8
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { labels: { font: { size: 16 } } } },
+      scales: { y: { beginAtZero: true, ticks: { font: { size: 14 } } } },
+      animation: { duration: 1400 }
+    }
+  });
+
+  const roiCtx = document.getElementById('roiChart').getContext('2d');
+  const roiChart = new Chart(roiCtx, {
+    type: 'bar',
+    data: {
+      labels: ['Target ROI', 'Actual ROI'],
+      datasets: [{
+        label: 'ROI %',
+        data: [350, 411],
+        backgroundColor: ['#C19A6B', '#FFD700']
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { display: false } },
+      scales: {
+        y: { beginAtZero: true, ticks: { font: { size: 14 } } },
+        x: { ticks: { font: { size: 14 } } }
+      },
+      animation: { duration: 1200 }
+    }
+  });
+</script>

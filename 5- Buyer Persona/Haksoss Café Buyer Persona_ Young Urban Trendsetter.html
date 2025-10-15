@@ -1,0 +1,150 @@
+<section id="buyer-persona" class="persona-section">
+  <h2 class="section-title">Buyer Persona — Young Urban Trendsetter</h2>
+  <p class="section-intro">
+    Based on comprehensive market and behavioral data, the “Young Urban Trendsetter” represents Haksoss Café’s most socially influential audience — individuals who seek premium, shareable experiences that reinforce their personal brand of sophistication and trend awareness.
+  </p>
+
+  <div class="persona-cards">
+    <div class="persona-card">
+      <h3>Demographics</h3>
+      <p><strong>Age:</strong> 20–50<br>
+      <strong>Gender:</strong> 50% Male / 50% Female<br>
+      <strong>Income:</strong> EGP 200k–1M+<br>
+      <strong>Location:</strong> Urban Alexandria<br>
+      <strong>Occupation:</strong> Students & Professionals</p>
+    </div>
+
+    <div class="persona-card">
+      <h3>Psychographics</h3>
+      <p>Trend-focused, socially expressive, digitally connected. Values aesthetics, recognition, and lifestyle validation through experiences.</p>
+    </div>
+
+    <div class="persona-card">
+      <h3>Goals & Motivations</h3>
+      <p>Share Instagram-worthy experiences, attend exclusive events, and maintain recognition as early adopters in their social circles.</p>
+    </div>
+
+    <div class="persona-card">
+      <h3>Challenges</h3>
+      <p>High demand for uniqueness, limited time and budget, saturation of similar café experiences, and need for seamless service.</p>
+    </div>
+
+    <div class="persona-card">
+      <h3>Preferred Channels</h3>
+      <p>Instagram, TikTok, YouTube, lifestyle influencers, and email-based loyalty campaigns.</p>
+    </div>
+
+    <div class="persona-card">
+      <h3>Loyalty Behavior</h3>
+      <p>Engages through app-based referrals, posts experiences online, and maintains repeat visits through VIP or exclusive reward programs.</p>
+    </div>
+  </div>
+
+  <div class="chart-container">
+    <h3 class="chart-title">Platform Influence Chart</h3>
+    <canvas id="platformChart"></canvas>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const ctx = document.getElementById('platformChart');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Instagram', 'TikTok', 'YouTube', 'Email', 'Events'],
+      datasets: [{
+        label: 'Engagement Impact (%)',
+        data: [92, 87, 68, 55, 48],
+        backgroundColor: ['#a67c52', '#b68c63', '#c89b74', '#d7b48c', '#e6cfa8'],
+        borderRadius: 8
+      }]
+    },
+    options: {
+      plugins: {
+        legend: { labels: { font: { size: 16, family: 'Times New Roman' }, color: '#5a3e36' } },
+      },
+      scales: {
+        x: { ticks: { font: { size: 16, family: 'Times New Roman' }, color: '#5a3e36' } },
+        y: { ticks: { font: { size: 16, family: 'Times New Roman' }, color: '#5a3e36' } }
+      }
+    }
+  });
+</script>
+
+<style>
+  .persona-section {
+    background: linear-gradient(145deg, #fdf5ed, #fceedd);
+    border-radius: 20px;
+    padding: 50px 30px;
+    margin: 60px auto;
+    max-width: 1100px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    font-family: "Times New Roman", serif;
+    color: #5a3e36;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 25px;
+  }
+
+  .section-intro {
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto 40px;
+    font-size: 18px;
+  }
+
+  .persona-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 25px;
+    justify-content: center;
+  }
+
+  .persona-card {
+    background-color: #f5e6d0;
+    border-radius: 20px;
+    padding: 25px 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .persona-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  }
+
+  .persona-card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #5a3e36;
+  }
+
+  .persona-card p {
+    font-size: 18px;
+    line-height: 1.7;
+  }
+
+  .chart-container {
+    margin-top: 60px;
+    text-align: center;
+  }
+
+  .chart-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  canvas {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    .persona-cards { grid-template-columns: 1fr; }
+  }
+</style>

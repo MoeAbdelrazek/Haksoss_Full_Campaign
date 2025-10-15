@@ -1,119 +1,136 @@
-<section id="kpis" style="background:linear-gradient(145deg,#fdf5ed,#fceedd); padding:60px 30px; border-radius:20px; font-family:'Times New Roman',serif; color:#5a3e36; box-shadow:0 8px 25px rgba(0,0,0,0.08);">
-  <div class="kpis-container" style="max-width:1200px; margin:0 auto;">
+<section id="campaign-kpis" class="budget-section">
+  <h2 class="section-title">Campaign KPIs — Performance Dashboard</h2>
+  <p class="section-intro">
+    A meticulously tracked overview of Haksoss Café’s campaign performance, combining quantitative insights with channel-level analysis. Metrics reflect reach, loyalty growth, conversion optimization, ROAS, AOV, and Customer LTV.
+  </p>
 
-    <h2 style="text-align:center; font-size:32px; color:#8b5e3c; margin-bottom:20px; letter-spacing:1px;">Campaign KPIs & Performance Dashboard</h2>
-    <p style="text-align:center; max-width:900px; margin:0 auto 50px; font-size:20px; line-height:1.8; color:#5a3e36;">
-      Unified view of campaign performance across reach, engagement, CTR, conversions, ROAS, retention, funnel drop-offs, and channel-specific metrics.
-    </p>
+  <div class="charts-grid">
 
-    <div class="kpi-grid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:30px;">
-
-      <div class="kpi-card" style="background:#e6c9aa; border-radius:18px; padding:30px 25px; text-align:center; box-shadow:0 6px 20px rgba(0,0,0,0.1); transition:transform 0.3s ease, box-shadow 0.3s ease;">
-        <h3 style="font-size:22px; color:#8b5e3c; margin-bottom:18px;">ROAS</h3>
-        <div class="progress-bar" style="width:100%; height:30px; background:#e4d3c2; border-radius:15px; overflow:hidden; margin-bottom:15px;">
-          <div class="progress-fill" data-fill="411%" style="height:100%; width:0; background:linear-gradient(90deg,#ffd27f,#ffb957); color:#5a3e36; font-weight:bold; font-size:18px; line-height:30px; text-align:right; padding-right:12px; border-radius:15px 0 0 15px; transition:width 2s ease;">4.11:1</div>
-        </div>
-        <p style="font-size:18px; color:#5a3e36;">Target: 3.5:1 | Actual: 4.11:1 | ✅ Above Target</p>
-      </div>
-
-      <div class="kpi-card" style="background:#e6c9aa; border-radius:18px; padding:30px 25px; text-align:center; box-shadow:0 6px 20px rgba(0,0,0,0.1);">
-        <h3 style="font-size:22px; color:#8b5e3c; margin-bottom:18px;">Loyalty Sign-ups</h3>
-        <div class="progress-bar" style="width:100%; height:30px; background:#e4d3c2; border-radius:15px; overflow:hidden; margin-bottom:15px;">
-          <div class="progress-fill" data-fill="107%" style="height:100%; width:0; background:linear-gradient(90deg,#ffd27f,#ffb957); color:#5a3e36; font-weight:bold; font-size:18px; line-height:30px; text-align:right; padding-right:12px; border-radius:15px 0 0 15px; transition:width 2s ease;">1,070</div>
-        </div>
-        <p style="font-size:18px; color:#5a3e36;">Target: 1,000 | Actual: 1,070 | Growth: +7%</p>
-      </div>
-
-      <div class="kpi-card" style="background:#e6c9aa; border-radius:18px; padding:30px 25px; text-align:center; box-shadow:0 6px 20px rgba(0,0,0,0.1);">
-        <h3 style="font-size:22px; color:#8b5e3c; margin-bottom:18px;">CTR</h3>
-        <div class="progress-bar" style="width:100%; height:30px; background:#e4d3c2; border-radius:15px; overflow:hidden; margin-bottom:15px;">
-          <div class="progress-fill" data-fill="3.8%" style="height:100%; width:0; background:linear-gradient(90deg,#ffd27f,#ffb957); color:#5a3e36; font-weight:bold; font-size:18px; line-height:30px; text-align:right; padding-right:12px; border-radius:15px 0 0 15px; transition:width 2s ease;">3.8%</div>
-        </div>
-        <p style="font-size:18px; color:#5a3e36;">Target: 3% | Actual: 3.8% | Clicks: 1,230</p>
-      </div>
-
-      <div class="kpi-card" style="background:#e6c9aa; border-radius:18px; padding:30px 25px; text-align:center; box-shadow:0 6px 20px rgba(0,0,0,0.1);">
-        <h3 style="font-size:22px; color:#8b5e3c; margin-bottom:18px;">Conversion Rate</h3>
-        <div class="progress-bar" style="width:100%; height:30px; background:#e4d3c2; border-radius:15px; overflow:hidden; margin-bottom:15px;">
-          <div class="progress-fill" data-fill="6.2%" style="height:100%; width:0; background:linear-gradient(90deg,#ffd27f,#ffb957); color:#5a3e36; font-weight:bold; font-size:18px; line-height:30px; text-align:right; padding-right:12px; border-radius:15px 0 0 15px; transition:width 2s ease;">6.2%</div>
-        </div>
-        <p style="font-size:18px; color:#5a3e36;">Target: 5% | Actual: 6.2% | New VIPs: 82</p>
-      </div>
-
-      <div class="kpi-card donut-container" style="background:#e6c9aa; border-radius:18px; padding:30px 25px; text-align:center; box-shadow:0 6px 20px rgba(0,0,0,0.1);">
-        <h3 style="font-size:22px; color:#8b5e3c; margin-bottom:18px;">Retention Rate</h3>
-        <canvas id="retentionDonut" style="width:140px;height:140px;margin:10px auto;display:block;"></canvas>
-        <p style="font-size:18px; color:#5a3e36;">Target: 12% | Actual: 15% | Repeat Visits: 215</p>
-      </div>
-
-      <div class="kpi-card donut-container" style="background:#e6c9aa; border-radius:18px; padding:30px 25px; text-align:center; box-shadow:0 6px 20px rgba(0,0,0,0.1);">
-        <h3 style="font-size:22px; color:#8b5e3c; margin-bottom:18px;">Social Engagement</h3>
-        <canvas id="socialDonut" style="width:140px;height:140px;margin:10px auto;display:block;"></canvas>
-        <p style="font-size:18px; color:#5a3e36;">Target: 10% | Actual: 11.3% | Shares: 580</p>
-      </div>
-
-      <div class="kpi-card" style="background:#e6c9aa; border-radius:18px; padding:30px 25px; text-align:center; box-shadow:0 6px 20px rgba(0,0,0,0.1);">
-        <h3 style="font-size:22px; color:#8b5e3c; margin-bottom:18px;">Customer LTV</h3>
-        <div class="progress-bar" style="width:100%; height:30px; background:#e4d3c2; border-radius:15px; overflow:hidden; margin-bottom:15px;">
-          <div class="progress-fill" data-fill="125%" style="height:100%; width:0; background:linear-gradient(90deg,#ffd27f,#ffb957); color:#5a3e36; font-weight:bold; font-size:18px; line-height:30px; text-align:right; padding-right:12px; border-radius:15px 0 0 15px; transition:width 2s ease;">EGP 625</div>
-        </div>
-        <p style="font-size:18px; color:#5a3e36;">Target: EGP 500 | Actual: EGP 625 | +25%</p>
-      </div>
-
-      <div class="kpi-card" style="background:#e6c9aa; border-radius:18px; padding:30px 25px; text-align:center; box-shadow:0 6px 20px rgba(0,0,0,0.1);">
-        <h3 style="font-size:22px; color:#8b5e3c; margin-bottom:18px;">Average Order Value</h3>
-        <div class="progress-bar" style="width:100%; height:30px; background:#e4d3c2; border-radius:15px; overflow:hidden; margin-bottom:15px;">
-          <div class="progress-fill" data-fill="115%" style="height:100%; width:0; background:linear-gradient(90deg,#ffd27f,#ffb957); color:#5a3e36; font-weight:bold; font-size:18px; line-height:30px; text-align:right; padding-right:12px; border-radius:15px 0 0 15px; transition:width 2s ease;">EGP 115</div>
-        </div>
-        <p style="font-size:18px; color:#5a3e36;">Target: EGP 100 | Actual: EGP 115 | +15% Growth</p>
-      </div>
-
-      <div class="kpi-card wide-card" style="grid-column:span 2; background:#e6c9aa; border-radius:18px; padding:30px 25px; text-align:center; box-shadow:0 6px 20px rgba(0,0,0,0.1);">
-        <h3 style="font-size:22px; color:#8b5e3c; margin-bottom:18px;">Funnel Metrics & Drop-offs</h3>
-        <canvas id="funnelChart" style="width:100%; max-width:600px; height:300px; margin:10px auto; display:block;"></canvas>
-        <p style="font-size:18px; color:#5a3e36;">Visualizing awareness → consideration → conversion → retention → advocacy</p>
-      </div>
-
-      <div class="kpi-card wide-card" style="grid-column:span 2; background:#e6c9aa; border-radius:18px; padding:30px 25px; text-align:center; box-shadow:0 6px 20px rgba(0,0,0,0.1);">
-        <h3 style="font-size:22px; color:#8b5e3c; margin-bottom:18px;">Channel-wise Performance</h3>
-        <canvas id="channelChart" style="width:100%; max-width:600px; height:300px; margin:10px auto; display:block;"></canvas>
-        <p style="font-size:18px; color:#5a3e36;">Instagram, TikTok, Google Ads, Email, Influencers</p>
-      </div>
-
+    <!-- Icon card: Reach -->
+    <div class="chart-box">
+      <h3>Reach</h3>
+      <p style="font-size:22px; margin:10px 0;">
+        <span style="color:#FFD700;">&#128064;</span> 80,800 / 70,000
+      </p>
+      <p style="font-size:16px; color:#6b4f44;">+15% above target, driven by 72 high-performing Reels and 15 influencer activations</p>
     </div>
+
+    <!-- Icon card: Loyalty Sign-ups -->
+    <div class="chart-box">
+      <h3>Loyalty Sign-ups</h3>
+      <p style="font-size:22px; margin:10px 0;">
+        <span style="color:#FFD700;">&#128101;</span> 1,070 / 1,000
+      </p>
+      <p style="font-size:16px; color:#6b4f44;">+7% above target via frictionless forms & VIP incentive adoption</p>
+    </div>
+
+    <!-- Icon card: Conversion Rate -->
+    <div class="chart-box">
+      <h3>Conversion Rate</h3>
+      <p style="font-size:22px; margin:10px 0;">
+        <span style="color:#FFD700;">&#128200;</span> 6.2% / 5%
+      </p>
+      <p style="font-size:16px; color:#6b4f44;">+24% above baseline through optimized landing pages and dynamic retargeting</p>
+    </div>
+
+    <!-- Chart card: ROAS -->
+    <div class="chart-box">
+      <h3>ROAS by Channel</h3>
+      <canvas id="roasChart"></canvas>
+      <p style="font-size:16px; color:#6b4f44; margin-top:8px;">
+        Paid social dominated (4.5x), followed by Influencer campaigns (4.2x), confirming effective budget allocation
+      </p>
+    </div>
+
+    <!-- Chart card: Avg Order Value -->
+    <div class="chart-box">
+      <h3>Average Order Value (EGP)</h3>
+      <canvas id="aovChart"></canvas>
+      <p style="font-size:16px; color:#6b4f44; margin-top:8px;">
+        AOV improved 15% above target due to upsell bundles and premium product promotions
+      </p>
+    </div>
+
+    <!-- Chart card: Customer LTV -->
+    <div class="chart-box">
+      <h3>Customer LTV (EGP)</h3>
+      <canvas id="ltvChart"></canvas>
+      <p style="font-size:16px; color:#6b4f44; margin-top:8px;">
+        LTV increased 25%, reflecting retention-focused strategies and loyalty program engagement
+      </p>
+    </div>
+
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      document.querySelectorAll('.progress-fill').forEach(fill=>{
-        const width = fill.getAttribute('data-fill');
-        setTimeout(()=>fill.style.width=width,200);
-      });
-
-      new Chart(document.getElementById('retentionDonut'),{
-        type:'doughnut',
-        data:{labels:['Retention','Drop-off'], datasets:[{data:[15,85], backgroundColor:['#b8865b','#f5e8dc'], borderColor:'#5a3e36', borderWidth:2}]},
-        options:{plugins:{legend:{position:'bottom', labels:{color:'#5a3e36', font:{family:'Times New Roman'}}}}}
-      });
-
-      new Chart(document.getElementById('socialDonut'),{
-        type:'doughnut',
-        data:{labels:['Engaged','Not Engaged'], datasets:[{data:[11.3,88.7], backgroundColor:['#b8865b','#f5e8dc'], borderColor:'#5a3e36', borderWidth:2}]},
-        options:{plugins:{legend:{position:'bottom', labels:{color:'#5a3e36', font:{family:'Times New Roman'}}}}}
-      });
-
-      new Chart(document.getElementById('funnelChart'),{
-        type:'bar',
-        data:{datasets:[{label:'Users', data:[80800,50000,1070,215,180], backgroundColor:'#d8bfa3', borderColor:'#5a3e36', borderWidth:1}]},
-        options:{responsive:true, plugins:{legend:{display:false}}, scales:{x:{ticks:{color:'#5a3e36', font:{family:'Times New Roman'}}}, y:{ticks:{color:'#5a3e36', font:{family:'Times New Roman'}}}}}
-      });
-
-      new Chart(document.getElementById('channelChart'),{
-        type:'bar',
-        data:{labels:['Instagram/TikTok','Google Ads','Email','Landing Pages','Influencers'], datasets:[{label:'Conversions', data:[500,250,150,120,50], backgroundColor:'#b8865b', borderColor:'#5a3e36', borderWidth:1}]},
-        options:{responsive:true, plugins:{legend:{display:false}}, scales:{x:{ticks:{color:'#5a3e36', font:{family:'Times New Roman'}}}, y:{ticks:{color:'#5a3e36', font:{family:'Times New Roman'}}}}}
-      });
-    });
-  </script>
+  <h3 class="section-subtitle">Key Insights</h3>
+  <ul class="insights-list">
+    <li>Total campaign reach exceeded target by 15%, largely attributed to viral Reels and 15 key influencer activations.</li>
+    <li>Loyalty sign-ups surpassed goal by 7%, driven by optimized signup flow and targeted VIP incentives.</li>
+    <li>Conversion rate improved 24% above baseline, thanks to A/B tested landing pages and personalized retargeting.</li>
+    <li>Channel-level ROAS ranged 3.8–4.5, confirming precise budget allocation across Instagram/TikTok, SEM, Email/CRM, and Influencer campaigns.</li>
+    <li>Average Order Value increased 15% through upsells, cross-sells, and limited-time bundles.</li>
+    <li>Customer LTV grew 25% due to retention flows, VIP program adoption, and repeat purchase behavior.</li>
+  </ul>
 </section>
+
+<script>
+  const roasCtx = document.getElementById('roasChart').getContext('2d');
+  new Chart(roasCtx, {
+    type: 'bar',
+    data: {
+      labels: ['Instagram/TikTok','Google SEM','Email/CRM','Landing Pages','Influencers'],
+      datasets: [{
+        label: 'ROAS',
+        data: [4.5, 3.9, 3.8, 4.0, 4.2],
+        backgroundColor: ['#FFD700','#C19A6B','#FFD700','#C19A6B','#FFD700']
+      }]
+    },
+    options: {
+      responsive:true,
+      plugins:{
+        legend:{ display:false },
+        tooltip:{ callbacks:{ label: ctx => `ROAS: ${ctx.raw}x` } }
+      },
+      scales:{ y:{ beginAtZero:true } },
+      animation:{ duration:1200 }
+    }
+  });
+
+  const aovCtx = document.getElementById('aovChart').getContext('2d');
+  new Chart(aovCtx, {
+    type: 'bar',
+    data: {
+      labels: ['Target','Actual'],
+      datasets: [{
+        label:'Average Order Value',
+        data:[100,115],
+        backgroundColor:['#C19A6B','#FFD700']
+      }]
+    },
+    options: {
+      responsive:true,
+      plugins:{ legend:{ display:false }, tooltip:{ callbacks:{ label: ctx => `EGP ${ctx.raw}` } } },
+      scales:{ y:{ beginAtZero:true } },
+      animation:{ duration:1200 }
+    }
+  });
+
+  const ltvCtx = document.getElementById('ltvChart').getContext('2d');
+  new Chart(ltvCtx, {
+    type: 'bar',
+    data: {
+      labels: ['Target','Actual'],
+      datasets: [{
+        label:'Customer LTV',
+        data:[500,625],
+        backgroundColor:['#C19A6B','#FFD700']
+      }]
+    },
+    options: {
+      responsive:true,
+      plugins:{ legend:{ display:false }, tooltip:{ callbacks:{ label: ctx => `EGP ${ctx.raw}` } } },
+      scales:{ y:{ beginAtZero:true } },
+      animation:{ duration:1200 }
+    }
+  });
+</script>

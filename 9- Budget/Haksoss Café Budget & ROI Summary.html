@@ -1,0 +1,139 @@
+<section id="budget-roi" class="budget-section">
+  <h2 class="section-title">Haksoss Café — Budget Allocation, Flighting & ROI Foundation</h2>
+  <p class="section-intro">
+    Data-driven planning and precise budget allocation maximized ROI across all digital channels. Visualizations show spend, revenue, and channel-level ROAS with elegant, modern charts.
+  </p>
+
+  <div class="charts-grid">
+    <div class="chart-box">
+      <h3>Total Spend vs Revenue</h3>
+      <canvas id="spendRevenueChart"></canvas>
+    </div>
+    <div class="chart-box">
+      <h3>Channel ROAS Comparison</h3>
+      <canvas id="channelROASChart"></canvas>
+    </div>
+    <div class="chart-box">
+      <h3>Loyalty Sign-ups vs Target</h3>
+      <canvas id="signupsChart"></canvas>
+    </div>
+    <div class="chart-box">
+      <h3>Flighting Budget Distribution</h3>
+      <canvas id="flightingChart"></canvas>
+    </div>
+  </div>
+
+  <h3 class="section-subtitle">Key Insights</h3>
+  <ul class="insights-list">
+    <li>Total spend of EGP 1,141,000 delivered EGP 4,570,000 in revenue → ROI 411%, exceeding expectations.</li>
+    <li>Instagram/TikTok Ads produced the highest ROAS (4.5), proving hero creative + influencer strategy efficiency.</li>
+    <li>Loyalty sign-ups surpassed target by 7%, driven by friction-reduced forms and retention flows.</li>
+    <li>Flighting allocation across awareness, conversion, and retention phases optimized engagement and purchase behavior.</li>
+  </ul>
+</section>
+
+<style>
+  .budget-section {
+    background: linear-gradient(145deg, #fdf5ed, #fceedd);
+    border-radius: 20px;
+    padding: 50px 40px;
+    max-width: 1200px;
+    margin: 60px auto;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    font-family: "Times New Roman", serif;
+    color: #5a3e36;
+  }
+
+  .section-title {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .section-intro {
+    font-size: 18px;
+    max-width: 900px;
+    margin: 0 auto 40px;
+    text-align: center;
+  }
+
+  .charts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+
+  .chart-box {
+    background-color: #f5e6d0;
+    padding: 25px 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .chart-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  }
+
+  .chart-box h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  .insights-list li {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  @media (max-width: 768px) {
+    .charts-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const spendRevenueCtx = document.getElementById('spendRevenueChart').getContext('2d');
+  new Chart(spendRevenueCtx, {
+    type: 'bar',
+    data: {
+      labels: ['Spend', 'Revenue'],
+      datasets: [{ data: [1141000, 4570000], backgroundColor: ['#C19A6B', '#FFD700'] }]
+    },
+    options: { responsive: true, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true } }, animation: { duration: 1200 } }
+  });
+
+  const channelROASCtx = document.getElementById('channelROASChart').getContext('2d');
+  new Chart(channelROASCtx, {
+    type: 'bar',
+    data: {
+      labels: ['Instagram/TikTok','Google SEM','Email/CRM','Landing Pages','Influencers'],
+      datasets: [{ label: 'ROAS', data: [4.5, 3.9, 3.8, 4.0, 4.2], backgroundColor: '#FFD700' }]
+    },
+    options: { responsive: true, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true } }, animation: { duration: 1200 } }
+  });
+
+  const signupsCtx = document.getElementById('signupsChart').getContext('2d');
+  new Chart(signupsCtx, {
+    type: 'doughnut',
+    data: {
+      labels: ['Target Sign-ups','Actual Sign-ups'],
+      datasets: [{ data: [1000, 1070], backgroundColor: ['#C19A6B','#FFD700'], hoverOffset: 10 }]
+    },
+    options: { responsive: true, plugins: { legend: { position: 'bottom', labels: { font: { size: 16 } } } }, animation: { animateRotate: true, animateScale: true } }
+  });
+
+  const flightingCtx = document.getElementById('flightingChart').getContext('2d');
+  new Chart(flightingCtx, {
+    type: 'pie',
+    data: {
+      labels: ['Preflight','Awareness','Consideration','Conversion','Retention'],
+      datasets: [{ data: [5,30,30,25,10], backgroundColor: ['#FFD700','#C19A6B','#F3C06B','#D6A557','#BFA76E'], hoverOffset: 8 }]
+    },
+    options: { responsive: true, plugins: { legend: { position: 'bottom', labels: { font: { size: 14 } } } }, animation: { animateRotate: true, animateScale: true } }
+  });
+</script>
