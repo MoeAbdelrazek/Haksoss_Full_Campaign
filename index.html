@@ -67,12 +67,12 @@ nav.scrolled{background:rgba(10,10,10,.92);backdrop-filter:blur(18px);border-bot
 /* SECTIONS */
 section{padding:96px 40px;position:relative}
 .container{max-width:var(--max);margin:0 auto}
-.section-label{font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--g);margin-bottom:12px}
-.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3.5vw,2.9rem);font-weight:700;line-height:1.2;margin-bottom:18px}
-.section-sub{font-size:.92rem;font-weight:300;color:var(--m);line-height:1.8;max-width:540px}
+.section-label{font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--g);margin-bottom:12px;text-align:center}
+.section-title{font-family:"Playfair Display",serif;font-size:clamp(1.9rem,3.5vw,2.9rem);font-weight:700;line-height:1.2;margin-bottom:18px;text-align:center}
+.section-sub{font-size:.92rem;font-weight:300;color:var(--m);line-height:1.8;max-width:540px;text-align:center;margin-left:auto;margin-right:auto}
 
 /* divider */
-.gold-line{width:48px;height:2px;background:linear-gradient(90deg,var(--g),var(--gl));border-radius:2px;margin:20px 0 40px}
+.gold-line{width:48px;height:2px;background:linear-gradient(90deg,var(--g),var(--gl));border-radius:2px;margin:20px auto 40px}
 
 /* reveal */
 .r{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
@@ -195,9 +195,25 @@ footer{background:var(--s1);border-top:1px solid rgba(201,169,97,.1);padding:48p
 .footer-copy{font-size:.68rem;color:var(--m2);margin-top:24px}
 
 /* ────────────────────────────────
+   PHOTO GALLERY
+──────────────────────────────── */
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  grid-auto-rows:220px;
+  gap:10px;
+}
+.gallery-item{overflow:hidden;border-radius:10px;border:1px solid rgba(201,169,97,.1);transition:border-color .3s,transform .3s;cursor:pointer}
+.gallery-item.tall{grid-row:span 2}
+.gallery-item:hover{border-color:var(--gb);transform:scale(1.015)}
+.gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.gallery-item:hover img{transform:scale(1.07)}
+
+/* ────────────────────────────────
    RESPONSIVE
 ──────────────────────────────── */
 @media(max-width:900px){
+  .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:180px}
   .assets-grid{grid-template-columns:1fr}
   .strip-grid{grid-template-columns:repeat(2,1fr)}
   .platform-grid{grid-template-columns:1fr}
@@ -236,7 +252,7 @@ footer{background:var(--s1);border-top:1px solid rgba(201,169,97,.1);padding:48p
   <div class="hero-content">
     <div class="hero-tag r">2025 Social Media Campaign</div>
     <h1 class="r d1">Haksoss<br><em>Full Year Campaign</em></h1>
-    <p class="hero-sub r d2">A 12-month Instagram and Facebook campaign for one of Cairo's most distinguished specialty cafés — built on consistent storytelling, premium visuals, and a deep understanding of the local audience.</p>
+    <p class="hero-sub r d2">A 12-month Instagram and Facebook campaign for one of Alexandria's most distinguished specialty cafés — built on consistent storytelling, premium visuals, and a deep understanding of the local audience.</p>
     <div class="hero-meta r d3">
       <div class="hero-meta-item">
         <span>Duration</span>
@@ -250,7 +266,7 @@ footer{background:var(--s1);border-top:1px solid rgba(201,169,97,.1);padding:48p
       <div class="hero-divider"></div>
       <div class="hero-meta-item">
         <span>Industry</span>
-        <strong>Specialty Café · Cairo</strong>
+        <strong>Specialty Café · Alexandria</strong>
       </div>
     </div>
   </div>
@@ -307,6 +323,29 @@ footer{background:var(--s1);border-top:1px solid rgba(201,169,97,.1);padding:48p
     </div>
   </div>
 </section>
+
+<!-- PHOTO GALLERY -->
+<div style="margin-top:64px" class="r d1">
+  <p class="section-label">Photography</p>
+  <h3 style="font-family:'Playfair Display',serif;font-size:clamp(1.4rem,2.5vw,2rem);font-weight:600;margin-bottom:12px">Campaign Imagery</h3>
+  <div class="gold-line"></div>
+  <p class="section-sub" style="margin-bottom:36px">Original photography produced across the campaign — food, lifestyle, and atmosphere shoots that defined the visual identity across all platforms.</p>
+  <div class="gallery-grid">
+    <div class="gallery-item tall r d1"><img src="484935779_669430162281226_4092488908058817454_n.jpg" alt="Haksoss drink"></div>
+    <div class="gallery-item r d2"><img src="485166230_668576055699970_7801348965434568736_n.jpg" alt="Haksoss food"></div>
+    <div class="gallery-item r d3"><img src="565197177_831811526043088_3513346270435530223_n.jpg" alt="Haksoss dessert"></div>
+    <div class="gallery-item r d1"><img src="567048326_834113415812899_3948651642903480028_n.jpg" alt="Haksoss pasta"></div>
+    <div class="gallery-item tall r d2"><img src="577036878_875927611631479_6154563682810737192_n.jpg" alt="Haksoss grilled chicken"></div>
+    <div class="gallery-item r d3"><img src="577063636_855262793697961_8036039003256918182_n.jpg" alt="Haksoss lifestyle"></div>
+    <div class="gallery-item r d1"><img src="580836546_852009757356598_1831697960485552901_n.jpg" alt="Haksoss lifestyle"></div>
+    <div class="gallery-item r d2"><img src="587323144_865196782704562_7929104282036074161_n.jpg" alt="Haksoss lifestyle"></div>
+    <div class="gallery-item tall r d3"><img src="591911133_870612895496284_3799076164702562648_n.jpg" alt="Haksoss pastry"></div>
+    <div class="gallery-item r d1"><img src="595259565_875931331631107_698700857952058153_n.jpg" alt="Haksoss tea"></div>
+    <div class="gallery-item r d2"><img src="598659567_875922484965325_3846652032191404121_n.jpg" alt="Haksoss falafel plate"></div>
+    <div class="gallery-item r d3"><img src="612418517_897263556164551_3417453819125625625_n.jpg" alt="Haksoss pizza"></div>
+    <div class="gallery-item r d1"><img src="616391049_904110582146515_2763500585257543804_n.jpg" alt="Haksoss lifestyle"></div>
+  </div>
+</div>
 
 <!-- GROWTH CHART -->
 <section id="growth">
@@ -417,7 +456,7 @@ footer{background:var(--s1);border-top:1px solid rgba(201,169,97,.1);padding:48p
       <p class="section-label">Content Strategy</p>
       <h2 class="section-title">What We Produced</h2>
       <div class="gold-line"></div>
-      <p class="section-sub">A content mix built for visual storytelling — heavy on motion, light on captions. Every format designed to perform in Cairo's scroll culture.</p>
+      <p class="section-sub">A content mix built for visual storytelling — heavy on motion, light on captions. Every format designed to perform in Alexandria's scroll culture.</p>
     </div>
     <div class="breakdown-layout">
       <div class="breakdown-donut r d1">
@@ -599,7 +638,7 @@ footer{background:var(--s1);border-top:1px solid rgba(201,169,97,.1);padding:48p
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">Haksoss Café</div>
-  <div class="footer-sub">2025 Campaign Report · Cairo, Egypt</div>
+  <div class="footer-sub">2025 Campaign Report · Alexandria, Egypt</div>
   <div class="footer-links">
     <a href="https://www.instagram.com/haksoss.eg/" target="_blank" rel="noopener">Instagram</a>
     <a href="https://www.facebook.com/Haksoss.eg" target="_blank" rel="noopener">Facebook</a>
