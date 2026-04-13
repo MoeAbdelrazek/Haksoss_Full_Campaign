@@ -230,6 +230,126 @@ footer{background:var(--s1);border-top:1px solid rgba(201,169,97,.1);padding:48p
   .timeline-grid{grid-template-columns:repeat(2,1fr)}
   .hero-meta{gap:20px}
 }
+
+/* ────────────────────────────────
+   PRINT — A4
+──────────────────────────────── */
+@media print{
+  @page{
+    size:A4 portrait;
+    margin:14mm 16mm;
+  }
+
+  *{
+    -webkit-print-color-adjust:exact!important;
+    print-color-adjust:exact!important;
+    color-adjust:exact!important;
+  }
+
+  /* hide interactive/screen-only elements */
+  nav,
+  .hero-scroll,
+  .asset-card iframe,        /* FB embeds can't print */
+  body::before{              /* grain overlay */
+    display:none!important;
+  }
+
+  /* reset page body */
+  html,body{
+    width:210mm;
+    background:#0a0a0a!important;
+    color:#f5f5f0!important;
+    font-size:9pt;
+    line-height:1.6;
+    overflow:visible!important;
+  }
+
+  /* no horizontal overflow anywhere */
+  *{
+    max-width:100%!important;
+    overflow:visible!important;
+    box-sizing:border-box!important;
+  }
+
+  /* reveal animations: show everything */
+  .r{opacity:1!important;transform:none!important}
+
+  /* sections: tighter padding, no fixed positioning */
+  section,.strip{
+    padding:18mm 0 12mm!important;
+    page-break-inside:avoid;
+  }
+
+  /* hero: compact */
+  .hero{
+    min-height:auto!important;
+    padding:20mm 0 14mm!important;
+    page-break-after:always;
+  }
+  .hero h1{font-size:28pt!important}
+  .hero-bg{display:none}
+
+  /* strip: 4 cols, compact */
+  .strip{padding:10mm 0!important}
+  .strip-grid{
+    grid-template-columns:repeat(4,1fr)!important;
+    gap:0!important;
+  }
+  .strip-num{font-size:22pt!important}
+
+  /* Assets: hide iframes, show gallery only */
+  .assets-grid{display:none!important}   /* video cards hidden */
+  #assets{padding:14mm 0 8mm!important}
+  .gallery-grid{
+    grid-template-columns:repeat(4,1fr)!important;
+    grid-auto-rows:140px!important;
+    gap:5px!important;
+  }
+  .gallery-item.tall{grid-row:span 2}
+
+  /* charts: enforce fixed height */
+  .chart-wrap{page-break-inside:avoid}
+  .chart-wrap canvas{max-height:200px!important}
+  .breakdown-donut canvas{max-height:220px!important}
+
+  /* platform grid: 2 cols */
+  .platform-grid{
+    grid-template-columns:1fr 1fr!important;
+    gap:8px!important;
+  }
+  .platform-card{page-break-inside:avoid;padding:16px!important}
+
+  /* content breakdown */
+  .breakdown-layout{
+    grid-template-columns:1fr 1fr!important;
+    gap:20px!important;
+    align-items:center!important;
+  }
+
+  /* timeline: 6 cols, single page */
+  .timeline-grid{
+    grid-template-columns:repeat(6,1fr)!important;
+    gap:3px!important;
+  }
+  .tl-month{padding:10px 8px!important}
+  #timeline{page-break-before:always}
+
+  /* results: 3 cols */
+  .results-grid{
+    grid-template-columns:repeat(3,1fr)!important;
+    gap:8px!important;
+  }
+  .result-card{padding:16px!important;page-break-inside:avoid}
+
+  /* footer */
+  footer{
+    padding:10mm 0 6mm!important;
+    page-break-before:avoid;
+  }
+
+  /* ensure bars filled in print */
+  .p-bar-fill,.bk-bar-fill{transition:none!important}
+}
 </style>
 </head>
 <body>
@@ -280,7 +400,7 @@ footer{background:var(--s1);border-top:1px solid rgba(201,169,97,.1);padding:48p
 <div class="strip">
   <div class="strip-grid">
     <div class="strip-item r">
-      <span class="strip-num"><span data-count="2400000" data-suffix=""></span></span>
+      <span class="strip-num"><span data-count="1600000" data-suffix=""></span></span>
       <span class="strip-label">Total Reach</span>
     </div>
     <div class="strip-item r d1">
@@ -288,7 +408,7 @@ footer{background:var(--s1);border-top:1px solid rgba(201,169,97,.1);padding:48p
       <span class="strip-label">Content Pieces</span>
     </div>
     <div class="strip-item r d2">
-      <span class="strip-num"><span data-count="447"></span><sup>%</sup></span>
+      <span class="strip-num"><span data-count="253"></span><sup>%</sup></span>
       <span class="strip-label">Follower Growth</span>
     </div>
     <div class="strip-item r d3">
@@ -331,19 +451,19 @@ footer{background:var(--s1);border-top:1px solid rgba(201,169,97,.1);padding:48p
   <div class="gold-line"></div>
   <p class="section-sub" style="margin-bottom:36px">Original photography produced across the campaign — food, lifestyle, and atmosphere shoots that defined the visual identity across all platforms.</p>
   <div class="gallery-grid">
-    <div class="gallery-item tall r d1"><img src="484935779_669430162281226_4092488908058817454_n.jpg" alt="Haksoss drink"></div>
-    <div class="gallery-item r d2"><img src="485166230_668576055699970_7801348965434568736_n.jpg" alt="Haksoss food"></div>
-    <div class="gallery-item r d3"><img src="565197177_831811526043088_3513346270435530223_n.jpg" alt="Haksoss dessert"></div>
-    <div class="gallery-item r d1"><img src="567048326_834113415812899_3948651642903480028_n.jpg" alt="Haksoss pasta"></div>
-    <div class="gallery-item tall r d2"><img src="577036878_875927611631479_6154563682810737192_n.jpg" alt="Haksoss grilled chicken"></div>
-    <div class="gallery-item r d3"><img src="577063636_855262793697961_8036039003256918182_n.jpg" alt="Haksoss lifestyle"></div>
-    <div class="gallery-item r d1"><img src="580836546_852009757356598_1831697960485552901_n.jpg" alt="Haksoss lifestyle"></div>
-    <div class="gallery-item r d2"><img src="587323144_865196782704562_7929104282036074161_n.jpg" alt="Haksoss lifestyle"></div>
-    <div class="gallery-item tall r d3"><img src="591911133_870612895496284_3799076164702562648_n.jpg" alt="Haksoss pastry"></div>
-    <div class="gallery-item r d1"><img src="595259565_875931331631107_698700857952058153_n.jpg" alt="Haksoss tea"></div>
-    <div class="gallery-item r d2"><img src="598659567_875922484965325_3846652032191404121_n.jpg" alt="Haksoss falafel plate"></div>
-    <div class="gallery-item r d3"><img src="612418517_897263556164551_3417453819125625625_n.jpg" alt="Haksoss pizza"></div>
-    <div class="gallery-item r d1"><img src="616391049_904110582146515_2763500585257543804_n.jpg" alt="Haksoss lifestyle"></div>
+    <div class="gallery-item tall r d1"><img src="https://raw.githubusercontent.com/MoeAbdelrazek/Haksoss_Full_Campaign/main/484935779_669430162281226_4092488908058817454_n.jpg" alt="Haksoss drink"></div>
+    <div class="gallery-item r d2"><img src="https://raw.githubusercontent.com/MoeAbdelrazek/Haksoss_Full_Campaign/main/485166230_668576055699970_7801348965434568736_n.jpg" alt="Haksoss food"></div>
+    <div class="gallery-item r d3"><img src="https://raw.githubusercontent.com/MoeAbdelrazek/Haksoss_Full_Campaign/main/565197177_831811526043088_3513346270435530223_n.jpg" alt="Haksoss dessert"></div>
+    <div class="gallery-item r d1"><img src="https://raw.githubusercontent.com/MoeAbdelrazek/Haksoss_Full_Campaign/main/567048326_834113415812899_3948651642903480028_n.jpg" alt="Haksoss pasta"></div>
+    <div class="gallery-item tall r d2"><img src="https://raw.githubusercontent.com/MoeAbdelrazek/Haksoss_Full_Campaign/main/577036878_875927611631479_6154563682810737192_n.jpg" alt="Haksoss grilled chicken"></div>
+    <div class="gallery-item r d3"><img src="https://raw.githubusercontent.com/MoeAbdelrazek/Haksoss_Full_Campaign/main/577063636_855262793697961_8036039003256918182_n.jpg" alt="Haksoss lifestyle"></div>
+    <div class="gallery-item r d1"><img src="https://raw.githubusercontent.com/MoeAbdelrazek/Haksoss_Full_Campaign/main/580836546_852009757356598_1831697960485552901_n.jpg" alt="Haksoss lifestyle"></div>
+    <div class="gallery-item r d2"><img src="https://raw.githubusercontent.com/MoeAbdelrazek/Haksoss_Full_Campaign/main/587323144_865196782704562_7929104282036074161_n.jpg" alt="Haksoss lifestyle"></div>
+    <div class="gallery-item tall r d3"><img src="https://raw.githubusercontent.com/MoeAbdelrazek/Haksoss_Full_Campaign/main/591911133_870612895496284_3799076164702562648_n.jpg" alt="Haksoss pastry"></div>
+    <div class="gallery-item r d1"><img src="https://raw.githubusercontent.com/MoeAbdelrazek/Haksoss_Full_Campaign/main/595259565_875931331631107_698700857952058153_n.jpg" alt="Haksoss tea"></div>
+    <div class="gallery-item r d2"><img src="https://raw.githubusercontent.com/MoeAbdelrazek/Haksoss_Full_Campaign/main/598659567_875922484965325_3846652032191404121_n.jpg" alt="Haksoss falafel plate"></div>
+    <div class="gallery-item r d3"><img src="https://raw.githubusercontent.com/MoeAbdelrazek/Haksoss_Full_Campaign/main/612418517_897263556164551_3417453819125625625_n.jpg" alt="Haksoss pizza"></div>
+    <div class="gallery-item r d1"><img src="https://raw.githubusercontent.com/MoeAbdelrazek/Haksoss_Full_Campaign/main/616391049_904110582146515_2763500585257543804_n.jpg" alt="Haksoss lifestyle"></div>
   </div>
 </div>
 
@@ -359,7 +479,7 @@ footer{background:var(--s1);border-top:1px solid rgba(201,169,97,.1);padding:48p
     <div class="chart-wrap r d1">
       <div class="chart-header">
         <div>
-          <div style="font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--t)">3,400 → 18,600</div>
+          <div style="font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--t)">3,400 → 12,000</div>
           <div style="font-size:.75rem;color:var(--m);margin-top:4px">Followers | Jan to Dec 2025</div>
         </div>
         <div class="chart-legend">
@@ -388,7 +508,7 @@ footer{background:var(--s1);border-top:1px solid rgba(201,169,97,.1);padding:48p
         <div class="platform-handle">@haksoss.eg</div>
         <div class="p-stats">
           <div class="p-stat">
-            <div class="p-stat-val">18,600</div>
+            <div class="p-stat-val">12,000</div>
             <div class="p-stat-key">Followers (Dec)</div>
           </div>
           <div class="p-stat">
@@ -396,20 +516,20 @@ footer{background:var(--s1);border-top:1px solid rgba(201,169,97,.1);padding:48p
             <div class="p-stat-key">Avg Engagement</div>
           </div>
           <div class="p-stat">
-            <div class="p-stat-val">1.74M</div>
+            <div class="p-stat-val">1.1M</div>
             <div class="p-stat-key">Annual Reach</div>
           </div>
           <div class="p-stat">
-            <div class="p-stat-val">3.1M</div>
+            <div class="p-stat-val">2.0M</div>
             <div class="p-stat-key">Impressions</div>
           </div>
         </div>
         <div class="p-bar-wrap" style="margin-top:20px">
-          <div class="p-bar-label"><span>Reach share</span><span>66%</span></div>
+          <div class="p-bar-label"><span>Reach share</span><span>62%</span></div>
           <div class="p-bar"><div class="p-bar-fill" data-width="66"></div></div>
         </div>
         <div class="p-bar-wrap">
-          <div class="p-bar-label"><span>Reels avg views</span><span>8,400</span></div>
+          <div class="p-bar-label"><span>Reels avg views</span><span>5,800</span></div>
           <div class="p-bar"><div class="p-bar-fill" data-width="72"></div></div>
         </div>
       </div>
@@ -417,10 +537,10 @@ footer{background:var(--s1);border-top:1px solid rgba(201,169,97,.1);padding:48p
       <div class="platform-card r d2">
         <div class="platform-icon fb-icon">f</div>
         <div class="platform-name">Facebook</div>
-        <div class="platform-handle">Haksoss.eg</div>
+        <div class="platform-handle">Haksoss.eg &nbsp;·&nbsp; <span style="color:var(--g);font-size:.72rem">2K → 16K</span></div>
         <div class="p-stats">
           <div class="p-stat">
-            <div class="p-stat-val">22,400</div>
+            <div class="p-stat-val">16,000</div>
             <div class="p-stat-key">Page Likes (Dec)</div>
           </div>
           <div class="p-stat">
@@ -428,20 +548,20 @@ footer{background:var(--s1);border-top:1px solid rgba(201,169,97,.1);padding:48p
             <div class="p-stat-key">Avg Engagement</div>
           </div>
           <div class="p-stat">
-            <div class="p-stat-val">890K</div>
+            <div class="p-stat-val">680K</div>
             <div class="p-stat-key">Annual Reach</div>
           </div>
           <div class="p-stat">
-            <div class="p-stat-val">148K</div>
+            <div class="p-stat-val">112K</div>
             <div class="p-stat-key">Video Views</div>
           </div>
         </div>
         <div class="p-bar-wrap" style="margin-top:20px">
-          <div class="p-bar-label"><span>Reach share</span><span>34%</span></div>
+          <div class="p-bar-label"><span>Reach share</span><span>38%</span></div>
           <div class="p-bar"><div class="p-bar-fill" data-width="34"></div></div>
         </div>
         <div class="p-bar-wrap">
-          <div class="p-bar-label"><span>Post engagements</span><span>34,200</span></div>
+          <div class="p-bar-label"><span>Post engagements</span><span>26,400</span></div>
           <div class="p-bar"><div class="p-bar-fill" data-width="55"></div></div>
         </div>
       </div>
@@ -597,19 +717,19 @@ footer{background:var(--s1);border-top:1px solid rgba(201,169,97,.1);padding:48p
     <div class="results-grid">
       <div class="result-card r d1">
         <span class="result-icon">📈</span>
-        <div class="result-val">447%</div>
+        <div class="result-val">253%</div>
         <div class="result-label">Instagram Growth</div>
-        <div class="result-desc">From 3,400 to 18,600 followers — organic growth driven by consistent Reels and community engagement across 12 months.</div>
+        <div class="result-desc">From 3,400 to 12,000 followers — organic growth driven by consistent Reels and community engagement across 12 months.</div>
       </div>
       <div class="result-card r d2">
         <span class="result-icon">👁</span>
-        <div class="result-val">2.4M</div>
+        <div class="result-val">1.6M</div>
         <div class="result-label">Total Annual Reach</div>
         <div class="result-desc">Combined Instagram and Facebook reach over the full year — built without paid amplification on the majority of content.</div>
       </div>
       <div class="result-card r d3">
         <span class="result-icon">🎬</span>
-        <div class="result-val">148K</div>
+        <div class="result-val">112K</div>
         <div class="result-label">Facebook Video Views</div>
         <div class="result-desc">Video content consistently outperformed static posts. Reels and short-form videos drove the majority of new account discovery.</div>
       </div>
@@ -709,8 +829,8 @@ Chart.defaults.font.size=11
 /* GROWTH LINE CHART */
 const gCtx=document.getElementById('growthChart').getContext('2d')
 const months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
-const followers=[3400,4800,7200,10600,13100,14700,15800,16600,17100,17700,18200,18600]
-const newFollowers=[3400,1400,2400,3400,2500,1600,1100,800,500,600,500,400]
+const followers=[3400,3700,4100,4800,5700,6500,7200,7900,8650,9350,10100,12000]
+const newFollowers=[300,400,700,900,800,700,700,750,700,750,850,1050]
 
 const gGrad=gCtx.createLinearGradient(0,0,0,300)
 gGrad.addColorStop(0,'rgba(201,169,97,.25)')
